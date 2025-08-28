@@ -2,8 +2,8 @@ name: 自动备份脚本
 
 on:
   schedule:
-    # 每1小时运行一次
-    - cron: '0 */1 * * *'
+    # 每6小时运行一次
+    - cron: '0 */6 * * *'
   workflow_dispatch: # 手动触发
   push:
     paths:
@@ -17,7 +17,8 @@ jobs:
     - name: 检出代码
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.PERSONAL_TOKEN || secrets.GITHUB_TOKEN }}
+        persist-credentials: true
         
     - name: 设置 Node.js
       uses: actions/setup-node@v4
@@ -38,45 +39,264 @@ jobs:
         
         const config = JSON.parse(fs.readFileSync('config/scripts.json', 'utf8'));
         
-        async function downloadFile(url, filename) {
+        // 智能自学习版本检测系统
+        let versionCache = null;
+        let lastSuccessfulVersion = null;
+        
+        // 基于实际Forward版本格式和成功经验生成版本号
+        function generateForwardVersions() {
+          const now = new Date();
+          const year = now.getFullYear();
+          const month = (now.getMonth() + 1).toString().padStart(2, '0');
+          const date = now.getDate().toString().padStart(2, '0');
+          
+          const versions = [];
+          
+          // 如果有上次成功的版本，优先使用类似的格式
+          if (lastSuccessfulVersion) {
+            console.log(\`基于成功版本 \${lastSuccessfulVersion} 生成相似版本\`);
+            const match = lastSuccessfulVersion.match(/Forward\\/(\\d+\\.\\d+\\.\\d+) \\((\\d{8})(\\d{2})\\)/);
+            if (match) {
+              const [_, version, dateStr, buildNum] = match;
+              
+              // 基于成功版本生成相近版本
+              for (let i = 0; i < 5; i++) {
+                const newBuildNum = (parseInt(buildNum) + i).toString().padStart(2, '0');
+                versions.push(\`Forward/\${version} (\${dateStr}\${newBuildNum})\`);
+              }
+              
+              // 尝试版本号递增
+              const versionParts = version.split('.');
+              versionParts[2] = (parseInt(versionParts[2]) + 1).toString();
+              const newVersion = versionParts.join('.');
+              versions.push(\`Forward/\${newVersion} (\${dateStr}01)\`);
+              versions.push(\`Forward/\${newVersion} (\${dateStr}02)\`);
+            }
+          }
+          
+          // 基于当前日期生成版本 (根据你提供的真实格式)
+          const todayStr = \`\${year}\${month}\${date}\`;
+          
+          // 今天的版本 - 最高优先级
+          for (let buildNum = 1; buildNum <= 10; buildNum++) {
+            const buildStr = buildNum.toString().padStart(2, '0');
+            versions.unshift(\`Forward/1.3.6 (\${todayStr}\${buildStr})\`);
+            versions.unshift(\`Forward/1.3.7 (\${todayStr}\${buildStr})\`);
+            versions.unshift(\`Forward/1.3.8 (\${todayStr}\${buildStr})\`);
+            versions.unshift(\`Forward/1.4.0 (\${todayStr}\${buildStr})\`);
+          }
+          
+          // 最近7天的版本
+          for (let dayOffset = 1; dayOffset <= 7; dayOffset++) {
+            const targetDate = new Date(now);
+            targetDate.setDate(targetDate.getDate() - dayOffset);
+            
+            const targetYear = targetDate.getFullYear();
+            const targetMonth = (targetDate.getMonth() + 1).toString().padStart(2, '0');
+            const targetDay = targetDate.getDate().toString().padStart(2, '0');
+            const dateStr = \`\${targetYear}\${targetMonth}\${targetDay}\`;
+            
+            // 每天的前5个版本
+            for (let buildNum = 1; buildNum <= 5; buildNum++) {
+              const buildStr = buildNum.toString().padStart(2, '0');
+              versions.push(\`Forward/1.3.6 (\${dateStr}\${buildStr})\`);
+              versions.push(\`Forward/1.3.7 (\${dateStr}\${buildStr})\`);
+            }
+          }
+          
+          return [...new Set(versions)]; // 去重
+        }
+        
+        // 尝试从TestFlight获取真实版本信息
+        async function fetchRealVersionFromTestFlight() {
+          try {
+            // 尝试解析TestFlight页面获取版本信息
+            console.log('尝试从TestFlight获取真实版本信息...');
+            
+            // 已知的Forward TestFlight链接
+            const testflightUrls = [
+              'https://testflight.apple.com/join/uxkzBnhw', // Forward - 新视界
+              // 可以添加更多已知链接
+            ];
+            
+            for (const url of testflightUrls) {
+              try {
+                const response = await fetch(url, {
+                  headers: {
+                    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
+                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+                  }
+                });
+                
+                if (response.ok) {
+                  const html = await response.text();
+                  
+                  // 尝试提取版本信息的正则表达式
+                  const versionRegex = /Forward[\\s\\/](\\d+\\.\\d+\\.\\d+)\\s*\\((\\d{8})(\\d{2})\\)/gi;
+                  const matches = [...html.matchAll(versionRegex)];
+                  
+                  if (matches.length > 0) {
+                    const realVersions = matches.map(match => 
+                      \`Forward/\${match[1]} (\${match[2]}\${match[3]})\`
+                    );
+                    console.log(\`从TestFlight获取到真实版本: \${realVersions.join(', ')}\`);
+                    return realVersions;
+                  }
+                }
+              } catch (error) {
+                console.log(\`TestFlight链接 \${url} 访问失败: \${error.message}\`);
+              }
+            }
+          } catch (error) {
+            console.log(\`TestFlight版本获取失败: \${error.message}\`);
+          }
+          
+          return [];
+        }
+        
+        async function getUserAgent(url, retryCount = 0) {
+          try {
+            const hostname = new URL(url).hostname;
+            
+            if (hostname === 'widgets-xd.vercel.app') {
+              if (!versionCache) {
+                // 首先尝试从TestFlight获取真实版本
+                const realVersions = await fetchRealVersionFromTestFlight();
+                
+                if (realVersions.length > 0) {
+                  console.log(\`使用从TestFlight获取的真实版本\`);
+                  versionCache = [...realVersions, ...generateForwardVersions()];
+                } else {
+                  console.log(\`TestFlight获取失败，使用智能生成的版本\`);
+                  versionCache = generateForwardVersions();
+                }
+                
+                console.log(\`生成了 \${versionCache.length} 个候选版本\`);
+              }
+              
+              // 轮换使用版本
+              return versionCache[retryCount % versionCache.length];
+            }
+            
+            return userAgents[hostname] || userAgents.default;
+          } catch {
+            return userAgents.default;
+          }
+        }
+        
+        async function downloadFile(url, filename, retryCount = 0) {
           return new Promise((resolve, reject) => {
             const parsedUrl = new URL(url);
             const client = parsedUrl.protocol === 'https:' ? https : http;
             
-            const req = client.get(url, (res) => {
-              if (res.statusCode === 200) {
-                let data = '';
-                res.on('data', chunk => data += chunk);
-                res.on('end', () => {
-                  fs.writeFileSync(\`scripts/\${filename}\`, data);
-                  console.log(\`已下载: \${filename}\`);
-                  resolve();
-                });
-              } else if (res.statusCode >= 300 && res.statusCode < 400) {
-                // 处理重定向
-                downloadFile(res.headers.location, filename).then(resolve).catch(reject);
-              } else {
-                reject(new Error(\`HTTP \${res.statusCode}: \${url}\`));
-              }
-            });
-            
-            req.on('error', reject);
-            req.setTimeout(30000, () => {
-              req.destroy();
-              reject(new Error(\`超时: \${url}\`));
-            });
+            // 异步获取User-Agent
+            getUserAgent(url, retryCount).then(userAgent => {
+              const options = {
+                hostname: parsedUrl.hostname,
+                port: parsedUrl.port,
+                path: parsedUrl.pathname + parsedUrl.search,
+                method: 'GET',
+                headers: {
+                  'User-Agent': userAgent,
+                  'Accept': 'text/plain, application/javascript, */*',
+                  'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                  'Accept-Encoding': 'identity',
+                  'Connection': 'close',
+                  'Cache-Control': 'no-cache',
+                  'Pragma': 'no-cache',
+                  'Referer': 'https://testflight.apple.com/'
+                },
+                timeout: 30000
+              };
+              
+              console.log(\`[重试\${retryCount}] 使用 User-Agent: \${userAgent.substring(0, 50)}...\`);
+              
+              const req = client.request(options, (res) => {
+                console.log(\`请求 \${filename}: \${res.statusCode} \${res.statusMessage}\`);
+                
+                if (res.statusCode === 200) {
+                  let data = '';
+                  res.setEncoding('utf8');
+                  res.on('data', chunk => data += chunk);
+                  res.on('end', () => {
+                    // 验证脚本内容
+                    if (data.trim().length < 50) {
+                      reject(new Error(\`内容过短，可能不是有效脚本: \${data.substring(0, 100)}\`));
+                      return;
+                    }
+                    
+                    // 检查是否为错误页面
+                    if (data.includes('<html>') || data.includes('<!DOCTYPE')) {
+                      reject(new Error('返回的是HTML页面，不是JavaScript脚本'));
+                      return;
+                    }
+                    
+                    // 记录成功的版本号用于学习
+                    const hostname = new URL(url).hostname;
+                    if (hostname === 'widgets-xd.vercel.app' && userAgent.includes('Forward/')) {
+                      lastSuccessfulVersion = userAgent;
+                      console.log(\`✅ 记录成功版本: \${lastSuccessfulVersion}\`);
+                    }
+                    
+                    fs.writeFileSync(\`scripts/\${filename}\`, data);
+                    console.log(\`✅ 已下载: \${filename} (\${data.length} bytes) [User-Agent: \${userAgent.substring(0, 30)}...]\`);
+                    resolve();
+                  });
+                } else if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                  // 处理重定向
+                  console.log(\`重定向到: \${res.headers.location}\`);
+                  downloadFile(res.headers.location, filename, retryCount).then(resolve).catch(reject);
+                } else if (res.statusCode === 403 && retryCount < 20) { // 增加到20次重试
+                  console.log(\`收到403错误，尝试下一个版本 (重试 \${retryCount + 1}/20)...\`);
+                  setTimeout(() => {
+                    downloadFile(url, filename, retryCount + 1).then(resolve).catch(reject);
+                  }, 500 * (retryCount % 3 + 1)); // 短延迟，快速切换版本
+                } else {
+                  reject(new Error(\`HTTP \${res.statusCode}: \${url} - \${res.statusMessage}\`));
+                }
+              });
+              
+              req.on('error', (error) => {
+                reject(new Error(\`网络错误: \${error.message}\`));
+              });
+              
+              req.on('timeout', () => {
+                req.destroy();
+                reject(new Error(\`请求超时: \${url}\`));
+              });
+              
+              req.end();
+            }).catch(reject);
           });
         }
         
         async function main() {
+          const results = [];
           for (const script of config.scripts) {
             try {
+              console.log(\`开始下载: \${script.filename} 从 \${script.url}\`);
               await downloadFile(script.url, script.filename);
-              await new Promise(resolve => setTimeout(resolve, 1000)); // 延迟1秒
+              results.push({ script: script.filename, status: 'success' });
+              // 下载成功后稍作延迟，避免被限流
+              await new Promise(resolve => setTimeout(resolve, 1500));
             } catch (error) {
-              console.error(\`下载失败 \${script.filename}: \${error.message}\`);
-              // 继续下载其他脚本，不中断流程
+              console.error(\`❌ 下载失败 \${script.filename}: \${error.message}\`);
+              results.push({ script: script.filename, status: 'failed', error: error.message });
+              // 失败后也延迟，然后继续下载其他脚本
+              await new Promise(resolve => setTimeout(resolve, 2000));
             }
+          }
+          
+          // 输出下载摘要
+          console.log('\\n📊 下载摘要:');
+          const successful = results.filter(r => r.status === 'success');
+          const failed = results.filter(r => r.status === 'failed');
+          console.log(\`✅ 成功: \${successful.length}个\`);
+          console.log(\`❌ 失败: \${failed.length}个\`);
+          
+          if (failed.length > 0) {
+            console.log('\\n失败的脚本:');
+            failed.forEach(f => console.log(\`  - \${f.script}: \${f.error}\`));
           }
         }
         
@@ -105,7 +325,7 @@ jobs:
               requiredVersion: script.requiredVersion,
               version: \`1.0.\${hash.substring(0, 2)}\`,
               author: script.author,
-              url: \`https://summer-water-d054.j1395468936.workers.dev/scripts/\${script.filename}\`
+              url: \`https://your-worker.your-subdomain.workers.dev/scripts/\${script.filename}\`
             });
           }
         }
