@@ -557,7 +557,7 @@ async function fetchTencentVideo(inputUrl) {
   // 先把 res.data 转成 JSON
   const data = typeof res.data === "string" ? JSON.parse(res.data) : res.data;
 
-  // 获���弹幕分段数据
+  // 获取弹幕分段数据
   const promises = [];
   const segmentList = Object.values(data.segment_index);
   for (const item of segmentList) {
@@ -1254,7 +1254,7 @@ async function getCommentsById(params) {
 
   const urlRegex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(:\d+)?(\/[^\s]*)?$/;
   if (!urlRegex.test(title)) {
-      return generateDanmaku(`【手动链接弹幕】：请输入有效的播放链接进行弹幕��索`, 1);
+      return generateDanmaku(`【手动链接弹幕】：请输入有效的播放链接进行弹幕搜索`, 1);
   }
 
   const url = await convertMobileToPcUrl(title);
