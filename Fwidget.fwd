@@ -63,8 +63,7 @@
       "description": "聚合豆瓣、TMDB、IMDB和 Bangumi的影视动画榜单",
       "author": "阿米诺斯",
       "requiredVersion": "0.0.1",
-      "url": "https://widgets-xd.vercel.app/Widgets/combined.js",
-      "filename": "combined.js"
+      "url": "https://widgets-xd.vercel.app/Widgets/combined.js"
     },
     {
       "id": "imdb",
@@ -72,8 +71,7 @@
       "description": "聚合 IMDb 热门影视资源",
       "author": "Autism",
       "requiredVersion": "0.0.1",
-      "url": "https://widgets-xd.vercel.app/Widgets/IMDb.js",
-      "filename": "IMDb.js"
+      "url": "https://widgets-xd.vercel.app/Widgets/IMDb.js"
     }
   ]
 }
