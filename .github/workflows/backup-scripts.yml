@@ -1,0 +1,151 @@
+name: 自动备份脚本
+
+on:
+  schedule:
+    # 每1小时运行一次
+    - cron: '0 */1 * * *'
+  workflow_dispatch: # 手动触发
+  push:
+    paths:
+      - 'config/scripts.json'
+
+jobs:
+  backup-scripts:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: 设置 Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: 备份脚本
+      run: |
+        # 创建脚本目录
+        mkdir -p scripts
+        
+        # 读取配置并下载脚本
+        node -e "
+        const fs = require('fs');
+        const https = require('https');
+        const http = require('http');
+        const { URL } = require('url');
+        
+        const config = JSON.parse(fs.readFileSync('config/scripts.json', 'utf8'));
+        
+        async function downloadFile(url, filename) {
+          return new Promise((resolve, reject) => {
+            const parsedUrl = new URL(url);
+            const client = parsedUrl.protocol === 'https:' ? https : http;
+            
+            const req = client.get(url, (res) => {
+              if (res.statusCode === 200) {
+                let data = '';
+                res.on('data', chunk => data += chunk);
+                res.on('end', () => {
+                  fs.writeFileSync(\`scripts/\${filename}\`, data);
+                  console.log(\`已下载: \${filename}\`);
+                  resolve();
+                });
+              } else if (res.statusCode >= 300 && res.statusCode < 400) {
+                // 处理重定向
+                downloadFile(res.headers.location, filename).then(resolve).catch(reject);
+              } else {
+                reject(new Error(\`HTTP \${res.statusCode}: \${url}\`));
+              }
+            });
+            
+            req.on('error', reject);
+            req.setTimeout(30000, () => {
+              req.destroy();
+              reject(new Error(\`超时: \${url}\`));
+            });
+          });
+        }
+        
+        async function main() {
+          for (const script of config.scripts) {
+            try {
+              await downloadFile(script.url, script.filename);
+              await new Promise(resolve => setTimeout(resolve, 1000)); // 延迟1秒
+            } catch (error) {
+              console.error(\`下载失败 \${script.filename}: \${error.message}\`);
+              // 继续下载其他脚本，不中断流程
+            }
+          }
+        }
+        
+        main().catch(console.error);
+        "
+        
+    - name: 生成合集文件
+      run: |
+        node -e "
+        const fs = require('fs');
+        const crypto = require('crypto');
+        
+        const config = JSON.parse(fs.readFileSync('config/scripts.json', 'utf8'));
+        
+        const widgets = [];
+        for (const script of config.scripts) {
+          const scriptPath = \`scripts/\${script.filename}\`;
+          if (fs.existsSync(scriptPath)) {
+            const content = fs.readFileSync(scriptPath, 'utf8');
+            const hash = crypto.createHash('sha256').update(content).digest('hex').substring(0, 8);
+            
+            widgets.push({
+              id: script.id,
+              title: script.title,
+              description: script.description,
+              requiredVersion: script.requiredVersion,
+              version: \`1.0.\${hash.substring(0, 2)}\`,
+              author: script.author,
+              url: \`https://your-worker.your-subdomain.workers.dev/scripts/\${script.filename}\`
+            });
+          }
+        }
+        
+        const collection = {
+          title: config.collection.title,
+          description: config.collection.description + ' (最后更新: ' + new Date().toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'}) + ')',
+          icon: config.collection.icon,
+          widgets: widgets
+        };
+        
+        fs.writeFileSync('widgets.fwd', JSON.stringify(collection, null, 2));
+        console.log('已生成 widgets.fwd');
+        "
+        
+    - name: 更新统计信息
+      run: |
+        echo "## 📊 备份统计" > backup-stats.md
+        echo "" >> backup-stats.md
+        echo "- 🕒 最后更新: $(date '+%Y-%m-%d %H:%M:%S')" >> backup-stats.md
+        echo "- 📁 脚本数量: $(ls -1 scripts/ | wc -l)" >> backup-stats.md
+        echo "- 📄 脚本列表:" >> backup-stats.md
+        echo "" >> backup-stats.md
+        for file in scripts/*; do
+          if [ -f "$file" ]; then
+            size=$(stat -c%s "$file")
+            echo "  - $(basename "$file") (${size} bytes)" >> backup-stats.md
+          fi
+        done
+        
+    - name: 提交更改
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        
+        if git diff --staged --quiet; then
+          echo "没有检测到变更"
+        else
+          git commit -m "🤖 自动备份脚本 $(date '+%Y-%m-%d %H:%M:%S')"
+          git push
+          echo "已提交更改"
+        fi
