@@ -105,7 +105,7 @@ jobs:
               requiredVersion: script.requiredVersion,
               version: \`1.0.\${hash.substring(0, 2)}\`,
               author: script.author,
-              url: \`https://your-worker.your-subdomain.workers.dev/scripts/\${script.filename}\`
+              url: \`https://summer-water-d054.j1395468936.workers.dev/scripts/\${script.filename}\`
             });
           }
         }
