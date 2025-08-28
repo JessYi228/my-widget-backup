@@ -1,0 +1,61 @@
+{
+  "title": "我的脚本合集",
+  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/8/28 09:13:47)",
+  "icon": "https://github.com/huangxd-/ForwardWidgets/raw/main/icon.png",
+  "widgets": [
+    {
+      "id": "douban",
+      "title": "豆瓣我看&豆瓣个性化推荐",
+      "description": "解析豆瓣想看、在看、已看以及根据个人数据生成的个性化推荐",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.8d",
+      "author": "huangxd",
+      "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/douban.js"
+    },
+    {
+      "id": "trakt",
+      "title": "Trakt我看&Trakt个性化推荐",
+      "description": "解析Trakt想看、在看、已看、片单、追剧日历以及根据个人数据生成的个性化推荐",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.e5",
+      "author": "huangxd",
+      "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/trakt.js"
+    },
+    {
+      "id": "letterboxd",
+      "title": "Letterboxd电影爱好者平台",
+      "description": "解析Letterboxd片单内的影片",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.d5",
+      "author": "huangxd",
+      "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/letterboxd.js"
+    },
+    {
+      "id": "danmu_auto",
+      "title": "自动链接弹幕",
+      "description": "自动获取播放链接并从服务器获取弹幕",
+      "requiredVersion": "0.0.2",
+      "version": "1.0.44",
+      "author": "huangxd",
+      "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/danmu_auto.js"
+    },
+    {
+      "id": "danmu_playurl",
+      "title": "手动链接弹幕",
+      "description": "从指定播放链接和服务器获取弹幕",
+      "requiredVersion": "0.0.2",
+      "version": "1.0.5d",
+      "author": "huangxd",
+      "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/danmu_playurl.js"
+    },
+    {
+      "id": "person_movie",
+      "title": "TMDB人物影视作品",
+      "description": "获取 TMDB 的榜单数据",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.38",
+      "author": "Evan",
+      "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/person_movie.js"
+    }
+  ]
+}
