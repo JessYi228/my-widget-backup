@@ -1,7 +1,7 @@
 {
   "title": "Lucas all in one widgets",
   "description": "hand select widgets",
-  "icon": "https://github.com/JessYi228/Something/blob/Pictures/avatar.png?raw=true",
+  "icon": "https://raw.githubusercontent.com/JessYi228/Something/refs/heads/Pictures/avatar.png",
   "widgets": [
     {
       "id": "douban",
