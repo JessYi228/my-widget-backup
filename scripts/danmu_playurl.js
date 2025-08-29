@@ -766,7 +766,7 @@ async function fetchIqiyi(inputUrl) {
                 size: 25,	//字体大小，25 为中，18 为小
                 color: 16777215,	//弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
                 unixtime: Math.floor(Date.now() / 1000),	//Unix 时间戳格式
-                uid: 0,		//��送人的 id
+                uid: 0,		//发送人的 id
                 content: "",
             };
             content.timepoint = parseFloat(showTime[i]);
@@ -1134,7 +1134,7 @@ async function fetchYouku(inputUrl) {
     // 对于简单的 ASCII 字符串，btoa 可以直接处理
     // 如果需要支持 UTF-8 字符（例如中文），需要手动编码
     function utf8ToLatin1(str) {
-      // 将 UTF-8 字符串转换为 Latin-1 可���的字符串
+      // 将 UTF-8 字符串转换为 Latin-1 可用的字符串
       // 浏览器 btoa 只能处理 Latin-1（0-255 字符码）
       let result = '';
       for (let i = 0; i < str.length; i++) {
