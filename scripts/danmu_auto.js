@@ -1001,7 +1001,7 @@ async function fetchBilibili(inputUrl) {
 
       const data = typeof res.data === "string" ? JSON.parse(res.data) : res.data;
       if (data.code !== 0) {
-        console.error("获取普���投稿视频信息失败:", data.message);
+        console.error("获取普通投稿视频信息失败:", data.message);
         return null;
       }
 
@@ -1954,7 +1954,7 @@ async function getPlayurlFromVod(title, tmdbInfo, type, season, episode, episode
         return null;
       }
 
-      // ���询剩余的服务器
+      // 轮询剩余的服务器
       for (const site of filteredSites) {
         response = await tryRequest(site, title);
         if (response) {
