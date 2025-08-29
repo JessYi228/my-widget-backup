@@ -58,7 +58,7 @@ const sortParam = (defaultValue = "hs_desc") => ({ name: "sort", title: "排序�
 // 年份选项
 const yearOptionsRaw = [];
 for(let y = CURRENT_YEAR; y >= 1990 ; y--) { yearOptionsRaw.push({title: `${y} 年`, value: String(y)}); }
-// 默认今年, "全部"放在最后, 降序排列
+// 默认今年, "全部"放在最���, 降序排列
 const yearEnumParam = { name: "year", title: "年份", type: "enumeration", value: String(CURRENT_YEAR), description:"选择特定年份", enumOptions: processEnumOptions(yearOptionsRaw, "all", "全部年份", true) }; 
 
 // 地区选项
