@@ -1982,7 +1982,7 @@ async function getPlayurlFromVod(title, tmdbInfo, type, season, episode, episode
   if (data.list && data.list.length > 0) {
     animes = data.list.filter((anime) => {
       if ((anime.type_name === "电视剧" || anime.type_name === "动漫" || anime.type_name === "连续剧" || anime.type_name === "少儿"
-          || anime.type_name.includes("剧") || anime.type_name.includes("国创")
+          || anime.type_name.includes("剧") || anime.type_name.includes("国��")
       ) && type === "tv" && tmdbInfo.type !== "Reality") {
         return true;
       } else if (anime.type_name === "综艺" && type === "tv" && tmdbInfo.type === "Reality") {
