@@ -202,7 +202,7 @@ WidgetMetadata = {
                             value: "https://letterboxd.com/krisde/list/afi-top-100/"
                         },
                         {
-                            title: "视与听伟大电影（影评人榜）",
+                            title: "视与听伟大电影（影评人榜��",
                             value: "https://letterboxd.com/bfi/list/sight-and-sounds-greatest-films-of-all-time/"
                         },
                         {
