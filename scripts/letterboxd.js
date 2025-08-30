@@ -322,7 +322,7 @@ WidgetMetadata = {
                             value: "https://letterboxd.com/nataliaivonica/list/greta-gerwig-talked-about-these-films/"
                         },
                         {
-                            title: "斯坦利·库布里克——���爱",
+                            title: "斯坦利·库布里克——最爱",
                             value: "https://letterboxd.com/jeffroskull/list/stanley-kubricks-100-favorite-filmsthat-we/"
                         },
                         {
