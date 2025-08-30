@@ -1001,7 +1001,7 @@ async function fetchBilibili(inputUrl) {
 
       const data = typeof res.data === "string" ? JSON.parse(res.data) : res.data;
       if (data.code !== 0) {
-        console.error("获取普通投稿视频信息失败:", data.message);
+        console.error("获取���通投稿视频信息失败:", data.message);
         return null;
       }
 
