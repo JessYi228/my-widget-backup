@@ -12,7 +12,7 @@ WidgetMetadata = {
   site: "https://widgets-xd.vercel.app",
   version: "1.3.3",
   requiredVersion: "0.0.2",
-  detailCacheDuration: 60,
+  detailCacheDuration: 3600,
   modules: [
     // =============TMDB模块=============
     // --- 热门模块 ---
@@ -21,7 +21,7 @@ WidgetMetadata = {
       description: "今日热门电视剧",
       requiresWebView: false,
       functionName: "loadTodayHotTV",
-      cacheDuration: 60,
+      cacheDuration: 3600,
       params: [
         { name: "language", title: "语言", type: "language", value: "zh-CN" },
         { name: "page", title: "页码", type: "page" }
@@ -32,7 +32,7 @@ WidgetMetadata = {
       description: "今日热门电影",
       requiresWebView: false,
       functionName: "loadTodayHotMovies",
-      cacheDuration: 60,
+      cacheDuration: 3600,
       params: [
         { name: "language", title: "语言", type: "language", value: "zh-CN" },
         { name: "page", title: "页码", type: "page" }
@@ -1191,12 +1191,10 @@ async function loadTmdbTrendingData() {
         });
         return response.data;
     } catch (error) {
-        console.log("远程数据获取失败，回退到基础请求:", error.message);
         try {
             const fallbackResponse = await Widget.http.get("https://widgets-xd.vercel.app/data/TMDB_Trending.json");
             return fallbackResponse.data;
         } catch (fallbackError) {
-            console.error("所有请求方式均失败:", fallbackError.message);
             throw fallbackError;
         }
     }
@@ -1226,7 +1224,6 @@ async function loadTodayHotTV(params) {
       
       return filterBlockedItems(tvItems);
     } catch (error) {
-      console.error("远程数据获取失败，使用API数据:", error);
     }
   }
   
@@ -1282,7 +1279,6 @@ async function loadTodayHotMovies(params) {
       
       return filterBlockedItems(movieItems);
     } catch (error) {
-      console.error("远程数据获取失败，使用API数据:", error);
     }
   }
   
