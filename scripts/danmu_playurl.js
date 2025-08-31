@@ -557,7 +557,7 @@ async function fetchTencentVideo(inputUrl) {
   // 先把 res.data 转成 JSON
   const data = typeof res.data === "string" ? JSON.parse(res.data) : res.data;
 
-  // 获取弹幕分段数据
+  // 获���弹幕分段数据
   const promises = [];
   const segmentList = Object.values(data.segment_index);
   for (const item of segmentList) {
