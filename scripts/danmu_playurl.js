@@ -1134,7 +1134,7 @@ async function fetchYouku(inputUrl) {
     // 对于简单的 ASCII 字符串，btoa 可以直接处理
     // 如果需要支持 UTF-8 字符（例如中文），需要手动编码
     function utf8ToLatin1(str) {
-      // 将 UTF-8 字符串转换为 Latin-1 可用的字符串
+      // 将 UTF-8 字��串转换为 Latin-1 可用的字符串
       // 浏览器 btoa 只能处理 Latin-1（0-255 字符码）
       let result = '';
       for (let i = 0; i < str.length; i++) {
