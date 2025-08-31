@@ -2025,7 +2025,7 @@ async function manageBlockedItems(params) {
     return [{
       id: "unblock_result",
       type: "info",
-      title: success ? "✅ 取消屏蔽成功" : "❌ 操作失败",
+      title: success ? "✅ ��消屏蔽成功" : "❌ 操作失败",
       description: success ? 
         mediaTypeText + " ID " + unblockId + " 已从黑名单中移除，将重新在榜单中显示。" : 
         "未找到ID为 " + unblockId + " 的" + mediaTypeText + "，或取消屏蔽时出现错误。",
@@ -3228,7 +3228,7 @@ async function loadImdbCardItems(params = {}) {
   }
   if (videoIds.length === 0) {
       const docId = Widget.dom.parse(response.data);
-      if (docId < 0) throw new Error("解�� IMDB HTML 失败");
+      if (docId < 0) throw new Error("解析 IMDB HTML 失败");
       const itemElementIds = Widget.dom.select(docId, "ul.ipc-metadata-list > li, .lister-list > tr");
       for (const itemId of itemElementIds) {
           try {
