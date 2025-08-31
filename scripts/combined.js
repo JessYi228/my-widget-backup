@@ -2025,7 +2025,7 @@ async function manageBlockedItems(params) {
     return [{
       id: "unblock_result",
       type: "info",
-      title: success ? "✅ 取消屏蔽成功" : "❌ 操作失败",
+      title: success ? "✅ ��消屏蔽成功" : "❌ 操作失败",
       description: success ? 
         mediaTypeText + " ID " + unblockId + " 已从黑名单中移除，将重新在榜单中显示。" : 
         "未找到ID为 " + unblockId + " 的" + mediaTypeText + "，或取消屏蔽时出现错误。",
@@ -4580,7 +4580,7 @@ async function processBangumiPage_bg(url, categoryHint, currentPageString, ranki
     }
 
     if (!listHtml) { 
-        if (WidgetConfig_bg.DEBUG_LOGGING && !prefetchedHtmlPromise) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [BGM页面处理] 未在预取缓存中找到或预取失败，正常获取HTML: ${url}`); 
+        if (WidgetConfig_bg.DEBUG_LOGGING && !prefetchedHtmlPromise) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [BGM页面处理] 未在预取缓存中��到或预取失败，正常获取HTML: ${url}`); 
         try { 
             const listHtmlResp = await fetchWithRetry_bg(url, fetchOptions, 'get', false, WidgetConfig_bg.HTTP_MAIN_RETRIES); 
             if (!listHtmlResp?.data) throw new Error("列表页响应数据为空或无效"); 
