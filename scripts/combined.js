@@ -2025,7 +2025,7 @@ async function manageBlockedItems(params) {
     return [{
       id: "unblock_result",
       type: "info",
-      title: success ? "✅ 取消屏蔽成功" : "❌ 操作失败",
+      title: success ? "✅ ��消屏蔽成功" : "❌ 操作失败",
       description: success ? 
         mediaTypeText + " ID " + unblockId + " 已从黑名单中移除，将重新在榜单中显示。" : 
         "未找到ID为 " + unblockId + " 的" + mediaTypeText + "，或取消屏蔽时出现错误。",
