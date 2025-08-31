@@ -3253,7 +3253,7 @@ async function processTmdbFullDetailQueue_bg() {
     const batchSize = WidgetConfig_bg.MAX_CONCURRENT_TMDB_FULL_DETAILS_FETCH;
     const currentBatch = tmdbFullDetailFetchQueue_bg.splice(0, batchSize);
 
-    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TMDB完整详��队列] 处理批次大小: ${currentBatch.length}`);
+    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TMDB完整详情队列] 处理批次大小: ${currentBatch.length}`);
     const promises = currentBatch.map(async (task) => {
         const { itemRef, tmdbSearchType, tmdbId } = task;
         try {
