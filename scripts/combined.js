@@ -2150,7 +2150,7 @@ async function manageBlockedItems(params) {
       id: "empty_list",
       type: "info",
       title: "黑名单为空",
-      description: "当前没有屏蔽任何内容。使用\"🚫 搜索屏蔽\"功能添加要屏蔽的影片。",
+      description: "当前没有屏蔽任何内容。使用\"🚫 搜索���蔽\"功能添加要屏蔽的影片。",
       posterPath: "",
       backdropPath: "",
       rating: 0,
@@ -3589,7 +3589,7 @@ function calculateContentTTL_bg(identifier, context) {
         if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TTL计算] 使用排行TTL for year ${year}`);
         return WidgetConfig_bg.TTL_RANK_MS; 
     }
-    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TTL���算] 使用默认排行TTL`);
+    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TTL计算] 使用默认排行TTL`);
     return WidgetConfig_bg.TTL_RANK_MS; 
 }
 
