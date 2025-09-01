@@ -2025,7 +2025,7 @@ async function manageBlockedItems(params) {
     return [{
       id: "unblock_result",
       type: "info",
-      title: success ? "�� 取消屏蔽成功" : "❌ 操作失败",
+      title: success ? "✅ 取消屏蔽成功" : "❌ 操作失败",
       description: success ? 
         mediaTypeText + " ID " + unblockId + " 已从黑名单中移除，将重新在榜单中显示。" : 
         "未找到ID为 " + unblockId + " 的" + mediaTypeText + "，或取消屏蔽时出现错误。",
@@ -3228,7 +3228,7 @@ async function loadImdbCardItems(params = {}) {
   }
   if (videoIds.length === 0) {
       const docId = Widget.dom.parse(response.data);
-      if (docId < 0) throw new Error("解�� IMDB HTML 失败");
+      if (docId < 0) throw new Error("解析 IMDB HTML 失败");
       const itemElementIds = Widget.dom.select(docId, "ul.ipc-metadata-list > li, .lister-list > tr");
       for (const itemId of itemElementIds) {
           try {
@@ -3589,7 +3589,7 @@ function calculateContentTTL_bg(identifier, context) {
         if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TTL计算] 使用排行TTL for year ${year}`);
         return WidgetConfig_bg.TTL_RANK_MS; 
     }
-    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TTL计算] 使用默认排行TTL`);
+    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TTL���算] 使用默认排行TTL`);
     return WidgetConfig_bg.TTL_RANK_MS; 
 }
 
@@ -3869,7 +3869,7 @@ function generateTmdbSearchQueries_bg(originalTitle, chineseTitle, listTitle) {
     let queriesToProcess = Array.from(coreQueries).filter(q => q && q.length > 0);
     queriesToProcess = [...new Set(queriesToProcess)];
     if (queriesToProcess.length > WidgetConfig_bg.MAX_TOTAL_TMDB_QUERIES_TO_PROCESS) {
-        if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TMDB搜索] 查询词过多 (${queriesToProcess.length}), 截断为 ${WidgetConfig_bg.MAX_TOTAL_TMDB_QUERIES_TO_PROCESS} ��`);
+        if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TMDB搜索] 查询词过多 (${queriesToProcess.length}), 截断为 ${WidgetConfig_bg.MAX_TOTAL_TMDB_QUERIES_TO_PROCESS} 个`);
         queriesToProcess = queriesToProcess.slice(0, WidgetConfig_bg.MAX_TOTAL_TMDB_QUERIES_TO_PROCESS);
     }
     return queriesToProcess;
