@@ -2474,7 +2474,7 @@ async function getCommentsById(params) {
   // 测试参数值
   // return printParams(seriesName, episodeName, airDate, runtime, premiereDate, season, episode, tmdbId);
 
-  // 手动链接弹幕模块逻辑迁移到这
+  // ��动链接弹幕模块逻辑迁移到这
   const urlRegex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(:\d+)?(\/[^\s]*)?$/;
   if (urlRegex.test(title)) {
       console.log("原始播放链接：", title);
