@@ -3589,7 +3589,7 @@ function calculateContentTTL_bg(identifier, context) {
         if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TTL计算] 使用排行TTL for year ${year}`);
         return WidgetConfig_bg.TTL_RANK_MS; 
     }
-    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TTL���算] 使用默认排行TTL`);
+    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TTL计算] 使用默认排行TTL`);
     return WidgetConfig_bg.TTL_RANK_MS; 
 }
 
