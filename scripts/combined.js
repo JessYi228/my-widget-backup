@@ -2025,7 +2025,7 @@ async function manageBlockedItems(params) {
     return [{
       id: "unblock_result",
       type: "info",
-      title: success ? "✅ 取消屏蔽成功" : "❌ 操作失败",
+      title: success ? "✅ ��消屏蔽成功" : "❌ 操作失败",
       description: success ? 
         mediaTypeText + " ID " + unblockId + " 已从黑名单中移除，将重新在榜单中显示。" : 
         "未找到ID为 " + unblockId + " 的" + mediaTypeText + "，或取消屏蔽时出现错误。",
@@ -4530,7 +4530,7 @@ async function fetchItemDetails_bg(pendingItem, categoryHint, rankingContext = {
         if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [BGM详情_极限] TMDB匹配失败 for BGM ID ${pendingItem.id}. 将使用 BGM 列表数据并尝试获取BGM详情页数据。`);
         try {
             const detailHtmlResponse = await fetchWithRetry_bg( pendingItem.detailLink, { headers: { "User-Agent": WidgetConfig_bg.BGM_API_USER_AGENT, "Referer": `${WidgetConfig_bg.BGM_BASE_URL}/`, "Accept-Language": "zh-CN,zh;q=0.9" } }, 'get', false, WidgetConfig_bg.HTTP_MAIN_RETRIES );
-            if (!detailHtmlResponse?.data) throw new Error(`Bangumi详情页数据为空或无效: ${pendingItem.detailLink}`);
+            if (!detailHtmlResponse?.data) throw new Error(`Bangumi详���页数据为空或无效: ${pendingItem.detailLink}`);
             
             const $ = Widget.html.load(detailHtmlResponse.data);
             item.title = ($('h1.nameSingle > a').first().text().trim()) || item.title;
