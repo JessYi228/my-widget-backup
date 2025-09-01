@@ -2150,7 +2150,7 @@ async function manageBlockedItems(params) {
       id: "empty_list",
       type: "info",
       title: "黑名单为空",
-      description: "当前没有屏蔽任何内容。使用\"🚫 搜索���蔽\"功能添加要屏蔽的影片。",
+      description: "当前没有屏蔽任何内容。使用\"🚫 搜索屏蔽\"功能添加要屏蔽的影片。",
       posterPath: "",
       backdropPath: "",
       rating: 0,
