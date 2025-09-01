@@ -2150,7 +2150,7 @@ async function manageBlockedItems(params) {
       id: "empty_list",
       type: "info",
       title: "黑名单为空",
-      description: "当前没有屏蔽任何内容。使用\"🚫 搜索���蔽\"功能添加要屏蔽的影片。",
+      description: "当前没有屏蔽任何内容。使用\"🚫 搜索屏蔽\"功能添加要屏蔽的影片。",
       posterPath: "",
       backdropPath: "",
       rating: 0,
@@ -3228,7 +3228,7 @@ async function loadImdbCardItems(params = {}) {
   }
   if (videoIds.length === 0) {
       const docId = Widget.dom.parse(response.data);
-      if (docId < 0) throw new Error("解析 IMDB HTML 失败");
+      if (docId < 0) throw new Error("���析 IMDB HTML 失败");
       const itemElementIds = Widget.dom.select(docId, "ul.ipc-metadata-list > li, .lister-list > tr");
       for (const itemId of itemElementIds) {
           try {
