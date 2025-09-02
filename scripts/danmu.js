@@ -18,7 +18,7 @@ WidgetMetadata = {
   version: "1.0.1",
   requiredVersion: "0.0.2",
   description: "获取弹幕数据",
-  author: "Forward",
+  author: "Tester",
   site: "https://github.com/InchStudio/ForwardWidgets",
   globalParams: [
     {
