@@ -42,13 +42,13 @@
       "filename": "danmu_auto.js"
     },
     {
-      "id": "danmu_playurl",
-      "title": "手动链接弹幕",
-      "description": "从指定播放链接和服务器获取弹幕",
-      "author": "huangxd",
+      "id": "forward.danmu2",
+      "title": "自定义弹幕2",
+      "description": "从指定服务器获取弹幕",
       "requiredVersion": "0.0.2",
-      "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/danmu_playurl.js",
-      "filename": "danmu_playurl.js"
+      "version": "1.0.1",
+      "author": "Forward",
+      "url": "https://assets.vvebo.vip/scripts/danmu.js"
     },
     {
       "id": "combined",
