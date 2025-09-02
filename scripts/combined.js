@@ -466,7 +466,7 @@ WidgetMetadata = {
           name: "unblock_id",
           title: "🔓 取消屏蔽ID",
           type: "input",
-          description: "输入要取消屏蔽��TMDB ID",
+          description: "输入要取消屏蔽的TMDB ID",
           value: "",
           placeholder: "例如：2190",
           belongTo: { paramName: "action", value: ["unblock"] }
