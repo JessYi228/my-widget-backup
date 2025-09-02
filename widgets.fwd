@@ -1,6 +1,6 @@
 {
   "title": "我的脚本合集",
-  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/9/2 07:16:26)",
+  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/9/2 09:21:41)",
   "icon": "https://github.com/huangxd-/ForwardWidgets/raw/main/icon.png",
   "widgets": [
     {
@@ -53,7 +53,7 @@
       "title": "影视榜单",
       "description": "聚合豆瓣、TMDB、IMDB和 Bangumi的影视动画榜单",
       "requiredVersion": "0.0.1",
-      "version": "1.0.5a",
+      "version": "1.0.71",
       "author": "阿米诺斯",
       "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/combined.js"
     },
