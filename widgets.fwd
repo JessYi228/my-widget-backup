@@ -1,6 +1,6 @@
 {
   "title": "我的脚本合集",
-  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/9/2 15:17:56)",
+  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/9/2 15:49:16)",
   "icon": "https://github.com/huangxd-/ForwardWidgets/raw/main/icon.png",
   "widgets": [
     {
@@ -8,7 +8,7 @@
       "title": "豆瓣我看&豆瓣个性化推荐",
       "description": "解析豆瓣想看、在看、已看以及根据个人数据生成的个性化推荐",
       "requiredVersion": "0.0.1",
-      "version": "1.0.b2",
+      "version": "1.0.24",
       "author": "huangxd",
       "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/douban.js"
     },
@@ -35,25 +35,25 @@
       "title": "自动链接弹幕",
       "description": "自动获取播放链接并从服务器获取弹幕",
       "requiredVersion": "0.0.2",
-      "version": "1.0.44",
+      "version": "1.0.04",
       "author": "huangxd",
       "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/danmu_auto.js"
     },
     {
-      "id": "danmu_playurl",
-      "title": "手动链接弹幕",
-      "description": "从指定播放链接和服务器获取弹幕",
+      "id": "forward.danmu2",
+      "title": "自定义弹幕2",
+      "description": "从指定服务器获取弹幕",
       "requiredVersion": "0.0.2",
-      "version": "1.0.a1",
-      "author": "huangxd",
-      "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/danmu_playurl.js"
+      "version": "1.0.0c",
+      "author": "Forward",
+      "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/undefined"
     },
     {
       "id": "combined",
       "title": "影视榜单",
       "description": "聚合豆瓣、TMDB、IMDB和 Bangumi的影视动画榜单",
       "requiredVersion": "0.0.1",
-      "version": "1.0.26",
+      "version": "1.0.5a",
       "author": "阿米诺斯",
       "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/combined.js"
     },
