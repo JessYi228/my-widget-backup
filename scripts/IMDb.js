@@ -152,7 +152,7 @@ async function fetchPagedData(shardPath) {
         console.error(`[IMDb-v2 ERROR] 网络请求失败 ${encodedUrl}: ${e.message}`); 
         // 如果是 404 错误，可能是页码超出范围，返回空
         if (e.message.includes('404')) {
-            if(DEBUG_LOG) console.log(`[IMDb-v2 INFO] 数据未找到 (404)，可��页码超出范围: ${encodedUrl}`);
+            if(DEBUG_LOG) console.log(`[IMDb-v2 INFO] 数据未找到 (404)，可能页码超出范围: ${encodedUrl}`);
             return [];
         }
         throw new Error(`网络请求失败: ${e.message || '未知网络错误'}`);
