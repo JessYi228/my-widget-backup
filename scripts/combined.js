@@ -466,7 +466,7 @@ WidgetMetadata = {
           name: "unblock_id",
           title: "🔓 取消屏蔽ID",
           type: "input",
-          description: "输入要取消屏蔽的TMDB ID",
+          description: "输入要取消屏蔽��TMDB ID",
           value: "",
           placeholder: "例如：2190",
           belongTo: { paramName: "action", value: ["unblock"] }
@@ -4494,7 +4494,7 @@ async function fetchItemDetails_bg(pendingItem, categoryHint, rankingContext = {
                         if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [BGM详情_极限] TMDB类型判断 (ID ${pendingItem.id}): 明确为WEB动画 -> MOVIE.`);
                         if (hasShortFilmTag) {
                            isShortFilm = true;
-                           if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [BGM详情_极限] TMDB类���判断 (ID ${pendingItem.id}): WEB动画 同时标记为短片 -> isShortFilm=true.`);
+                           if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [BGM详情_极限] TMDB类型判断 (ID ${pendingItem.id}): WEB动画 同时标记为短片 -> isShortFilm=true.`);
                         }
                     } else if (hasShortFilmTag) { 
                         tmdbSType = CONSTANTS_bg.MEDIA_TYPES.MOVIE;
