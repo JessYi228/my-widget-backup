@@ -4626,7 +4626,7 @@ async function fetchItemDetails_bg(pendingItem, categoryHint, rankingContext = {
             
             const $ = Widget.html.load(detailHtmlResponse.data);
             item.title = ($('h1.nameSingle > a').first().text().trim()) || item.title;
-            const cnTitleFromDetail = getInfoFromBox_bg($, "��文名:");
+            const cnTitleFromDetail = getInfoFromBox_bg($, "中文名:");
             if (cnTitleFromDetail) item.title = cnTitleFromDetail;
 
             let detailPagePoster = await getBangumiDetailCover_bg(String(pendingItem.id), pendingItem.detailLink, bangumiAccessToken, bangumiCookie); 
