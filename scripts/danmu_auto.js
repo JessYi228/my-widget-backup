@@ -1471,7 +1471,7 @@ function getPathname(url) {
   if (pathStart === -1) return '/'; // 如果没有路径，返回默认根路径
   const queryStart = url.indexOf('?', pathStart);
   const hashStart = url.indexOf('#', pathStart);
-  // 确定路径的结束位置（查询字符串或片段之前）
+  // 确定路径���结束位置（查询字符串或片段之前）
   let pathEnd = queryStart !== -1 ? queryStart : (hashStart !== -1 ? hashStart : url.length);
   const pathname = url.substring(pathStart, pathEnd);
   return pathname || '/';
