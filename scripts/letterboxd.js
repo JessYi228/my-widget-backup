@@ -608,7 +608,7 @@ function extractLetterboxdUrlsFromResponse(responseData, minNum, maxNum) {
     // 创建Cheerio实例解析HTML
     let $ = Widget.html.load(responseData);
 
-    // 定位所有包含data-target-link属性的影��容器div
+    // 定位所有包含data-target-link属性的影片容器div
     // 选择器匹配：li.poster-container 下的 div.film-poster（包含data-target-link属性）
     let filmContainers = $('li.posteritem div.react-component[data-target-link]');
 
