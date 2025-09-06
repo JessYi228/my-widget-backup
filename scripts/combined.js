@@ -4123,7 +4123,7 @@ async function searchTmdb_bg(originalTitle, chineseTitle, listTitle, searchMedia
                     }
                 }
             } catch (batchError) { 
-                if (WidgetConfig_bg.DEBUG_LOGGING) console.error(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TMDB搜索S2] ${searchIdentifierForLog} Batch execution error:`, batchError.message); 
+                if (WidgetConfig_bg.DEBUG_LOGGING) console.error(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TMDB��索S2] ${searchIdentifierForLog} Batch execution error:`, batchError.message); 
                 if (String(batchError.message).includes("401")||String(batchError.message).includes("403")) return null; 
             }
         }
