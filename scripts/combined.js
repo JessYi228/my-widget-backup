@@ -3728,7 +3728,7 @@ function populateItemFromTmdbFullDetail_bg(itemRef, tmdbDetail) {
     }
     itemRef.tmdb_preferred_title = bestChineseTitleFromTmdb || itemRef.title; 
     if (bestChineseTitleFromTmdb && bestChineseTitleFromTmdb !== itemRef.title) {
-        if(WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TMDB填充工具] 更新 TMDB ID ${itemRef.tmdb_id} 的主标题为 TMDB 中文翻译: "${bestChineseTitleFromTmdb.substring(0,30)}..." (原 BGM 链接 ID: ${itemRef.link?.split('/').pop() || 'N/A'})`);
+        if(WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TMDB填充工具] 更新 TMDB ID ${itemRef.tmdb_id} 的主标题为 TMDB 中文翻译: "${bestChineseTitleFromTmdb.substring(0,30)}..." (��� BGM 链接 ID: ${itemRef.link?.split('/').pop() || 'N/A'})`);
         itemRef.title = bestChineseTitleFromTmdb;
     }
     if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TMDB填充工具] 条目 (TMDB ID ${itemRef.tmdb_id}) 已从完整详情填充。`);
