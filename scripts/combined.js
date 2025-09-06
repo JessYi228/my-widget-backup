@@ -1059,7 +1059,7 @@ WidgetMetadata = {
                 { title: "2月", value: "2" },
                 { title: "3月", value: "3" },
                 { title: "4月", value: "4" },
-                { title: "5月", value: "5" },
+                { title: "5��", value: "5" },
                 { title: "6月", value: "6" },
                 { title: "7月", value: "7" },
                 { title: "8月", value: "8" },
@@ -4626,7 +4626,7 @@ async function fetchItemDetails_bg(pendingItem, categoryHint, rankingContext = {
             
             const $ = Widget.html.load(detailHtmlResponse.data);
             item.title = ($('h1.nameSingle > a').first().text().trim()) || item.title;
-            const cnTitleFromDetail = getInfoFromBox_bg($, "��文名:");
+            const cnTitleFromDetail = getInfoFromBox_bg($, "中文名:");
             if (cnTitleFromDetail) item.title = cnTitleFromDetail;
 
             let detailPagePoster = await getBangumiDetailCover_bg(String(pendingItem.id), pendingItem.detailLink, bangumiAccessToken, bangumiCookie); 
