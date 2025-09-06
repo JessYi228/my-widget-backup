@@ -516,7 +516,7 @@ async function convertMobileToPcUrl(url) {
      * 将移动端页面 URL 转换为 PC 端页面 URL。
      * 支持爱奇艺、腾讯视频、优酷、芒果TV和哔哩哔哩。
      * @param {string} url - 移动端 URL
-     * @returns {string} - PC 端 URL（匹配成功）、错误信息（匹配但解析失败）或原链接（不匹配）
+     * @returns {string} - PC 端 URL（匹配成功）、错误���息（匹配但解析失败）或原链接（不匹配）
      */
 
     // 爱奇艺 (iQIYI)
@@ -1471,7 +1471,7 @@ function getPathname(url) {
   if (pathStart === -1) return '/'; // 如果没有路径，返回默认根路径
   const queryStart = url.indexOf('?', pathStart);
   const hashStart = url.indexOf('#', pathStart);
-  // 确定路径的结束位置（查询字符串或片段之前）
+  // 确定路径的结���位置（查询字符串或片段之前）
   let pathEnd = queryStart !== -1 ? queryStart : (hashStart !== -1 ? hashStart : url.length);
   const pathname = url.substring(pathStart, pathEnd);
   return pathname || '/';
@@ -2527,7 +2527,7 @@ async function getDanmuFromUrl(danmu_server, playUrl, debug, danmu_server_pollin
             if (server === danmu_server) continue;  // 如果是传入的 danmu_server，跳过
 
             result = await fetchDanmu(server);
-            if (result) return result;  // 如果获取到有效弹幕，返回弹幕数据
+            if (result) return result;  // 如果获取��有效弹幕，返回弹幕数据
         }
     }
 
