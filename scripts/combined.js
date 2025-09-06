@@ -2335,7 +2335,7 @@ async function loadDetail(link) {
         videoUrl: "",
         title: success ? "✅ 屏蔽成功" : "ℹ️ 已存在",
         description: success ? 
-          `${mediaTypeText}"${title}"${ratingText}已添加到黑名单，将不再在应用中显示。\n\n数据已保��到Widget.storage中，所有榜单都会自动过滤此内容。` : 
+          `${mediaTypeText}"${title}"${ratingText}已添加到黑名单，将不再在应用中显示。\n\n数据已保存到Widget.storage中，所有榜单都会自动过滤此内容。` : 
           `${mediaTypeText}"${title}"${ratingText}已在黑名单中。`
       };
       
@@ -4652,7 +4652,7 @@ async function fetchItemDetails_bg(pendingItem, categoryHint, rankingContext = {
 
 async function processBangumiPage_bg(url, categoryHint, currentPageString, rankingContextInfo = {}, bangumiAccessToken = null, bangumiCookie = null) { 
     const currentPage = currentPageString ? parseInt(currentPageString, 10) : 0;
-    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [BGM页面��理_V2_DEBUG] 列表页URL: ${url}, 当前页: ${currentPage > 0 ? currentPage : '未知/1'}, Context: ${JSON.stringify(rankingContextInfo)}, HasToken: ${!!bangumiAccessToken}`); 
+    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [BGM页面处理_V2_DEBUG] 列表页URL: ${url}, 当前页: ${currentPage > 0 ? currentPage : '未知/1'}, Context: ${JSON.stringify(rankingContextInfo)}, HasToken: ${!!bangumiAccessToken}`); 
     
     let listHtml;
     const commonHeaders = { 
