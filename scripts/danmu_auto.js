@@ -516,7 +516,7 @@ async function convertMobileToPcUrl(url) {
      * 将移动端页面 URL 转换为 PC 端页面 URL。
      * 支持爱奇艺、腾讯视频、优酷、芒果TV和哔哩哔哩。
      * @param {string} url - 移动端 URL
-     * @returns {string} - PC 端 URL（匹配成功）、错误信息（匹配但解析失败）或原链接（不匹配）
+     * @returns {string} - PC 端 URL（匹配成功）、���误信息（匹配但解析失败）或原链接（不匹配）
      */
 
     // 爱奇艺 (iQIYI)
