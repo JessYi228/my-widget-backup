@@ -84,7 +84,7 @@ WidgetMetadata = {
                 ], 
                 value: "movie" 
             },
-            { name: "language", title: "语言", type: "language", value: "zh-CN" },
+            { name: "language", title: "语��", type: "language", value: "zh-CN" },
             { name: "page", title: "页码", type: "page" }
         ]
     },
@@ -528,7 +528,7 @@ WidgetMetadata = {
         { name: "page", title: "页码", type: "page" }
       ]
     },
-    // --- 实时热点 ---
+    // --- 实时��点 ---
     {
       title: "豆瓣电影实时热榜",
       description: "来自豆瓣的当前热门电影榜单",
