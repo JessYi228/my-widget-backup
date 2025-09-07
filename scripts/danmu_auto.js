@@ -177,7 +177,7 @@ WidgetMetadata = {
     },
     {
       name: "danmu_api_1",
-      title: "danmu_api_1 (前面匹配不到的可以试试弹幕API，比如一些韩剧/美剧)",
+      title: "danmu_api_1 (前面匹配不到的可以试试弹幕API，比如一些���剧/美剧)",
       type: "input",
       placeholders: [
         {
@@ -797,7 +797,7 @@ async function fetchIqiyi(inputUrl) {
     return null;
   }
 
-  // 计算弹幕分段数量（每5分钟一个分段）
+  // 计算弹幕分段数量（每5分钟一个分���）
   const page = Math.ceil(duration / (60 * 5));
   console.log("弹幕分段数量:", page);
 
@@ -2491,7 +2491,7 @@ async function getDanmuFromUrl(danmu_server, playUrl, debug, danmu_server_pollin
             // console.log("已成功写入 output.xml");
 
             const danmuCount = parseDanmuku(res);
-            return danmuCount >= 5 ? res : null; // 如果弹幕数大于���于 5，返回弹幕数据
+            return danmuCount >= 5 ? res : null; // 如果弹幕数大于等于 5，返回弹幕数据
         }
         try {
             const response = await Widget.http.get(
