@@ -1059,7 +1059,7 @@ WidgetMetadata = {
                 { title: "2月", value: "2" },
                 { title: "3月", value: "3" },
                 { title: "4月", value: "4" },
-                { title: "5月", value: "5" },
+                { title: "5��", value: "5" },
                 { title: "6月", value: "6" },
                 { title: "7月", value: "7" },
                 { title: "8月", value: "8" },
