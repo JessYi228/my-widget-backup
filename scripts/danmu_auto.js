@@ -3488,7 +3488,7 @@ async function getPlayurlFromVod(title, tmdbInfo, type, season, episode, episode
   console.log("vod response: ↓↓↓");
   printFirst200Chars(data);
 
-  // 开始过滤数据
+  // 开始过滤��据
   let animes = [];
   if (data.list && data.list.length > 0) {
     animes = data.list.filter((anime) => {
