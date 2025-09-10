@@ -1059,7 +1059,7 @@ WidgetMetadata = {
                 { title: "2月", value: "2" },
                 { title: "3月", value: "3" },
                 { title: "4月", value: "4" },
-                { title: "5��", value: "5" },
+                { title: "5月", value: "5" },
                 { title: "6月", value: "6" },
                 { title: "7月", value: "7" },
                 { title: "8月", value: "8" },
@@ -2335,7 +2335,7 @@ async function loadDetail(link) {
         videoUrl: "",
         title: success ? "✅ 屏蔽成功" : "ℹ️ 已存在",
         description: success ? 
-          `${mediaTypeText}"${title}"${ratingText}已添加到黑名单，将不再在应用中显示。\n\n数据已保存到Widget.storage中，所有榜单都会自动过滤此内容。` : 
+          `${mediaTypeText}"${title}"${ratingText}已添加到黑名单，将不再在应用中显示。\n\n数据已保��到Widget.storage中，所有榜单都会自动过滤此内容。` : 
           `${mediaTypeText}"${title}"${ratingText}已在黑名单中。`
       };
       
