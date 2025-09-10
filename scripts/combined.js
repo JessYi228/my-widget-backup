@@ -4123,7 +4123,7 @@ async function searchTmdb_bg(originalTitle, chineseTitle, listTitle, searchMedia
                     }
                 }
             } catch (batchError) { 
-                if (WidgetConfig_bg.DEBUG_LOGGING) console.error(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TMDB��索S2] ${searchIdentifierForLog} Batch execution error:`, batchError.message); 
+                if (WidgetConfig_bg.DEBUG_LOGGING) console.error(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [TMDB搜索S2] ${searchIdentifierForLog} Batch execution error:`, batchError.message); 
                 if (String(batchError.message).includes("401")||String(batchError.message).includes("403")) return null; 
             }
         }
@@ -4652,7 +4652,7 @@ async function fetchItemDetails_bg(pendingItem, categoryHint, rankingContext = {
 
 async function processBangumiPage_bg(url, categoryHint, currentPageString, rankingContextInfo = {}, bangumiAccessToken = null, bangumiCookie = null) { 
     const currentPage = currentPageString ? parseInt(currentPageString, 10) : 0;
-    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [BGM页面处���_V2_DEBUG] 列表页URL: ${url}, 当前页: ${currentPage > 0 ? currentPage : '未知/1'}, Context: ${JSON.stringify(rankingContextInfo)}, HasToken: ${!!bangumiAccessToken}`); 
+    if (WidgetConfig_bg.DEBUG_LOGGING) console.log(`${CONSTANTS_bg.LOG_PREFIX_GENERAL} [BGM页面处理_V2_DEBUG] 列表页URL: ${url}, 当前页: ${currentPage > 0 ? currentPage : '未知/1'}, Context: ${JSON.stringify(rankingContextInfo)}, HasToken: ${!!bangumiAccessToken}`); 
     
     let listHtml;
     const commonHeaders = { 
