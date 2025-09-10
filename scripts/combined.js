@@ -2349,7 +2349,7 @@ async function loadDetail(link) {
       
       return {
         videoUrl: "",
-        title: success ? "✅ 取消屏蔽成功" : "❌ 操作失败",
+        title: success ? "✅ ���消屏蔽成功" : "❌ 操作失败",
         description: success ? 
           `${mediaTypeText}"${title}"已从黑名单中移除，将重新在应用中显示。\n\nWidget.storage已更新，所有榜单将重新显示此内容。` : 
           `取消屏蔽${mediaTypeText}"${title}"时出现错误。`
