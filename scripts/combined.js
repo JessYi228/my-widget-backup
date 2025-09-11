@@ -2330,6 +2330,7 @@ async function fetchImdbItemsForDouban(scItems) {
             { pattern: /^\u51e1\u4eba\u4fee\u4ed9\u4f20[\uff1a:]\u91cd\u8fd4\u5929\u5357/, replacement: '\u51e1\u4eba\u4fee\u4ed9\u4f20', forceFirstResult: true },
             { pattern: /^\u7f57\u5c0f\u9ed1\u6218\u8bb0/, replacement: '\u7f57\u5c0f\u9ed1\u6218\u8bb0', forceMovieType: true },
             { pattern: /^\u7d2b\u5ddd \u7b2c\u4e8c\u5b63/, replacement: '\u7d2b\u5ddd', forceFirstResult: true },
+            { pattern: /^\u661f\u671f\u4e09 \u7b2c\u4e8c\u5b63/, replacement: 'Wednesday', forceFirstResult: true, forceTypeFilter: 'tv' },
             { pattern: /^\u5343\u4e0e\u5343\u5bfb/, replacement: '\u5343\u4e0e\u5343\u5bfb', forceMovieType: true },
             { pattern: /^\u54c8\u5c14\u7684\u79fb\u52a8\u57ce\u5821/, replacement: '\u54c8\u5c14\u7684\u79fb\u52a8\u57ce\u5821', forceMovieType: true },
             { pattern: /^\u9b3c\u706d\u4e4b\u5203/, replacement: '\u9b3c\u706d\u4e4b\u5203', forceMovieType: true },
@@ -2368,6 +2369,8 @@ async function fetchImdbItemsForDouban(scItems) {
         let title = scItem.title;
         let forceFirstResult = false;
         let forceMovieType = false;
+        let forceTypeFilter = null;
+        
         for (const rule of titleNormalizationRules) {
             if (rule.pattern.test(title)) {
                 if (typeof rule.replacement === 'function') {
@@ -2380,6 +2383,9 @@ async function fetchImdbItemsForDouban(scItems) {
                 }
                 if (rule.forceMovieType) {
                     forceMovieType = true;
+                }
+                if (rule.forceTypeFilter) {
+                    forceTypeFilter = rule.forceTypeFilter;
                 }
                 break;
             }
@@ -2444,11 +2450,19 @@ async function fetchImdbItemsForDouban(scItems) {
                         originalDoubanId: scItem.id
                     }));
             } else {
-                const bestMatch = forceFirstResult && tmdbDatas.length > 0 ? 
-                    tmdbDatas[0] : 
-                    selectMatches(tmdbDatas, title, year, { 
+                let bestMatch;
+                
+                if (forceFirstResult && tmdbDatas.length > 0) {
+                    if (forceTypeFilter) {
+                        bestMatch = tmdbDatas.find(item => item.media_type === forceTypeFilter) || tmdbDatas[0];
+                    } else {
+                        bestMatch = tmdbDatas[0];
+                    }
+                } else {
+                    bestMatch = selectMatches(tmdbDatas, title, year, { 
                         doubanItem: scItem
                     });
+                }
                 
                 if (bestMatch && bestMatch.poster_path && bestMatch.id && 
                     (bestMatch.title || bestMatch.name) && 
