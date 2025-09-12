@@ -100,7 +100,7 @@
       "requiredVersion":"0.0.2",
       "version":“0.9.1",
       "author": "Baran",
-      "url": "https://gocy.pages.dev/#forward://widget?url=https%3A%2F%2Funpkg.com%2F%40forward-widget%2Fdanmu-universe"
+      "url": "https://unpkg.com/@forward-widget/danmu-universe"
     }
   ]
 }
