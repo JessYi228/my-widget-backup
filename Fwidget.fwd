@@ -92,15 +92,6 @@
       "version":"1.1.7",
       "author": "两块",
       "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/HotPicks.js"
-    },
-    {
-      "id": "danmu-universe",
-      "title": "通用弹幕",
-      "description": "通用弹幕插件，支持腾讯、优酷、爱奇艺、哔哩哔哩、人人视频等平台",
-      "requiredVersion":"0.0.2",
-      "version":“0.9.1",
-      "author": "Baran",
-      "url": "https://unpkg.com/@forward-widget/danmu-universe"
     }
   ]
 }
