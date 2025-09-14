@@ -526,7 +526,7 @@ function fixDTagContent(xmlStr) {
 function buildQueryString(params) {
   let queryString = '';
 
-  // 遍历 params 对象的每个属性
+  // 遍历 params 对象的每个属���
   for (let key in params) {
     if (params.hasOwnProperty(key)) {
       // 如果 queryString 已经有参数了，则添加 '&'
@@ -1952,7 +1952,7 @@ function updateQueryString(url, params) {
 function getPathname(url) {
   // 查找路径的起始位置（跳过协议和主机部分）
   let pathnameStart = url.indexOf('//') + 2;
-  if (pathnameStart === 1) pathnameStart = 0; // 如果没有协议���分
+  if (pathnameStart === 1) pathnameStart = 0; // 如果没有协议部分
   const pathStart = url.indexOf('/', pathnameStart);
   if (pathStart === -1) return '/'; // 如果没有路径，返回默认根路径
   const queryStart = url.indexOf('?', pathStart);
