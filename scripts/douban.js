@@ -1086,7 +1086,7 @@ WidgetMetadata = {
             {"title":"有村架纯","value":"有村架纯"}, {"title":"桥本环奈","value":"桥本环奈"}, {"title":"广濑铃","value":"广濑铃"},
             {"title":"李知恩","value":"李知恩"}, {"title":"裴秀智","value":"裴秀智"}, {"title":"申敏儿","value":"申敏儿"},
             {"title":"北川景子","value":"北川景子"}, {"title":"吉高由里子","value":"吉高由里子"}, {"title":"永野芽郁","value":"永野芽郁"},
-            {"title":"林允儿","value":"林允儿"}, {"title":"徐睿知","value":"徐睿知"}, {"title":"金所泫","value":"金所���"},
+            {"title":"林允儿","value":"林允儿"}, {"title":"徐睿知","value":"徐睿知"}, {"title":"金所泫","value":"金所泫"},
             {"title":"满岛光","value":"满岛光"}, {"title":"黑木华","value":"黑木华"}, {"title":"清野菜名","value":"清野菜名"},
             {"title":"孙艺珍","value":"孙艺珍"}, {"title":"孔孝真","value":"孔孝真"}, {"title":"金高银","value":"金高银"},
             {"title":"上白石萌音","value":"上白石萌音"}, {"title":"波瑠","value":"波瑠"}, {"title":"多部未华子","value":"多部未华子"},
