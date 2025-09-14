@@ -526,7 +526,7 @@ function fixDTagContent(xmlStr) {
 function buildQueryString(params) {
   let queryString = '';
 
-  // 遍历 params 对象的每个属���
+  // 遍历 params 对象的每个属性
   for (let key in params) {
     if (params.hasOwnProperty(key)) {
       // 如果 queryString 已经有参数了，则添加 '&'
