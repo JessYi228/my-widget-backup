@@ -202,7 +202,7 @@ WidgetMetadata = {
                             value: "https://letterboxd.com/krisde/list/afi-top-100/"
                         },
                         {
-                            title: "视与听伟大电影（影评人榜��",
+                            title: "视与听伟大电影（影评人榜）",
                             value: "https://letterboxd.com/bfi/list/sight-and-sounds-greatest-films-of-all-time/"
                         },
                         {
@@ -298,7 +298,7 @@ WidgetMetadata = {
                             value: "https://letterboxd.com/gpu/list/bong-joon-hos-favorites/"
                         },
                         {
-                            title: "索菲亚·科波拉——最爱",
+                            title: "索菲亚·科波拉��—最爱",
                             value: "https://letterboxd.com/mlkarasek/list/sofia-coppolas-favorite-films/"
                         },
                         {
