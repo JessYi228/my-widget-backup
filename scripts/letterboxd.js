@@ -202,7 +202,7 @@ WidgetMetadata = {
                             value: "https://letterboxd.com/krisde/list/afi-top-100/"
                         },
                         {
-                            title: "视与听伟大电影（影评人榜）",
+                            title: "视与听伟大电影（影评人榜��",
                             value: "https://letterboxd.com/bfi/list/sight-and-sounds-greatest-films-of-all-time/"
                         },
                         {
@@ -608,7 +608,7 @@ async function extractLetterboxdUrlsFromResponse(responseData, minNum, maxNum) {
     // 创建Cheerio实例解析HTML
     let $ = Widget.html.load(responseData);
 
-    // 定位所有包含data-target-link属性��影片容器div
+    // 定位所有包含data-target-link属性的影片容器div
     // 选择器匹配：li.poster-container 下的 div.film-poster（包含data-target-link属性）
     let filmContainers = $('li.posteritem div.react-component[data-target-link]');
 
