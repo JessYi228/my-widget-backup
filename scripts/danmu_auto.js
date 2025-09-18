@@ -1952,7 +1952,7 @@ function updateQueryString(url, params) {
 function getPathname(url) {
   // 查找路径的起始位置（跳过协议和主机部分）
   let pathnameStart = url.indexOf('//') + 2;
-  if (pathnameStart === 1) pathnameStart = 0; // 如果没有协议部分
+  if (pathnameStart === 1) pathnameStart = 0; // 如果没有协议���分
   const pathStart = url.indexOf('/', pathnameStart);
   if (pathStart === -1) return '/'; // 如果没有路径，返回默认根路径
   const queryStart = url.indexOf('?', pathStart);
@@ -3488,7 +3488,7 @@ async function getPlayurlFromVod(title, tmdbInfo, type, season, episode, episode
   console.log("vod response: ↓↓↓");
   printFirst200Chars(data);
 
-  // 开始过滤��据
+  // 开始过滤数据
   let animes = [];
   if (data.list && data.list.length > 0) {
     animes = data.list.filter((anime) => {
