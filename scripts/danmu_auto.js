@@ -3346,7 +3346,7 @@ async function getCommentsById(params) {
               return generateDanmaku("【自动链接弹幕】：该集综艺没有集标题，匹配不了", count);
           }
       }
-      // 如果存在airDate，则先获取airDate的年份，并通过年份获取所有年份相关的集信��
+      // 如果存在airDate，则先获取airDate的年份，并通过年份获取所有年份相关的集信息
       let airYear = null;
       if (airDate && airDate !== "" && /^\d{4}-\d{2}-\d{2}$/.test(airDate)) {
           airYear = airDate.split("-")[0];
@@ -3812,7 +3812,7 @@ async function getDanmuFromAPI(title, tmdbInfo, type, season, episode, episodeNa
     );
 
     if (!response_detail) {
-      console.error("获取数据��败");
+      console.error("获取数据失败");
       continue;
     }
 
