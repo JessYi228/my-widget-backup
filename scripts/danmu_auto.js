@@ -1936,7 +1936,7 @@ function updateQueryString(url, params) {
     baseUrl = baseUrl.substring(0, queryIndex);
   }
 
-  // 解析现有查询字符串为���象
+  // 解析现有查询字符串为对象
   const queryParams = {};
   if (queryString) {
     const pairs = queryString.split('&');
