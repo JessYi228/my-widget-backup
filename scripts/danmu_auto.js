@@ -3805,7 +3805,7 @@ async function getDanmuFromAPI(title, tmdbInfo, type, season, episode, episodeNa
                 return true;
               }
               // match chinese number
-              let chineseNumber = seasonPart.match(/[一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+/);
+              let chineseNumber = seasonPart.match(/[一二三四五六七八九十壹贰叁肆伍��柒捌玖拾]+/);
               if (chineseNumber && convertChineseNumber(chineseNumber[0]) === season) {
                 return true;
               }
