@@ -3372,7 +3372,7 @@ async function getCommentsById(params) {
           }
           if (!playUrl) {
               const count = debug === "true" ? 24 : 1;
-              return generateDanmaku("【自动链��弹幕】：该集综艺没有集标题，匹配不了", count);
+              return generateDanmaku("【自动链接弹幕】：该集综艺没有集标题，匹配不了", count);
           }
       }
       // 如果存在airDate，则先获取airDate的年份，并通过年份获取所有年份相关的集信息
