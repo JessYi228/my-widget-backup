@@ -2897,7 +2897,7 @@ function convertChineseNumber(chineseNumber) {
   // 单位映射（简体+繁体）
   const units = {
     // 简体
-    '十': 10, '百': 100, '��': 1000,
+    '十': 10, '百': 100, '千': 1000,
     // 繁体
     '拾': 10, '佰': 100, '仟': 1000
   };
@@ -3805,7 +3805,7 @@ async function getDanmuFromAPI(title, tmdbInfo, type, season, episode, episodeNa
                 return true;
               }
               // match chinese number
-              let chineseNumber = seasonPart.match(/[一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+/);
+              let chineseNumber = seasonPart.match(/[一二三四五六七��九十壹贰叁肆伍陆柒捌玖拾]+/);
               if (chineseNumber && convertChineseNumber(chineseNumber[0]) === season) {
                 return true;
               }
