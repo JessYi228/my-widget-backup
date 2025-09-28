@@ -2879,7 +2879,7 @@ async function searchDanmu(params) {
 }
 
 function convertChineseNumber(chineseNumber) {
-  // 如果是阿拉伯数字，直接转换
+  // 如果是阿拉伯数字，直接���换
   if (/^\d+$/.test(chineseNumber)) {
     return Number(chineseNumber);
   }
@@ -3805,7 +3805,7 @@ async function getDanmuFromAPI(title, tmdbInfo, type, season, episode, episodeNa
                 return true;
               }
               // match chinese number
-              let chineseNumber = seasonPart.match(/[一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+/);
+              let chineseNumber = seasonPart.match(/[一二三四五六七八九十壹贰叁���伍陆柒捌玖拾]+/);
               if (chineseNumber && convertChineseNumber(chineseNumber[0]) === season) {
                 return true;
               }
