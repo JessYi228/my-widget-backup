@@ -1,108 +1,108 @@
 //Original Author:阿米诺斯
 WidgetMetadata = {
   id: "forward.combined.media.lists",
-  title: "影视榜单",
-  description: "影视动画榜单",
-  author: "𝓑𝓾𝓽𝓽𝓮𝓻𝓯𝓵𝔂",
+  title: "\u5f71\u89c6\u699c\u5355",
+  description: "\u5f71\u89c6\u52a8\u753b\u699c\u5355",
+  author: "\ud835\udcd1\ud835\udcfe\ud835\udcfd\ud835\udcfd\ud835\udcee\ud835\udcfb\ud835\udcef\ud835\udcf5\ud835\udd02",
   site: "https://widgets-xd.vercel.app",
   version: "1.3.9",
   requiredVersion: "0.0.2",
   detailCacheDuration: 60,
   modules: [
-    // -------------TMDB模块-------------
-    // --- 热门模块 ---
+    // -------------TMDB\u6a21\u5757-------------
+    // --- \u70ed\u95e8\u6a21\u5757 ---
     {
-      title: "TMDB 热门剧集",
-      description: "今日热门电视剧",
+      title: "TMDB \u70ed\u95e8\u5267\u96c6",
+      description: "\u4eca\u65e5\u70ed\u95e8\u7535\u89c6\u5267",
       requiresWebView: false,
       functionName: "loadTodayHotTV",
       cacheDuration: 3600,
       params: [
-        { name: "language", title: "语言", type: "language", value: "zh-CN" },
+        { name: "language", title: "\u8bed\u8a00", type: "language", value: "zh-CN" },
         { 
           name: "sort_by", 
-          title: "地区", 
+          title: "\u5730\u533a", 
           type: "enumeration", 
           enumOptions: [
-            { title: "全部地区", value: "" },
-            { title: "中国", value: "CN" },
-            { title: "美国", value: "US" },
-            { title: "韩国", value: "KR" },
-            { title: "日本", value: "JP" },
-            { title: "英国", value: "GB" }
+            { title: "\u5168\u90e8\u5730\u533a", value: "" },
+            { title: "\u4e2d\u56fd", value: "CN" },
+            { title: "\u7f8e\u56fd", value: "US" },
+            { title: "\u97e9\u56fd", value: "KR" },
+            { title: "\u65e5\u672c", value: "JP" },
+            { title: "\u82f1\u56fd", value: "GB" }
           ], 
           value: "" 
         },
-        { name: "page", title: "页码", type: "page" }
+        { name: "page", title: "\u9875\u7801", type: "page" }
       ]
     },
     {
-      title: "TMDB 热门电影",
-      description: "今日热门电影",
+      title: "TMDB \u70ed\u95e8\u7535\u5f71",
+      description: "\u4eca\u65e5\u70ed\u95e8\u7535\u5f71",
       requiresWebView: false,
       functionName: "loadTodayHotMovies",
       cacheDuration: 3600,
       params: [
-        { name: "language", title: "语言", type: "language", value: "zh-CN" },
+        { name: "language", title: "\u8bed\u8a00", type: "language", value: "zh-CN" },
         { 
           name: "sort_by", 
-          title: "地区", 
+          title: "\u5730\u533a", 
           type: "enumeration", 
           enumOptions: [
-            { title: "全部地区", value: "" },
-            { title: "中国", value: "CN" },
-            { title: "美国", value: "US" },
-            { title: "韩国", value: "KR" },
-            { title: "日本", value: "JP" },
-            { title: "英国", value: "GB" }
+            { title: "\u5168\u90e8\u5730\u533a", value: "" },
+            { title: "\u4e2d\u56fd", value: "CN" },
+            { title: "\u7f8e\u56fd", value: "US" },
+            { title: "\u97e9\u56fd", value: "KR" },
+            { title: "\u65e5\u672c", value: "JP" },
+            { title: "\u82f1\u56fd", value: "GB" }
           ], 
           value: "" 
         },
-        { name: "page", title: "页码", type: "page" }
+        { name: "page", title: "\u9875\u7801", type: "page" }
       ]
     },
-    // --- 常规发现模块 ---
+    // --- \u5e38\u89c4\u53d1\u73b0\u6a21\u5757 ---
     {
-      title: "TMDB 高分内容",
-      description: "高分电影或剧集 (按用户评分排序)",
+      title: "TMDB \u9ad8\u5206\u5185\u5bb9",
+      description: "\u9ad8\u5206\u7535\u5f71\u6216\u5267\u96c6 (\u6309\u7528\u6237\u8bc4\u5206\u6392\u5e8f)",
       requiresWebView: false,
       functionName: "tmdbTopRated",
       cacheDuration: 3600,
       params: [
         { 
           name: "type", 
-          title: "🎭类型", 
+          title: "\ud83c\udfad\u7c7b\u578b", 
           type: "enumeration", 
           enumOptions: [
-            { title: "电影", value: "movie" },
-            { title: "剧集", value: "tv" }
+            { title: "\u7535\u5f71", value: "movie" },
+            { title: "\u5267\u96c6", value: "tv" }
           ], 
           value: "movie" 
         },
-        { name: "language", title: "语言", type: "language", value: "zh-CN" },
-        { name: "page", title: "页码", type: "page" }
+        { name: "language", title: "\u8bed\u8a00", type: "language", value: "zh-CN" },
+        { name: "page", title: "\u9875\u7801", type: "page" }
       ]
     },
-    // --- 播出平台模块 ---
+    // --- \u64ad\u51fa\u5e73\u53f0\u6a21\u5757 ---
     {
-        title: "TMDB 播出平台",
-        description: "按播出平台和内容类型筛选剧集内容",
+        title: "TMDB \u64ad\u51fa\u5e73\u53f0",
+        description: "\u6309\u64ad\u51fa\u5e73\u53f0\u548c\u5185\u5bb9\u7c7b\u578b\u7b5b\u9009\u5267\u96c6\u5185\u5bb9",
         requiresWebView: false,
         functionName: "tmdbDiscoverByNetwork",
         cacheDuration: 3600,
         params: [
             {
                 name: "with_networks",
-                title: "播出平台",
+                title: "\u64ad\u51fa\u5e73\u53f0",
                 type: "enumeration",
-                description: "选择一个平台以查看其剧集内容",
+                description: "\u9009\u62e9\u4e00\u4e2a\u5e73\u53f0\u4ee5\u67e5\u770b\u5176\u5267\u96c6\u5185\u5bb9",
                 value: "",
                 belongTo: {
                   paramName: "air_status",
                   value: ["released","upcoming",""],
                 },
           enumOptions: [
-            { title: "全部", value: "" },
+            { title: "\u5168\u90e8", value: "" },
             { title: "Tencent", value: "2007" },
             { title: "iQiyi", value: "1330" },
             { title: "Youku", value: "1419" },
@@ -129,78 +129,78 @@ WidgetMetadata = {
         },
         {
           name: "with_genres",
-          title: "🎭内容类型",
+          title: "\ud83c\udfad\u5185\u5bb9\u7c7b\u578b",
           type: "enumeration",
-          description: "选择要筛选的内容类型",
+          description: "\u9009\u62e9\u8981\u7b5b\u9009\u7684\u5185\u5bb9\u7c7b\u578b",
           value: "",
           belongTo: {
             paramName: "air_status",
             value: ["released","upcoming",""],
           },
           enumOptions: [
-            { title: "全部类型", value: "" },
-            { title: "犯罪", value: "80" },
-            { title: "动画", value: "16" },
-            { title: "喜剧", value: "35" },
-            { title: "剧情", value: "18" },
-            { title: "家庭", value: "10751" },
-            { title: "悬疑", value: "9648" },
-            { title: "真人秀", value: "10764" },
-            { title: "脱口秀", value: "10767" },
-            { title: "纪录片", value: "99" },
-            { title: "动作与冒险", value: "10759" },
-            { title: "科幻与奇幻", value: "10765" },
-            { title: "战争与政治", value: "10768" }
+            { title: "\u5168\u90e8\u7c7b\u578b", value: "" },
+            { title: "\u72af\u7f6a", value: "80" },
+            { title: "\u52a8\u753b", value: "16" },
+            { title: "\u559c\u5267", value: "35" },
+            { title: "\u5267\u60c5", value: "18" },
+            { title: "\u5bb6\u5ead", value: "10751" },
+            { title: "\u60ac\u7591", value: "9648" },
+            { title: "\u771f\u4eba\u79c0", value: "10764" },
+            { title: "\u8131\u53e3\u79c0", value: "10767" },
+            { title: "\u7eaa\u5f55\u7247", value: "99" },
+            { title: "\u52a8\u4f5c\u4e0e\u5192\u9669", value: "10759" },
+            { title: "\u79d1\u5e7b\u4e0e\u5947\u5e7b", value: "10765" },
+            { title: "\u6218\u4e89\u4e0e\u653f\u6cbb", value: "10768" }
           ]
         },
         {
           name: "air_status",
-          title: "上映状态",
+          title: "\u4e0a\u6620\u72b6\u6001",
           type: "enumeration",
-          description: "默认已上映",
+          description: "\u9ed8\u8ba4\u5df2\u4e0a\u6620",
           value: "released",
           enumOptions: [
-            { title: "已上映", value: "released" },
-            { title: "未上映", value: "upcoming" },
-            { title: "全部", value: "" }
+            { title: "\u5df2\u4e0a\u6620", value: "released" },
+            { title: "\u672a\u4e0a\u6620", value: "upcoming" },
+            { title: "\u5168\u90e8", value: "" }
           ]
         },
         {
           name: "sort_by",
-          title: "🔢 排序方式",
+          title: "\ud83d\udd22 \u6392\u5e8f\u65b9\u5f0f",
           type: "enumeration",
-          description: "选择内容排序方式,默认上映时间↓",
+          description: "\u9009\u62e9\u5185\u5bb9\u6392\u5e8f\u65b9\u5f0f,\u9ed8\u8ba4\u4e0a\u6620\u65f6\u95f4\u2193",
           value: "first_air_date.desc",
           enumOptions: [
-            { title: "上映时间↓", value: "first_air_date.desc" },
-            { title: "上映时间↑", value: "first_air_date.asc" },
-            { title: "人气最高", value: "popularity.desc" },
-            { title: "评分最高", value: "vote_average.desc" },
-            { title: "最多投票", value: "vote_count.desc" }
+            { title: "\u4e0a\u6620\u65f6\u95f4\u2193", value: "first_air_date.desc" },
+            { title: "\u4e0a\u6620\u65f6\u95f4\u2191", value: "first_air_date.asc" },
+            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popularity.desc" },
+            { title: "\u8bc4\u5206\u6700\u9ad8", value: "vote_average.desc" },
+            { title: "\u6700\u591a\u6295\u7968", value: "vote_count.desc" }
           ]
         },
-        { name: "page", title: "页码", type: "page" },
-        { name: "language", title: "语言", type: "language", value: "zh-CN" }
+        { name: "page", title: "\u9875\u7801", type: "page" },
+        { name: "language", title: "\u8bed\u8a00", type: "language", value: "zh-CN" }
       ]
     },
-    // --- 出品公司模块 ---
+    // --- \u51fa\u54c1\u516c\u53f8\u6a21\u5757 ---
     {
-      title: "TMDB 出品公司",
+      title: "TMDB \u51fa\u54c1\u516c\u53f8",
       functionName: "tmdbCompanies",
       cacheDuration: 3600,
       params: [
         {
           name: "with_companies",
-          title: "出品公司",
+          title: "\u51fa\u54c1\u516c\u53f8",
           type: "enumeration",
           value: "",
-          description: "选择一个公司以查看其剧集内容",
+          description: "\u9009\u62e9\u4e00\u4e2a\u516c\u53f8\u4ee5\u67e5\u770b\u5176\u5267\u96c6\u5185\u5bb9",
           belongTo: {
             paramName: "air_status",
             value: ["released","upcoming",""],
           },
           enumOptions: [
-            { title: "全部", value: "" },
+            { title: "\u5168\u90e8", value: "" },
             { title: "Disney", value: "2" },
             { title: "Warner Bros", value: "174" },
             { title: "Columbia", value: "5" },
@@ -210,7 +210,7 @@ WidgetMetadata = {
             { title: "20th Century", value: "25" },
             { title: "Marvel", value: "420" },
             { title: "Toho", value: "882" },
-            { title: "中国电影集团公司", value: "14714" },
+            { title: "\u4e2d\u56fd\u7535\u5f71\u96c6\u56e2\u516c\u53f8", value: "14714" },
             { title: "BBC", value: "3324" },
             { title: "A24", value: "41077" },
             { title: "Blumhouse", value: "3172" },
@@ -219,255 +219,255 @@ WidgetMetadata = {
         },
         {
           name: "with_genres",
-          title: "🎭内容类型",
+          title: "\ud83c\udfad\u5185\u5bb9\u7c7b\u578b",
           type: "enumeration",
-          description: "选择要筛选的内容类型",
+          description: "\u9009\u62e9\u8981\u7b5b\u9009\u7684\u5185\u5bb9\u7c7b\u578b",
           value: "",
           belongTo: {
             paramName: "air_status",
             value: ["released","upcoming",""],
           },
           enumOptions: [
-            { title: "全部类型", value: "" },
-            { title: "冒险", value: "12" },
-            { title: "剧情", value: "18" },
-            { title: "动作", value: "28" },
-            { title: "动画", value: "16" },
-            { title: "历史", value: "36" },
-            { title: "喜剧", value: "35" },
-            { title: "奇幻", value: "14" },
-            { title: "家庭", value: "10751" },
-            { title: "恐怖", value: "27" },
-            { title: "悬疑", value: "9648" },
-            { title: "惊悚", value: "53" },
-            { title: "战争", value: "10752" },
-            { title: "爱情", value: "10749" },
-            { title: "犯罪", value: "80" },
-            { title: "科幻", value: "878" },
-            { title: "记录", value: "99" },
-            { title: "西部", value: "37" },
-            { title: "音乐", value: "10402" },
-            { title: "电视电影", value: "10770" }
+            { title: "\u5168\u90e8\u7c7b\u578b", value: "" },
+            { title: "\u5192\u9669", value: "12" },
+            { title: "\u5267\u60c5", value: "18" },
+            { title: "\u52a8\u4f5c", value: "28" },
+            { title: "\u52a8\u753b", value: "16" },
+            { title: "\u5386\u53f2", value: "36" },
+            { title: "\u559c\u5267", value: "35" },
+            { title: "\u5947\u5e7b", value: "14" },
+            { title: "\u5bb6\u5ead", value: "10751" },
+            { title: "\u6050\u6016", value: "27" },
+            { title: "\u60ac\u7591", value: "9648" },
+            { title: "\u60ca\u609a", value: "53" },
+            { title: "\u6218\u4e89", value: "10752" },
+            { title: "\u7231\u60c5", value: "10749" },
+            { title: "\u72af\u7f6a", value: "80" },
+            { title: "\u79d1\u5e7b", value: "878" },
+            { title: "\u8bb0\u5f55", value: "99" },
+            { title: "\u897f\u90e8", value: "37" },
+            { title: "\u97f3\u4e50", value: "10402" },
+            { title: "\u7535\u89c6\u7535\u5f71", value: "10770" }
           ]
         },
         {
           name: "air_status",
-          title: "上映状态",
+          title: "\u4e0a\u6620\u72b6\u6001",
           type: "enumeration",
-          description: "默认已上映",
+          description: "\u9ed8\u8ba4\u5df2\u4e0a\u6620",
           value: "released",
           enumOptions: [
-            { title: "已上映", value: "released" },
-            { title: "未上映", value: "upcoming" },
-            { title: "全部", value: "" }
+            { title: "\u5df2\u4e0a\u6620", value: "released" },
+            { title: "\u672a\u4e0a\u6620", value: "upcoming" },
+            { title: "\u5168\u90e8", value: "" }
           ]
         },
         {
           name: "sort_by",
-          title: "🔢 排序方式",
+          title: "\ud83d\udd22 \u6392\u5e8f\u65b9\u5f0f",
           type: "enumeration",
-          description: "选择内容排序方式,默认上映时间↓",
+          description: "\u9009\u62e9\u5185\u5bb9\u6392\u5e8f\u65b9\u5f0f,\u9ed8\u8ba4\u4e0a\u6620\u65f6\u95f4\u2193",
           value: "primary_release_date.desc",
           enumOptions: [
-            { title: "上映时间↓", value: "primary_release_date.desc" },
-            { title: "上映时间↑", value: "primary_release_date.asc" },
-            { title: "人气最高", value: "popularity.desc" },
-            { title: "评分最高", value: "vote_average.desc" },
-            { title: "最多投票", value: "vote_count.desc" }
+            { title: "\u4e0a\u6620\u65f6\u95f4\u2193", value: "primary_release_date.desc" },
+            { title: "\u4e0a\u6620\u65f6\u95f4\u2191", value: "primary_release_date.asc" },
+            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popularity.desc" },
+            { title: "\u8bc4\u5206\u6700\u9ad8", value: "vote_average.desc" },
+            { title: "\u6700\u591a\u6295\u7968", value: "vote_count.desc" }
           ]
         },
-        { name: "page", title: "页码", type: "page" },
-        { name: "language", title: "语言", type: "language", value: "zh-CN" }
+        { name: "page", title: "\u9875\u7801", type: "page" },
+        { name: "language", title: "\u8bed\u8a00", type: "language", value: "zh-CN" }
       ]
     },
-    // =============屏蔽管理模块=============
+    // =============\u5c4f\u853d\u7ba1\u7406\u6a21\u5757=============
     {
-      title: "TMDB 搜索屏蔽",
-      description: "按影片名称或内容类型进行屏蔽",
+      title: "TMDB \u641c\u7d22\u5c4f\u853d",
+      description: "\u6309\u5f71\u7247\u540d\u79f0\u6216\u5185\u5bb9\u7c7b\u578b\u8fdb\u884c\u5c4f\u853d",
       requiresWebView: false,
       functionName: "searchAndBlock",
       cacheDuration: 0,
       params: [
         {
           name: "block_type",
-          title: "🎯 屏蔽类型",
+          title: "\ud83c\udfaf \u5c4f\u853d\u7c7b\u578b",
           type: "enumeration",
-          description: "选择屏蔽方式",
+          description: "\u9009\u62e9\u5c4f\u853d\u65b9\u5f0f",
           value: "by_name",
           enumOptions: [
-            { title: "按影片名称", value: "by_name" },
-            { title: "按内容类型", value: "by_genre" },
-            { title: "手动输入ID", value: "manual_id" }
+            { title: "\u6309\u5f71\u7247\u540d\u79f0", value: "by_name" },
+            { title: "\u6309\u5185\u5bb9\u7c7b\u578b", value: "by_genre" },
+            { title: "\u624b\u52a8\u8f93\u5165ID", value: "manual_id" }
           ]
         },
         {
           name: "action",
-          title: "🎮 操作模式",
+          title: "\ud83c\udfae \u64cd\u4f5c\u6a21\u5f0f",
           type: "enumeration",
-          description: "选择操作类型",
+          description: "\u9009\u62e9\u64cd\u4f5c\u7c7b\u578b",
           value: "search_only",
           enumOptions: [
-            { title: "仅搜索", value: "search_only" },
-            { title: "搜索并屏蔽", value: "search_and_block" }
+            { title: "\u4ec5\u641c\u7d22", value: "search_only" },
+            { title: "\u641c\u7d22\u5e76\u5c4f\u853d", value: "search_and_block" }
           ]
         },
         {
           name: "query",
-          title: "🔍 影片名称",
+          title: "\ud83d\udd0d \u5f71\u7247\u540d\u79f0",
           type: "input",
-          description: "输入要搜索的影片或剧集名称(按名称屏蔽模式使用)",
+          description: "\u8f93\u5165\u8981\u641c\u7d22\u7684\u5f71\u7247\u6216\u5267\u96c6\u540d\u79f0(\u6309\u540d\u79f0\u5c4f\u853d\u6a21\u5f0f\u4f7f\u7528)",
           value: "",
-          placeholder: "例如：鬼灭之刃、南方公园"
+          placeholder: "\u4f8b\u5982\uff1a\u9b3c\u706d\u4e4b\u5203\u3001\u5357\u65b9\u516c\u56ed"
         },
         {
           name: "genre_name",
-          title: "🏷️ 类型名称",
+          title: "\ud83c\udff7\ufe0f \u7c7b\u578b\u540d\u79f0",
           type: "input",
-          description: "输入要屏蔽的内容类型（按类型屏蔽模式使用）",
+          description: "\u8f93\u5165\u8981\u5c4f\u853d\u7684\u5185\u5bb9\u7c7b\u578b\uff08\u6309\u7c7b\u578b\u5c4f\u853d\u6a21\u5f0f\u4f7f\u7528\uff09",
           value: "",
-          placeholder: "例如：真人秀、综艺、纪录片、动作、爱情"
+          placeholder: "\u4f8b\u5982\uff1a\u771f\u4eba\u79c0\u3001\u7efc\u827a\u3001\u7eaa\u5f55\u7247\u3001\u52a8\u4f5c\u3001\u7231\u60c5"
         },
         {
           name: "language",
-          title: "🌐 搜索语言",
+          title: "\ud83c\udf10 \u641c\u7d22\u8bed\u8a00",
           type: "enumeration",
-          description: "选择搜索语言（按名称屏蔽模式使用）",
+          description: "\u9009\u62e9\u641c\u7d22\u8bed\u8a00\uff08\u6309\u540d\u79f0\u5c4f\u853d\u6a21\u5f0f\u4f7f\u7528\uff09",
           value: "zh-CN",
           enumOptions: [
-            { title: "中文", value: "zh-CN" },
+            { title: "\u4e2d\u6587", value: "zh-CN" },
             { title: "English", value: "en-US" },
-            { title: "其他语言", value: "en" }
+            { title: "\u5176\u4ed6\u8bed\u8a00", value: "en" }
           ]
         },
         {
           name: "tmdb_id",
-          title: "🆔 TMDB ID",
+          title: "\ud83c\udd94 TMDB ID",
           type: "input",
-          description: "输入要屏蔽的TMDB ID（手动输入ID模式使用）",
+          description: "\u8f93\u5165\u8981\u5c4f\u853d\u7684TMDB ID\uff08\u624b\u52a8\u8f93\u5165ID\u6a21\u5f0f\u4f7f\u7528\uff09",
           value: "",
-          placeholder: "例如：550, 1399"
+          placeholder: "\u4f8b\u5982\uff1a550, 1399"
         },
         {
           name: "media_type",
-          title: "🎭 媒体类型",
+          title: "\ud83c\udfad \u5a92\u4f53\u7c7b\u578b",
           type: "enumeration",
-          description: "选择媒体类型（手动输入ID模式使用）",
+          description: "\u9009\u62e9\u5a92\u4f53\u7c7b\u578b\uff08\u624b\u52a8\u8f93\u5165ID\u6a21\u5f0f\u4f7f\u7528\uff09",
           value: "tv",
           enumOptions: [
-            { title: "剧集", value: "tv" },
-            { title: "电影", value: "movie" }
+            { title: "\u5267\u96c6", value: "tv" },
+            { title: "\u7535\u5f71", value: "movie" }
           ]
         }
       ]
     },
     {
-      title: "TMDB 屏蔽管理",
-      description: "查看和管理已屏蔽的内容和类型",
+      title: "TMDB \u5c4f\u853d\u7ba1\u7406",
+      description: "\u67e5\u770b\u548c\u7ba1\u7406\u5df2\u5c4f\u853d\u7684\u5185\u5bb9\u548c\u7c7b\u578b",
       requiresWebView: false,
       functionName: "manageBlockedItems",
       cacheDuration: 0,
       params: [
         {
           name: "manage_type",
-          title: "📂 管理类型",
+          title: "\ud83d\udcc2 \u7ba1\u7406\u7c7b\u578b",
           type: "enumeration",
-          description: "选择要管理的屏蔽类型",
+          description: "\u9009\u62e9\u8981\u7ba1\u7406\u7684\u5c4f\u853d\u7c7b\u578b",
           value: "items",
           enumOptions: [
-            { title: "屏蔽的内容", value: "items" },
-            { title: "屏蔽的类型", value: "genres" }
+            { title: "\u5c4f\u853d\u7684\u5185\u5bb9", value: "items" },
+            { title: "\u5c4f\u853d\u7684\u7c7b\u578b", value: "genres" }
           ]
         },
         {
           name: "action",
-          title: "📋 操作",
+          title: "\ud83d\udccb \u64cd\u4f5c",
           type: "enumeration",
-          description: "选择要执行的操作",
+          description: "\u9009\u62e9\u8981\u6267\u884c\u7684\u64cd\u4f5c",
           value: "view",
           enumOptions: [
-            { title: "查看列表", value: "view" },
-            { title: "清空列表", value: "clear" },
-            { title: "取消屏蔽", value: "unblock" },
-            { title: "导出配置", value: "export" },
-            { title: "导入配置", value: "import" }
+            { title: "\u67e5\u770b\u5217\u8868", value: "view" },
+            { title: "\u6e05\u7a7a\u5217\u8868", value: "clear" },
+            { title: "\u53d6\u6d88\u5c4f\u853d", value: "unblock" },
+            { title: "\u5bfc\u51fa\u914d\u7f6e", value: "export" },
+            { title: "\u5bfc\u5165\u914d\u7f6e", value: "import" }
           ]
         },
         {
           name: "unblock_id",
-          title: "🔓 取消屏蔽ID",
+          title: "\ud83d\udd13 \u53d6\u6d88\u5c4f\u853dID",
           type: "input",
-          description: "输入要取消屏蔽的ID",
+          description: "\u8f93\u5165\u8981\u53d6\u6d88\u5c4f\u853d\u7684ID",
           value: "",
-          placeholder: "内容ID例如：2190 | 类型ID例如：10764",
+          placeholder: "\u5185\u5bb9ID\u4f8b\u5982\uff1a2190 | \u7c7b\u578bID\u4f8b\u5982\uff1a10764",
           belongTo: { paramName: "action", value: ["unblock"] }
         },
         {
           name: "unblock_media_type",
-          title: "🎭 媒体类型",
+          title: "\ud83c\udfad \u5a92\u4f53\u7c7b\u578b",
           type: "enumeration",
-          description: "选择要取消屏蔽的媒体类型（仅内容屏蔽需要）",
+          description: "\u9009\u62e9\u8981\u53d6\u6d88\u5c4f\u853d\u7684\u5a92\u4f53\u7c7b\u578b\uff08\u4ec5\u5185\u5bb9\u5c4f\u853d\u9700\u8981\uff09",
           value: "tv",
           enumOptions: [
-            { title: "剧集", value: "tv" },
-            { title: "电影", value: "movie" }
+            { title: "\u5267\u96c6", value: "tv" },
+            { title: "\u7535\u5f71", value: "movie" }
           ],
           belongTo: { paramName: "action", value: ["unblock"], paramName2: "manage_type", value2: ["items"] }
         },
         {
           name: "import_data",
-          title: "📥 导入数据",
+          title: "\ud83d\udce5 \u5bfc\u5165\u6570\u636e",
           type: "input",
-          description: "粘贴要导入的屏蔽ID列表，支持多种格式",
+          description: "\u7c98\u8d34\u8981\u5bfc\u5165\u7684\u5c4f\u853dID\u5217\u8868\uff0c\u652f\u6301\u591a\u79cd\u683c\u5f0f",
           value: "",
-          placeholder: "支持格式：550,1399 或 '550','1399' 或 \"550\",\"1399\"",
+          placeholder: "\u652f\u6301\u683c\u5f0f\uff1a550,1399 \u6216 '550','1399' \u6216 \"550\",\"1399\"",
           belongTo: { paramName: "action", value: ["import"] }
         }
       ]
     },
-    // -------------豆瓣模块-------------
-    // --- 片单解析 ---
+    // -------------\u8c46\u74e3\u6a21\u5757-------------
+    // --- \u7247\u5355\u89e3\u6790 ---
     {
-      title: "豆瓣自定义片单",
-      description: "支持格式:桌面/移动端豆列、官方榜单、App dispatch",
+      title: "\u8c46\u74e3\u81ea\u5b9a\u4e49\u7247\u5355",
+      description: "\u652f\u6301\u683c\u5f0f:\u684c\u9762/\u79fb\u52a8\u7aef\u8c46\u5217\u3001\u5b98\u65b9\u699c\u5355\u3001App dispatch",
       requiresWebView: false,
       functionName: "loadEnhancedDoubanList",
       cacheDuration: 3600,
       params: [
         {
           name: "url", 
-          title: "🔗 片单地址", 
+          title: "\ud83d\udd17 \u7247\u5355\u5730\u5740", 
           type: "input", 
-          description: "支持格式:桌面/移动端豆列、官方榜单、App dispatch",
+          description: "\u652f\u6301\u683c\u5f0f:\u684c\u9762/\u79fb\u52a8\u7aef\u8c46\u5217\u3001\u5b98\u65b9\u699c\u5355\u3001App dispatch",
           placeholders: [
-              { title: "豆瓣电影实时热榜", 
+              { title: "\u8c46\u74e3\u7535\u5f71\u5b9e\u65f6\u70ed\u699c", 
               value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/movie_real_time_hotest/&dt_dapp=1" },
-              { title: "豆瓣剧集实时热榜", 
+              { title: "\u8c46\u74e3\u5267\u96c6\u5b9e\u65f6\u70ed\u699c", 
               value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/tv_real_time_hotest/&dt_dapp=1" },
-              { title: "豆瓣书影音实时热榜", 
+              { title: "\u8c46\u74e3\u4e66\u5f71\u97f3\u5b9e\u65f6\u70ed\u699c", 
               value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/subject_real_time_hotest/&dt_dapp=1" },
-              { title: "一周电影口碑榜", 
+              { title: "\u4e00\u5468\u7535\u5f71\u53e3\u7891\u699c", 
               value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/movie_weekly_best/&dt_dapp=1" },
-              { title: "华语口碑剧集榜", 
+              { title: "\u534e\u8bed\u53e3\u7891\u5267\u96c6\u699c", 
               value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/tv_chinese_best_weekly/&dt_dapp=1" },
-              { title: "全球口碑剧集榜", 
+              { title: "\u5168\u7403\u53e3\u7891\u5267\u96c6\u699c", 
               value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/tv_global_best_weekly/&dt_dapp=1" },
-              { title: "国内热播综艺", 
+              { title: "\u56fd\u5185\u70ed\u64ad\u7efc\u827a", 
               value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/show_domestic/&dt_dapp=1" },
-              { title: "国外热播综艺", 
+              { title: "\u56fd\u5916\u70ed\u64ad\u7efc\u827a", 
               value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/show_foreign/&dt_dapp=1" },
-              { title: "当地影院热映", 
+              { title: "\u5f53\u5730\u5f71\u9662\u70ed\u6620", 
               value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/movie_showing/&dt_dapp=1" },
-              { title: "热门动画", 
+              { title: "\u70ed\u95e8\u52a8\u753b", 
               value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/tv_animation/&dt_dapp=1" }
           ]
         },
-        { name: "page", title: "页码", type: "page" }
+        { name: "page", title: "\u9875\u7801", type: "page" }
       ]
     }
   ]
 };
 
-// ===============屏蔽配置===============
+// ===============\u5c4f\u853d\u914d\u7f6e===============
 const GENRE_STORAGE_KEY = "forward_blocked_genres";
 const STORAGE_KEY = "forward_blocked_items";
 
@@ -776,7 +776,7 @@ function clearBlockedItems() {
     }
 }
 
-// ===============辅助函数===============
+// ===============\u8f85\u52a9\u51fd\u6570===============
 async function fetchTmdbGenres() {
     if (tmdbGenresCache) return tmdbGenresCache;
     
@@ -947,7 +947,7 @@ function parseDoubanAppDispatchUrl(url) {
     return null;
 }
 
-// =============TMDB功能函数============
+// =============TMDB\u529f\u80fd\u51fd\u6570============
 async function fetchTmdbData(api, params) {
     const [data, genres] = await Promise.all([
         Widget.tmdb.get(api, { params: params }),
@@ -1251,7 +1251,7 @@ async function tmdbCompanies(params = {}) {
     return await fetchTmdbData(api, cleanParams);
 }
 
-// ===============搜索屏蔽==============
+// ===============\u641c\u7d22\u5c4f\u853d==============
 async function searchTMDB(query, language) {
     if (!query || query.trim().length === 0) {
         throw new Error("\u641c\u7d22\u5173\u952e\u8bcd\u4e0d\u80fd\u4e3a\u7a7a");
@@ -1586,7 +1586,7 @@ async function searchAndBlock(params) {
         id: "no_query",
         type: "info",
         title: "\u26a0 \u8bf7\u8f93\u5165\u641c\u7d22\u5173\u952e\u8bcd",
-        description: "\u5728\u4e0a\u65b0\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u641c\u7d22\u7684\u5f71\u7247\u6216\u5267\u96c6\u540d\u79f0\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u6b64\u6a21\u5757\u3002",
+        description: "\u5728\u4e0a\u65b9\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u641c\u7d22\u7684\u5f71\u7247\u6216\u5267\u96c6\u540d\u79f0\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u6b64\u6a21\u5757\u3002",
         posterPath: "",
         backdropPath: "",
         rating: 0,
@@ -1723,7 +1723,7 @@ async function searchAndBlock(params) {
   }
 }
 
-// =============屏蔽管理=============
+// =============\u5c4f\u853d\u7ba1\u7406=============
 async function manageBlockedItems(params) {
   const manageType = params.manage_type || "items";
   const action = params.action || "view";
@@ -2133,7 +2133,7 @@ async function loadDetail(link) {
   }
 }
 
-// =============豆瓣功能函数=============
+// =============\u8c46\u74e3\u529f\u80fd\u51fd\u6570=============
 async function loadDoubanItemsFromApi(params = {}) {
   const { start, limit } = calculatePagination(params);
   const url = params.url;
@@ -2677,11 +2677,11 @@ async function fetchImdbItemsForDouban(scItems) {
             { pattern: /^\u6ca7\u5143\u56fe2 \u5143\u521d\u5c71\u756a\u5916\u7bc7/, replacement: '\u6ca7\u5143\u56fe' },
             { pattern: /^\u82cd\u5170\u8bc02 \u5f71\u4e09\u754c\u7bc7/, replacement: '\u82cd\u5170\u8bc0 \u52a8\u753b\u7248', forceFirstResult: true },
             { pattern: /^\u77f3\u7eaa\u5143 \u7b2c\u56db\u5b63 Part 2/, replacement: '\u77f3\u7eaa\u5143' },
-            { pattern: /^\u53cc\u4eba\u72ec\u81ea\u9732\u8425/, replacement: 'ふたりソロキャンプ' },
+            { pattern: /^\u53cc\u4eba\u72ec\u81ea\u9732\u8425/, replacement: '\u3075\u305f\u308a\u30bd\u30ed\u30ad\u30e3\u30f3\u30d7' },
             { pattern: /^\u5730\u7f1a\u5c11\u5e74\u82b1\u5b50\u541b \u7b2c\u4e8c\u5b63 \u540e\u7bc7/, replacement: '\u5730\u7f1a\u5c11\u5e74\u82b1\u5b50\u541b' },
             { pattern: /^\u66f4\u8863\u4eba\u5076\u5760\u5165\u7231\u6cb3 \u7b2c\u4e8c\u5b63/, replacement: '\u66f4\u8863\u4eba\u5076\u5760\u5165\u7231\u6cb3', forceFirstResult: true },
             { pattern: /^\u574f\u5973\u5b69/, replacement: '\u4e0d\u826f\u5c11\u5973' },
-            { pattern: /^\u82b1\u513f\u4e0e\u5c11\u5e74·\u540c\u5fc3\u5b63/, replacement: '\u82b1\u513f\u4e0e\u5c11\u5e74·\u540c\u5fc3\u5b63', forceFirstResult: true },
+            { pattern: /^\u82b1\u513f\u4e0e\u5c11\u5e74\u00b7\u540c\u5fc3\u5b63/, replacement: '\u82b1\u513f\u4e0e\u5c11\u5e74\u00b7\u540c\u5fc3\u5b63', forceFirstResult: true },
             { pattern: /^\u5954\u8dd1\u5427 \u7b2c\u4e5d\u5b63/, replacement: '\u5954\u8dd1\u5427!\u5144\u5f1f', forceFirstResult: true },
             { pattern: /^\u4e58\u98ce2025/, replacement: '\u4e58\u98ce2025', forceFirstResult: true },
             { pattern: /^\u4f60\u7684\u7231$/, replacement: '\ub108\uc758\uc5f0\uc560', forceFirstResult: true },
@@ -2703,7 +2703,7 @@ async function fetchImdbItemsForDouban(scItems) {
                 }
                 return baseName;
             }},
-            { pattern: /^([^·]+)·(.*)$/, replacement: (match, part1, part2) => {
+            { pattern: /^([^\u00b7]+)\u00b7(.*)$/, replacement: (match, part1, part2) => {
                 if (part2 && !/^(\u6162\u4eab\u5b63|\u7b2c.*\u5b63)/.test(part2)) {
                     return part1 + part2;
                 }
