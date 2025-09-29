@@ -1,2930 +1,3170 @@
 //Original Author:阿米诺斯
 WidgetMetadata = {
-  id: "forward.combined.media.lists",
-  title: "\u5f71\u89c6\u699c\u5355",
-  description: "\u5f71\u89c6\u52a8\u753b\u699c\u5355",
-  author: "\ud835\udcd1\ud835\udcfe\ud835\udcfd\ud835\udcfd\ud835\udcee\ud835\udcfb\ud835\udcef\ud835\udcf5\ud835\udd02",
-  site: "https://widgets-xd.vercel.app",
-  version: "1.3.9",
-  requiredVersion: "0.0.2",
-  detailCacheDuration: 60,
-  modules: [
-    // -------------TMDB\u6a21\u5757-------------
-    // --- \u70ed\u95e8\u6a21\u5757 ---
-    {
-      title: "TMDB \u70ed\u95e8\u5267\u96c6",
-      description: "\u4eca\u65e5\u70ed\u95e8\u7535\u89c6\u5267",
-      requiresWebView: false,
-      functionName: "loadTodayHotTV",
-      cacheDuration: 3600,
-      params: [
-        { name: "language", title: "\u8bed\u8a00", type: "language", value: "zh-CN" },
-        { 
-          name: "sort_by", 
-          title: "\u5730\u533a", 
-          type: "enumeration", 
-          enumOptions: [
-            { title: "\u5168\u90e8\u5730\u533a", value: "" },
-            { title: "\u4e2d\u56fd", value: "CN" },
-            { title: "\u7f8e\u56fd", value: "US" },
-            { title: "\u97e9\u56fd", value: "KR" },
-            { title: "\u65e5\u672c", value: "JP" },
-            { title: "\u82f1\u56fd", value: "GB" }
-          ], 
-          value: "" 
-        },
-        { name: "page", title: "\u9875\u7801", type: "page" }
-      ]
-    },
-    {
-      title: "TMDB \u70ed\u95e8\u7535\u5f71",
-      description: "\u4eca\u65e5\u70ed\u95e8\u7535\u5f71",
-      requiresWebView: false,
-      functionName: "loadTodayHotMovies",
-      cacheDuration: 3600,
-      params: [
-        { name: "language", title: "\u8bed\u8a00", type: "language", value: "zh-CN" },
-        { 
-          name: "sort_by", 
-          title: "\u5730\u533a", 
-          type: "enumeration", 
-          enumOptions: [
-            { title: "\u5168\u90e8\u5730\u533a", value: "" },
-            { title: "\u4e2d\u56fd", value: "CN" },
-            { title: "\u7f8e\u56fd", value: "US" },
-            { title: "\u97e9\u56fd", value: "KR" },
-            { title: "\u65e5\u672c", value: "JP" },
-            { title: "\u82f1\u56fd", value: "GB" }
-          ], 
-          value: "" 
-        },
-        { name: "page", title: "\u9875\u7801", type: "page" }
-      ]
-    },
-    // --- \u5e38\u89c4\u53d1\u73b0\u6a21\u5757 ---
-    {
-      title: "TMDB \u9ad8\u5206\u5185\u5bb9",
-      description: "\u9ad8\u5206\u7535\u5f71\u6216\u5267\u96c6 (\u6309\u7528\u6237\u8bc4\u5206\u6392\u5e8f)",
-      requiresWebView: false,
-      functionName: "tmdbTopRated",
-      cacheDuration: 3600,
-      params: [
-        { 
-          name: "type", 
-          title: "\ud83c\udfad\u7c7b\u578b", 
-          type: "enumeration", 
-          enumOptions: [
-            { title: "\u7535\u5f71", value: "movie" },
-            { title: "\u5267\u96c6", value: "tv" }
-          ], 
-          value: "movie" 
-        },
-        { name: "language", title: "\u8bed\u8a00", type: "language", value: "zh-CN" },
-        { name: "page", title: "\u9875\u7801", type: "page" }
-      ]
-    },
-    // --- \u64ad\u51fa\u5e73\u53f0\u6a21\u5757 ---
-    {
-        title: "TMDB \u64ad\u51fa\u5e73\u53f0",
-        description: "\u6309\u64ad\u51fa\u5e73\u53f0\u548c\u5185\u5bb9\u7c7b\u578b\u7b5b\u9009\u5267\u96c6\u5185\u5bb9",
-        requiresWebView: false,
-        functionName: "tmdbDiscoverByNetwork",
-        cacheDuration: 3600,
-        params: [
-            {
-                name: "with_networks",
-                title: "\u64ad\u51fa\u5e73\u53f0",
-                type: "enumeration",
-                description: "\u9009\u62e9\u4e00\u4e2a\u5e73\u53f0\u4ee5\u67e5\u770b\u5176\u5267\u96c6\u5185\u5bb9",
-                value: "",
-                belongTo: {
-                  paramName: "air_status",
-                  value: ["released","upcoming",""],
-                },
-          enumOptions: [
-            { title: "\u5168\u90e8", value: "" },
-            { title: "Tencent", value: "2007" },
-            { title: "iQiyi", value: "1330" },
-            { title: "Youku", value: "1419" },
-            { title: "Bilibili", value: "1605" },
-            { title: "MGTV", value: "1631" },
-            { title: "Netflix", value: "213" },
-            { title: "Disney+", value: "2739" },
-            { title: "HBO", value: "49" },
-            { title: "HBO Max", value: "3186" },
-            { title: "Apple TV+", value: "2552" },
-            { title: "Hulu", value: "453" },
-            { title: "Amazon Prime Video", value: "1024" },
-            { title: "FOX", value: "19" },
-            { title: "Paramount+", value: "4330" },
-            { title: "TV Tokyo", value: "94" },
-            { title: "BBC One", value: "332" },
-            { title: "BBC Two", value: "295" },
-            { title: "NBC", value: "6" },
-            { title: "AMC+", value: "174" },
-            { title: "We TV", value: "3732" },
-            { title: "Viu TV", value: "2146" },
-            { title: "TVB", value: "48" }
-          ]
-        },
-        {
-          name: "with_genres",
-          title: "\ud83c\udfad\u5185\u5bb9\u7c7b\u578b",
-          type: "enumeration",
-          description: "\u9009\u62e9\u8981\u7b5b\u9009\u7684\u5185\u5bb9\u7c7b\u578b",
-          value: "",
-          belongTo: {
-            paramName: "air_status",
-            value: ["released","upcoming",""],
-          },
-          enumOptions: [
-            { title: "\u5168\u90e8\u7c7b\u578b", value: "" },
-            { title: "\u72af\u7f6a", value: "80" },
-            { title: "\u52a8\u753b", value: "16" },
-            { title: "\u559c\u5267", value: "35" },
-            { title: "\u5267\u60c5", value: "18" },
-            { title: "\u5bb6\u5ead", value: "10751" },
-            { title: "\u60ac\u7591", value: "9648" },
-            { title: "\u771f\u4eba\u79c0", value: "10764" },
-            { title: "\u8131\u53e3\u79c0", value: "10767" },
-            { title: "\u7eaa\u5f55\u7247", value: "99" },
-            { title: "\u52a8\u4f5c\u4e0e\u5192\u9669", value: "10759" },
-            { title: "\u79d1\u5e7b\u4e0e\u5947\u5e7b", value: "10765" },
-            { title: "\u6218\u4e89\u4e0e\u653f\u6cbb", value: "10768" }
-          ]
-        },
-        {
-          name: "air_status",
-          title: "\u4e0a\u6620\u72b6\u6001",
-          type: "enumeration",
-          description: "\u9ed8\u8ba4\u5df2\u4e0a\u6620",
-          value: "released",
-          enumOptions: [
-            { title: "\u5df2\u4e0a\u6620", value: "released" },
-            { title: "\u672a\u4e0a\u6620", value: "upcoming" },
-            { title: "\u5168\u90e8", value: "" }
-          ]
-        },
-        {
-          name: "sort_by",
-          title: "\ud83d\udd22 \u6392\u5e8f\u65b9\u5f0f",
-          type: "enumeration",
-          description: "\u9009\u62e9\u5185\u5bb9\u6392\u5e8f\u65b9\u5f0f,\u9ed8\u8ba4\u4e0a\u6620\u65f6\u95f4\u2193",
-          value: "first_air_date.desc",
-          enumOptions: [
-            { title: "\u4e0a\u6620\u65f6\u95f4\u2193", value: "first_air_date.desc" },
-            { title: "\u4e0a\u6620\u65f6\u95f4\u2191", value: "first_air_date.asc" },
-            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popularity.desc" },
-            { title: "\u8bc4\u5206\u6700\u9ad8", value: "vote_average.desc" },
-            { title: "\u6700\u591a\u6295\u7968", value: "vote_count.desc" }
-          ]
-        },
-        { name: "page", title: "\u9875\u7801", type: "page" },
-        { name: "language", title: "\u8bed\u8a00", type: "language", value: "zh-CN" }
-      ]
-    },
-    // --- \u51fa\u54c1\u516c\u53f8\u6a21\u5757 ---
-    {
-      title: "TMDB \u51fa\u54c1\u516c\u53f8",
-      functionName: "tmdbCompanies",
-      cacheDuration: 3600,
-      params: [
-        {
-          name: "with_companies",
-          title: "\u51fa\u54c1\u516c\u53f8",
-          type: "enumeration",
-          value: "",
-          description: "\u9009\u62e9\u4e00\u4e2a\u516c\u53f8\u4ee5\u67e5\u770b\u5176\u5267\u96c6\u5185\u5bb9",
-          belongTo: {
-            paramName: "air_status",
-            value: ["released","upcoming",""],
-          },
-          enumOptions: [
-            { title: "\u5168\u90e8", value: "" },
-            { title: "Disney", value: "2" },
-            { title: "Warner Bros", value: "174" },
-            { title: "Columbia", value: "5" },
-            { title: "Sony", value: "34" },
-            { title: "Universal", value: "33" },
-            { title: "Paramount", value: "4" },
-            { title: "20th Century", value: "25" },
-            { title: "Marvel", value: "420" },
-            { title: "Toho", value: "882" },
-            { title: "\u4e2d\u56fd\u7535\u5f71\u96c6\u56e2\u516c\u53f8", value: "14714" },
-            { title: "BBC", value: "3324" },
-            { title: "A24", value: "41077" },
-            { title: "Blumhouse", value: "3172" },
-            { title: "Working Title Films", value: "10163" }
-          ]
-        },
-        {
-          name: "with_genres",
-          title: "\ud83c\udfad\u5185\u5bb9\u7c7b\u578b",
-          type: "enumeration",
-          description: "\u9009\u62e9\u8981\u7b5b\u9009\u7684\u5185\u5bb9\u7c7b\u578b",
-          value: "",
-          belongTo: {
-            paramName: "air_status",
-            value: ["released","upcoming",""],
-          },
-          enumOptions: [
-            { title: "\u5168\u90e8\u7c7b\u578b", value: "" },
-            { title: "\u5192\u9669", value: "12" },
-            { title: "\u5267\u60c5", value: "18" },
-            { title: "\u52a8\u4f5c", value: "28" },
-            { title: "\u52a8\u753b", value: "16" },
-            { title: "\u5386\u53f2", value: "36" },
-            { title: "\u559c\u5267", value: "35" },
-            { title: "\u5947\u5e7b", value: "14" },
-            { title: "\u5bb6\u5ead", value: "10751" },
-            { title: "\u6050\u6016", value: "27" },
-            { title: "\u60ac\u7591", value: "9648" },
-            { title: "\u60ca\u609a", value: "53" },
-            { title: "\u6218\u4e89", value: "10752" },
-            { title: "\u7231\u60c5", value: "10749" },
-            { title: "\u72af\u7f6a", value: "80" },
-            { title: "\u79d1\u5e7b", value: "878" },
-            { title: "\u8bb0\u5f55", value: "99" },
-            { title: "\u897f\u90e8", value: "37" },
-            { title: "\u97f3\u4e50", value: "10402" },
-            { title: "\u7535\u89c6\u7535\u5f71", value: "10770" }
-          ]
-        },
-        {
-          name: "air_status",
-          title: "\u4e0a\u6620\u72b6\u6001",
-          type: "enumeration",
-          description: "\u9ed8\u8ba4\u5df2\u4e0a\u6620",
-          value: "released",
-          enumOptions: [
-            { title: "\u5df2\u4e0a\u6620", value: "released" },
-            { title: "\u672a\u4e0a\u6620", value: "upcoming" },
-            { title: "\u5168\u90e8", value: "" }
-          ]
-        },
-        {
-          name: "sort_by",
-          title: "\ud83d\udd22 \u6392\u5e8f\u65b9\u5f0f",
-          type: "enumeration",
-          description: "\u9009\u62e9\u5185\u5bb9\u6392\u5e8f\u65b9\u5f0f,\u9ed8\u8ba4\u4e0a\u6620\u65f6\u95f4\u2193",
-          value: "primary_release_date.desc",
-          enumOptions: [
-            { title: "\u4e0a\u6620\u65f6\u95f4\u2193", value: "primary_release_date.desc" },
-            { title: "\u4e0a\u6620\u65f6\u95f4\u2191", value: "primary_release_date.asc" },
-            { title: "\u4eba\u6c14\u6700\u9ad8", value: "popularity.desc" },
-            { title: "\u8bc4\u5206\u6700\u9ad8", value: "vote_average.desc" },
-            { title: "\u6700\u591a\u6295\u7968", value: "vote_count.desc" }
-          ]
-        },
-        { name: "page", title: "\u9875\u7801", type: "page" },
-        { name: "language", title: "\u8bed\u8a00", type: "language", value: "zh-CN" }
-      ]
-    },
-    // =============\u5c4f\u853d\u7ba1\u7406\u6a21\u5757=============
-    {
-      title: "TMDB \u641c\u7d22\u5c4f\u853d",
-      description: "\u6309\u5f71\u7247\u540d\u79f0\u6216\u5185\u5bb9\u7c7b\u578b\u8fdb\u884c\u5c4f\u853d",
-      requiresWebView: false,
-      functionName: "searchAndBlock",
-      cacheDuration: 0,
-      params: [
-        {
-          name: "block_type",
-          title: "\ud83c\udfaf \u5c4f\u853d\u7c7b\u578b",
-          type: "enumeration",
-          description: "\u9009\u62e9\u5c4f\u853d\u65b9\u5f0f",
-          value: "by_name",
-          enumOptions: [
-            { title: "\u6309\u5f71\u7247\u540d\u79f0", value: "by_name" },
-            { title: "\u6309\u5185\u5bb9\u7c7b\u578b", value: "by_genre" },
-            { title: "\u624b\u52a8\u8f93\u5165ID", value: "manual_id" }
-          ]
-        },
-        {
-          name: "action",
-          title: "\ud83c\udfae \u64cd\u4f5c\u6a21\u5f0f",
-          type: "enumeration",
-          description: "\u9009\u62e9\u64cd\u4f5c\u7c7b\u578b",
-          value: "search_only",
-          enumOptions: [
-            { title: "\u4ec5\u641c\u7d22", value: "search_only" },
-            { title: "\u641c\u7d22\u5e76\u5c4f\u853d", value: "search_and_block" }
-          ]
-        },
-        {
-          name: "query",
-          title: "\ud83d\udd0d \u5f71\u7247\u540d\u79f0",
-          type: "input",
-          description: "\u8f93\u5165\u8981\u641c\u7d22\u7684\u5f71\u7247\u6216\u5267\u96c6\u540d\u79f0(\u6309\u540d\u79f0\u5c4f\u853d\u6a21\u5f0f\u4f7f\u7528)",
-          value: "",
-          placeholder: "\u4f8b\u5982\uff1a\u9b3c\u706d\u4e4b\u5203\u3001\u5357\u65b9\u516c\u56ed"
-        },
-        {
-          name: "genre_name",
-          title: "\ud83c\udff7\ufe0f \u7c7b\u578b\u540d\u79f0",
-          type: "input",
-          description: "\u8f93\u5165\u8981\u5c4f\u853d\u7684\u5185\u5bb9\u7c7b\u578b\uff08\u6309\u7c7b\u578b\u5c4f\u853d\u6a21\u5f0f\u4f7f\u7528\uff09",
-          value: "",
-          placeholder: "\u4f8b\u5982\uff1a\u771f\u4eba\u79c0\u3001\u7efc\u827a\u3001\u7eaa\u5f55\u7247\u3001\u52a8\u4f5c\u3001\u7231\u60c5"
-        },
-        {
-          name: "language",
-          title: "\ud83c\udf10 \u641c\u7d22\u8bed\u8a00",
-          type: "enumeration",
-          description: "\u9009\u62e9\u641c\u7d22\u8bed\u8a00\uff08\u6309\u540d\u79f0\u5c4f\u853d\u6a21\u5f0f\u4f7f\u7528\uff09",
-          value: "zh-CN",
-          enumOptions: [
-            { title: "\u4e2d\u6587", value: "zh-CN" },
-            { title: "English", value: "en-US" },
-            { title: "\u5176\u4ed6\u8bed\u8a00", value: "en" }
-          ]
-        },
-        {
-          name: "tmdb_id",
-          title: "\ud83c\udd94 TMDB ID",
-          type: "input",
-          description: "\u8f93\u5165\u8981\u5c4f\u853d\u7684TMDB ID\uff08\u624b\u52a8\u8f93\u5165ID\u6a21\u5f0f\u4f7f\u7528\uff09",
-          value: "",
-          placeholder: "\u4f8b\u5982\uff1a550, 1399"
-        },
-        {
-          name: "media_type",
-          title: "\ud83c\udfad \u5a92\u4f53\u7c7b\u578b",
-          type: "enumeration",
-          description: "\u9009\u62e9\u5a92\u4f53\u7c7b\u578b\uff08\u624b\u52a8\u8f93\u5165ID\u6a21\u5f0f\u4f7f\u7528\uff09",
-          value: "tv",
-          enumOptions: [
-            { title: "\u5267\u96c6", value: "tv" },
-            { title: "\u7535\u5f71", value: "movie" }
-          ]
-        }
-      ]
-    },
-    {
-      title: "TMDB \u5c4f\u853d\u7ba1\u7406",
-      description: "\u67e5\u770b\u548c\u7ba1\u7406\u5df2\u5c4f\u853d\u7684\u5185\u5bb9\u548c\u7c7b\u578b",
-      requiresWebView: false,
-      functionName: "manageBlockedItems",
-      cacheDuration: 0,
-      params: [
-        {
-          name: "manage_type",
-          title: "\ud83d\udcc2 \u7ba1\u7406\u7c7b\u578b",
-          type: "enumeration",
-          description: "\u9009\u62e9\u8981\u7ba1\u7406\u7684\u5c4f\u853d\u7c7b\u578b",
-          value: "items",
-          enumOptions: [
-            { title: "\u5c4f\u853d\u7684\u5185\u5bb9", value: "items" },
-            { title: "\u5c4f\u853d\u7684\u7c7b\u578b", value: "genres" }
-          ]
-        },
-        {
-          name: "action",
-          title: "\ud83d\udccb \u64cd\u4f5c",
-          type: "enumeration",
-          description: "\u9009\u62e9\u8981\u6267\u884c\u7684\u64cd\u4f5c",
-          value: "view",
-          enumOptions: [
-            { title: "\u67e5\u770b\u5217\u8868", value: "view" },
-            { title: "\u6e05\u7a7a\u5217\u8868", value: "clear" },
-            { title: "\u53d6\u6d88\u5c4f\u853d", value: "unblock" },
-            { title: "\u5bfc\u51fa\u914d\u7f6e", value: "export" },
-            { title: "\u5bfc\u5165\u914d\u7f6e", value: "import" }
-          ]
-        },
-        {
-          name: "unblock_id",
-          title: "\ud83d\udd13 \u53d6\u6d88\u5c4f\u853dID",
-          type: "input",
-          description: "\u8f93\u5165\u8981\u53d6\u6d88\u5c4f\u853d\u7684ID",
-          value: "",
-          placeholder: "\u5185\u5bb9ID\u4f8b\u5982\uff1a2190 | \u7c7b\u578bID\u4f8b\u5982\uff1a10764",
-          belongTo: { paramName: "action", value: ["unblock"] }
-        },
-        {
-          name: "unblock_media_type",
-          title: "\ud83c\udfad \u5a92\u4f53\u7c7b\u578b",
-          type: "enumeration",
-          description: "\u9009\u62e9\u8981\u53d6\u6d88\u5c4f\u853d\u7684\u5a92\u4f53\u7c7b\u578b\uff08\u4ec5\u5185\u5bb9\u5c4f\u853d\u9700\u8981\uff09",
-          value: "tv",
-          enumOptions: [
-            { title: "\u5267\u96c6", value: "tv" },
-            { title: "\u7535\u5f71", value: "movie" }
-          ],
-          belongTo: { paramName: "action", value: ["unblock"], paramName2: "manage_type", value2: ["items"] }
-        },
-        {
-          name: "import_data",
-          title: "\ud83d\udce5 \u5bfc\u5165\u6570\u636e",
-          type: "input",
-          description: "\u7c98\u8d34\u8981\u5bfc\u5165\u7684\u5c4f\u853dID\u5217\u8868\uff0c\u652f\u6301\u591a\u79cd\u683c\u5f0f",
-          value: "",
-          placeholder: "\u652f\u6301\u683c\u5f0f\uff1a550,1399 \u6216 '550','1399' \u6216 \"550\",\"1399\"",
-          belongTo: { paramName: "action", value: ["import"] }
-        }
-      ]
-    },
-    // -------------\u8c46\u74e3\u6a21\u5757-------------
-    // --- \u7247\u5355\u89e3\u6790 ---
-    {
-      title: "\u8c46\u74e3\u81ea\u5b9a\u4e49\u7247\u5355",
-      description: "\u652f\u6301\u683c\u5f0f:\u684c\u9762/\u79fb\u52a8\u7aef\u8c46\u5217\u3001\u5b98\u65b9\u699c\u5355\u3001App dispatch",
-      requiresWebView: false,
-      functionName: "loadEnhancedDoubanList",
-      cacheDuration: 3600,
-      params: [
-        {
-          name: "url", 
-          title: "\ud83d\udd17 \u7247\u5355\u5730\u5740", 
-          type: "input", 
-          description: "\u652f\u6301\u683c\u5f0f:\u684c\u9762/\u79fb\u52a8\u7aef\u8c46\u5217\u3001\u5b98\u65b9\u699c\u5355\u3001App dispatch",
-          placeholders: [
-              { title: "\u8c46\u74e3\u7535\u5f71\u5b9e\u65f6\u70ed\u699c", 
-              value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/movie_real_time_hotest/&dt_dapp=1" },
-              { title: "\u8c46\u74e3\u5267\u96c6\u5b9e\u65f6\u70ed\u699c", 
-              value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/tv_real_time_hotest/&dt_dapp=1" },
-              { title: "\u8c46\u74e3\u4e66\u5f71\u97f3\u5b9e\u65f6\u70ed\u699c", 
-              value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/subject_real_time_hotest/&dt_dapp=1" },
-              { title: "\u4e00\u5468\u7535\u5f71\u53e3\u7891\u699c", 
-              value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/movie_weekly_best/&dt_dapp=1" },
-              { title: "\u534e\u8bed\u53e3\u7891\u5267\u96c6\u699c", 
-              value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/tv_chinese_best_weekly/&dt_dapp=1" },
-              { title: "\u5168\u7403\u53e3\u7891\u5267\u96c6\u699c", 
-              value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/tv_global_best_weekly/&dt_dapp=1" },
-              { title: "\u56fd\u5185\u70ed\u64ad\u7efc\u827a", 
-              value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/show_domestic/&dt_dapp=1" },
-              { title: "\u56fd\u5916\u70ed\u64ad\u7efc\u827a", 
-              value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/show_foreign/&dt_dapp=1" },
-              { title: "\u5f53\u5730\u5f71\u9662\u70ed\u6620", 
-              value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/movie_showing/&dt_dapp=1" },
-              { title: "\u70ed\u95e8\u52a8\u753b", 
-              value: "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/tv_animation/&dt_dapp=1" }
-          ]
-        },
-        { name: "page", title: "\u9875\u7801", type: "page" }
-      ]
-    }
-  ]
+  '\u0069\u0064': "\u0066\u006F\u0072\u0077\u0061\u0072\u0064\u002E\u0063\u006F\u006D\u0062\u0069\u006E\u0065\u0064\u002E\u006D\u0065\u0064\u0069\u0061\u002E\u006C\u0069\u0073\u0074\u0073",
+  '\u0074\u0069\u0074\u006C\u0065': "\u5f71\u89c6\u699c\u5355",
+  '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u5f71\u89c6\u52a8\u753b\u699c\u5355",
+  '\u0061\u0075\u0074\u0068\u006F\u0072': "\ud835\udcd1\ud835\udcfe\ud835\udcfd\ud835\udcfd\ud835\udcee\ud835\udcfb\ud835\udcef\ud835\udcf5\ud835\udd02",
+  '\u0073\u0069\u0074\u0065': "\u0068\u0074\u0074\u0070\u0073\u003A\u002F\u002F\u0077\u0069\u0064\u0067\u0065\u0074\u0073\u002D\u0078\u0064\u002E\u0076\u0065\u0072\u0063\u0065\u006C\u002E\u0061\u0070\u0070",
+  '\u0076\u0065\u0072\u0073\u0069\u006F\u006E': "\u0031\u002E\u0033\u002E\u0039",
+  '\u0072\u0065\u0071\u0075\u0069\u0072\u0065\u0064\u0056\u0065\u0072\u0073\u0069\u006F\u006E': "0.0.2",
+  '\u0064\u0065\u0074\u0061\u0069\u006C\u0043\u0061\u0063\u0068\u0065\u0044\u0075\u0072\u0061\u0074\u0069\u006F\u006E': 60,
+  '\u006D\u006F\u0064\u0075\u006C\u0065\u0073': [{
+    '\u0074\u0069\u0074\u006C\u0065': "TMDB \u70ed\u95e8\u5267\u96c6",
+    '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u4eca\u65e5\u70ed\u95e8\u7535\u89c6\u5267",
+    '\u0072\u0065\u0071\u0075\u0069\u0072\u0065\u0073\u0057\u0065\u0062\u0056\u0069\u0065\u0077': false,
+    '\u0066\u0075\u006E\u0063\u0074\u0069\u006F\u006E\u004E\u0061\u006D\u0065': "\u006C\u006F\u0061\u0064\u0054\u006F\u0064\u0061\u0079\u0048\u006F\u0074\u0054\u0056",
+    "cacheDuration": 3600,
+    "params": [{
+      '\u006E\u0061\u006D\u0065': "\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065",
+      "title": "\u8bed\u8a00",
+      "type": "\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065",
+      '\u0076\u0061\u006C\u0075\u0065': "\u007A\u0068\u002D\u0043\u004E"
+    }, {
+      '\u006E\u0061\u006D\u0065': "\u0073\u006F\u0072\u0074\u005F\u0062\u0079",
+      '\u0074\u0069\u0074\u006C\u0065': "\u5730\u533a",
+      '\u0074\u0079\u0070\u0065': "\u0065\u006E\u0075\u006D\u0065\u0072\u0061\u0074\u0069\u006F\u006E",
+      "enumOptions": [{
+        '\u0074\u0069\u0074\u006C\u0065': "\u5168\u90e8\u5730\u533a",
+        "value": ""
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u4e2d\u56fd",
+        '\u0076\u0061\u006C\u0075\u0065': "CN"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u7f8e\u56fd",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0055\u0053"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u97e9\u56fd",
+        '\u0076\u0061\u006C\u0075\u0065': "\u004B\u0052"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u65e5\u672c",
+        "value": "\u004A\u0050"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u82f1\u56fd",
+        '\u0076\u0061\u006C\u0075\u0065': "GB"
+      }],
+      "value": ""
+    }, {
+      '\u006E\u0061\u006D\u0065': "page",
+      '\u0074\u0069\u0074\u006C\u0065': "\u9875\u7801",
+      '\u0074\u0079\u0070\u0065': "page"
+    }]
+  }, {
+    "title": "TMDB \u70ed\u95e8\u7535\u5f71",
+    "description": "\u4eca\u65e5\u70ed\u95e8\u7535\u5f71",
+    "requiresWebView": false,
+    "functionName": "loadTodayHotMovies",
+    '\u0063\u0061\u0063\u0068\u0065\u0044\u0075\u0072\u0061\u0074\u0069\u006F\u006E': 3600,
+    "params": [{
+      '\u006E\u0061\u006D\u0065': "language",
+      "title": "\u8bed\u8a00",
+      '\u0074\u0079\u0070\u0065': "\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065",
+      "value": "\u007A\u0068\u002D\u0043\u004E"
+    }, {
+      '\u006E\u0061\u006D\u0065': "sort_by",
+      '\u0074\u0069\u0074\u006C\u0065': "\u5730\u533a",
+      "type": "\u0065\u006E\u0075\u006D\u0065\u0072\u0061\u0074\u0069\u006F\u006E",
+      '\u0065\u006E\u0075\u006D\u004F\u0070\u0074\u0069\u006F\u006E\u0073': [{
+        "title": "\u5168\u90e8\u5730\u533a",
+        "value": ""
+      }, {
+        "title": "\u4e2d\u56fd",
+        "value": "\u0043\u004E"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u7f8e\u56fd",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0055\u0053"
+      }, {
+        "title": "\u97e9\u56fd",
+        "value": "KR"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u65e5\u672c",
+        "value": "JP"
+      }, {
+        "title": "\u82f1\u56fd",
+        "value": "\u0047\u0042"
+      }],
+      '\u0076\u0061\u006C\u0075\u0065': ""
+    }, {
+      '\u006E\u0061\u006D\u0065': "\u0070\u0061\u0067\u0065",
+      '\u0074\u0069\u0074\u006C\u0065': "\u9875\u7801",
+      '\u0074\u0079\u0070\u0065': "\u0070\u0061\u0067\u0065"
+    }]
+  }, {
+    '\u0074\u0069\u0074\u006C\u0065': "TMDB \u9ad8\u5206\u5185\u5bb9",
+    '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u9ad8\u5206\u7535\u5f71\u6216\u5267\u96c6 (\u6309\u7528\u6237\u8bc4\u5206\u6392\u5e8f)",
+    '\u0072\u0065\u0071\u0075\u0069\u0072\u0065\u0073\u0057\u0065\u0062\u0056\u0069\u0065\u0077': false,
+    "functionName": "\u0074\u006D\u0064\u0062\u0054\u006F\u0070\u0052\u0061\u0074\u0065\u0064",
+    '\u0063\u0061\u0063\u0068\u0065\u0044\u0075\u0072\u0061\u0074\u0069\u006F\u006E': 3600,
+    '\u0070\u0061\u0072\u0061\u006D\u0073': [{
+      "name": "\u0074\u0079\u0070\u0065",
+      "title": "\ud83c\udfad\u7c7b\u578b",
+      '\u0074\u0079\u0070\u0065': "\u0065\u006E\u0075\u006D\u0065\u0072\u0061\u0074\u0069\u006F\u006E",
+      "enumOptions": [{
+        "title": "\u7535\u5f71",
+        '\u0076\u0061\u006C\u0075\u0065': "\u006D\u006F\u0076\u0069\u0065"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u5267\u96c6",
+        "value": "\u0074\u0076"
+      }],
+      "value": "\u006D\u006F\u0076\u0069\u0065"
+    }, {
+      "name": "language",
+      '\u0074\u0069\u0074\u006C\u0065': "\u8bed\u8a00",
+      "type": "\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065",
+      "value": "\u007A\u0068\u002D\u0043\u004E"
+    }, {
+      '\u006E\u0061\u006D\u0065': "page",
+      '\u0074\u0069\u0074\u006C\u0065': "\u9875\u7801",
+      '\u0074\u0079\u0070\u0065': "\u0070\u0061\u0067\u0065"
+    }]
+  }, {
+    "title": "TMDB \u64ad\u51fa\u5e73\u53f0",
+    "description": "\u6309\u64ad\u51fa\u5e73\u53f0\u548c\u5185\u5bb9\u7c7b\u578b\u7b5b\u9009\u5267\u96c6\u5185\u5bb9",
+    '\u0072\u0065\u0071\u0075\u0069\u0072\u0065\u0073\u0057\u0065\u0062\u0056\u0069\u0065\u0077': false,
+    '\u0066\u0075\u006E\u0063\u0074\u0069\u006F\u006E\u004E\u0061\u006D\u0065': "\u0074\u006D\u0064\u0062\u0044\u0069\u0073\u0063\u006F\u0076\u0065\u0072\u0042\u0079\u004E\u0065\u0074\u0077\u006F\u0072\u006B",
+    "cacheDuration": 3600,
+    "params": [{
+      '\u006E\u0061\u006D\u0065': "with_networks",
+      "title": "\u64ad\u51fa\u5e73\u53f0",
+      "type": "enumeration",
+      "description": "\u9009\u62e9\u4e00\u4e2a\u5e73\u53f0\u4ee5\u67e5\u770b\u5176\u5267\u96c6\u5185\u5bb9",
+      "value": "",
+      '\u0062\u0065\u006C\u006F\u006E\u0067\u0054\u006F': {
+        '\u0070\u0061\u0072\u0061\u006D\u004E\u0061\u006D\u0065': "\u0061\u0069\u0072\u005F\u0073\u0074\u0061\u0074\u0075\u0073",
+        '\u0076\u0061\u006C\u0075\u0065': ["desaeler".split("").reverse().join(""), "\u0075\u0070\u0063\u006F\u006D\u0069\u006E\u0067", ""]
+      },
+      '\u0065\u006E\u0075\u006D\u004F\u0070\u0074\u0069\u006F\u006E\u0073': [{
+        '\u0074\u0069\u0074\u006C\u0065': "\u5168\u90e8",
+        '\u0076\u0061\u006C\u0075\u0065': ""
+      }, {
+        "title": "\u0054\u0065\u006E\u0063\u0065\u006E\u0074",
+        '\u0076\u0061\u006C\u0075\u0065': "2007"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u0069\u0051\u0069\u0079\u0069",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0033\u0033\u0030"
+      }, {
+        "title": "Youku",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0034\u0031\u0039"
+      }, {
+        "title": "\u0042\u0069\u006C\u0069\u0062\u0069\u006C\u0069",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0036\u0030\u0035"
+      }, {
+        "title": "\u004D\u0047\u0054\u0056",
+        "value": "1631"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "Netflix",
+        '\u0076\u0061\u006C\u0075\u0065': "213"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "Disney+",
+        "value": "2739"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u0048\u0042\u004F",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0034\u0039"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "HBO Max",
+        "value": "\u0033\u0031\u0038\u0036"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u0041\u0070\u0070\u006C\u0065\u0020\u0054\u0056\u002B",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0032\u0035\u0035\u0032"
+      }, {
+        "title": "Hulu",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0034\u0035\u0033"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "Amazon Prime Video",
+        '\u0076\u0061\u006C\u0075\u0065': "1024"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u0046\u004F\u0058",
+        "value": "\u0031\u0039"
+      }, {
+        "title": "Paramount+",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0034\u0033\u0033\u0030"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "TV Tokyo",
+        "value": "\u0039\u0034"
+      }, {
+        "title": "\u0042\u0042\u0043\u0020\u004F\u006E\u0065",
+        "value": "\u0033\u0033\u0032"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "BBC Two",
+        "value": "295"
+      }, {
+        "title": "\u004E\u0042\u0043",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0036"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u0041\u004D\u0043\u002B",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0037\u0034"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u0057\u0065\u0020\u0054\u0056",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0033\u0037\u0033\u0032"
+      }, {
+        "title": "\u0056\u0069\u0075\u0020\u0054\u0056",
+        '\u0076\u0061\u006C\u0075\u0065': "2146"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u0054\u0056\u0042",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0034\u0038"
+      }]
+    }, {
+      "name": "with_genres",
+      '\u0074\u0069\u0074\u006C\u0065': "\ud83c\udfad\u5185\u5bb9\u7c7b\u578b",
+      '\u0074\u0079\u0070\u0065': "enumeration",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u9009\u62e9\u8981\u7b5b\u9009\u7684\u5185\u5bb9\u7c7b\u578b",
+      "value": "",
+      "belongTo": {
+        "paramName": "\u0061\u0069\u0072\u005F\u0073\u0074\u0061\u0074\u0075\u0073",
+        "value": ["\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0064", "gnimocpu".split("").reverse().join(""), ""]
+      },
+      '\u0065\u006E\u0075\u006D\u004F\u0070\u0074\u0069\u006F\u006E\u0073': [{
+        '\u0074\u0069\u0074\u006C\u0065': "\u5168\u90e8\u7c7b\u578b",
+        "value": ""
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u72af\u7f6a",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0038\u0030"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u52a8\u753b",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0036"
+      }, {
+        "title": "\u559c\u5267",
+        "value": "\u0033\u0035"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u5267\u60c5",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0038"
+      }, {
+        "title": "\u5bb6\u5ead",
+        "value": "10751"
+      }, {
+        "title": "\u60ac\u7591",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0039\u0036\u0034\u0038"
+      }, {
+        "title": "\u771f\u4eba\u79c0",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0030\u0037\u0036\u0034"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u8131\u53e3\u79c0",
+        '\u0076\u0061\u006C\u0075\u0065': "10767"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u7eaa\u5f55\u7247",
+        "value": "99"
+      }, {
+        "title": "\u52a8\u4f5c\u4e0e\u5192\u9669",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0030\u0037\u0035\u0039"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u79d1\u5e7b\u4e0e\u5947\u5e7b",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0030\u0037\u0036\u0035"
+      }, {
+        "title": "\u6218\u4e89\u4e0e\u653f\u6cbb",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0030\u0037\u0036\u0038"
+      }]
+    }, {
+      '\u006E\u0061\u006D\u0065': "\u0061\u0069\u0072\u005F\u0073\u0074\u0061\u0074\u0075\u0073",
+      '\u0074\u0069\u0074\u006C\u0065': "\u4e0a\u6620\u72b6\u6001",
+      "type": "enumeration",
+      "description": "\u9ed8\u8ba4\u5df2\u4e0a\u6620",
+      '\u0076\u0061\u006C\u0075\u0065': "\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0064",
+      "enumOptions": [{
+        '\u0074\u0069\u0074\u006C\u0065': "\u5df2\u4e0a\u6620",
+        "value": "\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0064"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u672a\u4e0a\u6620",
+        "value": "upcoming"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u5168\u90e8",
+        '\u0076\u0061\u006C\u0075\u0065': ""
+      }]
+    }, {
+      "name": "\u0073\u006F\u0072\u0074\u005F\u0062\u0079",
+      "title": "\ud83d\udd22 \u6392\u5e8f\u65b9\u5f0f",
+      "type": "\u0065\u006E\u0075\u006D\u0065\u0072\u0061\u0074\u0069\u006F\u006E",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u9009\u62e9\u5185\u5bb9\u6392\u5e8f\u65b9\u5f0f,\u9ed8\u8ba4\u4e0a\u6620\u65f6\u95f4\u2193",
+      '\u0076\u0061\u006C\u0075\u0065': "first_air_date.desc",
+      '\u0065\u006E\u0075\u006D\u004F\u0070\u0074\u0069\u006F\u006E\u0073': [{
+        "title": "\u4e0a\u6620\u65f6\u95f4\u2193",
+        '\u0076\u0061\u006C\u0075\u0065': "first_air_date.desc"
+      }, {
+        "title": "\u4e0a\u6620\u65f6\u95f4\u2191",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0066\u0069\u0072\u0073\u0074\u005F\u0061\u0069\u0072\u005F\u0064\u0061\u0074\u0065\u002E\u0061\u0073\u0063"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u4eba\u6c14\u6700\u9ad8",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0070\u006F\u0070\u0075\u006C\u0061\u0072\u0069\u0074\u0079\u002E\u0064\u0065\u0073\u0063"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u8bc4\u5206\u6700\u9ad8",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065\u002E\u0064\u0065\u0073\u0063"
+      }, {
+        "title": "\u6700\u591a\u6295\u7968",
+        '\u0076\u0061\u006C\u0075\u0065': "vote_count.desc"
+      }]
+    }, {
+      '\u006E\u0061\u006D\u0065': "\u0070\u0061\u0067\u0065",
+      '\u0074\u0069\u0074\u006C\u0065': "\u9875\u7801",
+      "type": "page"
+    }, {
+      "name": "\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065",
+      "title": "\u8bed\u8a00",
+      '\u0074\u0079\u0070\u0065': "\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065",
+      "value": "\u007A\u0068\u002D\u0043\u004E"
+    }]
+  }, {
+    "title": "TMDB \u51fa\u54c1\u516c\u53f8",
+    "functionName": "tmdbCompanies",
+    '\u0063\u0061\u0063\u0068\u0065\u0044\u0075\u0072\u0061\u0074\u0069\u006F\u006E': 3600,
+    '\u0070\u0061\u0072\u0061\u006D\u0073': [{
+      '\u006E\u0061\u006D\u0065': "with_companies",
+      '\u0074\u0069\u0074\u006C\u0065': "\u51fa\u54c1\u516c\u53f8",
+      '\u0074\u0079\u0070\u0065': "\u0065\u006E\u0075\u006D\u0065\u0072\u0061\u0074\u0069\u006F\u006E",
+      '\u0076\u0061\u006C\u0075\u0065': "",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u9009\u62e9\u4e00\u4e2a\u516c\u53f8\u4ee5\u67e5\u770b\u5176\u5267\u96c6\u5185\u5bb9",
+      '\u0062\u0065\u006C\u006F\u006E\u0067\u0054\u006F': {
+        "paramName": "\u0061\u0069\u0072\u005F\u0073\u0074\u0061\u0074\u0075\u0073",
+        '\u0076\u0061\u006C\u0075\u0065': ["desaeler".split("").reverse().join(""), "gnimocpu".split("").reverse().join(""), ""]
+      },
+      "enumOptions": [{
+        "title": "\u5168\u90e8",
+        '\u0076\u0061\u006C\u0075\u0065': ""
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u0044\u0069\u0073\u006E\u0065\u0079",
+        "value": "\u0032"
+      }, {
+        "title": "\u0057\u0061\u0072\u006E\u0065\u0072\u0020\u0042\u0072\u006F\u0073",
+        "value": "\u0031\u0037\u0034"
+      }, {
+        "title": "\u0043\u006F\u006C\u0075\u006D\u0062\u0069\u0061",
+        "value": "\u0035"
+      }, {
+        "title": "\u0053\u006F\u006E\u0079",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0033\u0034"
+      }, {
+        "title": "\u0055\u006E\u0069\u0076\u0065\u0072\u0073\u0061\u006C",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0033\u0033"
+      }, {
+        "title": "\u0050\u0061\u0072\u0061\u006D\u006F\u0075\u006E\u0074",
+        "value": "\u0034"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u0032\u0030\u0074\u0068\u0020\u0043\u0065\u006E\u0074\u0075\u0072\u0079",
+        "value": "25"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "Marvel",
+        "value": "\u0034\u0032\u0030"
+      }, {
+        "title": "\u0054\u006F\u0068\u006F",
+        "value": "882"
+      }, {
+        "title": "\u4e2d\u56fd\u7535\u5f71\u96c6\u56e2\u516c\u53f8",
+        "value": "14714"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u0042\u0042\u0043",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0033\u0033\u0032\u0034"
+      }, {
+        "title": "\u0041\u0032\u0034",
+        '\u0076\u0061\u006C\u0075\u0065': "41077"
+      }, {
+        "title": "Blumhouse",
+        "value": "\u0033\u0031\u0037\u0032"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "Working Title Films",
+        "value": "\u0031\u0030\u0031\u0036\u0033"
+      }]
+    }, {
+      "name": "with_genres",
+      '\u0074\u0069\u0074\u006C\u0065': "\ud83c\udfad\u5185\u5bb9\u7c7b\u578b",
+      '\u0074\u0079\u0070\u0065': "\u0065\u006E\u0075\u006D\u0065\u0072\u0061\u0074\u0069\u006F\u006E",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u9009\u62e9\u8981\u7b5b\u9009\u7684\u5185\u5bb9\u7c7b\u578b",
+      "value": "",
+      '\u0062\u0065\u006C\u006F\u006E\u0067\u0054\u006F': {
+        '\u0070\u0061\u0072\u0061\u006D\u004E\u0061\u006D\u0065': "air_status",
+        "value": ["\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0064", "\u0075\u0070\u0063\u006F\u006D\u0069\u006E\u0067", ""]
+      },
+      '\u0065\u006E\u0075\u006D\u004F\u0070\u0074\u0069\u006F\u006E\u0073': [{
+        '\u0074\u0069\u0074\u006C\u0065': "\u5168\u90e8\u7c7b\u578b",
+        '\u0076\u0061\u006C\u0075\u0065': ""
+      }, {
+        "title": "\u5192\u9669",
+        "value": "12"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u5267\u60c5",
+        "value": "\u0031\u0038"
+      }, {
+        "title": "\u52a8\u4f5c",
+        "value": "\u0032\u0038"
+      }, {
+        "title": "\u52a8\u753b",
+        "value": "16"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u5386\u53f2",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0033\u0036"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u559c\u5267",
+        "value": "\u0033\u0035"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u5947\u5e7b",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0034"
+      }, {
+        "title": "\u5bb6\u5ead",
+        "value": "\u0031\u0030\u0037\u0035\u0031"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u6050\u6016",
+        '\u0076\u0061\u006C\u0075\u0065': "27"
+      }, {
+        "title": "\u60ac\u7591",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0039\u0036\u0034\u0038"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u60ca\u609a",
+        "value": "\u0035\u0033"
+      }, {
+        "title": "\u6218\u4e89",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0031\u0030\u0037\u0035\u0032"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u7231\u60c5",
+        "value": "\u0031\u0030\u0037\u0034\u0039"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u72af\u7f6a",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0038\u0030"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u79d1\u5e7b",
+        "value": "878"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u8bb0\u5f55",
+        "value": "99"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u897f\u90e8",
+        '\u0076\u0061\u006C\u0075\u0065': "37"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u97f3\u4e50",
+        "value": "\u0031\u0030\u0034\u0030\u0032"
+      }, {
+        "title": "\u7535\u89c6\u7535\u5f71",
+        "value": "\u0031\u0030\u0037\u0037\u0030"
+      }]
+    }, {
+      '\u006E\u0061\u006D\u0065': "\u0061\u0069\u0072\u005F\u0073\u0074\u0061\u0074\u0075\u0073",
+      "title": "\u4e0a\u6620\u72b6\u6001",
+      '\u0074\u0079\u0070\u0065': "\u0065\u006E\u0075\u006D\u0065\u0072\u0061\u0074\u0069\u006F\u006E",
+      "description": "\u9ed8\u8ba4\u5df2\u4e0a\u6620",
+      '\u0076\u0061\u006C\u0075\u0065': "released",
+      "enumOptions": [{
+        '\u0074\u0069\u0074\u006C\u0065': "\u5df2\u4e0a\u6620",
+        '\u0076\u0061\u006C\u0075\u0065': "released"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u672a\u4e0a\u6620",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0075\u0070\u0063\u006F\u006D\u0069\u006E\u0067"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u5168\u90e8",
+        '\u0076\u0061\u006C\u0075\u0065': ""
+      }]
+    }, {
+      '\u006E\u0061\u006D\u0065': "sort_by",
+      "title": "\ud83d\udd22 \u6392\u5e8f\u65b9\u5f0f",
+      '\u0074\u0079\u0070\u0065': "\u0065\u006E\u0075\u006D\u0065\u0072\u0061\u0074\u0069\u006F\u006E",
+      "description": "\u9009\u62e9\u5185\u5bb9\u6392\u5e8f\u65b9\u5f0f,\u9ed8\u8ba4\u4e0a\u6620\u65f6\u95f4\u2193",
+      '\u0076\u0061\u006C\u0075\u0065': "primary_release_date.desc",
+      "enumOptions": [{
+        "title": "\u4e0a\u6620\u65f6\u95f4\u2193",
+        "value": "primary_release_date.desc"
+      }, {
+        "title": "\u4e0a\u6620\u65f6\u95f4\u2191",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0070\u0072\u0069\u006D\u0061\u0072\u0079\u005F\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065\u002E\u0061\u0073\u0063"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u4eba\u6c14\u6700\u9ad8",
+        "value": "popularity.desc"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u8bc4\u5206\u6700\u9ad8",
+        '\u0076\u0061\u006C\u0075\u0065': "vote_average.desc"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u6700\u591a\u6295\u7968",
+        '\u0076\u0061\u006C\u0075\u0065': "vote_count.desc"
+      }]
+    }, {
+      '\u006E\u0061\u006D\u0065': "page",
+      '\u0074\u0069\u0074\u006C\u0065': "\u9875\u7801",
+      '\u0074\u0079\u0070\u0065': "\u0070\u0061\u0067\u0065"
+    }, {
+      '\u006E\u0061\u006D\u0065': "language",
+      "title": "\u8bed\u8a00",
+      "type": "\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065",
+      '\u0076\u0061\u006C\u0075\u0065': "zh-CN"
+    }]
+  }, {
+    "title": "TMDB \u641c\u7d22\u5c4f\u853d",
+    '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u6309\u5f71\u7247\u540d\u79f0\u6216\u5185\u5bb9\u7c7b\u578b\u8fdb\u884c\u5c4f\u853d",
+    '\u0072\u0065\u0071\u0075\u0069\u0072\u0065\u0073\u0057\u0065\u0062\u0056\u0069\u0065\u0077': false,
+    '\u0066\u0075\u006E\u0063\u0074\u0069\u006F\u006E\u004E\u0061\u006D\u0065': "\u0073\u0065\u0061\u0072\u0063\u0068\u0041\u006E\u0064\u0042\u006C\u006F\u0063\u006B",
+    '\u0063\u0061\u0063\u0068\u0065\u0044\u0075\u0072\u0061\u0074\u0069\u006F\u006E': 0,
+    '\u0070\u0061\u0072\u0061\u006D\u0073': [{
+      "name": "block_type",
+      '\u0074\u0069\u0074\u006C\u0065': "\ud83c\udfaf \u5c4f\u853d\u7c7b\u578b",
+      '\u0074\u0079\u0070\u0065': "\u0065\u006E\u0075\u006D\u0065\u0072\u0061\u0074\u0069\u006F\u006E",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u9009\u62e9\u5c4f\u853d\u65b9\u5f0f",
+      "value": "by_name",
+      '\u0065\u006E\u0075\u006D\u004F\u0070\u0074\u0069\u006F\u006E\u0073': [{
+        "title": "\u6309\u5f71\u7247\u540d\u79f0",
+        '\u0076\u0061\u006C\u0075\u0065': "by_name"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u6309\u5185\u5bb9\u7c7b\u578b",
+        "value": "by_genre"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u624b\u52a8\u8f93\u5165ID",
+        '\u0076\u0061\u006C\u0075\u0065': "\u006D\u0061\u006E\u0075\u0061\u006C\u005F\u0069\u0064"
+      }]
+    }, {
+      "name": "action",
+      "title": "\ud83c\udfae \u64cd\u4f5c\u6a21\u5f0f",
+      '\u0074\u0079\u0070\u0065': "enumeration",
+      "description": "\u9009\u62e9\u64cd\u4f5c\u7c7b\u578b",
+      '\u0076\u0061\u006C\u0075\u0065': "search_only",
+      '\u0065\u006E\u0075\u006D\u004F\u0070\u0074\u0069\u006F\u006E\u0073': [{
+        "title": "\u4ec5\u641c\u7d22",
+        "value": "search_only"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u641c\u7d22\u5e76\u5c4f\u853d",
+        "value": "\u0073\u0065\u0061\u0072\u0063\u0068\u005F\u0061\u006E\u0064\u005F\u0062\u006C\u006F\u0063\u006B"
+      }]
+    }, {
+      "name": "query",
+      '\u0074\u0069\u0074\u006C\u0065': "\ud83d\udd0d \u5f71\u7247\u540d\u79f0",
+      '\u0074\u0079\u0070\u0065': "\u0069\u006E\u0070\u0075\u0074",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u8f93\u5165\u8981\u641c\u7d22\u7684\u5f71\u7247\u6216\u5267\u96c6\u540d\u79f0(\u6309\u540d\u79f0\u5c4f\u853d\u6a21\u5f0f\u4f7f\u7528)",
+      '\u0076\u0061\u006C\u0075\u0065': "",
+      '\u0070\u006C\u0061\u0063\u0065\u0068\u006F\u006C\u0064\u0065\u0072': "\u4f8b\u5982\uff1a\u9b3c\u706d\u4e4b\u5203\u3001\u5357\u65b9\u516c\u56ed"
+    }, {
+      "name": "\u0067\u0065\u006E\u0072\u0065\u005F\u006E\u0061\u006D\u0065",
+      '\u0074\u0069\u0074\u006C\u0065': "\ud83c\udff7\ufe0f \u7c7b\u578b\u540d\u79f0",
+      '\u0074\u0079\u0070\u0065': "input",
+      "description": "\u8f93\u5165\u8981\u5c4f\u853d\u7684\u5185\u5bb9\u7c7b\u578b\uff08\u6309\u7c7b\u578b\u5c4f\u853d\u6a21\u5f0f\u4f7f\u7528\uff09",
+      '\u0076\u0061\u006C\u0075\u0065': "",
+      '\u0070\u006C\u0061\u0063\u0065\u0068\u006F\u006C\u0064\u0065\u0072': "\u4f8b\u5982\uff1a\u771f\u4eba\u79c0\u3001\u7efc\u827a\u3001\u7eaa\u5f55\u7247\u3001\u52a8\u4f5c\u3001\u7231\u60c5"
+    }, {
+      '\u006E\u0061\u006D\u0065': "\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065",
+      "title": "\ud83c\udf10 \u641c\u7d22\u8bed\u8a00",
+      "type": "enumeration",
+      "description": "\u9009\u62e9\u641c\u7d22\u8bed\u8a00\uff08\u6309\u540d\u79f0\u5c4f\u853d\u6a21\u5f0f\u4f7f\u7528\uff09",
+      '\u0076\u0061\u006C\u0075\u0065': "\u007A\u0068\u002D\u0043\u004E",
+      '\u0065\u006E\u0075\u006D\u004F\u0070\u0074\u0069\u006F\u006E\u0073': [{
+        '\u0074\u0069\u0074\u006C\u0065': "\u4e2d\u6587",
+        '\u0076\u0061\u006C\u0075\u0065': "zh-CN"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "English",
+        "value": "\u0065\u006E\u002D\u0055\u0053"
+      }, {
+        "title": "\u5176\u4ed6\u8bed\u8a00",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0065\u006E"
+      }]
+    }, {
+      '\u006E\u0061\u006D\u0065': "tmdb_id",
+      '\u0074\u0069\u0074\u006C\u0065': "\ud83c\udd94 TMDB ID",
+      "type": "\u0069\u006E\u0070\u0075\u0074",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u8f93\u5165\u8981\u5c4f\u853d\u7684TMDB ID\uff08\u624b\u52a8\u8f93\u5165ID\u6a21\u5f0f\u4f7f\u7528\uff09",
+      "value": "",
+      "placeholder": "\u4f8b\u5982\uff1a550, 1399"
+    }, {
+      '\u006E\u0061\u006D\u0065': "\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065",
+      "title": "\ud83c\udfad \u5a92\u4f53\u7c7b\u578b",
+      "type": "enumeration",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u9009\u62e9\u5a92\u4f53\u7c7b\u578b\uff08\u624b\u52a8\u8f93\u5165ID\u6a21\u5f0f\u4f7f\u7528\uff09",
+      "value": "\u0074\u0076",
+      "enumOptions": [{
+        '\u0074\u0069\u0074\u006C\u0065': "\u5267\u96c6",
+        "value": "\u0074\u0076"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u7535\u5f71",
+        '\u0076\u0061\u006C\u0075\u0065': "\u006D\u006F\u0076\u0069\u0065"
+      }]
+    }]
+  }, {
+    '\u0074\u0069\u0074\u006C\u0065': "TMDB \u5c4f\u853d\u7ba1\u7406",
+    "description": "\u67e5\u770b\u548c\u7ba1\u7406\u5df2\u5c4f\u853d\u7684\u5185\u5bb9\u548c\u7c7b\u578b",
+    '\u0072\u0065\u0071\u0075\u0069\u0072\u0065\u0073\u0057\u0065\u0062\u0056\u0069\u0065\u0077': false,
+    "functionName": "manageBlockedItems",
+    '\u0063\u0061\u0063\u0068\u0065\u0044\u0075\u0072\u0061\u0074\u0069\u006F\u006E': 0,
+    '\u0070\u0061\u0072\u0061\u006D\u0073': [{
+      "name": "\u006D\u0061\u006E\u0061\u0067\u0065\u005F\u0074\u0079\u0070\u0065",
+      "title": "\ud83d\udcc2 \u7ba1\u7406\u7c7b\u578b",
+      '\u0074\u0079\u0070\u0065': "\u0065\u006E\u0075\u006D\u0065\u0072\u0061\u0074\u0069\u006F\u006E",
+      "description": "\u9009\u62e9\u8981\u7ba1\u7406\u7684\u5c4f\u853d\u7c7b\u578b",
+      '\u0076\u0061\u006C\u0075\u0065': "\u0069\u0074\u0065\u006D\u0073",
+      '\u0065\u006E\u0075\u006D\u004F\u0070\u0074\u0069\u006F\u006E\u0073': [{
+        "title": "\u5c4f\u853d\u7684\u5185\u5bb9",
+        "value": "\u0069\u0074\u0065\u006D\u0073"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u5c4f\u853d\u7684\u7c7b\u578b",
+        "value": "\u0067\u0065\u006E\u0072\u0065\u0073"
+      }]
+    }, {
+      '\u006E\u0061\u006D\u0065': "\u0061\u0063\u0074\u0069\u006F\u006E",
+      "title": "\ud83d\udccb \u64cd\u4f5c",
+      '\u0074\u0079\u0070\u0065': "\u0065\u006E\u0075\u006D\u0065\u0072\u0061\u0074\u0069\u006F\u006E",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u9009\u62e9\u8981\u6267\u884c\u7684\u64cd\u4f5c",
+      '\u0076\u0061\u006C\u0075\u0065': "\u0076\u0069\u0065\u0077",
+      "enumOptions": [{
+        '\u0074\u0069\u0074\u006C\u0065': "\u67e5\u770b\u5217\u8868",
+        "value": "\u0076\u0069\u0065\u0077"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u6e05\u7a7a\u5217\u8868",
+        '\u0076\u0061\u006C\u0075\u0065': "clear"
+      }, {
+        "title": "\u53d6\u6d88\u5c4f\u853d",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0075\u006E\u0062\u006C\u006F\u0063\u006B"
+      }, {
+        "title": "\u5bfc\u51fa\u914d\u7f6e",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0065\u0078\u0070\u006F\u0072\u0074"
+      }, {
+        "title": "\u5bfc\u5165\u914d\u7f6e",
+        "value": "\u0069\u006D\u0070\u006F\u0072\u0074"
+      }]
+    }, {
+      '\u006E\u0061\u006D\u0065': "\u0075\u006E\u0062\u006C\u006F\u0063\u006B\u005F\u0069\u0064",
+      '\u0074\u0069\u0074\u006C\u0065': "\ud83d\udd13 \u53d6\u6d88\u5c4f\u853dID",
+      "type": "input",
+      "description": "\u8f93\u5165\u8981\u53d6\u6d88\u5c4f\u853d\u7684ID",
+      '\u0076\u0061\u006C\u0075\u0065': "",
+      '\u0070\u006C\u0061\u0063\u0065\u0068\u006F\u006C\u0064\u0065\u0072': "\u5185\u5bb9ID\u4f8b\u5982\uff1a2190 | \u7c7b\u578bID\u4f8b\u5982\uff1a10764",
+      '\u0062\u0065\u006C\u006F\u006E\u0067\u0054\u006F': {
+        "paramName": "\u0061\u0063\u0074\u0069\u006F\u006E",
+        "value": ["\u0075\u006E\u0062\u006C\u006F\u0063\u006B"]
+      }
+    }, {
+      "name": "unblock_media_type",
+      "title": "\ud83c\udfad \u5a92\u4f53\u7c7b\u578b",
+      '\u0074\u0079\u0070\u0065': "enumeration",
+      "description": "\u9009\u62e9\u8981\u53d6\u6d88\u5c4f\u853d\u7684\u5a92\u4f53\u7c7b\u578b\uff08\u4ec5\u5185\u5bb9\u5c4f\u853d\u9700\u8981\uff09",
+      '\u0076\u0061\u006C\u0075\u0065': "\u0074\u0076",
+      "enumOptions": [{
+        '\u0074\u0069\u0074\u006C\u0065': "\u5267\u96c6",
+        '\u0076\u0061\u006C\u0075\u0065': "tv"
+      }, {
+        "title": "\u7535\u5f71",
+        '\u0076\u0061\u006C\u0075\u0065': "\u006D\u006F\u0076\u0069\u0065"
+      }],
+      "belongTo": {
+        "paramName": "\u0061\u0063\u0074\u0069\u006F\u006E",
+        '\u0076\u0061\u006C\u0075\u0065': ["\u0075\u006E\u0062\u006C\u006F\u0063\u006B"],
+        '\u0070\u0061\u0072\u0061\u006D\u004E\u0061\u006D\u0065\u0032': "manage_type",
+        '\u0076\u0061\u006C\u0075\u0065\u0032': ["\u0069\u0074\u0065\u006D\u0073"]
+      }
+    }, {
+      '\u006E\u0061\u006D\u0065': "\u0069\u006D\u0070\u006F\u0072\u0074\u005F\u0064\u0061\u0074\u0061",
+      "title": "\ud83d\udce5 \u5bfc\u5165\u6570\u636e",
+      "type": "\u0069\u006E\u0070\u0075\u0074",
+      "description": "\u7c98\u8d34\u8981\u5bfc\u5165\u7684\u5c4f\u853dID\u5217\u8868\uff0c\u652f\u6301\u591a\u79cd\u683c\u5f0f",
+      '\u0076\u0061\u006C\u0075\u0065': "",
+      "placeholder": "\u652f\u6301\u683c\u5f0f\uff1a550,1399 \u6216 '550','1399' \u6216 \"550\",\"1399\"",
+      "belongTo": {
+        "paramName": "action",
+        '\u0076\u0061\u006C\u0075\u0065': ["\u0069\u006D\u0070\u006F\u0072\u0074"]
+      }
+    }]
+  }, {
+    "title": "\u8c46\u74e3\u81ea\u5b9a\u4e49\u7247\u5355",
+    "description": "\u652f\u6301\u683c\u5f0f:\u684c\u9762/\u79fb\u52a8\u7aef\u8c46\u5217\u3001\u5b98\u65b9\u699c\u5355\u3001App dispatch",
+    '\u0072\u0065\u0071\u0075\u0069\u0072\u0065\u0073\u0057\u0065\u0062\u0056\u0069\u0065\u0077': false,
+    '\u0066\u0075\u006E\u0063\u0074\u0069\u006F\u006E\u004E\u0061\u006D\u0065': "loadEnhancedDoubanList",
+    "cacheDuration": 3600,
+    '\u0070\u0061\u0072\u0061\u006D\u0073': [{
+      '\u006E\u0061\u006D\u0065': "\u0075\u0072\u006C",
+      '\u0074\u0069\u0074\u006C\u0065': "\ud83d\udd17 \u7247\u5355\u5730\u5740",
+      "type": "\u0069\u006E\u0070\u0075\u0074",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u652f\u6301\u683c\u5f0f:\u684c\u9762/\u79fb\u52a8\u7aef\u8c46\u5217\u3001\u5b98\u65b9\u699c\u5355\u3001App dispatch",
+      '\u0070\u006C\u0061\u0063\u0065\u0068\u006F\u006C\u0064\u0065\u0072\u0073': [{
+        "title": "\u8c46\u74e3\u7535\u5f71\u5b9e\u65f6\u70ed\u699c",
+        '\u0076\u0061\u006C\u0075\u0065': "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/movie_real_time_hotest/&dt_dapp=1"
+      }, {
+        "title": "\u8c46\u74e3\u5267\u96c6\u5b9e\u65f6\u70ed\u699c",
+        "value": "\u0068\u0074\u0074\u0070\u0073\u003A\u002F\u002F\u0077\u0077\u0077\u002E\u0064\u006F\u0075\u0062\u0061\u006E\u002E\u0063\u006F\u006D\u002F\u0064\u006F\u0075\u0062\u0061\u006E\u0061\u0070\u0070\u002F\u0064\u0069\u0073\u0070\u0061\u0074\u0063\u0068\u003F\u0075\u0072\u0069\u003D\u002F\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u002F\u0074\u0076\u005F\u0072\u0065\u0061\u006C\u005F\u0074\u0069\u006D\u0065\u005F\u0068\u006F\u0074\u0065\u0073\u0074\u002F\u0026\u0064\u0074\u005F\u0064\u0061\u0070\u0070\u003D\u0031"
+      }, {
+        "title": "\u8c46\u74e3\u4e66\u5f71\u97f3\u5b9e\u65f6\u70ed\u699c",
+        '\u0076\u0061\u006C\u0075\u0065': "\u0068\u0074\u0074\u0070\u0073\u003A\u002F\u002F\u0077\u0077\u0077\u002E\u0064\u006F\u0075\u0062\u0061\u006E\u002E\u0063\u006F\u006D\u002F\u0064\u006F\u0075\u0062\u0061\u006E\u0061\u0070\u0070\u002F\u0064\u0069\u0073\u0070\u0061\u0074\u0063\u0068\u003F\u0075\u0072\u0069\u003D\u002F\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u002F\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0072\u0065\u0061\u006C\u005F\u0074\u0069\u006D\u0065\u005F\u0068\u006F\u0074\u0065\u0073\u0074\u002F\u0026\u0064\u0074\u005F\u0064\u0061\u0070\u0070\u003D\u0031"
+      }, {
+        "title": "\u4e00\u5468\u7535\u5f71\u53e3\u7891\u699c",
+        '\u0076\u0061\u006C\u0075\u0065': "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/movie_weekly_best/&dt_dapp=1"
+      }, {
+        "title": "\u534e\u8bed\u53e3\u7891\u5267\u96c6\u699c",
+        '\u0076\u0061\u006C\u0075\u0065': "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/tv_chinese_best_weekly/&dt_dapp=1"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u5168\u7403\u53e3\u7891\u5267\u96c6\u699c",
+        '\u0076\u0061\u006C\u0075\u0065': "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/tv_global_best_weekly/&dt_dapp=1"
+      }, {
+        "title": "\u56fd\u5185\u70ed\u64ad\u7efc\u827a",
+        "value": "\u0068\u0074\u0074\u0070\u0073\u003A\u002F\u002F\u0077\u0077\u0077\u002E\u0064\u006F\u0075\u0062\u0061\u006E\u002E\u0063\u006F\u006D\u002F\u0064\u006F\u0075\u0062\u0061\u006E\u0061\u0070\u0070\u002F\u0064\u0069\u0073\u0070\u0061\u0074\u0063\u0068\u003F\u0075\u0072\u0069\u003D\u002F\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u002F\u0073\u0068\u006F\u0077\u005F\u0064\u006F\u006D\u0065\u0073\u0074\u0069\u0063\u002F\u0026\u0064\u0074\u005F\u0064\u0061\u0070\u0070\u003D\u0031"
+      }, {
+        "title": "\u56fd\u5916\u70ed\u64ad\u7efc\u827a",
+        '\u0076\u0061\u006C\u0075\u0065': "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/show_foreign/&dt_dapp=1"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u5f53\u5730\u5f71\u9662\u70ed\u6620",
+        "value": "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/movie_showing/&dt_dapp=1"
+      }, {
+        '\u0074\u0069\u0074\u006C\u0065': "\u70ed\u95e8\u52a8\u753b",
+        "value": "\u0068\u0074\u0074\u0070\u0073\u003A\u002F\u002F\u0077\u0077\u0077\u002E\u0064\u006F\u0075\u0062\u0061\u006E\u002E\u0063\u006F\u006D\u002F\u0064\u006F\u0075\u0062\u0061\u006E\u0061\u0070\u0070\u002F\u0064\u0069\u0073\u0070\u0061\u0074\u0063\u0068\u003F\u0075\u0072\u0069\u003D\u002F\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u002F\u0074\u0076\u005F\u0061\u006E\u0069\u006D\u0061\u0074\u0069\u006F\u006E\u002F\u0026\u0064\u0074\u005F\u0064\u0061\u0070\u0070\u003D\u0031"
+      }]
+    }, {
+      "name": "page",
+      "title": "\u9875\u7801",
+      '\u0074\u0079\u0070\u0065': "page"
+    }]
+  }]
 };
-
-// ===============\u5c4f\u853d\u914d\u7f6e===============
-const GENRE_STORAGE_KEY = "forward_blocked_genres";
-const STORAGE_KEY = "forward_blocked_items";
-
+var _0xbd03fb = (302760 ^ 302763) + (322454 ^ 322448);
+const GENRE_STORAGE_KEY = "\u0066\u006F\u0072\u0077\u0061\u0072\u0064\u005F\u0062\u006C\u006F\u0063\u006B\u0065\u0064\u005F\u0067\u0065\u006E\u0072\u0065\u0073";
+_0xbd03fb = 701417 ^ 701420;
+var _0x_0x4ce;
+const STORAGE_KEY = "smeti_dekcolb_drawrof".split("").reverse().join("");
+_0x_0x4ce = '\u0067\u0065\u006A\u0065\u006A\u006A';
 const TMDB_GENRE_MAPPING = {
-    "\u771f\u4eba\u79c0": 10764,
-    "\u8131\u53e3\u79c0": 10767, 
-    "\u7efc\u827a": 10764,
-    "\u7eaa\u5f55\u7247": 99,
-    "\u52a8\u4f5c\u5192\u9669": 10759,
-    "\u52a8\u753b": 16,
-    "\u559c\u5267": 35,
-    "\u72af\u7f6a": 80,
-    "\u5267\u60c5": 18,
-    "\u5bb6\u5ead": 10751,
-    "\u513f\u7ae5": 10762,
-    "\u60ac\u7591": 9648,
-    "\u65b0\u95fb": 10763,
-    "\u79d1\u5e7b\u5947\u5e7b": 10765,
-    "\u80a5\u7682\u5267": 10766,
-    "\u6218\u4e89\u653f\u6cbb": 10768,
-    "\u897f\u90e8": 37,
-    "\u52a8\u4f5c": 28,
-    "\u5192\u9669": 12,
-    "\u5386\u53f2": 36,
-    "\u5947\u5e7b": 14,
-    "\u6050\u6016": 27,
-    "\u97f3\u4e50": 10402,
-    "\u7231\u60c5": 10749,
-    "\u79d1\u5e7b": 878,
-    "\u7535\u89c6\u7535\u5f71": 10770,
-    "\u60ca\u609a": 53,
-    "\u6218\u4e89": 10752
+  "\u771f\u4eba\u79c0": 10764,
+  "\u8131\u53e3\u79c0": 10767,
+  "\u7efc\u827a": 10764,
+  "\u7eaa\u5f55\u7247": 99,
+  "\u52a8\u4f5c\u5192\u9669": 10759,
+  "\u52a8\u753b": 16,
+  "\u559c\u5267": 35,
+  "\u72af\u7f6a": 80,
+  "\u5267\u60c5": 18,
+  "\u5bb6\u5ead": 10751,
+  "\u513f\u7ae5": 10762,
+  "\u60ac\u7591": 9648,
+  "\u65b0\u95fb": 10763,
+  "\u79d1\u5e7b\u5947\u5e7b": 10765,
+  "\u80a5\u7682\u5267": 10766,
+  "\u6218\u4e89\u653f\u6cbb": 10768,
+  "\u897f\u90e8": 37,
+  "\u52a8\u4f5c": 28,
+  "\u5192\u9669": 12,
+  "\u5386\u53f2": 36,
+  "\u5947\u5e7b": 14,
+  "\u6050\u6016": 27,
+  "\u97f3\u4e50": 10402,
+  "\u7231\u60c5": 10749,
+  "\u79d1\u5e7b": 878,
+  "\u7535\u89c6\u7535\u5f71": 10770,
+  "\u60ca\u609a": 53,
+  "\u6218\u4e89": 10752
 };
-
-const REVERSE_GENRE_MAPPING = Object.fromEntries(
-    Object.entries(TMDB_GENRE_MAPPING).map(([name, id]) => [id, name])
-);
-
+var _0x8gb9ee = (944123 ^ 944114) + (669281 ^ 669285);
+const REVERSE_GENRE_MAPPING = Object['\u0066\u0072\u006F\u006D\u0045\u006E\u0074\u0072\u0069\u0065\u0073'](Object['\u0065\u006E\u0074\u0072\u0069\u0065\u0073'](TMDB_GENRE_MAPPING)['\u006D\u0061\u0070'](([name, id]) => [id, name]));
+_0x8gb9ee = '\u0069\u006B\u0066\u0063\u0070\u006F';
+var _0xb4ee6b = (589858 ^ 589866) + (210682 ^ 210685);
 let blockedIdCache = null;
+_0xb4ee6b = 471396 ^ 471398;
 let blockedGenresCache = null;
+var _0xd83b;
 let blockedItemsCache = null;
+_0xd83b = (469361 ^ 469361) + (322528 ^ 322534);
 let tmdbGenresCache = null;
-
 function clearAllCaches() {
-    blockedIdCache = null;
-    blockedGenresCache = null;
-    blockedItemsCache = null;
-    tmdbGenresCache = null;
+  blockedIdCache = null;
+  blockedGenresCache = null;
+  blockedItemsCache = null;
+  tmdbGenresCache = null;
 }
-
 function clearBlockedIdCache() {
-    blockedIdCache = null;
+  blockedIdCache = null;
 }
-
 function clearBlockedGenresCache() {
-    blockedGenresCache = null;
+  blockedGenresCache = null;
 }
-
 function clearBlockedItemsCache() {
-    blockedItemsCache = null;
+  blockedItemsCache = null;
 }
-
-
 function getBlockedIdSet() {
-    try {
-        if (blockedIdCache) {
-            return blockedIdCache;
-        }
-        
-        const blockedItems = getBlockedItems();
-        const idSet = new Set();
-        
-        for (let i = 0; i < blockedItems.length; i++) {
-            const item = blockedItems[i];
-            const idStr = String(item.id);
-            const idNum = parseInt(item.id);
-            
-            idSet.add(idStr + "_" + item.media_type);
-            idSet.add(idNum + "_" + item.media_type);
-            
-            idSet.add(idStr);
-            idSet.add(idNum);
-        }
-        
-        blockedIdCache = idSet;
-        return idSet;
-    } catch (error) {
-        return new Set();
-    }
-}
-
-function getBlockedGenres() {
-    try {
-        if (blockedGenresCache) {
-            return blockedGenresCache;
-        }
-        
-        const stored = Widget.storage.get(GENRE_STORAGE_KEY);
-        blockedGenresCache = stored ? JSON.parse(stored) : [];
-        return blockedGenresCache;
-    } catch (error) {
-        return [];
-    }
-}
-
-function saveBlockedGenres(genres) {
-    try {
-        Widget.storage.set(GENRE_STORAGE_KEY, JSON.stringify(genres));
-        blockedGenresCache = genres;
-        clearBlockedIdCache();
-        return true;
-    } catch (error) {
-        return false;
-    }
-}
-
-function getBlockedItems() {
-    try {
-        if (blockedItemsCache) {
-            return blockedItemsCache;
-        }
-        
-        const stored = Widget.storage.get(STORAGE_KEY);
-        blockedItemsCache = stored ? JSON.parse(stored) : [];
-        return blockedItemsCache;
-    } catch (error) {
-        return [];
-    }
-}
-
-function saveBlockedItems(items) {
-    try {
-        Widget.storage.set(STORAGE_KEY, JSON.stringify(items));
-        blockedItemsCache = items;
-        clearBlockedIdCache();
-        return true;
-    } catch (error) {
-        return false;
-    }
-}
-
-function isItemBlocked(item) {
-    if (!item || !item.id) return false;
-    
-    const blockedIdSet = getBlockedIdSet();
-    const itemId = String(item.id);
-    const itemIdNum = parseInt(item.id);
-    
-    if (blockedIdSet.has(itemId) || blockedIdSet.has(itemIdNum)) {
-        return true;
-    }
-    
-    if (item.mediaType || item.media_type) {
-        const mediaType = item.mediaType || item.media_type;
-        if (blockedIdSet.has(itemId + "_" + mediaType) || blockedIdSet.has(itemIdNum + "_" + mediaType)) {
-            return true;
-        }
-    }
-    
-    if (item.originalDoubanId) {
-        const doubanId = String(item.originalDoubanId);
-        const doubanIdNum = parseInt(item.originalDoubanId);
-        if (blockedIdSet.has(doubanId) || blockedIdSet.has(doubanIdNum)) {
-            return true;
-        }
-    }
-    
-    return false;
-}
-
-function isItemBlockedByGenre(item) {
-    if (!item || !item.genre_ids) return false;
-    
-    const blockedGenres = getBlockedGenres();
-    const blockedGenreIds = new Set(blockedGenres.map(g => g.id));
-    
-    return item.genre_ids.some(genreId => blockedGenreIds.has(genreId));
-}
-
-function isItemBlockedEnhanced(item) {
-    if (isItemBlocked(item)) {
-        return true;
-    }
-    
-    if (isItemBlockedByGenre(item)) {
-        return true;
-    }
-    
-    return false;
-}
-
-function filterBlockedItemsEnhanced(items) {
-    if (!Array.isArray(items)) return items;
-    
-    const blockedIdSet = getBlockedIdSet();
-    const blockedGenres = getBlockedGenres();
-    const blockedGenreIds = new Set(blockedGenres.map(g => g.id));
-    
-    const filtered = [];
-    for (let i = 0; i < items.length; i++) {
-        const item = items[i];
-        if (!item || !item.id) {
-            filtered.push(item);
-            continue;
-        }
-        
-        const itemId = String(item.id);
-        const itemIdNum = parseInt(item.id);
-        if (blockedIdSet.has(itemId) || blockedIdSet.has(itemIdNum)) {
-            continue;
-        }
-        
-        if (item.genre_ids && item.genre_ids.some(genreId => blockedGenreIds.has(genreId))) {
-            continue;
-        }
-        
-        if (item.mediaType || item.media_type) {
-            const mediaType = item.mediaType || item.media_type;
-            if (blockedIdSet.has(itemId + "_" + mediaType) || blockedIdSet.has(itemIdNum + "_" + mediaType)) {
-                continue;
-            }
-        }
-        
-        if (item.originalDoubanId) {
-            const doubanId = String(item.originalDoubanId);
-            const doubanIdNum = parseInt(item.originalDoubanId);
-            if (blockedIdSet.has(doubanId) || blockedIdSet.has(doubanIdNum)) {
-                continue;
-            }
-        }
-        
-        filtered.push(item);
-    }
-    
-    return filtered;
-}
-
-function addBlockedGenre(genreName, genreId, description = "") {
-    const blockedGenres = getBlockedGenres();
-    
-    const exists = blockedGenres.some(blocked => 
-        blocked.id === genreId || blocked.name === genreName
-    );
-    
-    if (!exists) {
-        blockedGenres.push({
-            id: genreId,
-            name: genreName,
-            description: description || `\u5c4f\u853d\u6240\u6709"${genreName}"\u7c7b\u578b\u7684\u5185\u5bb9`,
-            blocked_date: new Date().toISOString()
-        });
-        
-        return saveBlockedGenres(blockedGenres);
-    }
-    
-    return false;
-}
-
-function removeBlockedGenre(genreId) {
-    const blockedGenres = getBlockedGenres();
-    const filtered = blockedGenres.filter(genre => genre.id !== genreId);
-    return saveBlockedGenres(filtered);
-}
-
-
-function addBlockedItem(item) {
-    const blockedItems = getBlockedItems();
-    
-    const exists = blockedItems.some(blocked => 
-        blocked.id === String(item.id) && blocked.media_type === item.media_type
-    );
-    
-    if (!exists) {
-        blockedItems.push({
-            id: String(item.id),
-            media_type: item.media_type,
-            title: item.title,
-            poster_path: item.poster_path,
-            overview: item.overview,
-            blocked_date: new Date().toISOString(),
-            vote_average: item.vote_average || 0
-        });
-        
-        return saveBlockedItems(blockedItems);
-    }
-    
-    return false;
-}
-
-function removeBlockedItem(id, mediaType) {
-    const blockedItems = getBlockedItems();
-    const filtered = blockedItems.filter(item => 
-        !(item.id === String(id) && item.media_type === mediaType)
-    );
-    
-    return saveBlockedItems(filtered);
-}
-
-function clearBlockedItems() {
-    try {
-        Widget.storage.clear();
-        clearAllCaches();
-        return true;
-    } catch (error) {
-        return false;
-    }
-}
-
-// ===============\u8f85\u52a9\u51fd\u6570===============
-async function fetchTmdbGenres() {
-    if (tmdbGenresCache) return tmdbGenresCache;
-    
-    const [movieGenres, tvGenres] = await Promise.all([
-        Widget.tmdb.get('/genre/movie/list', { params: { language: 'zh-CN' } }),
-        Widget.tmdb.get('/genre/tv/list', { params: { language: 'zh-CN' } })
-    ]);
-    
-    tmdbGenresCache = {
-        movie: movieGenres.genres.reduce((acc, g) => ({ ...acc, [g.id]: g.name }), {}),
-        tv: tvGenres.genres.reduce((acc, g) => ({ ...acc, [g.id]: g.name }), {})
-    };
-    return tmdbGenresCache;
-}
-
-function getTmdbGenreTitles(genreIds, mediaType) {
-    const genres = tmdbGenresCache?.[mediaType] || {};
-    const topThreeIds = genreIds.slice(0, 3); 
-    return topThreeIds
-        .map(id => genres[id]?.trim() || `\u672a\u77e5\u7c7b\u578b(${id})`)
-        .filter(Boolean)
-        .join('\u2022');
-}
-
-function getDoubanGenreTitles(genres, itemType) {
-    if (!genres) {
-        return "";
-    }
-    
-    let genreArray = [];
-    
-    if (typeof genres === 'string') {
-        const cleanGenres = genres.trim();
-        if (cleanGenres) {
-            if (cleanGenres.includes(',')) {
-                genreArray = cleanGenres.split(',');
-            } else if (cleanGenres.includes('\u3001')) {
-                genreArray = cleanGenres.split('\u3001');
-            } else if (cleanGenres.includes('/')) {
-                genreArray = cleanGenres.split('/');
-            } else if (cleanGenres.includes(' ')) {
-                genreArray = cleanGenres.split(' ');
-            } else {
-                genreArray = [cleanGenres];
-            }
-        }
-    } 
-    else if (Array.isArray(genres)) {
-        genreArray = genres.filter(g => g && g.trim());
-    } 
-    else {
-        const genreStr = String(genres).trim();
-        if (genreStr && genreStr !== 'undefined' && genreStr !== 'null') {
-            genreArray = [genreStr];
-        }
-    }
-    
-    genreArray = genreArray
-        .map(g => g.trim())
-        .filter(g => g && g !== '')
-        .filter((genre, index, arr) => arr.indexOf(genre) === index);
-    
-    if (genreArray.length === 0) {
-        return "";
-    }
-    
-    const topThreeGenres = genreArray.slice(0, 3);
-    return topThreeGenres.join(' ');
-}
-
-function extractGenresFromText(text) {
-    if (!text) return [];
-    
-    const genreKeywords = [
-        '\u52a8\u4f5c', '\u79d1\u5e7b', '\u707e\u96be', '\u7231\u60c5', '\u559c\u5267', '\u60ac\u7591', '\u72af\u7f6a', '\u5192\u9669', '\u5947\u5e7b', '\u6218\u4e89',
-        '\u5386\u53f2', '\u6b66\u4fa0', '\u60ca\u609a', '\u6050\u6016', '\u60c5\u8272', '\u52a8\u753b', '\u5267\u60c5', '\u897f\u90e8', '\u5bb6\u5ead', '\u97f3\u4e50',
-        '\u8fd0\u52a8', '\u53e4\u88c5', '\u6b4c\u821e', '\u4f20\u8bb0', '\u77ed\u7247', '\u7eaa\u5f55\u7247', '\u6587\u827a', '\u9752\u6625', '\u6821\u56ed', '\u804c\u573a',
-        '\u90fd\u5e02', '\u519c\u6751', '\u519b\u4e8b', '\u8b66\u50a3', '\u8c0d\u6218', '\u5bab\u5ef7', '\u795e\u8bdd', '\u9b54\u5e7b'
-    ];
-    
-    const foundGenres = [];
-    
-    const typePattern = /(?:\u7c7b\u578b|genre)[\uff1a:\s]*([^\n\r]+)/i;
-    const typeMatch = text.match(typePattern);
-    if (typeMatch) {
-        const typeText = typeMatch[1];
-        const types = typeText.split(/[\/\u3001,,\s]+/).filter(t => t.trim());
-        foundGenres.push(...types);
-    }
-    
-    for (const keyword of genreKeywords) {
-        if (text.includes(keyword) && !foundGenres.includes(keyword)) {
-            foundGenres.push(keyword);
-        }
-    }
-    
-    return foundGenres.slice(0, 3);
-}
-
-function formatItemDescription(item) {
-    let description = item.description || '';
-    const hasRating = /\u8bc4\u5206|rating/i.test(description);
-    const hasYear = /\u5e74\u4efd|year/i.test(description);
-    const hasType = /\u7c7b\u578b|type/i.test(description);
-    
-    if (item.itemType && !hasType) {
-        description = `\u7c7b\u578b: ${item.itemType} | ${description}`;
-    }
-    
-    if (item.rating && !hasRating) {
-        description = `\u8bc4\u5206: ${item.rating} | ${description}`;
-    }
-    
-    if (item.releaseDate && !hasYear) {
-        const year = String(item.releaseDate).substring(0,4);
-        if (/^\d{4}$/.test(year)) {
-            description = `\u5e74\u4efd: ${year} | ${description}`;
-        }
-    }
-    
-    return description
-        .replace(/^\|\s*/, '')
-        .replace(/\s*\|$/, '')
-        .trim();
-}
-
-function calculatePagination(params) {
-    let page = parseInt(params.page) || 1;
-    const limit = parseInt(params.limit) || 20;
-    
-    if (typeof params.start !== 'undefined') {
-        page = Math.floor(parseInt(params.start) / limit) + 1;
-    }
-    
-    const start = (page - 1) * limit;
-    return { page, limit, start };
-}
-
-function getBeijingDate() {
-    const now = new Date();
-    const beijingTime = now.getTime() + (8 * 60 * 60 * 1000);
-    const beijingDate = new Date(beijingTime);
-    return `${beijingDate.getUTCFullYear()}-${String(beijingDate.getUTCMonth() + 1).padStart(2, '0')}-${String(beijingDate.getUTCDate()).padStart(2, '0')}`;
-}
-
-function parseDoubanAppDispatchUrl(url) {
-    const cleanedUrl = url.replace(/\s+/g, '').trim();
-    const questionMarkIndex = cleanedUrl.indexOf('?');
-    const queryString = cleanedUrl.substring(questionMarkIndex + 1);
-    
-    const params = {};
-    const paramPairs = queryString.split('&');
-    for (const pair of paramPairs) {
-        const [key, value] = pair.split('=');
-        params[decodeURIComponent(key)] = decodeURIComponent(value);
-    }
-    
-    const uriParam = params['uri'];
-    const cleanUri = (uriParam.startsWith('/') ? uriParam.substring(1) : uriParam).trim();
-    
-    if (cleanUri.includes('subject_collection/')) {
-        return `https://m.douban.com/${cleanUri}`;
-    }
-    else if (cleanUri.includes('doulist/')) {
-        return `https://www.douban.com/${cleanUri}`;
-    }
-    
-    return null;
-}
-
-// =============TMDB\u529f\u80fd\u51fd\u6570============
-async function fetchTmdbData(api, params) {
-    const [data, genres] = await Promise.all([
-        Widget.tmdb.get(api, { params: params }),
-        fetchTmdbGenres()
-    ]);
-
-    const filteredResults = data.results
-        .filter((item) => {
-            return item.poster_path &&
-                   item.id &&
-                   (item.title || item.name) &&
-                   (item.title || item.name).trim().length > 0;
-        })
-        .map((item) => {
-            const mediaType = item.media_type || (item.title ? 'movie' : 'tv');
-            const genreIds = item.genre_ids || [];
-            const genreTitle = getTmdbGenreTitles(genreIds, mediaType);
-
-            return {
-                id: item.id,
-                type: "tmdb",
-                title: item.title || item.name,
-                description: item.overview,
-                releaseDate: item.release_date || item.first_air_date,
-                backdropPath: item.backdrop_path,
-                posterPath: item.poster_path,
-                rating: item.vote_average,
-                mediaType: mediaType,
-                genreTitle: genreTitle,
-                genre_ids: genreIds
-            };
-        });
-
-    return filterBlockedItemsEnhanced(filteredResults);
-}
-
-async function loadTmdbTrendingData() {
-    try {
-        const response = await Widget.http.get("https://widgets-xd.vercel.app/data/TMDB_Trending.json", {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15'
-            }
-        });
-        return response.data;
-    } catch (error) {
-        try {
-            const fallbackResponse = await Widget.http.get("https://widgets-xd.vercel.app/data/TMDB_Trending.json");
-            return fallbackResponse.data;
-        } catch (fallbackError) {
-            throw fallbackError;
-        }
-    }
-}
-
-async function loadTodayHotTV(params) {
-  const page = parseInt(params.page) || 1;
-  const region = params.sort_by || '';
-  
-  if (region) {
-    const [data, genres] = await Promise.all([
-      Widget.tmdb.get(`/discover/tv`, { 
-        params: { 
-          language: params.language || 'zh-CN',
-          page: page,
-          with_origin_country: region,
-          sort_by: (region === '' || region === 'CN' || region === 'US') ? 'popularity.desc' : 'vote_count.desc'
-        } 
-      }),
-      fetchTmdbGenres()
-    ]);
-    
-    const items = data.results
-      .filter(item => item.poster_path)
-      .map(item => ({
-        id: String(item.id),
-        type: "tmdb",
-        title: item.name,
-        description: item.overview,
-        releaseDate: item.first_air_date,
-        backdropPath: item.backdrop_path,
-        posterPath: item.poster_path,
-        rating: item.vote_average,
-        mediaType: "tv",
-        genreTitle: getTmdbGenreTitles(item.genre_ids || [], "tv"),
-        genre_ids: item.genre_ids || []
-      }));
-    
-    return filterBlockedItemsEnhanced(items);
-  }
-  
-  if (page === 1) {
-    try {
-      const data = await loadTmdbTrendingData();
-      const allTvItems = data.today_tv || [];
-      
-      const tvItems = [];
-      for (let i = 0; i < allTvItems.length && tvItems.length < 20; i++) {
-        const item = allTvItems[i];
-        if (item.type === 'tv' && item.poster_url) {
-          tvItems.push({
-            id: item.id.toString(),
-            type: "tmdb",
-            title: item.title,
-            genreTitle: item.genreTitle,
-            rating: item.rating,
-            description: item.overview,
-            releaseDate: item.release_date,
-            posterPath: item.poster_url,
-            backdropPath: item.title_backdrop,
-            mediaType: 'tv',
-            genre_ids: item.genre_ids || []
-          });
-        }
-      }
-      
-      return filterBlockedItemsEnhanced(tvItems);
-    } catch (error) {
-    }
-  }
-  
-  const [data, genres] = await Promise.all([
-    Widget.tmdb.get(`/trending/tv/day`, { 
-      params: { 
-        language: params.language || 'zh-CN',
-        page: page
-      } 
-    }),
-    fetchTmdbGenres()
-  ]);
-  
-  const items = data.results
-    .filter(item => (!item.media_type || item.media_type === 'tv') && item.poster_path)
-    .map(item => ({
-      id: String(item.id),
-      type: "tmdb",
-      title: item.name,
-      description: item.overview,
-      releaseDate: item.first_air_date,
-      backdropPath: item.backdrop_path,
-      posterPath: item.poster_path,
-      rating: item.vote_average,
-      mediaType: "tv",
-      genreTitle: getTmdbGenreTitles(item.genre_ids || [], "tv"),
-      genre_ids: item.genre_ids || []
-    }));
-  
-  return filterBlockedItemsEnhanced(items);
-}
-
-async function loadTodayHotMovies(params) {
-  const page = parseInt(params.page) || 1;
-  const region = params.sort_by || '';
-  
-  if (region) {
-    const [data, genres] = await Promise.all([
-      Widget.tmdb.get(`/discover/movie`, { 
-        params: { 
-          language: params.language || 'zh-CN',
-          page: page,
-          with_origin_country: region,
-          sort_by: (region === '' || region === 'CN' || region === 'US') ? 'popularity.desc' : 'vote_count.desc'
-        } 
-      }),
-      fetchTmdbGenres()
-    ]);
-    
-    const items = data.results
-      .filter(item => item.poster_path)
-      .map(item => ({
-        id: String(item.id),
-        type: "tmdb",
-        title: item.title,
-        description: item.overview,
-        releaseDate: item.release_date,
-        backdropPath: item.backdrop_path,
-        posterPath: item.poster_path,
-        rating: item.vote_average,
-        mediaType: "movie",
-        genreTitle: getTmdbGenreTitles(item.genre_ids || [], "movie"),
-        genre_ids: item.genre_ids || []
-      }));
-    
-    return filterBlockedItemsEnhanced(items);
-  }
-  
-  if (page === 1) {
-    try {
-      const data = await loadTmdbTrendingData();
-      const allMovieItems = data.today_movies || [];
-      
-      const movieItems = [];
-      for (let i = 0; i < allMovieItems.length && movieItems.length < 20; i++) {
-        const item = allMovieItems[i];
-        if (item.type === 'movie' && item.poster_url) {
-          movieItems.push({
-            id: item.id.toString(),
-            type: "tmdb",
-            title: item.title,
-            genreTitle: item.genreTitle,
-            rating: item.rating,
-            description: item.overview,
-            releaseDate: item.release_date,
-            posterPath: item.poster_url,
-            backdropPath: item.title_backdrop,
-            mediaType: 'movie',
-            genre_ids: item.genre_ids || []
-          });
-        }
-      }
-      
-      return filterBlockedItemsEnhanced(movieItems);
-    } catch (error) {
-    }
-  }
-  
-  const [data, genres] = await Promise.all([
-    Widget.tmdb.get(`/trending/movie/day`, { 
-      params: { 
-        language: params.language || 'zh-CN',
-        page: page
-      } 
-    }),
-    fetchTmdbGenres()
-  ]);
-  
-  const items = data.results
-    .filter(item => (!item.media_type || item.media_type === 'movie') && item.poster_path)
-    .map(item => ({
-      id: String(item.id),
-      type: "tmdb",
-      title: item.title,
-      description: item.overview,
-      releaseDate: item.release_date,
-      backdropPath: item.backdrop_path,
-      posterPath: item.poster_path,
-      rating: item.vote_average,
-      mediaType: "movie",
-      genreTitle: getTmdbGenreTitles(item.genre_ids || [], "movie"),
-      genre_ids: item.genre_ids || []
-    }));
-  
-  return filterBlockedItemsEnhanced(items);
-}
-
-async function tmdbTopRated(params) {
-    const type = params.type || 'movie';
-    const api = type === 'movie' ? `movie/top_rated` : `tv/top_rated`;
-    return await fetchTmdbData(api, params);
-}
-
-async function tmdbDiscoverByNetwork(params = {}) {
-    const api = "discover/tv";
-    const beijingDate = getBeijingDate();
-    const discoverParams = {
-        language: params.language || 'zh-CN',
-        page: params.page || 1,
-        with_networks: params.with_networks,
-        sort_by: params.sort_by || "first_air_date.desc",
-    };
-    
-    if (params.air_status === 'released') {
-        discoverParams['first_air_date.lte'] = beijingDate;
-    } else if (params.air_status === 'upcoming') {
-        discoverParams['first_air_date.gte'] = beijingDate;
-    }
-    
-    if (params.with_genres) {
-        discoverParams.with_genres = params.with_genres;
-    }
-    
-    return await fetchTmdbData(api, discoverParams);
-}
-
-async function tmdbCompanies(params = {}) {
-    const api = "discover/movie";
-    const beijingDate = getBeijingDate();
-    const withCompanies = String(params.with_companies || '').trim();
-
-    const cleanParams = {
-        page: params.page || 1,
-        language: params.language || "zh-CN",
-        sort_by: params.sort_by || "primary_release_date.desc",
-        include_adult: false,
-        include_video: false
-    };
-
-    if (withCompanies) {
-        cleanParams.with_companies = withCompanies;
-    }
-
-    if (params.air_status === 'released') {
-        cleanParams['primary_release_date.lte'] = beijingDate;
-    } else if (params.air_status === 'upcoming') {
-        cleanParams['primary_release_date.gte'] = beijingDate;
-    }
-
-    if (params.with_genres) {
-        cleanParams.with_genres = String(params.with_genres).trim();
-    }
-
-    return await fetchTmdbData(api, cleanParams);
-}
-
-// ===============\u641c\u7d22\u5c4f\u853d==============
-async function searchTMDB(query, language) {
-    if (!query || query.trim().length === 0) {
-        throw new Error("\u641c\u7d22\u5173\u952e\u8bcd\u4e0d\u80fd\u4e3a\u7a7a");
-    }
-
-    try {
-        const response = await Widget.tmdb.get("/search/multi", {
-            params: {
-                query: query.trim(),
-                language: language || "zh-CN",
-                page: 1
-            }
-        });
-
-        if (!response) {
-            throw new Error("TMDB API\u65e0\u54cd\u5e94");
-        }
-
-        let results = [];
-        if (response.results) {
-            results = response.results;
-        } else if (response.data && response.data.results) {
-            results = response.data.results;
-        } else if (Array.isArray(response)) {
-            results = response;
-        } else {
-            throw new Error("\u65e0\u6cd5\u89e3\u6790TMDB\u54cd\u5e94\u7ed3\u6784");
-        }
-
-        const filteredResults = [];
-        for (let i = 0; i < results.length && filteredResults.length < 20; i++) {
-            const item = results[i];
-            if ((item.media_type === "movie" || item.media_type === "tv") &&
-                item.id &&
-                (item.title || item.name) &&
-                item.poster_path) {
-                
-                const title = item.title || item.name;
-                const releaseDate = item.release_date || item.first_air_date;
-                const year = releaseDate ? new Date(releaseDate).getFullYear() : "";
-                
-                filteredResults.push({
-                    id: String(item.id),
-                    media_type: item.media_type,
-                    title: title,
-                    poster_path: item.poster_path,
-                    overview: item.overview || "",
-                    vote_average: item.vote_average || 0,
-                    release_date: releaseDate,
-                    year: year
-                });
-            }
-        }
-        
-        return filteredResults;
-        
-    } catch (error) {
-        throw new Error("\u641c\u7d22\u5931\u8d25: " + error.message);
-    }
-}
-
-async function searchAndBlockByGenre(params) {
-    const action = params.action || "search_only";
-    const genreName = params.genre_name ? params.genre_name.trim() : '';
-    
-    if (!genreName) {
-        return [{
-            id: "no_genre_name",
-            type: "info",
-            title: "\u26a0 \u8bf7\u8f93\u5165\u8981\u5c4f\u853d\u7684\u7c7b\u578b\u540d\u79f0",
-            description: "\u4f8b\u5982\uff1a\u771f\u4eba\u79c0\u3001\u7efc\u827a\u3001\u7eaa\u5f55\u7247\u3001\u52a8\u4f5c\u3001\u7231\u60c5\u7b49",
-            posterPath: "",
-            backdropPath: "",
-            rating: 0,
-            mediaType: "info"
-        }];
-    }
-    
-    const matchedGenres = [];
-    const lowerGenreName = genreName.toLowerCase();
-    
-    for (const [name, id] of Object.entries(TMDB_GENRE_MAPPING)) {
-        if (name.includes(genreName) || genreName.includes(name) || 
-            name.toLowerCase().includes(lowerGenreName)) {
-            matchedGenres.push({ name, id });
-        }
-    }
-    
-    if (matchedGenres.length === 0) {
-        const suggestions = Object.keys(TMDB_GENRE_MAPPING).slice(0, 10);
-        return [{
-            id: "no_genre_match",
-            type: "info",
-            title: "\u2753 \u672a\u627e\u5230\u5339\u914d\u7684\u7c7b\u578b",
-            description: `\u672a\u627e\u5230\u4e0e"${genreName}"\u5339\u914d\u7684\u7c7b\u578b\u3002\n\n\u652f\u6301\u7684\u7c7b\u578b\u5305\u62ec\uff1a\n${suggestions.join('\u3001')}`,
-            posterPath: "",
-            backdropPath: "",
-            rating: 0,
-            mediaType: "info"
-        }];
-    }
-    
-    const resultItems = [];
-    
-    if (action === "search_only") {
-        resultItems.push({
-            id: "genre_search_summary",
-            type: "info",
-            title: "\u1f50d \u627e\u5230\u5339\u914d\u7684\u7c7b\u578b",
-            description: `\u641c\u7d22"${genreName}"\u627e\u5230 ${matchedGenres.length} \u4e2a\u5339\u914d\u7c7b\u578b\uff1a\n\n${matchedGenres.map(g => `\u2022 ${g.name} (ID: ${g.id})`).join('\n')}\n\n\u9009\u62e9"\u641c\u7d22\u5e76\u5c4f\u853d"\u6a21\u5f0f\u53ef\u5c06\u8fd9\u4e9b\u7c7b\u578b\u52a0\u5165\u5c4f\u853d\u5217\u8868\u3002`,
-            posterPath: "",
-            backdropPath: "",
-            rating: 0,
-            mediaType: "info"
-        });
-        
-        for (const genre of matchedGenres) {
-            const blockedGenres = getBlockedGenres();
-            const isBlocked = blockedGenres.some(blocked => blocked.id === genre.id);
-            const status = isBlocked ? "\u1f6ab \u5df2\u5c4f\u853d" : "\u2705 \u53ef\u5c4f\u853d";
-            
-            resultItems.push({
-                id: `genre_detail_${genre.id}`,
-                type: "info", 
-                title: `${status} ${genre.name}`,
-                description: `TMDB\u7c7b\u578bID: ${genre.id}\n${isBlocked ? '\u6b64\u7c7b\u578b\u5df2\u5728\u5c4f\u853d\u5217\u8868\u4e2d' : '\u53ef\u4ee5\u5c4f\u853d\u6b64\u7c7b\u578b\u7684\u6240\u6709\u5185\u5bb9'}`,
-                posterPath: "",
-                backdropPath: "",
-                rating: 0,
-                mediaType: "info"
-            });
-        }
-        
-    } else if (action === "search_and_block") {
-        let blockedCount = 0;
-        let alreadyBlockedCount = 0;
-        
-        for (const genre of matchedGenres) {
-            const success = addBlockedGenre(genre.name, genre.id);
-            if (success) {
-                blockedCount++;
-            } else {
-                alreadyBlockedCount++;
-            }
-            
-            const status = success ? "\u2705 \u5df2\u5c4f\u853d" : "\u1f6ab \u5df2\u5b58\u5728";
-            resultItems.push({
-                id: `blocked_genre_${genre.id}`,
-                type: "info",
-                title: `${status} ${genre.name}`,
-                description: `TMDB\u7c7b\u578bID: ${genre.id}\n${success ? '\u5df2\u6dfb\u52a0\u5230\u7c7b\u578b\u5c4f\u853d\u5217\u8868' : '\u6b64\u7c7b\u578b\u5df2\u5728\u5c4f\u853d\u5217\u8868\u4e2d'}`,
-                posterPath: "",
-                backdropPath: "",
-                rating: 0,
-                mediaType: "info"
-            });
-        }
-        
-        resultItems.unshift({
-            id: "genre_block_summary",
-            type: "info",
-            title: "\u1f3af \u7c7b\u578b\u5c4f\u853d\u64cd\u4f5c\u5b8c\u6210",
-            description: `\u641c\u7d22"${genreName}"\u627e\u5230 ${matchedGenres.length} \u4e2a\u7c7b\u578b\n\u65b0\u589e\u5c4f\u853d: ${blockedCount} \u4e2a\n\u5df2\u5b58\u5728: ${alreadyBlockedCount} \u4e2a\n\n\u5305\u542b\u8fd9\u4e9b\u7c7b\u578b\u7684\u6240\u6709\u5185\u5bb9\u5c06\u4e0d\u518d\u5728\u699c\u5355\u4e2d\u663e\u793a\u3002`,
-            posterPath: "",
-            backdropPath: "",
-            rating: 0,
-            mediaType: "info"
-        });
-    }
-    
-    return resultItems;
-}
-
-const originalFilterBlockedItems = filterBlockedItems;
-
-function filterBlockedItems(items) {
-    return filterBlockedItemsEnhanced(items);
-}
-
-function addToBlockList(tmdbId, mediaType = "movie", title = "", additionalInfo = {}) {
   try {
-    const stored = Widget.storage.get(STORAGE_KEY);
-    const blockedItems = stored ? JSON.parse(stored) : [];
-    
-    const itemId = String(tmdbId);
-    
-    let exists = false;
-    for (let i = 0; i < blockedItems.length; i++) {
-      if (blockedItems[i].id === itemId && blockedItems[i].media_type === mediaType) {
-        exists = true;
+    if (blockedIdCache) {
+      return blockedIdCache;
+    }
+    const _0x4e2fb = getBlockedItems();
+    var _0xe62e = (576206 ^ 576203) + (819622 ^ 819618);
+    const _0x34f = new Set();
+    _0xe62e = "enkcbi".split("").reverse().join("");
+    for (let i = 103652 ^ 103652; i < _0x4e2fb['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+      var _0x754c = (185652 ^ 185661) + (496868 ^ 496868);
+      const _0xb3bb0b = _0x4e2fb[i];
+      _0x754c = (980450 ^ 980451) + (837911 ^ 837907);
+      const _0xc4b5e = String(_0xb3bb0b['\u0069\u0064']);
+      var _0xba86d = (567388 ^ 567386) + (315320 ^ 315326);
+      const _0xbg5e = parseInt(_0xb3bb0b['\u0069\u0064']);
+      _0xba86d = 104424 ^ 104429;
+      _0x34f['\u0061\u0064\u0064'](_0xc4b5e + "\u005F" + _0xb3bb0b['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065']);
+      _0x34f['\u0061\u0064\u0064'](_0xbg5e + "\u005F" + _0xb3bb0b['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065']);
+      _0x34f['\u0061\u0064\u0064'](_0xc4b5e);
+      _0x34f['\u0061\u0064\u0064'](_0xbg5e);
+    }
+    blockedIdCache = _0x34f;
+    return _0x34f;
+  } catch (error) {
+    return new Set();
+  }
+}
+function getBlockedGenres() {
+  try {
+    if (blockedGenresCache) {
+      return blockedGenresCache;
+    }
+    var _0xfd314f = (919526 ^ 919520) + (511743 ^ 511735);
+    const _0xcd_0x298 = Widget['\u0073\u0074\u006F\u0072\u0061\u0067\u0065']['\u0067\u0065\u0074'](GENRE_STORAGE_KEY);
+    _0xfd314f = 615642 ^ 615647;
+    blockedGenresCache = _0xcd_0x298 ? JSON['\u0070\u0061\u0072\u0073\u0065'](_0xcd_0x298) : [];
+    return blockedGenresCache;
+  } catch (error) {
+    return [];
+  }
+}
+function saveBlockedGenres(genres) {
+  try {
+    Widget['\u0073\u0074\u006F\u0072\u0061\u0067\u0065']['\u0073\u0065\u0074'](GENRE_STORAGE_KEY, JSON['\u0073\u0074\u0072\u0069\u006E\u0067\u0069\u0066\u0079'](genres));
+    blockedGenresCache = genres;
+    clearBlockedIdCache();
+    return !![];
+  } catch (error) {
+    return false;
+  }
+}
+function getBlockedItems() {
+  try {
+    if (blockedItemsCache) {
+      return blockedItemsCache;
+    }
+    const _0x72c = Widget['\u0073\u0074\u006F\u0072\u0061\u0067\u0065']['\u0067\u0065\u0074'](STORAGE_KEY);
+    blockedItemsCache = _0x72c ? JSON['\u0070\u0061\u0072\u0073\u0065'](_0x72c) : [];
+    return blockedItemsCache;
+  } catch (error) {
+    return [];
+  }
+}
+function saveBlockedItems(items) {
+  try {
+    Widget['\u0073\u0074\u006F\u0072\u0061\u0067\u0065']['\u0073\u0065\u0074'](STORAGE_KEY, JSON['\u0073\u0074\u0072\u0069\u006E\u0067\u0069\u0066\u0079'](items));
+    blockedItemsCache = items;
+    clearBlockedIdCache();
+    return !![];
+  } catch (error) {
+    return false;
+  }
+}
+function isItemBlocked(item) {
+  if (!item || !item['\u0069\u0064']) return false;
+  var _0xd_0x1g9 = (426915 ^ 426914) + (108005 ^ 108013);
+  const _0x73c2ga = getBlockedIdSet();
+  _0xd_0x1g9 = (196806 ^ 196800) + (587270 ^ 587269);
+  var _0xd2e = (874402 ^ 874404) + (305408 ^ 305417);
+  const _0x3f49f = String(item['\u0069\u0064']);
+  _0xd2e = (400754 ^ 400757) + (575194 ^ 575187);
+  var _0x7c34e;
+  const _0x6e_0xdf4 = parseInt(item['\u0069\u0064']);
+  _0x7c34e = (783324 ^ 783326) + (354992 ^ 354993);
+  if (_0x73c2ga['\u0068\u0061\u0073'](_0x3f49f) || _0x73c2ga['\u0068\u0061\u0073'](_0x6e_0xdf4)) {
+    return !![];
+  }
+  if (item['\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065'] || item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065']) {
+    var _0x66fdde;
+    const _0xgc252c = item['\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065'] || item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'];
+    _0x66fdde = 104970 ^ 104973;
+    if (_0x73c2ga['\u0068\u0061\u0073'](_0x3f49f + "\u005F" + _0xgc252c) || _0x73c2ga['\u0068\u0061\u0073'](_0x6e_0xdf4 + "\u005F" + _0xgc252c)) {
+      return !![];
+    }
+  }
+  if (item['\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u0044\u006F\u0075\u0062\u0061\u006E\u0049\u0064']) {
+    var _0xgd_0x3e8 = (974359 ^ 974359) + (314673 ^ 314681);
+    const _0x2c1ccc = String(item['\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u0044\u006F\u0075\u0062\u0061\u006E\u0049\u0064']);
+    _0xgd_0x3e8 = (503929 ^ 503931) + (696203 ^ 696202);
+    const _0x5ebb7c = parseInt(item['\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u0044\u006F\u0075\u0062\u0061\u006E\u0049\u0064']);
+    if (_0x73c2ga['\u0068\u0061\u0073'](_0x2c1ccc) || _0x73c2ga['\u0068\u0061\u0073'](_0x5ebb7c)) {
+      return !![];
+    }
+  }
+  return false;
+}
+function isItemBlockedByGenre(item) {
+  if (!item || !item['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073']) return false;
+  var _0x2da5g;
+  const _0xe675dg = getBlockedGenres();
+  _0x2da5g = (161409 ^ 161411) + (249086 ^ 249087);
+  var _0x462bf;
+  const _0xa82c7a = new Set(_0xe675dg['\u006D\u0061\u0070'](g => g['\u0069\u0064']));
+  _0x462bf = 241438 ^ 241432;
+  return item['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073']['\u0073\u006F\u006D\u0065'](genreId => _0xa82c7a['\u0068\u0061\u0073'](genreId));
+}
+function isItemBlockedEnhanced(item) {
+  if (isItemBlocked(item)) {
+    return !![];
+  }
+  if (isItemBlockedByGenre(item)) {
+    return !![];
+  }
+  return false;
+}
+function filterBlockedItemsEnhanced(items) {
+  if (!Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](items)) return items;
+  var _0x821d5f = (627628 ^ 627625) + (557192 ^ 557199);
+  const _0x84cde = getBlockedIdSet();
+  _0x821d5f = '\u0070\u006D\u0063\u0064\u0065\u006B';
+  const _0x0a8adg = getBlockedGenres();
+  var _0x61c1ec;
+  const _0x261eb = new Set(_0x0a8adg['\u006D\u0061\u0070'](g => g['\u0069\u0064']));
+  _0x61c1ec = (587385 ^ 587386) + (960487 ^ 960487);
+  const _0x718cba = [];
+  for (let i = 323042 ^ 323042; i < items['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+    const _0xc4373a = items[i];
+    if (!_0xc4373a || !_0xc4373a['\u0069\u0064']) {
+      _0x718cba['\u0070\u0075\u0073\u0068'](_0xc4373a);
+      continue;
+    }
+    const _0xab9gfd = String(_0xc4373a['\u0069\u0064']);
+    var _0xc1d;
+    const _0x9616b = parseInt(_0xc4373a['\u0069\u0064']);
+    _0xc1d = (470509 ^ 470500) + (664655 ^ 664647);
+    if (_0x84cde['\u0068\u0061\u0073'](_0xab9gfd) || _0x84cde['\u0068\u0061\u0073'](_0x9616b)) {
+      continue;
+    }
+    if (_0xc4373a['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] && _0xc4373a['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073']['\u0073\u006F\u006D\u0065'](genreId => _0x261eb['\u0068\u0061\u0073'](genreId))) {
+      continue;
+    }
+    if (_0xc4373a['\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065'] || _0xc4373a['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065']) {
+      var _0x0b842g = (708373 ^ 708371) + (551528 ^ 551533);
+      const _0xaf73fe = _0xc4373a['\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065'] || _0xc4373a['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'];
+      _0x0b842g = 376312 ^ 376318;
+      if (_0x84cde['\u0068\u0061\u0073'](_0xab9gfd + "\u005F" + _0xaf73fe) || _0x84cde['\u0068\u0061\u0073'](_0x9616b + "\u005F" + _0xaf73fe)) {
+        continue;
+      }
+    }
+    if (_0xc4373a['\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u0044\u006F\u0075\u0062\u0061\u006E\u0049\u0064']) {
+      var _0x62cd4e = (693458 ^ 693459) + (160128 ^ 160132);
+      const _0xb739ba = String(_0xc4373a['\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u0044\u006F\u0075\u0062\u0061\u006E\u0049\u0064']);
+      _0x62cd4e = (623999 ^ 623993) + (745358 ^ 745352);
+      const _0x23215e = parseInt(_0xc4373a['\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u0044\u006F\u0075\u0062\u0061\u006E\u0049\u0064']);
+      if (_0x84cde['\u0068\u0061\u0073'](_0xb739ba) || _0x84cde['\u0068\u0061\u0073'](_0x23215e)) {
+        continue;
+      }
+    }
+    _0x718cba['\u0070\u0075\u0073\u0068'](_0xc4373a);
+  }
+  return _0x718cba;
+}
+function addBlockedGenre(genreName, genreId, description = "") {
+  var _0x912f = (597064 ^ 597064) + (561832 ^ 561834);
+  const _0xcab91e = getBlockedGenres();
+  _0x912f = (261110 ^ 261119) + (858564 ^ 858573);
+  const _0x9_0x815 = _0xcab91e['\u0073\u006F\u006D\u0065'](blocked => blocked['\u0069\u0064'] === genreId || blocked['\u006E\u0061\u006D\u0065'] === genreName);
+  if (!_0x9_0x815) {
+    _0xcab91e['\u0070\u0075\u0073\u0068']({
+      '\u0069\u0064': genreId,
+      "name": genreName,
+      "description": description || `\u5c4f\u853d\u6240\u6709"${genreName}"\u7c7b\u578b\u7684\u5185\u5bb9`,
+      '\u0062\u006C\u006F\u0063\u006B\u0065\u0064\u005F\u0064\u0061\u0074\u0065': new Date()['\u0074\u006F\u0049\u0053\u004F\u0053\u0074\u0072\u0069\u006E\u0067']()
+    });
+    return saveBlockedGenres(_0xcab91e);
+  }
+  return false;
+}
+function removeBlockedGenre(genreId) {
+  var _0x3b4ae = (767228 ^ 767226) + (473194 ^ 473187);
+  const _0x8c753e = getBlockedGenres();
+  _0x3b4ae = 926931 ^ 926931;
+  const _0xd6bb0b = _0x8c753e['\u0066\u0069\u006C\u0074\u0065\u0072'](genre => genre['\u0069\u0064'] !== genreId);
+  return saveBlockedGenres(_0xd6bb0b);
+}
+function addBlockedItem(item) {
+  var _0x8e824c = (279950 ^ 279943) + (191054 ^ 191047);
+  const _0xgb2 = getBlockedItems();
+  _0x8e824c = 641309 ^ 641308;
+  var _0xc_0x91c = (538377 ^ 538378) + (162322 ^ 162320);
+  const _0xf_0xbc6 = _0xgb2['\u0073\u006F\u006D\u0065'](blocked => blocked['\u0069\u0064'] === String(item['\u0069\u0064']) && blocked['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065']);
+  _0xc_0x91c = 955582 ^ 955576;
+  if (!_0xf_0xbc6) {
+    _0xgb2['\u0070\u0075\u0073\u0068']({
+      "id": String(item['\u0069\u0064']),
+      '\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065': item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'],
+      '\u0074\u0069\u0074\u006C\u0065': item['\u0074\u0069\u0074\u006C\u0065'],
+      "poster_path": item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+      '\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077': item['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+      '\u0062\u006C\u006F\u0063\u006B\u0065\u0064\u005F\u0064\u0061\u0074\u0065': new Date()['\u0074\u006F\u0049\u0053\u004F\u0053\u0074\u0072\u0069\u006E\u0067'](),
+      '\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065': item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] || 252610 ^ 252610
+    });
+    return saveBlockedItems(_0xgb2);
+  }
+  return false;
+}
+function removeBlockedItem(id, mediaType) {
+  var _0xf9b37f;
+  const _0xbf04d = getBlockedItems();
+  _0xf9b37f = (525675 ^ 525673) + (577841 ^ 577847);
+  var _0xb5cf7d;
+  const _0x75a23e = _0xbf04d['\u0066\u0069\u006C\u0074\u0065\u0072'](item => !(item['\u0069\u0064'] === String(id) && item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === mediaType));
+  _0xb5cf7d = (950059 ^ 950061) + (312396 ^ 312392);
+  return saveBlockedItems(_0x75a23e);
+}
+function clearBlockedItems() {
+  try {
+    Widget['\u0073\u0074\u006F\u0072\u0061\u0067\u0065']['\u0063\u006C\u0065\u0061\u0072']();
+    clearAllCaches();
+    return !![];
+  } catch (error) {
+    return false;
+  }
+}
+async function fetchTmdbGenres() {
+  if (tmdbGenresCache) return tmdbGenresCache;
+  const [movieGenres, tvGenres] = await Promise['\u0061\u006C\u006C']([Widget['\u0074\u006D\u0064\u0062']['\u0067\u0065\u0074']("\u002F\u0067\u0065\u006E\u0072\u0065\u002F\u006D\u006F\u0076\u0069\u0065\u002F\u006C\u0069\u0073\u0074", {
+    '\u0070\u0061\u0072\u0061\u006D\u0073': {
+      '\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065': "\u007A\u0068\u002D\u0043\u004E"
+    }
+  }), Widget['\u0074\u006D\u0064\u0062']['\u0067\u0065\u0074']("tsil/vt/erneg/".split("").reverse().join(""), {
+    '\u0070\u0061\u0072\u0061\u006D\u0073': {
+      "language": 'zh-CN'
+    }
+  })]);
+  tmdbGenresCache = {
+    '\u006D\u006F\u0076\u0069\u0065': movieGenres['\u0067\u0065\u006E\u0072\u0065\u0073']['\u0072\u0065\u0064\u0075\u0063\u0065']((acc, g) => ({
+      ...acc,
+      [g['\u0069\u0064']]: g['\u006E\u0061\u006D\u0065']
+    }), {}),
+    '\u0074\u0076': tvGenres['\u0067\u0065\u006E\u0072\u0065\u0073']['\u0072\u0065\u0064\u0075\u0063\u0065']((acc, g) => ({
+      ...acc,
+      [g['\u0069\u0064']]: g['\u006E\u0061\u006D\u0065']
+    }), {})
+  };
+  return tmdbGenresCache;
+}
+function getTmdbGenreTitles(genreIds, mediaType) {
+  const _0xc5b9e = tmdbGenresCache?.[mediaType] || {};
+  const _0xe0331b = genreIds['\u0073\u006C\u0069\u0063\u0065'](902945 ^ 902945, 701680 ^ 701683);
+  return _0xe0331b['\u006D\u0061\u0070'](id => _0xc5b9e[id]?.trim() || `\u672a\u77e5\u7c7b\u578b(${id})`)['\u0066\u0069\u006C\u0074\u0065\u0072'](Boolean)['\u006A\u006F\u0069\u006E']('\u2022');
+}
+function getDoubanGenreTitles(genres, itemType) {
+  if (!genres) {
+    return "";
+  }
+  let _0x0beff = [];
+  if (typeof genres === "\u0073\u0074\u0072\u0069\u006E\u0067") {
+    var _0xbb_0x5g3 = (544941 ^ 544943) + (823410 ^ 823415);
+    const _0xg0cc = genres['\u0074\u0072\u0069\u006D']();
+    _0xbb_0x5g3 = 431094 ^ 431090;
+    if (_0xg0cc) {
+      if (_0xg0cc['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u002C")) {
+        _0x0beff = _0xg0cc['\u0073\u0070\u006C\u0069\u0074']("\u002C");
+      } else if (_0xg0cc['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']('\u3001')) {
+        _0x0beff = _0xg0cc['\u0073\u0070\u006C\u0069\u0074']('\u3001');
+      } else if (_0xg0cc['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u002F")) {
+        _0x0beff = _0xg0cc['\u0073\u0070\u006C\u0069\u0074']("\u002F");
+      } else if (_0xg0cc['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u0020")) {
+        _0x0beff = _0xg0cc['\u0073\u0070\u006C\u0069\u0074']("\u0020");
+      } else {
+        _0x0beff = [_0xg0cc];
+      }
+    }
+  } else if (Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](genres)) {
+    _0x0beff = genres['\u0066\u0069\u006C\u0074\u0065\u0072'](g => g && g['\u0074\u0072\u0069\u006D']());
+  } else {
+    var _0xgd76e = (798693 ^ 798688) + (602503 ^ 602500);
+    const _0x42984d = String(genres)['\u0074\u0072\u0069\u006D']();
+    _0xgd76e = (338256 ^ 338259) + (204173 ^ 204169);
+    if (_0x42984d && _0x42984d !== "\u0075\u006E\u0064\u0065\u0066\u0069\u006E\u0065\u0064" && _0x42984d !== "\u006E\u0075\u006C\u006C") {
+      _0x0beff = [_0x42984d];
+    }
+  }
+  _0x0beff = _0x0beff['\u006D\u0061\u0070'](g => g['\u0074\u0072\u0069\u006D']())['\u0066\u0069\u006C\u0074\u0065\u0072'](g => g && g !== '')['\u0066\u0069\u006C\u0074\u0065\u0072']((genre, index, arr) => arr['\u0069\u006E\u0064\u0065\u0078\u004F\u0066'](genre) === index);
+  if (_0x0beff['\u006C\u0065\u006E\u0067\u0074\u0068'] === (605476 ^ 605476)) {
+    return "";
+  }
+  var _0xbb43gf;
+  const _0xb823be = _0x0beff['\u0073\u006C\u0069\u0063\u0065'](339111 ^ 339111, 388505 ^ 388506);
+  _0xbb43gf = (489238 ^ 489235) + (693459 ^ 693463);
+  return _0xb823be['\u006A\u006F\u0069\u006E']("\u0020");
+}
+function extractGenresFromText(text) {
+  if (!text) return [];
+  const _0xa1c = ['\u52a8\u4f5c', '\u79d1\u5e7b', '\u707e\u96be', '\u7231\u60c5', '\u559c\u5267', '\u60ac\u7591', '\u72af\u7f6a', '\u5192\u9669', '\u5947\u5e7b', '\u6218\u4e89', '\u5386\u53f2', '\u6b66\u4fa0', '\u60ca\u609a', '\u6050\u6016', '\u60c5\u8272', '\u52a8\u753b', '\u5267\u60c5', '\u897f\u90e8', '\u5bb6\u5ead', '\u97f3\u4e50', '\u8fd0\u52a8', '\u53e4\u88c5', '\u6b4c\u821e', '\u4f20\u8bb0', '\u77ed\u7247', '\u7eaa\u5f55\u7247', '\u6587\u827a', '\u9752\u6625', '\u6821\u56ed', '\u804c\u573a', '\u90fd\u5e02', '\u519c\u6751', '\u519b\u4e8b', '\u8b66\u50a3', '\u8c0d\u6218', '\u5bab\u5ef7', '\u795e\u8bdd', '\u9b54\u5e7b'];
+  const _0xe5_0x552 = [];
+  const _0x19ff = new RegExp('\u0028\u003F\u003A\u005C\u0075\u0037\u0063\u0037\u0062\u005C\u0075\u0035\u0037\u0038\u0062\u007C\u0067\u0065\u006E\u0072\u0065\u0029\u005B\u005C\u0075\u0066\u0066\u0031\u0061\u003A\u005C\u0073\u005D\u002A\u0028\u005B\u005E\u005C\u006E\u005C\u0072\u005D\u002B\u0029', '\u0069');
+  var _0x4cafa = (258426 ^ 258429) + (611638 ^ 611635);
+  const _0xec72ea = text['\u006D\u0061\u0074\u0063\u0068'](_0x19ff);
+  _0x4cafa = '\u0062\u006D\u0067\u0069\u006A\u0064';
+  if (_0xec72ea) {
+    const _0x28a70c = _0xec72ea[922876 ^ 922877];
+    const _0x44e0fe = _0x28a70c['\u0073\u0070\u006C\u0069\u0074'](new RegExp("+]s\\,,1003u\\/\\[".split("").reverse().join(""), ""))['\u0066\u0069\u006C\u0074\u0065\u0072'](t => t['\u0074\u0072\u0069\u006D']());
+    _0xe5_0x552['\u0070\u0075\u0073\u0068'](..._0x44e0fe);
+  }
+  for (const _0xd896gb of _0xa1c) {
+    if (text['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073'](_0xd896gb) && !_0xe5_0x552['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073'](_0xd896gb)) {
+      _0xe5_0x552['\u0070\u0075\u0073\u0068'](_0xd896gb);
+    }
+  }
+  return _0xe5_0x552['\u0073\u006C\u0069\u0063\u0065'](302657 ^ 302657, 979384 ^ 979387);
+}
+function formatItemDescription(item) {
+  var _0xa97d6b;
+  let _0x10_0x398 = item['\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E'] || '';
+  _0xa97d6b = (504987 ^ 504990) + (288654 ^ 288654);
+  const _0x1cgca = new RegExp("gnitar|6025u\\4cb8u\\".split("").reverse().join(""), '\u0069')['\u0074\u0065\u0073\u0074'](_0x10_0x398);
+  var _0x70bff = (749112 ^ 749119) + (903319 ^ 903317);
+  const _0x3d_0xg3g = new RegExp("raey|dfe4u\\47e5u\\".split("").reverse().join(""), '\u0069')['\u0074\u0065\u0073\u0074'](_0x10_0x398);
+  _0x70bff = '\u0063\u0070\u006A\u006E\u006C\u006E';
+  var _0x0ff7b = (599997 ^ 599994) + (620973 ^ 620975);
+  const _0x4918f = new RegExp("epyt|b875u\\b7c7u\\".split("").reverse().join(""), '\u0069')['\u0074\u0065\u0073\u0074'](_0x10_0x398);
+  _0x0ff7b = (885418 ^ 885422) + (451868 ^ 451864);
+  if (item['\u0069\u0074\u0065\u006D\u0054\u0079\u0070\u0065'] && !_0x4918f) {
+    _0x10_0x398 = `\u7c7b\u578b: ${item['\u0069\u0074\u0065\u006D\u0054\u0079\u0070\u0065']} | ${_0x10_0x398}`;
+  }
+  if (item['\u0072\u0061\u0074\u0069\u006E\u0067'] && !_0x1cgca) {
+    _0x10_0x398 = `\u8bc4\u5206: ${item['\u0072\u0061\u0074\u0069\u006E\u0067']} | ${_0x10_0x398}`;
+  }
+  if (item['\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0044\u0061\u0074\u0065'] && !_0x3d_0xg3g) {
+    const _0x788eg = String(item['\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0044\u0061\u0074\u0065'])['\u0073\u0075\u0062\u0073\u0074\u0072\u0069\u006E\u0067'](292215 ^ 292215, 218687 ^ 218683);
+    if (new RegExp('\u005E\u005C\u0064\u007B\u0034\u007D\u0024', "")['\u0074\u0065\u0073\u0074'](_0x788eg)) {
+      _0x10_0x398 = `\u5e74\u4efd: ${_0x788eg} | ${_0x10_0x398}`;
+    }
+  }
+  return _0x10_0x398['\u0072\u0065\u0070\u006C\u0061\u0063\u0065'](new RegExp('\u005E\u005C\u007C\u005C\u0073\u002A', ""), '')['\u0072\u0065\u0070\u006C\u0061\u0063\u0065'](new RegExp('\u005C\u0073\u002A\u005C\u007C\u0024', ""), '')['\u0074\u0072\u0069\u006D']();
+}
+function calculatePagination(params) {
+  var _0x872f = (699433 ^ 699438) + (503539 ^ 503546);
+  let _0x0e4d = parseInt(params['\u0070\u0061\u0067\u0065']) || 189932 ^ 189933;
+  _0x872f = 837217 ^ 837225;
+  var _0x45f;
+  const _0xd5225e = parseInt(params['\u006C\u0069\u006D\u0069\u0074']) || 859981 ^ 859993;
+  _0x45f = 499194 ^ 499195;
+  if (typeof params['\u0073\u0074\u0061\u0072\u0074'] !== "\u0075\u006E\u0064\u0065\u0066\u0069\u006E\u0065\u0064") {
+    _0x0e4d = Math['\u0066\u006C\u006F\u006F\u0072'](parseInt(params['\u0073\u0074\u0061\u0072\u0074']) / _0xd5225e) + (645115 ^ 645114);
+  }
+  var _0xe1166c;
+  const _0xd411bb = (_0x0e4d - (161813 ^ 161812)) * _0xd5225e;
+  _0xe1166c = (507405 ^ 507406) + (160700 ^ 160702);
+  return {
+    "page": _0x0e4d,
+    '\u006C\u0069\u006D\u0069\u0074': _0xd5225e,
+    '\u0073\u0074\u0061\u0072\u0074': _0xd411bb
+  };
+}
+function getBeijingDate() {
+  const _0x784e7b = new Date();
+  var _0xb7ga = (210585 ^ 210588) + (947502 ^ 947496);
+  const _0xfgdd8e = _0x784e7b['\u0067\u0065\u0074\u0054\u0069\u006D\u0065']() + (168364 ^ 168356) * (512466 ^ 512494) * (808723 ^ 808751) * (780518 ^ 781070);
+  _0xb7ga = 445754 ^ 445759;
+  const _0x9062d = new Date(_0xfgdd8e);
+  return `${_0x9062d['\u0067\u0065\u0074\u0055\u0054\u0043\u0046\u0075\u006C\u006C\u0059\u0065\u0061\u0072']()}-${String(_0x9062d['\u0067\u0065\u0074\u0055\u0054\u0043\u004D\u006F\u006E\u0074\u0068']() + (830088 ^ 830089))['\u0070\u0061\u0064\u0053\u0074\u0061\u0072\u0074'](665262 ^ 665260, "\u0030")}-${String(_0x9062d['\u0067\u0065\u0074\u0055\u0054\u0043\u0044\u0061\u0074\u0065']())['\u0070\u0061\u0064\u0053\u0074\u0061\u0072\u0074'](324849 ^ 324851, "\u0030")}`;
+}
+function parseDoubanAppDispatchUrl(url) {
+  var _0xe2a;
+  const _0x2ea = url['\u0072\u0065\u0070\u006C\u0061\u0063\u0065'](new RegExp("+s\\".split("").reverse().join(""), '\u0067'), '')['\u0074\u0072\u0069\u006D']();
+  _0xe2a = 552035 ^ 552034;
+  var _0x4b3e3d = (216413 ^ 216408) + (745821 ^ 745819);
+  const _0x8a7a7a = _0x2ea['\u0069\u006E\u0064\u0065\u0078\u004F\u0066']("\u003F");
+  _0x4b3e3d = (881193 ^ 881194) + (528188 ^ 528184);
+  var _0x5fd73c = (358710 ^ 358708) + (670282 ^ 670282);
+  const _0x31dcgf = _0x2ea['\u0073\u0075\u0062\u0073\u0074\u0072\u0069\u006E\u0067'](_0x8a7a7a + (269484 ^ 269485));
+  _0x5fd73c = (439687 ^ 439687) + (287897 ^ 287899);
+  var _0x2_0x9df = (493073 ^ 493074) + (598843 ^ 598843);
+  const _0x72cdcb = {};
+  _0x2_0x9df = (705646 ^ 705645) + (446914 ^ 446913);
+  var _0x9ed1cg = (686779 ^ 686783) + (711336 ^ 711342);
+  const _0xe7efda = _0x31dcgf['\u0073\u0070\u006C\u0069\u0074']("\u0026");
+  _0x9ed1cg = 256479 ^ 256475;
+  for (const _0x0ge68g of _0xe7efda) {
+    const [key, value] = _0x0ge68g['\u0073\u0070\u006C\u0069\u0074']("\u003D");
+    _0x72cdcb[decodeURIComponent(key)] = decodeURIComponent(value);
+  }
+  var _0xa2f23f;
+  const _0x527g = _0x72cdcb['uri'];
+  _0xa2f23f = (281259 ^ 281258) + (130145 ^ 130149);
+  const _0x6b3f = (_0x527g['\u0073\u0074\u0061\u0072\u0074\u0073\u0057\u0069\u0074\u0068']("\u002F") ? _0x527g['\u0073\u0075\u0062\u0073\u0074\u0072\u0069\u006E\u0067'](495371 ^ 495370) : _0x527g)['\u0074\u0072\u0069\u006D']();
+  if (_0x6b3f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("/noitcelloc_tcejbus".split("").reverse().join(""))) {
+    return `https://m.douban.com/${_0x6b3f}`;
+  } else if (_0x6b3f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("/tsiluod".split("").reverse().join(""))) {
+    return `https://www.douban.com/${_0x6b3f}`;
+  }
+  return null;
+}
+async function fetchTmdbData(api, params) {
+  const [data, genres] = await Promise['\u0061\u006C\u006C']([Widget['\u0074\u006D\u0064\u0062']['\u0067\u0065\u0074'](api, {
+    "params": params
+  }), fetchTmdbGenres()]);
+  var _0xd2_0xb29 = (115980 ^ 115983) + (503985 ^ 503987);
+  const _0x0c9c6c = data['\u0072\u0065\u0073\u0075\u006C\u0074\u0073']['\u0066\u0069\u006C\u0074\u0065\u0072'](item => {
+    return item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] && item['\u0069\u0064'] && (item['\u0074\u0069\u0074\u006C\u0065'] || item['\u006E\u0061\u006D\u0065']) && (item['\u0074\u0069\u0074\u006C\u0065'] || item['\u006E\u0061\u006D\u0065'])['\u0074\u0072\u0069\u006D']()['\u006C\u0065\u006E\u0067\u0074\u0068'] > (638839 ^ 638839);
+  })['\u006D\u0061\u0070'](item => {
+    var _0xcf24g = (135107 ^ 135106) + (954583 ^ 954591);
+    const _0x63gbe = item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] || (item['\u0074\u0069\u0074\u006C\u0065'] ? "eivom".split("").reverse().join("") : "vt".split("").reverse().join(""));
+    _0xcf24g = (438410 ^ 438408) + (621677 ^ 621679);
+    var _0xf1g7f = (668369 ^ 668376) + (799102 ^ 799094);
+    const _0x149cef = item['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] || [];
+    _0xf1g7f = 259834 ^ 259826;
+    const _0x298e = getTmdbGenreTitles(_0x149cef, _0x63gbe);
+    return {
+      "id": item['\u0069\u0064'],
+      "type": "\u0074\u006D\u0064\u0062",
+      "title": item['\u0074\u0069\u0074\u006C\u0065'] || item['\u006E\u0061\u006D\u0065'],
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': item['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+      '\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0044\u0061\u0074\u0065': item['\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065'] || item['\u0066\u0069\u0072\u0073\u0074\u005F\u0061\u0069\u0072\u005F\u0064\u0061\u0074\u0065'],
+      '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': item['\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u005F\u0070\u0061\u0074\u0068'],
+      "posterPath": item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+      "rating": item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'],
+      "mediaType": _0x63gbe,
+      "genreTitle": _0x298e,
+      '\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073': _0x149cef
+    };
+  });
+  _0xd2_0xb29 = (246673 ^ 246673) + (449574 ^ 449573);
+  return filterBlockedItemsEnhanced(_0x0c9c6c);
+}
+async function loadTmdbTrendingData() {
+  try {
+    var _0xb634ea;
+    const _0x028f1c = await Widget['\u0068\u0074\u0074\u0070']['\u0067\u0065\u0074']("\u0068\u0074\u0074\u0070\u0073\u003A\u002F\u002F\u0077\u0069\u0064\u0067\u0065\u0074\u0073\u002D\u0078\u0064\u002E\u0076\u0065\u0072\u0063\u0065\u006C\u002E\u0061\u0070\u0070\u002F\u0064\u0061\u0074\u0061\u002F\u0054\u004D\u0044\u0042\u005F\u0054\u0072\u0065\u006E\u0064\u0069\u006E\u0067\u002E\u006A\u0073\u006F\u006E", {
+      "headers": {
+        "\u0055\u0073\u0065\u0072\u002D\u0041\u0067\u0065\u006E\u0074": "\u004D\u006F\u007A\u0069\u006C\u006C\u0061\u002F\u0035\u002E\u0030\u0020\u0028\u004D\u0061\u0063\u0069\u006E\u0074\u006F\u0073\u0068\u003B\u0020\u0049\u006E\u0074\u0065\u006C\u0020\u004D\u0061\u0063\u0020\u004F\u0053\u0020\u0058\u0020\u0031\u0030\u005F\u0031\u0035\u005F\u0037\u0029\u0020\u0041\u0070\u0070\u006C\u0065\u0057\u0065\u0062\u004B\u0069\u0074\u002F\u0036\u0030\u0035\u002E\u0031\u002E\u0031\u0035\u0020\u0028\u004B\u0048\u0054\u004D\u004C\u002C\u0020\u006C\u0069\u006B\u0065\u0020\u0047\u0065\u0063\u006B\u006F\u0029\u0020\u0056\u0065\u0072\u0073\u0069\u006F\u006E\u002F\u0031\u0036\u002E\u0031\u0020\u0053\u0061\u0066\u0061\u0072\u0069\u002F\u0036\u0030\u0035\u002E\u0031\u002E\u0031\u0035"
+      }
+    });
+    _0xb634ea = (953003 ^ 953001) + (422893 ^ 422888);
+    return _0x028f1c['\u0064\u0061\u0074\u0061'];
+  } catch (error) {
+    try {
+      const _0x9cdc = await Widget['\u0068\u0074\u0074\u0070']['\u0067\u0065\u0074']("\u0068\u0074\u0074\u0070\u0073\u003A\u002F\u002F\u0077\u0069\u0064\u0067\u0065\u0074\u0073\u002D\u0078\u0064\u002E\u0076\u0065\u0072\u0063\u0065\u006C\u002E\u0061\u0070\u0070\u002F\u0064\u0061\u0074\u0061\u002F\u0054\u004D\u0044\u0042\u005F\u0054\u0072\u0065\u006E\u0064\u0069\u006E\u0067\u002E\u006A\u0073\u006F\u006E");
+      return _0x9cdc['\u0064\u0061\u0074\u0061'];
+    } catch (fallbackError) {
+      throw fallbackError;
+    }
+  }
+}
+async function loadTodayHotTV(params) {
+  var _0x7f8e6c;
+  const _0x3a83af = parseInt(params['\u0070\u0061\u0067\u0065']) || 808256 ^ 808257;
+  _0x7f8e6c = '\u006C\u0070\u0061\u0065\u0070\u006C';
+  const _0x8fe9c = params['\u0073\u006F\u0072\u0074\u005F\u0062\u0079'] || '';
+  if (_0x8fe9c) {
+    const [data, genres] = await Promise['\u0061\u006C\u006C']([Widget['\u0074\u006D\u0064\u0062']['\u0067\u0065\u0074'](`/discover/tv`, {
+      '\u0070\u0061\u0072\u0061\u006D\u0073': {
+        "language": params['\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065'] || "NC-hz".split("").reverse().join(""),
+        '\u0070\u0061\u0067\u0065': _0x3a83af,
+        '\u0077\u0069\u0074\u0068\u005F\u006F\u0072\u0069\u0067\u0069\u006E\u005F\u0063\u006F\u0075\u006E\u0074\u0072\u0079': _0x8fe9c,
+        "sort_by": _0x8fe9c === '' || _0x8fe9c === "NC".split("").reverse().join("") || _0x8fe9c === "SU".split("").reverse().join("") ? "csed.ytiralupop".split("").reverse().join("") : "csed.tnuoc_etov".split("").reverse().join("")
+      }
+    }), fetchTmdbGenres()]);
+    const items = data['\u0072\u0065\u0073\u0075\u006C\u0074\u0073']['\u0066\u0069\u006C\u0074\u0065\u0072'](item => item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'])['\u006D\u0061\u0070'](item => ({
+      "id": String(item['\u0069\u0064']),
+      '\u0074\u0079\u0070\u0065': "\u0074\u006D\u0064\u0062",
+      '\u0074\u0069\u0074\u006C\u0065': item['\u006E\u0061\u006D\u0065'],
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': item['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+      "releaseDate": item['\u0066\u0069\u0072\u0073\u0074\u005F\u0061\u0069\u0072\u005F\u0064\u0061\u0074\u0065'],
+      "backdropPath": item['\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u005F\u0070\u0061\u0074\u0068'],
+      '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+      '\u0072\u0061\u0074\u0069\u006E\u0067': item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'],
+      "mediaType": "tv",
+      '\u0067\u0065\u006E\u0072\u0065\u0054\u0069\u0074\u006C\u0065': getTmdbGenreTitles(item['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] || [], "\u0074\u0076"),
+      "genre_ids": item['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] || []
+    }));
+    return filterBlockedItemsEnhanced(items);
+  }
+  if (_0x3a83af === (488784 ^ 488785)) {
+    try {
+      const _0x06bb = await loadTmdbTrendingData();
+      const _0x7b41dd = _0x06bb['\u0074\u006F\u0064\u0061\u0079\u005F\u0074\u0076'] || [];
+      var _0xbb2;
+      const _0xg8fe = [];
+      _0xbb2 = (710847 ^ 710845) + (420480 ^ 420485);
+      for (let i = 977100 ^ 977100; i < _0x7b41dd['\u006C\u0065\u006E\u0067\u0074\u0068'] && _0xg8fe['\u006C\u0065\u006E\u0067\u0074\u0068'] < (368305 ^ 368293); i++) {
+        const _0x1e4fef = _0x7b41dd[i];
+        if (_0x1e4fef['\u0074\u0079\u0070\u0065'] === "\u0074\u0076" && _0x1e4fef['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0075\u0072\u006C']) {
+          _0xg8fe['\u0070\u0075\u0073\u0068']({
+            '\u0069\u0064': _0x1e4fef['\u0069\u0064']['\u0074\u006F\u0053\u0074\u0072\u0069\u006E\u0067'](),
+            '\u0074\u0079\u0070\u0065': "tmdb",
+            '\u0074\u0069\u0074\u006C\u0065': _0x1e4fef['\u0074\u0069\u0074\u006C\u0065'],
+            '\u0067\u0065\u006E\u0072\u0065\u0054\u0069\u0074\u006C\u0065': _0x1e4fef['\u0067\u0065\u006E\u0072\u0065\u0054\u0069\u0074\u006C\u0065'],
+            '\u0072\u0061\u0074\u0069\u006E\u0067': _0x1e4fef['\u0072\u0061\u0074\u0069\u006E\u0067'],
+            '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': _0x1e4fef['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+            '\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0044\u0061\u0074\u0065': _0x1e4fef['\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065'],
+            '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': _0x1e4fef['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0075\u0072\u006C'],
+            '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': _0x1e4fef['\u0074\u0069\u0074\u006C\u0065\u005F\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070'],
+            '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "\u0074\u0076",
+            '\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073': _0x1e4fef['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] || []
+          });
+        }
+      }
+      return filterBlockedItemsEnhanced(_0xg8fe);
+    } catch (error) {}
+  }
+  const [data, genres] = await Promise['\u0061\u006C\u006C']([Widget['\u0074\u006D\u0064\u0062']['\u0067\u0065\u0074'](`/trending/tv/day`, {
+    "params": {
+      "language": params['\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065'] || "\u007A\u0068\u002D\u0043\u004E",
+      '\u0070\u0061\u0067\u0065': _0x3a83af
+    }
+  }), fetchTmdbGenres()]);
+  var _0xc1799b;
+  const items = data['\u0072\u0065\u0073\u0075\u006C\u0074\u0073']['\u0066\u0069\u006C\u0074\u0065\u0072'](item => (!item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] || item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === "vt".split("").reverse().join("")) && item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'])['\u006D\u0061\u0070'](item => ({
+    '\u0069\u0064': String(item['\u0069\u0064']),
+    "type": "tmdb",
+    '\u0074\u0069\u0074\u006C\u0065': item['\u006E\u0061\u006D\u0065'],
+    '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': item['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+    '\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0044\u0061\u0074\u0065': item['\u0066\u0069\u0072\u0073\u0074\u005F\u0061\u0069\u0072\u005F\u0064\u0061\u0074\u0065'],
+    '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': item['\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u005F\u0070\u0061\u0074\u0068'],
+    "posterPath": item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+    "rating": item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'],
+    '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "\u0074\u0076",
+    '\u0067\u0065\u006E\u0072\u0065\u0054\u0069\u0074\u006C\u0065': getTmdbGenreTitles(item['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] || [], "\u0074\u0076"),
+    "genre_ids": item['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] || []
+  }));
+  _0xc1799b = (274606 ^ 274605) + (515908 ^ 515917);
+  return filterBlockedItemsEnhanced(items);
+}
+async function loadTodayHotMovies(params) {
+  const _0x12_0x6c0 = parseInt(params['\u0070\u0061\u0067\u0065']) || 958467 ^ 958466;
+  const _0x65ea = params['\u0073\u006F\u0072\u0074\u005F\u0062\u0079'] || '';
+  if (_0x65ea) {
+    const [data, genres] = await Promise['\u0061\u006C\u006C']([Widget['\u0074\u006D\u0064\u0062']['\u0067\u0065\u0074'](`/discover/movie`, {
+      "params": {
+        '\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065': params['\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065'] || "NC-hz".split("").reverse().join(""),
+        '\u0070\u0061\u0067\u0065': _0x12_0x6c0,
+        '\u0077\u0069\u0074\u0068\u005F\u006F\u0072\u0069\u0067\u0069\u006E\u005F\u0063\u006F\u0075\u006E\u0074\u0072\u0079': _0x65ea,
+        "sort_by": _0x65ea === '' || _0x65ea === "\u0043\u004E" || _0x65ea === "SU".split("").reverse().join("") ? "\u0070\u006F\u0070\u0075\u006C\u0061\u0072\u0069\u0074\u0079\u002E\u0064\u0065\u0073\u0063" : "csed.tnuoc_etov".split("").reverse().join("")
+      }
+    }), fetchTmdbGenres()]);
+    const items = data['\u0072\u0065\u0073\u0075\u006C\u0074\u0073']['\u0066\u0069\u006C\u0074\u0065\u0072'](item => item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'])['\u006D\u0061\u0070'](item => ({
+      '\u0069\u0064': String(item['\u0069\u0064']),
+      "type": "\u0074\u006D\u0064\u0062",
+      '\u0074\u0069\u0074\u006C\u0065': item['\u0074\u0069\u0074\u006C\u0065'],
+      "description": item['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+      "releaseDate": item['\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065'],
+      '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': item['\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u005F\u0070\u0061\u0074\u0068'],
+      '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+      "rating": item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'],
+      '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "\u006D\u006F\u0076\u0069\u0065",
+      '\u0067\u0065\u006E\u0072\u0065\u0054\u0069\u0074\u006C\u0065': getTmdbGenreTitles(item['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] || [], "eivom".split("").reverse().join("")),
+      '\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073': item['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] || []
+    }));
+    return filterBlockedItemsEnhanced(items);
+  }
+  if (_0x12_0x6c0 === (373235 ^ 373234)) {
+    try {
+      const _0xc3g8be = await loadTmdbTrendingData();
+      const _0xc9b91a = _0xc3g8be['\u0074\u006F\u0064\u0061\u0079\u005F\u006D\u006F\u0076\u0069\u0065\u0073'] || [];
+      const _0x77f = [];
+      for (let i = 368493 ^ 368493; i < _0xc9b91a['\u006C\u0065\u006E\u0067\u0074\u0068'] && _0x77f['\u006C\u0065\u006E\u0067\u0074\u0068'] < (678501 ^ 678513); i++) {
+        var _0xb586b = (145569 ^ 145572) + (877945 ^ 877949);
+        const _0x5e2 = _0xc9b91a[i];
+        _0xb586b = (398794 ^ 398793) + (981101 ^ 981098);
+        if (_0x5e2['\u0074\u0079\u0070\u0065'] === "\u006D\u006F\u0076\u0069\u0065" && _0x5e2['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0075\u0072\u006C']) {
+          _0x77f['\u0070\u0075\u0073\u0068']({
+            '\u0069\u0064': _0x5e2['\u0069\u0064']['\u0074\u006F\u0053\u0074\u0072\u0069\u006E\u0067'](),
+            "type": "tmdb",
+            '\u0074\u0069\u0074\u006C\u0065': _0x5e2['\u0074\u0069\u0074\u006C\u0065'],
+            '\u0067\u0065\u006E\u0072\u0065\u0054\u0069\u0074\u006C\u0065': _0x5e2['\u0067\u0065\u006E\u0072\u0065\u0054\u0069\u0074\u006C\u0065'],
+            "rating": _0x5e2['\u0072\u0061\u0074\u0069\u006E\u0067'],
+            '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': _0x5e2['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+            "releaseDate": _0x5e2['\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065'],
+            "posterPath": _0x5e2['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0075\u0072\u006C'],
+            "backdropPath": _0x5e2['\u0074\u0069\u0074\u006C\u0065\u005F\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070'],
+            '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': 'movie',
+            '\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073': _0x5e2['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] || []
+          });
+        }
+      }
+      return filterBlockedItemsEnhanced(_0x77f);
+    } catch (error) {}
+  }
+  const [data, genres] = await Promise['\u0061\u006C\u006C']([Widget['\u0074\u006D\u0064\u0062']['\u0067\u0065\u0074'](`/trending/movie/day`, {
+    '\u0070\u0061\u0072\u0061\u006D\u0073': {
+      '\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065': params['\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065'] || "\u007A\u0068\u002D\u0043\u004E",
+      '\u0070\u0061\u0067\u0065': _0x12_0x6c0
+    }
+  }), fetchTmdbGenres()]);
+  var _0xb8761d = (831795 ^ 831799) + (281545 ^ 281550);
+  const items = data['\u0072\u0065\u0073\u0075\u006C\u0074\u0073']['\u0066\u0069\u006C\u0074\u0065\u0072'](item => (!item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] || item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === "eivom".split("").reverse().join("")) && item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'])['\u006D\u0061\u0070'](item => ({
+    '\u0069\u0064': String(item['\u0069\u0064']),
+    '\u0074\u0079\u0070\u0065': "\u0074\u006D\u0064\u0062",
+    '\u0074\u0069\u0074\u006C\u0065': item['\u0074\u0069\u0074\u006C\u0065'],
+    "description": item['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+    "releaseDate": item['\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065'],
+    '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': item['\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u005F\u0070\u0061\u0074\u0068'],
+    '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+    '\u0072\u0061\u0074\u0069\u006E\u0067': item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'],
+    "mediaType": "\u006D\u006F\u0076\u0069\u0065",
+    '\u0067\u0065\u006E\u0072\u0065\u0054\u0069\u0074\u006C\u0065': getTmdbGenreTitles(item['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] || [], "eivom".split("").reverse().join("")),
+    '\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073': item['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] || []
+  }));
+  _0xb8761d = "bkopmc".split("").reverse().join("");
+  return filterBlockedItemsEnhanced(items);
+}
+async function tmdbTopRated(params) {
+  var _0x7458da = (924419 ^ 924420) + (703342 ^ 703336);
+  const _0x053gd = params['\u0074\u0079\u0070\u0065'] || "eivom".split("").reverse().join("");
+  _0x7458da = (944802 ^ 944811) + (395380 ^ 395388);
+  const _0x9c_0xde3 = _0x053gd === "eivom".split("").reverse().join("") ? `movie/top_rated` : `tv/top_rated`;
+  return await fetchTmdbData(_0x9c_0xde3, params);
+}
+async function tmdbDiscoverByNetwork(params = {}, _0x9c85b) {
+  _0x9c85b = "vt/revocsid".split("").reverse().join("");
+  var _0xbec5b;
+  const _0x629aa = getBeijingDate();
+  _0xbec5b = '\u006B\u0067\u0061\u0065\u0069\u006C';
+  var _0xbbe52c;
+  const _0x46f = {
+    "language": params['\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065'] || "NC-hz".split("").reverse().join(""),
+    "page": params['\u0070\u0061\u0067\u0065'] || 141341 ^ 141340,
+    '\u0077\u0069\u0074\u0068\u005F\u006E\u0065\u0074\u0077\u006F\u0072\u006B\u0073': params['\u0077\u0069\u0074\u0068\u005F\u006E\u0065\u0074\u0077\u006F\u0072\u006B\u0073'],
+    '\u0073\u006F\u0072\u0074\u005F\u0062\u0079': params['\u0073\u006F\u0072\u0074\u005F\u0062\u0079'] || "csed.etad_ria_tsrif".split("").reverse().join("")
+  };
+  _0xbbe52c = "dfdboj".split("").reverse().join("");
+  if (params['\u0061\u0069\u0072\u005F\u0073\u0074\u0061\u0074\u0075\u0073'] === "\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0064") {
+    _0x46f["\u0066\u0069\u0072\u0073\u0074\u005F\u0061\u0069\u0072\u005F\u0064\u0061\u0074\u0065\u002E\u006C\u0074\u0065"] = _0x629aa;
+  } else if (params['\u0061\u0069\u0072\u005F\u0073\u0074\u0061\u0074\u0075\u0073'] === "\u0075\u0070\u0063\u006F\u006D\u0069\u006E\u0067") {
+    _0x46f['first_air_date.gte'] = _0x629aa;
+  }
+  if (params['\u0077\u0069\u0074\u0068\u005F\u0067\u0065\u006E\u0072\u0065\u0073']) {
+    _0x46f['\u0077\u0069\u0074\u0068\u005F\u0067\u0065\u006E\u0072\u0065\u0073'] = params['\u0077\u0069\u0074\u0068\u005F\u0067\u0065\u006E\u0072\u0065\u0073'];
+  }
+  return await fetchTmdbData(_0x9c85b, _0x46f);
+}
+async function tmdbCompanies(params = {}, _0x34ced) {
+  var _0x4dae;
+  _0x34ced = "\u0064\u0069\u0073\u0063\u006F\u0076\u0065\u0072\u002F\u006D\u006F\u0076\u0069\u0065";
+  _0x4dae = (352017 ^ 352018) + (785428 ^ 785427);
+  var _0xea_0x216;
+  const _0xc53b2a = getBeijingDate();
+  _0xea_0x216 = "bqgkcp".split("").reverse().join("");
+  const _0xffe10d = String(params['\u0077\u0069\u0074\u0068\u005F\u0063\u006F\u006D\u0070\u0061\u006E\u0069\u0065\u0073'] || '')['\u0074\u0072\u0069\u006D']();
+  var _0x96c;
+  const _0x5292bf = {
+    "page": params['\u0070\u0061\u0067\u0065'] || 456197 ^ 456196,
+    '\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065': params['\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065'] || "\u007A\u0068\u002D\u0043\u004E",
+    '\u0073\u006F\u0072\u0074\u005F\u0062\u0079': params['\u0073\u006F\u0072\u0074\u005F\u0062\u0079'] || "\u0070\u0072\u0069\u006D\u0061\u0072\u0079\u005F\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065\u002E\u0064\u0065\u0073\u0063",
+    "include_adult": false,
+    "include_video": false
+  };
+  _0x96c = (996880 ^ 996887) + (564906 ^ 564906);
+  if (_0xffe10d) {
+    _0x5292bf['\u0077\u0069\u0074\u0068\u005F\u0063\u006F\u006D\u0070\u0061\u006E\u0069\u0065\u0073'] = _0xffe10d;
+  }
+  if (params['\u0061\u0069\u0072\u005F\u0073\u0074\u0061\u0074\u0075\u0073'] === "desaeler".split("").reverse().join("")) {
+    _0x5292bf["\u0070\u0072\u0069\u006D\u0061\u0072\u0079\u005F\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065\u002E\u006C\u0074\u0065"] = _0xc53b2a;
+  } else if (params['\u0061\u0069\u0072\u005F\u0073\u0074\u0061\u0074\u0075\u0073'] === "\u0075\u0070\u0063\u006F\u006D\u0069\u006E\u0067") {
+    _0x5292bf["\u0070\u0072\u0069\u006D\u0061\u0072\u0079\u005F\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065\u002E\u0067\u0074\u0065"] = _0xc53b2a;
+  }
+  if (params['\u0077\u0069\u0074\u0068\u005F\u0067\u0065\u006E\u0072\u0065\u0073']) {
+    _0x5292bf['\u0077\u0069\u0074\u0068\u005F\u0067\u0065\u006E\u0072\u0065\u0073'] = String(params['\u0077\u0069\u0074\u0068\u005F\u0067\u0065\u006E\u0072\u0065\u0073'])['\u0074\u0072\u0069\u006D']();
+  }
+  return await fetchTmdbData(_0x34ced, _0x5292bf);
+}
+async function searchTMDB(query, language) {
+  if (!query || query['\u0074\u0072\u0069\u006D']()['\u006C\u0065\u006E\u0067\u0074\u0068'] === (580711 ^ 580711)) {
+    throw new Error("\u641c\u7d22\u5173\u952e\u8bcd\u4e0d\u80fd\u4e3a\u7a7a");
+  }
+  try {
+    var _0x7d863a = (540374 ^ 540383) + (417421 ^ 417419);
+    const _0xc593bc = await Widget['\u0074\u006D\u0064\u0062']['\u0067\u0065\u0074']("\u002F\u0073\u0065\u0061\u0072\u0063\u0068\u002F\u006D\u0075\u006C\u0074\u0069", {
+      "params": {
+        '\u0071\u0075\u0065\u0072\u0079': query['\u0074\u0072\u0069\u006D'](),
+        '\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065': language || "NC-hz".split("").reverse().join(""),
+        '\u0070\u0061\u0067\u0065': 1
+      }
+    });
+    _0x7d863a = 293939 ^ 293936;
+    if (!_0xc593bc) {
+      throw new Error("TMDB API\u65e0\u54cd\u5e94");
+    }
+    let _0xf86a = [];
+    if (_0xc593bc['\u0072\u0065\u0073\u0075\u006C\u0074\u0073']) {
+      _0xf86a = _0xc593bc['\u0072\u0065\u0073\u0075\u006C\u0074\u0073'];
+    } else if (_0xc593bc['\u0064\u0061\u0074\u0061'] && _0xc593bc['\u0064\u0061\u0074\u0061']['\u0072\u0065\u0073\u0075\u006C\u0074\u0073']) {
+      _0xf86a = _0xc593bc['\u0064\u0061\u0074\u0061']['\u0072\u0065\u0073\u0075\u006C\u0074\u0073'];
+    } else if (Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](_0xc593bc)) {
+      _0xf86a = _0xc593bc;
+    } else {
+      throw new Error("\u65e0\u6cd5\u89e3\u6790TMDB\u54cd\u5e94\u7ed3\u6784");
+    }
+    const _0x897c = [];
+    for (let i = 535065 ^ 535065; i < _0xf86a['\u006C\u0065\u006E\u0067\u0074\u0068'] && _0x897c['\u006C\u0065\u006E\u0067\u0074\u0068'] < (565958 ^ 565970); i++) {
+      var _0xd2gb = (638158 ^ 638154) + (537642 ^ 537646);
+      const _0xb3_0xddd = _0xf86a[i];
+      _0xd2gb = (187123 ^ 187124) + (522726 ^ 522734);
+      if ((_0xb3_0xddd['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === "\u006D\u006F\u0076\u0069\u0065" || _0xb3_0xddd['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === "\u0074\u0076") && _0xb3_0xddd['\u0069\u0064'] && (_0xb3_0xddd['\u0074\u0069\u0074\u006C\u0065'] || _0xb3_0xddd['\u006E\u0061\u006D\u0065']) && _0xb3_0xddd['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068']) {
+        const _0x8c7e = _0xb3_0xddd['\u0074\u0069\u0074\u006C\u0065'] || _0xb3_0xddd['\u006E\u0061\u006D\u0065'];
+        var _0x3d4g3a = (360442 ^ 360445) + (300270 ^ 300271);
+        const _0x14_0xbf2 = _0xb3_0xddd['\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065'] || _0xb3_0xddd['\u0066\u0069\u0072\u0073\u0074\u005F\u0061\u0069\u0072\u005F\u0064\u0061\u0074\u0065'];
+        _0x3d4g3a = (647749 ^ 647748) + (111698 ^ 111702);
+        const _0xcabd = _0x14_0xbf2 ? new Date(_0x14_0xbf2)['\u0067\u0065\u0074\u0046\u0075\u006C\u006C\u0059\u0065\u0061\u0072']() : "";
+        _0x897c['\u0070\u0075\u0073\u0068']({
+          '\u0069\u0064': String(_0xb3_0xddd['\u0069\u0064']),
+          '\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065': _0xb3_0xddd['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'],
+          "title": _0x8c7e,
+          '\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068': _0xb3_0xddd['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+          '\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077': _0xb3_0xddd['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'] || "",
+          '\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065': _0xb3_0xddd['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] || 989622 ^ 989622,
+          '\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065': _0x14_0xbf2,
+          '\u0079\u0065\u0061\u0072': _0xcabd
+        });
+      }
+    }
+    return _0x897c;
+  } catch (error) {
+    throw new Error("\u641c\u7d22\u5931\u8d25: " + error['\u006D\u0065\u0073\u0073\u0061\u0067\u0065']);
+  }
+}
+async function searchAndBlockByGenre(params) {
+  const _0xb43b = params['\u0061\u0063\u0074\u0069\u006F\u006E'] || "\u0073\u0065\u0061\u0072\u0063\u0068\u005F\u006F\u006E\u006C\u0079";
+  const _0xc2_0xb22 = params['\u0067\u0065\u006E\u0072\u0065\u005F\u006E\u0061\u006D\u0065'] ? params['\u0067\u0065\u006E\u0072\u0065\u005F\u006E\u0061\u006D\u0065']['\u0074\u0072\u0069\u006D']() : '';
+  if (!_0xc2_0xb22) {
+    return [{
+      '\u0069\u0064': "no_genre_name",
+      '\u0074\u0079\u0070\u0065': "info",
+      '\u0074\u0069\u0074\u006C\u0065': "\u26a0 \u8bf7\u8f93\u5165\u8981\u5c4f\u853d\u7684\u7c7b\u578b\u540d\u79f0",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u4f8b\u5982\uff1a\u771f\u4eba\u79c0\u3001\u7efc\u827a\u3001\u7eaa\u5f55\u7247\u3001\u52a8\u4f5c\u3001\u7231\u60c5\u7b49",
+      '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+      "backdropPath": "",
+      '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+      "mediaType": "\u0069\u006E\u0066\u006F"
+    }];
+  }
+  const _0xg051ba = [];
+  var _0xde14cf;
+  const _0x9a3ag = _0xc2_0xb22['\u0074\u006F\u004C\u006F\u0077\u0065\u0072\u0043\u0061\u0073\u0065']();
+  _0xde14cf = (488925 ^ 488920) + (293665 ^ 293672);
+  for (const [name, id] of Object['\u0065\u006E\u0074\u0072\u0069\u0065\u0073'](TMDB_GENRE_MAPPING)) {
+    if (name['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073'](_0xc2_0xb22) || _0xc2_0xb22['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073'](name) || name['\u0074\u006F\u004C\u006F\u0077\u0065\u0072\u0043\u0061\u0073\u0065']()['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073'](_0x9a3ag)) {
+      _0xg051ba['\u0070\u0075\u0073\u0068']({
+        '\u006E\u0061\u006D\u0065': name,
+        '\u0069\u0064': id
+      });
+    }
+  }
+  if (_0xg051ba['\u006C\u0065\u006E\u0067\u0074\u0068'] === (824503 ^ 824503)) {
+    var _0x4cd7b = (558728 ^ 558734) + (787331 ^ 787334);
+    const _0xe89g = Object['\u006B\u0065\u0079\u0073'](TMDB_GENRE_MAPPING)['\u0073\u006C\u0069\u0063\u0065'](145454 ^ 145454, 538783 ^ 538773);
+    _0x4cd7b = (225904 ^ 225905) + (710491 ^ 710490);
+    return [{
+      '\u0069\u0064': "\u006E\u006F\u005F\u0067\u0065\u006E\u0072\u0065\u005F\u006D\u0061\u0074\u0063\u0068",
+      "type": "\u0069\u006E\u0066\u006F",
+      '\u0074\u0069\u0074\u006C\u0065': "\u2753 \u672a\u627e\u5230\u5339\u914d\u7684\u7c7b\u578b",
+      "description": `\u672a\u627e\u5230\u4e0e"${_0xc2_0xb22}"\u5339\u914d\u7684\u7c7b\u578b\u3002\n\n\u652f\u6301\u7684\u7c7b\u578b\u5305\u62ec\uff1a\n${_0xe89g['\u006A\u006F\u0069\u006E']('\u3001')}`,
+      '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+      '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+      '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+      '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F"
+    }];
+  }
+  const _0xfb1c = [];
+  if (_0xb43b === "\u0073\u0065\u0061\u0072\u0063\u0068\u005F\u006F\u006E\u006C\u0079") {
+    _0xfb1c['\u0070\u0075\u0073\u0068']({
+      "id": "\u0067\u0065\u006E\u0072\u0065\u005F\u0073\u0065\u0061\u0072\u0063\u0068\u005F\u0073\u0075\u006D\u006D\u0061\u0072\u0079",
+      "type": "\u0069\u006E\u0066\u006F",
+      "title": "\u1f50d \u627e\u5230\u5339\u914d\u7684\u7c7b\u578b",
+      "description": `\u641c\u7d22"${_0xc2_0xb22}"\u627e\u5230 ${_0xg051ba['\u006C\u0065\u006E\u0067\u0074\u0068']} \u4e2a\u5339\u914d\u7c7b\u578b\uff1a\n\n${_0xg051ba['\u006D\u0061\u0070'](g => `\u2022 ${g['\u006E\u0061\u006D\u0065']} (ID: ${g['\u0069\u0064']})`)['\u006A\u006F\u0069\u006E']("\u000A")}\n\n\u9009\u62e9"\u641c\u7d22\u5e76\u5c4f\u853d"\u6a21\u5f0f\u53ef\u5c06\u8fd9\u4e9b\u7c7b\u578b\u52a0\u5165\u5c4f\u853d\u5217\u8868\u3002`,
+      '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+      '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+      '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+      '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "info"
+    });
+    for (const genre of _0xg051ba) {
+      const _0xe71a = getBlockedGenres();
+      const _0x7c69d = _0xe71a['\u0073\u006F\u006D\u0065'](blocked => blocked['\u0069\u0064'] === genre['\u0069\u0064']);
+      const status = _0x7c69d ? "\u1f6ab \u5df2\u5c4f\u853d" : "\u2705 \u53ef\u5c4f\u853d";
+      _0xfb1c['\u0070\u0075\u0073\u0068']({
+        "id": `genre_detail_${genre['\u0069\u0064']}`,
+        "type": "\u0069\u006E\u0066\u006F",
+        '\u0074\u0069\u0074\u006C\u0065': `${status} ${genre['\u006E\u0061\u006D\u0065']}`,
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': `TMDB\u7c7b\u578bID: ${genre['\u0069\u0064']}\n${_0x7c69d ? '\u6b64\u7c7b\u578b\u5df2\u5728\u5c4f\u853d\u5217\u8868\u4e2d' : '\u53ef\u4ee5\u5c4f\u853d\u6b64\u7c7b\u578b\u7684\u6240\u6709\u5185\u5bb9'}`,
+        "posterPath": "",
+        "backdropPath": "",
+        '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+        '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "info"
+      });
+    }
+  } else if (_0xb43b === "\u0073\u0065\u0061\u0072\u0063\u0068\u005F\u0061\u006E\u0064\u005F\u0062\u006C\u006F\u0063\u006B") {
+    var _0x96fe5a;
+    let _0xfe_0xfb9 = 832904 ^ 832904;
+    _0x96fe5a = 265659 ^ 265661;
+    let _0x3d72f = 524213 ^ 524213;
+    for (const genre of _0xg051ba) {
+      const _0x551dfd = addBlockedGenre(genre['\u006E\u0061\u006D\u0065'], genre['\u0069\u0064']);
+      if (_0x551dfd) {
+        _0xfe_0xfb9++;
+      } else {
+        _0x3d72f++;
+      }
+      var _0x19b4d;
+      const status = _0x551dfd ? "\u2705 \u5df2\u5c4f\u853d" : "\u1f6ab \u5df2\u5b58\u5728";
+      _0x19b4d = (688856 ^ 688861) + (551136 ^ 551141);
+      _0xfb1c['\u0070\u0075\u0073\u0068']({
+        '\u0069\u0064': `blocked_genre_${genre['\u0069\u0064']}`,
+        "type": "\u0069\u006E\u0066\u006F",
+        "title": `${status} ${genre['\u006E\u0061\u006D\u0065']}`,
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': `TMDB\u7c7b\u578bID: ${genre['\u0069\u0064']}\n${_0x551dfd ? '\u5df2\u6dfb\u52a0\u5230\u7c7b\u578b\u5c4f\u853d\u5217\u8868' : '\u6b64\u7c7b\u578b\u5df2\u5728\u5c4f\u853d\u5217\u8868\u4e2d'}`,
+        '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+        '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+        "rating": 0,
+        "mediaType": "info"
+      });
+    }
+    _0xfb1c['\u0075\u006E\u0073\u0068\u0069\u0066\u0074']({
+      '\u0069\u0064': "genre_block_summary",
+      "type": "info",
+      '\u0074\u0069\u0074\u006C\u0065': "\u1f3af \u7c7b\u578b\u5c4f\u853d\u64cd\u4f5c\u5b8c\u6210",
+      "description": `\u641c\u7d22"${_0xc2_0xb22}"\u627e\u5230 ${_0xg051ba['\u006C\u0065\u006E\u0067\u0074\u0068']} \u4e2a\u7c7b\u578b\n\u65b0\u589e\u5c4f\u853d: ${_0xfe_0xfb9} \u4e2a\n\u5df2\u5b58\u5728: ${_0x3d72f} \u4e2a\n\n\u5305\u542b\u8fd9\u4e9b\u7c7b\u578b\u7684\u6240\u6709\u5185\u5bb9\u5c06\u4e0d\u518d\u5728\u699c\u5355\u4e2d\u663e\u793a\u3002`,
+      "posterPath": "",
+      '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+      "rating": 0,
+      '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "info"
+    });
+  }
+  return _0xfb1c;
+}
+var _0x5887cg = (810431 ^ 810431) + (758356 ^ 758364);
+const originalFilterBlockedItems = filterBlockedItems;
+_0x5887cg = (499164 ^ 499167) + (337262 ^ 337262);
+function filterBlockedItems(items) {
+  return filterBlockedItemsEnhanced(items);
+}
+function addToBlockList(tmdbId, mediaType = "eivom".split("").reverse().join(""), title = "", additionalInfo = {}) {
+  try {
+    var _0x87a2b = (335992 ^ 335985) + (161474 ^ 161472);
+    const _0x961fad = Widget['\u0073\u0074\u006F\u0072\u0061\u0067\u0065']['\u0067\u0065\u0074'](STORAGE_KEY);
+    _0x87a2b = (752722 ^ 752726) + (851409 ^ 851412);
+    const _0xe7012b = _0x961fad ? JSON['\u0070\u0061\u0072\u0073\u0065'](_0x961fad) : [];
+    var _0xb5c = (549116 ^ 549109) + (431971 ^ 431971);
+    const _0xf9d7cf = String(tmdbId);
+    _0xb5c = "pcfbbi".split("").reverse().join("");
+    let _0x10a9gb = false;
+    for (let i = 283800 ^ 283800; i < _0xe7012b['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+      if (_0xe7012b[i]['\u0069\u0064'] === _0xf9d7cf && _0xe7012b[i]['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === mediaType) {
+        _0x10a9gb = !![];
         break;
       }
     }
-    
-    if (!exists) {
-      blockedItems.push({
-        id: itemId,
-        media_type: mediaType,
-        title: title || `TMDB ID: ${itemId}`,
-        poster_path: additionalInfo.poster_path || "",
-        overview: additionalInfo.overview,
-        blocked_date: new Date().toISOString(),
-        vote_average: additionalInfo.vote_average || 0
+    if (!_0x10a9gb) {
+      _0xe7012b['\u0070\u0075\u0073\u0068']({
+        '\u0069\u0064': _0xf9d7cf,
+        '\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065': mediaType,
+        '\u0074\u0069\u0074\u006C\u0065': title || `TMDB ID: ${_0xf9d7cf}`,
+        '\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068': additionalInfo['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] || "",
+        "overview": additionalInfo['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+        '\u0062\u006C\u006F\u0063\u006B\u0065\u0064\u005F\u0064\u0061\u0074\u0065': new Date()['\u0074\u006F\u0049\u0053\u004F\u0053\u0074\u0072\u0069\u006E\u0067'](),
+        '\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065': additionalInfo['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] || 995485 ^ 995485
       });
-      
-      Widget.storage.set(STORAGE_KEY, JSON.stringify(blockedItems));
+      Widget['\u0073\u0074\u006F\u0072\u0061\u0067\u0065']['\u0073\u0065\u0074'](STORAGE_KEY, JSON['\u0073\u0074\u0072\u0069\u006E\u0067\u0069\u0066\u0079'](_0xe7012b));
       clearBlockedIdCache();
       clearBlockedItemsCache();
-      return true;
+      return !![];
     }
-    
     return false;
   } catch (error) {
     return false;
   }
 }
-
 async function searchAndBlock(params) {
-  const blockType = params.block_type || "by_name";
-  const action = params.action || "search_only";
-  
-  if (blockType === "by_genre") {
+  var _0x217c = (886824 ^ 886827) + (258711 ^ 258719);
+  const _0x7394c = params['\u0062\u006C\u006F\u0063\u006B\u005F\u0074\u0079\u0070\u0065'] || "eman_yb".split("").reverse().join("");
+  _0x217c = 501266 ^ 501265;
+  const _0x22e8d = params['\u0061\u0063\u0074\u0069\u006F\u006E'] || "\u0073\u0065\u0061\u0072\u0063\u0068\u005F\u006F\u006E\u006C\u0079";
+  if (_0x7394c === "erneg_yb".split("").reverse().join("")) {
     return await searchAndBlockByGenre({
-      action: action,
-      genre_name: params.genre_name
+      '\u0061\u0063\u0074\u0069\u006F\u006E': _0x22e8d,
+      '\u0067\u0065\u006E\u0072\u0065\u005F\u006E\u0061\u006D\u0065': params['\u0067\u0065\u006E\u0072\u0065\u005F\u006E\u0061\u006D\u0065']
     });
-  } else if (blockType === "manual_id") {
-    const tmdbId = params.tmdb_id ? params.tmdb_id.trim() : '';
-    const mediaType = params.media_type || "movie";
-    
-    if (!tmdbId) {
+  } else if (_0x7394c === "\u006D\u0061\u006E\u0075\u0061\u006C\u005F\u0069\u0064") {
+    const _0x3a1g = params['\u0074\u006D\u0064\u0062\u005F\u0069\u0064'] ? params['\u0074\u006D\u0064\u0062\u005F\u0069\u0064']['\u0074\u0072\u0069\u006D']() : '';
+    var _0x594dad;
+    const _0x2a5f3c = params['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] || "\u006D\u006F\u0076\u0069\u0065";
+    _0x594dad = '\u0070\u0064\u0063\u0070\u006B\u0066';
+    if (!_0x3a1g) {
       return [{
-        id: "no_id",
-        type: "info",
-        title: "\u26a0 \u8bf7\u8f93\u5165TMDB ID",
-        description: "\u5728\u4e0a\u65b9\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u5c4f\u853d\u7684TMDB ID\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u6b64\u6a21\u5757\u3002",
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "info"
+        '\u0069\u0064': "no_id",
+        '\u0074\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F",
+        '\u0074\u0069\u0074\u006C\u0065': "\u26a0 \u8bf7\u8f93\u5165TMDB ID",
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u5728\u4e0a\u65b9\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u5c4f\u853d\u7684TMDB ID\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u6b64\u6a21\u5757\u3002",
+        '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+        '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+        "rating": 0,
+        '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F"
       }];
     }
-
-    if (!/^\d+$/.test(tmdbId)) {
+    if (!new RegExp("$+d\\^".split("").reverse().join(""), "")['\u0074\u0065\u0073\u0074'](_0x3a1g)) {
       return [{
-        id: "invalid_id",
-        type: "error",
-        title: "\u274c \u65e0\u6548\u7684ID\u683c\u5f0f",
-        description: "TMDB ID\u5e94\u8be5\u662f\u7eaf\u6570\u5b57\uff0c\u4f8b\u5982\uff1a550\u30011399",
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "error"
+        "id": "invalid_id",
+        "type": "\u0065\u0072\u0072\u006F\u0072",
+        '\u0074\u0069\u0074\u006C\u0065': "\u274c \u65e0\u6548\u7684ID\u683c\u5f0f",
+        "description": "TMDB ID\u5e94\u8be5\u662f\u7eaf\u6570\u5b57\uff0c\u4f8b\u5982\uff1a550\u30011399",
+        "posterPath": "",
+        '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+        '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+        '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "error"
       }];
     }
-
     try {
-      const endpoint = mediaType === "movie" ? "/movie/" + tmdbId : "/tv/" + tmdbId;
-      
-      const response = await Widget.tmdb.get(endpoint, {
-        params: { language: "zh-CN" }
+      var _0xd890a;
+      const _0xa899b = _0x2a5f3c === "\u006D\u006F\u0076\u0069\u0065" ? "\u002F\u006D\u006F\u0076\u0069\u0065\u002F" + _0x3a1g : "/vt/".split("").reverse().join("") + _0x3a1g;
+      _0xd890a = (199607 ^ 199602) + (247456 ^ 247457);
+      var _0x6b22c;
+      const _0x641e = await Widget['\u0074\u006D\u0064\u0062']['\u0067\u0065\u0074'](_0xa899b, {
+        "params": {
+          '\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065': "zh-CN"
+        }
       });
-
+      _0x6b22c = 487082 ^ 487080;
+      var _0xe_0xe35 = (492888 ^ 492890) + (331861 ^ 331859);
       let item = null;
-      if (response && response.data) {
-        item = response.data;
-      } else if (response && (response.title || response.name)) {
-        item = response;
+      _0xe_0xe35 = (894103 ^ 894097) + (663452 ^ 663451);
+      if (_0x641e && _0x641e['\u0064\u0061\u0074\u0061']) {
+        item = _0x641e['\u0064\u0061\u0074\u0061'];
+      } else if (_0x641e && (_0x641e['\u0074\u0069\u0074\u006C\u0065'] || _0x641e['\u006E\u0061\u006D\u0065'])) {
+        item = _0x641e;
       } else {
         throw new Error("\u65e0\u6cd5\u89e3\u6790\u8be6\u60c5\u54cd\u5e94\u7ed3\u6784");
       }
-
-      const title = item.title || item.name;
-      
-      if (!title) {
+      const _0x92552f = item['\u0074\u0069\u0074\u006C\u0065'] || item['\u006E\u0061\u006D\u0065'];
+      if (!_0x92552f) {
         return [{
-          id: "not_found",
-          type: "error",
-          title: "\u274c \u5185\u5bb9\u4e0d\u5b58\u5728",
-          description: "\u672a\u627e\u5230ID\u4e3a " + tmdbId + " \u7684" + (mediaType === "movie" ? "\u7535\u5f71" : "\u5267\u96c6"),
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "error"
+          '\u0069\u0064': "\u006E\u006F\u0074\u005F\u0066\u006F\u0075\u006E\u0064",
+          '\u0074\u0079\u0070\u0065': "error",
+          "title": "\u274c \u5185\u5bb9\u4e0d\u5b58\u5728",
+          "description": "\u672a\u627e\u5230ID\u4e3a " + _0x3a1g + " \u7684" + (_0x2a5f3c === "\u006D\u006F\u0076\u0069\u0065" ? "\u7535\u5f71" : "\u5267\u96c6"),
+          "posterPath": "",
+          '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+          "rating": 0,
+          '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "error"
         }];
       }
-
       const blockItem = {
-        id: tmdbId,
-        media_type: mediaType,
-        title: title,
-        poster_path: item.poster_path,
-        overview: item.overview,
-        vote_average: item.vote_average
+        '\u0069\u0064': _0x3a1g,
+        '\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065': _0x2a5f3c,
+        "title": _0x92552f,
+        "poster_path": item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+        '\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077': item['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+        '\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065': item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065']
       };
-
       const success = addBlockedItem(blockItem);
-      const mediaTypeText = mediaType === "movie" ? "\u7535\u5f71" : "\u5267\u96c6";
-      const ratingText = item.vote_average ? " \u2b50" + item.vote_average.toFixed(1) : "";
-      
+      var _0xe2_0xd0c;
+      const mediaTypeText = _0x2a5f3c === "\u006D\u006F\u0076\u0069\u0065" ? "\u7535\u5f71" : "\u5267\u96c6";
+      _0xe2_0xd0c = 107877 ^ 107885;
+      const ratingText = item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] ? " \u2b50" + item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065']['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](958005 ^ 958004) : "";
       return [{
-        id: "manual_block_result_" + tmdbId,
-        type: "info",
-        title: success ? "\u2705 \u5c4f\u853d\u6210\u529f" : "\u2139\ufe0f \u5df2\u5b58\u5728",
-        description: success ? 
-          mediaTypeText + "\"" + title + "\"" + ratingText + "\u5df2\u6dfb\u52a0\u5230\u9ed1\u540d\u5355" : 
-          mediaTypeText + "\"" + title + "\"" + ratingText + "\u5df2\u5728\u9ed1\u540d\u5355\u4e2d",
-        posterPath: item.poster_path ? "https://image.tmdb.org/t/p/w500" + item.poster_path : "",
-        backdropPath: "",
-        rating: item.vote_average || 0,
-        mediaType: mediaType
+        '\u0069\u0064': "_tluser_kcolb_launam".split("").reverse().join("") + _0x3a1g,
+        '\u0074\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F",
+        "title": success ? "\u2705 \u5c4f\u853d\u6210\u529f" : "\u2139\ufe0f \u5df2\u5b58\u5728",
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': success ? mediaTypeText + "\u0022" + _0x92552f + "\u0022" + ratingText + "\u5df2\u6dfb\u52a0\u5230\u9ed1\u540d\u5355" : mediaTypeText + "\u0022" + _0x92552f + "\u0022" + ratingText + "\u5df2\u5728\u9ed1\u540d\u5355\u4e2d",
+        '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] ? "005w/p/t/gro.bdmt.egami//:sptth".split("").reverse().join("") + item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] : "",
+        '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+        '\u0072\u0061\u0074\u0069\u006E\u0067': item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] || 799972 ^ 799972,
+        "mediaType": _0x2a5f3c
       }];
-
     } catch (error) {
       return [{
-        id: "manual_block_error",
-        type: "error", 
-        title: "\u274c \u5c4f\u853d\u5931\u8d25",
-        description: "\u9519\u8bef\u4fe1\u606f: " + error.message,
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "error"
+        "id": "\u006D\u0061\u006E\u0075\u0061\u006C\u005F\u0062\u006C\u006F\u0063\u006B\u005F\u0065\u0072\u0072\u006F\u0072",
+        '\u0074\u0079\u0070\u0065': "\u0065\u0072\u0072\u006F\u0072",
+        '\u0074\u0069\u0074\u006C\u0065': "\u274c \u5c4f\u853d\u5931\u8d25",
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u9519\u8bef\u4fe1\u606f: " + error['\u006D\u0065\u0073\u0073\u0061\u0067\u0065'],
+        "posterPath": "",
+        '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+        '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+        '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "\u0065\u0072\u0072\u006F\u0072"
       }];
     }
   } else {
-    const query = params.query ? params.query.trim() : '';
-    const language = params.language || "zh-CN";
-    
-    if (!query) {
+    var _0xaba12d = (986104 ^ 986107) + (224118 ^ 224115);
+    const _0xab7a = params['\u0071\u0075\u0065\u0072\u0079'] ? params['\u0071\u0075\u0065\u0072\u0079']['\u0074\u0072\u0069\u006D']() : '';
+    _0xaba12d = (902201 ^ 902205) + (279048 ^ 279055);
+    const _0x2cfc7b = params['\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065'] || "NC-hz".split("").reverse().join("");
+    if (!_0xab7a) {
       return [{
-        id: "no_query",
-        type: "info",
-        title: "\u26a0 \u8bf7\u8f93\u5165\u641c\u7d22\u5173\u952e\u8bcd",
-        description: "\u5728\u4e0a\u65b9\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u641c\u7d22\u7684\u5f71\u7247\u6216\u5267\u96c6\u540d\u79f0\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u6b64\u6a21\u5757\u3002",
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "info"
+        "id": "no_query",
+        "type": "info",
+        "title": "\u26a0 \u8bf7\u8f93\u5165\u641c\u7d22\u5173\u952e\u8bcd",
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u5728\u4e0a\u65b9\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u641c\u7d22\u7684\u5f71\u7247\u6216\u5267\u96c6\u540d\u79f0\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u6b64\u6a21\u5757\u3002",
+        "posterPath": "",
+        '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+        '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+        '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F"
       }];
     }
-
     try {
-      const searchResults = await searchTMDB(query, language);
-      
-      if (searchResults.length === 0) {
+      var _0x1da74f = (253259 ^ 253260) + (739528 ^ 739535);
+      const _0x7debb = await searchTMDB(_0xab7a, _0x2cfc7b);
+      _0x1da74f = 386346 ^ 386350;
+      if (_0x7debb['\u006C\u0065\u006E\u0067\u0074\u0068'] === (507332 ^ 507332)) {
         return [{
-          id: "no_results",
-          type: "info", 
-          title: "\u1f50d \u672a\u627e\u5230\u5339\u914d\u7ed3\u679c",
-          description: "\u6ca1\u6709\u627e\u5230\u4e0e\"" + query + "\"\u76f8\u5173\u7684\u5f71\u7247\u6216\u5267\u96c6\uff0c\u8bf7\u5c1d\u8bd5\u5176\u4ed6\u5173\u952e\u8bcd\u3002",
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "info"
+          '\u0069\u0064': "\u006E\u006F\u005F\u0072\u0065\u0073\u0075\u006C\u0074\u0073",
+          "type": "info",
+          '\u0074\u0069\u0074\u006C\u0065': "\u1f50d \u672a\u627e\u5230\u5339\u914d\u7ed3\u679c",
+          "description": "\u6ca1\u6709\u627e\u5230\u4e0e\"" + _0xab7a + "\"\u76f8\u5173\u7684\u5f71\u7247\u6216\u5267\u96c6\uff0c\u8bf7\u5c1d\u8bd5\u5176\u4ed6\u5173\u952e\u8bcd\u3002",
+          '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+          "backdropPath": "",
+          "rating": 0,
+          "mediaType": "\u0069\u006E\u0066\u006F"
         }];
       }
-
-      const resultItems = [];
-      
-      if (action === "search_only") {
-        const blockedItems = getBlockedItems();
-        const blockedIds = new Set();
-        for (let i = 0; i < blockedItems.length; i++) {
-          blockedIds.add(blockedItems[i].id + "_" + blockedItems[i].media_type);
+      const _0xe3651c = [];
+      if (_0x22e8d === "\u0073\u0065\u0061\u0072\u0063\u0068\u005F\u006F\u006E\u006C\u0079") {
+        var _0xg020e;
+        const _0x8827e = getBlockedItems();
+        _0xg020e = 909587 ^ 909590;
+        var _0x5c6e1b;
+        const _0x1g1f6d = new Set();
+        _0x5c6e1b = 477540 ^ 477536;
+        for (let i = 963514 ^ 963514; i < _0x8827e['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+          _0x1g1f6d['\u0061\u0064\u0064'](_0x8827e[i]['\u0069\u0064'] + "\u005F" + _0x8827e[i]['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065']);
         }
-        
-        for (let i = 0; i < searchResults.length; i++) {
-          const item = searchResults[i];
-          const isBlocked = blockedIds.has(item.id + "_" + item.media_type);
-          const mediaTypeText = item.media_type === "movie" ? "\u7535\u5f71" : "\u5267\u96c6";
-          const yearText = item.year ? " (" + item.year + ")" : "";
-          const ratingText = item.vote_average ? " \u2b50" + item.vote_average.toFixed(1) : "";
-          const statusText = isBlocked ? " \u1f6ab\u5df2\u5c4f\u853d" : "";
-          
-          resultItems.push({
-            id: "search_" + item.id + "_" + item.media_type,
-            type: "info",
-            title: item.title + yearText + statusText,
-            description: mediaTypeText + ratingText + " (TMDB ID: " + item.id + ") | " + (item.overview || "\u6682\u65e0\u7b80\u4ecb"),
-            posterPath: item.poster_path ? "https://image.tmdb.org/t/p/w500" + item.poster_path : "",
-            backdropPath: "",
-            rating: item.vote_average || 0,
-            mediaType: item.media_type
+        for (let i = 872585 ^ 872585; i < _0x7debb['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+          const item = _0x7debb[i];
+          const _0xd576a = _0x1g1f6d['\u0068\u0061\u0073'](item['\u0069\u0064'] + "\u005F" + item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065']);
+          const mediaTypeText = item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === "\u006D\u006F\u0076\u0069\u0065" ? "\u7535\u5f71" : "\u5267\u96c6";
+          var _0x3f5ecc = (491284 ^ 491285) + (280855 ^ 280853);
+          const yearText = item['\u0079\u0065\u0061\u0072'] ? "\u0020\u0028" + item['\u0079\u0065\u0061\u0072'] + "\u0029" : "";
+          _0x3f5ecc = 190751 ^ 190750;
+          const ratingText = item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] ? " \u2b50" + item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065']['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](482311 ^ 482310) : "";
+          var _0x3_0x39d = (691564 ^ 691565) + (804297 ^ 804297);
+          const _0x4f_0x429 = _0xd576a ? " \u1f6ab\u5df2\u5c4f\u853d" : "";
+          _0x3_0x39d = 498865 ^ 498870;
+          _0xe3651c['\u0070\u0075\u0073\u0068']({
+            "id": "_hcraes".split("").reverse().join("") + item['\u0069\u0064'] + "\u005F" + item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'],
+            '\u0074\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F",
+            '\u0074\u0069\u0074\u006C\u0065': item['\u0074\u0069\u0074\u006C\u0065'] + yearText + _0x4f_0x429,
+            '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': mediaTypeText + ratingText + " :DI BDMT( ".split("").reverse().join("") + item['\u0069\u0064'] + "\u0029\u0020\u007C\u0020" + (item['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'] || "\u6682\u65e0\u7b80\u4ecb"),
+            '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] ? "\u0068\u0074\u0074\u0070\u0073\u003A\u002F\u002F\u0069\u006D\u0061\u0067\u0065\u002E\u0074\u006D\u0064\u0062\u002E\u006F\u0072\u0067\u002F\u0074\u002F\u0070\u002F\u0077\u0035\u0030\u0030" + item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] : "",
+            '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+            "rating": item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] || 559727 ^ 559727,
+            "mediaType": item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065']
           });
         }
-        
-        resultItems.unshift({
-          id: "search_summary",
-          type: "info",
-          title: "\u1f50d \u641c\u7d22\u7ed3\u679c",
-          description: "\u641c\u7d22\"" + query + "\"\u627e\u5230 " + searchResults.length + " \u4e2a\u7ed3\u679c\n\n" +
-                       "\u5982\u9700\u5c4f\u853d\u8fd9\u4e9b\u5185\u5bb9\uff0c\u8bf7\u9009\u62e9\"\u641c\u7d22\u5e76\u5c4f\u853d\"\u6a21\u5f0f\u3002",
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "info"
+        _0xe3651c['\u0075\u006E\u0073\u0068\u0069\u0066\u0074']({
+          '\u0069\u0064': "\u0073\u0065\u0061\u0072\u0063\u0068\u005F\u0073\u0075\u006D\u006D\u0061\u0072\u0079",
+          "type": "\u0069\u006E\u0066\u006F",
+          "title": "\u1f50d \u641c\u7d22\u7ed3\u679c",
+          "description": "\u641c\u7d22\"" + _0xab7a + "\"\u627e\u5230 " + _0x7debb['\u006C\u0065\u006E\u0067\u0074\u0068'] + " \u4e2a\u7ed3\u679c\n\n" + "\u5982\u9700\u5c4f\u853d\u8fd9\u4e9b\u5185\u5bb9\uff0c\u8bf7\u9009\u62e9\"\u641c\u7d22\u5e76\u5c4f\u853d\"\u6a21\u5f0f\u3002",
+          "posterPath": "",
+          '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+          "rating": 0,
+          "mediaType": "info"
         });
-        
       } else {
-        let blockedCount = 0;
-        let alreadyBlockedCount = 0;
-        
-        for (let i = 0; i < searchResults.length; i++) {
-          const item = searchResults[i];
-          const mediaTypeText = item.media_type === "movie" ? "\u7535\u5f71" : "\u5267\u96c6";
-          const yearText = item.year ? " (" + item.year + ")" : "";
-          const ratingText = item.vote_average ? " \u2b50" + item.vote_average.toFixed(1) : "";
-          
+        var _0xge_0x1fe = (228030 ^ 228028) + (686512 ^ 686513);
+        let _0xb4_0xg39 = 429958 ^ 429958;
+        _0xge_0x1fe = (793997 ^ 793994) + (489478 ^ 489475);
+        var _0x5ab = (821492 ^ 821493) + (304837 ^ 304833);
+        let _0xbebc = 514418 ^ 514418;
+        _0x5ab = (722374 ^ 722374) + (964854 ^ 964863);
+        for (let i = 481802 ^ 481802; i < _0x7debb['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+          const item = _0x7debb[i];
+          const mediaTypeText = item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === "eivom".split("").reverse().join("") ? "\u7535\u5f71" : "\u5267\u96c6";
+          var _0xfe88dd;
+          const yearText = item['\u0079\u0065\u0061\u0072'] ? "\u0020\u0028" + item['\u0079\u0065\u0061\u0072'] + "\u0029" : "";
+          _0xfe88dd = 856327 ^ 856322;
+          var _0x9835dg = (560610 ^ 560609) + (727687 ^ 727687);
+          const ratingText = item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] ? " \u2b50" + item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065']['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](282851 ^ 282850) : "";
+          _0x9835dg = (782929 ^ 782931) + (372643 ^ 372645);
           const blockItem = {
-            id: item.id,
-            media_type: item.media_type,
-            title: item.title,
-            poster_path: item.poster_path,
-            overview: item.overview,
-            vote_average: item.vote_average
+            '\u0069\u0064': item['\u0069\u0064'],
+            "media_type": item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'],
+            '\u0074\u0069\u0074\u006C\u0065': item['\u0074\u0069\u0074\u006C\u0065'],
+            '\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068': item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+            "overview": item['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+            '\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065': item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065']
           };
-          
+          var _0x19a9ff;
           const success = addBlockedItem(blockItem);
+          _0x19a9ff = '\u006F\u0064\u0067\u0071\u0070\u006D';
           if (success) {
-            blockedCount++;
+            _0xb4_0xg39++;
           } else {
-            alreadyBlockedCount++;
+            _0xbebc++;
           }
-          
-          const status = success ? "\u2705 \u5df2\u5c4f\u853d" : "\u1f6ab \u5df2\u5b58\u5728";
-          
-          resultItems.push({
-            id: "blocked_" + item.id + "_" + item.media_type,
-            type: "info",
-            title: status + " " + item.title + yearText,
-            description: mediaTypeText + ratingText + " (TMDB ID: " + item.id + ") | " + (item.overview || "\u6682\u65e0\u7b80\u4ecb"),
-            posterPath: item.poster_path ? "https://image.tmdb.org/t/p/w500" + item.poster_path : "",
-            backdropPath: "",
-            rating: item.vote_average || 0,
-            mediaType: item.media_type
+          var _0xb8f87g = (461338 ^ 461339) + (511459 ^ 511459);
+          const _0x3efg = success ? "\u2705 \u5df2\u5c4f\u853d" : "\u1f6ab \u5df2\u5b58\u5728";
+          _0xb8f87g = (508121 ^ 508122) + (932779 ^ 932783);
+          _0xe3651c['\u0070\u0075\u0073\u0068']({
+            "id": "_dekcolb".split("").reverse().join("") + item['\u0069\u0064'] + "\u005F" + item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'],
+            '\u0074\u0079\u0070\u0065': "info",
+            "title": _0x3efg + "\u0020" + item['\u0074\u0069\u0074\u006C\u0065'] + yearText,
+            "description": mediaTypeText + ratingText + "\u0020\u0028\u0054\u004D\u0044\u0042\u0020\u0049\u0044\u003A\u0020" + item['\u0069\u0064'] + "\u0029\u0020\u007C\u0020" + (item['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'] || "\u6682\u65e0\u7b80\u4ecb"),
+            '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] ? "005w/p/t/gro.bdmt.egami//:sptth".split("").reverse().join("") + item['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] : "",
+            '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+            '\u0072\u0061\u0074\u0069\u006E\u0067': item['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] || 313361 ^ 313361,
+            "mediaType": item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065']
           });
         }
-        
-        resultItems.unshift({
-          id: "block_summary",
-          type: "info",
-          title: "\u1f3af \u5c4f\u853d\u64cd\u4f5c\u5b8c\u6210",
-          description: "\u641c\u7d22\"" + query + "\"\u627e\u5230 " + searchResults.length + " \u4e2a\u7ed3\u679c\n" +
-                       "\u65b0\u589e\u5c4f\u853d: " + blockedCount + " \u4e2a\n" +
-                       "\u5df2\u5b58\u5728: " + alreadyBlockedCount + " \u4e2a\n\n" +
-                       "\u8fd9\u4e9b\u5185\u5bb9\u5c06\u4e0d\u518d\u5728\u4efb\u4f55TMDB\u699c\u5355\u4e2d\u663e\u793a\u3002",
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "info"
+        _0xe3651c['\u0075\u006E\u0073\u0068\u0069\u0066\u0074']({
+          '\u0069\u0064': "block_summary",
+          '\u0074\u0079\u0070\u0065': "info",
+          "title": "\u1f3af \u5c4f\u853d\u64cd\u4f5c\u5b8c\u6210",
+          '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u641c\u7d22\"" + _0xab7a + "\"\u627e\u5230 " + _0x7debb['\u006C\u0065\u006E\u0067\u0074\u0068'] + " \u4e2a\u7ed3\u679c\n" + "\u65b0\u589e\u5c4f\u853d: " + _0xb4_0xg39 + " \u4e2a\n" + "\u5df2\u5b58\u5728: " + _0xbebc + " \u4e2a\n\n" + "\u8fd9\u4e9b\u5185\u5bb9\u5c06\u4e0d\u518d\u5728\u4efb\u4f55TMDB\u699c\u5355\u4e2d\u663e\u793a\u3002",
+          '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+          "backdropPath": "",
+          "rating": 0,
+          '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F"
         });
       }
-      
-      return resultItems;
-      
+      return _0xe3651c;
     } catch (error) {
       return [{
-        id: "error",
-        type: "error",
-        title: "\u274c \u641c\u7d22\u5931\u8d25",
-        description: "\u9519\u8bef\u4fe1\u606f: " + error.message,
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "error"
+        '\u0069\u0064': "error",
+        '\u0074\u0079\u0070\u0065': "error",
+        '\u0074\u0069\u0074\u006C\u0065': "\u274c \u641c\u7d22\u5931\u8d25",
+        "description": "\u9519\u8bef\u4fe1\u606f: " + error['\u006D\u0065\u0073\u0073\u0061\u0067\u0065'],
+        "posterPath": "",
+        "backdropPath": "",
+        '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+        '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "\u0065\u0072\u0072\u006F\u0072"
       }];
     }
   }
 }
-
-// =============\u5c4f\u853d\u7ba1\u7406=============
 async function manageBlockedItems(params) {
-  const manageType = params.manage_type || "items";
-  const action = params.action || "view";
-  
-  if (manageType === "genres") {
-    if (action === "unblock") {
-      const genreId = params.unblock_id ? parseInt(params.unblock_id.trim()) : null;
-      
-      if (!genreId) {
+  var _0x46378a;
+  const _0xdca2bb = params['\u006D\u0061\u006E\u0061\u0067\u0065\u005F\u0074\u0079\u0070\u0065'] || "\u0069\u0074\u0065\u006D\u0073";
+  _0x46378a = "nhkjin".split("").reverse().join("");
+  const _0x62196e = params['\u0061\u0063\u0074\u0069\u006F\u006E'] || "\u0076\u0069\u0065\u0077";
+  if (_0xdca2bb === "\u0067\u0065\u006E\u0072\u0065\u0073") {
+    if (_0x62196e === "kcolbnu".split("").reverse().join("")) {
+      const _0x20e93d = params['\u0075\u006E\u0062\u006C\u006F\u0063\u006B\u005F\u0069\u0064'] ? parseInt(params['\u0075\u006E\u0062\u006C\u006F\u0063\u006B\u005F\u0069\u0064']['\u0074\u0072\u0069\u006D']()) : null;
+      if (!_0x20e93d) {
         return [{
-          id: "no_genre_id",
-          type: "info",
-          title: "\u26a0 \u8bf7\u8f93\u5165\u8981\u53d6\u6d88\u5c4f\u853d\u7684\u7c7b\u578bID",
-          description: "\u5728\u4e0a\u65b9\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u53d6\u6d88\u5c4f\u853d\u7684\u7c7b\u578bID\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u3002",
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "info"
+          '\u0069\u0064': "\u006E\u006F\u005F\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064",
+          "type": "\u0069\u006E\u0066\u006F",
+          '\u0074\u0069\u0074\u006C\u0065': "\u26a0 \u8bf7\u8f93\u5165\u8981\u53d6\u6d88\u5c4f\u853d\u7684\u7c7b\u578bID",
+          '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u5728\u4e0a\u65b9\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u53d6\u6d88\u5c4f\u853d\u7684\u7c7b\u578bID\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u3002",
+          '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+          '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+          "rating": 0,
+          "mediaType": "info"
         }];
       }
-      
-      const success = removeBlockedGenre(genreId);
-      const genreName = REVERSE_GENRE_MAPPING[genreId] || `\u7c7b\u578bID: ${genreId}`;
-      
+      var _0x9f78b = (920394 ^ 920397) + (932761 ^ 932766);
+      const success = removeBlockedGenre(_0x20e93d);
+      _0x9f78b = (270417 ^ 270421) + (446265 ^ 446264);
+      var _0xg5753a = (493964 ^ 493961) + (563975 ^ 563972);
+      const _0xfd2 = REVERSE_GENRE_MAPPING[_0x20e93d] || `\u7c7b\u578bID: ${_0x20e93d}`;
+      _0xg5753a = (951628 ^ 951628) + (974543 ^ 974536);
       return [{
-        id: "unblock_genre_result",
-        type: "info",
-        title: success ? "\u2705 \u53d6\u6d88\u5c4f\u853d\u6210\u529f" : "\u274c \u64cd\u4f5c\u5931\u8d25",
-        description: success ? 
-          `\u7c7b\u578b"${genreName}"\u5df2\u4ece\u5c4f\u853d\u5217\u8868\u4e2d\u79fb\u9664\uff0c\u5c06\u91cd\u65b0\u5728\u699c\u5355\u4e2d\u663e\u793a\u3002` : 
-          `\u672a\u627e\u5230ID\u4e3a ${genreId} \u7684\u7c7b\u578b\uff0c\u6216\u53d6\u6d88\u5c4f\u853d\u65f6\u51fa\u73b0\u9519\u8bef\u3002`,
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "info"
+        '\u0069\u0064': "unblock_genre_result",
+        '\u0074\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F",
+        '\u0074\u0069\u0074\u006C\u0065': success ? "\u2705 \u53d6\u6d88\u5c4f\u853d\u6210\u529f" : "\u274c \u64cd\u4f5c\u5931\u8d25",
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': success ? `\u7c7b\u578b"${_0xfd2}"\u5df2\u4ece\u5c4f\u853d\u5217\u8868\u4e2d\u79fb\u9664\uff0c\u5c06\u91cd\u65b0\u5728\u699c\u5355\u4e2d\u663e\u793a\u3002` : `\u672a\u627e\u5230ID\u4e3a ${_0x20e93d} \u7684\u7c7b\u578b\uff0c\u6216\u53d6\u6d88\u5c4f\u853d\u65f6\u51fa\u73b0\u9519\u8bef\u3002`,
+        '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+        "backdropPath": "",
+        "rating": 0,
+        "mediaType": "info"
       }];
     }
-    
-    if (action === "clear") {
+    if (_0x62196e === "raelc".split("").reverse().join("")) {
       try {
-        Widget.storage.remove(GENRE_STORAGE_KEY);
+        Widget['\u0073\u0074\u006F\u0072\u0061\u0067\u0065']['\u0072\u0065\u006D\u006F\u0076\u0065'](GENRE_STORAGE_KEY);
         clearBlockedGenresCache();
         clearBlockedIdCache();
         return [{
-          id: "clear_genres_result",
-          type: "info",
-          title: "\u2705 \u7c7b\u578b\u5c4f\u853d\u5217\u8868\u5df2\u6e05\u7a7a",
-          description: "\u6240\u6709\u88ab\u5c4f\u853d\u7684\u7c7b\u578b\u5df2\u88ab\u79fb\u9664\uff0c\u5185\u5bb9\u5c06\u91cd\u65b0\u5728\u699c\u5355\u4e2d\u663e\u793a\u3002",
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "info"
+          '\u0069\u0064': "clear_genres_result",
+          '\u0074\u0079\u0070\u0065': "info",
+          "title": "\u2705 \u7c7b\u578b\u5c4f\u853d\u5217\u8868\u5df2\u6e05\u7a7a",
+          '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u6240\u6709\u88ab\u5c4f\u853d\u7684\u7c7b\u578b\u5df2\u88ab\u79fb\u9664\uff0c\u5185\u5bb9\u5c06\u91cd\u65b0\u5728\u699c\u5355\u4e2d\u663e\u793a\u3002",
+          "posterPath": "",
+          '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+          '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+          "mediaType": "info"
         }];
       } catch (error) {
         return [{
-          id: "clear_genres_error",
-          type: "error",
-          title: "\u274c \u6e05\u7a7a\u5931\u8d25",
-          description: "\u6e05\u7a7a\u7c7b\u578b\u5c4f\u853d\u5217\u8868\u65f6\u51fa\u73b0\u9519\u8bef\u3002",
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "error"
+          "id": "\u0063\u006C\u0065\u0061\u0072\u005F\u0067\u0065\u006E\u0072\u0065\u0073\u005F\u0065\u0072\u0072\u006F\u0072",
+          "type": "\u0065\u0072\u0072\u006F\u0072",
+          "title": "\u274c \u6e05\u7a7a\u5931\u8d25",
+          "description": "\u6e05\u7a7a\u7c7b\u578b\u5c4f\u853d\u5217\u8868\u65f6\u51fa\u73b0\u9519\u8bef\u3002",
+          '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+          '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+          '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+          '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "error"
         }];
       }
     }
-    
-    const blockedGenres = getBlockedGenres();
-    
-    if (blockedGenres.length === 0) {
+    var _0xff1e6c;
+    const _0xac28d = getBlockedGenres();
+    _0xff1e6c = 981042 ^ 981042;
+    if (_0xac28d['\u006C\u0065\u006E\u0067\u0074\u0068'] === (688920 ^ 688920)) {
       return [{
-        id: "empty_genre_list",
-        type: "info",
-        title: "\u7c7b\u578b\u5c4f\u853d\u5217\u8868\u4e3a\u7a7a",
-        description: "\u5f53\u524d\u6ca1\u6709\u5c4f\u853d\u4efb\u4f55\u5185\u5bb9\u7c7b\u578b\u3002\u5728\u5c4f\u853d\u7c7b\u578b\u9009\u62e9\"\u6309\u5185\u5bb9\u7c7b\u578b\"\u6dfb\u52a0\u8981\u5c4f\u853d\u7684\u7c7b\u578b\u3002",
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "info"
+        '\u0069\u0064': "empty_genre_list",
+        '\u0074\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F",
+        '\u0074\u0069\u0074\u006C\u0065': "\u7c7b\u578b\u5c4f\u853d\u5217\u8868\u4e3a\u7a7a",
+        "description": "\u5f53\u524d\u6ca1\u6709\u5c4f\u853d\u4efb\u4f55\u5185\u5bb9\u7c7b\u578b\u3002\u5728\u5c4f\u853d\u7c7b\u578b\u9009\u62e9\"\u6309\u5185\u5bb9\u7c7b\u578b\"\u6dfb\u52a0\u8981\u5c4f\u853d\u7684\u7c7b\u578b\u3002",
+        '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+        "backdropPath": "",
+        '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+        "mediaType": "\u0069\u006E\u0066\u006F"
       }];
     }
-    
     const resultItems = [];
-    
-    resultItems.push({
-      id: "genre_unblock_help",
-      type: "info",
-      title: "\ud83d\udca1 \u53d6\u6d88\u7c7b\u578b\u5c4f\u853d\u8bf4\u660e",
-      description: "\u8981\u53d6\u6d88\u5c4f\u853d\u67d0\u4e2a\u7c7b\u578b\uff0c\u8bf7\uff1a\ud83d\udcdd \u8bb0\u4f4f\u8981\u53d6\u6d88\u7684\u7c7b\u578bID\uff0c\u2699\ufe0f \u9009\u62e9\"\u53d6\u6d88\u5c4f\u853d\"\u64cd\u4f5c\uff0c\u270f\ufe0f \u8f93\u5165\u5bf9\u5e94\u7684\u7c7b\u578bID",
-      posterPath: "",
-      backdropPath: "",
-      rating: 0,
-      mediaType: "info"
+    resultItems['\u0070\u0075\u0073\u0068']({
+      '\u0069\u0064': "\u0067\u0065\u006E\u0072\u0065\u005F\u0075\u006E\u0062\u006C\u006F\u0063\u006B\u005F\u0068\u0065\u006C\u0070",
+      "type": "info",
+      '\u0074\u0069\u0074\u006C\u0065': "\ud83d\udca1 \u53d6\u6d88\u7c7b\u578b\u5c4f\u853d\u8bf4\u660e",
+      "description": "\u8981\u53d6\u6d88\u5c4f\u853d\u67d0\u4e2a\u7c7b\u578b\uff0c\u8bf7\uff1a\ud83d\udcdd \u8bb0\u4f4f\u8981\u53d6\u6d88\u7684\u7c7b\u578bID\uff0c\u2699\ufe0f \u9009\u62e9\"\u53d6\u6d88\u5c4f\u853d\"\u64cd\u4f5c\uff0c\u270f\ufe0f \u8f93\u5165\u5bf9\u5e94\u7684\u7c7b\u578bID",
+      '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+      '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+      '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+      "mediaType": "\u0069\u006E\u0066\u006F"
     });
-    
-    const sortedGenres = [...blockedGenres].sort((a, b) => 
-      new Date(b.blocked_date) - new Date(a.blocked_date)
-    );
-    
-    for (const genre of sortedGenres) {
-      const blockedDate = new Date(genre.blocked_date).toLocaleDateString();
-      
-      resultItems.push({
-        id: `blocked_genre_${genre.id}`,
-        type: "blocked_genre",
-        title: `\ud83d\udeab ${genre.name}`,
-        description: `\u7c7b\u578bID: ${genre.id} | \u5c4f\u853d\u4e8e: ${blockedDate}\n${genre.description}`,
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "genre",
-        genreId: genre.id,
-        genreName: genre.name
+    var _0xbafg = (974788 ^ 974789) + (259760 ^ 259764);
+    const _0x867g = [..._0xac28d]['\u0073\u006F\u0072\u0074']((a, b) => new Date(b['\u0062\u006C\u006F\u0063\u006B\u0065\u0064\u005F\u0064\u0061\u0074\u0065']) - new Date(a['\u0062\u006C\u006F\u0063\u006B\u0065\u0064\u005F\u0064\u0061\u0074\u0065']));
+    _0xbafg = '\u0066\u006D\u0068\u0070\u006F\u0063';
+    for (const _0xa3420a of _0x867g) {
+      var _0x8ea;
+      const blockedDate = new Date(_0xa3420a['\u0062\u006C\u006F\u0063\u006B\u0065\u0064\u005F\u0064\u0061\u0074\u0065'])['\u0074\u006F\u004C\u006F\u0063\u0061\u006C\u0065\u0044\u0061\u0074\u0065\u0053\u0074\u0072\u0069\u006E\u0067']();
+      _0x8ea = (868839 ^ 868846) + (254250 ^ 254251);
+      resultItems['\u0070\u0075\u0073\u0068']({
+        '\u0069\u0064': `blocked_genre_${_0xa3420a['\u0069\u0064']}`,
+        "type": "blocked_genre",
+        "title": `\ud83d\udeab ${_0xa3420a['\u006E\u0061\u006D\u0065']}`,
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': `\u7c7b\u578bID: ${_0xa3420a['\u0069\u0064']} | \u5c4f\u853d\u4e8e: ${blockedDate}\n${_0xa3420a['\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E']}`,
+        "posterPath": "",
+        '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+        "rating": 0,
+        "mediaType": "genre",
+        '\u0067\u0065\u006E\u0072\u0065\u0049\u0064': _0xa3420a['\u0069\u0064'],
+        '\u0067\u0065\u006E\u0072\u0065\u004E\u0061\u006D\u0065': _0xa3420a['\u006E\u0061\u006D\u0065']
       });
     }
-    
     return resultItems;
   } else {
-    if (action === "unblock") {
-      const unblockId = params.unblock_id ? params.unblock_id.trim() : '';
-      const mediaType = params.unblock_media_type || "tv";
-      
-      if (!unblockId) {
+    if (_0x62196e === "kcolbnu".split("").reverse().join("")) {
+      var _0x9efe = (375987 ^ 375995) + (357995 ^ 357992);
+      const _0xg1b6bb = params['\u0075\u006E\u0062\u006C\u006F\u0063\u006B\u005F\u0069\u0064'] ? params['\u0075\u006E\u0062\u006C\u006F\u0063\u006B\u005F\u0069\u0064']['\u0074\u0072\u0069\u006D']() : '';
+      _0x9efe = (850553 ^ 850552) + (543547 ^ 543539);
+      var _0xb3be4b = (686722 ^ 686725) + (759631 ^ 759623);
+      const _0xc4g = params['\u0075\u006E\u0062\u006C\u006F\u0063\u006B\u005F\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] || "\u0074\u0076";
+      _0xb3be4b = 224488 ^ 224495;
+      if (!_0xg1b6bb) {
         return [{
-          id: "no_unblock_id",
-          type: "info",
-          title: "\u26a0 \u8bf7\u8f93\u5165\u8981\u53d6\u6d88\u5c4f\u853d\u7684ID",
-          description: "\u5728\u4e0a\u65b9\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u53d6\u6d88\u5c4f\u853d\u7684TMDB ID\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u3002",
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "info"
+          "id": "\u006E\u006F\u005F\u0075\u006E\u0062\u006C\u006F\u0063\u006B\u005F\u0069\u0064",
+          "type": "info",
+          '\u0074\u0069\u0074\u006C\u0065': "\u26a0 \u8bf7\u8f93\u5165\u8981\u53d6\u6d88\u5c4f\u853d\u7684ID",
+          '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u5728\u4e0a\u65b9\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u53d6\u6d88\u5c4f\u853d\u7684TMDB ID\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u3002",
+          '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+          '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+          "rating": 0,
+          "mediaType": "\u0069\u006E\u0066\u006F"
         }];
       }
-
-      if (!/^\d+$/.test(unblockId)) {
+      if (!new RegExp('\u005E\u005C\u0064\u002B\u0024', "")['\u0074\u0065\u0073\u0074'](_0xg1b6bb)) {
         return [{
-          id: "invalid_unblock_id",
-          type: "error",
-          title: "\u274c \u65e0\u6548\u7684ID\u683c\u5f0f",
-          description: "TMDB ID\u5e94\u8be5\u662f\u7eaf\u6570\u5b57\uff0c\u4f8b\u5982\uff1a2190\u3001550",
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "error"
+          '\u0069\u0064': "\u0069\u006E\u0076\u0061\u006C\u0069\u0064\u005F\u0075\u006E\u0062\u006C\u006F\u0063\u006B\u005F\u0069\u0064",
+          "type": "\u0065\u0072\u0072\u006F\u0072",
+          "title": "\u274c \u65e0\u6548\u7684ID\u683c\u5f0f",
+          '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "TMDB ID\u5e94\u8be5\u662f\u7eaf\u6570\u5b57\uff0c\u4f8b\u5982\uff1a2190\u3001550",
+          "posterPath": "",
+          '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+          '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+          "mediaType": "\u0065\u0072\u0072\u006F\u0072"
         }];
       }
-
-      const success = removeBlockedItem(unblockId, mediaType);
-      const mediaTypeText = mediaType === "movie" ? "\u7535\u5f71" : "\u5267\u96c6";
-      
+      const success = removeBlockedItem(_0xg1b6bb, _0xc4g);
+      const mediaTypeText = _0xc4g === "\u006D\u006F\u0076\u0069\u0065" ? "\u7535\u5f71" : "\u5267\u96c6";
       return [{
-        id: "unblock_result",
-        type: "info",
-        title: success ? "\u2705 \u53d6\u6d88\u5c4f\u853d\u6210\u529f" : "\u274c \u64cd\u4f5c\u5931\u8d25",
-        description: success ? 
-          mediaTypeText + " ID " + unblockId + " \u5df2\u4ece\u9ed1\u540d\u5355\u4e2d\u79fb\u9664\uff0c\u5c06\u91cd\u65b0\u5728\u699c\u5355\u4e2d\u663e\u793a\u3002" : 
-          "\u672a\u627e\u5230ID\u4e3a " + unblockId + " \u7684" + mediaTypeText + "\uff0c\u6216\u53d6\u6d88\u5c4f\u853d\u65f6\u51fa\u73b0\u9519\u8bef\u3002",
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "info"
+        '\u0069\u0064': "\u0075\u006E\u0062\u006C\u006F\u0063\u006B\u005F\u0072\u0065\u0073\u0075\u006C\u0074",
+        '\u0074\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F",
+        '\u0074\u0069\u0074\u006C\u0065': success ? "\u2705 \u53d6\u6d88\u5c4f\u853d\u6210\u529f" : "\u274c \u64cd\u4f5c\u5931\u8d25",
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': success ? mediaTypeText + "\u0020\u0049\u0044\u0020" + _0xg1b6bb + " \u5df2\u4ece\u9ed1\u540d\u5355\u4e2d\u79fb\u9664\uff0c\u5c06\u91cd\u65b0\u5728\u699c\u5355\u4e2d\u663e\u793a\u3002" : "\u672a\u627e\u5230ID\u4e3a " + _0xg1b6bb + " \u7684" + mediaTypeText + "\uff0c\u6216\u53d6\u6d88\u5c4f\u853d\u65f6\u51fa\u73b0\u9519\u8bef\u3002",
+        '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+        '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+        "rating": 0,
+        '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "info"
       }];
     }
-    
-    if (action === "clear") {
+    if (_0x62196e === "\u0063\u006C\u0065\u0061\u0072") {
+      var _0x24c8cf;
       const success = clearBlockedItems();
+      _0x24c8cf = '\u0066\u0067\u006D\u006A\u006A\u006C';
       return [{
-        id: "clear_result",
-        type: "info",
-        title: success ? "\u2705 \u9ed1\u540d\u5355\u5df2\u6e05\u7a7a" : "\u274c \u6e05\u7a7a\u5931\u8d25",
-        description: success ? "\u6240\u6709\u5c4f\u853d\u9879\u5df2\u88ab\u79fb\u9664\uff0cWidget\u5b58\u50a8\u5df2\u6e05\u7a7a" : "\u6e05\u7a7a\u9ed1\u540d\u5355\u65f6\u51fa\u73b0\u9519\u8bef",
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "info"
+        "id": "\u0063\u006C\u0065\u0061\u0072\u005F\u0072\u0065\u0073\u0075\u006C\u0074",
+        '\u0074\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F",
+        "title": success ? "\u2705 \u9ed1\u540d\u5355\u5df2\u6e05\u7a7a" : "\u274c \u6e05\u7a7a\u5931\u8d25",
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': success ? "\u6240\u6709\u5c4f\u853d\u9879\u5df2\u88ab\u79fb\u9664\uff0cWidget\u5b58\u50a8\u5df2\u6e05\u7a7a" : "\u6e05\u7a7a\u9ed1\u540d\u5355\u65f6\u51fa\u73b0\u9519\u8bef",
+        '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+        "backdropPath": "",
+        '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+        "mediaType": "info"
       }];
     }
-
-    if (action === "export") {
+    if (_0x62196e === "tropxe".split("").reverse().join("")) {
+      var _0x76dc4c = (413059 ^ 413063) + (548845 ^ 548846);
       const blockedItems = getBlockedItems();
-      const idList = blockedItems.map(item => item.id).join(',');
-      
+      _0x76dc4c = (473796 ^ 473798) + (156252 ^ 156245);
+      var _0x4541df;
+      const _0x9e96e = blockedItems['\u006D\u0061\u0070'](item => item['\u0069\u0064'])['\u006A\u006F\u0069\u006E']("\u002C");
+      _0x4541df = (330842 ^ 330846) + (182503 ^ 182496);
       return [{
-        id: "export_result",
-        type: "info",
-        title: "\ud83d\udce4 \u5bfc\u51fa\u5c4f\u853d\u914d\u7f6e",
-        description: `\u5f53\u524d\u5c4f\u853d\u7684ID\u5217\u8868\uff08${blockedItems.length}\u4e2a\uff09\uff1a\n\n${idList || '\u65e0'}`,
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "info"
+        "id": "\u0065\u0078\u0070\u006F\u0072\u0074\u005F\u0072\u0065\u0073\u0075\u006C\u0074",
+        "type": "info",
+        '\u0074\u0069\u0074\u006C\u0065': "\ud83d\udce4 \u5bfc\u51fa\u5c4f\u853d\u914d\u7f6e",
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': `\u5f53\u524d\u5c4f\u853d\u7684ID\u5217\u8868\uff08${blockedItems['\u006C\u0065\u006E\u0067\u0074\u0068']}\u4e2a\uff09\uff1a\n\n${_0x9e96e || '\u65e0'}`,
+        "posterPath": "",
+        '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+        '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+        '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "info"
       }];
     }
-
-    if (action === "import") {
-      const importData = params.import_data ? params.import_data.trim() : '';
-      if (!importData) {
+    if (_0x62196e === "tropmi".split("").reverse().join("")) {
+      const _0xac4fe = params['\u0069\u006D\u0070\u006F\u0072\u0074\u005F\u0064\u0061\u0074\u0061'] ? params['\u0069\u006D\u0070\u006F\u0072\u0074\u005F\u0064\u0061\u0074\u0061']['\u0074\u0072\u0069\u006D']() : '';
+      if (!_0xac4fe) {
         return [{
-          id: "import_empty",
-          type: "info",
-          title: "\u26a0 \u8bf7\u8f93\u5165\u5bfc\u5165\u6570\u636e",
-          description: "\u5728\u4e0a\u65b9\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u5bfc\u5165\u7684TMDB ID\u5217\u8868\uff08\u7528\u9017\u53f7\u5206\u9694\uff09\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u3002",
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "info"
+          '\u0069\u0064': "import_empty",
+          '\u0074\u0079\u0070\u0065': "info",
+          '\u0074\u0069\u0074\u006C\u0065': "\u26a0 \u8bf7\u8f93\u5165\u5bfc\u5165\u6570\u636e",
+          '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u5728\u4e0a\u65b9\u8f93\u5165\u6846\u4e2d\u8f93\u5165\u8981\u5bfc\u5165\u7684TMDB ID\u5217\u8868\uff08\u7528\u9017\u53f7\u5206\u9694\uff09\uff0c\u7136\u540e\u91cd\u65b0\u8fd0\u884c\u3002",
+          '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+          '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+          '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+          '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "info"
         }];
       }
-
       try {
-        let cleanedData = importData;
-        
-        cleanedData = cleanedData.replace(/['"]/g, '');
-        
-        const idArray = cleanedData.split(',');
-        const ids = [];
-        for (let i = 0; i < idArray.length; i++) {
-          const id = idArray[i].trim();
-          if (/^\d+$/.test(id)) {
-            ids.push(id);
+        let _0xa2_0x7ff = _0xac4fe;
+        _0xa2_0x7ff = _0xa2_0x7ff['\u0072\u0065\u0070\u006C\u0061\u0063\u0065'](new RegExp('\u005B\u0027\u0022\u005D', '\u0067'), '');
+        var _0x8b2b;
+        const _0x168a2b = _0xa2_0x7ff['\u0073\u0070\u006C\u0069\u0074']("\u002C");
+        _0x8b2b = (182492 ^ 182495) + (639623 ^ 639630);
+        var _0x9ff4g = (944625 ^ 944627) + (373484 ^ 373480);
+        const _0x88eaeb = [];
+        _0x9ff4g = "ncfige".split("").reverse().join("");
+        for (let i = 730926 ^ 730926; i < _0x168a2b['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+          const id = _0x168a2b[i]['\u0074\u0072\u0069\u006D']();
+          if (new RegExp("$+d\\^".split("").reverse().join(""), "")['\u0074\u0065\u0073\u0074'](id)) {
+            _0x88eaeb['\u0070\u0075\u0073\u0068'](id);
           }
         }
-        
-        let importedCount = 0;
+        var _0xb_0xe94 = (959172 ^ 959173) + (321267 ^ 321274);
+        let _0x3gbf9f = 351292 ^ 351292;
+        _0xb_0xe94 = "iclpjf".split("").reverse().join("");
         const blockedItems = getBlockedItems();
-
-        for (let i = 0; i < ids.length; i++) {
-          const id = ids[i];
-          const exists = blockedItems.some(item => item.id === id);
-          if (!exists) {
-            blockedItems.push({
-              id: id,
-              media_type: "movie",
-              title: `TMDB ID: ${id}`,
-              poster_path: "",
-              overview: "\u901a\u8fc7ID\u5bfc\u5165\u7684\u5c4f\u853d\u9879",
-              blocked_date: new Date().toISOString(),
-              vote_average: 0
+        for (let i = 449927 ^ 449927; i < _0x88eaeb['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+          var _0xfd_0xg68;
+          const id = _0x88eaeb[i];
+          _0xfd_0xg68 = 256742 ^ 256751;
+          var _0xc712a;
+          const _0x4fga = blockedItems['\u0073\u006F\u006D\u0065'](item => item['\u0069\u0064'] === id);
+          _0xc712a = (339874 ^ 339883) + (824549 ^ 824547);
+          if (!_0x4fga) {
+            blockedItems['\u0070\u0075\u0073\u0068']({
+              "id": id,
+              '\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065': "movie",
+              "title": `TMDB ID: ${id}`,
+              '\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068': "",
+              '\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077': "\u901a\u8fc7ID\u5bfc\u5165\u7684\u5c4f\u853d\u9879",
+              "blocked_date": new Date()['\u0074\u006F\u0049\u0053\u004F\u0053\u0074\u0072\u0069\u006E\u0067'](),
+              "vote_average": 0
             });
-            importedCount++;
+            _0x3gbf9f++;
           }
         }
-
+        var _0x34gc3a = (299143 ^ 299150) + (428958 ^ 428953);
         const success = saveBlockedItems(blockedItems);
-        
+        _0x34gc3a = (217415 ^ 217412) + (784630 ^ 784626);
         return [{
-          id: "import_result",
-          type: "info",
-          title: success ? `\u2705 \u5bfc\u5165\u6210\u529f` : "\u274c \u5bfc\u5165\u5931\u8d25",
-          description: success ? 
-            `\u6210\u529f\u5bfc\u5165 ${importedCount} \u4e2a\u65b0\u7684\u5c4f\u853d\u9879\uff0c\u603b\u8ba1 ${blockedItems.length} \u4e2a\u5c4f\u853d\u9879` :
-            "\u5bfc\u5165\u8fc7\u7a0b\u4e2d\u51fa\u73b0\u9519\u8bef",
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "info"
+          "id": "\u0069\u006D\u0070\u006F\u0072\u0074\u005F\u0072\u0065\u0073\u0075\u006C\u0074",
+          "type": "info",
+          '\u0074\u0069\u0074\u006C\u0065': success ? `\u2705 \u5bfc\u5165\u6210\u529f` : "\u274c \u5bfc\u5165\u5931\u8d25",
+          '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': success ? `\u6210\u529f\u5bfc\u5165 ${_0x3gbf9f} \u4e2a\u65b0\u7684\u5c4f\u853d\u9879\uff0c\u603b\u8ba1 ${blockedItems['\u006C\u0065\u006E\u0067\u0074\u0068']} \u4e2a\u5c4f\u853d\u9879` : "\u5bfc\u5165\u8fc7\u7a0b\u4e2d\u51fa\u73b0\u9519\u8bef",
+          '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+          '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+          "rating": 0,
+          "mediaType": "info"
         }];
       } catch (error) {
         return [{
-          id: "import_error",
-          type: "error",
-          title: "\u274c \u5bfc\u5165\u5931\u8d25",
-          description: `\u9519\u8bef\u4fe1\u606f: ${error.message}`,
-          posterPath: "",
-          backdropPath: "",
-          rating: 0,
-          mediaType: "error"
+          '\u0069\u0064': "import_error",
+          '\u0074\u0079\u0070\u0065': "\u0065\u0072\u0072\u006F\u0072",
+          "title": "\u274c \u5bfc\u5165\u5931\u8d25",
+          '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': `\u9519\u8bef\u4fe1\u606f: ${error['\u006D\u0065\u0073\u0073\u0061\u0067\u0065']}`,
+          '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+          "backdropPath": "",
+          '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+          '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': "error"
         }];
       }
     }
-    
     const blockedItems = getBlockedItems();
-    
-    if (blockedItems.length === 0) {
+    if (blockedItems['\u006C\u0065\u006E\u0067\u0074\u0068'] === (336868 ^ 336868)) {
       return [{
-        id: "empty_list",
-        type: "info",
-        title: "\u9ed1\u540d\u5355\u4e3a\u7a7a",
-        description: "\u5f53\u524d\u6ca1\u6709\u5c4f\u853d\u4efb\u4f55\u5185\u5bb9\u3002\u4f7f\u7528\"TMDB \u641c\u7d22\u5c4f\u853d\"\u529f\u80fd\u6dfb\u52a0\u8981\u5c4f\u853d\u7684\u5f71\u7247\u3002",
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "info"
+        '\u0069\u0064': "empty_list",
+        '\u0074\u0079\u0070\u0065': "info",
+        "title": "\u9ed1\u540d\u5355\u4e3a\u7a7a",
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u5f53\u524d\u6ca1\u6709\u5c4f\u853d\u4efb\u4f55\u5185\u5bb9\u3002\u4f7f\u7528\"TMDB \u641c\u7d22\u5c4f\u853d\"\u529f\u80fd\u6dfb\u52a0\u8981\u5c4f\u853d\u7684\u5f71\u7247\u3002",
+        '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+        '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+        '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+        "mediaType": "\u0069\u006E\u0066\u006F"
       }];
     }
-
-    const sortedItems = [];
-    for (let i = 0; i < blockedItems.length; i++) {
-      sortedItems.push(blockedItems[i]);
+    var _0x20220a;
+    const _0x2g25fd = [];
+    _0x20220a = '\u0062\u0062\u0070\u0063\u0071\u0069';
+    for (let i = 657574 ^ 657574; i < blockedItems['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+      _0x2g25fd['\u0070\u0075\u0073\u0068'](blockedItems[i]);
     }
-    
-    sortedItems.sort(function(a, b) {
-      return new Date(b.blocked_date) - new Date(a.blocked_date);
+    _0x2g25fd['\u0073\u006F\u0072\u0074'](function (a, b) {
+      return new Date(b['\u0062\u006C\u006F\u0063\u006B\u0065\u0064\u005F\u0064\u0061\u0074\u0065']) - new Date(a['\u0062\u006C\u006F\u0063\u006B\u0065\u0064\u005F\u0064\u0061\u0074\u0065']);
     });
-
+    var _0x68a = (619699 ^ 619697) + (615360 ^ 615367);
     const resultItems = [];
-    
-    if (sortedItems.length > 0) {
-      resultItems.push({
-        id: "unblock_help",
-        type: "info",
-        title: "\ud83d\udca1 \u53d6\u6d88\u5c4f\u853d\u8bf4\u660e",
-        description: "\u8981\u53d6\u6d88\u5c4f\u853d\u67d0\u4e2a\u5185\u5bb9\uff0c\u8bf7\uff1a\ud83d\udcdd \u8bb0\u4f4f\u8981\u53d6\u6d88\u7684TMDB ID\uff0c\u2699\ufe0f \u9009\u62e9\"\u53d6\u6d88\u5c4f\u853d\"\u64cd\u4f5c\uff0c\u270f\ufe0f \u8f93\u5165\u5bf9\u5e94\u7684ID\u548c\u5a92\u4f53\u7c7b\u578b",
-        posterPath: "",
-        backdropPath: "",
-        rating: 0,
-        mediaType: "info"
+    _0x68a = '\u0069\u006B\u0066\u006E\u006C\u0065';
+    if (_0x2g25fd['\u006C\u0065\u006E\u0067\u0074\u0068'] > (435527 ^ 435527)) {
+      resultItems['\u0070\u0075\u0073\u0068']({
+        "id": "unblock_help",
+        '\u0074\u0079\u0070\u0065': "\u0069\u006E\u0066\u006F",
+        '\u0074\u0069\u0074\u006C\u0065': "\ud83d\udca1 \u53d6\u6d88\u5c4f\u853d\u8bf4\u660e",
+        "description": "\u8981\u53d6\u6d88\u5c4f\u853d\u67d0\u4e2a\u5185\u5bb9\uff0c\u8bf7\uff1a\ud83d\udcdd \u8bb0\u4f4f\u8981\u53d6\u6d88\u7684TMDB ID\uff0c\u2699\ufe0f \u9009\u62e9\"\u53d6\u6d88\u5c4f\u853d\"\u64cd\u4f5c\uff0c\u270f\ufe0f \u8f93\u5165\u5bf9\u5e94\u7684ID\u548c\u5a92\u4f53\u7c7b\u578b",
+        '\u0070\u006F\u0073\u0074\u0065\u0072\u0050\u0061\u0074\u0068': "",
+        "backdropPath": "",
+        '\u0072\u0061\u0074\u0069\u006E\u0067': 0,
+        "mediaType": "\u0069\u006E\u0066\u006F"
       });
     }
-    
-    for (let i = 0; i < sortedItems.length; i++) {
-      const item = sortedItems[i];
-      const mediaTypeText = item.media_type === "movie" ? "\u7535\u5f71" : "\u5267\u96c6";
-      const blockedDate = new Date(item.blocked_date).toLocaleDateString();
-      const ratingText = item.vote_average ? " \u2b50" + item.vote_average.toFixed(1) : "";
-      
-      resultItems.push({
-        id: "blocked_" + item.id + "_" + item.media_type,
-        type: "blocked_item",
-        title: "\ud83d\udeab " + item.title,
-        description: mediaTypeText + ratingText + " | TMDB ID: " + item.id + " | \u5c4f\u853d\u4e8e: " + blockedDate + "\n" + (item.overview || "\u6682\u65e0\u7b80\u4ecb"),
-        posterPath: item.poster_path ? "https://image.tmdb.org/t/p/w500" + item.poster_path : "",
-        backdropPath: "",
-        rating: item.vote_average || 0,
-        mediaType: item.media_type,
-        tmdbId: item.id,
-        tmdbMediaType: item.media_type
+    for (let i = 909465 ^ 909465; i < _0x2g25fd['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+      const _0x2437d = _0x2g25fd[i];
+      const mediaTypeText = _0x2437d['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === "eivom".split("").reverse().join("") ? "\u7535\u5f71" : "\u5267\u96c6";
+      const blockedDate = new Date(_0x2437d['\u0062\u006C\u006F\u0063\u006B\u0065\u0064\u005F\u0064\u0061\u0074\u0065'])['\u0074\u006F\u004C\u006F\u0063\u0061\u006C\u0065\u0044\u0061\u0074\u0065\u0053\u0074\u0072\u0069\u006E\u0067']();
+      const _0x2b8dc = _0x2437d['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] ? " \u2b50" + _0x2437d['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065']['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](954111 ^ 954110) : "";
+      resultItems['\u0070\u0075\u0073\u0068']({
+        '\u0069\u0064': "\u0062\u006C\u006F\u0063\u006B\u0065\u0064\u005F" + _0x2437d['\u0069\u0064'] + "\u005F" + _0x2437d['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'],
+        '\u0074\u0079\u0070\u0065': "blocked_item",
+        "title": "\ud83d\udeab " + _0x2437d['\u0074\u0069\u0074\u006C\u0065'],
+        "description": mediaTypeText + _0x2b8dc + "\u0020\u007C\u0020\u0054\u004D\u0044\u0042\u0020\u0049\u0044\u003A\u0020" + _0x2437d['\u0069\u0064'] + " | \u5c4f\u853d\u4e8e: " + blockedDate + "\u000A" + (_0x2437d['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'] || "\u6682\u65e0\u7b80\u4ecb"),
+        "posterPath": _0x2437d['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] ? "005w/p/t/gro.bdmt.egami//:sptth".split("").reverse().join("") + _0x2437d['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] : "",
+        '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': "",
+        "rating": _0x2437d['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] || 635171 ^ 635171,
+        "mediaType": _0x2437d['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'],
+        "tmdbId": _0x2437d['\u0069\u0064'],
+        "tmdbMediaType": _0x2437d['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065']
       });
     }
-    
     return resultItems;
   }
 }
-
 async function loadDetail(link) {
   try {
-    if (link.startsWith("block://")) {
-      const parts = link.replace("block://", "").split("/");
+    if (link['\u0073\u0074\u0061\u0072\u0074\u0073\u0057\u0069\u0074\u0068']("//:kcolb".split("").reverse().join(""))) {
+      var _0xb80c = (127902 ^ 127894) + (125754 ^ 125754);
+      const parts = link['\u0072\u0065\u0070\u006C\u0061\u0063\u0065']("//:kcolb".split("").reverse().join(""), "")['\u0073\u0070\u006C\u0069\u0074']("\u002F");
+      _0xb80c = 424171 ^ 424162;
       const [id, mediaType, encodedTitle] = parts;
       const title = decodeURIComponent(encodedTitle);
-      
-      const endpoint = mediaType === "movie" ? "/movie/" + id : "/tv/" + id;
-      
-      const response = await Widget.tmdb.get(endpoint, {
-        params: { language: "zh-CN" }
+      const _0x80832a = mediaType === "eivom".split("").reverse().join("") ? "/eivom/".split("").reverse().join("") + id : "\u002F\u0074\u0076\u002F" + id;
+      var _0x2fgf = (969465 ^ 969457) + (508538 ^ 508539);
+      const _0x77da = await Widget['\u0074\u006D\u0064\u0062']['\u0067\u0065\u0074'](_0x80832a, {
+        '\u0070\u0061\u0072\u0061\u006D\u0073': {
+          '\u006C\u0061\u006E\u0067\u0075\u0061\u0067\u0065': "\u007A\u0068\u002D\u0043\u004E"
+        }
       });
-
-      let item = null;
-      if (response && response.data) {
-        item = response.data;
-      } else if (response && (response.title || response.name)) {
-        item = response;
+      _0x2fgf = '\u006C\u0068\u006C\u0063\u006D\u0070';
+      let _0x8f31d = null;
+      if (_0x77da && _0x77da['\u0064\u0061\u0074\u0061']) {
+        _0x8f31d = _0x77da['\u0064\u0061\u0074\u0061'];
+      } else if (_0x77da && (_0x77da['\u0074\u0069\u0074\u006C\u0065'] || _0x77da['\u006E\u0061\u006D\u0065'])) {
+        _0x8f31d = _0x77da;
       } else {
         throw new Error("\u65e0\u6cd5\u89e3\u6790\u8be6\u60c5\u54cd\u5e94\u7ed3\u6784");
       }
-      const blockItem = {
-        id: id,
-        media_type: mediaType,
-        title: item.title || item.name,
-        poster_path: item.poster_path,
-        overview: item.overview,
-        vote_average: item.vote_average
+      const _0x74g9a = {
+        '\u0069\u0064': id,
+        '\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065': mediaType,
+        '\u0074\u0069\u0074\u006C\u0065': _0x8f31d['\u0074\u0069\u0074\u006C\u0065'] || _0x8f31d['\u006E\u0061\u006D\u0065'],
+        "poster_path": _0x8f31d['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+        "overview": _0x8f31d['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+        "vote_average": _0x8f31d['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065']
       };
-
-      const success = addBlockedItem(blockItem);
-      const mediaTypeText = mediaType === "movie" ? "\u7535\u5f71" : "\u5267\u96c6";
-      const ratingText = item.vote_average ? ` \u2b50${item.vote_average.toFixed(1)}` : "";
-      
+      const success = addBlockedItem(_0x74g9a);
+      var _0x2afd = (762587 ^ 762588) + (760591 ^ 760589);
+      const mediaTypeText = mediaType === "eivom".split("").reverse().join("") ? "\u7535\u5f71" : "\u5267\u96c6";
+      _0x2afd = '\u006C\u006C\u0063\u0064\u006F\u0063';
+      var _0x4_0xg38;
+      const _0xa3_0x71c = _0x8f31d['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] ? ` \u2b50${_0x8f31d['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065']['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](764885 ^ 764884)}` : "";
+      _0x4_0xg38 = 473817 ^ 473809;
       return {
-        videoUrl: "",
-        title: success ? "\u2705 \u5c4f\u853d\u6210\u529f" : "\u2139\ufe0f \u5df2\u5b58\u5728",
-        description: success ? 
-          `${mediaTypeText}"${title}"${ratingText}\u5df2\u6dfb\u52a0\u5230\u9ed1\u540d\u5355\uff0c\u5c06\u4e0d\u518d\u5728\u5e94\u7528\u4e2d\u663e\u793a\u3002\n\n\u6570\u636e\u5df2\u4fdd\u5b58\u5230Widget.storage\u4e2d\uff0c\u6240\u6709\u699c\u5355\u90fd\u4f1a\u81ea\u52a8\u8fc7\u6ee4\u6b64\u5185\u5bb9\u3002` : 
-          `${mediaTypeText}"${title}"${ratingText}\u5df2\u5728\u9ed1\u540d\u5355\u4e2d\u3002`
+        '\u0076\u0069\u0064\u0065\u006F\u0055\u0072\u006C': "",
+        '\u0074\u0069\u0074\u006C\u0065': success ? "\u2705 \u5c4f\u853d\u6210\u529f" : "\u2139\ufe0f \u5df2\u5b58\u5728",
+        "description": success ? `${mediaTypeText}"${title}"${_0xa3_0x71c}\u5df2\u6dfb\u52a0\u5230\u9ed1\u540d\u5355\uff0c\u5c06\u4e0d\u518d\u5728\u5e94\u7528\u4e2d\u663e\u793a\u3002\n\n\u6570\u636e\u5df2\u4fdd\u5b58\u5230Widget.storage\u4e2d\uff0c\u6240\u6709\u699c\u5355\u90fd\u4f1a\u81ea\u52a8\u8fc7\u6ee4\u6b64\u5185\u5bb9\u3002` : `${mediaTypeText}"${title}"${_0xa3_0x71c}\u5df2\u5728\u9ed1\u540d\u5355\u4e2d\u3002`
       };
-      
-    } else if (link.startsWith("unblock://")) {
-      const parts = link.replace("unblock://", "").split("/");
+    } else if (link['\u0073\u0074\u0061\u0072\u0074\u0073\u0057\u0069\u0074\u0068']("//:kcolbnu".split("").reverse().join(""))) {
+      var _0x1cd;
+      const parts = link['\u0072\u0065\u0070\u006C\u0061\u0063\u0065']("//:kcolbnu".split("").reverse().join(""), "")['\u0073\u0070\u006C\u0069\u0074']("\u002F");
+      _0x1cd = (582579 ^ 582577) + (261978 ^ 261978);
       const [id, mediaType, encodedTitle] = parts;
       const title = decodeURIComponent(encodedTitle);
-      
+      var _0xbbf81d;
       const success = removeBlockedItem(id, mediaType);
-      const mediaTypeText = mediaType === "movie" ? "\u7535\u5f71" : "\u5267\u96c6";
-      
+      _0xbbf81d = (467464 ^ 467471) + (534857 ^ 534856);
+      var _0x4c8e;
+      const mediaTypeText = mediaType === "eivom".split("").reverse().join("") ? "\u7535\u5f71" : "\u5267\u96c6";
+      _0x4c8e = '\u0066\u0069\u0070\u0066\u006F\u0065';
       return {
-        videoUrl: "",
-        title: success ? "\u2705 \u53d6\u6d88\u5c4f\u853d\u6210\u529f" : "\u274c \u64cd\u4f5c\u5931\u8d25",
-        description: success ? 
-          `${mediaTypeText}"${title}"\u5df2\u4ece\u9ed1\u540d\u5355\u4e2d\u79fb\u9664\uff0c\u5c06\u91cd\u65b0\u5728\u5e94\u7528\u4e2d\u663e\u793a\u3002\n\nWidget.storage\u5df2\u66f4\u65b0\uff0c\u6240\u6709\u699c\u5355\u5c06\u91cd\u65b0\u663e\u793a\u6b64\u5185\u5bb9\u3002` : 
-          `\u53d6\u6d88\u5c4f\u853d${mediaTypeText}"${title}"\u65f6\u51fa\u73b0\u9519\u8bef\u3002`
+        "videoUrl": "",
+        '\u0074\u0069\u0074\u006C\u0065': success ? "\u2705 \u53d6\u6d88\u5c4f\u853d\u6210\u529f" : "\u274c \u64cd\u4f5c\u5931\u8d25",
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': success ? `${mediaTypeText}"${title}"\u5df2\u4ece\u9ed1\u540d\u5355\u4e2d\u79fb\u9664\uff0c\u5c06\u91cd\u65b0\u5728\u5e94\u7528\u4e2d\u663e\u793a\u3002\n\nWidget.storage\u5df2\u66f4\u65b0\uff0c\u6240\u6709\u699c\u5355\u5c06\u91cd\u65b0\u663e\u793a\u6b64\u5185\u5bb9\u3002` : `\u53d6\u6d88\u5c4f\u853d${mediaTypeText}"${title}"\u65f6\u51fa\u73b0\u9519\u8bef\u3002`
       };
     }
-    
     return {
-      videoUrl: "",
-      title: "\u274c \u65e0\u6548\u64cd\u4f5c",
-      description: "\u65e0\u6cd5\u8bc6\u522b\u7684\u64cd\u4f5c\u7c7b\u578b\uff0c\u8bf7\u4f7f\u7528\u5c4f\u853d\u7ba1\u7406\u5668\u4e2d\u7684\u529f\u80fd\u3002"
+      '\u0076\u0069\u0064\u0065\u006F\u0055\u0072\u006C': "",
+      '\u0074\u0069\u0074\u006C\u0065': "\u274c \u65e0\u6548\u64cd\u4f5c",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': "\u65e0\u6cd5\u8bc6\u522b\u7684\u64cd\u4f5c\u7c7b\u578b\uff0c\u8bf7\u4f7f\u7528\u5c4f\u853d\u7ba1\u7406\u5668\u4e2d\u7684\u529f\u80fd\u3002"
     };
-    
   } catch (error) {
     return {
-      videoUrl: "",
-      title: "\u274c \u64cd\u4f5c\u5931\u8d25", 
-      description: `\u9519\u8bef\u4fe1\u606f: ${error.message}`
+      '\u0076\u0069\u0064\u0065\u006F\u0055\u0072\u006C': "",
+      '\u0074\u0069\u0074\u006C\u0065': "\u274c \u64cd\u4f5c\u5931\u8d25",
+      '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': `\u9519\u8bef\u4fe1\u606f: ${error['\u006D\u0065\u0073\u0073\u0061\u0067\u0065']}`
     };
   }
 }
-
-// =============\u8c46\u74e3\u529f\u80fd\u51fd\u6570=============
 async function loadDoubanItemsFromApi(params = {}) {
-  const { start, limit } = calculatePagination(params);
-  const url = params.url;
-  const apiUrl = `${url}?start=${start}&count=${limit}&updated_at&items_only=1&for_mobile=1`;
-  const listIdMatch = params.url.match(/subject_collection\/(\w+)/);
-  const referer = listIdMatch ? `https://m.douban.com/subject_collection/${listIdMatch[1]}/` : 'https://m.douban.com/';
-  const response = await Widget.http.get(apiUrl, {
-    headers: {
-      Referer: referer,
-      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
-    },
-  });
-  
-  const items = response.data.subject_collection_items;
-  const processedItems = items.map((item) => {
-    let genres = item.genres;
-    
-    if (!genres || (Array.isArray(genres) && genres.length === 0)) {
-        const textToExtract = [
-            item.card_subtitle,
-            item.description,
-            item.abstract
-        ].filter(Boolean).join(' ');
-        
-        if (textToExtract) {
-            const extractedGenres = extractGenresFromText(textToExtract);
-            if (extractedGenres.length > 0) {
-                genres = extractedGenres;
-            }
-        }
+  const {
+    "start": start,
+    '\u006C\u0069\u006D\u0069\u0074': limit
+  } = calculatePagination(params);
+  const _0x3c7ed = params['\u0075\u0072\u006C'];
+  const _0x944f = `${_0x3c7ed}?start=${start}&count=${limit}&updated_at&items_only=1&for_mobile=1`;
+  const _0xc1cb4e = params['\u0075\u0072\u006C']['\u006D\u0061\u0074\u0063\u0068'](new RegExp('\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u005C\u002F\u0028\u005C\u0077\u002B\u0029', ""));
+  const _0x9f3e5a = _0xc1cb4e ? `https://m.douban.com/subject_collection/${_0xc1cb4e[686864 ^ 686865]}/` : "/moc.nabuod.m//:sptth".split("").reverse().join("");
+  var _0x45eg = (494079 ^ 494077) + (165713 ^ 165717);
+  const _0x0e539a = await Widget['\u0068\u0074\u0074\u0070']['\u0067\u0065\u0074'](_0x944f, {
+    '\u0068\u0065\u0061\u0064\u0065\u0072\u0073': {
+      '\u0052\u0065\u0066\u0065\u0072\u0065\u0072': _0x9f3e5a,
+      "\u0055\u0073\u0065\u0072\u002D\u0041\u0067\u0065\u006E\u0074": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
     }
-   
+  });
+  _0x45eg = (370620 ^ 370620) + (950790 ^ 950791);
+  const _0xf54de = _0x0e539a['\u0064\u0061\u0074\u0061']['\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u005F\u0069\u0074\u0065\u006D\u0073'];
+  var _0x5_0x288 = (847424 ^ 847426) + (640345 ^ 640351);
+  const _0xd98a9f = _0xf54de['\u006D\u0061\u0070'](item => {
+    var _0x8g9fcd = (986374 ^ 986383) + (478672 ^ 478681);
+    let _0xd9e = item['\u0067\u0065\u006E\u0072\u0065\u0073'];
+    _0x8g9fcd = (249335 ^ 249330) + (570754 ^ 570753);
+    if (!_0xd9e || Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](_0xd9e) && _0xd9e['\u006C\u0065\u006E\u0067\u0074\u0068'] === (665691 ^ 665691)) {
+      const _0x8cb5f = [item['\u0063\u0061\u0072\u0064\u005F\u0073\u0075\u0062\u0074\u0069\u0074\u006C\u0065'], item['\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E'], item['\u0061\u0062\u0073\u0074\u0072\u0061\u0063\u0074']]['\u0066\u0069\u006C\u0074\u0065\u0072'](Boolean)['\u006A\u006F\u0069\u006E']("\u0020");
+      if (_0x8cb5f) {
+        var _0xca08de = (404957 ^ 404953) + (549766 ^ 549763);
+        const _0xba4ff = extractGenresFromText(_0x8cb5f);
+        _0xca08de = 332218 ^ 332222;
+        if (_0xba4ff['\u006C\u0065\u006E\u0067\u0074\u0068'] > (251155 ^ 251155)) {
+          _0xd9e = _0xba4ff;
+        }
+      }
+    }
     return {
-      id: item.id,
-      type: "douban",
-      title: item.title,
-      coverUrl: item.cover?.url,
-      description: formatItemDescription({
-          description: item.card_subtitle || item.description,
-          rating: item.rating?.value,
-          releaseDate: item.year
+      "id": item['\u0069\u0064'],
+      "type": "\u0064\u006F\u0075\u0062\u0061\u006E",
+      '\u0074\u0069\u0074\u006C\u0065': item['\u0074\u0069\u0074\u006C\u0065'],
+      "coverUrl": item['\u0063\u006F\u0076\u0065\u0072']?.url,
+      "description": formatItemDescription({
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': item['\u0063\u0061\u0072\u0064\u005F\u0073\u0075\u0062\u0074\u0069\u0074\u006C\u0065'] || item['\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E'],
+        '\u0072\u0061\u0074\u0069\u006E\u0067': item['\u0072\u0061\u0074\u0069\u006E\u0067']?.value,
+        "releaseDate": item['\u0079\u0065\u0061\u0072']
       }),
-      rating: item.rating?.value,
-      releaseDate: item.year,
-      genreTitle: getDoubanGenreTitles(genres || [], null)
+      '\u0072\u0061\u0074\u0069\u006E\u0067': item['\u0072\u0061\u0074\u0069\u006E\u0067']?.value,
+      '\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0044\u0061\u0074\u0065': item['\u0079\u0065\u0061\u0072'],
+      "genreTitle": getDoubanGenreTitles(_0xd9e || [], null)
     };
   });
-  
-  return filterBlockedItemsEnhanced(processedItems);
+  _0x5_0x288 = (283274 ^ 283273) + (759257 ^ 759248);
+  return filterBlockedItemsEnhanced(_0xd98a9f);
 }
-
 async function loadDoubanHotList(params = {}) {
-  const url = params.url;
-  
-  const uriMatch = url.match(/uri=([^&]+)/);
-  if (!uriMatch) {
+  const _0x8decca = params['\u0075\u0072\u006C'];
+  var _0xfe2f = (501273 ^ 501264) + (579078 ^ 579078);
+  const _0x22_0x6g0 = _0x8decca['\u006D\u0061\u0074\u0063\u0068'](new RegExp('\u0075\u0072\u0069\u003D\u0028\u005B\u005E\u0026\u005D\u002B\u0029', ""));
+  _0xfe2f = (741159 ^ 741158) + (830190 ^ 830182);
+  if (!_0x22_0x6g0) {
     throw new Error("\u65e0\u6cd5\u89e3\u6790\u8c46\u74e3dispatch URL");
   }
-  
-  const uri = decodeURIComponent(uriMatch[1]);
-  const collectionMatch = uri.match(/\/subject_collection\/([^\/]+)/);
-  if (!collectionMatch) {
+  const _0xa5efe = decodeURIComponent(_0x22_0x6g0[429535 ^ 429534]);
+  var _0xe2842b;
+  const _0x6787af = _0xa5efe['\u006D\u0061\u0074\u0063\u0068'](new RegExp(")+]/\\^[(/\\noitcelloc_tcejbus/\\".split("").reverse().join(""), ""));
+  _0xe2842b = 121910 ^ 121904;
+  if (!_0x6787af) {
     throw new Error("\u65e0\u6cd5\u4ece URI\u4e2d\u63d0\u53d6collection ID");
   }
-  
-  const collectionId = collectionMatch[1];
-  
-  const apiUrl = `https://m.douban.com/rexxar/api/v2/subject_collection/${collectionId}/items?updated_at&items_only=1&for_mobile=1`;
-  const referer = `https://m.douban.com/subject_collection/${collectionId}/`;
-  
-  const response = await Widget.http.get(apiUrl, {
-    headers: {
-      Referer: referer,
-      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
-    },
+  const _0x7f84ca = _0x6787af[958228 ^ 958229];
+  const _0xcb077c = `https://m.douban.com/rexxar/api/v2/subject_collection/${_0x7f84ca}/items?updated_at&items_only=1&for_mobile=1`;
+  const _0xf2143d = `https://m.douban.com/subject_collection/${_0x7f84ca}/`;
+  const _0xbd5a = await Widget['\u0068\u0074\u0074\u0070']['\u0067\u0065\u0074'](_0xcb077c, {
+    "headers": {
+      "Referer": _0xf2143d,
+      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+    }
   });
-  
-  if (!response.data || !response.data.subject_collection_items) {
+  if (!_0xbd5a['\u0064\u0061\u0074\u0061'] || !_0xbd5a['\u0064\u0061\u0074\u0061']['\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u005F\u0069\u0074\u0065\u006D\u0073']) {
     throw new Error("\u83b7\u53d6\u8c46\u74e3\u70ed\u699c\u6570\u636e\u5931\u8d25");
   }
-  
-  const items = response.data.subject_collection_items;
-  
-  const processedItems = items.map((item) => {
-    let genres = item.genres;
-    
-    if (!genres || (Array.isArray(genres) && genres.length === 0)) {
-        const textToExtract = [
-            item.card_subtitle,
-            item.description,
-            item.abstract
-        ].filter(Boolean).join(' ');
-        
-        if (textToExtract) {
-            const extractedGenres = extractGenresFromText(textToExtract);
-            if (extractedGenres.length > 0) {
-                genres = extractedGenres;
-            }
+  var _0xf8782f = (918892 ^ 918888) + (101905 ^ 101908);
+  const _0x9d8gee = _0xbd5a['\u0064\u0061\u0074\u0061']['\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u005F\u0069\u0074\u0065\u006D\u0073'];
+  _0xf8782f = 663997 ^ 663988;
+  var _0x5cd;
+  const _0xcf334c = _0x9d8gee['\u006D\u0061\u0070'](item => {
+    let _0x0f69c = item['\u0067\u0065\u006E\u0072\u0065\u0073'];
+    if (!_0x0f69c || Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](_0x0f69c) && _0x0f69c['\u006C\u0065\u006E\u0067\u0074\u0068'] === (187478 ^ 187478)) {
+      var _0xe3_0x291;
+      const _0x66c4e = [item['\u0063\u0061\u0072\u0064\u005F\u0073\u0075\u0062\u0074\u0069\u0074\u006C\u0065'], item['\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E'], item['\u0061\u0062\u0073\u0074\u0072\u0061\u0063\u0074']]['\u0066\u0069\u006C\u0074\u0065\u0072'](Boolean)['\u006A\u006F\u0069\u006E']("\u0020");
+      _0xe3_0x291 = (459893 ^ 459891) + (129205 ^ 129204);
+      if (_0x66c4e) {
+        var _0x1e4ef;
+        const _0xgfc = extractGenresFromText(_0x66c4e);
+        _0x1e4ef = (142303 ^ 142302) + (511332 ^ 511333);
+        if (_0xgfc['\u006C\u0065\u006E\u0067\u0074\u0068'] > (202116 ^ 202116)) {
+          _0x0f69c = _0xgfc;
         }
+      }
     }
-    
-    const itemType = determineItemType(item, params.type);
-   
+    var _0x4eabe = (366713 ^ 366704) + (181130 ^ 181123);
+    const _0x5e387d = determineItemType(item, params['\u0074\u0079\u0070\u0065']);
+    _0x4eabe = (835212 ^ 835210) + (938957 ^ 938948);
     return {
-      id: item.id,
-      type: "douban",
-      title: item.title,
-      coverUrl: item.cover?.url,
-      description: formatItemDescription({
-          description: item.card_subtitle || item.description,
-          rating: item.rating?.value,
-          releaseDate: item.year,
-          itemType: itemType
+      '\u0069\u0064': item['\u0069\u0064'],
+      "type": "douban",
+      '\u0074\u0069\u0074\u006C\u0065': item['\u0074\u0069\u0074\u006C\u0065'],
+      '\u0063\u006F\u0076\u0065\u0072\u0055\u0072\u006C': item['\u0063\u006F\u0076\u0065\u0072']?.url,
+      "description": formatItemDescription({
+        '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': item['\u0063\u0061\u0072\u0064\u005F\u0073\u0075\u0062\u0074\u0069\u0074\u006C\u0065'] || item['\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E'],
+        "rating": item['\u0072\u0061\u0074\u0069\u006E\u0067']?.value,
+        '\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0044\u0061\u0074\u0065': item['\u0079\u0065\u0061\u0072'],
+        "itemType": _0x5e387d
       }),
-      rating: item.rating?.value,
-      releaseDate: item.year,
-      genreTitle: getDoubanGenreTitles(genres || [], itemType),
-      itemType: itemType
+      '\u0072\u0061\u0074\u0069\u006E\u0067': item['\u0072\u0061\u0074\u0069\u006E\u0067']?.value,
+      '\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0044\u0061\u0074\u0065': item['\u0079\u0065\u0061\u0072'],
+      '\u0067\u0065\u006E\u0072\u0065\u0054\u0069\u0074\u006C\u0065': getDoubanGenreTitles(_0x0f69c || [], _0x5e387d),
+      '\u0069\u0074\u0065\u006D\u0054\u0079\u0070\u0065': _0x5e387d
     };
   });
-  
-  return filterBlockedItemsEnhanced(processedItems);
+  _0x5cd = (634491 ^ 634490) + (464441 ^ 464440);
+  return filterBlockedItemsEnhanced(_0xcf334c);
 }
-
 function determineItemType(item, paramType) {
-  if (paramType === "movie") return "\u7535\u5f71";
-  if (paramType === "tv") return "\u5267\u96c6";
-  if (paramType === "subject") {
-    if (item.subtype === "movie") return "\u7535\u5f71";
-    
-    const cardSubtitle = item.card_subtitle || "";
-    if (cardSubtitle.includes("\u7535\u5f71")) return "\u7535\u5f71";
-    if (cardSubtitle.includes("\u5267\u96c6") || cardSubtitle.includes("\u7535\u89c6\u5267")) return "\u5267\u96c6";
-    
+  if (paramType === "\u006D\u006F\u0076\u0069\u0065") return "\u7535\u5f71";
+  if (paramType === "vt".split("").reverse().join("")) return "\u5267\u96c6";
+  if (paramType === "tcejbus".split("").reverse().join("")) {
+    if (item['\u0073\u0075\u0062\u0074\u0079\u0070\u0065'] === "\u006D\u006F\u0076\u0069\u0065") return "\u7535\u5f71";
+    var _0x6d9ef;
+    const _0xc226b = item['\u0063\u0061\u0072\u0064\u005F\u0073\u0075\u0062\u0074\u0069\u0074\u006C\u0065'] || "";
+    _0x6d9ef = (157262 ^ 157263) + (393496 ^ 393501);
+    if (_0xc226b['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u5f71")) return "\u7535\u5f71";
+    if (_0xc226b['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u5267\u96c6") || _0xc226b['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u89c6\u5267")) return "\u5267\u96c6";
     return "\u7efc\u5408";
   }
   return "\u672a\u77e5";
 }
-
 function detectMultiTypeItems(items) {
-  const titleTypeMap = new Map();
-  
-  for (const item of items) {
-    const title = item.title.trim();
-    if (!titleTypeMap.has(title)) {
-      titleTypeMap.set(title, new Set());
+  const _0xg0964e = new Map();
+  for (const _0x7d549b of items) {
+    const title = _0x7d549b['\u0074\u0069\u0074\u006C\u0065']['\u0074\u0072\u0069\u006D']();
+    if (!_0xg0964e['\u0068\u0061\u0073'](title)) {
+      _0xg0964e['\u0073\u0065\u0074'](title, new Set());
     }
-    
-    let itemType = item.type;
-    if (item.subtype) {
-      itemType = item.subtype;
+    var _0x9b5b5f;
+    let _0x23_0xe21 = _0x7d549b['\u0074\u0079\u0070\u0065'];
+    _0x9b5b5f = '\u0069\u006E\u0067\u0070\u0067\u0070';
+    if (_0x7d549b['\u0073\u0075\u0062\u0074\u0079\u0070\u0065']) {
+      _0x23_0xe21 = _0x7d549b['\u0073\u0075\u0062\u0074\u0079\u0070\u0065'];
     }
-    
-    titleTypeMap.get(title).add(itemType);
+    _0xg0964e['\u0067\u0065\u0074'](title)['\u0061\u0064\u0064'](_0x23_0xe21);
   }
-  
-  const multiTypesTitles = new Set();
-  for (const [title, types] of titleTypeMap.entries()) {
-    if (types.size > 1) {
-      const hasMovieOrTv = types.has('movie') || types.has('tv');
-      if (hasMovieOrTv) {
-        multiTypesTitles.add(title);
+  var _0xe539e = (673099 ^ 673101) + (350350 ^ 350344);
+  const _0x7169c = new Set();
+  _0xe539e = (562963 ^ 562971) + (826616 ^ 826619);
+  for (const [title, types] of _0xg0964e['\u0065\u006E\u0074\u0072\u0069\u0065\u0073']()) {
+    if (types['\u0073\u0069\u007A\u0065'] > (179124 ^ 179125)) {
+      const _0x1565df = types['\u0068\u0061\u0073']("eivom".split("").reverse().join("")) || types['\u0068\u0061\u0073']("vt".split("").reverse().join(""));
+      if (_0x1565df) {
+        _0x7169c['\u0061\u0064\u0064'](title);
       }
     }
   }
-  
-  return items.map(item => {
-    const title = item.title.trim();
-    const isMultiType = multiTypesTitles.has(title);
-    
+  return items['\u006D\u0061\u0070'](item => {
+    const title = item['\u0074\u0069\u0074\u006C\u0065']['\u0074\u0072\u0069\u006D']();
+    var _0xe65a4f = (311141 ^ 311139) + (325934 ^ 325932);
+    const _0x8223bf = _0x7169c['\u0068\u0061\u0073'](title);
+    _0xe65a4f = "hkomga".split("").reverse().join("");
     return {
       ...item,
-      shouldUseMultiTypeMatching: isMultiType
+      "shouldUseMultiTypeMatching": _0x8223bf
     };
   });
 }
-
 function detectItemTypeFromContent(item) {
-  const aliases = (item.original_title || item.aka || item.alternate_title || "").toLowerCase();
-  if (aliases.includes("\u7535\u5f71\u7248") || aliases.includes("(\u7535\u5f71)") || aliases.includes("movie")) {
-    return "movie";
+  const _0x4db = (item['\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u005F\u0074\u0069\u0074\u006C\u0065'] || item['\u0061\u006B\u0061'] || item['\u0061\u006C\u0074\u0065\u0072\u006E\u0061\u0074\u0065\u005F\u0074\u0069\u0074\u006C\u0065'] || "")['\u0074\u006F\u004C\u006F\u0077\u0065\u0072\u0043\u0061\u0073\u0065']();
+  if (_0x4db['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u5f71\u7248") || _0x4db['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("(\u7535\u5f71)") || _0x4db['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u006D\u006F\u0076\u0069\u0065")) {
+    return "\u006D\u006F\u0076\u0069\u0065";
   }
-  if (aliases.includes("\u7535\u89c6\u5267\u7248") || aliases.includes("(\u7535\u89c6\u5267)") || aliases.includes("tv") || aliases.includes("series")) {
-    return "tv";
+  if (_0x4db['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u89c6\u5267\u7248") || _0x4db['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("(\u7535\u89c6\u5267)") || _0x4db['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u0074\u0076") || _0x4db['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u0073\u0065\u0072\u0069\u0065\u0073")) {
+    return "\u0074\u0076";
   }
-  
-  const description = (item.card_subtitle || item.description || item.abstract || "").toLowerCase();
-  const title = (item.title || "").toLowerCase();
-  
-  if (description.includes("\u7535\u5f71") && !description.includes("\u7535\u89c6") && !description.includes("\u5267")) {
-    return "movie";
+  var _0x6cf7a = (630740 ^ 630743) + (724841 ^ 724846);
+  const _0x2fge7f = (item['\u0063\u0061\u0072\u0064\u005F\u0073\u0075\u0062\u0074\u0069\u0074\u006C\u0065'] || item['\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E'] || item['\u0061\u0062\u0073\u0074\u0072\u0061\u0063\u0074'] || "")['\u0074\u006F\u004C\u006F\u0077\u0065\u0072\u0043\u0061\u0073\u0065']();
+  _0x6cf7a = 263466 ^ 263464;
+  const _0x5b6c2g = (item['\u0074\u0069\u0074\u006C\u0065'] || "")['\u0074\u006F\u004C\u006F\u0077\u0065\u0072\u0043\u0061\u0073\u0065']();
+  if (_0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u5f71") && !_0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u89c6") && !_0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u5267")) {
+    return "eivom".split("").reverse().join("");
   }
-  
-  if (description.includes("\u7535\u89c6\u5267") || description.includes("\u5267\u96c6") || description.includes("\u96c6\u6570") || 
-      description.includes("\u5b63") || description.includes("\u5168") && description.includes("\u96c6")) {
-    return "tv";
+  if (_0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u89c6\u5267") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u5267\u96c6") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u96c6\u6570") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u5b63") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u5168") && _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u96c6")) {
+    return "\u0074\u0076";
   }
-  
-  if (description.includes("\u52a8\u753b") || title.includes("\u52a8\u753b") || 
-      description.includes("\u756a\u5267") || description.includes("anime") ||
-      description.includes("animation") || aliases.includes("\u52a8\u753b")) {
-    
-    if (description.includes("\u7535\u5f71") || title.includes("\u7535\u5f71") || 
-        description.includes("\u5267\u573a\u7248") || title.includes("\u5267\u573a\u7248")) {
-      return "movie";
+  if (_0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u52a8\u753b") || _0x5b6c2g['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u52a8\u753b") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u756a\u5267") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u0061\u006E\u0069\u006D\u0065") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u0061\u006E\u0069\u006D\u0061\u0074\u0069\u006F\u006E") || _0x4db['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u52a8\u753b")) {
+    if (_0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u5f71") || _0x5b6c2g['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u5f71") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u5267\u573a\u7248") || _0x5b6c2g['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u5267\u573a\u7248")) {
+      return "eivom".split("").reverse().join("");
     }
-    
-    if (description.includes("\u756a\u5267") || description.includes("\u7b2c") && description.includes("\u5b63") ||
-        description.includes("\u96c6") && !description.includes("\u7535\u5f71") ||
-        description.includes("tv") || description.includes("series")) {
-      return "tv";
+    if (_0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u756a\u5267") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7b2c") && _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u5b63") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u96c6") && !_0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u5f71") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u0074\u0076") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u0073\u0065\u0072\u0069\u0065\u0073")) {
+      return "vt".split("").reverse().join("");
     }
-    
-    return "multi";
+    return "\u006D\u0075\u006C\u0074\u0069";
   }
-  
-  if (description.includes("\u5206\u949f") || description.includes("min") || description.includes("\u5c0f\u65f6")) {
-    return "movie";
+  if (_0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u5206\u949f") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u006D\u0069\u006E") || _0x2fge7f['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u5c0f\u65f6")) {
+    return "\u006D\u006F\u0076\u0069\u0065";
   }
-  
-  if (title.includes("\u7535\u5f71\u7248")) {
-    return "movie";
+  if (_0x5b6c2g['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u5f71\u7248")) {
+    return "eivom".split("").reverse().join("");
   }
-  if (title.includes("\u7535\u89c6\u5267\u7248") || title.includes("\u5267\u7248")) {
-    return "tv";
+  if (_0x5b6c2g['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u7535\u89c6\u5267\u7248") || _0x5b6c2g['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u5267\u7248")) {
+    return "\u0074\u0076";
   }
-  
   return null;
 }
-
 function detectAndAssignTypePreferences(items) {
-  const titleItemsMap = new Map();
-  
+  const _0x2g5bge = new Map();
   for (const item of items) {
-    const title = item.title.trim();
-    if (!titleItemsMap.has(title)) {
-      titleItemsMap.set(title, []);
+    var _0xaf_0x735 = (816942 ^ 816937) + (784306 ^ 784304);
+    const title = item['\u0074\u0069\u0074\u006C\u0065']['\u0074\u0072\u0069\u006D']();
+    _0xaf_0x735 = (628574 ^ 628569) + (342640 ^ 342641);
+    if (!_0x2g5bge['\u0068\u0061\u0073'](title)) {
+      _0x2g5bge['\u0073\u0065\u0074'](title, []);
     }
-    titleItemsMap.get(title).push(item);
+    _0x2g5bge['\u0067\u0065\u0074'](title)['\u0070\u0075\u0073\u0068'](item);
   }
-  
-  const multiItemTitles = new Set();
-  for (const [title, titleItems] of titleItemsMap.entries()) {
-    if (titleItems.length > 1) {
-      const hasMultipleTypes = titleItems.some((item, index) => {
-        const otherItems = titleItems.filter((_, i) => i !== index);
-        const itemType = detectItemTypeFromContent(item);
-        return otherItems.some(otherItem => {
-          const otherType = detectItemTypeFromContent(otherItem);
-          return itemType && otherType && itemType !== otherType;
+  var _0x81586f = (973199 ^ 973191) + (269771 ^ 269775);
+  const _0x6e62dc = new Set();
+  _0x81586f = (864378 ^ 864382) + (490862 ^ 490859);
+  for (const [title, titleItems] of _0x2g5bge['\u0065\u006E\u0074\u0072\u0069\u0065\u0073']()) {
+    if (titleItems['\u006C\u0065\u006E\u0067\u0074\u0068'] > (114655 ^ 114654)) {
+      const _0xgca = titleItems['\u0073\u006F\u006D\u0065']((item, index) => {
+        const _0x6b83gb = titleItems['\u0066\u0069\u006C\u0074\u0065\u0072']((_, i) => i !== index);
+        var _0xd6eg = (515809 ^ 515808) + (925009 ^ 925009);
+        const _0xa4_0x84a = detectItemTypeFromContent(item);
+        _0xd6eg = (341991 ^ 341987) + (441910 ^ 441904);
+        return _0x6b83gb['\u0073\u006F\u006D\u0065'](otherItem => {
+          const _0x98968c = detectItemTypeFromContent(otherItem);
+          return _0xa4_0x84a && _0x98968c && _0xa4_0x84a !== _0x98968c;
         });
       });
-      
-      if (hasMultipleTypes) {
-        multiItemTitles.add(title);
+      if (_0xgca) {
+        _0x6e62dc['\u0061\u0064\u0064'](title);
       } else {
-        multiItemTitles.add(title);
+        _0x6e62dc['\u0061\u0064\u0064'](title);
       }
     }
   }
-  
-  const itemsWithPreferences = [];
-  const processedTitles = new Map();
-  
+  var _0xb10fge = (248701 ^ 248698) + (194098 ^ 194103);
+  const _0x98e98a = [];
+  _0xb10fge = "khkbod".split("").reverse().join("");
+  var _0xd3a6g = (987714 ^ 987716) + (201046 ^ 201055);
+  const _0xbe_0xceb = new Map();
+  _0xd3a6g = 229616 ^ 229621;
   for (const item of items) {
-    const title = item.title.trim();
-    const isMultiTypeTitle = multiItemTitles.has(title);
-    
-    let assignedTypePreference = null;
-    
-    if (isMultiTypeTitle) {
-      if (!processedTitles.has(title)) {
-        processedTitles.set(title, []);
+    var _0x16bgf;
+    const title = item['\u0074\u0069\u0074\u006C\u0065']['\u0074\u0072\u0069\u006D']();
+    _0x16bgf = 289937 ^ 289943;
+    const _0x9f2d5g = _0x6e62dc['\u0068\u0061\u0073'](title);
+    let _0x9gd4fa = null;
+    if (_0x9f2d5g) {
+      if (!_0xbe_0xceb['\u0068\u0061\u0073'](title)) {
+        _0xbe_0xceb['\u0073\u0065\u0074'](title, []);
       }
-      
-      const sameTitle = processedTitles.get(title);
-      const currentCount = sameTitle.length;
-      
-      if (currentCount === 0) {
-        assignedTypePreference = "movie";
-      } else if (currentCount === 1) {
-        assignedTypePreference = "tv";
+      const _0xec_0x074 = _0xbe_0xceb['\u0067\u0065\u0074'](title);
+      var _0x13768c = (743187 ^ 743189) + (477172 ^ 477172);
+      const _0xef395a = _0xec_0x074['\u006C\u0065\u006E\u0067\u0074\u0068'];
+      _0x13768c = (747382 ^ 747383) + (502737 ^ 502739);
+      if (_0xef395a === (891629 ^ 891629)) {
+        _0x9gd4fa = "eivom".split("").reverse().join("");
+      } else if (_0xef395a === (234154 ^ 234155)) {
+        _0x9gd4fa = "vt".split("").reverse().join("");
       }
-      
-      sameTitle.push(item.id);
+      _0xec_0x074['\u0070\u0075\u0073\u0068'](item['\u0069\u0064']);
     }
-    
-    itemsWithPreferences.push({
+    _0x98e98a['\u0070\u0075\u0073\u0068']({
       ...item,
-      isMultiTypeTitle: isMultiTypeTitle,
-      assignedTypePreference: assignedTypePreference
+      "isMultiTypeTitle": _0x9f2d5g,
+      '\u0061\u0073\u0073\u0069\u0067\u006E\u0065\u0064\u0054\u0079\u0070\u0065\u0050\u0072\u0065\u0066\u0065\u0072\u0065\u006E\u0063\u0065': _0x9gd4fa
     });
   }
-  
-  return itemsWithPreferences;
+  return _0x98e98a;
 }
-
 async function fetchTmdbDataForDouban(key, mediaType) {
-    let searchTypes = [];
-    
-    if (mediaType === "movie") {
-        searchTypes = ["movie"];
-    } else if (mediaType === "tv") {
-        searchTypes = ["tv"];
-    } else if (mediaType === "multi") {
-        searchTypes = ["movie", "tv"];
-    } else {
-        searchTypes = ["movie", "tv"];
-    }
-    
-    const allResults = [];
-    
-    for (const type of searchTypes) {
-        try {
-            const tmdbResults = await Widget.tmdb.get(`/search/${type}`, {
-                params: {
-                    query: key,
-                    language: "zh_CN",
-                }
-            });
-            
-            if (tmdbResults.results && tmdbResults.results.length > 0) {
-                const resultsWithType = tmdbResults.results.map(result => ({
-                    ...result,
-                    media_type: type
-                }));
-                allResults.push(...resultsWithType);
-            }
-        } catch (error) {
+  let _0x23099c = [];
+  if (mediaType === "\u006D\u006F\u0076\u0069\u0065") {
+    _0x23099c = ["eivom".split("").reverse().join("")];
+  } else if (mediaType === "\u0074\u0076") {
+    _0x23099c = ["\u0074\u0076"];
+  } else if (mediaType === "itlum".split("").reverse().join("")) {
+    _0x23099c = ["\u006D\u006F\u0076\u0069\u0065", "\u0074\u0076"];
+  } else {
+    _0x23099c = ["eivom".split("").reverse().join(""), "vt".split("").reverse().join("")];
+  }
+  const _0x5237e = [];
+  for (const _0x4538g of _0x23099c) {
+    try {
+      var _0x3fd9ba = (104510 ^ 104509) + (235569 ^ 235570);
+      const _0xfa2c = await Widget['\u0074\u006D\u0064\u0062']['\u0067\u0065\u0074'](`/search/${_0x4538g}`, {
+        '\u0070\u0061\u0072\u0061\u006D\u0073': {
+          "query": key,
+          "language": "\u007A\u0068\u005F\u0043\u004E"
         }
-    }
-    
-    return allResults;
+      });
+      _0x3fd9ba = (209605 ^ 209606) + (927242 ^ 927240);
+      if (_0xfa2c['\u0072\u0065\u0073\u0075\u006C\u0074\u0073'] && _0xfa2c['\u0072\u0065\u0073\u0075\u006C\u0074\u0073']['\u006C\u0065\u006E\u0067\u0074\u0068'] > (778202 ^ 778202)) {
+        var _0x24bb = (945356 ^ 945349) + (620698 ^ 620691);
+        const _0xb245b = _0xfa2c['\u0072\u0065\u0073\u0075\u006C\u0074\u0073']['\u006D\u0061\u0070'](result => ({
+          ...result,
+          '\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065': _0x4538g
+        }));
+        _0x24bb = (360153 ^ 360152) + (205169 ^ 205168);
+        _0x5237e['\u0070\u0075\u0073\u0068'](..._0xb245b);
+      }
+    } catch (error) {}
+  }
+  return _0x5237e;
 }
-
 function calculateSimilarity(str1, str2) {
-    const cleanStr1 = str1.toLowerCase().replace(/[^\u4e00-\u9fa5a-z0-9]/g, '');
-    const cleanStr2 = str2.toLowerCase().replace(/[^\u4e00-\u9fa5a-z0-9]/g, '');
-    
-    if (cleanStr1 === cleanStr2) return 1.0;
-    
-    const longer = cleanStr1.length > cleanStr2.length ? cleanStr1 : cleanStr2;
-    const shorter = cleanStr1.length > cleanStr2.length ? cleanStr2 : cleanStr1;
-    
-    if (longer.length === 0) return 1.0;
-    
-    const editDistance = getEditDistance(longer, shorter);
-    return (longer.length - editDistance) / longer.length;
+  const _0xfa721d = str1['\u0074\u006F\u004C\u006F\u0077\u0065\u0072\u0043\u0061\u0073\u0065']()['\u0072\u0065\u0070\u006C\u0061\u0063\u0065'](new RegExp('\u005B\u005E\u005C\u0075\u0034\u0065\u0030\u0030\u002D\u005C\u0075\u0039\u0066\u0061\u0035\u0061\u002D\u007A\u0030\u002D\u0039\u005D', '\u0067'), '');
+  var _0xfd61c = (478525 ^ 478526) + (278500 ^ 278500);
+  const _0x7ge = str2['\u0074\u006F\u004C\u006F\u0077\u0065\u0072\u0043\u0061\u0073\u0065']()['\u0072\u0065\u0070\u006C\u0061\u0063\u0065'](new RegExp("]9-0z-a5af9u\\-00e4u\\^[".split("").reverse().join(""), '\u0067'), '');
+  _0xfd61c = (237033 ^ 237038) + (402465 ^ 402473);
+  if (_0xfa721d === _0x7ge) return 299402 ^ 299403;
+  var _0x4e612b;
+  const _0x25_0x55b = _0xfa721d['\u006C\u0065\u006E\u0067\u0074\u0068'] > _0x7ge['\u006C\u0065\u006E\u0067\u0074\u0068'] ? _0xfa721d : _0x7ge;
+  _0x4e612b = 140835 ^ 140834;
+  const _0xed1c3a = _0xfa721d['\u006C\u0065\u006E\u0067\u0074\u0068'] > _0x7ge['\u006C\u0065\u006E\u0067\u0074\u0068'] ? _0x7ge : _0xfa721d;
+  if (_0x25_0x55b['\u006C\u0065\u006E\u0067\u0074\u0068'] === (564314 ^ 564314)) return 854933 ^ 854932;
+  const _0x52b86d = getEditDistance(_0x25_0x55b, _0xed1c3a);
+  return (_0x25_0x55b['\u006C\u0065\u006E\u0067\u0074\u0068'] - _0x52b86d) / _0x25_0x55b['\u006C\u0065\u006E\u0067\u0074\u0068'];
 }
-
 function getEditDistance(str1, str2) {
-    const matrix = [];
-    
-    for (let i = 0; i <= str2.length; i++) {
-        matrix[i] = [i];
+  var _0x30b;
+  const _0xg6c58e = [];
+  _0x30b = 405772 ^ 405773;
+  for (let i = 683328 ^ 683328; i <= str2['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+    _0xg6c58e[i] = [i];
+  }
+  for (let j = 478590 ^ 478590; j <= str1['\u006C\u0065\u006E\u0067\u0074\u0068']; j++) {
+    _0xg6c58e[317444 ^ 317444][j] = j;
+  }
+  for (let i = 234951 ^ 234950; i <= str2['\u006C\u0065\u006E\u0067\u0074\u0068']; i++) {
+    for (let j = 343584 ^ 343585; j <= str1['\u006C\u0065\u006E\u0067\u0074\u0068']; j++) {
+      if (str2['\u0063\u0068\u0061\u0072\u0041\u0074'](i - (759662 ^ 759663)) === str1['\u0063\u0068\u0061\u0072\u0041\u0074'](j - (317706 ^ 317707))) {
+        _0xg6c58e[i][j] = _0xg6c58e[i - (296191 ^ 296190)][j - (539805 ^ 539804)];
+      } else {
+        _0xg6c58e[i][j] = Math['\u006D\u0069\u006E'](_0xg6c58e[i - (550935 ^ 550934)][j - (473590 ^ 473591)] + (575180 ^ 575181), _0xg6c58e[i][j - (474821 ^ 474820)] + (511684 ^ 511685), _0xg6c58e[i - (280304 ^ 280305)][j] + (836201 ^ 836200));
+      }
     }
-    
-    for (let j = 0; j <= str1.length; j++) {
-        matrix[0][j] = j;
-    }
-    
-    for (let i = 1; i <= str2.length; i++) {
-        for (let j = 1; j <= str1.length; j++) {
-            if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
-                matrix[i][j] = matrix[i - 1][j - 1];
-            } else {
-                matrix[i][j] = Math.min(
-                    matrix[i - 1][j - 1] + 1,
-                    matrix[i][j - 1] + 1,
-                    matrix[i - 1][j] + 1
-                );
-            }
-        }
-    }
-    
-    return matrix[str2.length][str1.length];
+  }
+  return _0xg6c58e[str2['\u006C\u0065\u006E\u0067\u0074\u0068']][str1['\u006C\u0065\u006E\u0067\u0074\u0068']];
 }
-
 function selectMatches(tmdbResults, originalTitle, originalYear, options = {}) {
-    if (tmdbResults.length === 0) return options.returnArray ? [] : null;
-    
-    const {
-        returnArray = false,
-        preferredType = null,
-        minThreshold = 0.7,
-        doubanItem = null
-    } = options;
-    
-    let actualPreferredType = preferredType;
-    if (!actualPreferredType && doubanItem) {
-        const detectedType = detectItemTypeFromContent(doubanItem);
-        if (detectedType) {
-            actualPreferredType = detectedType;
-        } else if (doubanItem.subtype === "movie") {
-            actualPreferredType = "movie";
-        } else if (doubanItem.subtype === "tv") {
-            actualPreferredType = "tv";
-        }
+  if (tmdbResults['\u006C\u0065\u006E\u0067\u0074\u0068'] === (283438 ^ 283438)) return options['\u0072\u0065\u0074\u0075\u0072\u006E\u0041\u0072\u0072\u0061\u0079'] ? [] : null;
+  const {
+    "returnArray": returnArray = false,
+    '\u0070\u0072\u0065\u0066\u0065\u0072\u0072\u0065\u0064\u0054\u0079\u0070\u0065': preferredType = null,
+    '\u006D\u0069\u006E\u0054\u0068\u0072\u0065\u0073\u0068\u006F\u006C\u0064': minThreshold = 0.7,
+    '\u0064\u006F\u0075\u0062\u0061\u006E\u0049\u0074\u0065\u006D': doubanItem = null
+  } = options;
+  let _0x95496d = preferredType;
+  if (!_0x95496d && doubanItem) {
+    var _0x6def = (762855 ^ 762855) + (741600 ^ 741603);
+    const _0x60d93d = detectItemTypeFromContent(doubanItem);
+    _0x6def = (393591 ^ 393589) + (820569 ^ 820573);
+    if (_0x60d93d) {
+      _0x95496d = _0x60d93d;
+    } else if (doubanItem['\u0073\u0075\u0062\u0074\u0079\u0070\u0065'] === "\u006D\u006F\u0076\u0069\u0065") {
+      _0x95496d = "\u006D\u006F\u0076\u0069\u0065";
+    } else if (doubanItem['\u0073\u0075\u0062\u0074\u0079\u0070\u0065'] === "vt".split("").reverse().join("")) {
+      _0x95496d = "\u0074\u0076";
     }
-    
-    if (!returnArray) {
-        if (tmdbResults.length === 1) return tmdbResults[0];
-        
-        let bestMatch = null;
-        let bestScore = 0;
-        
-        for (const result of tmdbResults) {
-            let score = calculateMatchScore(result, originalTitle, originalYear);
-            
-            if (actualPreferredType && result.media_type === actualPreferredType) {
-                score += 1.0;
-            }
-            
-            if (score > bestScore) {
-                bestScore = score;
-                bestMatch = result;
-            }
-        }
-        
-        return bestMatch;
-    } else {
-        const resultsByType = {};
-        for (const result of tmdbResults) {
-            const mediaType = result.media_type;
-            if (!resultsByType[mediaType]) {
-                resultsByType[mediaType] = [];
-            }
-            resultsByType[mediaType].push(result);
-        }
-        
-        const bestMatches = [];
-        for (const [mediaType, results] of Object.entries(resultsByType)) {
-            const bestMatch = selectMatches(results, originalTitle, originalYear, { preferredType: mediaType });
-            if (bestMatch) {
-                const score = calculateMatchScore(bestMatch, originalTitle, originalYear);
-                if (score >= minThreshold) {
-                    bestMatches.push(bestMatch);
-                }
-            }
-        }
-        
-        bestMatches.sort((a, b) => {
-            const scoreA = calculateMatchScore(a, originalTitle, originalYear);
-            const scoreB = calculateMatchScore(b, originalTitle, originalYear);
-            return scoreB - scoreA;
-        });
-        
-        return bestMatches;
+  }
+  if (!returnArray) {
+    if (tmdbResults['\u006C\u0065\u006E\u0067\u0074\u0068'] === (280226 ^ 280227)) return tmdbResults[983425 ^ 983425];
+    let bestMatch = null;
+    var _0x77b82c = (153942 ^ 153943) + (491283 ^ 491282);
+    let _0xa6e36f = 996163 ^ 996163;
+    _0x77b82c = (748155 ^ 748146) + (155125 ^ 155133);
+    for (const result of tmdbResults) {
+      var _0x1cgb;
+      let score = calculateMatchScore(result, originalTitle, originalYear);
+      _0x1cgb = (954237 ^ 954234) + (513257 ^ 513249);
+      if (_0x95496d && result['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === _0x95496d) {
+        score += 546797 ^ 546796;
+      }
+      if (score > _0xa6e36f) {
+        _0xa6e36f = score;
+        bestMatch = result;
+      }
     }
+    return bestMatch;
+  } else {
+    const _0xd1a78c = {};
+    for (const result of tmdbResults) {
+      var _0x832a = (616785 ^ 616791) + (787374 ^ 787368);
+      const _0xab9efg = result['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'];
+      _0x832a = (804371 ^ 804378) + (291651 ^ 291659);
+      if (!_0xd1a78c[_0xab9efg]) {
+        _0xd1a78c[_0xab9efg] = [];
+      }
+      _0xd1a78c[_0xab9efg]['\u0070\u0075\u0073\u0068'](result);
+    }
+    const _0xa5_0x6ee = [];
+    for (const [mediaType, results] of Object['\u0065\u006E\u0074\u0072\u0069\u0065\u0073'](_0xd1a78c)) {
+      const bestMatch = selectMatches(results, originalTitle, originalYear, {
+        "preferredType": mediaType
+      });
+      if (bestMatch) {
+        var _0x29215c = (251200 ^ 251208) + (956628 ^ 956627);
+        const score = calculateMatchScore(bestMatch, originalTitle, originalYear);
+        _0x29215c = "mfebje".split("").reverse().join("");
+        if (score >= minThreshold) {
+          _0xa5_0x6ee['\u0070\u0075\u0073\u0068'](bestMatch);
+        }
+      }
+    }
+    _0xa5_0x6ee['\u0073\u006F\u0072\u0074']((a, b) => {
+      const _0xced32d = calculateMatchScore(a, originalTitle, originalYear);
+      const _0xb2e = calculateMatchScore(b, originalTitle, originalYear);
+      return _0xb2e - _0xced32d;
+    });
+    return _0xa5_0x6ee;
+  }
 }
-
-function calculateMatchScore(result, originalTitle, originalYear) {
-    const tmdbTitle = result.title || result.name || '';
-    const originalName = result.original_title || result.original_name || '';
-    
-    const titleSimilarity = Math.max(
-        calculateSimilarity(originalTitle, tmdbTitle),
-        calculateSimilarity(originalTitle, originalName)
-    );
-    
-    let exactMatchBonus = 0;
-    if (titleSimilarity >= 0.98) {
-        exactMatchBonus = 2.0;
-    } else if (titleSimilarity >= 0.9) {
-        exactMatchBonus = 1.0;
+function calculateMatchScore(result, originalTitle, originalYear, _0xc22fc, _0x86da) {
+  const _0xef31f = result['\u0074\u0069\u0074\u006C\u0065'] || result['\u006E\u0061\u006D\u0065'] || '';
+  const _0x513b = result['\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u005F\u0074\u0069\u0074\u006C\u0065'] || result['\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u005F\u006E\u0061\u006D\u0065'] || '';
+  const _0xa2b = Math['\u006D\u0061\u0078'](calculateSimilarity(originalTitle, _0xef31f), calculateSimilarity(originalTitle, _0x513b));
+  var _0x32f4e = (528664 ^ 528666) + (662187 ^ 662186);
+  _0xc22fc = 260343 ^ 260343;
+  _0x32f4e = '\u0066\u006B\u0067\u006C\u0063\u0065';
+  if (_0xa2b >= 0.98) {
+    _0xc22fc = 293339 ^ 293337;
+  } else if (_0xa2b >= 0.9) {
+    _0xc22fc = 139288 ^ 139289;
+  }
+  _0x86da = 314205 ^ 314205;
+  if (originalYear) {
+    const _0xbb8b1c = (result['\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065'] || result['\u0066\u0069\u0072\u0073\u0074\u005F\u0061\u0069\u0072\u005F\u0064\u0061\u0074\u0065'] || '')['\u0073\u0075\u0062\u0073\u0074\u0072\u0069\u006E\u0067'](659203 ^ 659203, 612028 ^ 612024);
+    if (_0xbb8b1c && Math['\u0061\u0062\u0073'](parseInt(originalYear) - parseInt(_0xbb8b1c)) <= (508180 ^ 508181)) {
+      _0x86da = 0.2;
     }
-    
-    let yearBonus = 0;
-    if (originalYear) {
-        const tmdbYear = (result.release_date || result.first_air_date || '').substring(0, 4);
-        if (tmdbYear && Math.abs(parseInt(originalYear) - parseInt(tmdbYear)) <= 1) {
-            yearBonus = 0.2;
-        }
-    }
-    
-    const popularityBonus = Math.min(result.popularity / 10000, 0.05);
-    const ratingBonus = Math.min(result.vote_average / 200, 0.025);
-    
-    return titleSimilarity + exactMatchBonus + yearBonus + popularityBonus + ratingBonus;
+  }
+  const _0x2c_0x4gf = Math['\u006D\u0069\u006E'](result['\u0070\u006F\u0070\u0075\u006C\u0061\u0072\u0069\u0074\u0079'] / (722215 ^ 729655), 0.05);
+  const _0x1a42dc = Math['\u006D\u0069\u006E'](result['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'] / (959263 ^ 959447), 0.025);
+  return _0xa2b + _0xc22fc + _0x86da + _0x2c_0x4gf + _0x1a42dc;
 }
-
 function generateGenreTitleFromTmdb(tmdbItem, doubanItem) {
-    let genres = doubanItem.genres;
-    
-    if (!genres || (Array.isArray(genres) && genres.length === 0)) {
-        const textToExtract = [
-            doubanItem.card_subtitle,
-            doubanItem.description,
-            doubanItem.abstract
-        ].filter(Boolean).join(' ');
-        
-        if (textToExtract) {
-            const extractedGenres = extractGenresFromText(textToExtract);
-            if (extractedGenres.length > 0) {
-                genres = extractedGenres;
-            }
-        }
+  var _0xc28ede = (218072 ^ 218076) + (483818 ^ 483819);
+  let _0xf953ef = doubanItem['\u0067\u0065\u006E\u0072\u0065\u0073'];
+  _0xc28ede = (856882 ^ 856891) + (624068 ^ 624067);
+  if (!_0xf953ef || Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](_0xf953ef) && _0xf953ef['\u006C\u0065\u006E\u0067\u0074\u0068'] === (732945 ^ 732945)) {
+    var _0xa9fd = (202294 ^ 202292) + (376731 ^ 376728);
+    const _0x67456e = [doubanItem['\u0063\u0061\u0072\u0064\u005F\u0073\u0075\u0062\u0074\u0069\u0074\u006C\u0065'], doubanItem['\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E'], doubanItem['\u0061\u0062\u0073\u0074\u0072\u0061\u0063\u0074']]['\u0066\u0069\u006C\u0074\u0065\u0072'](Boolean)['\u006A\u006F\u0069\u006E']("\u0020");
+    _0xa9fd = (266682 ^ 266682) + (383373 ^ 383373);
+    if (_0x67456e) {
+      var _0x5cbcb;
+      const _0x54cab = extractGenresFromText(_0x67456e);
+      _0x5cbcb = 655024 ^ 655027;
+      if (_0x54cab['\u006C\u0065\u006E\u0067\u0074\u0068'] > (663835 ^ 663835)) {
+        _0xf953ef = _0x54cab;
+      }
     }
-    
-    if (!genres || (Array.isArray(genres) && genres.length === 0)) {
-        if (tmdbItem.genre_ids && tmdbItem.genre_ids.length > 0) {
-            genres = tmdbItem.genre_ids.map(id => mapTmdbGenreIdToChineseName(id)).filter(Boolean);
-        }
+  }
+  if (!_0xf953ef || Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](_0xf953ef) && _0xf953ef['\u006C\u0065\u006E\u0067\u0074\u0068'] === (700430 ^ 700430)) {
+    if (tmdbItem['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073'] && tmdbItem['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073']['\u006C\u0065\u006E\u0067\u0074\u0068'] > (522384 ^ 522384)) {
+      _0xf953ef = tmdbItem['\u0067\u0065\u006E\u0072\u0065\u005F\u0069\u0064\u0073']['\u006D\u0061\u0070'](id => mapTmdbGenreIdToChineseName(id))['\u0066\u0069\u006C\u0074\u0065\u0072'](Boolean);
     }
-    
-    if (!genres || (Array.isArray(genres) && genres.length === 0)) {
-        return "";
-    }
-    
-    return getDoubanGenreTitles(genres, determineItemType(doubanItem, doubanItem.type));
+  }
+  if (!_0xf953ef || Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](_0xf953ef) && _0xf953ef['\u006C\u0065\u006E\u0067\u0074\u0068'] === (547655 ^ 547655)) {
+    return "";
+  }
+  return getDoubanGenreTitles(_0xf953ef, determineItemType(doubanItem, doubanItem['\u0074\u0079\u0070\u0065']));
 }
-
 function mapTmdbGenreIdToChineseName(genreId) {
-    const genreMap = {
-        28: "\u52a8\u4f5c", 12: "\u5192\u9669", 16: "\u52a8\u753b", 35: "\u559c\u5267", 80: "\u72af\u7f6a",
-        99: "\u7eaa\u5f55\u7247", 18: "\u5267\u60c5", 10751: "\u5bb6\u5ead", 14: "\u5947\u5e7b", 36: "\u5386\u53f2",
-        27: "\u6050\u6016", 10402: "\u97f3\u4e50", 9648: "\u60ac\u7591", 10749: "\u7231\u60c5", 878: "\u79d1\u5e7b",
-        10770: "\u7535\u89c6\u7535\u5f71", 53: "\u60ca\u609a", 10752: "\u6218\u4e89", 37: "\u897f\u90e8",
-        
-        10759: "\u52a8\u4f5c\u5192\u9669", 16: "\u52a8\u753b", 35: "\u559c\u5267", 80: "\u72af\u7f6a", 99: "\u7eaa\u5f55\u7247",
-        18: "\u5267\u60c5", 10751: "\u5bb6\u5ead", 10762: "\u513f\u7ae5", 9648: "\u60ac\u7591", 10763: "\u65b0\u95fb",
-        10764: "\u771f\u4eba\u79c0", 10765: "\u79d1\u5e7b\u5947\u5e7b", 10766: "\u80a5\u7682\u5267", 10767: "\u8131\u53e3\u79c0",
-        10768: "\u6218\u4e89\u653f\u6cbb", 37: "\u897f\u90e8"
-    };
-    
-    return genreMap[genreId] || null;
+  var _0xd79e;
+  const _0x2ac0f = {
+    28: "\u52a8\u4f5c",
+    12: "\u5192\u9669",
+    16: "\u52a8\u753b",
+    35: "\u559c\u5267",
+    80: "\u72af\u7f6a",
+    99: "\u7eaa\u5f55\u7247",
+    18: "\u5267\u60c5",
+    10751: "\u5bb6\u5ead",
+    14: "\u5947\u5e7b",
+    36: "\u5386\u53f2",
+    27: "\u6050\u6016",
+    10402: "\u97f3\u4e50",
+    9648: "\u60ac\u7591",
+    10749: "\u7231\u60c5",
+    878: "\u79d1\u5e7b",
+    10770: "\u7535\u89c6\u7535\u5f71",
+    53: "\u60ca\u609a",
+    10752: "\u6218\u4e89",
+    37: "\u897f\u90e8",
+    10759: "\u52a8\u4f5c\u5192\u9669",
+    16: "\u52a8\u753b",
+    35: "\u559c\u5267",
+    80: "\u72af\u7f6a",
+    99: "\u7eaa\u5f55\u7247",
+    18: "\u5267\u60c5",
+    10751: "\u5bb6\u5ead",
+    10762: "\u513f\u7ae5",
+    9648: "\u60ac\u7591",
+    10763: "\u65b0\u95fb",
+    10764: "\u771f\u4eba\u79c0",
+    10765: "\u79d1\u5e7b\u5947\u5e7b",
+    10766: "\u80a5\u7682\u5267",
+    10767: "\u8131\u53e3\u79c0",
+    10768: "\u6218\u4e89\u653f\u6cbb",
+    37: "\u897f\u90e8"
+  };
+  _0xd79e = "lpodff".split("").reverse().join("");
+  return _0x2ac0f[genreId] || null;
 }
-
 async function fetchImdbItemsForDouban(scItems) {
-    const promises = scItems.map(async (scItem) => {
-        const titleNormalizationRules = [
-            { pattern: /^\u51e1\u4eba\u4fee\u4ed9\u4f20[\uff1a:]\u91cd\u8fd4\u5929\u5357/, replacement: '\u51e1\u4eba\u4fee\u4ed9\u4f20', forceFirstResult: true },
-            { pattern: /^\u7f57\u5c0f\u9ed1\u6218\u8bb0/, replacement: '\u7f57\u5c0f\u9ed1\u6218\u8bb0', forceMovieType: true },
-            { pattern: /^\u7d2b\u5ddd \u7b2c\u4e8c\u5b63/, replacement: '\u7d2b\u5ddd', forceFirstResult: true },
-            { pattern: /^\u661f\u671f\u4e09 \u7b2c\u4e8c\u5b63/, replacement: 'Wednesday', forceFirstResult: true, forceTypeFilter: 'tv' },
-            { pattern: /^\u5343\u4e0e\u5343\u5bfb/, replacement: '\u5343\u4e0e\u5343\u5bfb', forceMovieType: true },
-            { pattern: /^\u54c8\u5c14\u7684\u79fb\u52a8\u57ce\u5821/, replacement: '\u54c8\u5c14\u7684\u79fb\u52a8\u57ce\u5821', forceMovieType: true },
-            { pattern: /^\u9b3c\u706d\u4e4b\u5203/, replacement: '\u9b3c\u706d\u4e4b\u5203', forceMovieType: true },
-            { pattern: /^\u5929\u6c14\u4e4b\u5b50/, replacement: '\u5929\u6c14\u4e4b\u5b50', forceMovieType: true },
-            { pattern: /^\u5742\u672c\u65e5\u5e38 Part 2/, replacement: '\u5742\u672c\u65e5\u5e38' },
-            { pattern: /^\u6ca7\u5143\u56fe2 \u5143\u521d\u5c71\u756a\u5916\u7bc7/, replacement: '\u6ca7\u5143\u56fe' },
-            { pattern: /^\u82cd\u5170\u8bc02 \u5f71\u4e09\u754c\u7bc7/, replacement: '\u82cd\u5170\u8bc0 \u52a8\u753b\u7248', forceFirstResult: true },
-            { pattern: /^\u77f3\u7eaa\u5143 \u7b2c\u56db\u5b63 Part 2/, replacement: '\u77f3\u7eaa\u5143' },
-            { pattern: /^\u53cc\u4eba\u72ec\u81ea\u9732\u8425/, replacement: '\u3075\u305f\u308a\u30bd\u30ed\u30ad\u30e3\u30f3\u30d7' },
-            { pattern: /^\u5730\u7f1a\u5c11\u5e74\u82b1\u5b50\u541b \u7b2c\u4e8c\u5b63 \u540e\u7bc7/, replacement: '\u5730\u7f1a\u5c11\u5e74\u82b1\u5b50\u541b' },
-            { pattern: /^\u66f4\u8863\u4eba\u5076\u5760\u5165\u7231\u6cb3 \u7b2c\u4e8c\u5b63/, replacement: '\u66f4\u8863\u4eba\u5076\u5760\u5165\u7231\u6cb3', forceFirstResult: true },
-            { pattern: /^\u574f\u5973\u5b69/, replacement: '\u4e0d\u826f\u5c11\u5973' },
-            { pattern: /^\u82b1\u513f\u4e0e\u5c11\u5e74\u00b7\u540c\u5fc3\u5b63/, replacement: '\u82b1\u513f\u4e0e\u5c11\u5e74\u00b7\u540c\u5fc3\u5b63', forceFirstResult: true },
-            { pattern: /^\u5954\u8dd1\u5427 \u7b2c\u4e5d\u5b63/, replacement: '\u5954\u8dd1\u5427!\u5144\u5f1f', forceFirstResult: true },
-            { pattern: /^\u4e58\u98ce2025/, replacement: '\u4e58\u98ce2025', forceFirstResult: true },
-            { pattern: /^\u4f60\u7684\u7231$/, replacement: '\ub108\uc758\uc5f0\uc560', forceFirstResult: true },
-            { pattern: /^\u771f\u7684\u662f\u5f88\u4e0d\u9519\u7684\u4eba/, replacement: '\uc9c4\uc9dc \uad1c\ucc2e\uc740 \uc0ac\ub78c', forceFirstResult: true },
-            { pattern: /^\u6700\u540e\u590d\u6d3b\u6218/, replacement: '\u30d5\u30a1\u30a4\u30ca\u30eb\u30c9\u30e9\u30d5\u30c8', forceFirstResult: true },
-            { pattern: /^\u66b4\u98ce\u5708/, replacement: '\ubd81\uadf9\uc131', forceFirstResult: true },
-            { pattern: / \u7b2c[^\u5b63]*\u5b63/, replacement: '' },
-            { pattern: /^(\u6b4c\u624b|\u5168\u5458\u52a0\u901f\u4e2d)\d{4}$/, replacement: (match, showName) => {
-                const showMap = {
-                    '\u6b4c\u624b': '\u6211\u662f\u6b4c\u624b',
-                    '\u5168\u5458\u52a0\u901f\u4e2d': '\u5168\u5458\u52a0\u901f\u4e2d'
-                };
-                return showMap[showName] || showName;
-            }},
-            { pattern: /^\u5954\u8dd1\u5427(?! ?\u5144\u5f1f)/, replacement: '\u5954\u8dd1\u5427\u5144\u5f1f' },
-            { pattern: /^(.+?[^0-9])\d+$/, replacement: (match, baseName) => {
-                if (/^(\u6b4c\u624b|\u5168\u5458\u52a0\u901f\u4e2d)\d{4}$/.test(match)) {
-                    return match;
-                }
-                return baseName;
-            }},
-            { pattern: /^([^\u00b7]+)\u00b7(.*)$/, replacement: (match, part1, part2) => {
-                if (part2 && !/^(\u6162\u4eab\u5b63|\u7b2c.*\u5b63)/.test(part2)) {
-                    return part1 + part2;
-                }
-                return part1;
-            }}
-        ];
-        
-        let title = scItem.title;
-        let forceFirstResult = false;
-        let forceMovieType = false;
-        let forceTypeFilter = null;
-        
-        for (const rule of titleNormalizationRules) {
-            if (rule.pattern.test(title)) {
-                if (typeof rule.replacement === 'function') {
-                    title = title.replace(rule.pattern, rule.replacement);
-                } else {
-                    title = title.replace(rule.pattern, rule.replacement);
-                }
-                if (rule.forceFirstResult) {
-                    forceFirstResult = true;
-                }
-                if (rule.forceMovieType) {
-                    forceMovieType = true;
-                }
-                if (rule.forceTypeFilter) {
-                    forceTypeFilter = rule.forceTypeFilter;
-                }
-                break;
-            }
+  var _0xca5fb = (481958 ^ 481959) + (381808 ^ 381808);
+  const _0x1f3ee = scItems['\u006D\u0061\u0070'](async scItem => {
+    var _0xddae;
+    const _0xde7d8f = [{
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp('\u005E\u005C\u0075\u0035\u0031\u0065\u0031\u005C\u0075\u0034\u0065\u0062\u0061\u005C\u0075\u0034\u0066\u0065\u0065\u005C\u0075\u0034\u0065\u0064\u0039\u005C\u0075\u0034\u0066\u0032\u0030\u005B\u005C\u0075\u0066\u0066\u0031\u0061\u003A\u005D\u005C\u0075\u0039\u0031\u0063\u0064\u005C\u0075\u0038\u0066\u0064\u0034\u005C\u0075\u0035\u0039\u0032\u0039\u005C\u0075\u0035\u0033\u0035\u0037', ""),
+      "replacement": '\u51e1\u4eba\u4fee\u4ed9\u4f20',
+      '\u0066\u006F\u0072\u0063\u0065\u0046\u0069\u0072\u0073\u0074\u0052\u0065\u0073\u0075\u006C\u0074': !![]
+    }, {
+      "pattern": new RegExp("0bb8u\\8126u\\1de9u\\f0c5u\\75f7u\\^".split("").reverse().join(""), ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u7f57\u5c0f\u9ed1\u6218\u8bb0',
+      '\u0066\u006F\u0072\u0063\u0065\u004D\u006F\u0076\u0069\u0065\u0054\u0079\u0070\u0065': !![]
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp('\u005E\u005C\u0075\u0037\u0064\u0032\u0062\u005C\u0075\u0035\u0064\u0064\u0064\u0020\u005C\u0075\u0037\u0062\u0032\u0063\u005C\u0075\u0034\u0065\u0038\u0063\u005C\u0075\u0035\u0062\u0036\u0033', ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u7d2b\u5ddd',
+      "forceFirstResult": !![]
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp('\u005E\u005C\u0075\u0036\u0036\u0031\u0066\u005C\u0075\u0036\u0037\u0031\u0066\u005C\u0075\u0034\u0065\u0030\u0039\u0020\u005C\u0075\u0037\u0062\u0032\u0063\u005C\u0075\u0034\u0065\u0038\u0063\u005C\u0075\u0035\u0062\u0036\u0033', ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': "\u0057\u0065\u0064\u006E\u0065\u0073\u0064\u0061\u0079",
+      '\u0066\u006F\u0072\u0063\u0065\u0046\u0069\u0072\u0073\u0074\u0052\u0065\u0073\u0075\u006C\u0074': !![],
+      "forceTypeFilter": 'tv'
+    }, {
+      "pattern": new RegExp("bfb5u\\3435u\\e0e4u\\3435u\\^".split("").reverse().join(""), ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u5343\u4e0e\u5343\u5bfb',
+      '\u0066\u006F\u0072\u0063\u0065\u004D\u006F\u0076\u0069\u0065\u0054\u0079\u0070\u0065': !![]
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp('\u005E\u005C\u0075\u0035\u0034\u0063\u0038\u005C\u0075\u0035\u0063\u0031\u0034\u005C\u0075\u0037\u0036\u0038\u0034\u005C\u0075\u0037\u0039\u0066\u0062\u005C\u0075\u0035\u0032\u0061\u0038\u005C\u0075\u0035\u0037\u0063\u0065\u005C\u0075\u0035\u0038\u0032\u0031', ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u54c8\u5c14\u7684\u79fb\u52a8\u57ce\u5821',
+      '\u0066\u006F\u0072\u0063\u0065\u004D\u006F\u0076\u0069\u0065\u0054\u0079\u0070\u0065': !![]
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp("3025u\\b4e4u\\d607u\\c3b9u\\^".split("").reverse().join(""), ""),
+      "replacement": '\u9b3c\u706d\u4e4b\u5203',
+      '\u0066\u006F\u0072\u0063\u0065\u004D\u006F\u0076\u0069\u0065\u0054\u0079\u0070\u0065': !![]
+    }, {
+      "pattern": new RegExp("05b5u\\b4e4u\\41c6u\\9295u\\^".split("").reverse().join(""), ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u5929\u6c14\u4e4b\u5b50',
+      "forceMovieType": !![]
+    }, {
+      "pattern": new RegExp('\u005E\u005C\u0075\u0035\u0037\u0034\u0032\u005C\u0075\u0036\u0037\u0032\u0063\u005C\u0075\u0036\u0035\u0065\u0035\u005C\u0075\u0035\u0065\u0033\u0038\u0020\u0050\u0061\u0072\u0074\u0020\u0032', ""),
+      "replacement": '\u5742\u672c\u65e5\u5e38'
+    }, {
+      "pattern": new RegExp("7cb7u\\6195u\\a657u\\17c5u\\d125u\\3415u\\ 2ef65u\\3415u\\7ac6u\\^".split("").reverse().join(""), ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u6ca7\u5143\u56fe'
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp('\u005E\u005C\u0075\u0038\u0032\u0063\u0064\u005C\u0075\u0035\u0031\u0037\u0030\u005C\u0075\u0038\u0062\u0063\u0030\u0032\u0020\u005C\u0075\u0035\u0066\u0037\u0031\u005C\u0075\u0034\u0065\u0030\u0039\u005C\u0075\u0037\u0035\u0034\u0063\u005C\u0075\u0037\u0062\u0063\u0037', ""),
+      "replacement": '\u82cd\u5170\u8bc0 \u52a8\u753b\u7248',
+      "forceFirstResult": !![]
+    }, {
+      "pattern": new RegExp("2 traP 36b5u\\bd65u\\c2b7u\\ 3415u\\aae7u\\3f77u\\^".split("").reverse().join(""), ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u77f3\u7eaa\u5143'
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp("5248u\\2379u\\ae18u\\ce27u\\abe4u\\cc35u\\^".split("").reverse().join(""), ""),
+      "replacement": '\u3075\u305f\u308a\u30bd\u30ed\u30ad\u30e3\u30f3\u30d7'
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp("7cb7u\\e045u\\ 36b5u\\c8e4u\\c2b7u\\ b145u\\05b5u\\1b28u\\47e5u\\11c5u\\a1f7u\\0375u\\^".split("").reverse().join(""), ""),
+      "replacement": '\u5730\u7f1a\u5c11\u5e74\u82b1\u5b50\u541b'
+    }, {
+      "pattern": new RegExp("36b5u\\c8e4u\\c2b7u\\ 3bc6u\\1327u\\5615u\\0675u\\6705u\\abe4u\\3688u\\4f66u\\^".split("").reverse().join(""), ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u66f4\u8863\u4eba\u5076\u5760\u5165\u7231\u6cb3',
+      '\u0066\u006F\u0072\u0063\u0065\u0046\u0069\u0072\u0073\u0074\u0052\u0065\u0073\u0075\u006C\u0074': !![]
+    }, {
+      "pattern": new RegExp("96b5u\\3795u\\f475u\\^".split("").reverse().join(""), ""),
+      "replacement": '\u4e0d\u826f\u5c11\u5973'
+    }, {
+      "pattern": new RegExp('\u005E\u005C\u0075\u0038\u0032\u0062\u0031\u005C\u0075\u0035\u0031\u0033\u0066\u005C\u0075\u0034\u0065\u0030\u0065\u005C\u0075\u0035\u0063\u0031\u0031\u005C\u0075\u0035\u0065\u0037\u0034\u005C\u0075\u0030\u0030\u0062\u0037\u005C\u0075\u0035\u0034\u0030\u0063\u005C\u0075\u0035\u0066\u0063\u0033\u005C\u0075\u0035\u0062\u0036\u0033', ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u82b1\u513f\u4e0e\u5c11\u5e74\u00b7\u540c\u5fc3\u5b63',
+      '\u0066\u006F\u0072\u0063\u0065\u0046\u0069\u0072\u0073\u0074\u0052\u0065\u0073\u0075\u006C\u0074': !![]
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp('\u005E\u005C\u0075\u0035\u0039\u0035\u0034\u005C\u0075\u0038\u0064\u0064\u0031\u005C\u0075\u0035\u0034\u0032\u0037\u0020\u005C\u0075\u0037\u0062\u0032\u0063\u005C\u0075\u0034\u0065\u0035\u0064\u005C\u0075\u0035\u0062\u0036\u0033', ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u5954\u8dd1\u5427!\u5144\u5f1f',
+      "forceFirstResult": !![]
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp('\u005E\u005C\u0075\u0034\u0065\u0035\u0038\u005C\u0075\u0039\u0038\u0063\u0065\u0032\u0030\u0032\u0035', ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u4e58\u98ce2025',
+      '\u0066\u006F\u0072\u0063\u0065\u0046\u0069\u0072\u0073\u0074\u0052\u0065\u0073\u0075\u006C\u0074': !![]
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp("$1327u\\4867u\\06f4u\\^".split("").reverse().join(""), ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\ub108\uc758\uc5f0\uc560',
+      '\u0066\u006F\u0072\u0063\u0065\u0046\u0069\u0072\u0073\u0074\u0052\u0065\u0073\u0075\u006C\u0074': !![]
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp('\u005E\u005C\u0075\u0037\u0037\u0031\u0066\u005C\u0075\u0037\u0036\u0038\u0034\u005C\u0075\u0036\u0036\u0032\u0066\u005C\u0075\u0035\u0066\u0038\u0038\u005C\u0075\u0034\u0065\u0030\u0064\u005C\u0075\u0039\u0035\u0031\u0039\u005C\u0075\u0037\u0036\u0038\u0034\u005C\u0075\u0034\u0065\u0062\u0061', ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\uc9c4\uc9dc \uad1c\ucc2e\uc740 \uc0ac\ub78c',
+      '\u0066\u006F\u0072\u0063\u0065\u0046\u0069\u0072\u0073\u0074\u0052\u0065\u0073\u0075\u006C\u0074': !![]
+    }, {
+      "pattern": new RegExp('\u005E\u005C\u0075\u0036\u0037\u0030\u0030\u005C\u0075\u0035\u0034\u0030\u0065\u005C\u0075\u0035\u0039\u0030\u0064\u005C\u0075\u0036\u0064\u0033\u0062\u005C\u0075\u0036\u0032\u0031\u0038', ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u30d5\u30a1\u30a4\u30ca\u30eb\u30c9\u30e9\u30d5\u30c8',
+      '\u0066\u006F\u0072\u0063\u0065\u0046\u0069\u0072\u0073\u0074\u0052\u0065\u0073\u0075\u006C\u0074': !![]
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp("8075u\\ec89u\\4b66u\\^".split("").reverse().join(""), ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\ubd81\uadf9\uc131',
+      '\u0066\u006F\u0072\u0063\u0065\u0046\u0069\u0072\u0073\u0074\u0052\u0065\u0073\u0075\u006C\u0074': !![]
+    }, {
+      "pattern": new RegExp('\u0020\u005C\u0075\u0037\u0062\u0032\u0063\u005B\u005E\u005C\u0075\u0035\u0062\u0036\u0033\u005D\u002A\u005C\u0075\u0035\u0062\u0036\u0033', ""),
+      "replacement": ''
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp("$}4{d\\)d2e4u\\f109u\\0a25u\\8545u\\8615u\\|b426u\\c4b6u\\(^".split("").reverse().join(""), ""),
+      "replacement": (match, showName) => {
+        var _0x0cda1e = (547640 ^ 547632) + (710355 ^ 710358);
+        const _0x1e56d = {
+          '\u6b4c\u624b': '\u6211\u662f\u6b4c\u624b',
+          '\u5168\u5458\u52a0\u901f\u4e2d': '\u5168\u5458\u52a0\u901f\u4e2d'
+        };
+        _0x0cda1e = (184268 ^ 184268) + (108878 ^ 108878);
+        return _0x1e56d[showName] || showName;
+      }
+    }, {
+      "pattern": new RegExp('\u005E\u005C\u0075\u0035\u0039\u0035\u0034\u005C\u0075\u0038\u0064\u0064\u0031\u005C\u0075\u0035\u0034\u0032\u0037\u0028\u003F\u0021\u0020\u003F\u005C\u0075\u0035\u0031\u0034\u0034\u005C\u0075\u0035\u0066\u0031\u0066\u0029', ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': '\u5954\u8dd1\u5427\u5144\u5f1f'
+    }, {
+      "pattern": new RegExp('\u005E\u0028\u002E\u002B\u003F\u005B\u005E\u0030\u002D\u0039\u005D\u0029\u005C\u0064\u002B\u0024', ""),
+      "replacement": (match, baseName) => {
+        if (new RegExp('\u005E\u0028\u005C\u0075\u0036\u0062\u0034\u0063\u005C\u0075\u0036\u0032\u0034\u0062\u007C\u005C\u0075\u0035\u0031\u0036\u0038\u005C\u0075\u0035\u0034\u0035\u0038\u005C\u0075\u0035\u0032\u0061\u0030\u005C\u0075\u0039\u0030\u0031\u0066\u005C\u0075\u0034\u0065\u0032\u0064\u0029\u005C\u0064\u007B\u0034\u007D\u0024', "")['\u0074\u0065\u0073\u0074'](match)) {
+          return match;
         }
-        
-        let year = null;
-        if (scItem.year) {
-            year = String(scItem.year);
-        } else if (scItem.card_subtitle) {
-            const yearMatch = scItem.card_subtitle.match(/(\d{4})/);
-            if (yearMatch) year = yearMatch[1];
+        return baseName;
+      }
+    }, {
+      '\u0070\u0061\u0074\u0074\u0065\u0072\u006E': new RegExp('\u005E\u0028\u005B\u005E\u005C\u0075\u0030\u0030\u0062\u0037\u005D\u002B\u0029\u005C\u0075\u0030\u0030\u0062\u0037\u0028\u002E\u002A\u0029\u0024', ""),
+      '\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074': (match, part1, part2) => {
+        if (part2 && !new RegExp(")36b5u\\*.c2b7u\\|36b5u\\bae4u\\2616u\\(^".split("").reverse().join(""), "")['\u0074\u0065\u0073\u0074'](part2)) {
+          return part1 + part2;
         }
-
-        let searchType = scItem.type;
-        
-        if (forceMovieType) {
-            searchType = "movie";
+        return part1;
+      }
+    }];
+    _0xddae = 420125 ^ 420127;
+    var _0x1535b;
+    let _0xd18a = scItem['\u0074\u0069\u0074\u006C\u0065'];
+    _0x1535b = '\u0066\u0062\u006F\u0066\u006E\u006B';
+    let _0xacd42c = false;
+    let _0xbdb = false;
+    let _0xb2b = null;
+    for (const _0x5b6d1a of _0xde7d8f) {
+      if (_0x5b6d1a['\u0070\u0061\u0074\u0074\u0065\u0072\u006E']['\u0074\u0065\u0073\u0074'](_0xd18a)) {
+        if (typeof _0x5b6d1a['\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074'] === "\u0066\u0075\u006E\u0063\u0074\u0069\u006F\u006E") {
+          _0xd18a = _0xd18a['\u0072\u0065\u0070\u006C\u0061\u0063\u0065'](_0x5b6d1a['\u0070\u0061\u0074\u0074\u0065\u0072\u006E'], _0x5b6d1a['\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074']);
         } else {
-            let detectedType = detectItemTypeFromContent(scItem);
-            
-            if (scItem.type === "multi") {
-                if (detectedType) {
-                    searchType = detectedType;
-                } else if (scItem.subtype && (scItem.subtype === "movie" || scItem.subtype === "tv")) {
-                    searchType = scItem.subtype;
-                } else {
-                    searchType = "multi";
-                }
-            }
+          _0xd18a = _0xd18a['\u0072\u0065\u0070\u006C\u0061\u0063\u0065'](_0x5b6d1a['\u0070\u0061\u0074\u0074\u0065\u0072\u006E'], _0x5b6d1a['\u0072\u0065\u0070\u006C\u0061\u0063\u0065\u006D\u0065\u006E\u0074']);
         }
-        
-        const tmdbDatas = await fetchTmdbDataForDouban(title, searchType);
-
-        if (tmdbDatas.length !== 0) {
-            
-            if (scItem.isMultiTypeTitle) {
-                const allMatches = selectMatches(tmdbDatas, title, year, { 
-                    returnArray: true, 
-                    doubanItem: scItem
-                });
-
-                return allMatches
-                    .filter(match => {
-                        return match.poster_path &&
-                               match.id &&
-                               (match.title || match.name) &&
-                               (match.title || match.name).trim().length > 0;
-                    })
-                    .map(match => ({
-                        id: match.id,
-                        type: "tmdb",
-                        title: match.title ?? match.name,
-                        description: match.overview,
-                        releaseDate: match.release_date ?? match.first_air_date,
-                        backdropPath: match.backdrop_path,
-                        posterPath: match.poster_path,
-                        rating: match.vote_average,
-                        mediaType: match.media_type,
-                        genreTitle: generateGenreTitleFromTmdb(match, scItem),
-                        originalDoubanTitle: scItem.title,
-                        originalDoubanYear: scItem.year,
-                        originalDoubanId: scItem.id
-                    }));
-            } else {
-                let bestMatch;
-                
-                if (forceFirstResult && tmdbDatas.length > 0) {
-                    if (forceTypeFilter) {
-                        bestMatch = tmdbDatas.find(item => item.media_type === forceTypeFilter) || tmdbDatas[0];
-                    } else {
-                        bestMatch = tmdbDatas[0];
-                    }
-                } else {
-                    bestMatch = selectMatches(tmdbDatas, title, year, { 
-                        doubanItem: scItem
-                    });
-                }
-                
-                if (bestMatch && bestMatch.poster_path && bestMatch.id && 
-                    (bestMatch.title || bestMatch.name) && 
-                    (bestMatch.title || bestMatch.name).trim().length > 0) {
-                    return {
-                        id: bestMatch.id,
-                        type: "tmdb",
-                        title: bestMatch.title ?? bestMatch.name,
-                        description: bestMatch.overview,
-                        releaseDate: bestMatch.release_date ?? bestMatch.first_air_date,
-                        backdropPath: bestMatch.backdrop_path,
-                        posterPath: bestMatch.poster_path,
-                        rating: bestMatch.vote_average,
-                        mediaType: bestMatch.media_type,
-                        genreTitle: generateGenreTitleFromTmdb(bestMatch, scItem),
-                        originalDoubanTitle: scItem.title,
-                        originalDoubanYear: scItem.year,
-                        originalDoubanId: scItem.id
-                    };
-                }
-            }
+        if (_0x5b6d1a['\u0066\u006F\u0072\u0063\u0065\u0046\u0069\u0072\u0073\u0074\u0052\u0065\u0073\u0075\u006C\u0074']) {
+          _0xacd42c = !![];
         }
-        return null;
-    });
-
-    const results = await Promise.all(promises);
-    
-    const allItems = [];
-    for (const result of results) {
-        if (result) {
-            if (Array.isArray(result)) {
-                allItems.push(...result);
-            } else {
-                allItems.push(result);
-            }
+        if (_0x5b6d1a['\u0066\u006F\u0072\u0063\u0065\u004D\u006F\u0076\u0069\u0065\u0054\u0079\u0070\u0065']) {
+          _0xbdb = !![];
         }
+        if (_0x5b6d1a['\u0066\u006F\u0072\u0063\u0065\u0054\u0079\u0070\u0065\u0046\u0069\u006C\u0074\u0065\u0072']) {
+          _0xb2b = _0x5b6d1a['\u0066\u006F\u0072\u0063\u0065\u0054\u0079\u0070\u0065\u0046\u0069\u006C\u0074\u0065\u0072'];
+        }
+        break;
+      }
     }
-    
-    return filterBlockedItemsEnhanced(allItems);
+    var _0xa2gc;
+    let _0x1decde = null;
+    _0xa2gc = (320198 ^ 320197) + (169965 ^ 169963);
+    if (scItem['\u0079\u0065\u0061\u0072']) {
+      _0x1decde = String(scItem['\u0079\u0065\u0061\u0072']);
+    } else if (scItem['\u0063\u0061\u0072\u0064\u005F\u0073\u0075\u0062\u0074\u0069\u0074\u006C\u0065']) {
+      var _0x4d235d = (965075 ^ 965074) + (616374 ^ 616373);
+      const _0x82234b = scItem['\u0063\u0061\u0072\u0064\u005F\u0073\u0075\u0062\u0074\u0069\u0074\u006C\u0065']['\u006D\u0061\u0074\u0063\u0068'](new RegExp('\u0028\u005C\u0064\u007B\u0034\u007D\u0029', ""));
+      _0x4d235d = (799915 ^ 799917) + (816544 ^ 816552);
+      if (_0x82234b) _0x1decde = _0x82234b[756821 ^ 756820];
+    }
+    let _0x86b1ec = scItem['\u0074\u0079\u0070\u0065'];
+    if (_0xbdb) {
+      _0x86b1ec = "eivom".split("").reverse().join("");
+    } else {
+      let _0x27_0x6f2 = detectItemTypeFromContent(scItem);
+      if (scItem['\u0074\u0079\u0070\u0065'] === "itlum".split("").reverse().join("")) {
+        if (_0x27_0x6f2) {
+          _0x86b1ec = _0x27_0x6f2;
+        } else if (scItem['\u0073\u0075\u0062\u0074\u0079\u0070\u0065'] && (scItem['\u0073\u0075\u0062\u0074\u0079\u0070\u0065'] === "eivom".split("").reverse().join("") || scItem['\u0073\u0075\u0062\u0074\u0079\u0070\u0065'] === "\u0074\u0076")) {
+          _0x86b1ec = scItem['\u0073\u0075\u0062\u0074\u0079\u0070\u0065'];
+        } else {
+          _0x86b1ec = "\u006D\u0075\u006C\u0074\u0069";
+        }
+      }
+    }
+    const _0x28_0x48b = await fetchTmdbDataForDouban(_0xd18a, _0x86b1ec);
+    if (_0x28_0x48b['\u006C\u0065\u006E\u0067\u0074\u0068'] !== (588653 ^ 588653)) {
+      if (scItem['\u0069\u0073\u004D\u0075\u006C\u0074\u0069\u0054\u0079\u0070\u0065\u0054\u0069\u0074\u006C\u0065']) {
+        var _0x8fa7a;
+        const _0xd2cc5g = selectMatches(_0x28_0x48b, _0xd18a, _0x1decde, {
+          '\u0072\u0065\u0074\u0075\u0072\u006E\u0041\u0072\u0072\u0061\u0079': !![],
+          '\u0064\u006F\u0075\u0062\u0061\u006E\u0049\u0074\u0065\u006D': scItem
+        });
+        _0x8fa7a = '\u006C\u006E\u006D\u0070\u006E\u006A';
+        return _0xd2cc5g['\u0066\u0069\u006C\u0074\u0065\u0072'](match => {
+          return match['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] && match['\u0069\u0064'] && (match['\u0074\u0069\u0074\u006C\u0065'] || match['\u006E\u0061\u006D\u0065']) && (match['\u0074\u0069\u0074\u006C\u0065'] || match['\u006E\u0061\u006D\u0065'])['\u0074\u0072\u0069\u006D']()['\u006C\u0065\u006E\u0067\u0074\u0068'] > (248940 ^ 248940);
+        })['\u006D\u0061\u0070'](match => ({
+          '\u0069\u0064': match['\u0069\u0064'],
+          "type": "\u0074\u006D\u0064\u0062",
+          '\u0074\u0069\u0074\u006C\u0065': match['\u0074\u0069\u0074\u006C\u0065'] ?? match['\u006E\u0061\u006D\u0065'],
+          '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': match['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+          '\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u0044\u0061\u0074\u0065': match['\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065'] ?? match['\u0066\u0069\u0072\u0073\u0074\u005F\u0061\u0069\u0072\u005F\u0064\u0061\u0074\u0065'],
+          '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': match['\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u005F\u0070\u0061\u0074\u0068'],
+          "posterPath": match['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+          "rating": match['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'],
+          '\u006D\u0065\u0064\u0069\u0061\u0054\u0079\u0070\u0065': match['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'],
+          '\u0067\u0065\u006E\u0072\u0065\u0054\u0069\u0074\u006C\u0065': generateGenreTitleFromTmdb(match, scItem),
+          '\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u0044\u006F\u0075\u0062\u0061\u006E\u0054\u0069\u0074\u006C\u0065': scItem['\u0074\u0069\u0074\u006C\u0065'],
+          '\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u0044\u006F\u0075\u0062\u0061\u006E\u0059\u0065\u0061\u0072': scItem['\u0079\u0065\u0061\u0072'],
+          '\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u0044\u006F\u0075\u0062\u0061\u006E\u0049\u0064': scItem['\u0069\u0064']
+        }));
+      } else {
+        let _0x8a831a;
+        if (_0xacd42c && _0x28_0x48b['\u006C\u0065\u006E\u0067\u0074\u0068'] > (837460 ^ 837460)) {
+          if (_0xb2b) {
+            _0x8a831a = _0x28_0x48b['\u0066\u0069\u006E\u0064'](item => item['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'] === _0xb2b) || _0x28_0x48b[276692 ^ 276692];
+          } else {
+            _0x8a831a = _0x28_0x48b[437121 ^ 437121];
+          }
+        } else {
+          _0x8a831a = selectMatches(_0x28_0x48b, _0xd18a, _0x1decde, {
+            "doubanItem": scItem
+          });
+        }
+        if (_0x8a831a && _0x8a831a['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'] && _0x8a831a['\u0069\u0064'] && (_0x8a831a['\u0074\u0069\u0074\u006C\u0065'] || _0x8a831a['\u006E\u0061\u006D\u0065']) && (_0x8a831a['\u0074\u0069\u0074\u006C\u0065'] || _0x8a831a['\u006E\u0061\u006D\u0065'])['\u0074\u0072\u0069\u006D']()['\u006C\u0065\u006E\u0067\u0074\u0068'] > (809140 ^ 809140)) {
+          return {
+            '\u0069\u0064': _0x8a831a['\u0069\u0064'],
+            "type": "tmdb",
+            "title": _0x8a831a['\u0074\u0069\u0074\u006C\u0065'] ?? _0x8a831a['\u006E\u0061\u006D\u0065'],
+            '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': _0x8a831a['\u006F\u0076\u0065\u0072\u0076\u0069\u0065\u0077'],
+            "releaseDate": _0x8a831a['\u0072\u0065\u006C\u0065\u0061\u0073\u0065\u005F\u0064\u0061\u0074\u0065'] ?? _0x8a831a['\u0066\u0069\u0072\u0073\u0074\u005F\u0061\u0069\u0072\u005F\u0064\u0061\u0074\u0065'],
+            '\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u0050\u0061\u0074\u0068': _0x8a831a['\u0062\u0061\u0063\u006B\u0064\u0072\u006F\u0070\u005F\u0070\u0061\u0074\u0068'],
+            "posterPath": _0x8a831a['\u0070\u006F\u0073\u0074\u0065\u0072\u005F\u0070\u0061\u0074\u0068'],
+            '\u0072\u0061\u0074\u0069\u006E\u0067': _0x8a831a['\u0076\u006F\u0074\u0065\u005F\u0061\u0076\u0065\u0072\u0061\u0067\u0065'],
+            "mediaType": _0x8a831a['\u006D\u0065\u0064\u0069\u0061\u005F\u0074\u0079\u0070\u0065'],
+            "genreTitle": generateGenreTitleFromTmdb(_0x8a831a, scItem),
+            '\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u0044\u006F\u0075\u0062\u0061\u006E\u0054\u0069\u0074\u006C\u0065': scItem['\u0074\u0069\u0074\u006C\u0065'],
+            "originalDoubanYear": scItem['\u0079\u0065\u0061\u0072'],
+            '\u006F\u0072\u0069\u0067\u0069\u006E\u0061\u006C\u0044\u006F\u0075\u0062\u0061\u006E\u0049\u0064': scItem['\u0069\u0064']
+          };
+        }
+      }
+    }
+    return null;
+  });
+  _0xca5fb = (188016 ^ 188021) + (651552 ^ 651553);
+  var _0x0e7bb = (231246 ^ 231244) + (452267 ^ 452266);
+  const _0x29_0xb66 = await Promise['\u0061\u006C\u006C'](_0x1f3ee);
+  _0x0e7bb = (406082 ^ 406091) + (690439 ^ 690432);
+  const _0xaaf3c = [];
+  for (const _0x68eea of _0x29_0xb66) {
+    if (_0x68eea) {
+      if (Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](_0x68eea)) {
+        _0xaaf3c['\u0070\u0075\u0073\u0068'](..._0x68eea);
+      } else {
+        _0xaaf3c['\u0070\u0075\u0073\u0068'](_0x68eea);
+      }
+    }
+  }
+  return filterBlockedItemsEnhanced(_0xaaf3c);
 }
-
 async function loadEnhancedDoubanList(params = {}) {
-    const url = params.url;
-    
-    if (url.includes("douban.com/doulist/")) {
-        return loadEnhancedDefaultList(params);
-    } 
-    else if (url.includes("douban.com/subject_collection/")) {
-        return loadEnhancedSubjectCollection(params);
-    } 
-    else if (url.includes("m.douban.com/doulist/")) {
-        const desktopUrl = url.replace("m.douban.com", "www.douban.com");
-        return loadEnhancedDefaultList({ ...params, url: desktopUrl });
-    }
-    else if (url.includes("douban.com/doubanapp/dispatch")) {
-        const parsedUrl = parseDoubanAppDispatchUrl(url);
-        return loadEnhancedDoubanList({ ...params, url: parsedUrl });
-    }
-    
-    return [];
-}
-
-async function loadEnhancedDefaultList(params = {}) {
-    const url = params.url;
-    const listId = url.match(/doulist\/(\d+)/)?.[1];
-    const page = params.page || 1;
-    const count = 25;
-    const start = (page - 1) * count;
-    const pageUrl = `https://www.douban.com/doulist/${listId}/?start=${start}&sort=seq&playable=0&sub_type=`;
-
-    const response = await Widget.http.get(pageUrl, {
-        headers: {
-            Referer: `https://movie.douban.com/explore`,
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-        },
+  var _0xb1f4c = (434684 ^ 434686) + (660870 ^ 660879);
+  const _0xfae = params['\u0075\u0072\u006C'];
+  _0xb1f4c = '\u0063\u006E\u0070\u006B\u006D\u006D';
+  if (_0xfae['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("/tsiluod/moc.nabuod".split("").reverse().join(""))) {
+    return loadEnhancedDefaultList(params);
+  } else if (_0xfae['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u0064\u006F\u0075\u0062\u0061\u006E\u002E\u0063\u006F\u006D\u002F\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u002F")) {
+    return loadEnhancedSubjectCollection(params);
+  } else if (_0xfae['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u006D\u002E\u0064\u006F\u0075\u0062\u0061\u006E\u002E\u0063\u006F\u006D\u002F\u0064\u006F\u0075\u006C\u0069\u0073\u0074\u002F")) {
+    var _0xa889b = (471725 ^ 471716) + (123754 ^ 123752);
+    const _0x9c7e = _0xfae['\u0072\u0065\u0070\u006C\u0061\u0063\u0065']("\u006D\u002E\u0064\u006F\u0075\u0062\u0061\u006E\u002E\u0063\u006F\u006D", "moc.nabuod.www".split("").reverse().join(""));
+    _0xa889b = "pippbl".split("").reverse().join("");
+    return loadEnhancedDefaultList({
+      ...params,
+      "url": _0x9c7e
     });
-
-    const docId = Widget.dom.parse(response.data);
-    const videoElementIds = Widget.dom.select(docId, ".doulist-item .title a");
-
-    let doubanItems = [];
-    for (const itemId of videoElementIds) {
-        const link = await Widget.dom.attr(itemId, "href");
-        const text = await Widget.dom.text(itemId);
-        const chineseTitle = text.trim().split(' ')[0];
-        if (chineseTitle) {
-            doubanItems.push({ title: chineseTitle, type: "multi" });
-        }
-    }
-
-    return await fetchImdbItemsForDouban(doubanItems);
+  } else if (_0xfae['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u0064\u006F\u0075\u0062\u0061\u006E\u002E\u0063\u006F\u006D\u002F\u0064\u006F\u0075\u0062\u0061\u006E\u0061\u0070\u0070\u002F\u0064\u0069\u0073\u0070\u0061\u0074\u0063\u0068")) {
+    var _0xd21e6f;
+    const _0x1637de = parseDoubanAppDispatchUrl(_0xfae);
+    _0xd21e6f = '\u006A\u0071\u0068\u0063\u006F\u0068';
+    return loadEnhancedDoubanList({
+      ...params,
+      "url": _0x1637de
+    });
+  }
+  return [];
 }
-
+async function loadEnhancedDefaultList(params = {}, _0x84c) {
+  var _0xf4bc = (526158 ^ 526153) + (156221 ^ 156223);
+  const _0xbb334c = params['\u0075\u0072\u006C'];
+  _0xf4bc = (906728 ^ 906721) + (682678 ^ 682674);
+  const _0x48gb0e = _0xbb334c['\u006D\u0061\u0074\u0063\u0068'](new RegExp('\u0064\u006F\u0075\u006C\u0069\u0073\u0074\u005C\u002F\u0028\u005C\u0064\u002B\u0029', ""))?.[589155 ^ 589154];
+  var _0x6_0x204 = (326404 ^ 326405) + (452810 ^ 452815);
+  const _0xb5ae4b = params['\u0070\u0061\u0067\u0065'] || 935159 ^ 935158;
+  _0x6_0x204 = 338785 ^ 338791;
+  _0x84c = 746062 ^ 746071;
+  var _0xfaa0g = (685094 ^ 685091) + (967048 ^ 967051);
+  const _0xd51bd = (_0xb5ae4b - (414724 ^ 414725)) * _0x84c;
+  _0xfaa0g = 115097 ^ 115102;
+  const _0xbcbe = `https://www.douban.com/doulist/${_0x48gb0e}/?start=${_0xd51bd}&sort=seq&playable=0&sub_type=`;
+  const _0x6c73af = await Widget['\u0068\u0074\u0074\u0070']['\u0067\u0065\u0074'](_0xbcbe, {
+    "headers": {
+      '\u0052\u0065\u0066\u0065\u0072\u0065\u0072': `https://movie.douban.com/explore`,
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    }
+  });
+  const _0xf4ee = Widget['\u0064\u006F\u006D']['\u0070\u0061\u0072\u0073\u0065'](_0x6c73af['\u0064\u0061\u0074\u0061']);
+  var _0x7_0x879;
+  const _0xc03c = Widget['\u0064\u006F\u006D']['\u0073\u0065\u006C\u0065\u0063\u0074'](_0xf4ee, "a eltit. meti-tsiluod.".split("").reverse().join(""));
+  _0x7_0x879 = "fpifhi".split("").reverse().join("");
+  let _0x30_0x9fa = [];
+  for (const _0x636c of _0xc03c) {
+    var _0xb3874a = (564478 ^ 564471) + (553831 ^ 553839);
+    const _0x1c4fg = await Widget['\u0064\u006F\u006D']['\u0061\u0074\u0074\u0072'](_0x636c, "\u0068\u0072\u0065\u0066");
+    _0xb3874a = (716398 ^ 716393) + (589657 ^ 589649);
+    var _0x4292dc = (932654 ^ 932647) + (350637 ^ 350634);
+    const _0x9f1ccb = await Widget['\u0064\u006F\u006D']['\u0074\u0065\u0078\u0074'](_0x636c);
+    _0x4292dc = (181904 ^ 181912) + (847621 ^ 847620);
+    const _0xd5d = _0x9f1ccb['\u0074\u0072\u0069\u006D']()['\u0073\u0070\u006C\u0069\u0074']("\u0020")[593837 ^ 593837];
+    if (_0xd5d) {
+      _0x30_0x9fa['\u0070\u0075\u0073\u0068']({
+        '\u0074\u0069\u0074\u006C\u0065': _0xd5d,
+        '\u0074\u0079\u0070\u0065': "\u006D\u0075\u006C\u0074\u0069"
+      });
+    }
+  }
+  return await fetchImdbItemsForDouban(_0x30_0x9fa);
+}
 async function loadEnhancedItemsFromApi(params = {}) {
-    const url = params.url;
-    const listId = params.url.match(/subject_collection\/(\w+)/)?.[1];
-    const response = await Widget.http.get(url, {
-        headers: {
-            Referer: `https://m.douban.com/subject_collection/${listId}/`,
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-        },
-    });
-
-    const scItems = response.data.subject_collection_items;
-    return await fetchImdbItemsForDouban(scItems);
-}
-
-async function loadEnhancedSubjectCollection(params = {}) {
-    const listId = params.url.match(/subject_collection\/(\w+)/)?.[1];
-    const page = params.page || 1;
-    const count = 20;
-    const start = (page - 1) * count;
-    
-    let pageUrl = `https://m.douban.com/rexxar/api/v2/subject_collection/${listId}/items?start=${start}&count=${count}&updated_at&items_only=1&type_tag&for_mobile=1`;
-    if (params.type) {
-        pageUrl += `&type=${params.type}`;
+  const _0x478f5a = params['\u0075\u0072\u006C'];
+  const _0x12f61b = params['\u0075\u0072\u006C']['\u006D\u0061\u0074\u0063\u0068'](new RegExp('\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u005C\u002F\u0028\u005C\u0077\u002B\u0029', ""))?.[443908 ^ 443909];
+  const _0x27523a = await Widget['\u0068\u0074\u0074\u0070']['\u0067\u0065\u0074'](_0x478f5a, {
+    '\u0068\u0065\u0061\u0064\u0065\u0072\u0073': {
+      "Referer": `https://m.douban.com/subject_collection/${_0x12f61b}/`,
+      "\u0055\u0073\u0065\u0072\u002D\u0041\u0067\u0065\u006E\u0074": "\u004D\u006F\u007A\u0069\u006C\u006C\u0061\u002F\u0035\u002E\u0030\u0020\u0028\u004D\u0061\u0063\u0069\u006E\u0074\u006F\u0073\u0068\u003B\u0020\u0049\u006E\u0074\u0065\u006C\u0020\u004D\u0061\u0063\u0020\u004F\u0053\u0020\u0058\u0020\u0031\u0030\u005F\u0031\u0035\u005F\u0037\u0029\u0020\u0041\u0070\u0070\u006C\u0065\u0057\u0065\u0062\u004B\u0069\u0074\u002F\u0035\u0033\u0037\u002E\u0033\u0036\u0020\u0028\u004B\u0048\u0054\u004D\u004C\u002C\u0020\u006C\u0069\u006B\u0065\u0020\u0047\u0065\u0063\u006B\u006F\u0029\u0020\u0043\u0068\u0072\u006F\u006D\u0065\u002F\u0039\u0031\u002E\u0030\u002E\u0034\u0034\u0037\u0032\u002E\u0031\u0032\u0034\u0020\u0053\u0061\u0066\u0061\u0072\u0069\u002F\u0035\u0033\u0037\u002E\u0033\u0036"
     }
-    
-    return await loadEnhancedItemsFromApi({ ...params, url: pageUrl });
+  });
+  var _0xe6f = (754274 ^ 754277) + (966406 ^ 966415);
+  const _0xd2ege = _0x27523a['\u0064\u0061\u0074\u0061']['\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u005F\u0069\u0074\u0065\u006D\u0073'];
+  _0xe6f = (484366 ^ 484358) + (684840 ^ 684832);
+  return await fetchImdbItemsForDouban(_0xd2ege);
+}
+async function loadEnhancedSubjectCollection(params = {}, _0x4cc9b) {
+  var _0x5e_0xee9;
+  const _0xa6c5e = params['\u0075\u0072\u006C']['\u006D\u0061\u0074\u0063\u0068'](new RegExp('\u0073\u0075\u0062\u006A\u0065\u0063\u0074\u005F\u0063\u006F\u006C\u006C\u0065\u0063\u0074\u0069\u006F\u006E\u005C\u002F\u0028\u005C\u0077\u002B\u0029', ""))?.[348585 ^ 348584];
+  _0x5e_0xee9 = 473413 ^ 473420;
+  var _0x21c = (766515 ^ 766515) + (413572 ^ 413568);
+  const _0x6d3g9e = params['\u0070\u0061\u0067\u0065'] || 848551 ^ 848550;
+  _0x21c = 628079 ^ 628078;
+  var _0x1a6ded = (988271 ^ 988264) + (220281 ^ 220287);
+  _0x4cc9b = 441198 ^ 441210;
+  _0x1a6ded = (716485 ^ 716484) + (488346 ^ 488347);
+  var _0x6bb2a;
+  const _0x7b17cb = (_0x6d3g9e - (785140 ^ 785141)) * _0x4cc9b;
+  _0x6bb2a = "lmoqaj".split("").reverse().join("");
+  let _0x737cd = `https://m.douban.com/rexxar/api/v2/subject_collection/${_0xa6c5e}/items?start=${_0x7b17cb}&count=${_0x4cc9b}&updated_at&items_only=1&type_tag&for_mobile=1`;
+  if (params['\u0074\u0079\u0070\u0065']) {
+    _0x737cd += `&type=${params['\u0074\u0079\u0070\u0065']}`;
+  }
+  return await loadEnhancedItemsFromApi({
+    ...params,
+    '\u0075\u0072\u006C': _0x737cd
+  });
 }
