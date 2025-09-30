@@ -282,7 +282,7 @@ WidgetMetadata = {
                             value: "https://letterboxd.com/crew/list/the-2010s-top-250-narrative-features/"
                         },
                         {
-                            title: "韦斯·安���森——最爱",
+                            title: "韦斯·安德森——最爱",
                             value: "https://letterboxd.com/mlkarasek/list/wes-andersons-favorite-films/"
                         },
                         {
@@ -564,7 +564,7 @@ WidgetMetadata = {
                             value: "1930s",
                         },
                         {
-                            title: "1920年代",
+                            title: "1920年���",
                             value: "1920s",
                         },
                         {
