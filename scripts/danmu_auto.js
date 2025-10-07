@@ -1892,7 +1892,7 @@ async function fetchYouku(inputUrl, segmentTime, tmdbId, season, episode, danmu_
         console.error("请求失败:", error.message); // 输出错误信息
       }
 
-      return []; // 请���失败时返回空数组
+      return []; // 请求失败时返回空数组
     }
   }
 }
