@@ -564,7 +564,7 @@ WidgetMetadata = {
                             value: "1930s",
                         },
                         {
-                            title: "1920年代",
+                            title: "1920年��",
                             value: "1920s",
                         },
                         {
