@@ -298,7 +298,7 @@ WidgetMetadata = {
                             value: "https://letterboxd.com/gpu/list/bong-joon-hos-favorites/"
                         },
                         {
-                            title: "索菲亚·科波拉��—最爱",
+                            title: "索菲亚·科波拉——最爱",
                             value: "https://letterboxd.com/mlkarasek/list/sofia-coppolas-favorite-films/"
                         },
                         {
@@ -564,7 +564,7 @@ WidgetMetadata = {
                             value: "1930s",
                         },
                         {
-                            title: "1920年代",
+                            title: "1920��代",
                             value: "1920s",
                         },
                         {
