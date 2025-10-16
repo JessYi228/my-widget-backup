@@ -605,7 +605,7 @@ async function convertMobileToPcUrl(url) {
             return matches[0];
         }
 
-        return "无法解析优酷移动端 URL";
+        return "无法解析优��移动端 URL";
     }
 
     // 芒果TV (Mango TV)
