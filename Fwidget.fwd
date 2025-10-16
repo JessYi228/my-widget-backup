@@ -54,7 +54,7 @@
       "description": "从指定服务器获取弹幕",
       "requiredVersion": "0.0.2",
       "version": "1.0.1",
-      "author": "Tester",
+      "author": "Forward",
       "url": "https://raw.githubusercontent.com/JessYi228/my-widget-backup/refs/heads/main/scripts/danmu.js"
     }, 
     {
@@ -65,15 +65,6 @@
       "version": "1.0.4",
       "author": "Evan",
       "url": "https://raw.githubusercontent.com/EmrysChoo/ForwardWidgets/refs/heads/main/Widgets/person_movie.js"
-    },
-    {
-      "id": "imdb",
-      "title": "IMDb 分类资源 v2",
-      "description": "聚合 IMDb 热门影视资源",
-      "requiredVersion": "0.0.1",
-      "version":"2.0.0",
-      "author": "Autism",
-      "url": "https://widgets-xd.vercel.app/Widgets/IMDb.js"
     },
     {
       "id": "bangumi_charts_tmdb_v3",
