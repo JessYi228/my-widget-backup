@@ -15,7 +15,7 @@
 WidgetMetadata = {
   id: "forward.auto.danmu2",
   title: "自动链接弹幕v2",
-  version: "2.0.2",
+  version: "2.0.3",
   requiredVersion: "0.0.2",
   description: "自动获取播放链接并从服务器获取弹幕【五折码：CHEAP.5;七折码：CHEAP】",
   author: "huangxd",
@@ -1578,7 +1578,7 @@ async function fetchMangoTV(inputUrl, segmentTime, tmdbId, season, episode) {
   const api_ctl_barrage = "https://galaxy.bz.mgtv.com/getctlbarrage";
 
   // 解析 URL 获取 cid 和 vid
-  // 手动解析 URL（没有 URL 对象的情况下）
+  // 手动解析 URL（没有 URL 对象��情况下）
   const regex = /^(https?:\/\/[^\/]+)(\/[^?#]*)/;
   const match = inputUrl.match(regex);
 
@@ -3598,7 +3598,7 @@ async function handleHanjutvAnimes(animesHanjutv, queryTitle, curAnimes) {
 async function handleBahamutAnimes(animesBahamut, queryTitle, curAnimes) {
   const tmpAnimes = [];
 
-  // 使用 map 和 async 时需要返回 Promise 数组，并等待所有 Promise 完成
+  // 使用 map 和 async 时��要返回 Promise 数组，并等待所有 Promise 完成
   const processBahamutAnimes = await Promise.all(animesBahamut
     .filter(s => s.title.includes(queryTitle))
     .map(async (anime) => {
@@ -3915,6 +3915,13 @@ async function searchDanmu(params) {
         }
       });
 
+      // Sort matched animes by title length (before first parenthesis)
+      matchedAnimes.sort((a, b) => {
+        const aLength = a.animeTitle.split('(')[0].length;
+        const bLength = b.animeTitle.split('(')[0].length;
+        return aLength - bLength;
+      });
+
       // Combine matched and non-matched animes, with matched ones at the front
       animes = [...matchedAnimes, ...nonMatchedAnimes];
     } else {
@@ -3928,6 +3935,13 @@ async function searchDanmu(params) {
         } else {
             nonMatchedAnimes.push(anime);
         }
+      });
+
+      // Sort matched animes by title length (before first parenthesis)
+      matchedAnimes.sort((a, b) => {
+        const aLength = a.animeTitle.split('(')[0].length;
+        const bLength = b.animeTitle.split('(')[0].length;
+        return aLength - bLength;
       });
 
       // Combine matched and non-matched animes, with matched ones at the front
