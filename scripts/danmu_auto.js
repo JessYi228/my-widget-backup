@@ -1578,7 +1578,7 @@ async function fetchMangoTV(inputUrl, segmentTime, tmdbId, season, episode) {
   const api_ctl_barrage = "https://galaxy.bz.mgtv.com/getctlbarrage";
 
   // 解析 URL 获取 cid 和 vid
-  // 手动解析 URL（没有 URL 对象��情况下）
+  // 手动解析 URL（没有 URL 对象的情况下）
   const regex = /^(https?:\/\/[^\/]+)(\/[^?#]*)/;
   const match = inputUrl.match(regex);
 
@@ -3598,7 +3598,7 @@ async function handleHanjutvAnimes(animesHanjutv, queryTitle, curAnimes) {
 async function handleBahamutAnimes(animesBahamut, queryTitle, curAnimes) {
   const tmpAnimes = [];
 
-  // 使用 map 和 async 时��要返回 Promise 数组，并等待所有 Promise 完成
+  // 使用 map 和 async 时需要返回 Promise 数组，并等待所有 Promise 完成
   const processBahamutAnimes = await Promise.all(animesBahamut
     .filter(s => s.title.includes(queryTitle))
     .map(async (anime) => {
