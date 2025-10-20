@@ -1547,7 +1547,7 @@ async function fetchIqiyiDanmaku(segment) {
             size: 25,	//字体大小，25 为中，18 为小
             color: 16777215,	//弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
             unixtime: Math.floor(Date.now() / 1000),	//Unix 时间戳格式
-            uid: 0,		//���送人的 id
+            uid: 0,		//发送人的 id
             content: "",
         };
         content.timepoint = parseFloat(showTime[i]);
@@ -1578,7 +1578,7 @@ async function fetchMangoTV(inputUrl, segmentTime, tmdbId, season, episode) {
   const api_ctl_barrage = "https://galaxy.bz.mgtv.com/getctlbarrage";
 
   // 解析 URL 获取 cid 和 vid
-  // 手动解析 URL（没有 URL 对象的情况下）
+  // 手动解析 URL（没有 URL 对象��情况下）
   const regex = /^(https?:\/\/[^\/]+)(\/[^?#]*)/;
   const match = inputUrl.match(regex);
 
@@ -3598,7 +3598,7 @@ async function handleHanjutvAnimes(animesHanjutv, queryTitle, curAnimes) {
 async function handleBahamutAnimes(animesBahamut, queryTitle, curAnimes) {
   const tmpAnimes = [];
 
-  // 使用 map 和 async 时需要返回 Promise 数组，并等待所有 Promise 完成
+  // 使用 map 和 async 时��要返回 Promise 数组，并等待所有 Promise 完成
   const processBahamutAnimes = await Promise.all(animesBahamut
     .filter(s => s.title.includes(queryTitle))
     .map(async (anime) => {
