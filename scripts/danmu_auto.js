@@ -3598,7 +3598,7 @@ async function handleHanjutvAnimes(animesHanjutv, queryTitle, curAnimes) {
 async function handleBahamutAnimes(animesBahamut, queryTitle, curAnimes) {
   const tmpAnimes = [];
 
-  // 使用 map 和 async 时需要返回 Promise 数组，并等待所有 Promise 完成
+  // 使用 map 和 async 时��要返回 Promise 数组，并等待所有 Promise 完成
   const processBahamutAnimes = await Promise.all(animesBahamut
     .filter(s => s.title.includes(queryTitle))
     .map(async (anime) => {
