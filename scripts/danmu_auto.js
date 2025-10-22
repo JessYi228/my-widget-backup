@@ -1547,7 +1547,7 @@ async function fetchIqiyiDanmaku(segment) {
             size: 25,	//字体大小，25 为中，18 为小
             color: 16777215,	//弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
             unixtime: Math.floor(Date.now() / 1000),	//Unix 时间戳格式
-            uid: 0,		//��送人的 id
+            uid: 0,		//发送人的 id
             content: "",
         };
         content.timepoint = parseFloat(showTime[i]);
