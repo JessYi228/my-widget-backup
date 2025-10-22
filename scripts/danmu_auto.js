@@ -1578,7 +1578,7 @@ async function fetchMangoTV(inputUrl, segmentTime, tmdbId, season, episode) {
   const api_ctl_barrage = "https://galaxy.bz.mgtv.com/getctlbarrage";
 
   // 解析 URL 获取 cid 和 vid
-  // 手动解析 URL（没有 URL 对象的情况下）
+  // 手动解析 URL（没有 URL 对象��情况下）
   const regex = /^(https?:\/\/[^\/]+)(\/[^?#]*)/;
   const match = inputUrl.match(regex);
 
