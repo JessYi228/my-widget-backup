@@ -495,7 +495,7 @@ function setPreferByAnimeId(animeId) {
 // storage 读写请求
 // =====================
 
-// 获取变量数据
+// 获取��量数据
 async function getCaches() {
     if (animes.length === 0) {
         log("info", 'getCaches start.');
