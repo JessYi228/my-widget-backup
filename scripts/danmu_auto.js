@@ -3545,7 +3545,7 @@ async function handleRenrenAnimes(animesRenren, queryTitle, curAnimes) {
 }
 
 async function handleHanjutvAnimes(animesHanjutv, queryTitle, curAnimes) {
-  const cateMap = {1: "韩剧", 2: "综艺", 3: "���影", 4: "日剧", 5: "美剧", 6: "泰剧", 7: "国产剧"}
+  const cateMap = {1: "韩剧", 2: "综艺", 3: "电影", 4: "日剧", 5: "美剧", 6: "泰剧", 7: "国产剧"}
 
   function getCategory(key) {
     return cateMap[key] || "其他";
