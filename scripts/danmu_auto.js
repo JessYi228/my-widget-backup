@@ -3884,7 +3884,7 @@ async function getComment(commentId, segmentTime, tmdbId, season, episode, other
     }
   }
 
-  // 如果��幕为空，则请求第三方弹幕服务器作为兜底
+  // 如果弹幕为空，则请求第三方弹幕服务器作为兜底
   if (danmus.length === 0 && urlPattern.test(url)) {
     danmus = await fetchOtherServer(url);
   }
