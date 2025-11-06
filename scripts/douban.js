@@ -729,7 +729,7 @@ WidgetMetadata = {
           },
           enumOptions: [
             {"title":"周润发","value":"周润发"}, {"title":"梁朝伟","value":"梁朝伟"}, {"title":"刘德华","value":"刘德华"},
-            {"title":"成龙","value":"成龙"}, {"title":"李连杰","value":"李���杰"}, {"title":"张家辉","value":"张家辉"},
+            {"title":"成龙","value":"成龙"}, {"title":"李连杰","value":"李连杰"}, {"title":"张家辉","value":"张家辉"},
             {"title":"古天乐","value":"古天乐"}, {"title":"甄子丹","value":"甄子丹"}, {"title":"刘青云","value":"刘青云"},
             {"title":"任达华","value":"任达华"}, {"title":"吴镇宇","value":"吴镇宇"}, {"title":"黄秋生","value":"黄秋生"},
             {"title":"林家栋","value":"林家栋"}, {"title":"余文乐","value":"余文乐"}, {"title":"谢霆锋","value":"谢霆锋"},
@@ -840,7 +840,7 @@ WidgetMetadata = {
             value: ["ea_actor"],
           },
           enumOptions: [
-            {"title":"莱昂纳多·迪卡普里奥","value":"莱昂纳多·迪卡普里奥"}, {"title":"布拉德·皮特","value":"布拉德·皮特"}, {"title":"汤姆·汉克斯","value":"汤姆��汉克斯"},
+            {"title":"莱昂纳多·迪卡普里奥","value":"莱昂纳多·迪卡普里奥"}, {"title":"布拉德·皮特","value":"布拉德·皮特"}, {"title":"汤姆·汉克斯","value":"汤姆·汉克斯"},
             {"title":"罗伯特·德尼罗","value":"罗伯特·德尼罗"}, {"title":"丹泽尔·华盛顿","value":"丹泽尔·华盛顿"}, {"title":"约翰尼·德普","value":"约翰尼·德普"},
             {"title":"休·杰克曼","value":"休·杰克曼"}, {"title":"克里斯蒂安·贝尔","value":"克里斯蒂安·贝尔"}, {"title":"克里斯·海姆斯沃斯","value":"克里斯·海姆斯沃斯"},
             {"title":"马特·达蒙","value":"马特·达蒙"}, {"title":"瑞安·高斯林","value":"瑞安·高斯林"}, {"title":"杰克·吉伦哈尔","value":"杰克·吉伦哈尔"},
@@ -889,7 +889,7 @@ WidgetMetadata = {
         },
         {
           name: "cn_director_select",
-          title: "筛选国内导���",
+          title: "筛选国内导演",
           type: "enumeration",
           belongTo: {
             paramName: "name_type",
@@ -924,7 +924,7 @@ WidgetMetadata = {
             value: ["fr_director"],
           },
           enumOptions: [
-            {"title":"斯蒂文·斯皮尔伯格","value":"斯蒂文��斯皮尔伯格"}, {"title":"马丁·斯科塞斯","value":"马丁·斯科塞斯"}, {"title":"克里斯托弗·诺兰","value":"克里斯托弗·诺兰"},
+            {"title":"斯蒂文·斯皮尔伯格","value":"斯蒂文·斯皮尔伯格"}, {"title":"马丁·斯科塞斯","value":"马丁·斯科塞斯"}, {"title":"克里斯托弗·诺兰","value":"克里斯托弗·诺兰"},
             {"title":"昆汀·塔伦蒂诺","value":"昆汀·塔伦蒂诺"}, {"title":"詹姆斯·卡梅隆","value":"詹姆斯·卡梅隆"}, {"title":"伍迪·艾伦","value":"伍迪·艾伦"},
             {"title":"大卫·芬奇","value":"大卫·芬奇"}, {"title":"蒂姆·伯顿","value":"蒂姆·伯顿"}, {"title":"雷德利·斯科特","value":"雷德利·斯科特"},
             {"title":"阿尔弗雷德·希区柯克","value":"阿尔弗雷德·希区柯克"}, {"title":"斯坦利·库布里克","value":"斯坦利·库布里克"}, {"title":"弗朗西斯·福特·科波拉","value":"弗朗西斯·福特·科波拉"},
@@ -937,7 +937,7 @@ WidgetMetadata = {
             {"title":"英格玛·伯格曼","value":"英格玛·伯格曼"}, {"title":"费德里科·费里尼","value":"费德里科·费里尼"}, {"title":"维托里奥·德·西卡","value":"维托里奥·德·西卡"},
             {"title":"吕克·贝松","value":"吕克·贝松"}, {"title":"让-吕克·戈达尔","value":"让-吕克·戈达尔"}, {"title":"弗朗索瓦·特吕弗","value":"弗朗索瓦·特吕弗"},
             {"title":"拉斯·冯·提尔","value":"拉斯·冯·提尔"}, {"title":"托马斯·温特伯格","value":"托马斯·温特伯格"}, {"title":"迈克尔·哈内克","value":"迈克尔·哈内克"},
-            {"title":"贝托鲁奇","value":"贝托鲁奇"}, {"title":"安德烈·塔可夫斯基","value":"安德烈·塔可夫斯基"}, {"title":"谢尔盖·爱森斯坦","value":"谢尔��·爱森斯坦"},
+            {"title":"贝托鲁奇","value":"贝托鲁奇"}, {"title":"安德烈·塔可夫斯基","value":"安德烈·塔可夫斯基"}, {"title":"谢尔盖·爱森斯坦","value":"谢尔盖·爱森斯坦"},
             {"title":"阿基·考里斯马基","value":"阿基·考里斯马基"}, {"title":"阿斯哈·法哈蒂","value":"阿斯哈·法哈蒂"}, {"title":"巴兹·鲁赫曼","value":"巴兹·鲁赫曼"},
             {"title":"彼得·杰克逊","value":"彼得·杰克逊"}, {"title":"丹尼斯·维伦纽瓦","value":"丹尼斯·维伦纽瓦"}, {"title":"格蕾塔·葛韦格","value":"格蕾塔·葛韦格"},
             {"title":"乔丹·皮尔","value":"乔丹·皮尔"}, {"title":"斯派克·李","value":"斯派克·李"}
@@ -1080,7 +1080,7 @@ WidgetMetadata = {
             {"title":"崔岷植","value":"崔岷植"}, {"title":"宋承宪","value":"宋承宪"}, {"title":"金南佶","value":"金南佶"},
             {"title":"渡边谦","value":"渡辺謙"}, {"title":"染谷将太","value":"染谷将太"}, {"title":"福山雅治","value":"福山雅治"},
             {"title":"长泽雅美","value":"长泽雅美"}, {"title":"新垣结衣","value":"新垣结衣"}, {"title":"石原里美","value":"石原里美"},
-            {"title":"全智贤","value":"��智贤"}, {"title":"宋慧乔","value":"宋慧乔"}, {"title":"韩孝周","value":"韩孝周"},
+            {"title":"全智贤","value":"全智贤"}, {"title":"宋慧乔","value":"宋慧乔"}, {"title":"韩孝周","value":"韩孝周"},
             {"title":"绫濑遥","value":"绫濑遥"}, {"title":"深田恭子","value":"深田恭子"}, {"title":"户田惠梨香","value":"户田惠梨香"},
             {"title":"朴信惠","value":"朴信惠"}, {"title":"金泰希","value":"金泰希"}, {"title":"李英爱","value":"李英爱"},
             {"title":"有村架纯","value":"有村架纯"}, {"title":"桥本环奈","value":"桥本环奈"}, {"title":"广濑铃","value":"广濑铃"},
