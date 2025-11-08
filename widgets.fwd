@@ -1,6 +1,6 @@
 {
   "title": "我的脚本合集",
-  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/11/9 01:14:49)",
+  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/11/9 02:24:15)",
   "icon": "https://github.com/huangxd-/ForwardWidgets/raw/main/icon.png",
   "widgets": [
     {
@@ -71,7 +71,7 @@
       "title": "TMDB人物影视作品",
       "description": "获取 TMDB 的榜单数据",
       "requiredVersion": "0.0.1",
-      "version": "1.0.7e",
+      "version": "1.0.38",
       "author": "Evan",
       "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/person_movie.js"
     }
