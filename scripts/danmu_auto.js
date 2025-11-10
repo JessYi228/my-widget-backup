@@ -3658,7 +3658,7 @@ async function handleBahamutAnimes(animesBahamut, queryTitle, curAnimes) {
         let transformedAnime = {
           animeId: anime.video_sn,
           bangumiId: String(anime.video_sn),
-          animeTitle: `${simplized(anime.title)}(${(anime.info.match(/(\d{4})/) || [null])[0]})���动漫】from bahamut`,
+          animeTitle: `${simplized(anime.title)}(${(anime.info.match(/(\d{4})/) || [null])[0]})【动漫】from bahamut`,
           type: "动漫",
           typeDescription: "动漫",
           imageUrl: anime.cover,
