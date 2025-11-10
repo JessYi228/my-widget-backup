@@ -721,7 +721,7 @@ async function getVodAnimesFromAllServers(title, servers) {
           completedCount++;
           results[index] = { status: 'fulfilled', value: result };
 
-          // 如果找到了有数据的结果且还没有返回，立即返回
+          // 如果找到��有数据的结果且还没有返回，立即返回
           if (!resolved && result.list && result.list.length > 0) {
             resolved = true;
             resolve([result]);
@@ -2401,7 +2401,7 @@ function rotWord(word){
   return Uint8Array.from([word[1],word[2],word[3],word[0]]);
 }
 
-// ��节代换
+// 字节代换
 function subWord(word){
   return Uint8Array.from(word.map(b=>SBOX[b]));
 }
