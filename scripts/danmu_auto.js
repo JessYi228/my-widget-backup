@@ -721,7 +721,7 @@ async function getVodAnimesFromAllServers(title, servers) {
           completedCount++;
           results[index] = { status: 'fulfilled', value: result };
 
-          // 如果找到��有数据的结果且还没有返回，立即返回
+          // 如果找到了有数据的结果且还没有返回，立即返回
           if (!resolved && result.list && result.list.length > 0) {
             resolved = true;
             resolve([result]);
