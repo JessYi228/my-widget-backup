@@ -1,6 +1,6 @@
 {
   "title": "我的脚本合集",
-  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/11/25 17:23:05)",
+  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/11/25 18:22:50)",
   "icon": "https://github.com/huangxd-/ForwardWidgets/raw/main/icon.png",
   "widgets": [
     {
@@ -44,7 +44,7 @@
       "title": "自定义弹幕2",
       "description": "从指定服务器获取弹幕",
       "requiredVersion": "0.0.2",
-      "version": "1.0.0c",
+      "version": "1.0.fc",
       "author": "Forward",
       "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/undefined"
     },

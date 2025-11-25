@@ -9,7 +9,7 @@
  * link: 链接，Optional
  * videoUrl: 视频链接，Optional
  * commentId: 弹幕ID，Optional。在搜索到弹幕列表后实际加载时会携带
- * animeId: 动漫ID，Optional。在搜索到动漫列表后实际加载时会携带
+ * animeId: 动漫ID，Optional。在搜索到动漫列表��实际加载时会携带
  *
  */
 WidgetMetadata = {
