@@ -488,7 +488,7 @@ function setPreferByAnimeId(animeId) {
       return key; // 返回被修改的 key
     }
   }
-  return null; // 如果没有找到匹配的 key���返回 null
+  return null; // 如果没有找到匹配的 key，返回 null
 }
 
 // =====================
