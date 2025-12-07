@@ -1,6 +1,6 @@
 {
   "title": "我的脚本合集",
-  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/12/7 19:14:52)",
+  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/12/7 20:35:37)",
   "icon": "https://github.com/huangxd-/ForwardWidgets/raw/main/icon.png",
   "widgets": [
     {
@@ -17,7 +17,7 @@
       "title": "Trakt我看&Trakt个性化推荐",
       "description": "解析Trakt想看、在看、已看、片单、追剧日历以及根据个人数据生成的个性化推荐",
       "requiredVersion": "0.0.1",
-      "version": "1.0.10",
+      "version": "1.0.d5",
       "author": "huangxd",
       "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/trakt.js"
     },
@@ -26,7 +26,7 @@
       "title": "Letterboxd电影爱好者平台",
       "description": "解析Letterboxd片单内的影片",
       "requiredVersion": "0.0.1",
-      "version": "1.0.88",
+      "version": "1.0.96",
       "author": "huangxd",
       "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/letterboxd.js"
     },
