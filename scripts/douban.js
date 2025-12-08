@@ -516,7 +516,7 @@ WidgetMetadata = {
           type: "enumeration",
           enumOptions: [
             { title: "综合排序", value: "T" },
-            { title: "近期热度", value: "U" },
+            { title: "近期���度", value: "U" },
             { title: "首映时间", value: "R" },
             { title: "高分优选", value: "S" }
           ]
@@ -693,7 +693,7 @@ WidgetMetadata = {
         },
         {
           name: "cn_actress_select",
-          title: "筛选国内女��员",
+          title: "筛选国内女演员",
           type: "enumeration",
           belongTo: {
             paramName: "name_type",
@@ -767,7 +767,7 @@ WidgetMetadata = {
             {"title":"徐若瑄","value":"徐若瑄"}, {"title":"谢欣颖","value":"谢欣颖"}, {"title":"柯佳嬿","value":"柯佳嬿"},
             {"title":"陈意涵","value":"陈意涵"}, {"title":"白歆惠","value":"白歆惠"}, {"title":"简嫚书","value":"简嫚书"},
             {"title":"曾之乔","value":"曾之乔"}, {"title":"郭采洁","value":"郭采洁"}, {"title":"夏于乔","value":"夏于乔"},
-            {"title":"安心亚","value":"���心亚"}, {"title":"赖雅妍","value":"赖雅妍"}, {"title":"许玮甯","value":"许玮甯"},
+            {"title":"安心亚","value":"安心亚"}, {"title":"赖雅妍","value":"赖雅妍"}, {"title":"许玮甯","value":"许玮甯"},
             {"title":"谢盈萱","value":"谢盈萱"}, {"title":"严艺文","value":"严艺文"}, {"title":"王净","value":"王净"},
             {"title":"陈妍希","value":"陈妍希"}, {"title":"张榕容","value":"张榕容"}, {"title":"林心如","value":"林心如"},
             {"title":"安以轩","value":"安以轩"}, {"title":"徐熙媛","value":"徐熙媛"}, {"title":"邓丽欣","value":"邓丽欣"},
@@ -786,7 +786,7 @@ WidgetMetadata = {
           enumOptions: [
             {"title":"木村拓哉","value":"木村拓哉"}, {"title":"山田孝之","value":"山田孝之"}, {"title":"福山雅治","value":"福山雅治"},
             {"title":"李敏镐","value":"李敏镐"}, {"title":"宋仲基","value":"宋仲基"}, {"title":"孔刘","value":"孔刘"},
-            {"title":"佐藤健","value":"佐藤健"}, {"title":"菅田���晖","value":"菅田将晖"}, {"title":"冈田准一","value":"岡田准一"},
+            {"title":"佐藤健","value":"佐藤健"}, {"title":"菅田将晖","value":"菅田将晖"}, {"title":"冈田准一","value":"岡田准一"},
             {"title":"朴叙俊","value":"朴叙俊"}, {"title":"李钟硕","value":"李钟硕"}, {"title":"金秀贤","value":"金秀贤"},
             {"title":"小栗旬","value":"小栗旬"}, {"title":"松坂桃李","value":"松坂桃李"}, {"title":"中村伦也","value":"中村倫也"},
             {"title":"姜栋元","value":"姜栋元"}, {"title":"李秉宪","value":"李秉宪"}, {"title":"池昌旭","value":"池昌旭"},
@@ -798,7 +798,7 @@ WidgetMetadata = {
             {"title":"朴海镇","value":"朴海镇"}, {"title":"金汎","value":"金汎"}, {"title":"安孝燮","value":"安孝燮"},
             {"title":"三浦春马","value":"三浦春馬"}, {"title":"志尊淳","value":"志尊淳"}, {"title":"町田启太","value":"町田啓太"},
             {"title":"刘亚仁","value":"刘亚仁"}, {"title":"金永光","value":"金永光"}, {"title":"李俊昊","value":"李俊昊"},
-            {"title":"长谷川博己","value":"長谷川博己"}, {"title":"坂口健太郎","value":"坂口健太郎"}, {"title":"中川大志","value":"中川大志"},
+            {"title":"长谷川博己","value":"長���川博己"}, {"title":"坂口健太郎","value":"坂口健太郎"}, {"title":"中川大志","value":"中川大志"},
             {"title":"崔岷植","value":"崔岷植"}, {"title":"宋承宪","value":"宋承宪"}, {"title":"金南佶","value":"金南佶"},
             {"title":"渡边谦","value":"渡辺謙"}, {"title":"染谷将太","value":"染谷将太"}
           ],
@@ -937,7 +937,7 @@ WidgetMetadata = {
             {"title":"英格玛·伯格曼","value":"英格玛·伯格曼"}, {"title":"费德里科·费里尼","value":"费德里科·费里尼"}, {"title":"维托里奥·德·西卡","value":"维托里奥·德·西卡"},
             {"title":"吕克·贝松","value":"吕克·贝松"}, {"title":"让-吕克·戈达尔","value":"让-吕克·戈达尔"}, {"title":"弗朗索瓦·特吕弗","value":"弗朗索瓦·特吕弗"},
             {"title":"拉斯·冯·提尔","value":"拉斯·冯·提尔"}, {"title":"托马斯·温特伯格","value":"托马斯·温特伯格"}, {"title":"迈克尔·哈内克","value":"迈克尔·哈内克"},
-            {"title":"贝托鲁奇","value":"贝托鲁奇"}, {"title":"安德��·塔可夫斯基","value":"安德烈·塔可夫斯基"}, {"title":"谢尔盖·爱森斯坦","value":"谢尔盖·爱森斯坦"},
+            {"title":"贝托鲁奇","value":"贝托鲁奇"}, {"title":"安德烈·塔可夫斯基","value":"安德烈·塔可夫斯基"}, {"title":"谢尔盖·爱森斯坦","value":"谢尔盖·爱森斯坦"},
             {"title":"阿基·考里斯马基","value":"阿基·考里斯马基"}, {"title":"阿斯哈·法哈蒂","value":"阿斯哈·法哈蒂"}, {"title":"巴兹·鲁赫曼","value":"巴兹·鲁赫曼"},
             {"title":"彼得·杰克逊","value":"彼得·杰克逊"}, {"title":"丹尼斯·维伦纽瓦","value":"丹尼斯·维伦纽瓦"}, {"title":"格蕾塔·葛韦格","value":"格蕾塔·葛韦格"},
             {"title":"乔丹·皮尔","value":"乔丹·皮尔"}, {"title":"斯派克·李","value":"斯派克·李"}
@@ -1099,7 +1099,7 @@ WidgetMetadata = {
             {"title":"罗伯特·德尼罗","value":"罗伯特·德尼罗"}, {"title":"丹泽尔·华盛顿","value":"丹泽尔·华盛顿"}, {"title":"约翰尼·德普","value":"约翰尼·德普"},
             {"title":"休·杰克曼","value":"休·杰克曼"}, {"title":"克里斯蒂安·贝尔","value":"克里斯蒂安·贝尔"}, {"title":"克里斯·海姆斯沃斯","value":"克里斯·海姆斯沃斯"},
             {"title":"马特·达蒙","value":"马特·达蒙"}, {"title":"瑞安·高斯林","value":"瑞安·高斯林"}, {"title":"杰克·吉伦哈尔","value":"杰克·吉伦哈尔"},
-            {"title":"汤姆·哈迪","value":"汤姆·哈迪"}, {"title":"基努·里维斯","value":"基努·里维斯"}, {"title":"威尔·史密斯","value":"威尔·史密斯"},
+            {"title":"��姆·哈迪","value":"汤姆·哈迪"}, {"title":"基努·里维斯","value":"基努·里维斯"}, {"title":"威尔·史密斯","value":"威尔·史密斯"},
             {"title":"乔治·克鲁尼","value":"乔治·克鲁尼"}, {"title":"本·阿弗莱克","value":"本·阿弗莱克"}, {"title":"马克·沃尔伯格","value":"马克·沃尔伯格"},
             {"title":"丹尼尔·戴-刘易斯","value":"丹尼尔·戴-刘易斯"}, {"title":"安东尼·霍普金斯","value":"安东尼·霍普金斯"}, {"title":"加里·奥德曼","value":"加里·奥德曼"},
             {"title":"克里斯·埃文斯","value":"克里斯·埃文斯"}, {"title":"罗伯特·唐尼","value":"罗伯特·唐尼"}, {"title":"马克·鲁法洛","value":"马克·鲁法洛"},
@@ -1318,7 +1318,7 @@ function cleanTitle(title) {
 
     // 删除季数、期数、part等
     const patterns = [
-        /[·\-:]\s*[^·\-:]+季/,                // “·慢享季”
+        /[·\-:]\s*[^·\-:]+季/,                // “·慢享��”
         /第[^季]*季/,                        // “第X季”
         /(?:Part|Season|Series)\s*\d+/i,     // “Part 2”
         /\d{4}/,                             // 年份
