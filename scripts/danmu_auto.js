@@ -721,7 +721,7 @@ async function getVodAnimesFromAllServers(title, servers) {
           completedCount++;
           results[index] = { status: 'fulfilled', value: result };
 
-          // 如果找到��有数据的结果且还没有返回，立即返回
+          // 如果找到了有数据的结果且还没有返回，立即返回
           if (!resolved && result.list && result.list.length > 0) {
             resolved = true;
             resolve([result]);
@@ -1947,7 +1947,7 @@ async function fetchYouku(inputUrl, segmentTime, tmdbId, season, episode, other_
     return [];
   }
 
-  // 弹幕和视频信息 API ��础地址
+  // 弹幕和视频信息 API 基础地址
   const api_video_info = "https://openapi.youku.com/v2/videos/show.json";
   const api_danmaku = "https://acs.youku.com/h5/mopen.youku.danmu.list/1.0/";
 
@@ -3016,7 +3016,7 @@ async function getHanjutvDetail(sid) {
       return [];
     }
 
-    // 正常情况下输出 JSON ���符串
+    // 正常情况下输出 JSON 字符串
     log("info", `getHanjutvDetail: ${JSON.stringify(resp.data.series)}`);
 
     return resp.data.series;
