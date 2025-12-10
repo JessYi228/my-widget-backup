@@ -420,7 +420,7 @@ async function loadInterestItems(params = {}) {
         let url = `https://trakt.tv/users/${userName}/${status}?page=${traktPage}`;
         return await fetchTraktData(url, {Cookie: cookie}, status, minNum, maxNum, random);
     } catch (error) {
-        console.error("处��失败:", error);
+        console.error("处理失败:", error);
         throw error;
     }
 }
