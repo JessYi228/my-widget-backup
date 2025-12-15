@@ -798,7 +798,7 @@ WidgetMetadata = {
             {"title":"朴海镇","value":"朴海镇"}, {"title":"金汎","value":"金汎"}, {"title":"安孝燮","value":"安孝燮"},
             {"title":"三浦春马","value":"三浦春馬"}, {"title":"志尊淳","value":"志尊淳"}, {"title":"町田启太","value":"町田啓太"},
             {"title":"刘亚仁","value":"刘亚仁"}, {"title":"金永光","value":"金永光"}, {"title":"李俊昊","value":"李俊昊"},
-            {"title":"长谷川博己","value":"長谷川博己"}, {"title":"坂口健太郎","value":"坂口健太郎"}, {"title":"中川大志","value":"中川大志"},
+            {"title":"长谷川��己","value":"長谷川博己"}, {"title":"坂口健太郎","value":"坂口健太郎"}, {"title":"中川大志","value":"中川大志"},
             {"title":"崔岷植","value":"崔岷植"}, {"title":"宋承宪","value":"宋承宪"}, {"title":"金南佶","value":"金南佶"},
             {"title":"渡边谦","value":"渡辺謙"}, {"title":"染谷将太","value":"染谷将太"}
           ],
