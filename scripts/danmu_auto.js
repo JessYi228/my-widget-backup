@@ -2401,7 +2401,7 @@ function rotWord(word){
   return Uint8Array.from([word[1],word[2],word[3],word[0]]);
 }
 
-// 字节代换
+// ��节代换
 function subWord(word){
   return Uint8Array.from(word.map(b=>SBOX[b]));
 }
