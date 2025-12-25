@@ -493,7 +493,7 @@ var Envs = class {
     return this.get("CONVERT_COLOR", convertColorToWhite ? "white" : "default", "string");
   }
   /**
-   * 获取记录的环境变量 JSON
+   * 获取记录���环境变量 JSON
    * @returns {Map<any, any>} JSON 字符串
    */
   static getAccessedEnvVars() {
