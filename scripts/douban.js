@@ -798,7 +798,7 @@ WidgetMetadata = {
             {"title":"朴海镇","value":"朴海镇"}, {"title":"金汎","value":"金汎"}, {"title":"安孝燮","value":"安孝燮"},
             {"title":"三浦春马","value":"三浦春馬"}, {"title":"志尊淳","value":"志尊淳"}, {"title":"町田启太","value":"町田啓太"},
             {"title":"刘亚仁","value":"刘亚仁"}, {"title":"金永光","value":"金永光"}, {"title":"李俊昊","value":"李俊昊"},
-            {"title":"长谷���博己","value":"長谷川博己"}, {"title":"坂口健太郎","value":"坂口健太郎"}, {"title":"中川大志","value":"中川大志"},
+            {"title":"长��川博己","value":"長谷川博己"}, {"title":"坂口健太郎","value":"坂口健太郎"}, {"title":"中川大志","value":"中川大志"},
             {"title":"崔岷植","value":"崔岷植"}, {"title":"宋承宪","value":"宋承宪"}, {"title":"金南佶","value":"金南佶"},
             {"title":"渡边谦","value":"渡辺謙"}, {"title":"染谷将太","value":"染谷将太"}
           ],
@@ -1149,7 +1149,7 @@ WidgetMetadata = {
             {"title":"昆汀·塔伦蒂诺","value":"昆汀·塔伦蒂诺"}, {"title":"詹姆斯·卡梅隆","value":"詹姆斯·卡梅隆"}, {"title":"伍迪·艾伦","value":"伍迪·艾伦"},
             {"title":"大卫·芬奇","value":"大卫·芬奇"}, {"title":"蒂姆·伯顿","value":"蒂姆·伯顿"}, {"title":"雷德利·斯科特","value":"雷德利·斯科特"},
             {"title":"阿尔弗雷德·希区柯克","value":"阿尔弗雷德·希区柯克"}, {"title":"斯坦利·库布里克","value":"斯坦利·库布里克"}, {"title":"弗朗西斯·福特·科波拉","value":"弗朗西斯·福特·科波拉"},
-            {"title":"黑泽明","value":"黑泽明"}, {"title":"���津安二郎","value":"小津安二郎"}, {"title":"是枝裕和","value":"是枝裕和"},
+            {"title":"黑泽明","value":"黑泽明"}, {"title":"小津安二郎","value":"小津安二郎"}, {"title":"是枝裕和","value":"是枝裕和"},
             {"title":"奉俊昊","value":"奉俊昊"}, {"title":"朴赞郁","value":"朴赞郁"}, {"title":"李沧东","value":"李沧东"},
             {"title":"奥逊·威尔斯","value":"奥逊·威尔斯"}, {"title":"乔治·卢卡斯","value":"乔治·卢卡斯"}, {"title":"盖·里奇","value":"盖·里奇"},
             {"title":"韦斯·安德森","value":"韦斯·安德森"}, {"title":"保罗·托马斯·安德森","value":"保罗·托马斯·安德森"}, {"title":"达米恩·查泽雷","value":"达米恩·查泽雷"},
