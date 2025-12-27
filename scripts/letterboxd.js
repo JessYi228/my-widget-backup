@@ -282,7 +282,7 @@ WidgetMetadata = {
                             value: "https://letterboxd.com/crew/list/the-2010s-top-250-narrative-features/"
                         },
                         {
-                            title: "韦斯·安德森——最爱",
+                            title: "韦斯·���德森——最爱",
                             value: "https://letterboxd.com/mlkarasek/list/wes-andersons-favorite-films/"
                         },
                         {
@@ -298,7 +298,7 @@ WidgetMetadata = {
                             value: "https://letterboxd.com/gpu/list/bong-joon-hos-favorites/"
                         },
                         {
-                            title: "索菲亚·科波拉��—最爱",
+                            title: "索菲亚·科波拉——最爱",
                             value: "https://letterboxd.com/mlkarasek/list/sofia-coppolas-favorite-films/"
                         },
                         {
