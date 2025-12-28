@@ -493,7 +493,7 @@ var Envs = class {
     return this.get("CONVERT_COLOR", convertColorToWhite ? "white" : "default", "string");
   }
   /**
-   * 获取记录的环境变量 JSON
+   * 获取记录���环境变量 JSON
    * @returns {Map<any, any>} JSON 字符串
    */
   static getAccessedEnvVars() {
@@ -6937,7 +6937,7 @@ var MangoSource = class extends BaseSource {
         segmentList.push({
           "type": "imgo",
           "segment_start": i * 60,
-          // 每段开始时间（秒）
+          // 每段��始时间（秒）
           "segment_end": Math.min((i + 1) * 60, time_to_second(time)),
           // 每段结束时间（秒）
           "url": `https://${cdnList}/${cdnVersion}/${i}.json`
