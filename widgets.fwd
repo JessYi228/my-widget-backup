@@ -1,6 +1,6 @@
 {
   "title": "我的脚本合集",
-  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/12/28 07:18:26)",
+  "description": "自动备份的脚本合集，防止删库 (最后更新: 2025/12/28 09:48:32)",
   "icon": "https://github.com/huangxd-/ForwardWidgets/raw/main/icon.png",
   "widgets": [
     {
@@ -17,7 +17,7 @@
       "title": "Trakt我看&Trakt个性化推荐",
       "description": "解析Trakt想看、在看、已看、片单、追剧日历以及根据个人数据生成的个性化推荐",
       "requiredVersion": "0.0.1",
-      "version": "1.0.97",
+      "version": "1.0.d5",
       "author": "huangxd",
       "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/trakt.js"
     },
@@ -35,7 +35,7 @@
       "title": "自动链接弹幕",
       "description": "自动获取播放链接并从服务器获取弹幕",
       "requiredVersion": "0.0.2",
-      "version": "1.0.45",
+      "version": "1.0.e1",
       "author": "huangxd",
       "url": "https://summer-water-d054.j1395468936.workers.dev/scripts/danmu_auto.js"
     },
