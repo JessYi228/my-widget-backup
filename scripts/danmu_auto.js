@@ -479,7 +479,7 @@ var Envs = class {
     }
   }
   /**
-   * 获取记录的原始���境变量 JSON
+   * 获取记录的原始环境变量 JSON
    * @returns {Map<any, any>} JSON 字符串
    */
   static getOriginalEnvVars() {
