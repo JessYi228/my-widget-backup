@@ -479,7 +479,7 @@ var Envs = class {
     }
   }
   /**
-   * 获取记录的原始环��变量 JSON
+   * 获取记录的原始环境变量 JSON
    * @returns {Map<any, any>} JSON 字符串
    */
   static getOriginalEnvVars() {
@@ -7985,7 +7985,7 @@ var YoukuSource = class extends BaseSource {
     return processYoukuAnimes;
   }
   /**
-   * 处理���格式化分集列表
+   * 处理和格式化分集列表
    * @param {Array} rawEpisodes - 原始分集数据
    * @param {string} mediaType - 媒体类型 (variety/movie/drama/anime)
    * @returns {Array} 格式化后的分集列表
