@@ -2254,7 +2254,7 @@ function convertChineseNumber(chineseNumber) {
     "\u5341": 10,
     "\u767E": 100,
     "\u5343": 1e3,
-    // ��体
+    // 繁体
     "\u62FE": 10,
     "\u4F70": 100,
     "\u4EDF": 1e3
