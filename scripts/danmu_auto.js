@@ -493,7 +493,7 @@ var Envs = class {
     return this.get("CONVERT_COLOR", convertColorToWhite ? "white" : "default", "string");
   }
   /**
-   * 获取记录的���境变量 JSON
+   * 获取记录的环境变量 JSON
    * @returns {Map<any, any>} JSON 字符串
    */
   static getAccessedEnvVars() {
@@ -7985,7 +7985,7 @@ var YoukuSource = class extends BaseSource {
     return processYoukuAnimes;
   }
   /**
-   * 处理和格式化分集列表
+   * ��理和格式化分集列表
    * @param {Array} rawEpisodes - 原始分集数据
    * @param {string} mediaType - 媒体类型 (variety/movie/drama/anime)
    * @returns {Array} 格式化后的分集列表
