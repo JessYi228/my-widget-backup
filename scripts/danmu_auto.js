@@ -7985,7 +7985,7 @@ var YoukuSource = class extends BaseSource {
     return processYoukuAnimes;
   }
   /**
-   * 处理和格式化分集列表
+   * 处理��格式化分集列表
    * @param {Array} rawEpisodes - 原始分集数据
    * @param {string} mediaType - 媒体类型 (variety/movie/drama/anime)
    * @returns {Array} 格式化后的分集列表
