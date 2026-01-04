@@ -3483,7 +3483,7 @@ var BaseSource = class {
   async getEpisodeDanmuSegments(id) {
     throw new Error("Method 'getEpisodeDanmuSegments' must be implemented");
   }
-  // 获取某集的分片弹���
+  // 获取某集的分片弹幕
   async getEpisodeSegmentDanmu(segment) {
     throw new Error("Method 'getEpisodeSegmentDanmu' must be implemented");
   }
