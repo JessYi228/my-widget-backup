@@ -6625,7 +6625,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         unixtime: Math.floor(Date.now() / 1e3),
         //Unix 时间戳格式
         uid: 0,
-        //发送人的 id
+        //发送人�� id
         content: ""
       };
       content.timepoint = parseFloat(item["showTime"]);
