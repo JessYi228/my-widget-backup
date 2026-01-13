@@ -493,7 +493,7 @@ var Envs = class {
     return this.get("CONVERT_COLOR", convertColorToWhite ? "white" : "default", "string");
   }
   /**
-   * 解析剧名映��表
+   * 解析剧名映射表
    * @returns {Map} 剧名映射表
    */
   static resolveTitleMappingTable() {
@@ -5499,7 +5499,7 @@ var TencentSource = class extends BaseSource {
       mediaId,
       title,
       type: contentType,
-      // 使用中文类型,与360/vod保持一致
+      // 使用中���类型,与360/vod保持一致
       year: videoInfo.year,
       imageUrl: videoInfo.imgUrl,
       episodeCount
