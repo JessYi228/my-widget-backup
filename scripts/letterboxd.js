@@ -452,7 +452,7 @@ WidgetMetadata = {
                             value: "crime",
                         },
                         {
-                            title: "��录片",
+                            title: "纪录片",
                             value: "documentary",
                         },
                         {
