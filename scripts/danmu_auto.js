@@ -5499,7 +5499,7 @@ var TencentSource = class extends BaseSource {
       mediaId,
       title,
       type: contentType,
-      // 使用中文类型,与360/vod保持一致
+      // 使用��文类型,与360/vod保持一致
       year: videoInfo.year,
       imageUrl: videoInfo.imgUrl,
       episodeCount
