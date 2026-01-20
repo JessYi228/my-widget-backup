@@ -55,7 +55,7 @@ WidgetMetadata = {
           name: "cookie",
           title: "用户Cookie",
           type: "input",
-          description: "未��写情况下非个性化推荐；可手机登陆网页版后，通过loon，Qx等软件抓包获取Cookie",
+          description: "未填写情况下非个性化推荐；可手机登陆网页版后，通过loon，Qx等软件抓包获取Cookie",
         },
         {
           name: "type",
@@ -192,7 +192,7 @@ WidgetMetadata = {
               value: "最新",
             },
             {
-              title: "��瓣高分",
+              title: "豆瓣高分",
               value: "豆瓣高分",
             },
             {
@@ -659,7 +659,7 @@ WidgetMetadata = {
             { title: "日韩女演员", value: "jk_actress" },
             { title: "欧美男演员", value: "ea_actor" },
             { title: "欧美女演员", value: "ea_actress" },
-            { title: "国内导��", value: "cn_director" },
+            { title: "国内导演", value: "cn_director" },
             { title: "国外导演", value: "fr_director" },
           ],
         },
@@ -679,7 +679,7 @@ WidgetMetadata = {
             {"title":"黄晓明","value":"黄晓明"}, {"title":"陈坤","value":"陈坤"}, {"title":"胡歌","value":"胡歌"},
             {"title":"张涵予","value":"张涵予"}, {"title":"刘烨","value":"刘烨"}, {"title":"吴秀波","value":"吴秀波"},
             {"title":"李晨","value":"李晨"}, {"title":"冯绍峰","value":"冯绍峰"}, {"title":"黄轩","value":"黄轩"},
-            {"title":"段奕宏","value":"段奕宏"}, {"title":"王凯","value":"王凯"}, {"title":"雷佳���","value":"雷佳音"},
+            {"title":"段奕宏","value":"段奕宏"}, {"title":"王凯","value":"王凯"}, {"title":"雷佳音","value":"雷佳音"},
             {"title":"杨洋","value":"杨洋"}, {"title":"肖战","value":"肖战"}, {"title":"王一博","value":"王一博"},
             {"title":"易烊千玺","value":"易烊千玺"}, {"title":"朱一龙","value":"朱一龙"}, {"title":"张若昀","value":"张若昀"},
             {"title":"李现","value":"李现"}, {"title":"任嘉伦","value":"任嘉伦"}, {"title":"靳东","value":"靳东"},
@@ -709,7 +709,7 @@ WidgetMetadata = {
             {"title":"蒋雯丽","value":"蒋雯丽"}, {"title":"徐静蕾","value":"徐静蕾"}, {"title":"闫妮","value":"闫妮"},
             {"title":"海清","value":"海清"}, {"title":"袁泉","value":"袁泉"}, {"title":"周冬雨","value":"周冬雨"},
             {"title":"马思纯","value":"马思纯"}, {"title":"赵丽颖","value":"赵丽颖"}, {"title":"杨紫","value":"杨紫"},
-            {"title":"迪丽热巴","value":"迪丽热��"}, {"title":"谭松韵","value":"谭松韵"}, {"title":"佟丽娅","value":"佟丽娅"},
+            {"title":"迪丽热巴","value":"迪丽热巴"}, {"title":"谭松韵","value":"谭松韵"}, {"title":"佟丽娅","value":"佟丽娅"},
             {"title":"江疏影","value":"江疏影"}, {"title":"刘诗诗","value":"刘诗诗"}, {"title":"白百何","value":"白百何"},
             {"title":"梅婷","value":"梅婷"}, {"title":"张静初","value":"张静初"}, {"title":"陈数","value":"陈数"},
             {"title":"殷桃","value":"殷桃"}, {"title":"王丽坤","value":"王丽坤"}, {"title":"李小冉","value":"李小冉"},
@@ -728,7 +728,7 @@ WidgetMetadata = {
             value: ["ht_actor"],
           },
           enumOptions: [
-            {"title":"周润发","value":"周润发"}, {"title":"梁朝���","value":"梁朝伟"}, {"title":"刘德华","value":"刘德华"},
+            {"title":"周润发","value":"周润发"}, {"title":"梁朝伟","value":"梁朝伟"}, {"title":"刘德华","value":"刘德华"},
             {"title":"成龙","value":"成龙"}, {"title":"李连杰","value":"李连杰"}, {"title":"张家辉","value":"张家辉"},
             {"title":"古天乐","value":"古天乐"}, {"title":"甄子丹","value":"甄子丹"}, {"title":"刘青云","value":"刘青云"},
             {"title":"任达华","value":"任达华"}, {"title":"吴镇宇","value":"吴镇宇"}, {"title":"黄秋生","value":"黄秋生"},
@@ -786,7 +786,7 @@ WidgetMetadata = {
           enumOptions: [
             {"title":"木村拓哉","value":"木村拓哉"}, {"title":"山田孝之","value":"山田孝之"}, {"title":"福山雅治","value":"福山雅治"},
             {"title":"李敏镐","value":"李敏镐"}, {"title":"宋仲基","value":"宋仲基"}, {"title":"孔刘","value":"孔刘"},
-            {"title":"佐藤健","value":"佐藤健"}, {"title":"菅田将晖","value":"菅���将晖"}, {"title":"冈田准一","value":"岡田准一"},
+            {"title":"佐藤健","value":"佐藤健"}, {"title":"菅田将晖","value":"菅田将晖"}, {"title":"冈田准一","value":"岡田准一"},
             {"title":"朴叙俊","value":"朴叙俊"}, {"title":"李钟硕","value":"李钟硕"}, {"title":"金秀贤","value":"金秀贤"},
             {"title":"小栗旬","value":"小栗旬"}, {"title":"松坂桃李","value":"松坂桃李"}, {"title":"中村伦也","value":"中村倫也"},
             {"title":"姜栋元","value":"姜栋元"}, {"title":"李秉宪","value":"李秉宪"}, {"title":"池昌旭","value":"池昌旭"},
