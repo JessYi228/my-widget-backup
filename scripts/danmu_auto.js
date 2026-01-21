@@ -479,7 +479,7 @@ var Envs = class {
     }
   }
   /**
-   * 获取记录的原始环境变量 JSON
+   * 获取记录的原始��境变量 JSON
    * @returns {Map<any, any>} JSON 字符串
    */
   static getOriginalEnvVars() {
@@ -6359,7 +6359,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
     }
   }
   /**
-   * 将 video_id ���换为 entity_id
+   * 将 video_id 转换为 entity_id
    * @param {string} videoId - 视频 ID
    * @returns {string|null} entity_id
    */
