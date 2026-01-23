@@ -479,7 +479,7 @@ var Envs = class {
     }
   }
   /**
-   * 获取记录的原始环境变量 JSON
+   * ���取记录的原始环境变量 JSON
    * @returns {Map<any, any>} JSON 字符串
    */
   static getOriginalEnvVars() {
@@ -493,7 +493,7 @@ var Envs = class {
     return this.get("CONVERT_COLOR", convertColorToWhite ? "white" : "default", "string");
   }
   /**
-   * 解析剧名映��表
+   * 解析剧名映射表
    * @returns {Map} 剧名映射表
    */
   static resolveTitleMappingTable() {
