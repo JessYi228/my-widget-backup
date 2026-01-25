@@ -493,7 +493,7 @@ var Envs = class {
     return this.get("CONVERT_COLOR", convertColorToWhite ? "white" : "default", "string");
   }
   /**
-   * 解析剧名映射表
+   * 解析剧名��射表
    * @returns {Map} 剧名映射表
    */
   static resolveTitleMappingTable() {
