@@ -55,7 +55,7 @@ WidgetMetadata = {
           name: "cookie",
           title: "用户Cookie",
           type: "input",
-          description: "未��写情况下非个性化推荐；可手机登陆网页版后，通过loon，Qx等软件抓包获取Cookie",
+          description: "未填写情况下非个性化推荐；可手机登陆网页版后，通过loon，Qx等软件抓包获取Cookie",
         },
         {
           name: "type",
@@ -192,7 +192,7 @@ WidgetMetadata = {
               value: "最新",
             },
             {
-              title: "��瓣高分",
+              title: "豆瓣高分",
               value: "豆瓣高分",
             },
             {
@@ -1338,7 +1338,7 @@ function cleanTitle(title) {
 
     title = title.trim();
 
-    // 对“多个词”的情况，仅保留第一个���主标题”（如“沧元图2 元初山” → “沧元图”）
+    // 对“多个词”的情况，仅保留第一个“主标题”（如“沧元图2 元初山” → “沧元图”）
     // 使用中文词语边界分割
     const parts = title.split(/\s+/);
     if (parts.length > 1) {
