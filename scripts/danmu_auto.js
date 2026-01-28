@@ -8196,7 +8196,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
    * 从 season_type_name 提取媒体类型
    * B站 API 返回的类型包括：电影、番剧、国创、纪录片、综艺、电视剧等
    * @param {string} seasonTypeName - API 返回的 season_type_name
-   * @returns {string} 标准化���媒体类型
+   * @returns {string} 标准化的媒体类型
    */
   _extractMediaType(seasonTypeName) {
     const typeName = (seasonTypeName || "").toLowerCase();
