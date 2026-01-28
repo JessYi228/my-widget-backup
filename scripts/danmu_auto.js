@@ -739,7 +739,7 @@ var Globals = {
     lastSelectMap: null
   },
   searchCache: /* @__PURE__ */ new Map(),
-  // 搜索结果��存，存储格式：{ keyword: { results, timestamp } }
+  // 搜索结果缓存，存储格式：{ keyword: { results, timestamp } }
   commentCache: /* @__PURE__ */ new Map(),
   // 弹幕缓存，存储格式：{ videoUrl: { comments, timestamp } }
   deployPlatform: "",
