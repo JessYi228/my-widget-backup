@@ -666,7 +666,7 @@ async function fetchImdbIdsFromLetterboxdUrls(letterboxdUrls) {
                 },
             });
 
-            // 使用 Widget.html.load 解析详情页
+            // 使用 Widget.html.load ���析详情页
             let $ = Widget.html.load(detailResponse.data);
             let imdbLinkEl = $('a[data-track-action="IMDb"]').first();
 
