@@ -718,7 +718,7 @@ var Globals = {
   redisValid: false,
   // redis是否生效
   redisCacheInitialized: false,
-  // redis 缓存是否已初始��
+  // redis 缓存是否已初始化
   lastSelectMap: /* @__PURE__ */ new Map(),
   // 存储查询关键字上次选择的animeId，用于下次match自动匹配时优先选择该anime
   lastHashes: {
