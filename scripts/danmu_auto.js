@@ -7781,7 +7781,7 @@ var MangoSource = class extends BaseSource {
     log("debug", `[Mango] \u7EFC\u827A\u5904\u7406\u5F00\u59CB\uFF0C\u539F\u59CB\u5206\u96C6\u6570: ${rawEpisodes.length}`);
     const hasQiFormat = rawEpisodes.some((ep) => {
       const fullTitle = `${ep.t2 || ""} ${ep.t1 || ""}`.trim();
-      return /第\d+期/.test(fullTitle);
+      return /第\d+���/.test(fullTitle);
     });
     log("debug", `[Mango] \u7EFC\u827A\u683C\u5F0F\u5206\u6790: \u6709\u671F\u6570\u683C\u5F0F=${hasQiFormat}`);
     const episodeInfos = [];
@@ -8288,7 +8288,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
   }
   /**
    * 从 season_type_name 提取媒体类型
-   * B站 API 返回的类型包括：电影、番剧��国创、纪录片、综艺、电视剧等
+   * B站 API 返回的类型包括：电影、番剧、国创、纪录片、综艺、电视剧等
    * @param {string} seasonTypeName - API 返回的 season_type_name
    * @returns {string} 标准化的媒体类型
    */
