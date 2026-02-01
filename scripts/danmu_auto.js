@@ -7593,7 +7593,7 @@ var MangoSource = class extends BaseSource {
     return Math.floor((leftColor + rightColor) / 2);
   }
   /**
-   * 从类型字符串中提取标准化的媒体类型
+   * 从类型字符串中提��标准化的媒体类型
    * @param {string} typeStr - API 返回的类型字符串
    * @returns {string} 标准化的媒体类型
    */
@@ -9172,7 +9172,7 @@ var YoukuSource = class extends BaseSource {
   /**
    * 处理和格式化分集列表
    * @param {Array} rawEpisodes - 原始分集数据
-   * @param {string} mediaType - 媒体类�� (variety/movie/drama/anime)
+   * @param {string} mediaType - 媒体类型 (variety/movie/drama/anime)
    * @returns {Array} 格式化后的分集列表
    */
   _processAndFormatEpisodes(rawEpisodes, mediaType = "variety") {
