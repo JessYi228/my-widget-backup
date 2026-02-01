@@ -7593,7 +7593,7 @@ var MangoSource = class extends BaseSource {
     return Math.floor((leftColor + rightColor) / 2);
   }
   /**
-   * 从类型字符串中提��标准化的媒体类型
+   * 从类型字符串中提取标准化的媒体类型
    * @param {string} typeStr - API 返回的类型字符串
    * @returns {string} 标准化的媒体类型
    */
@@ -8288,7 +8288,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
   }
   /**
    * 从 season_type_name 提取媒体类型
-   * B站 API 返回的类型包括：电影、番剧、国创、纪录片、综艺、电视剧等
+   * B站 API 返回的类型包括：电影、番剧��国创、纪录片、综艺、电视剧等
    * @param {string} seasonTypeName - API 返回的 season_type_name
    * @returns {string} 标准化的媒体类型
    */
