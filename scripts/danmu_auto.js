@@ -727,7 +727,7 @@ var Globals = {
   localCacheValid: false,
   // 本地缓存是否生效
   localCacheInitialized: false,
-  // 本地缓存是否已初始化
+  // ��地缓存是否已初始化
   redisValid: false,
   // redis是否生效
   redisCacheInitialized: false,
@@ -10643,7 +10643,7 @@ var SohuSource = class extends BaseSource {
     this.sortAndPushAnimesByYear(tmpAnimes, curAnimes);
     return processSohuAnimes;
   }
-  // 提��vid和aid的公共函数
+  // 提取vid和aid的公共函数
   async extractVidAndAid(id) {
     let vid2;
     let aid = "0";
