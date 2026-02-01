@@ -8650,7 +8650,7 @@ var MangoSource = class extends BaseSource {
     }
   }
   /**
-   * 获��电影正片
+   * 获取电影正片
    * @param {string} mediaId - 媒体ID
    * @returns {Object|null} 电影正片信息
    */
@@ -11888,7 +11888,7 @@ var AnimekoSource = class extends BaseSource {
     }
   }
   /**
-   * 将 API 结果转换为统一的��据格式
+   * 将 API 结果转换为统一的数据格式
    * @param {Array} results API 原始结果
    * @returns {Array} 转换后的数据
    */
