@@ -55,7 +55,7 @@ WidgetMetadata = {
           name: "cookie",
           title: "用户Cookie",
           type: "input",
-          description: "未��写情况下非个性化推荐；可手机登陆网页版后，通过loon，Qx等软件抓包获取Cookie",
+          description: "未填写情况下非个性化推荐；可手机登陆网页版后，通过loon，Qx等软件抓包获取Cookie",
         },
         {
           name: "type",
@@ -192,7 +192,7 @@ WidgetMetadata = {
               value: "最新",
             },
             {
-              title: "��瓣高分",
+              title: "豆瓣高分",
               value: "豆瓣高分",
             },
             {
@@ -672,7 +672,7 @@ WidgetMetadata = {
             value: ["cn_actor"],
           },
           enumOptions: [
-            {"title":"黄渤","value":"黄渤"}, {"title":"徐峥","value":"徐峥"}, {"title":"���宝强","value":"王宝强"},
+            {"title":"黄渤","value":"黄渤"}, {"title":"徐峥","value":"徐峥"}, {"title":"王宝强","value":"王宝强"},
             {"title":"吴京","value":"吴京"}, {"title":"张译","value":"张译"}, {"title":"沈腾","value":"沈腾"},
             {"title":"葛优","value":"葛优"}, {"title":"邓超","value":"邓超"}, {"title":"陈道明","value":"陈道明"},
             {"title":"张国立","value":"张国立"}, {"title":"姜文","value":"姜文"}, {"title":"孙红雷","value":"孙红雷"},
@@ -683,7 +683,7 @@ WidgetMetadata = {
             {"title":"杨洋","value":"杨洋"}, {"title":"肖战","value":"肖战"}, {"title":"王一博","value":"王一博"},
             {"title":"易烊千玺","value":"易烊千玺"}, {"title":"朱一龙","value":"朱一龙"}, {"title":"张若昀","value":"张若昀"},
             {"title":"李现","value":"李现"}, {"title":"任嘉伦","value":"任嘉伦"}, {"title":"靳东","value":"靳东"},
-            {"title":"廖���","value":"廖凡"}, {"title":"潘粤明","value":"潘粤明"}, {"title":"马天宇","value":"马天宇"},
+            {"title":"廖凡","value":"廖凡"}, {"title":"潘粤明","value":"潘粤明"}, {"title":"马天宇","value":"马天宇"},
             {"title":"林更新","value":"林更新"}, {"title":"佟大为","value":"佟大为"}, {"title":"陈赫","value":"陈赫"},
             {"title":"杜淳","value":"杜淳"}, {"title":"冯远征","value":"冯远征"}, {"title":"王志文","value":"王志文"},
             {"title":"李保田","value":"李保田"}, {"title":"陈宝国","value":"陈宝国"}, {"title":"张丰毅","value":"张丰毅"},
@@ -702,7 +702,7 @@ WidgetMetadata = {
           enumOptions: [
             {"title":"巩俐","value":"巩俐"}, {"title":"章子怡","value":"章子怡"}, {"title":"周迅","value":"周迅"},
             {"title":"范冰冰","value":"范冰冰"}, {"title":"李冰冰","value":"李冰冰"}, {"title":"赵薇","value":"赵薇"},
-            {"title":"汤唯","value":"汤��"}, {"title":"刘亦菲","value":"刘亦菲"}, {"title":"杨幂","value":"杨幂"},
+            {"title":"汤唯","value":"汤唯"}, {"title":"刘亦菲","value":"刘亦菲"}, {"title":"杨幂","value":"杨幂"},
             {"title":"杨颖","value":"杨颖"}, {"title":"倪妮","value":"倪妮"}, {"title":"舒淇","value":"舒淇"},
             {"title":"孙俪","value":"孙俪"}, {"title":"姚晨","value":"姚晨"}, {"title":"高圆圆","value":"高圆圆"},
             {"title":"刘涛","value":"刘涛"}, {"title":"马伊琍","value":"马伊琍"}, {"title":"宋佳","value":"宋佳"},
@@ -731,7 +731,7 @@ WidgetMetadata = {
             {"title":"周润发","value":"周润发"}, {"title":"梁朝伟","value":"梁朝伟"}, {"title":"刘德华","value":"刘德华"},
             {"title":"成龙","value":"成龙"}, {"title":"李连杰","value":"李连杰"}, {"title":"张家辉","value":"张家辉"},
             {"title":"古天乐","value":"古天乐"}, {"title":"甄子丹","value":"甄子丹"}, {"title":"刘青云","value":"刘青云"},
-            {"title":"任达华","value":"任达华"}, {"title":"吴镇宇","value":"吴镇宇"}, {"title":"黄���生","value":"黄秋生"},
+            {"title":"任达华","value":"任达华"}, {"title":"吴镇宇","value":"吴镇宇"}, {"title":"黄秋生","value":"黄秋生"},
             {"title":"林家栋","value":"林家栋"}, {"title":"余文乐","value":"余文乐"}, {"title":"谢霆锋","value":"谢霆锋"},
             {"title":"郭富城","value":"郭富城"}, {"title":"曾志伟","value":"曾志伟"}, {"title":"吕良伟","value":"吕良伟"},
             {"title":"林保怡","value":"林保怡"}, {"title":"欧阳震华","value":"欧阳震华"}, {"title":"张卫健","value":"张卫健"},
@@ -741,7 +741,7 @@ WidgetMetadata = {
             {"title":"吴慷仁","value":"吴慷仁"}, {"title":"蓝正龙","value":"蓝正龙"}, {"title":"张孝全","value":"张孝全"},
             {"title":"凤小岳","value":"凤小岳"}, {"title":"刘冠廷","value":"刘冠廷"}, {"title":"郑人硕","value":"郑人硕"},
             {"title":"林哲熹","value":"林哲熹"}, {"title":"许光汉","value":"许光汉"}, {"title":"邱泽","value":"邱泽"},
-            {"title":"明道","value":"明道"}, {"title":"贺军翔","value":"���军翔"}, {"title":"周渝民","value":"周渝民"},
+            {"title":"明道","value":"明道"}, {"title":"贺军翔","value":"贺军翔"}, {"title":"周渝民","value":"周渝民"},
             {"title":"言承旭","value":"言承旭"}, {"title":"汪东城","value":"汪东城"}, {"title":"陈奕迅","value":"陈奕迅"},
             {"title":"张震","value":"张震"}, {"title":"王力宏","value":"王力宏"}, {"title":"林志颖","value":"林志颖"},
             {"title":"苏有朋","value":"苏有朋"}, {"title":"吴彦祖","value":"吴彦祖"}
@@ -817,7 +817,7 @@ WidgetMetadata = {
             {"title":"绫濑遥","value":"绫濑遥"}, {"title":"深田恭子","value":"深田恭子"}, {"title":"户田惠梨香","value":"户田惠梨香"},
             {"title":"朴信惠","value":"朴信惠"}, {"title":"金泰希","value":"金泰希"}, {"title":"李英爱","value":"李英爱"},
             {"title":"有村架纯","value":"有村架纯"}, {"title":"桥本环奈","value":"桥本环奈"}, {"title":"广濑铃","value":"广濑铃"},
-            {"title":"李知恩","value":"李知恩"}, {"title":"裴秀智","value":"裴秀智"}, {"title":"申敏��","value":"申敏儿"},
+            {"title":"李知恩","value":"李知恩"}, {"title":"裴秀智","value":"裴秀智"}, {"title":"申敏儿","value":"申敏儿"},
             {"title":"北川景子","value":"北川景子"}, {"title":"吉高由里子","value":"吉高由里子"}, {"title":"永野芽郁","value":"永野芽郁"},
             {"title":"林允儿","value":"林允儿"}, {"title":"徐睿知","value":"徐睿知"}, {"title":"金所泫","value":"金所泫"},
             {"title":"满岛光","value":"满岛光"}, {"title":"黑木华","value":"黑木华"}, {"title":"清野菜名","value":"清野菜名"},
@@ -881,7 +881,7 @@ WidgetMetadata = {
             {"title":"布丽·拉尔森","value":"布丽·拉尔森"}, {"title":"蕾切尔·麦克亚当斯","value":"蕾切尔·麦克亚当斯"}, {"title":"艾丽西亚·维坎德","value":"艾丽西亚·维坎德"},
             {"title":"凯莉·穆里根","value":"凯莉·穆里根"}, {"title":"维奥拉·戴维斯","value":"维奥拉·戴维斯"}, {"title":"奥克塔维娅·斯宾瑟","value":"奥克塔维娅·斯宾瑟"},
             {"title":"黛安·基顿","value":"黛安·基顿"}, {"title":"苏珊·萨兰登","value":"苏珊·萨兰登"}, {"title":"梅丽莎·麦卡西","value":"梅丽莎·麦卡西"},
-            {"title":"蒂尔达·斯文顿","value":"蒂尔达·斯文顿"}, {"title":"劳拉·邓恩","value":"劳拉·邓恩"}, {"title":"蕾妮·��薇格","value":"蕾妮·齐薇格"},
+            {"title":"蒂尔达·斯文顿","value":"蒂尔达·斯文顿"}, {"title":"劳拉·邓恩","value":"劳拉·邓恩"}, {"title":"蕾妮·齐薇格","value":"蕾妮·齐薇格"},
             {"title":"安娜·肯德里克","value":"安娜·肯德里克"}, {"title":"珍妮弗·康纳利","value":"珍妮弗·康纳利"}, {"title":"克莱尔·芙伊","value":"克莱尔·芙伊"},
             {"title":"艾米丽·莫迪默","value":"艾米丽·莫迪默"}, {"title":"凯瑟琳·泽塔-琼斯","value":"凯瑟琳·泽塔-琼斯"}, {"title":"伊丽莎白·班克斯","value":"伊丽莎白·班克斯"},
             {"title":"弗洛伦丝·皮尤","value":"弗洛伦丝·皮尤"}, {"title":"玛丽昂·歌迪亚","value":"玛丽昂·歌迪亚"}
