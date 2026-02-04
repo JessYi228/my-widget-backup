@@ -7837,7 +7837,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
     }
   }
   /**
-   * 过滤爱奇艺搜索项
+   * 过滤爱奇艺���索项
    * @param {Object} album - 搜索结果专辑信息
    * @param {string} keyword - 搜索关键词
    * @returns {Object|null} 过滤后的结果
