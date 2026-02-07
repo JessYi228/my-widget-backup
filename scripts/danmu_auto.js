@@ -10643,7 +10643,7 @@ var SohuSource = class extends BaseSource {
     this.sortAndPushAnimesByYear(tmpAnimes, curAnimes);
     return processSohuAnimes;
   }
-  // 提取vid和aid的公共函数
+  // 提���vid和aid的公共函数
   async extractVidAndAid(id) {
     let vid2;
     let aid = "0";
