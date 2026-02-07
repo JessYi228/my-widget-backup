@@ -727,7 +727,7 @@ var Globals = {
   localCacheValid: false,
   // 本地缓存是否生效
   localCacheInitialized: false,
-  // ��地缓存是否已初始化
+  // 本地缓存是否已初始化
   redisValid: false,
   // redis是否生效
   redisCacheInitialized: false,
