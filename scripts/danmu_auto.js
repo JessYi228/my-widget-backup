@@ -12098,7 +12098,7 @@ var AnimekoSource = class extends BaseSource {
     });
   }
   /**
-   * 获取具体分片的弹幕数据
+   * 获取���体分片的弹幕数据
    * 标准实现：返回原始数据，格式化交由父类统一处理
    */
   async getEpisodeSegmentDanmu(segment) {
