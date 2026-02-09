@@ -3880,7 +3880,7 @@ var REGEX_PURE_SEASON_PART = /^(?:(?:第|S(?:eason)?)\s*\d+(?:季|期|部)?|(?:P
 var RE_LANG_CN = /(普通话|国语|中文配音|中配|中文|粤配|粤语|台配|台语|港配|港语|字幕|助听)(?:版)?/;
 var RE_LANG_JP = /(日语|日配|原版|原声)(?:版)?/;
 var RE_NA_TAG = /(\(|（|\[)N\/A(\)|）|\])/gi;
-var RE_PART_NORM = /第(\d+)部分/g;
+var RE_PART_NORM = /���(\d+)部分/g;
 var RE_PART_NORM_2 = /(?:Part|P)[\s.]*(\d+)/gi;
 var RE_FINAL_SEASON = /(?:The\s+)?Final\s+Season/gi;
 var RE_SEASON_NORM = /(?:Season|S)\s*(\d+)/gi;
@@ -6709,7 +6709,7 @@ var RenrenSource = class extends BaseSource {
       "aliid": aliId,
       // 使用动态aliId
       "umid": "",
-      // 必须为空字符串以通过校验
+      // 必须为��字符串以通过校验
       "clienttype": this.API_CONFIG.TV_CLIENT_TYPE,
       "pkt": this.API_CONFIG.TV_PKT,
       "t": timestamp.toString(),
