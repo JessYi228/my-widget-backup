@@ -722,7 +722,7 @@ var Globals = {
   animes: [],
   episodeIds: [],
   episodeNum: 10001,
-  // 全局变量，用于自增 ID
+  // 全局变量��用于自增 ID
   logBuffer: [],
   requestHistory: /* @__PURE__ */ new Map(),
   // 记录每个 IP 地址的请求历史
@@ -3890,7 +3890,7 @@ var RE_CN_DUB_VER = /(\(|（|\[)?(普通话|国语|中文配音|中配|中文|�
 var RE_JP_DUB_VER = /(\(|（|\[)?(日语|日配|原版|原声)版?(\)|）|\])?/g;
 var RE_SOURCE_TAG = /【.*?】/g;
 var RE_REGION_LIMIT = /(\(|（|\[)仅限.*?地区(\)|）|\])/g;
-var RE_PUNCTUATION = /[!！?？,，.。、~～:：\-–—_]/g;
+var RE_PUNCTUATION = /[!���?？,，.。、~～:：\-–—_]/g;
 var RE_WHITESPACE = /\s+/g;
 var RE_FROM_SUFFIX = /\s*from\s+.*$/i;
 var RE_PARENTHESES_CONTENT = /(\(|（|\[).*?(\)|）|\])/g;
