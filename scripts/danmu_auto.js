@@ -655,7 +655,7 @@ var Envs = class {
       redisToken: this.get("UPSTASH_REDIS_REST_TOKEN", "", "string", true),
       // upstash redis url
       rateLimitMaxRequests: this.get("RATE_LIMIT_MAX_REQUESTS", 3, "number"),
-      // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流）
+      // 限��配置：时间窗口内最大请求次数（默认 3，0表示不限流）
       enableEpisodeFilter: this.get("ENABLE_EPISODE_FILTER", false, "boolean"),
       // 集标题过滤开关配置（默认 false，禁用过滤）
       logLevel: this.get("LOG_LEVEL", "info", "string"),
