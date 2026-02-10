@@ -2808,7 +2808,7 @@ var SegmentListResponse = class _SegmentListResponse {
     const segmentList = (json.segmentList || []).map((segment) => Segment.fromJson(segment));
     return new _SegmentListResponse({ ...json, segmentList });
   }
-  // ---- 转换为纯 JSON ----
+  // ---- ���换为纯 JSON ----
   toJson() {
     return {
       ...this,
