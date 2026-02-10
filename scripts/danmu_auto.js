@@ -6694,7 +6694,7 @@ var RenrenSource = class extends BaseSource {
     return CACHED_ALI_ID;
   }
   /**
-   * ���成 TV 端接口所需的请求头
+   * 生成 TV 端接口所需的请求头
    * 处理签名、设备标识及版本控制字段
    * @param {number} timestamp 当前时间戳
    * @param {string} sign 接口签名
@@ -13543,7 +13543,7 @@ var AnimekoSource = class extends BaseSource {
   /**
    * 移除字符串中的标点符号、特殊符号和空白字符
    * 兼容不支持 Unicode 属性转义的 Node.js 版本
-   * @param {string} str 输入字��串
+   * @param {string} str 输入字符串
    * @returns {string} 清理后的字符串
    */
   removePunctuationAndSymbols(str) {
