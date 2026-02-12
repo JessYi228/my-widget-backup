@@ -13553,7 +13553,7 @@ var AnimekoSource = class extends BaseSource {
     return patterns.some((p) => p.test(title));
   }
   /**
-   * 批量检查条目关系并修正标��
+   * 批量检查条目关系并修正标题
    * 对于检测到的续作或衍生关系，在标题后追加标识
    * @param {Array} list 条目列表
    * @returns {Promise<Array>} 修正后的列表
