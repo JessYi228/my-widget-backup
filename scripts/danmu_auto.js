@@ -655,7 +655,7 @@ var Envs = class {
       redisToken: this.get("UPSTASH_REDIS_REST_TOKEN", "", "string", true),
       // upstash redis url
       rateLimitMaxRequests: this.get("RATE_LIMIT_MAX_REQUESTS", 3, "number"),
-      // 限��配置：时间窗口内最大请求次数（默认 3，0表示不限流）
+      // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流）
       enableEpisodeFilter: this.get("ENABLE_EPISODE_FILTER", false, "boolean"),
       // 集标题过滤开关配置（默认 false，禁用过滤）
       logLevel: this.get("LOG_LEVEL", "info", "string"),
@@ -9361,7 +9361,7 @@ var MangoSource = class extends BaseSource {
           month = data.data.tab_m[pageIndex].m;
         }
       }
-      const mangoBlacklist = /^(.*?)(抢先(看|版)|加更(版)?|花絮|预告|特辑|(特别|惊喜|纳凉)?企划|彩蛋|专访|幕后(花絮)?|直播|纯享|未播|衍生|番外|合伙人手记|会员(专享|加长)|片花|精华|看点|速看|解读|reaction|超前营业|超前(vlog)?|陪看(记)?|.{3,}篇|影评)(.*?)$/i;
+      const mangoBlacklist = /^(.*?)(抢先(看|版)|加更(版)?|花絮|预告|特辑|(特别|惊喜|纳凉)?企划|彩蛋|专访|幕后(花絮)?|直播|纯享|未播|衍生|番外|合伙人手记|会员(专享|加长)|片花|精华|看点|速看|解读|reaction|超前营业|超前(vlog)?|陪看(��)?|.{3,}篇|影评)(.*?)$/i;
       const episodes = allEpisodes.filter((ep) => {
         const fullTitle = `${ep.t2 || ""} ${ep.t1 || ""}`.trim();
         if (ep.isnew === "2") {
