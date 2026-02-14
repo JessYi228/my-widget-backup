@@ -2800,7 +2800,7 @@ var Bangumi = class _Bangumi {
     const episodes = json.episodes.map((ep) => BangumiEpisode.fromJson(ep));
     return new _Bangumi({ ...json, episodes });
   }
-  // ---- 转换为纯 JSON ----
+  // ---- ���换为纯 JSON ----
   toJson() {
     return {
       ...this,
