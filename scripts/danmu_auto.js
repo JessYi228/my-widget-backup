@@ -2800,7 +2800,7 @@ var Bangumi = class _Bangumi {
     const episodes = json.episodes.map((ep) => BangumiEpisode.fromJson(ep));
     return new _Bangumi({ ...json, episodes });
   }
-  // ---- ��换为纯 JSON ----
+  // ---- 转换为纯 JSON ----
   toJson() {
     return {
       ...this,
@@ -13540,7 +13540,7 @@ var AnimekoSource = class extends BaseSource {
       /OVA/i,
       /OAD/i,
       /剧场版|Movie|Film/i,
-      /续���|续集/i,
+      /续篇|续集/i,
       /SP/i,
       /(?<!\d)\d+$/,
       // 末尾数字
