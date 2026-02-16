@@ -3153,7 +3153,7 @@ function groupDanmusByMinute(filteredDanmus, n) {
       return {
         cid: data.cid,
         p: data.p,
-        // 仅���计算后的逻辑计数大于1时才显示 "x N"
+        // 仅当计算后的逻辑计数大于1时才显示 "x N"
         m: displayCount > 1 ? `${message} x ${displayCount}` : message,
         t: data.earliestT
       };
