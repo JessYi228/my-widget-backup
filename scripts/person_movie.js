@@ -34,7 +34,7 @@ WidgetMetadata = {
             { title: "黄渤", value: "128026" },
             { title: "葛优", value: "76913" },
             { title: "胡歌", value: "1106514" },
-            { title: "张���", value: "3963465" },
+            { title: "张译", value: "3963465" },
             { title: "沈腾", value: "1519026" },
             { title: "王宝强", value: "71051" },
             { title: "赵丽颖", value: "1260868" },
