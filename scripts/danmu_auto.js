@@ -639,7 +639,7 @@ var Envs = class {
       otherServer: this.get("OTHER_SERVER", "https://api.danmu.icu", "string"),
       // 第三方弹幕服务器
       customSourceApiUrl: this.get("CUSTOM_SOURCE_API_URL", "", "string", true),
-      // 自定义弹幕源API地址，默认为��，配置后还需在SOURCE_ORDER添加custom源
+      // 自定义弹幕源API地址，默认为空，配置后还需在SOURCE_ORDER添加custom源
       vodServers: this.resolveVodServers(),
       // vod站点配置，格式：名称@URL,名称@URL
       vodReturnMode: this.get("VOD_RETURN_MODE", "fastest", "string").toLowerCase(),
