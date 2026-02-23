@@ -4026,7 +4026,7 @@ var RegexStore = {
     CN: /第([一二三四五六七八九十])季/g,
     ROMAN: /(\s|^)(IV|III|II|I)(\s|$)/g,
     INFO_STRONG: /(?:season|s|第)\s*[0-9一二三四五六七八九十]+\s*(?:季|期|部(?!分))?/gi,
-    PART_INFO_STRONG: /(?:part|p|第)\s*\d+\s*(?:���分)?/gi,
+    PART_INFO_STRONG: /(?:part|p|第)\s*\d+\s*(?:部分)?/gi,
     PART_ANY: /(?:part|p)\s*\d+/gi,
     CN_STRUCTURE: /(?:^|\s|×\d+\s?)(承|转|结)(?=$|[\s\(\（\[【])/i,
     SUFFIX_AMBIGUOUS: /(?:[\s\u4e00-\u9fa5]|^)(S|T|R|II|III|IV)(?=$|[\s\(\（\[【])/i,
