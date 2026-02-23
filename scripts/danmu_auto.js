@@ -13540,7 +13540,7 @@ var AnimekoSource = class extends BaseSource {
       /OVA/i,
       /OAD/i,
       /剧场版|Movie|Film/i,
-      /续���|续集/i,
+      /续篇|续集/i,
       /SP/i,
       /(?<!\d)\d+$/,
       // 末尾数字
