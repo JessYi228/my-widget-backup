@@ -14010,7 +14010,7 @@ var AnimekoSource = class extends BaseSource {
   }
   /**
    * 获取剧集列表
-   * Bangumi API 限制单次 limit=200，需循��获取完整列表
+   * Bangumi API 限制单次 limit=200，需循环获取完整列表
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Array>} 剧集数组
    */
