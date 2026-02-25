@@ -636,7 +636,7 @@ var Envs = class {
       token: this.get("TOKEN", "87654321", "string", true),
       // token，默认为87654321
       adminToken: this.get("ADMIN_TOKEN", "", "string", true),
-      // admin token，用于系统管理访问控制
+      // admin token，用于��统管理访问控制
       sourceOrderArr: this.resolveSourceOrder(),
       // 源排序
       otherServer: this.get("OTHER_SERVER", "https://api.danmu.icu", "string"),
@@ -6817,7 +6817,7 @@ var RenrenSource = class extends BaseSource {
     }
   }
   // =====================
-  // 标准接口实现 (BaseSource 抽象方法)
+  // 标准接��实现 (BaseSource 抽象方法)
   // =====================
   async search(keyword) {
     log("info", `[Renren] \u5F00\u59CB\u641C\u7D22: ${keyword}`);
