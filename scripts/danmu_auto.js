@@ -636,7 +636,7 @@ var Envs = class {
       token: this.get("TOKEN", "87654321", "string", true),
       // token，默认为87654321
       adminToken: this.get("ADMIN_TOKEN", "", "string", true),
-      // admin token，用于��统管理访问控制
+      // admin token，用于系统管理访问控制
       sourceOrderArr: this.resolveSourceOrder(),
       // 源排序
       otherServer: this.get("OTHER_SERVER", "https://api.danmu.icu", "string"),
