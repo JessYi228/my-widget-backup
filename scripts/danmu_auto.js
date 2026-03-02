@@ -4026,7 +4026,7 @@ var MergeWeights = Object.freeze({
     CN_STRICT_MATCH: 25,
     // 中文严格 核心词命中且集数一致的奖励
     CN_STRICT_MISMATCH: -5,
-    // 中文严格 核心词包含但集数不���（防止同系列不同集数的误对齐）
+    // 中文严格 核心词包含但集数不同（防止同系列不同集数的误对齐）
     NUMERIC_MATCH: 2,
     // 数字严格相等
     PATTERN_CONSISTENCY_BONUS: 2,
@@ -14919,7 +14919,7 @@ var AnimekoSource = class extends BaseSource {
   hasExplicitSeasonInfo(title) {
     if (!title) return false;
     const patterns = [
-      /第\s*[0-9一二三���五六七八九十]+\s*[季期部]/i,
+      /第\s*[0-9一二三四五六七八九十]+\s*[季期部]/i,
       // 第2季
       /Season\s*\d+/i,
       // Season 2
