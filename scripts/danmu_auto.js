@@ -702,7 +702,7 @@ var Envs = class {
       danmuOutputFormat: this.get("DANMU_OUTPUT_FORMAT", "json", "string"),
       // 弹幕输出格式配置（默认 json，可选值：json, xml）
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", false, "boolean"),
-      // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
+      // 严格标题匹配模式配置（默认 false，宽松模糊匹配���
       titleToChinese: this.get("TITLE_TO_CHINESE", false, "boolean"),
       // 外语标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", false, "boolean"),
@@ -4026,7 +4026,7 @@ var MergeWeights = Object.freeze({
     CN_STRICT_MATCH: 25,
     // 中文严格 核心词命中且集数一致的奖励
     CN_STRICT_MISMATCH: -5,
-    // 中文严格 核心词包含但集数���同（防止同系列不同集数的误对齐）
+    // 中文严格 核心词包含但集数不同（防止同系列不同集数的误对齐）
     NUMERIC_MATCH: 2,
     // 数字严格相等
     PATTERN_CONSISTENCY_BONUS: 2,
