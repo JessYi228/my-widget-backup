@@ -4026,7 +4026,7 @@ var MergeWeights = Object.freeze({
     CN_STRICT_MATCH: 25,
     // 中文严格 核心词命中且集数一致的奖励
     CN_STRICT_MISMATCH: -5,
-    // 中文严格 核心词包含但集数不同（防止同系列��同集数的误对齐）
+    // 中文严格 核心词包含但集数不同（防止同系列不同集数的误对齐）
     NUMERIC_MATCH: 2,
     // 数字严格相等
     PATTERN_CONSISTENCY_BONUS: 2,
@@ -4043,7 +4043,7 @@ var Thresholds = Object.freeze({
   SIMILARITY_STRONG: 0.98,
   // 强匹配（Probe确认后）
   TIER_DEFAULT: 1e-3,
-  // 默认分数梯度容差
+  // ��认分数梯度容差
   TIER_CN: 0.4,
   // 中文优先梯度容差
   TIER_PART: 0.5,
