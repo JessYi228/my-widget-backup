@@ -2740,7 +2740,7 @@ var Link = class _Link {
     validateType(id, "number");
     Object.assign(this, { name, url, title, id });
   }
-  // ---- 静态方法：从 JSON 创��� Link 对象 ----
+  // ---- 静态方法：从 JSON 创建 Link 对象 ----
   static fromJson(json) {
     if (typeof json !== "object" || json === null) {
       throw new TypeError("fromJson \u53C2\u6570\u5FC5\u987B\u662F\u5BF9\u8C61");
@@ -4043,7 +4043,7 @@ var Thresholds = Object.freeze({
   SIMILARITY_STRONG: 0.98,
   // 强匹配（Probe确认后）
   TIER_DEFAULT: 1e-3,
-  // 默认分数梯度容差
+  // ��认分数梯度容差
   TIER_CN: 0.4,
   // 中文优先梯度容差
   TIER_PART: 0.5,
@@ -4064,7 +4064,7 @@ var RegexStore = {
     JP: /(日语|日配|原版|原声)(?:版)?/,
     CN_DUB_VER: /(\(|（|\[)?(普通话|国语|中文配音|中配|中文|粤配|粤语|台配|台语|港配|港语|字幕|助听)版?(\)|）|\])?/g,
     JP_DUB_VER: /(\(|（|\[)?(日语|日配|原版|原声)版?(\)|）|\])?/g,
-    KEYWORDS_STRONG: /(?:普通话|国语|中文配音|中配|中文|粤��|粤语|台配|台语|港配|港语|字幕|助听|日语|日配|原版|原声)(?:版)?/g,
+    KEYWORDS_STRONG: /(?:普通话|国语|中文配音|中配|中文|粤配|粤语|台配|台语|港配|港语|字幕|助听|日语|日配|原版|原声)(?:版)?/g,
     CN_STD: /普通话|国语|中文配音|中配|中文|粤配|粤语|台配|台语|港配|港语|字幕|助听/g,
     JP_STD: /日语|日配|原版|原声/g
   },
@@ -6765,7 +6765,7 @@ var RenrenSource = class extends BaseSource {
   }
   /**
    * 生成 TV 端接口所需的请求头
-   * 处��签名、设备标识及版本控制字段
+   * 处理签名、设备标识及版本控制字段
    * @param {number} timestamp 当前时间戳
    * @param {string} sign 接口签名
    * @returns {Object} HTTP Headers
