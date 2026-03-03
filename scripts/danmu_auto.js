@@ -4039,7 +4039,7 @@ var MergeWeights = Object.freeze({
 });
 var Thresholds = Object.freeze({
   SIMILARITY_MIN: 0.6,
-  // 最低标题相似度
+  // 最低标题相似���
   SIMILARITY_STRONG: 0.98,
   // 强匹配（Probe确认后）
   TIER_DEFAULT: 1e-3,
@@ -6797,7 +6797,7 @@ var RenrenSource = class extends BaseSource {
    * 搜索剧集 (TV API)
    * @param {string} keyword 搜索关键词
    * @param {number} size 分页大小
-   * @returns {Array} 统一格式的搜索结果列表
+   * @returns {Array} 统一格式的���索结果列表
    */
   async searchAppContent(keyword, size = 30) {
     try {
@@ -10574,7 +10574,7 @@ var MangoSource = class extends BaseSource {
     }
   }
   /**
-   * 处理综艺分集，智能��滤和排序
+   * 处理综艺分集，智能过滤和排序
    * @param {Array} rawEpisodes - 原始分集数据
    * @returns {Array} 处理后的分集列表
    */
