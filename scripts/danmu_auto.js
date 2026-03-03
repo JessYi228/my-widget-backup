@@ -4024,7 +4024,7 @@ var MergeWeights = Object.freeze({
     SEASON_SHIFT_EXACT: 15,
     // 完美的季度偏移匹配（如 S2E1 -> S1E13）
     CN_STRICT_MATCH: 25,
-    // 中文严格 核心词命中且���数一致的奖励
+    // 中文严格 核心词命中且集数一致的奖励
     CN_STRICT_MISMATCH: -5,
     // 中文严格 核心词包含但集数不同（防止同系列不同集数的误对齐）
     NUMERIC_MATCH: 2,
@@ -4039,7 +4039,7 @@ var MergeWeights = Object.freeze({
 });
 var Thresholds = Object.freeze({
   SIMILARITY_MIN: 0.6,
-  // 最低标题相似度
+  // 最低标题相似���
   SIMILARITY_STRONG: 0.98,
   // 强匹配（Probe确认后）
   TIER_DEFAULT: 1e-3,
