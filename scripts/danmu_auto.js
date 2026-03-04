@@ -4039,7 +4039,7 @@ var MergeWeights = Object.freeze({
 });
 var Thresholds = Object.freeze({
   SIMILARITY_MIN: 0.6,
-  // 最低标题相似度
+  // 最低标题相似���
   SIMILARITY_STRONG: 0.98,
   // 强匹配（Probe确认后）
   TIER_DEFAULT: 1e-3,
