@@ -15087,7 +15087,7 @@ var AnimekoSource = class extends BaseSource {
   }
   /**
    * 获取完整弹幕列表
-   * 支持自动降级：Global -> CN
+   * 支持自动��级：Global -> CN
    * @param {string} episodeId 剧集 ID 或 完整 API URL
    * @returns {Promise<Array>} 弹幕数组
    */
