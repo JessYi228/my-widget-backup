@@ -4008,7 +4008,7 @@ var ENABLE_VERBOSE_MERGE_LOG = false;
 var MergeWeights = Object.freeze({
   // 标题与结构
   TITLE_STRUCTURE_CONFLICT: -0.15,
-  // 标题结构冲突（如父子集关系）
+  // 标题结构冲突（如父子��关系）
   LANG_MATCH_CN: 0.15,
   // 双端均为中文时的奖励
   LANG_MISMATCH: -0.2,
