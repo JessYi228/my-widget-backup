@@ -4010,7 +4010,7 @@ var MergeWeights = Object.freeze({
   TITLE_STRUCTURE_CONFLICT: -0.15,
   // 标题结构冲突（如父子集关系）
   LANG_MATCH_CN: 0.15,
-  // 双端均为中文时的奖励
+  // 双端均为中文时���奖励
   LANG_MISMATCH: -0.2,
   // 语言不一致时的惩罚
   // 日期
