@@ -4027,7 +4027,7 @@ var MergeWeights = Object.freeze({
     LANG_MISMATCH: -5,
     // 集标题语言不一致
     SEASON_NUM_MISMATCH: -10,
-    // 季���编号冲突
+    // 季度编号冲突
     SPECIAL_TYPE_MISMATCH: -10,
     // 特殊类型（OP/ED）不一致
     SPECIAL_TYPE_MATCH: 3,
