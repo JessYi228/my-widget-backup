@@ -902,7 +902,7 @@ var Globals = {
   // 静态常量
   VERSION: "1.17.0",
   MAX_LOGS: 1e3,
-  // 日志存储，最��保存 1000 行
+  // 日志存储，最多保存 1000 行
   MAX_ANIMES: 100,
   MAX_RECORDS: 100,
   // 请求记录最大数量
@@ -15133,7 +15133,7 @@ var AnimekoSource = class extends BaseSource {
       /(?<!\d)\d+$/,
       // 末尾数字
       /\S+篇/i,
-      // 篇章标识 (如: 柱训练篇)
+      // 篇��标识 (如: 柱训练篇)
       /\S+章/i,
       /Act\s*\d+/i,
       /Phase\s*\d+/i
