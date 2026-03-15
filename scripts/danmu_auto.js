@@ -902,7 +902,7 @@ var Globals = {
   // 静态常量
   VERSION: "1.17.0",
   MAX_LOGS: 1e3,
-  // 日志存储，最多保存 1000 行
+  // 日志存储，最��保存 1000 行
   MAX_ANIMES: 100,
   MAX_RECORDS: 100,
   // 请求记录最大数量
@@ -15406,7 +15406,7 @@ var AnimekoSource = class extends BaseSource {
     return [];
   }
   /**
-   * 获取分���弹幕列表定义
+   * 获取分段弹幕列表定义
    * 使用完整的 API URL 填充 url 字段，以通过 format 校验
    */
   async getEpisodeDanmuSegments(id) {
