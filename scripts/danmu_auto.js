@@ -8102,7 +8102,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── 详情 & 剧集 ──────────────────────────────────────────────
+  // ── 详情 & 剧集 ──────────────────────────────────────���───────
   async getDetail(id) {
     try {
       const sid = String(id || "").trim();
@@ -13909,7 +13909,7 @@ var LeshiSource = class extends BaseSource {
     };
   }
   /**
-   * 过滤乐视网搜索项
+   * 过滤��视网搜索项
    * @param {Object} item - 搜索项
    * @param {string} keyword - 搜索关键词
    * @returns {Object|null} 过滤后的结果
@@ -15133,7 +15133,7 @@ var AnimekoSource = class extends BaseSource {
       /(?<!\d)\d+$/,
       // 末尾数字
       /\S+篇/i,
-      // 篇��标识 (如: 柱训练篇)
+      // 篇章标识 (如: 柱训练篇)
       /\S+章/i,
       /Act\s*\d+/i,
       /Phase\s*\d+/i
