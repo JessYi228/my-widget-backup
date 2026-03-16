@@ -4407,7 +4407,7 @@ var RegexStore = {
     PV_CHECK: /(pv|trailer|预告)/i,
     SPECIAL_CHECK: /^(s|o|sp|special)\d/i,
     SEASON_MATCH: /(?:^|\s)(?:第|S)(\d+)[季S]/i,
-    NUM_STRATEGY_A: /(?:第|s)(\d+)[季s]\s*(?:���|ep|e)(\d+)/i,
+    NUM_STRATEGY_A: /(?:第|s)(\d+)[季s]\s*(?:第|ep|e)(\d+)/i,
     NUM_STRATEGY_B: /(?:ep|e|vol|episode|chapter|no|part|第)\s*(\d+(\.\d+)?)(?:\s*[话話集])?(?!\s*[季期部])/i,
     NUM_STRATEGY_C: /(?:^|\s)(?:第)?(\d+(\.\d+)?)(?:话|集|\s|$)/,
     DANDAN_IGNORE: /^[SC]\d+/i,
