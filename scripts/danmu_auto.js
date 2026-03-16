@@ -15406,7 +15406,7 @@ var AnimekoSource = class extends BaseSource {
     return [];
   }
   /**
-   * 获取分段弹幕列表定义
+   * 获取分���弹幕列表定义
    * 使用完整的 API URL 填充 url 字段，以通过 format 校验
    */
   async getEpisodeDanmuSegments(id) {
