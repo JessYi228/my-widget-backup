@@ -894,7 +894,7 @@ __publicField(Envs, "DEFAULT_AI_MATCH_PROMPT", `\u4F60\u662F\u4E00\u4E2A\u4E13\u
 
 // danmu_api/configs/globals.js
 var Globals = {
-  // 缓存环境���量
+  // 缓存环境变量
   env: {},
   envs: {},
   originalEnvVars: {},
@@ -7491,7 +7491,7 @@ ${path2}?${sortedQuery}`;
     return createHmacSha256(secret, signStr);
   }
   /**
-   * 构建网页版带签名的请求头
+   * ���建网页版带签名的请求头
    */
   buildSignedHeaders({ method, url, params = {}, deviceId, token }) {
     const ClientProfile = {
@@ -15085,7 +15085,7 @@ var AnimekoSource = class extends BaseSource {
    * 过滤搜索结果
    * 利用公共方法对主标题和别名进行匹配校验
    * @param {Array} list 原始 API 返回结果列表
-   * @param {string} keyword 用户搜索关键词
+   * @param {string} keyword 用��搜索关键词
    * @returns {Array} 过滤后的结果列表
    */
   filterSearchResults(list, keyword) {
