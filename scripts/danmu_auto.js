@@ -894,7 +894,7 @@ __publicField(Envs, "DEFAULT_AI_MATCH_PROMPT", `\u4F60\u662F\u4E00\u4E2A\u4E13\u
 
 // danmu_api/configs/globals.js
 var Globals = {
-  // 缓存环境变���
+  // 缓存环境变量
   env: {},
   envs: {},
   originalEnvVars: {},
@@ -7491,7 +7491,7 @@ ${path2}?${sortedQuery}`;
     return createHmacSha256(secret, signStr);
   }
   /**
-   * 构建网页版带签名的请求头
+   * ���建网页版带签名的请求头
    */
   buildSignedHeaders({ method, url, params = {}, deviceId, token }) {
     const ClientProfile = {
