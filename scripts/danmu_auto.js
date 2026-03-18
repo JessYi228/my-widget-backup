@@ -894,7 +894,7 @@ __publicField(Envs, "DEFAULT_AI_MATCH_PROMPT", `\u4F60\u662F\u4E00\u4E2A\u4E13\u
 
 // danmu_api/configs/globals.js
 var Globals = {
-  // 缓存环境变量
+  // 缓存环境���量
   env: {},
   envs: {},
   originalEnvVars: {},
