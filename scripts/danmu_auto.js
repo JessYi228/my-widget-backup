@@ -7491,7 +7491,7 @@ ${path2}?${sortedQuery}`;
     return createHmacSha256(secret, signStr);
   }
   /**
-   * ���建网页版带签名的请求头
+   * 构建网页版带签名的请求头
    */
   buildSignedHeaders({ method, url, params = {}, deviceId, token }) {
     const ClientProfile = {
