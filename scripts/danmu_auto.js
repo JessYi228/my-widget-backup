@@ -6995,7 +6995,7 @@ var RenrenSource = class extends BaseSource {
     return result;
   }
   /**
-   * 执行 ID 轮换/初���化
+   * 执行 ID 轮换/初始化
    * 生成新的 ID，重置计数器，并随机生成下一次的轮换阈值
    */
   rotateAliId() {
