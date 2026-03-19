@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -961,7 +961,7 @@ var Envs = class {
       aiModel: this.get("AI_MODEL", "gpt-4o", "string"),
       // AI模型名称
       aiApiKey: this.get("AI_API_KEY", "", "string", true),
-      // AI服务API密钥
+      // AI服务API���钥
       aiMatchPrompt: this.get("AI_MATCH_PROMPT", this.DEFAULT_AI_MATCH_PROMPT, "string"),
       // AI自动匹配提示词模板
       rememberLastSelect: this.get("REMEMBER_LAST_SELECT", true, "boolean"),
@@ -4422,7 +4422,7 @@ var MergeWeights = Object.freeze({
   // 语言不一致时的惩罚
   // 日期
   DATE_MATCH: 0,
-  // 基础日期匹配（动态���算，此处为占位）
+  // 基础日期匹配（动态计算，此处为占位）
   // 集数对齐 (Alignment)
   EP_ALIGN: {
     MOVIE_TYPE_MISMATCH: -5,
