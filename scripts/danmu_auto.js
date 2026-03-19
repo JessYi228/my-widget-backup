@@ -915,7 +915,7 @@ var Globals = {
   requestHistory: /* @__PURE__ */ new Map(),
   // 记录每个 IP 地址的请求历史
   localCacheValid: false,
-  // 本地缓存是否生效
+  // 本地缓存��否生效
   localCacheInitialized: false,
   // 本地缓存是否已初始化
   redisValid: false,
