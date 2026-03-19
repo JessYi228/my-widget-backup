@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -951,7 +951,7 @@ var Envs = class {
       titleToChinese: this.get("TITLE_TO_CHINESE", false, "boolean"),
       // 外语标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", false, "boolean"),
-      // 搜索的剧名���题自动繁转简
+      // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
       // 剧名映射表，用于自动匹配时替换标题进行搜索
       ipBlacklist: this.resolveIpBlacklist(),
