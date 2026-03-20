@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -4422,7 +4422,7 @@ var MergeWeights = Object.freeze({
   // 语言不一致时的惩罚
   // 日期
   DATE_MATCH: 0,
-  // 基础日期匹配（动态计算，此处为占位）
+  // 基础日期匹配（动态���算，此处为占位）
   // 集数对齐 (Alignment)
   EP_ALIGN: {
     MOVIE_TYPE_MISMATCH: -5,
@@ -8070,7 +8070,7 @@ var HanjutvSource = class extends BaseSource {
     const list = data?.seriesData?.seriesList || data?.seriesList || data?.seriesData?.series || [];
     return this.normalizeSearchItems(list);
   }
-  // ── 搜索��选合并 ─────────────────────────────────────────────
+  // ── 搜索候选合并 ─────────────────────────────────────────────
   dedupeBySid(items = []) {
     const map = /* @__PURE__ */ new Map();
     for (const item of items) {
