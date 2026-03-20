@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -8070,7 +8070,7 @@ var HanjutvSource = class extends BaseSource {
     const list = data?.seriesData?.seriesList || data?.seriesList || data?.seriesData?.series || [];
     return this.normalizeSearchItems(list);
   }
-  // ── 搜索候选���并 ─────────────────────────────────────────────
+  // ── 搜索候选合并 ─────────────────────────────────────────────
   dedupeBySid(items = []) {
     const map = /* @__PURE__ */ new Map();
     for (const item of items) {
@@ -16417,7 +16417,7 @@ WidgetMetadata = {
   author: "huangxd",
   site: "https://github.com/huangxd-/ForwardWidgets",
   globalParams: [
-    // 源配置
+    // ���配置
     {
       name: "sourceOrder",
       title: "\u6E90\u6392\u5E8F\u914D\u7F6E\uFF0C\u9ED8\u8BA4'360,vod,renren,hanjutv'\uFF0C\u53EF\u9009['360', 'vod', 'tmdb', 'douban', 'tencent', 'youku', 'iqiyi', 'imgo', 'bilibili', 'migu', 'sohu', 'leshi', 'xigua', 'maiduidui', 'renren', 'hanjutv', 'bahamut', 'dandan', 'custom']",
