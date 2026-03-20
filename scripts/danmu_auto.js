@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -4422,7 +4422,7 @@ var MergeWeights = Object.freeze({
   // 语言不一致时的惩罚
   // 日期
   DATE_MATCH: 0,
-  // 基础日期匹配（动态���算，此处为占位）
+  // 基础日期匹配（动态计算，此处为占位）
   // 集数对齐 (Alignment)
   EP_ALIGN: {
     MOVIE_TYPE_MISMATCH: -5,
@@ -9664,7 +9664,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
     return md5(signString).toUpperCase();
   }
   /**
-   * 处理搜索结果并格式化为 DanDanPlay 格式
+   * 处��搜索结果并格式化为 DanDanPlay 格式
    * @param {Array} sourceAnimes - 搜索结果数组
    * @param {string} queryTitle - 搜索关键词
    * @param {Array} curAnimes - 当前动漫列表
@@ -12035,7 +12035,7 @@ var DandanSource = class extends BaseSource {
       return { episodes: [], titles: [], relateds: [], type: null, typeDescription: null, imageUrl: null };
     }
   }
-  // 计算两个字符串的文本相似度（字符集交并比算法）
+  // 计算两个字符串的文本相似度（字符集交��比算法）
   calculateSimilarity(str1, str2) {
     if (!str1 || !str2) return 0;
     const s1 = new Set(str1.toLowerCase());
