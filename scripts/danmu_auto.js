@@ -5308,7 +5308,7 @@ function findSecondaryMatches(primaryAnime, secondaryList, collectionAnimeIds = 
     const secCandidates = [secTitleForSim];
     if (secAnime.aliases && Array.isArray(secAnime.aliases)) {
       secAnime.aliases.forEach((alias) => {
-        let cleanAlias = alias.replace(RegexStore.Clean.YEAR_TAG, "").replace(/【(电影|电视剧)】/g, "").trim();
+        let cleanAlias = alias.replace(RegexStore.Clean.YEAR_TAG, "").replace(/【(电影|电��剧)】/g, "").trim();
         if (cleanAlias) secCandidates.push(cleanAlias);
       });
     }
@@ -9468,7 +9468,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
       return {
         provider: "iqiyi",
         mediaId: `movie_${qipuId}`,
-        // 使用特殊前缀标识电影
+        // ���用特殊前缀标识电影
         title: cleanedTitle2,
         type: mediaType,
         year: year2,
