@@ -3084,7 +3084,7 @@ var Anime = class _Anime {
     const links = (json.links || []).map((link) => Link.fromJson(link));
     return new _Anime({ ...json, links });
   }
-  // ---- ���换为纯 JSON ----
+  // ---- 转换为纯 JSON ----
   toJson() {
     return {
       ...this,
@@ -8479,7 +8479,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── 详情 & 剧集 ───────────��──────────────────────────────────
+  // ── 详情 & 剧集 ──────────────────────────────────────────────
   async getDetail(id) {
     try {
       const sid = String(id || "").trim();
