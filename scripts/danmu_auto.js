@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -10226,7 +10226,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
-        //弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
+        //弹幕颜色，RGB 颜色���为十进制后的值，16777215 为白色
         unixtime: Math.floor(Date.now() / 1e3),
         //Unix 时间戳格式
         uid: 0,
@@ -15879,7 +15879,7 @@ var AnimekoSource = class extends BaseSource {
   }
   /**
    * 获取分段弹幕列表定义
-   * 使用完整的 API URL 填充 url 字段，以通过 format 校验
+   * ���用完整的 API URL 填充 url 字段，以通过 format 校验
    */
   async getEpisodeDanmuSegments(id) {
     return new SegmentListResponse({
