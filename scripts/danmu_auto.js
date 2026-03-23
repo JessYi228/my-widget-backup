@@ -6640,7 +6640,7 @@ var BaseSource = class {
     log("info", `\u5206\u7247\u5F39\u5E55\u5904\u7406\u5B8C\u6210\uFF0C\u5171 ${formatted.length} \u6761`);
     return convertToDanmakuJson(formatted, segment.type);
   }
-  // 按年份降序��序并添加到curAnimes
+  // 按年份降序排序并添加到curAnimes
   sortAndPushAnimesByYear(processedAnimes, curAnimes) {
     processedAnimes.filter((anime) => anime !== null).sort((a, b) => {
       const yearA = extractYear(a.animeTitle);
@@ -8479,7 +8479,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── 详情 & 剧集 ──────────────────────────────────────────────
+  // ── 详情 & 剧集 ─────────���────────────────────────────────────
   async getDetail(id) {
     try {
       const sid = String(id || "").trim();
@@ -15499,7 +15499,7 @@ var AnimekoSource = class extends BaseSource {
           keyword: searchKeyword,
           filter: {
             type: [2]
-            // 2 代表动画类��
+            // 2 代表动画类型
           }
         };
         const resp = await Widget.http.post(searchUrl, JSON.stringify(payload), {
