@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -951,7 +951,7 @@ var Envs = class {
       titleToChinese: this.get("TITLE_TO_CHINESE", false, "boolean"),
       // 外语标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", false, "boolean"),
-      // 搜索的剧名标题自动繁转简
+      // 搜索的��名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
       // 剧名映射表，用于自动匹配时替换标题进行搜索
       ipBlacklist: this.resolveIpBlacklist(),
@@ -961,7 +961,7 @@ var Envs = class {
       aiModel: this.get("AI_MODEL", "gpt-4o", "string"),
       // AI模型名称
       aiApiKey: this.get("AI_API_KEY", "", "string", true),
-      // AI服务API��钥
+      // AI服务API密钥
       aiMatchPrompt: this.get("AI_MATCH_PROMPT", this.DEFAULT_AI_MATCH_PROMPT, "string"),
       // AI自动匹配提示词模板
       rememberLastSelect: this.get("REMEMBER_LAST_SELECT", true, "boolean"),
@@ -8479,7 +8479,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── 详情 & 剧集 ─────────���────────────────────────────────────
+  // ── 详情 & 剧集 ──────────────────────────────────────────────
   async getDetail(id) {
     try {
       const sid = String(id || "").trim();
