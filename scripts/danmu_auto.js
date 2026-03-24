@@ -8479,7 +8479,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── 详情 & 剧集 ──────────────────────────────────────────────
+  // ── 详情 & 剧集 ─────────���────────────────────────────────────
   async getDetail(id) {
     try {
       const sid = String(id || "").trim();
@@ -11673,7 +11673,7 @@ __publicField(_BilibiliSource, "WBI_MIXIN_KEY_TABLE", [
   44,
   52
 ]);
-// APP 签名相关常量 (Android 粉版 - 港澳台搜索用)
+// APP 签���相关常量 (Android 粉版 - 港澳台搜索用)
 __publicField(_BilibiliSource, "APP_KEY", "1d8b6e7d45233436");
 __publicField(_BilibiliSource, "APP_SEC", "560c52ccd288fed045859ed18bffd973");
 var BilibiliSource = _BilibiliSource;
@@ -15499,7 +15499,7 @@ var AnimekoSource = class extends BaseSource {
           keyword: searchKeyword,
           filter: {
             type: [2]
-            // 2 代表动画类��
+            // 2 代表动画类型
           }
         };
         const resp = await Widget.http.post(searchUrl, JSON.stringify(payload), {
