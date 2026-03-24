@@ -961,7 +961,7 @@ var Envs = class {
       aiModel: this.get("AI_MODEL", "gpt-4o", "string"),
       // AI模型名称
       aiApiKey: this.get("AI_API_KEY", "", "string", true),
-      // AI服务API密钥
+      // AI服务API��钥
       aiMatchPrompt: this.get("AI_MATCH_PROMPT", this.DEFAULT_AI_MATCH_PROMPT, "string"),
       // AI自动匹配提示词模板
       rememberLastSelect: this.get("REMEMBER_LAST_SELECT", true, "boolean"),
