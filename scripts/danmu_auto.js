@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -961,7 +961,7 @@ var Envs = class {
       aiModel: this.get("AI_MODEL", "gpt-4o", "string"),
       // AI模型名称
       aiApiKey: this.get("AI_API_KEY", "", "string", true),
-      // AI服务API密���
+      // AI服务API密钥
       aiMatchPrompt: this.get("AI_MATCH_PROMPT", this.DEFAULT_AI_MATCH_PROMPT, "string"),
       // AI自动匹配提示词模板
       rememberLastSelect: this.get("REMEMBER_LAST_SELECT", true, "boolean"),
@@ -10482,7 +10482,7 @@ var MangoSource = class extends BaseSource {
           } else {
             log("debug", `[Mango] \u7EFC\u827A\u8FC7\u6EE4\u4E0A\u4E2D\u4E0B\u683C\u5F0F+\u540E\u7F00: ${fullTitle}`);
           }
-        } else if (qiPureMatch && !hasUpMidDown && !/会员版|纯享版|特别版|独家版|加更|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后|访谈|采访|混剪|合集|盘点|总结|删减|未播放|NG|番外|片段|看点|精彩|制作|导演|演员|拍摄|片尾曲|插曲|主题曲|背景音乐|OST|音乐|歌曲/.test(fullTitle)) {
+        } else if (qiPureMatch && !hasUpMidDown && !/会员版|纯享版|特别版|独家版|加更|Plus|\+|花絮|预告|彩��|抢先|精选|未播|回顾|特辑|幕后|访谈|采访|混剪|合集|盘点|总结|删减|未播放|NG|番外|片段|看点|精彩|制作|导演|演员|拍摄|片尾曲|插曲|主题曲|背景音乐|OST|音乐|歌曲/.test(fullTitle)) {
           const qiNum = qiPureMatch[1];
           qiInfoMap.set(ep, [parseInt(qiNum), ""]);
           episodeInfos.push(ep);
