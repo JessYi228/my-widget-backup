@@ -15499,7 +15499,7 @@ var AnimekoSource = class extends BaseSource {
           keyword: searchKeyword,
           filter: {
             type: [2]
-            // 2 代表动画类型
+            // 2 代表动画类��
           }
         };
         const resp = await Widget.http.post(searchUrl, JSON.stringify(payload), {
