@@ -6640,7 +6640,7 @@ var BaseSource = class {
     log("info", `\u5206\u7247\u5F39\u5E55\u5904\u7406\u5B8C\u6210\uFF0C\u5171 ${formatted.length} \u6761`);
     return convertToDanmakuJson(formatted, segment.type);
   }
-  // 按年份降序排序并添加到curAnimes
+  // 按年份降序��序并添加到curAnimes
   sortAndPushAnimesByYear(processedAnimes, curAnimes) {
     processedAnimes.filter((anime) => anime !== null).sort((a, b) => {
       const yearA = extractYear(a.animeTitle);
@@ -10482,7 +10482,7 @@ var MangoSource = class extends BaseSource {
           } else {
             log("debug", `[Mango] \u7EFC\u827A\u8FC7\u6EE4\u4E0A\u4E2D\u4E0B\u683C\u5F0F+\u540E\u7F00: ${fullTitle}`);
           }
-        } else if (qiPureMatch && !hasUpMidDown && !/会员版|纯享版|特别版|独家版|加更|Plus|\+|花絮|预告|��蛋|抢先|精选|未播|回顾|特辑|幕后|访谈|采访|混剪|合集|盘点|总结|删减|未播放|NG|番外|片段|看点|精彩|制作|导演|演员|拍摄|片尾曲|插曲|主题曲|背景音乐|OST|音乐|歌曲/.test(fullTitle)) {
+        } else if (qiPureMatch && !hasUpMidDown && !/会员版|纯享版|特别版|独家版|加更|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后|访谈|采访|混剪|合集|盘点|总结|删减|未播放|NG|番外|片段|看点|精彩|制作|导演|演员|拍摄|片尾曲|插曲|主题曲|背景音乐|OST|音乐|歌曲/.test(fullTitle)) {
           const qiNum = qiPureMatch[1];
           qiInfoMap.set(ep, [parseInt(qiNum), ""]);
           episodeInfos.push(ep);
@@ -15499,7 +15499,7 @@ var AnimekoSource = class extends BaseSource {
           keyword: searchKeyword,
           filter: {
             type: [2]
-            // 2 代表动画类型
+            // 2 代表动画类��
           }
         };
         const resp = await Widget.http.post(searchUrl, JSON.stringify(payload), {
