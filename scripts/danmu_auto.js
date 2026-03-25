@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -15496,7 +15496,7 @@ var AnimekoSource = class extends BaseSource {
   }
   /**
    * 搜索动画条目
-   * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤及关��检测
+   * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤及关系检测
    * @param {string} keyword 搜索关键词
    * @returns {Promise<Array>} 转换后的搜索结果列表
    */
