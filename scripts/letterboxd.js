@@ -428,7 +428,7 @@ WidgetMetadata = {
                     value: "default",
                     enumOptions: [
                         {
-                            title: "所有类型",
+                            title: "所有��型",
                             value: "default",
                         },
                         {
