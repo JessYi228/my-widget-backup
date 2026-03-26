@@ -8480,7 +8480,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── 详情 & 剧�� ──────────────────────────────────────────────
+  // ── 详情 & 剧集 ──────────────────────────────────────────────
   async getDetail(id) {
     try {
       const sid = String(id || "").trim();
