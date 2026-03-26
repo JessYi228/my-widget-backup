@@ -15916,7 +15916,7 @@ var AnimekoSource = class extends BaseSource {
     return this.getEpisodeDanmu(url);
   }
   /**
-   * 格式化弹幕为标准格式
+   * ��式化弹幕为标准格式
    * @param {Array} comments 原始弹幕数据
    * @returns {Array} 格式化后的弹幕
    */
