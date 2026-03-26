@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -961,7 +961,7 @@ var Envs = class {
       aiModel: this.get("AI_MODEL", "gpt-4o", "string"),
       // AI模型名称
       aiApiKey: this.get("AI_API_KEY", "", "string", true),
-      // AI服务API密钥
+      // AI服务API密���
       aiMatchPrompt: this.get("AI_MATCH_PROMPT", this.DEFAULT_AI_MATCH_PROMPT, "string"),
       // AI自动匹配提示词模板
       rememberLastSelect: this.get("REMEMBER_LAST_SELECT", true, "boolean"),
@@ -15496,7 +15496,7 @@ var AnimekoSource = class extends BaseSource {
   }
   /**
    * 搜索动画条目
-   * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤及关��检测
+   * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤及关系检测
    * @param {string} keyword 搜索关键词
    * @returns {Promise<Array>} 转换后的搜索结果列表
    */
@@ -15916,7 +15916,7 @@ var AnimekoSource = class extends BaseSource {
     return this.getEpisodeDanmu(url);
   }
   /**
-   * 格式化弹幕为标准格式
+   * ��式化弹幕为标准格式
    * @param {Array} comments 原始弹幕数据
    * @returns {Array} 格式化后的弹幕
    */
