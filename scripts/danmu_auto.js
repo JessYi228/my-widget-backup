@@ -15496,7 +15496,7 @@ var AnimekoSource = class extends BaseSource {
   }
   /**
    * 搜索动画条目
-   * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤及关系检测
+   * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤及关��检测
    * @param {string} keyword 搜索关键词
    * @returns {Promise<Array>} 转换后的搜索结果列表
    */
