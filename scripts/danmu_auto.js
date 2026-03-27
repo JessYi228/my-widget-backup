@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -15916,7 +15916,7 @@ var AnimekoSource = class extends BaseSource {
     return this.getEpisodeDanmu(url);
   }
   /**
-   * 格式化弹幕为标准格式
+   * ��式化弹幕为标准格式
    * @param {Array} comments 原始弹幕数据
    * @returns {Array} 格式化后的弹幕
    */
