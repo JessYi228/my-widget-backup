@@ -282,7 +282,7 @@ WidgetMetadata = {
                             value: "https://letterboxd.com/mlkarasek/list/wes-andersons-favorite-films/"
                         },
                         {
-                            title: "��里·艾斯特——当代最爱",
+                            title: "阿里·艾斯特——当代最爱",
                             value: "https://letterboxd.com/mgamber/list/ari-asters-favorite-films/"
                         },
                         {
