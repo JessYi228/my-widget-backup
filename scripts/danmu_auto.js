@@ -8518,7 +8518,7 @@ var HanjutvSource = class extends BaseSource {
     const list = data?.seriesData?.seriesList || data?.seriesList || data?.seriesData?.series || [];
     return this.normalizeSearchItems(list);
   }
-  // ── 搜索候选合并 ─────────────────────────────────────────────
+  // ── 搜索候选合并 ──────────────────────────────────────��──────
   dedupeBySid(items = []) {
     const map = /* @__PURE__ */ new Map();
     for (const item of items) {
@@ -12129,7 +12129,7 @@ __publicField(_BilibiliSource, "WBI_MIXIN_KEY_TABLE", [
   44,
   52
 ]);
-// APP 签名相关常量 (Android 粉版 - 港澳���搜索用)
+// APP 签名相关常量 (Android 粉版 - 港澳台搜索用)
 __publicField(_BilibiliSource, "APP_KEY", "1d8b6e7d45233436");
 __publicField(_BilibiliSource, "APP_SEC", "560c52ccd288fed045859ed18bffd973");
 var BilibiliSource = _BilibiliSource;
