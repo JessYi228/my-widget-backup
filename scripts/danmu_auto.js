@@ -7841,7 +7841,7 @@ var RenrenSource = class extends BaseSource {
   }
   /**
    * 获取有效的 aliid
-   * 根据 isBatchMode 决定是否增加计数
+   * ���据 isBatchMode 决定是否增加计数
    */
   getAliId() {
     if (!CACHED_ALI_ID) {
@@ -8689,7 +8689,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── 详情 & 剧集 ──────────────────────────────────────────────
+  // ── 详情 & 剧集 ─��────────────────────────────────────────────
   async getSeriesDetail(id, loader, missingLogTag, errorTag) {
     try {
       const sid = String(id || "").trim();
