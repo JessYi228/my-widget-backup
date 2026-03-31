@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -7841,7 +7841,7 @@ var RenrenSource = class extends BaseSource {
   }
   /**
    * 获取有效的 aliid
-   * ���据 isBatchMode 决定是否增加计数
+   * 根据 isBatchMode 决定是否增加计数
    */
   getAliId() {
     if (!CACHED_ALI_ID) {
@@ -8518,7 +8518,7 @@ var HanjutvSource = class extends BaseSource {
     const list = data?.seriesData?.seriesList || data?.seriesList || data?.seriesData?.series || [];
     return this.normalizeSearchItems(list);
   }
-  // ── 搜索候选合并 ─────────────────────────────────────────────
+  // ── 搜索候选合并 ──────────────────────────────────────��──────
   dedupeBySid(items = []) {
     const map = /* @__PURE__ */ new Map();
     for (const item of items) {
@@ -8689,7 +8689,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── 详情 & 剧集 ─��────────────────────────────────────────────
+  // ── 详情 & 剧集 ──────────────────────────────────────────────
   async getSeriesDetail(id, loader, missingLogTag, errorTag) {
     try {
       const sid = String(id || "").trim();
