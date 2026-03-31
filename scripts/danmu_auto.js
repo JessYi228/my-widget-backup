@@ -3078,7 +3078,7 @@ var Anime = class _Anime {
       source
     });
   }
-  // ---- 静态方法：从 JSON ���建 Anime 对象 ----
+  // ---- 静态方法：从 JSON 创建 Anime 对象 ----
   static fromJson(json) {
     if (typeof json !== "object" || json === null) {
       throw new TypeError("fromJson \u53C2\u6570\u5FC5\u987B\u662F\u5BF9\u8C61");
@@ -12129,7 +12129,7 @@ __publicField(_BilibiliSource, "WBI_MIXIN_KEY_TABLE", [
   44,
   52
 ]);
-// APP 签名相关常量 (Android 粉版 - 港澳台搜索用)
+// APP 签名相关常量 (Android 粉版 - 港澳���搜索用)
 __publicField(_BilibiliSource, "APP_KEY", "1d8b6e7d45233436");
 __publicField(_BilibiliSource, "APP_SEC", "560c52ccd288fed045859ed18bffd973");
 var BilibiliSource = _BilibiliSource;
