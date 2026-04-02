@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -16363,7 +16363,7 @@ var AiyifanSource = class extends BaseSource {
   }
   /**
    * 搜索电视剧
-   * @param {string} keyword - ��索关键词
+   * @param {string} keyword - 搜索关键词
    * @param {number} page - 页码，默认为1
    * @param {number} size - 每页数量，默认为10
    * @returns {Promise<Object>} 搜索结果
