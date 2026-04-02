@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -10095,7 +10095,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         episodeCount: 1,
         // 电影只有1集
         _qipuId: qipuId
-        // 保存原始 qipuId 供后续使��
+        // 保存原始 qipuId 供后续使用
       };
     }
     const url = album.pageUrl;
@@ -10915,7 +10915,7 @@ var MangoSource = class extends BaseSource {
     for (const ep of rawEpisodes) {
       const fullTitle = `${ep.t2 || ""} ${ep.t1 || ""}`.trim();
       if (hasQiFormat) {
-        const qiUpMidDownMatch = fullTitle.match(/第(\d+)���([上中下])/);
+        const qiUpMidDownMatch = fullTitle.match(/第(\d+)期([上中下])/);
         const qiPureMatch = fullTitle.match(/第(\d+)期/);
         const hasUpMidDown = /第\d+期[上中下]/.test(fullTitle);
         if (qiUpMidDownMatch) {
@@ -16363,7 +16363,7 @@ var AiyifanSource = class extends BaseSource {
   }
   /**
    * 搜索电视剧
-   * @param {string} keyword - 搜索关键词
+   * @param {string} keyword - ��索关键词
    * @param {number} page - 页码，默认为1
    * @param {number} size - 每页数量，默认为10
    * @returns {Promise<Object>} 搜索结果
