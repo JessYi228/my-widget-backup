@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -12129,7 +12129,7 @@ __publicField(_BilibiliSource, "WBI_MIXIN_KEY_TABLE", [
   44,
   52
 ]);
-// APP 签名相关常量 (Android 粉版 - 港澳台搜索用)
+// APP 签名相关常量 (Android 粉版 - 港澳���搜索用)
 __publicField(_BilibiliSource, "APP_KEY", "1d8b6e7d45233436");
 __publicField(_BilibiliSource, "APP_SEC", "560c52ccd288fed045859ed18bffd973");
 var BilibiliSource = _BilibiliSource;
