@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -3078,7 +3078,7 @@ var Anime = class _Anime {
       source
     });
   }
-  // ---- 静态方法：从 JSON ��建 Anime 对象 ----
+  // ---- ��态方法：从 JSON 创建 Anime 对象 ----
   static fromJson(json) {
     if (typeof json !== "object" || json === null) {
       throw new TypeError("fromJson \u53C2\u6570\u5FC5\u987B\u662F\u5BF9\u8C61");
@@ -12751,7 +12751,7 @@ var DandanSource = class extends BaseSource {
    * 搜索动画条目
    * 包含常规搜索、TMDB 日语原名搜索，以及去除季度信息后的降级搜索策略
    * @param {string} keyword 搜索关键词
-   * @param {boolean} isFallback 标记当前是否处于降级搜索状态，防止无限递归
+   * @param {boolean} isFallback 标记��前是否处于降级搜索状态，防止无限递归
    */
   async search(keyword, isFallback = false) {
     try {
