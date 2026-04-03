@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -3078,7 +3078,7 @@ var Anime = class _Anime {
       source
     });
   }
-  // ---- ���态方法：从 JSON 创建 Anime 对象 ----
+  // ---- 静态方法：从 JSON 创建 Anime 对象 ----
   static fromJson(json) {
     if (typeof json !== "object" || json === null) {
       throw new TypeError("fromJson \u53C2\u6570\u5FC5\u987B\u662F\u5BF9\u8C61");
@@ -10095,7 +10095,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         episodeCount: 1,
         // 电影只有1集
         _qipuId: qipuId
-        // 保存原始 qipuId 供后续使用
+        // 保存原始 qipuId 供后续使��
       };
     }
     const url = album.pageUrl;
@@ -10915,7 +10915,7 @@ var MangoSource = class extends BaseSource {
     for (const ep of rawEpisodes) {
       const fullTitle = `${ep.t2 || ""} ${ep.t1 || ""}`.trim();
       if (hasQiFormat) {
-        const qiUpMidDownMatch = fullTitle.match(/第(\d+)期([上中下])/);
+        const qiUpMidDownMatch = fullTitle.match(/第(\d+)���([上中下])/);
         const qiPureMatch = fullTitle.match(/第(\d+)期/);
         const hasUpMidDown = /第\d+期[上中下]/.test(fullTitle);
         if (qiUpMidDownMatch) {
