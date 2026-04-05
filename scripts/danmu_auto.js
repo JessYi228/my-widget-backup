@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -16595,7 +16595,7 @@ var AiyifanSource = class extends BaseSource {
         type: drama.atypeName,
         // 默认类型
         year: new Date(drama.postTime).getFullYear(),
-        // 年份信息可能需要从其��地方获取
+        // 年份信息可能需要从其他地方获取
         imageUrl: drama.imgPath || null,
         // 图片链接
         episodeCount: 0
