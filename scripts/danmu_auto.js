@@ -16950,7 +16950,7 @@ var AnimekoSource = class extends BaseSource {
     return list;
   }
   /**
-   * 获取指定条目的关联条目列表
+   * 获取指定条目的���联条目列表
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Array>} 关联条目数组
    */
