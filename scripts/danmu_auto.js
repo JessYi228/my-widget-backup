@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -948,7 +948,7 @@ var Envs = class {
       danmuOutputFormat: this.get("DANMU_OUTPUT_FORMAT", "json", "string"),
       // 弹幕输出格式配置（默认 json，可选值：json, xml）
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", false, "boolean"),
-      // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
+      // 严格标题匹配模式配置（默�� false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", false, "boolean"),
       // 外语标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", false, "boolean"),
@@ -956,7 +956,7 @@ var Envs = class {
       titleMappingTable: this.resolveTitleMappingTable(),
       // 剧名映射表，用于自动匹配时替换标题进行搜索
       ipBlacklist: this.resolveIpBlacklist(),
-      // IP 黑名单（支持正则���
+      // IP 黑名单（支持正则）
       aiBaseUrl: this.get("AI_BASE_URL", "https://api.openai.com/v1", "string"),
       // AI服务基础URL
       aiModel: this.get("AI_MODEL", "gpt-4o", "string"),
@@ -8047,7 +8047,7 @@ var RenrenSource = class extends BaseSource {
   /**
    * 获取剧集详情 (TV API)
    * @param {string} dramaId 剧集ID
-   * @param {string} episodeSid ��集ID (可选)
+   * @param {string} episodeSid 单集ID (可选)
    * @returns {Object} 详情数据对象
    */
   async getAppDramaDetail(dramaId, episodeSid = "") {
@@ -11287,7 +11287,7 @@ var MangoSource = class extends BaseSource {
         color: 16777215,
         //弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
         unixtime: Math.floor(Date.now() / 1e3),
-        //Unix 时���戳格式
+        //Unix 时间戳格式
         uid: 0,
         //发送人的 id
         content: ""
