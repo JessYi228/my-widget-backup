@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -16950,7 +16950,7 @@ var AnimekoSource = class extends BaseSource {
     return list;
   }
   /**
-   * ���取指定条目的关联条目列表
+   * 获取指定条目的关联条目列表
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Array>} 关联条目数组
    */
