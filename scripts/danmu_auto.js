@@ -956,7 +956,7 @@ var Envs = class {
       titleMappingTable: this.resolveTitleMappingTable(),
       // 剧名映射表，用于自动匹配时替换标题进行搜索
       ipBlacklist: this.resolveIpBlacklist(),
-      // IP 黑名单（支持正��）
+      // IP 黑名单（支持��则）
       aiBaseUrl: this.get("AI_BASE_URL", "https://api.openai.com/v1", "string"),
       // AI服务基础URL
       aiModel: this.get("AI_MODEL", "gpt-4o", "string"),
