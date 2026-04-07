@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -948,7 +948,7 @@ var Envs = class {
       danmuOutputFormat: this.get("DANMU_OUTPUT_FORMAT", "json", "string"),
       // 弹幕输出格式配置（默认 json，可选值：json, xml）
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", false, "boolean"),
-      // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
+      // 严格标题匹配模式配置（默�� false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", false, "boolean"),
       // 外语标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", false, "boolean"),
@@ -12447,7 +12447,7 @@ var YoukuSource = class extends BaseSource {
   }
   /**
    * 处理和格式化分集列表
-   * @param {Array} rawEpisodes - ���始分集数据
+   * @param {Array} rawEpisodes - 原始分集数据
    * @param {string} mediaType - 媒体类型 (variety/movie/drama/anime)
    * @returns {Array} 格式化后的分集列表
    */
@@ -16403,7 +16403,7 @@ var AiyifanSource = class extends BaseSource {
   /**
    * 搜索电视剧
    * @param {string} keyword - 搜索关键词
-   * @param {number} page - 页码，默认为1
+   * @param {number} page - 页码��默认为1
    * @param {number} size - 每页数量，默认为10
    * @returns {Promise<Object>} 搜索结果
    */
@@ -16950,7 +16950,7 @@ var AnimekoSource = class extends BaseSource {
     return list;
   }
   /**
-   * 获取指定条目的关���条目列表
+   * 获取指定条目的关联条目列表
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Array>} 关联条目数组
    */
