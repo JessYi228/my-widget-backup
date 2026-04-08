@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -12447,7 +12447,7 @@ var YoukuSource = class extends BaseSource {
   }
   /**
    * 处理和格式化分集列表
-   * @param {Array} rawEpisodes - ���始分集数据
+   * @param {Array} rawEpisodes - 原始分集数据
    * @param {string} mediaType - 媒体类型 (variety/movie/drama/anime)
    * @returns {Array} 格式化后的分集列表
    */
@@ -16950,7 +16950,7 @@ var AnimekoSource = class extends BaseSource {
     return list;
   }
   /**
-   * 获取指定条目的关���条目列表
+   * 获取指定条目的关联条目列表
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Array>} 关联条目数组
    */
