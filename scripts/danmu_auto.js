@@ -16595,7 +16595,7 @@ var AiyifanSource = class extends BaseSource {
         type: drama.atypeName,
         // 默认类型
         year: new Date(drama.postTime).getFullYear(),
-        // 年份信息可能需要从其��地方获取
+        // 年份信息可能需要从其他地方获取
         imageUrl: drama.imgPath || null,
         // 图片链接
         episodeCount: 0
