@@ -1,6 +1,6 @@
 ## 📊 备份统计
 
-- 🕒 最后更新: 2026-04-09 10:57:56
+- 🕒 最后更新: 2026-04-09 11:57:22
 - 📁 脚本数量: 10
 - 📄 脚本列表:
 
@@ -12,5 +12,5 @@
   - douban.js (96998 bytes)
   - letterboxd.js (34438 bytes)
   - person_movie.js (7843 bytes)
-  - trakt.js (18206 bytes)
+  - trakt.js (18212 bytes)
   - undefined (6398 bytes)
