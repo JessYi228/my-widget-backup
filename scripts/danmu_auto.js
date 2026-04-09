@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -8047,7 +8047,7 @@ var RenrenSource = class extends BaseSource {
   /**
    * 获取剧集详情 (TV API)
    * @param {string} dramaId 剧集ID
-   * @param {string} episodeSid ���集ID (可选)
+   * @param {string} episodeSid 单集ID (可选)
    * @returns {Object} 详情数据对象
    */
   async getAppDramaDetail(dramaId, episodeSid = "") {
@@ -16950,7 +16950,7 @@ var AnimekoSource = class extends BaseSource {
     return list;
   }
   /**
-   * 获取指定条目的关联条目列表
+   * 获���指定条目的关联条目列表
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Array>} 关联条目数组
    */
