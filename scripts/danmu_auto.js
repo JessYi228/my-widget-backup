@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -9046,7 +9046,7 @@ var HanjutvSource = class extends BaseSource {
     this.sortAndPushAnimesByYear(tmpAnimes, curAnimes);
     return tmpAnimes;
   }
-  // ── 弹幕 ─────────────────────────────────────────────────────
+  // ── 弹幕 ──────────────��──────────────────────────────────────
   async fetchEpisodeDanmuByRef(episodeRef) {
     const episodeId = String(episodeRef?.id || "").trim();
     if (!episodeId) return [];
