@@ -10976,7 +10976,7 @@ var MangoSource = class extends BaseSource {
           const upMidDown = qiUpMidDownMatch[2];
           const qiUpMidDownText = `\u7B2C${qiNum}\u671F${upMidDown}`;
           const afterUpMidDown = fullTitle.substring(fullTitle.indexOf(qiUpMidDownText) + qiUpMidDownText.length);
-          const hasInvalidSuffix = /^(加更|会员版|纯享版|特别版|独家版|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后)/.test(afterUpMidDown);
+          const hasInvalidSuffix = /^(加更|会员版|纯享版|特别版|独家版|Plus|\+|花絮|预告|彩蛋|抢���|精选|未播|回顾|特辑|幕后)/.test(afterUpMidDown);
           if (!hasInvalidSuffix) {
             qiInfoMap.set(ep, [parseInt(qiNum), upMidDown]);
             episodeInfos.push(ep);
