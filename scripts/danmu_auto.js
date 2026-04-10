@@ -9046,7 +9046,7 @@ var HanjutvSource = class extends BaseSource {
     this.sortAndPushAnimesByYear(tmpAnimes, curAnimes);
     return tmpAnimes;
   }
-  // ── 弹幕 ──────────────��──────────────────────────────────────
+  // ── 弹幕 ─────────────────────────────────────────────────────
   async fetchEpisodeDanmuByRef(episodeRef) {
     const episodeId = String(episodeRef?.id || "").trim();
     if (!episodeId) return [];
