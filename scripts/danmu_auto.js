@@ -587,7 +587,7 @@ var Envs = class {
   }
   /**
    * 解析平台排序
-   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan��
+   * 支持单个平台或通过&连接的组合平台（如 bilibili1&dandan）
    * @returns {Array} 平台排序数组
    */
   static resolvePlatformOrder() {
@@ -956,7 +956,7 @@ var Envs = class {
       titleMappingTable: this.resolveTitleMappingTable(),
       // 剧名映射表，用于自动匹配时替换标题进行搜索
       ipBlacklist: this.resolveIpBlacklist(),
-      // IP 黑名单（支持正则）
+      // IP 黑名单（支持正��）
       aiBaseUrl: this.get("AI_BASE_URL", "https://api.openai.com/v1", "string"),
       // AI服务基础URL
       aiModel: this.get("AI_MODEL", "gpt-4o", "string"),
@@ -10976,7 +10976,7 @@ var MangoSource = class extends BaseSource {
           const upMidDown = qiUpMidDownMatch[2];
           const qiUpMidDownText = `\u7B2C${qiNum}\u671F${upMidDown}`;
           const afterUpMidDown = fullTitle.substring(fullTitle.indexOf(qiUpMidDownText) + qiUpMidDownText.length);
-          const hasInvalidSuffix = /^(加更|会员版|纯享版|特别版|独家版|Plus|\+|花絮|预告|彩蛋|抢���|精选|未播|回顾|特辑|幕后)/.test(afterUpMidDown);
+          const hasInvalidSuffix = /^(加更|会员版|纯享版|特别版|独家版|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后)/.test(afterUpMidDown);
           if (!hasInvalidSuffix) {
             qiInfoMap.set(ep, [parseInt(qiNum), upMidDown]);
             episodeInfos.push(ep);
