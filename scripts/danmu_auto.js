@@ -3098,7 +3098,7 @@ var Anime = class _Anime {
       source
     });
   }
-  // ---- 静态方法：从 JSON 创建 Anime 对象 ----
+  // ---- 静态��法：从 JSON 创建 Anime 对象 ----
   static fromJson(json) {
     if (typeof json !== "object" || json === null) {
       throw new TypeError("fromJson \u53C2\u6570\u5FC5\u987B\u662F\u5BF9\u8C61");
