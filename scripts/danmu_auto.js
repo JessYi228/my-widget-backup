@@ -476,7 +476,29 @@ function applyOffset(danmus, offsetSeconds, options = {}) {
   if (!offset || !Array.isArray(danmus) || danmus.length === 0) return danmus;
   const usePercent = options?.usePercent === true;
   const videoDuration = Number(options?.videoDuration || 0);
-  const scaleRatio = usePercent && Number.isFinite(videoDuration) && videoDuration > 0 ? (videoDuration + offset) / videoDuration : null;
+  const getDanmuTimeSeconds = (danmu) => {
+    if (!danmu || typeof danmu !== "object") return null;
+    if (typeof danmu.p === "string") {
+      const parts = danmu.p.split(",");
+      const time = parseFloat(parts[0]);
+      if (Number.isFinite(time)) return time;
+    }
+    if (danmu.t !== void 0 && danmu.t !== null) {
+      const time = Number(danmu.t);
+      if (Number.isFinite(time)) return time;
+    }
+    if (danmu.progress !== void 0 && danmu.progress !== null) {
+      const time = Number(danmu.progress);
+      if (Number.isFinite(time)) return time / 1e3;
+    }
+    if (danmu.timepoint !== void 0 && danmu.timepoint !== null) {
+      const time = Number(danmu.timepoint);
+      if (Number.isFinite(time)) return time;
+    }
+    return null;
+  };
+  const fallbackDuration = videoDuration > 0 ? videoDuration : getDanmuTimeSeconds(danmus[danmus.length - 1]) || 0;
+  const scaleRatio = usePercent && Number.isFinite(fallbackDuration) && fallbackDuration > 0 ? (fallbackDuration + offset) / fallbackDuration : null;
   if (usePercent && scaleRatio === null) return danmus;
   const offsetMs = offset * 1e3;
   const clamp = (v) => Math.max(0, v);
@@ -795,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} 剧名映射表
+   * @returns {Map} ���名映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -949,11 +971,11 @@ var Envs = class {
       localRedisUrl: this.get("LOCAL_REDIS_URL", "", "string", true),
       // 本地 Redis 连接URL，示例：redis://:password@127.0.0.1:6379/0，只支持本地部署和docker部署
       rateLimitMaxRequests: this.get("RATE_LIMIT_MAX_REQUESTS", 3, "number"),
-      // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流）
+      // 限流配置：时间窗口内最大请��次数（默认 3，0表示不限流）
       enableAnimeEpisodeFilter: this.get("ENABLE_ANIME_EPISODE_FILTER", false, "boolean"),
       // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用过滤）
       logLevel: this.get("LOG_LEVEL", "info", "string"),
-      // 日志级别配置（默认 info，可选���：error, warn, info）
+      // 日志级别配置（默认 info，可选值：error, warn, info）
       searchCacheMinutes: this.get("SEARCH_CACHE_MINUTES", 3, "number"),
       // 搜索结果缓存时间配置（分钟，默认 3）
       commentCacheMinutes: this.get("COMMENT_CACHE_MINUTES", 3, "number"),
@@ -1061,7 +1083,7 @@ var Globals = {
   originalEnvVars: {},
   accessedEnvVars: {},
   // 静态常量
-  VERSION: "1.18.5",
+  VERSION: "1.18.6",
   MAX_LOGS: 1e3,
   // 日志存储，最多保存 1000 行
   MAX_RECORDS: 100,
@@ -2932,9 +2954,13 @@ function convertChineseNumber(chineseNumber) {
   }
   return result;
 }
+function sanitizeSearchKeyword(str) {
+  if (!str) return "";
+  return String(str).replace(/[\u200B-\u200F\uFEFF]/g, "").trim();
+}
 function normalizeSpaces(str) {
   if (!str) return "";
-  return String(str).trim().replace(/[\s【】\[\]《》<>「」!?！？.,，。~～]/g, "");
+  return String(str).replace(/[^\u4e00-\u9fa5\u3400-\u4DBF\u{20000}-\u{2EE5F}\u{30000}-\u{323AF}\u3040-\u30ff\uFF65-\uFF9F\uAC00-\uD7AFa-zA-Z0-9\uFF10-\uFF19\uFF21-\uFF3A\uFF41-\uFF5A\u2160-\u217F\u0400-\u04FF\u00C0-\u024F\u0370-\u03FF]/gu, "");
 }
 function strictTitleMatch(title, query) {
   if (!title || !query) return false;
@@ -3024,7 +3050,7 @@ function extractSeasonNumberFromAnimeTitle(animeTitle) {
       baseTitle: titleWithoutYear.slice(0, titleWithoutYear.lastIndexOf(trailingNumber[1])).trim()
     };
   }
-  const trailingChinese = titleWithoutYear.match(/([一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+)$/);
+  const trailingChinese = titleWithoutYear.match(/([一二三四五六七八���十壹贰叁肆伍陆柒捌玖拾]+)$/);
   if (trailingChinese) {
     return {
       season: convertChineseNumber(trailingChinese[1]),
@@ -5602,10 +5628,10 @@ function findBestAlignmentOffset(primaryLinks, secondaryLinks, seriesLangA = "Un
   let bestOffset = 0, maxScore = -9999;
   let minNormalA = null, minNormalB = null;
   pInfos.forEach(({ info }) => {
-    if (info.num !== null && !info.isSpecial) minNormalA = minNormalA === null ? info.num : Math.min(minNormalA, info.num);
+    if (info.num !== null && !info.isSpecial && info.num % 1 === 0) minNormalA = minNormalA === null ? info.num : Math.min(minNormalA, info.num);
   });
   sInfos.forEach(({ info }) => {
-    if (info.num !== null && !info.isSpecial) minNormalB = minNormalB === null ? info.num : Math.min(minNormalB, info.num);
+    if (info.num !== null && !info.isSpecial && info.num % 1 === 0) minNormalB = minNormalB === null ? info.num : Math.min(minNormalB, info.num);
   });
   const seasonShift = minNormalA !== null && minNormalB !== null ? minNormalA - minNormalB : null;
   const baseRange = 15;
@@ -6035,59 +6061,72 @@ async function processMergeTask(params) {
       derivedAnime.bangumiId = String(derivedAnime.animeId);
       let mergedCount = 0;
       const redundantS = identifyRedundantTitle(derivedMatch.links, derivedMatch.animeTitle, secSource);
-      let consensusShift = null;
+      const isBroadSpecial = (info) => info.isSpecial || info.isStrictSpecial || info.num !== null && info.num % 1 !== 0;
       const shiftCounts = /* @__PURE__ */ new Map();
-      for (let k = 0; k < filteredMLinksWithIndex.length; k++) {
-        const pIdx = k + offset;
-        if (pIdx >= 0 && pIdx < filteredPLinksWithIndex.length) {
-          const pLinkItem = filteredPLinksWithIndex[pIdx];
-          const sLinkItem = filteredMLinksWithIndex[k];
-          const infoP = extractEpisodeInfo(getTempTitle(pLinkItem.link.title || pLinkItem.link.name, redundantP), currentPrimarySource);
-          const infoS = extractEpisodeInfo(getTempTitle(sLinkItem.link.title || sLinkItem.link.name, redundantS), secSource);
-          if (infoP.num !== null && infoS.num !== null && !infoP.isSpecial && !infoS.isSpecial) {
-            const diff = infoP.num - infoS.num;
-            shiftCounts.set(diff, (shiftCounts.get(diff) || 0) + 1);
-          }
+      filteredMLinksWithIndex.forEach((sItem, k) => {
+        const pItem = filteredPLinksWithIndex[k + offset];
+        if (!pItem) return;
+        const infoP = extractEpisodeInfo(getTempTitle(pItem.link.title || pItem.link.name, redundantP), currentPrimarySource);
+        const infoS = extractEpisodeInfo(getTempTitle(sItem.link.title || sItem.link.name, redundantS), secSource);
+        if (infoP.num !== null && infoS.num !== null && !infoP.isSpecial && !infoS.isSpecial) {
+          const diff = infoP.num - infoS.num;
+          shiftCounts.set(diff, (shiftCounts.get(diff) || 0) + 1);
         }
-      }
-      let maxShiftCount = 0;
-      for (const [diff, count] of shiftCounts.entries()) {
-        if (count > maxShiftCount) {
-          maxShiftCount = count;
-          consensusShift = diff;
-        }
-      }
+      });
+      const consensusShift = shiftCounts.size > 0 ? [...shiftCounts.entries()].reduce((max, curr) => curr[1] > max[1] ? curr : max)[0] : null;
+      const pSpecialIndices = filteredPLinksWithIndex.reduce((acc, pItem, i) => {
+        const info = extractEpisodeInfo(getTempTitle(pItem.link.title || pItem.link.name, redundantP), currentPrimarySource);
+        if (isBroadSpecial(info) && !info.isPV) acc.push(i);
+        return acc;
+      }, []);
+      let sSpecialCounter = 0;
       for (let k = 0; k < filteredMLinksWithIndex.length; k++) {
         let pIndex = k + offset;
         const sourceLinkItem = filteredMLinksWithIndex[k];
         const sourceLink = sourceLinkItem.link;
         const sTitleShort = sourceLink.name || sourceLink.title || `Index ${k}`;
-        const orphanItem = { link: sourceLink, originalIndex: sourceLinkItem.originalIndex, relativeIndex: pIndex, info: null };
         const cleanTitleS = getTempTitle(sourceLink.title || sourceLink.name, redundantS);
-        orphanItem.info = extractEpisodeInfo(cleanTitleS, secSource);
-        if (consensusShift !== null && orphanItem.info.num !== null && !orphanItem.info.isSpecial) {
-          const targetNum = orphanItem.info.num + consensusShift;
-          const exactMatchIndex = filteredPLinksWithIndex.findIndex((pItem) => {
-            const pTitle = getTempTitle(pItem.link.title || pItem.link.name, redundantP);
-            const pInfo = extractEpisodeInfo(pTitle, currentPrimarySource);
-            return pInfo.num === targetNum && !pInfo.isSpecial;
+        const infoS = extractEpisodeInfo(cleanTitleS, secSource);
+        const orphanItem = { link: sourceLink, originalIndex: sourceLinkItem.originalIndex, relativeIndex: pIndex, info: infoS };
+        const broadSpecialS = isBroadSpecial(infoS);
+        if (consensusShift !== null && infoS.num !== null && !broadSpecialS) {
+          const targetNum = infoS.num + consensusShift;
+          pIndex = filteredPLinksWithIndex.findIndex((pItem) => {
+            const infoP = extractEpisodeInfo(getTempTitle(pItem.link.title || pItem.link.name, redundantP), currentPrimarySource);
+            return infoP.num === targetNum && !isBroadSpecial(infoP);
           });
-          if (exactMatchIndex !== -1) {
-            pIndex = exactMatchIndex;
+          if (pIndex !== -1) {
             orphanItem.relativeIndex = pIndex;
           } else {
-            pIndex = -1;
             let closestIdx = -0.5;
-            for (let i = 0; i < filteredPLinksWithIndex.length; i++) {
-              const pItem = filteredPLinksWithIndex[i];
-              const pTitle = getTempTitle(pItem.link.title || pItem.link.name, redundantP);
-              const pInfo = extractEpisodeInfo(pTitle, currentPrimarySource);
-              if (pInfo.num !== null && !pInfo.isSpecial && pInfo.num < targetNum) {
+            for (let i = filteredPLinksWithIndex.length - 1; i >= 0; i--) {
+              const infoP = extractEpisodeInfo(getTempTitle(filteredPLinksWithIndex[i].link.title || filteredPLinksWithIndex[i].link.name, redundantP), currentPrimarySource);
+              if (infoP.num !== null && !infoP.isSpecial && infoP.num < targetNum) {
                 closestIdx = i;
+                break;
               }
             }
             orphanItem.relativeIndex = closestIdx + k * 1e-3 + 0.1;
           }
+        } else if (broadSpecialS) {
+          let bestPIdx = -1, bestSim = 0.65;
+          const cleanEpS = cleanEpisodeText(cleanTitleS);
+          for (const pIdx of pSpecialIndices) {
+            const pTitle = getTempTitle(filteredPLinksWithIndex[pIdx].link.title || filteredPLinksWithIndex[pIdx].link.name, redundantP);
+            const infoP = extractEpisodeInfo(pTitle, currentPrimarySource);
+            if (infoS.isPV !== infoP.isPV) continue;
+            const sim = calculateSimilarity(cleanEpS, cleanEpisodeText(pTitle));
+            if (sim > bestSim) {
+              bestSim = sim;
+              bestPIdx = pIdx;
+            }
+          }
+          if (bestPIdx === -1 && !infoS.isPV && sSpecialCounter < pSpecialIndices.length) {
+            bestPIdx = pSpecialIndices[sSpecialCounter];
+          }
+          if (!infoS.isPV) sSpecialCounter++;
+          pIndex = bestPIdx;
+          orphanItem.relativeIndex = pIndex !== -1 ? pIndex : filteredPLinksWithIndex.length + k * 1e-3;
         } else {
           orphanItem.relativeIndex = pIndex !== -1 ? pIndex : k + offset;
         }
@@ -6099,19 +6138,22 @@ async function processMergeTask(params) {
           const specialP = getSpecialEpisodeType(cleanTitleP);
           const specialS = getSpecialEpisodeType(cleanTitleS);
           const infoP = extractEpisodeInfo(cleanTitleP, currentPrimarySource);
-          const infoS = orphanItem.info;
           if (infoS.isPV && !specialP) {
-            mappingEntries.push({ idx: pIndex, text: `   [\u7565\u8FC7] ${pTitleShort} =/= ${sTitleShort} (PV\u4E0D\u5339\u914D\u6B63\u7247)` });
+            mappingEntries.push({ idx: orphanItem.relativeIndex, text: `   [\u7565\u8FC7] ${pTitleShort} =/= ${sTitleShort} (PV\u4E0D\u5339\u914D\u6B63\u7247)` });
             orphanedEpisodes.push(orphanItem);
             continue;
           }
           if (specialP !== specialS) {
-            mappingEntries.push({ idx: pIndex, text: `   [\u7565\u8FC7] ${pTitleShort} =/= ${sTitleShort} (\u7279\u6B8A\u96C6\u7C7B\u578B\u4E0D\u5339\u914D)` });
+            mappingEntries.push({ idx: orphanItem.relativeIndex, text: `   [\u7565\u8FC7] ${pTitleShort} =/= ${sTitleShort} (\u7279\u6B8A\u96C6\u7C7B\u578B\u4E0D\u5339\u914D)` });
             orphanedEpisodes.push(orphanItem);
             continue;
           }
-          if (infoP.isStrictSpecial && !infoS.isSpecial || infoS.isStrictSpecial && !infoP.isSpecial) {
-            mappingEntries.push({ idx: pIndex, text: `   [\u7565\u8FC7] ${pTitleShort} =/= ${sTitleShort} (\u6B63\u7247\u4E0E\u756A\u5916\u963B\u65AD)` });
+          const strictOrDecimalP = infoP.isStrictSpecial || infoP.num !== null && infoP.num % 1 !== 0;
+          const strictOrDecimalS = infoS.isStrictSpecial || infoS.num !== null && infoS.num % 1 !== 0;
+          const isRegularP = !infoP.isSpecial && (infoP.num === null || infoP.num % 1 === 0);
+          const isRegularS = !infoS.isSpecial && (infoS.num === null || infoS.num % 1 === 0);
+          if (strictOrDecimalP && isRegularS || strictOrDecimalS && isRegularP) {
+            mappingEntries.push({ idx: orphanItem.relativeIndex, text: `   [\u7565\u8FC7] ${pTitleShort} =/= ${sTitleShort} (\u6B63\u7247\u4E0E\u756A\u5916\u963B\u65AD)` });
             orphanedEpisodes.push(orphanItem);
             continue;
           }
@@ -6131,7 +6173,7 @@ async function processMergeTask(params) {
             }
             newMergedTitle = newMergedTitle.replace(/^【([^】]+)】/, (match2, content) => `\u3010${content}${DISPLAY_CONNECTOR}${sLabel}\u3011`);
           }
-          mappingEntries.push({ idx: pIndex, text: `   [\u5339\u914D] ${pTitleShort} <-> ${sTitleShort}` });
+          mappingEntries.push({ idx: orphanItem.relativeIndex, text: `   [\u5339\u914D] ${pTitleShort} <-> ${sTitleShort}` });
           matchedPIndices.add(pIndex);
           mergedCount++;
           pendingMutations.push({ linkIndex: originalPIndex, newUrl: newMergedUrl, newTitle: newMergedTitle });
@@ -7456,8 +7498,10 @@ var VodSource = class extends BaseSource {
   // 查询vod站点影片信息
   async getVodAnimes(title, server, serverName) {
     try {
+      const safeTitle = sanitizeSearchKeyword(title);
+      const encodedTitle = encodeURIComponent(safeTitle);
       const response = await Widget.http.get(
-        `${server}/api.php/provide/vod/?ac=detail&wd=${title}&pg=1`,
+        `${server}/api.php/provide/vod/?ac=detail&wd=${encodedTitle}&pg=1`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -7988,7 +8032,7 @@ var RenrenSource = class extends BaseSource {
   }
   /**
    * 生成随机的 aliid
-   * 规律：24位长度，以 'aY' 开头，包含字母数字和 Base64 特殊字���
+   * 规律：24位长度，以 'aY' 开头，包含字母数字和 Base64 特殊字符
    * 模拟抓包数据：aYN4D0XfSREDAJaw3UAjG33K
    */
   generateRandomAliId() {
@@ -9382,6 +9426,7 @@ var BahamutSource = class extends BaseSource {
   }
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null) {
     const tmpAnimes = [];
+    const isJapaneseKeyword = /[\u3040-\u309F\u30A0-\u30FF]/.test(queryTitle);
     queryTitle = traditionalized(queryTitle);
     function bahamutTitleMatches(itemTitle, queryTitle2, searchUsedTitle) {
       if (!itemTitle) return false;
@@ -9427,8 +9472,8 @@ var BahamutSource = class extends BaseSource {
     const filtered = arr.filter((item) => {
       const itemTitle = item.title || "";
       const usedSearchTitle = item._searchUsedTitle || item._originalQuery || "";
-      if (item._searchUsedTitle && item._searchUsedTitle !== queryTitle) {
-        log("info", `[Bahamut] TMDB\u7ED3\u679C\u76F4\u63A5\u4FDD\u7559: ${itemTitle}`);
+      if (isJapaneseKeyword || item._searchUsedTitle && item._searchUsedTitle !== queryTitle) {
+        log("info", `[Bahamut] \u547D\u4E2D\u65E5\u8BED\u5173\u952E\u8BCD\u6216TMDB\u7ED3\u679C\uFF0C\u7ED5\u8FC7\u5339\u914D\u89C4\u5219\u76F4\u63A5\u4FDD\u7559: ${itemTitle}`);
         return true;
       }
       return bahamutTitleMatches(itemTitle, queryTitle, usedSearchTitle);
@@ -12996,7 +13041,8 @@ var DandanSource = class extends BaseSource {
         headers: {
           "Content-Type": "application/json",
           "User-Agent": DandanUserAgent
-        }
+        },
+        retries: 1
       });
       if (!resp || !resp.data) {
         log("info", "getDandanEposides: \u8BF7\u6C42\u5931\u8D25\u6216\u65E0\u6570\u636E\u8FD4\u56DE");
@@ -18021,7 +18067,7 @@ async function getSegmentComment(segment, queryFormat) {
 }
 
 // forward/forward-widget.js
-var wv = true ? "1.18.5" : Globals.VERSION;
+var wv = true ? "1.18.6" : Globals.VERSION;
 WidgetMetadata = {
   id: "forward.auto.danmu2",
   title: "\u81EA\u52A8\u94FE\u63A5\u5F39\u5E55v2",
