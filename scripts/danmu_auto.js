@@ -953,7 +953,7 @@ var Envs = class {
       enableAnimeEpisodeFilter: this.get("ENABLE_ANIME_EPISODE_FILTER", false, "boolean"),
       // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用过滤）
       logLevel: this.get("LOG_LEVEL", "info", "string"),
-      // 日志级别配置（默认 info，可选值：error, warn, info）
+      // 日志级别配置（默认 info，可选���：error, warn, info）
       searchCacheMinutes: this.get("SEARCH_CACHE_MINUTES", 3, "number"),
       // 搜索结果缓存时间配置（分钟，默认 3）
       commentCacheMinutes: this.get("COMMENT_CACHE_MINUTES", 3, "number"),
@@ -3098,7 +3098,7 @@ var Anime = class _Anime {
       source
     });
   }
-  // ---- 静态��法：从 JSON 创建 Anime 对象 ----
+  // ---- 静态方法：从 JSON 创建 Anime 对象 ----
   static fromJson(json) {
     if (typeof json !== "object" || json === null) {
       throw new TypeError("fromJson \u53C2\u6570\u5FC5\u987B\u662F\u5BF9\u8C61");
@@ -7988,7 +7988,7 @@ var RenrenSource = class extends BaseSource {
   }
   /**
    * 生成随机的 aliid
-   * 规律：24位长度，以 'aY' 开头，包含字母数字和 Base64 特殊字符
+   * 规律：24位长度，以 'aY' 开头，包含字母数字和 Base64 特殊字���
    * 模拟抓包数据：aYN4D0XfSREDAJaw3UAjG33K
    */
   generateRandomAliId() {
