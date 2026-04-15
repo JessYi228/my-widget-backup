@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} 剧名映射表
+   * @returns {Map} 剧���映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -971,7 +971,7 @@ var Envs = class {
       localRedisUrl: this.get("LOCAL_REDIS_URL", "", "string", true),
       // 本地 Redis 连接URL，示例：redis://:password@127.0.0.1:6379/0，只支持本地部署和docker部署
       rateLimitMaxRequests: this.get("RATE_LIMIT_MAX_REQUESTS", 3, "number"),
-      // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流）
+      // 限流配置：时间窗口内最大请求��数（默认 3，0表示不限流）
       enableAnimeEpisodeFilter: this.get("ENABLE_ANIME_EPISODE_FILTER", false, "boolean"),
       // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用过滤）
       logLevel: this.get("LOG_LEVEL", "info", "string"),
@@ -3050,7 +3050,7 @@ function extractSeasonNumberFromAnimeTitle(animeTitle) {
       baseTitle: titleWithoutYear.slice(0, titleWithoutYear.lastIndexOf(trailingNumber[1])).trim()
     };
   }
-  const trailingChinese = titleWithoutYear.match(/([一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+)$/);
+  const trailingChinese = titleWithoutYear.match(/([一二三四五六七八九���壹贰叁肆伍陆柒捌玖拾]+)$/);
   if (trailingChinese) {
     return {
       season: convertChineseNumber(trailingChinese[1]),
@@ -8840,7 +8840,7 @@ var HanjutvSource = class extends BaseSource {
       }
     };
   }
-  // ── 搜索接口 ─────────────────────────────────────────────────
+  // ── 搜索接口 ──────────────────────────────��──────────────────
   /**
    * 从响应 payload 中提取搜索结果；支持加密与明文两种格式
    */
