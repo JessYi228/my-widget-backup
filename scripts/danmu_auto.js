@@ -9586,7 +9586,7 @@ var BahamutSource = class extends BaseSource {
     return comments.map((c) => ({
       cid: Number(c.sn),
       p: `${(c.time / 10).toFixed(2)},${positionToMode[c.position] || c.tp},${parseInt(c.color.slice(1), 16)},[bahamut]`,
-      // 根据 globals.danmuSimplifiedTraditional 控制是��繁转简
+      // 根据 globals.danmuSimplifiedTraditional 控制是否繁转简
       m: globals.danmuSimplifiedTraditional === "simplified" ? simplized(c.text) : c.text,
       t: c.time / 10
     }));
@@ -14534,7 +14534,7 @@ var SohuSource = class extends BaseSource {
     };
   }
   /**
-   * 过滤搜���视频搜索项
+   * 过滤搜狐视频搜索项
    * @param {Object} item - 搜索项
    * @param {string} keyword - 搜索关键词
    * @returns {Object|null} 过滤后的结果
