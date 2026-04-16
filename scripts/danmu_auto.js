@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} ��名映射表
+   * @returns {Map} 剧名映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -3050,7 +3050,7 @@ function extractSeasonNumberFromAnimeTitle(animeTitle) {
       baseTitle: titleWithoutYear.slice(0, titleWithoutYear.lastIndexOf(trailingNumber[1])).trim()
     };
   }
-  const trailingChinese = titleWithoutYear.match(/([一二三四五六七八��十壹贰叁肆伍陆柒捌玖拾]+)$/);
+  const trailingChinese = titleWithoutYear.match(/([一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+)$/);
   if (trailingChinese) {
     return {
       season: convertChineseNumber(trailingChinese[1]),
@@ -4798,7 +4798,7 @@ var SpecialSeriesRegistry = [
   {
     // 案例 3：没有任何副标题，主标题本身就是特殊类型
     seriesKeywords: ["\u7EA2\u732A", "\u5343\u4E0E\u5343\u5BFB", "\u9F99\u732B"],
-    // 当没有匹配到���何 mappings（或根本没写 mappings）时，直接给这个条目打上默认标签
+    // 当没有匹配到任何 mappings（或根本没写 mappings）时，直接给这个条目打上默认标签
     defaultStandard: "\u5267\u573A\u7248"
   }
 ];
