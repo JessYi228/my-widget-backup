@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} 剧��映射表
+   * @returns {Map} 剧名映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -3050,7 +3050,7 @@ function extractSeasonNumberFromAnimeTitle(animeTitle) {
       baseTitle: titleWithoutYear.slice(0, titleWithoutYear.lastIndexOf(trailingNumber[1])).trim()
     };
   }
-  const trailingChinese = titleWithoutYear.match(/([一二三四五六七八九��壹贰叁肆伍陆柒捌玖拾]+)$/);
+  const trailingChinese = titleWithoutYear.match(/([一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+)$/);
   if (trailingChinese) {
     return {
       season: convertChineseNumber(trailingChinese[1]),
