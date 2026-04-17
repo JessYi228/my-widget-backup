@@ -14534,7 +14534,7 @@ var SohuSource = class extends BaseSource {
     };
   }
   /**
-   * 过滤搜���视频搜索项
+   * 过滤搜狐视频搜索项
    * @param {Object} item - 搜索项
    * @param {string} keyword - 搜索关键词
    * @returns {Object|null} 过滤后的结果
