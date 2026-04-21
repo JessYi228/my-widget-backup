@@ -1036,7 +1036,7 @@ __publicField(Envs, "ALLOWED_PLATFORMS", ["qiyi", "bilibili1", "imgo", "youku", 
 __publicField(Envs, "ALLOWED_SOURCES", ["360", "vod", "tmdb", "douban", "tencent", "youku", "iqiyi", "imgo", "bilibili", "migu", "renren", "hanjutv", "bahamut", "dandan", "sohu", "leshi", "xigua", "maiduidui", "aiyifan", "animeko", "custom"]);
 // 允许的源
 __publicField(Envs, "MERGE_ALLOWED_SOURCES", ["tencent", "youku", "iqiyi", "imgo", "bilibili", "migu", "renren", "hanjutv", "bahamut", "dandan", "sohu", "leshi", "xigua", "maiduidui", "aiyifan", "animeko"]);
-// 允许的源合并
+// 允���的源合并
 __publicField(Envs, "DEFAULT_AI_MATCH_PROMPT", `\u4F60\u662F\u4E00\u4E2A\u4E13\u4E1A\u7684\u5F71\u89C6\u5339\u914D\u4E13\u5BB6\uFF0C\u4F60\u7684\u7684\u4EFB\u52A1\u662F\u6839\u636E\u7528\u6237\u63D0\u4F9B\u7684 JSON \u6570\u636E\uFF0C\u4ECE\u5019\u9009\u52A8\u6F2B\u5217\u8868\u4E2D\u5339\u914D\u6700\u7B26\u5408\u6761\u4EF6\u7684\u52A8\u6F2B\u53CA\u96C6\u6570\u3002
 
 \u8F93\u5165\u5B57\u6BB5\u8BF4\u660E\uFF1A
@@ -3209,7 +3209,7 @@ var BangumiEpisode = class _BangumiEpisode {
     validateType(airDate, "string");
     Object.assign(this, { seasonId, episodeId, episodeTitle, episodeNumber, airDate });
   }
-  // ---- 静态方法：从 JSON 创建 BangumiEpisode 对象 ----
+  // ---- 静态方法：从 JSON ��建 BangumiEpisode 对象 ----
   static fromJson(json) {
     if (typeof json !== "object" || json === null) {
       throw new TypeError("fromJson \u53C2\u6570\u5FC5\u987B\u662F\u5BF9\u8C61");
@@ -8093,7 +8093,7 @@ var RenrenSource = class extends BaseSource {
   }
   /**
    * 生成随机的 aliid
-   * 规律：24位长度，以 'aY' 开头，包含字母数字和 Base64 特殊字符
+   * ���律：24位长度，以 'aY' 开头，包含字母数字和 Base64 特殊字符
    * 模拟抓包数据：aYN4D0XfSREDAJaw3UAjG33K
    */
   generateRandomAliId() {
