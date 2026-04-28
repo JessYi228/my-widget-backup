@@ -16927,7 +16927,7 @@ var AnimekoSource = class extends BaseSource {
   hasExplicitSeasonInfo(title) {
     if (!title) return false;
     const patterns = [
-      /第\s*[0-9一二三四五六七八九十]+\s*[季期部]/i,
+      /第\s*[0-9一二三四五���七八九十]+\s*[季期部]/i,
       // 第2季
       /Season\s*\d+/i,
       // Season 2
