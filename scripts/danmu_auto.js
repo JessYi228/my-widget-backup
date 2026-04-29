@@ -11653,7 +11653,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
     }
   }
   /**
-   * 从 season_type_name ���取媒体类型
+   * 从 season_type_name 提取媒体类型
    * B站 API 返回的类型包括：电影、番剧、国创、纪录片、综艺、电视剧等
    * @param {string} seasonTypeName - API 返回的 season_type_name
    * @returns {string} 标准化的媒体类型
@@ -17117,7 +17117,7 @@ var AnimekoSource = class extends BaseSource {
     }
   }
   /**
-   * 处理并存储番剧及剧集信息
+   * ���理并存储番剧及剧集信息
    * @param {Array} sourceAnimes 搜索到的番剧列表
    * @param {string} queryTitle 原始查询标题
    * @param {Array} curAnimes 当前缓存的番剧列表
