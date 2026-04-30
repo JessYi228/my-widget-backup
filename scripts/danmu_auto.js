@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} 剧名映射表
+   * @returns {Map} ���名映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -8778,7 +8778,7 @@ var HanjutvSource = class extends BaseSource {
       return fallback;
     }
   }
-  // ── 数据规范化 ──────────────────────────────────────────────
+  // ── 数据规范化 ───────────────���──────────────────────────────
   normalizeSearchItems(items = []) {
     if (!Array.isArray(items)) return [];
     return items.map((item) => {
