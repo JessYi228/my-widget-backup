@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} ���名映射表
+   * @returns {Map} 剧名映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -8778,7 +8778,7 @@ var HanjutvSource = class extends BaseSource {
       return fallback;
     }
   }
-  // ── 数据规范化 ───────────────���──────────────────────────────
+  // ── 数据规范化 ──────────────────────────────────────────────
   normalizeSearchItems(items = []) {
     if (!Array.isArray(items)) return [];
     return items.map((item) => {
@@ -12322,7 +12322,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
   }
   /**
    * 获取单段弹幕数据
-   * 包含就地拦截元数据并进行时间轴平移与截取的能力
+   * 包含就地拦截元数据并进行时间轴平移��截取的能力
    */
   async getEpisodeSegmentDanmu(segment) {
     try {
