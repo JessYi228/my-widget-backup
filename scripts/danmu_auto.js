@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} 剧名映射表
+   * @returns {Map} 剧名��射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -3050,7 +3050,7 @@ function extractSeasonNumberFromAnimeTitle(animeTitle) {
       baseTitle: titleWithoutYear.slice(0, titleWithoutYear.lastIndexOf(trailingNumber[1])).trim()
     };
   }
-  const trailingChinese = titleWithoutYear.match(/([一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+)$/);
+  const trailingChinese = titleWithoutYear.match(/([一二三四五六七八九十壹贰叁肆��陆柒捌玖拾]+)$/);
   if (trailingChinese) {
     return {
       season: convertChineseNumber(trailingChinese[1]),
@@ -11653,7 +11653,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
     }
   }
   /**
-   * 从 season_type_name ���取媒体类型
+   * 从 season_type_name 提取媒体类型
    * B站 API 返回的类型包括：电影、番剧、国创、纪录片、综艺、电视剧等
    * @param {string} seasonTypeName - API 返回的 season_type_name
    * @returns {string} 标准化的媒体类型
