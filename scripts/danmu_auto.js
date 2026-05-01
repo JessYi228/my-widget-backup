@@ -11471,7 +11471,7 @@ var MangoSource = class extends BaseSource {
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
-        //弹幕颜色，RGB 颜色��为十进制后的值，16777215 为白色
+        //弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
         unixtime: Math.floor(Date.now() / 1e3),
         //Unix 时间戳格式
         uid: 0,
@@ -11653,7 +11653,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
     }
   }
   /**
-   * 从 season_type_name 提取媒体类型
+   * 从 season_type_name ���取媒体类型
    * B站 API 返回的类型包括：电影、番剧、国创、纪录片、综艺、电视剧等
    * @param {string} seasonTypeName - API 返回的 season_type_name
    * @returns {string} 标准化的媒体类型
