@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} 剧���映射表
+   * @returns {Map} 剧名映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -8777,7 +8777,7 @@ var HanjutvSource = class extends BaseSource {
       return fallback;
     }
   }
-  // ── 数据规范化 ────────────────────────────────────���─────────
+  // ── 数据规范化 ──────────────────────────────────────────────
   normalizeSearchItems(items = []) {
     if (!Array.isArray(items)) return [];
     return items.map((item) => {
@@ -11001,7 +11001,7 @@ var IqiyiSource = _IqiyiSource;
 
 // danmu_api/sources/mango.js
 var MangoSource = class extends BaseSource {
-  // 处理 v2_color 对���的转换逻辑
+  // 处理 v2_color 对象的转换逻辑
   transformV2Color(v2_color) {
     const DEFAULT_COLOR_INT = -1;
     if (!v2_color) {
