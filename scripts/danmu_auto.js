@@ -1025,7 +1025,7 @@ var Envs = class {
       deployPlatformToken: this.get("DEPLOY_PLATFROM_TOKEN", "", "string", true),
       // 部署平台项目名称配置（默认空）
       NODE_TLS_REJECT_UNAUTHORIZED: this.get("NODE_TLS_REJECT_UNAUTHORIZED", 1, "number"),
-      // 在建立 HTTPS 连接时是否验证服务器的 SSL/TLS 证书，0表示忽略，默认为1
+      // 在建立 HTTPS 连��时是否验证服务器的 SSL/TLS 证书，0表示忽略，默认为1
       envVarConfig
       // 环境变量分类和描述映射
     };
@@ -8725,7 +8725,7 @@ var HanjutvSource = class extends BaseSource {
     return CATE_MAP[key] || "\u5176\u4ED6";
   }
   /**
-   * 构建 TV 端请求头，返回 { headers, uid }
+   * 构建 TV 端请求头，��回 { headers, uid }
    */
   async buildTvHeaders() {
     if (!this._tvMakeHeaders) {
@@ -17434,7 +17434,7 @@ var AnimekoSource = class extends BaseSource {
   }
   /**
    * 获取具体分片的弹幕数据
-   * 标准实现：返回原始数据，格式化交由父类统一处理
+   * 标准实现：返回原始数据，格式化交由父��统一处理
    */
   async getEpisodeSegmentDanmu(segment) {
     const url = (segment.url || "").trim();
