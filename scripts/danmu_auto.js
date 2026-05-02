@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} 剧名映射表
+   * @returns {Map} 剧���映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -951,7 +951,7 @@ var Envs = class {
       groupMinute: Math.min(this.get("GROUP_MINUTE", 1, "number"), 30),
       // 分钟内合并去重（默认 1，最大值30，0表示不去重）
       danmuLimit: this.get("DANMU_LIMIT", 0, "number"),
-      // 等间隔采样限制弹幕总数，单位为k，即千：默��� 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
+      // 等间隔采样限制弹幕总数，单位为k，即千：默认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
       proxyUrl: this.get("PROXY_URL", "", "string", true),
       // 代理/反代地址
       danmuSimplifiedTraditional: this.get("DANMU_SIMPLIFIED_TRADITIONAL", "default", "string"),
@@ -1764,7 +1764,7 @@ function ftPYStr() {
 }
 var exceptionMap = /* @__PURE__ */ new Map([
   ["\u5403", "\u5403"],
-  // 吃 -> 喫，但��源，不转换
+  // 吃 -> 喫，但同源，不转换
   ["\u6CE8", "\u6CE8"]
   // 注 -> 註，但同源，不转换
 ]);
@@ -8777,7 +8777,7 @@ var HanjutvSource = class extends BaseSource {
       return fallback;
     }
   }
-  // ── 数据规范化 ──────────────────────────────────────────────
+  // ── 数据规范化 ────────────────────────────────────���─────────
   normalizeSearchItems(items = []) {
     if (!Array.isArray(items)) return [];
     return items.map((item) => {
@@ -11001,7 +11001,7 @@ var IqiyiSource = _IqiyiSource;
 
 // danmu_api/sources/mango.js
 var MangoSource = class extends BaseSource {
-  // 处理 v2_color 对象的转换逻辑
+  // 处理 v2_color 对���的转换逻辑
   transformV2Color(v2_color) {
     const DEFAULT_COLOR_INT = -1;
     if (!v2_color) {
