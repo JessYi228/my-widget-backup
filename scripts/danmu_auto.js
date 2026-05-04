@@ -1764,7 +1764,7 @@ function ftPYStr() {
 }
 var exceptionMap = /* @__PURE__ */ new Map([
   ["\u5403", "\u5403"],
-  // 吃 -> 喫，但同源，不转换
+  // 吃 -> 喫，但同���，不转换
   ["\u6CE8", "\u6CE8"]
   // 注 -> 註，但同源，不转换
 ]);
@@ -10732,7 +10732,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   /**
    * 为 API 生成签名
    * @param {Object} params - 请求参数
-   * @returns {string} MD5 ��名
+   * @returns {string} MD5 签名
    */
   _createSign(params) {
     const cleanParams = {};
@@ -11532,7 +11532,7 @@ var MangoSource = class extends BaseSource {
         ct: 1,
         // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
-        //字体大小，25 为中，18 为小
+        //字体大小，25 为中，18 ��小
         color: 16777215,
         //弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
         unixtime: Math.floor(Date.now() / 1e3),
