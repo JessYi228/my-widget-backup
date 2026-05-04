@@ -10732,7 +10732,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   /**
    * 为 API 生成签名
    * @param {Object} params - 请求参数
-   * @returns {string} MD5 签名
+   * @returns {string} MD5 ��名
    */
   _createSign(params) {
     const cleanParams = {};
