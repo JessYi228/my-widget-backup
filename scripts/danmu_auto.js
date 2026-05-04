@@ -15324,7 +15324,7 @@ var LeshiSource = class extends BaseSource {
           let year = null;
           let yearMatch = /<b>年份：<\/b>.*?>(\d{4})<\/a>/.exec(htmlBlock);
           if (!yearMatch) {
-            yearMatch = /<b>上映���间：<\/b>.*?>(\d{4})<\/a>/.exec(htmlBlock);
+            yearMatch = /<b>上映时间：<\/b>.*?>(\d{4})<\/a>/.exec(htmlBlock);
           }
           if (!yearMatch) {
             yearMatch = /_y(\d{4})_/.exec(htmlBlock);
