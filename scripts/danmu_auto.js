@@ -17329,7 +17329,7 @@ var AnimekoSource = class extends BaseSource {
   /**
    * 处理并存储番剧及剧集信息
    * @param {Array} sourceAnimes 搜索到的番剧列表
-   * @param {string} queryTitle 原始查询标��
+   * @param {string} queryTitle 原始查询标题
    * @param {Array} curAnimes 当前缓存的番剧列表
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null) {
