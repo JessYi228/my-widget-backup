@@ -10766,7 +10766,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   }
   /**
    * 处理搜索结果并格式化为 DanDanPlay 格式
-   * @param {Array} sourceAnimes - 搜索结果数��
+   * @param {Array} sourceAnimes - 搜索结果数组
    * @param {string} queryTitle - 搜索关键词
    * @param {Array} curAnimes - 当前动漫列表
    * @returns {Promise<void>}
