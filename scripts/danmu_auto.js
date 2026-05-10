@@ -10766,7 +10766,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   }
   /**
    * 处理搜索结果并格式化为 DanDanPlay 格式
-   * @param {Array} sourceAnimes - 搜索结果数组
+   * @param {Array} sourceAnimes - 搜索结果数��
    * @param {string} queryTitle - 搜索关键词
    * @param {Array} curAnimes - 当前动漫列表
    * @returns {Promise<void>}
@@ -17216,7 +17216,7 @@ var AnimekoSource = class extends BaseSource {
     }
   }
   /**
-   * 将 API 结果转换为统一的数据格式
+   * 将 API 结果转��为统一的数据格式
    * @param {Array} results API 原始结果
    * @returns {Array} 转换后的数据
    */
@@ -17329,7 +17329,7 @@ var AnimekoSource = class extends BaseSource {
   /**
    * 处理并存储番剧及剧集信息
    * @param {Array} sourceAnimes 搜索到的番剧列表
-   * @param {string} queryTitle 原始查询标��
+   * @param {string} queryTitle 原始查询标题
    * @param {Array} curAnimes 当前缓存的番剧列表
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null) {
