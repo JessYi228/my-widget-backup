@@ -951,7 +951,7 @@ var Envs = class {
       groupMinute: Math.min(this.get("GROUP_MINUTE", 1, "number"), 30),
       // 分钟内合并去重（默认 1，最大值30，0表示不去重）
       danmuLimit: this.get("DANMU_LIMIT", 0, "number"),
-      // 等间隔采样限制弹幕总数，单位���k，即千：默认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
+      // 等间隔采样限制弹幕总数，单位为k，即千：默认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
       proxyUrl: this.get("PROXY_URL", "", "string", true),
       // 代理/反代地址
       danmuSimplifiedTraditional: this.get("DANMU_SIMPLIFIED_TRADITIONAL", "default", "string"),
@@ -6319,7 +6319,7 @@ function detectCollectionCandidates(curAnimes) {
     const startBracketMatch = protectedTitle.match(/^(?:【|\[)(.+?)(?:】|\])/);
     if (startBracketMatch) {
       const content = startBracketMatch[1];
-      if (!/^(TV|剧场版|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content)) {
+      if (!/^(TV|剧场���|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content)) {
         protectedTitle = protectedTitle.replace(startBracketMatch[0], content + " ");
       }
     }
@@ -9015,7 +9015,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── 详情 & 剧集 ──────────────────────────────────────────────
+  // ── 详情 & 剧集 ────────────────────────────────────────��─────
   async getSeriesDetail(id, loader, missingLogTag, errorTag) {
     try {
       const sid = String(id || "").trim();
@@ -17329,7 +17329,7 @@ var AnimekoSource = class extends BaseSource {
   /**
    * 处理并存储番剧及剧集信息
    * @param {Array} sourceAnimes 搜索到的番剧列表
-   * @param {string} queryTitle 原始查询标题
+   * @param {string} queryTitle 原始查询标��
    * @param {Array} curAnimes 当前缓存的番剧列表
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null) {
