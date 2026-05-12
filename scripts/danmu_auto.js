@@ -10766,7 +10766,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   }
   /**
    * 处理搜索结果并格式化为 DanDanPlay 格式
-   * @param {Array} sourceAnimes - 搜索结果数组
+   * @param {Array} sourceAnimes - 搜索结果数��
    * @param {string} queryTitle - 搜索关键词
    * @param {Array} curAnimes - 当前动漫列表
    * @returns {Promise<void>}
@@ -17329,7 +17329,7 @@ var AnimekoSource = class extends BaseSource {
   /**
    * 处理并存储番剧及剧集信息
    * @param {Array} sourceAnimes 搜索到的番剧列表
-   * @param {string} queryTitle 原始查询标题
+   * @param {string} queryTitle 原始查询标��
    * @param {Array} curAnimes 当前缓存的番剧列表
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null) {
@@ -18493,7 +18493,7 @@ WidgetMetadata = {
         }
       ]
     },
-    // 匹配��置
+    // 匹配配置
     {
       name: "platformOrder",
       title: "\u5E73\u53F0\u4F18\u9009\u914D\u7F6E\uFF0C\u53EF\u9009['qiyi', 'bilibili1', 'imgo', 'youku', 'qq', 'migu', 'sohu', 'leshi, 'xigua', 'maiduidui', 'aiyifan', 'renren', 'hanjutv', 'bahamut', 'dandan', 'custom']",
