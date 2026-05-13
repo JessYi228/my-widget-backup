@@ -1764,7 +1764,7 @@ function ftPYStr() {
 }
 var exceptionMap = /* @__PURE__ */ new Map([
   ["\u5403", "\u5403"],
-  // 吃 -> 喫，但同���，不转换
+  // 吃 -> 喫，但同源，不转换
   ["\u6CE8", "\u6CE8"]
   // 注 -> 註，但同源，不转换
 ]);
@@ -10766,7 +10766,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   }
   /**
    * 处理搜索结果并格式化为 DanDanPlay 格式
-   * @param {Array} sourceAnimes - 搜索结果数组
+   * @param {Array} sourceAnimes - 搜索结果数��
    * @param {string} queryTitle - 搜索关键词
    * @param {Array} curAnimes - 当前动漫列表
    * @returns {Promise<void>}
@@ -17216,7 +17216,7 @@ var AnimekoSource = class extends BaseSource {
     }
   }
   /**
-   * 将 API 结果转换为统一的数据格式
+   * 将 API 结果转��为统一的数据格式
    * @param {Array} results API 原始结果
    * @returns {Array} 转换后的数据
    */
