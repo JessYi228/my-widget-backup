@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} ���名映射表
+   * @returns {Map} 剧名映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -1764,7 +1764,7 @@ function ftPYStr() {
 }
 var exceptionMap = /* @__PURE__ */ new Map([
   ["\u5403", "\u5403"],
-  // 吃 -> 喫，但同源，不转换
+  // 吃 -> 喫，但同���，不转换
   ["\u6CE8", "\u6CE8"]
   // 注 -> 註，但同源，不转换
 ]);
@@ -6319,7 +6319,7 @@ function detectCollectionCandidates(curAnimes) {
     const startBracketMatch = protectedTitle.match(/^(?:【|\[)(.+?)(?:】|\])/);
     if (startBracketMatch) {
       const content = startBracketMatch[1];
-      if (!/^(TV|剧��版|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content)) {
+      if (!/^(TV|剧场版|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content)) {
         protectedTitle = protectedTitle.replace(startBracketMatch[0], content + " ");
       }
     }
