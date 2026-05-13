@@ -6319,7 +6319,7 @@ function detectCollectionCandidates(curAnimes) {
     const startBracketMatch = protectedTitle.match(/^(?:【|\[)(.+?)(?:】|\])/);
     if (startBracketMatch) {
       const content = startBracketMatch[1];
-      if (!/^(TV|剧场���|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content)) {
+      if (!/^(TV|剧场版|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content)) {
         protectedTitle = protectedTitle.replace(startBracketMatch[0], content + " ");
       }
     }
@@ -10766,7 +10766,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   }
   /**
    * 处理搜索结果并格式化为 DanDanPlay 格式
-   * @param {Array} sourceAnimes - 搜索结果数组
+   * @param {Array} sourceAnimes - 搜索结果数��
    * @param {string} queryTitle - 搜索关键词
    * @param {Array} curAnimes - 当前动漫列表
    * @returns {Promise<void>}
@@ -17216,7 +17216,7 @@ var AnimekoSource = class extends BaseSource {
     }
   }
   /**
-   * 将 API 结果转换为统一的数据格式
+   * 将 API 结果转��为统一的数据格式
    * @param {Array} results API 原始结果
    * @returns {Array} 转换后的数据
    */
