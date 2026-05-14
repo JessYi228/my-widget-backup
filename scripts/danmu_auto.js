@@ -10766,7 +10766,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   }
   /**
    * 处理搜索结果并格式化为 DanDanPlay 格式
-   * @param {Array} sourceAnimes - 搜索结果数组
+   * @param {Array} sourceAnimes - 搜索结果数��
    * @param {string} queryTitle - 搜索关键词
    * @param {Array} curAnimes - 当前动漫列表
    * @returns {Promise<void>}
@@ -17216,7 +17216,7 @@ var AnimekoSource = class extends BaseSource {
     }
   }
   /**
-   * 将 API 结果转换为统一的数据格式
+   * 将 API 结果转��为统一的数据格式
    * @param {Array} results API 原始结果
    * @returns {Array} 转换后的数据
    */
@@ -17390,7 +17390,7 @@ var AnimekoSource = class extends BaseSource {
     return processAnimekoAnimes;
   }
   /**
-   * 获取完���弹幕列表
+   * 获取完整弹幕列表
    * 支持自动降级：Global -> CN
    * @param {string} episodeId 剧集 ID 或 完整 API URL
    * @returns {Promise<Array>} 弹幕数组
