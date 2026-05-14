@@ -951,7 +951,7 @@ var Envs = class {
       groupMinute: Math.min(this.get("GROUP_MINUTE", 1, "number"), 30),
       // 分钟内合并去重（默认 1，最大值30，0表示不去重）
       danmuLimit: this.get("DANMU_LIMIT", 0, "number"),
-      // 等间隔采样限制弹幕总数，单位为k，即千：默认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
+      // 等间隔采样限制弹幕总数，单���为k，即千：默认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
       proxyUrl: this.get("PROXY_URL", "", "string", true),
       // 代理/反代地址
       danmuSimplifiedTraditional: this.get("DANMU_SIMPLIFIED_TRADITIONAL", "default", "string"),
@@ -10766,7 +10766,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   }
   /**
    * 处理搜索结果并格式化为 DanDanPlay 格式
-   * @param {Array} sourceAnimes - 搜索结果数��
+   * @param {Array} sourceAnimes - 搜索结果数组
    * @param {string} queryTitle - 搜索关键词
    * @param {Array} curAnimes - 当前动漫列表
    * @returns {Promise<void>}
@@ -17216,7 +17216,7 @@ var AnimekoSource = class extends BaseSource {
     }
   }
   /**
-   * 将 API 结果转��为统一的数据格式
+   * 将 API 结果转换为统一的数据格式
    * @param {Array} results API 原始结果
    * @returns {Array} 转换后的数据
    */
