@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} ��名映射表
+   * @returns {Map} 剧名映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -9015,7 +9015,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── 详情 & 剧集 ────────────────────────────────────────��─────
+  // ── 详情 & 剧集 ──────────────────────────────────────────────
   async getSeriesDetail(id, loader, missingLogTag, errorTag) {
     try {
       const sid = String(id || "").trim();
