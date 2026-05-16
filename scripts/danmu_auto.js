@@ -951,7 +951,7 @@ var Envs = class {
       groupMinute: Math.min(this.get("GROUP_MINUTE", 1, "number"), 30),
       // 分钟内合并去重（默认 1，最大值30，0表示不去重）
       danmuLimit: this.get("DANMU_LIMIT", 0, "number"),
-      // 等间隔采样限制弹幕总数，单位为k，即千：默认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
+      // 等间隔采样限制弹幕总数，单位为k，即千：默认 0���表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
       proxyUrl: this.get("PROXY_URL", "", "string", true),
       // 代理/反代地址
       danmuSimplifiedTraditional: this.get("DANMU_SIMPLIFIED_TRADITIONAL", "default", "string"),
@@ -1764,7 +1764,7 @@ function ftPYStr() {
 }
 var exceptionMap = /* @__PURE__ */ new Map([
   ["\u5403", "\u5403"],
-  // 吃 -> 喫，但同源，不转换
+  // 吃 -> 喫，但同源���不转换
   ["\u6CE8", "\u6CE8"]
   // 注 -> 註，但同源，不转换
 ]);
@@ -6319,7 +6319,7 @@ function detectCollectionCandidates(curAnimes) {
     const startBracketMatch = protectedTitle.match(/^(?:【|\[)(.+?)(?:】|\])/);
     if (startBracketMatch) {
       const content = startBracketMatch[1];
-      if (!/^(TV|剧场���|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content)) {
+      if (!/^(TV|剧场版|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content)) {
         protectedTitle = protectedTitle.replace(startBracketMatch[0], content + " ");
       }
     }
