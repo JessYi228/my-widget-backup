@@ -9015,7 +9015,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── 详情 & 剧集 ──────────────────────────────────────────────
+  // ── 详情 & 剧集 ────────────────────────────────────────��─────
   async getSeriesDetail(id, loader, missingLogTag, errorTag) {
     try {
       const sid = String(id || "").trim();
@@ -10766,7 +10766,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   }
   /**
    * 处理搜索结果并格式化为 DanDanPlay 格式
-   * @param {Array} sourceAnimes - 搜索结果数��
+   * @param {Array} sourceAnimes - 搜索结果数组
    * @param {string} queryTitle - 搜索关键词
    * @param {Array} curAnimes - 当前动漫列表
    * @returns {Promise<void>}
