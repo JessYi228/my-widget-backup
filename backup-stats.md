@@ -1,6 +1,6 @@
 ## 📊 备份统计
 
-- 🕒 最后更新: 2026-05-23 21:53:50
+- 🕒 最后更新: 2026-05-23 22:52:24
 - 📁 脚本数量: 10
 - 📄 脚本列表:
 
@@ -9,7 +9,7 @@
   - danmu.js (6398 bytes)
   - danmu_auto.js (894868 bytes)
   - danmu_playurl.js (46921 bytes)
-  - douban.js (97010 bytes)
+  - douban.js (97034 bytes)
   - letterboxd.js (34438 bytes)
   - person_movie.js (7843 bytes)
   - trakt.js (18206 bytes)
