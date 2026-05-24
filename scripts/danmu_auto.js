@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} 剧名映射表
+   * @returns {Map} 剧��映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -8970,7 +8970,7 @@ ${path2}?${sortedQuery}`;
     return resultEpisodes;
   }
   /**
-   * 处理搜索结��
+   * 处理搜索结果
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
@@ -11057,7 +11057,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
       return {
         provider: "iqiyi",
         mediaId: `movie_${qipuId}`,
-        // 使用特殊前缀标识电影
+        // 使用特殊前缀���识电影
         title: cleanedTitle2,
         type: mediaType,
         year: year2,
