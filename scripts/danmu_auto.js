@@ -4742,7 +4742,7 @@ var RegexStore = {
     NA_TAG: /(\(|（|\[)N\/A(\)|）|\])/gi,
     SOURCE_TAG: /【.*?】/g,
     REGION_LIMIT: /(\(|（|\[)仅限.*?地区(\)|）|\])/g,
-    PUNCTUATION: /[!！?？,，.���、~～:：\-–—_]/g,
+    PUNCTUATION: /[!！?？,，.。、~～:：\-–—_]/g,
     WHITESPACE: /\s+/g,
     FROM_SUFFIX: /\s*from\s+.*$/i,
     PARENTHESES_CONTENT: /(\(|（|\[).*?(\)|）|\])/g,
@@ -17836,7 +17836,7 @@ var AiyifanSource = class extends BaseSource {
   /**
    * 获取某集的弹幕分片列表
    * @param {string} id - 视频ID
-   * @returns {Promise<any>} 弹幕分片列表
+   * @returns {Promise<any>} ���幕分片列表
    */
   async getEpisodeDanmuSegments(id) {
     const danmaku = await this.getEpisodeDanmu(id);
@@ -18275,7 +18275,7 @@ var AnimekoSource = class extends BaseSource {
    * 获取完整弹幕列表
    * 支持自动降级：Global -> CN
    * @param {string} episodeId 剧集 ID 或 完整 API URL
-   * @returns {Promise<Array>} 弹幕数组
+   * @returns {Promise<Array>} 弹幕数��
    */
   async getEpisodeDanmu(episodeId) {
     let realId = String(episodeId).trim();
