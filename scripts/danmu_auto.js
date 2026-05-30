@@ -4741,7 +4741,7 @@ var RegexStore = {
   Clean: {
     NA_TAG: /(\(|（|\[)N\/A(\)|）|\])/gi,
     SOURCE_TAG: /【.*?】/g,
-    REGION_LIMIT: /(\(|（|\[)仅限.*?地区(\)|��|\])/g,
+    REGION_LIMIT: /(\(|（|\[)仅限.*?地区(\)|）|\])/g,
     PUNCTUATION: /[!！?？,，.。、~～:：\-–—_]/g,
     WHITESPACE: /\s+/g,
     FROM_SUFFIX: /\s*from\s+.*$/i,
