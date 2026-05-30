@@ -4741,7 +4741,7 @@ var RegexStore = {
   Clean: {
     NA_TAG: /(\(|（|\[)N\/A(\)|）|\])/gi,
     SOURCE_TAG: /【.*?】/g,
-    REGION_LIMIT: /(\(|（|\[)仅限.*?地区(\)|）|\])/g,
+    REGION_LIMIT: /(\(|（|\[)仅限.*?地区(\)|��|\])/g,
     PUNCTUATION: /[!！?？,，.。、~～:：\-–—_]/g,
     WHITESPACE: /\s+/g,
     FROM_SUFFIX: /\s*from\s+.*$/i,
@@ -8970,7 +8970,7 @@ ${path2}?${sortedQuery}`;
     return resultEpisodes;
   }
   /**
-   * 处理搜索结��
+   * 处理搜索结果
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
