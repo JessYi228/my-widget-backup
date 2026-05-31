@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级方法)
+   * 获取网页版弹幕 (终极降级���法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
@@ -18275,7 +18275,7 @@ var AnimekoSource = class extends BaseSource {
    * 获取完整弹幕列表
    * 支持自动降级：Global -> CN
    * @param {string} episodeId 剧集 ID 或 完整 API URL
-   * @returns {Promise<Array>} 弹幕���组
+   * @returns {Promise<Array>} 弹幕数组
    */
   async getEpisodeDanmu(episodeId) {
     let realId = String(episodeId).trim();
