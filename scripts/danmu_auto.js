@@ -7681,7 +7681,7 @@ var VodSource = class extends BaseSource {
    * 处理搜索结果
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
-   * @param {Array} curAnimes 结��池
+   * @param {Array} curAnimes 结果池
    * @param {string} vodName VOD资源站名称
    * @param {Map|null} detailStore 详情缓存
    * @param {number|null} querySeason 目标季度
@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级方法)
+   * 获取网页版弹幕 (终极降级���法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
