@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} 剧��映射表
+   * @returns {Map} 剧名映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级方法)
+   * 获取网页版弹幕 (终极降级���法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
@@ -11057,7 +11057,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
       return {
         provider: "iqiyi",
         mediaId: `movie_${qipuId}`,
-        // 使用特殊前缀���识电影
+        // 使用特殊前缀标识电影
         title: cleanedTitle2,
         type: mediaType,
         year: year2,
@@ -18275,7 +18275,7 @@ var AnimekoSource = class extends BaseSource {
    * 获取完整弹幕列表
    * 支持自动降级：Global -> CN
    * @param {string} episodeId 剧集 ID 或 完整 API URL
-   * @returns {Promise<Array>} ���幕数组
+   * @returns {Promise<Array>} 弹幕数组
    */
   async getEpisodeDanmu(episodeId) {
     let realId = String(episodeId).trim();
