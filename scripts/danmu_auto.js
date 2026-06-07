@@ -8268,7 +8268,7 @@ var RenrenSource = class extends BaseSource {
     return result;
   }
   /**
-   * 生成 Mac ���格式的 UUID 设备指纹
+   * 生成 Mac 端格式的 UUID 设备指纹
    */
   generateMacAliId() {
     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级方法)
+   * 获取网页版弹幕 (终极降级���法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
