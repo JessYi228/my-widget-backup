@@ -11057,7 +11057,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
       return {
         provider: "iqiyi",
         mediaId: `movie_${qipuId}`,
-        // 使用特殊前缀��识电影
+        // 使用特殊前缀标识电影
         title: cleanedTitle2,
         type: mediaType,
         year: year2,
@@ -18275,7 +18275,7 @@ var AnimekoSource = class extends BaseSource {
    * 获取完整弹幕列表
    * 支持自动降级：Global -> CN
    * @param {string} episodeId 剧集 ID 或 完整 API URL
-   * @returns {Promise<Array>} 弹幕数组
+   * @returns {Promise<Array>} 弹幕��组
    */
   async getEpisodeDanmu(episodeId) {
     let realId = String(episodeId).trim();
