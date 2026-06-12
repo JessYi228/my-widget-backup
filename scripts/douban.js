@@ -798,7 +798,7 @@ WidgetMetadata = {
             {"title":"朴海镇","value":"朴海镇"}, {"title":"金汎","value":"金汎"}, {"title":"安孝燮","value":"安孝燮"},
             {"title":"三浦春马","value":"三浦春馬"}, {"title":"志尊淳","value":"志尊淳"}, {"title":"町田启太","value":"町田啓太"},
             {"title":"刘亚仁","value":"刘亚仁"}, {"title":"金永光","value":"金永光"}, {"title":"李俊昊","value":"李俊昊"},
-            {"title":"长谷川博己","value":"長谷川博己"}, {"title":"坂口健太郎","value":"坂口健太郎"}, {"title":"中川大志","value":"中川大志"},
+            {"title":"长��川博己","value":"長谷川博己"}, {"title":"坂口健太郎","value":"坂口健太郎"}, {"title":"中川大志","value":"中川大志"},
             {"title":"崔岷植","value":"崔岷植"}, {"title":"宋承宪","value":"宋承宪"}, {"title":"金南佶","value":"金南佶"},
             {"title":"渡边谦","value":"渡辺謙"}, {"title":"染谷将太","value":"染谷将太"}
           ],
@@ -882,7 +882,7 @@ WidgetMetadata = {
             {"title":"凯莉·穆里根","value":"凯莉·穆里根"}, {"title":"维奥拉·戴维斯","value":"维奥拉·戴维斯"}, {"title":"奥克塔维娅·斯宾瑟","value":"奥克塔维娅·斯宾瑟"},
             {"title":"黛安·基顿","value":"黛安·基顿"}, {"title":"苏珊·萨兰登","value":"苏珊·萨兰登"}, {"title":"梅丽莎·麦卡西","value":"梅丽莎·麦卡西"},
             {"title":"蒂尔达·斯文顿","value":"蒂尔达·斯文顿"}, {"title":"劳拉·邓恩","value":"劳拉·邓恩"}, {"title":"蕾妮·齐薇格","value":"蕾妮·齐薇格"},
-            {"title":"安娜·��德里克","value":"安娜·肯德里克"}, {"title":"珍妮弗·康纳利","value":"珍妮弗·康纳利"}, {"title":"克莱尔·芙伊","value":"克莱尔·芙伊"},
+            {"title":"安娜·肯德里克","value":"安娜·肯德里克"}, {"title":"珍妮弗·康纳利","value":"珍妮弗·康纳利"}, {"title":"克莱尔·芙伊","value":"克莱尔·芙伊"},
             {"title":"艾米丽·莫迪默","value":"艾米丽·莫迪默"}, {"title":"凯瑟琳·泽塔-琼斯","value":"凯瑟琳·泽塔-琼斯"}, {"title":"伊丽莎白·班克斯","value":"伊丽莎白·班克斯"},
             {"title":"弗洛伦丝·皮尤","value":"弗洛伦丝·皮尤"}, {"title":"玛丽昂·歌迪亚","value":"玛丽昂·歌迪亚"}
           ],
@@ -1055,7 +1055,7 @@ WidgetMetadata = {
             {"title":"陈慧琳","value":"陈慧琳"}, {"title":"林依晨","value":"林依晨"}, {"title":"陈乔恩","value":"陈乔恩"},
             {"title":"杨丞琳","value":"杨丞琳"}, {"title":"张钧甯","value":"张钧甯"}, {"title":"桂纶镁","value":"桂纶镁"},
             {"title":"徐若瑄","value":"徐若瑄"}, {"title":"谢欣颖","value":"谢欣颖"}, {"title":"柯佳嬿","value":"柯佳嬿"},
-            {"title":"陈意涵","value":"陈意涵"}, {"title":"白歆惠","value":"白歆惠"}, {"title":"简嫚书","value":"简���书"},
+            {"title":"陈意涵","value":"陈意涵"}, {"title":"白歆惠","value":"白歆惠"}, {"title":"简嫚书","value":"简嫚书"},
             {"title":"曾之乔","value":"曾之乔"}, {"title":"郭采洁","value":"郭采洁"}, {"title":"夏于乔","value":"夏于乔"},
             {"title":"安心亚","value":"安心亚"}, {"title":"赖雅妍","value":"赖雅妍"}, {"title":"许玮甯","value":"许玮甯"},
             {"title":"谢盈萱","value":"谢盈萱"}, {"title":"严艺文","value":"严艺文"}, {"title":"王净","value":"王净"},

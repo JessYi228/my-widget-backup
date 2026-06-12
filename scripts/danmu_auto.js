@@ -989,7 +989,7 @@ var Envs = class {
       colorPool: this.get("COLOR_POOL", "16777215,16777215,16777215,16777215,16777215,16777215,16777215,16777215,16744319,16752762,16774799,9498256,8388564,8900346,14204888,16758465", "string"),
       // 自定义颜色池，CONVERT_COLOR为color时生效
       danmuOutputFormat: this.get("DANMU_OUTPUT_FORMAT", "json", "string"),
-      // 弹幕输出格式配置（默认 json，可���值：json, xml）
+      // 弹幕输出格式配置（默认 json，可选值：json, xml）
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", false, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", false, "boolean"),
@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级方法)
+   * 获取网页版弹幕 (终极降级���法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
