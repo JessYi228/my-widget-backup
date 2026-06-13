@@ -649,7 +649,7 @@ var Envs = class {
    * 从环境变量 MERGE_SOURCE_PAIRS 获取配置
    * 支持使用分号或逗号分隔多组配置
    * 支持一主多从配置，第一个为主源，后续为副源
-   * 允许单源配置（用于保留特定源的原始结果，不被合并消耗）
+   * 允许单源配置（用于保留特定源的原始结果，不被合并���耗）
    * 格式示例: bilibili&animeko, dandan&animeko&bahamut,dandan
    * @returns {Array} 合并配置数组 [{primary: 'dandan', secondaries: ['animeko', 'bahamut']}, {primary: 'renren', secondaries: []}]
    */
@@ -951,7 +951,7 @@ var Envs = class {
       groupMinute: Math.min(this.get("GROUP_MINUTE", 1, "number"), 30),
       // 分钟内合并去重（默认 1，最大值30，0表示不去重）
       danmuLimit: this.get("DANMU_LIMIT", 0, "number"),
-      // 等间隔采样限制弹幕总数，单位为k，即千：��认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
+      // 等间隔采样限制弹幕总数，单位为k，即千：默认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
       proxyUrl: this.get("PROXY_URL", "", "string", true),
       // 代理/反代地址
       danmuSimplifiedTraditional: this.get("DANMU_SIMPLIFIED_TRADITIONAL", "default", "string"),
@@ -1025,7 +1025,7 @@ var Envs = class {
       deployPlatformToken: this.get("DEPLOY_PLATFROM_TOKEN", "", "string", true),
       // 部署平台项目名称配置（默认空）
       NODE_TLS_REJECT_UNAUTHORIZED: this.get("NODE_TLS_REJECT_UNAUTHORIZED", 1, "number"),
-      // 在建立 HTTPS 连接时是否验证服务器的 SSL/TLS 证书，0表示忽略，默认为1
+      // 在建立 HTTPS 连��时是否验证服务器的 SSL/TLS 证书，0表示忽略，默认为1
       envVarConfig
       // 环境变量分类和描述映射
     };
@@ -17836,7 +17836,7 @@ var AiyifanSource = class extends BaseSource {
   /**
    * 获取某集的弹幕分片列表
    * @param {string} id - 视频ID
-   * @returns {Promise<any>} 弹幕分片列��
+   * @returns {Promise<any>} 弹幕分片列表
    */
   async getEpisodeDanmuSegments(id) {
     const danmaku = await this.getEpisodeDanmu(id);
