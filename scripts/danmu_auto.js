@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级方法)
+   * 获取网页版弹幕 (终极降级���法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
@@ -11057,7 +11057,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
       return {
         provider: "iqiyi",
         mediaId: `movie_${qipuId}`,
-        // 使用特殊前��标识电影
+        // 使用特殊前缀标识电影
         title: cleanedTitle2,
         type: mediaType,
         year: year2,
