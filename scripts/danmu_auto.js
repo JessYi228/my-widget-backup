@@ -4742,7 +4742,7 @@ var RegexStore = {
     NA_TAG: /(\(|（|\[)N\/A(\)|）|\])/gi,
     SOURCE_TAG: /【.*?】/g,
     REGION_LIMIT: /(\(|（|\[)仅限.*?地区(\)|）|\])/g,
-    PUNCTUATION: /[!！?？,，.���、~～:：\-–—_]/g,
+    PUNCTUATION: /[!！?？,，.。、~～:：\-–—_]/g,
     WHITESPACE: /\s+/g,
     FROM_SUFFIX: /\s*from\s+.*$/i,
     PARENTHESES_CONTENT: /(\(|（|\[).*?(\)|）|\])/g,
@@ -11057,7 +11057,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
       return {
         provider: "iqiyi",
         mediaId: `movie_${qipuId}`,
-        // 使用特殊前缀标识电影
+        // 使用特殊前��标识电影
         title: cleanedTitle2,
         type: mediaType,
         year: year2,
