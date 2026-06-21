@@ -1025,7 +1025,7 @@ var Envs = class {
       deployPlatformToken: this.get("DEPLOY_PLATFROM_TOKEN", "", "string", true),
       // 部署平台项目名称配置（默认空）
       NODE_TLS_REJECT_UNAUTHORIZED: this.get("NODE_TLS_REJECT_UNAUTHORIZED", 1, "number"),
-      // 在建立 HTTPS 连��时是否验证服务器的 SSL/TLS 证书，0表示忽略，默认为1
+      // 在建立 HTTPS 连接时是否验证服务器的 SSL/TLS 证书，0表示忽略，默认为1
       envVarConfig
       // 环境变量分类和描述映射
     };
@@ -9609,7 +9609,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── ��情 & 剧集 ──────────────────────────────────────────────
+  // ── 详情 & 剧集 ──────────────────────────────────────────────
   async getSeriesDetail(id, loader, missingLogTag, errorTag) {
     try {
       const sid = String(id || "").trim();
