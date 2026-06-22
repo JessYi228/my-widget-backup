@@ -4742,7 +4742,7 @@ var RegexStore = {
     NA_TAG: /(\(|（|\[)N\/A(\)|）|\])/gi,
     SOURCE_TAG: /【.*?】/g,
     REGION_LIMIT: /(\(|（|\[)仅限.*?地区(\)|）|\])/g,
-    PUNCTUATION: /[!！?？,，.。���~～:：\-–—_]/g,
+    PUNCTUATION: /[!！?？,，.。、~～:：\-–—_]/g,
     WHITESPACE: /\s+/g,
     FROM_SUFFIX: /\s*from\s+.*$/i,
     PARENTHESES_CONTENT: /(\(|（|\[).*?(\)|）|\])/g,
@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级方法)
+   * 获取网页版弹幕 (终极降级���法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
@@ -17836,7 +17836,7 @@ var AiyifanSource = class extends BaseSource {
   /**
    * 获取某集的弹幕分片列表
    * @param {string} id - 视频ID
-   * @returns {Promise<any>} ��幕分片列表
+   * @returns {Promise<any>} 弹幕分片列表
    */
   async getEpisodeDanmuSegments(id) {
     const danmaku = await this.getEpisodeDanmu(id);
