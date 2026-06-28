@@ -3863,7 +3863,7 @@ function groupDanmusByMinute(filteredDanmus, n, isMultiSource = false) {
           like: 0,
           // 初始化like字段
           sources: /* @__PURE__ */ new Set()
-          // 收集当前具���弹幕内容的真实独立来源
+          // 收集当前具体弹幕内容的真实独立来源
         };
       }
       acc[message].count += 1;
@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级方法)
+   * 获取网页版弹幕 (终极降级���法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
