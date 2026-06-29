@@ -257,7 +257,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
 // 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
 function extractSeasonNumber(animeTitle) {
   const title = String(animeTitle || "");
-  let m = title.match(/第\s*([0-9���二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+)\s*[季部]/);
+  let m = title.match(/第\s*([0-9一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+)\s*[季部]/);
   if (m) {
     const n = convertChineseNumber(m[1]);
     if (n > 0) return n;
