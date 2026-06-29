@@ -659,7 +659,7 @@ async function getDetailById(params) {
   // 多 source 并发，同 source 内 4 级 fallback 保持串行
   const results = await mapDanmuSourcesInBatches(sources, DANMU_SOURCE_BATCH_SIZE, async (source) => {
     try {
-      // 1. match 优先：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接���配当前集。
+      // 1. match 优先：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接匹配当前集。
       //    库内直接匹配 + 严格标题过滤，一步到位拿稳定 episodeId，不依赖易过期的临时ID。
       let episodes = await fetchEpisodesByMatch(source, matchTitle, season, episode);
       // 2. 失败 → 标准 bangumi 端点（官方 dandanplay / 真实作品ID 直接命中）
@@ -736,7 +736,7 @@ async function getCommentsById(params) {
         lastError = new Error("获取数据失败");
       } catch (error) {
         lastError = error;
-        console.error(`请求 ${source.server} 失败:`, error);
+        console.error(`请求 ${source.server} 失��:`, error);
       }
     }
 
