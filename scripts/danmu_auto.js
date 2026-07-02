@@ -1115,7 +1115,7 @@ var Globals = {
   redisCacheInitialized: false,
   // redis 缓存是否已初始化
   lastSelectMap: /* @__PURE__ */ new Map(),
-  // 存储查询关键字上次选择的animeId，用于下次match自动匹配时优先选择该anime
+  // 存储查询关键字上次选择的animeId，用于下次match自动匹���时优先选择该anime
   reqRecords: [],
   // 记录请求历史，包括接口/参数/请求时间
   todayReqNum: 0,
@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级���法)
+   * 获取网页版弹幕 (终极降级方法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
@@ -12665,7 +12665,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
     return [];
   }
   /**
-   * 处理搜索结果
+   * 处理搜索���果
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
