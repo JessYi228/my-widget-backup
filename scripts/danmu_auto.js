@@ -951,7 +951,7 @@ var Envs = class {
       groupMinute: Math.min(this.get("GROUP_MINUTE", 1, "number"), 30),
       // 分钟内合并去重（默认 1，最大值30，0表示不去重）
       danmuLimit: this.get("DANMU_LIMIT", 0, "number"),
-      // 等间隔采样限制弹幕总数，单位为k，即千：默认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
+      // 等间隔采样限制弹幕总数，单��为k，即千：默认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
       proxyUrl: this.get("PROXY_URL", "", "string", true),
       // 代理/反代地址
       danmuSimplifiedTraditional: this.get("DANMU_SIMPLIFIED_TRADITIONAL", "default", "string"),
@@ -1025,7 +1025,7 @@ var Envs = class {
       deployPlatformToken: this.get("DEPLOY_PLATFROM_TOKEN", "", "string", true),
       // 部署平台项目名称配置（默认空）
       NODE_TLS_REJECT_UNAUTHORIZED: this.get("NODE_TLS_REJECT_UNAUTHORIZED", 1, "number"),
-      // 在建立 HTTPS 连��时是否验证服务器的 SSL/TLS 证书，0表示忽略，默认为1
+      // 在建立 HTTPS 连接时是否验证服务器的 SSL/TLS 证书，0表示忽略，默认为1
       envVarConfig
       // 环境变量分类和描述映射
     };
@@ -9609,7 +9609,7 @@ var HanjutvSource = class extends BaseSource {
       return [];
     }
   }
-  // ── ��情 & 剧集 ──────────────────────────────────────────────
+  // ── 详情 & 剧集 ──────────────────────────────────────────────
   async getSeriesDetail(id, loader, missingLogTag, errorTag) {
     try {
       const sid = String(id || "").trim();
@@ -18275,7 +18275,7 @@ var AnimekoSource = class extends BaseSource {
    * 获取完整弹幕列表
    * 支持自动降级：Global -> CN
    * @param {string} episodeId 剧集 ID 或 完整 API URL
-   * @returns {Promise<Array>} 弹幕数组
+   * @returns {Promise<Array>} 弹幕��组
    */
   async getEpisodeDanmu(episodeId) {
     let realId = String(episodeId).trim();
