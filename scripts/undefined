@@ -666,7 +666,7 @@ async function getDetailById(params) {
       if (!episodes) {
         episodes = await fetchEpisodesByBangumi(source, parsedAnimeId.id);
       }
-      // 3. 失败 → 重新 search/anime 拿新鲜ID再 bangumi（并行后备实例走实时源）
+      // 3. 失败 → 重新 search/anime ���新鲜ID再 bangumi（并行后备实例走实时源）
       if (!episodes) {
         episodes = await fetchEpisodesByResearch(source, title, season);
       }
