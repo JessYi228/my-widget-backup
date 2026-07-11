@@ -476,7 +476,7 @@ function convertChineseNumber(chineseNumber) {
     return Number(chineseNumber);
   }
   
-  // 中文数字映射（简体+繁体）
+  // 中文���字映射（简体+繁体）
   const digits = {
     // 简体
     '零': 0, '一': 1, '二': 2, '三': 3, '四': 4, '五': 5,
