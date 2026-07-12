@@ -58,7 +58,7 @@ WidgetMetadata = {
     {
       //id需固定为getComments
       id: "getComments",
-      title: "获取弹���",
+      title: "获��弹幕",
       functionName: "getCommentsById",
       type: "danmu",
       params: [],

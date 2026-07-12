@@ -8970,7 +8970,7 @@ ${path2}?${sortedQuery}`;
     return resultEpisodes;
   }
   /**
-   * 处理搜索结果
+   * 处理搜索结��
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级���法)
+   * 获取网页版弹幕 (终极降级方法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
