@@ -817,7 +817,7 @@ var Envs = class {
   }
   /**
    * 解析剧名映射表
-   * @returns {Map} 剧名���射表
+   * @returns {Map} 剧��映射表
    */
   static resolveTitleMappingTable() {
     const mappingStr = this.get("TITLE_MAPPING_TABLE", "", "string").trim();
@@ -8268,7 +8268,7 @@ var RenrenSource = class extends BaseSource {
     return result;
   }
   /**
-   * 生成 Mac 端��式的 UUID 设备指纹
+   * 生成 Mac 端格式的 UUID 设备指纹
    */
   generateMacAliId() {
     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
@@ -8970,7 +8970,7 @@ ${path2}?${sortedQuery}`;
     return resultEpisodes;
   }
   /**
-   * 处理搜索结果
+   * 处理搜索结��
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
