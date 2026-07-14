@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级���法)
+   * 获取网页版弹幕 (终极降级方法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
@@ -14080,7 +14080,7 @@ var DandanSource = class extends BaseSource {
       return { episodes: [], titles: [], relateds: [], type: null, typeDescription: null, imageUrl: null };
     }
   }
-  // 计算两个字符串的文本相似度（字符集交并比算法）
+  // 计算两个字符串的文本相似度（字符集交并��算法）
   calculateSimilarity(str1, str2) {
     if (!str1 || !str2) return 0;
     const s1 = new Set(str1.toLowerCase());
