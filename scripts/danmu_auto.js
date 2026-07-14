@@ -4742,7 +4742,7 @@ var RegexStore = {
     NA_TAG: /(\(|（|\[)N\/A(\)|）|\])/gi,
     SOURCE_TAG: /【.*?】/g,
     REGION_LIMIT: /(\(|（|\[)仅限.*?地区(\)|）|\])/g,
-    PUNCTUATION: /[!！?？,��.。、~～:：\-–—_]/g,
+    PUNCTUATION: /[!！?？,，.。、~～:：\-–—_]/g,
     WHITESPACE: /\s+/g,
     FROM_SUFFIX: /\s*from\s+.*$/i,
     PARENTHESES_CONTENT: /(\(|（|\[).*?(\)|）|\])/g,
@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级方法)
+   * 获取网页版弹幕 (终极降级���法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
