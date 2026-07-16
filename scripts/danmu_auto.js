@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级���法)
+   * 获取网页版弹幕 (终极降级方法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
@@ -9873,7 +9873,7 @@ var HanjutvSource = class extends BaseSource {
     this.sortAndPushAnimesByYear(tmpAnimes, curAnimes);
     return tmpAnimes;
   }
-  // ── 弹幕 ─────────────────────────────────────────────────────
+  // ── 弹幕 ──────────────────────���──────────────────────────────
   async fetchEpisodeDanmuByRef(episodeRef) {
     const episodeId = String(episodeRef?.id || "").trim();
     if (!episodeId) return [];
