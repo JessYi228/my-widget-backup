@@ -9118,7 +9118,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级方法)
+   * 获取网页版弹幕 (终极降级���法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
@@ -11423,7 +11423,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
    * 处理搜索结果
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
-   * @param {Array} curAnimes ���果池
+   * @param {Array} curAnimes 结果池
    * @param {Map|null} detailStore 详情缓存
    * @param {number|null} querySeason 目标季度
    */
@@ -17698,7 +17698,7 @@ var AiyifanSource = class extends BaseSource {
         imageUrl: drama.imgPath || null,
         // 图片链接
         episodeCount: 0
-        // 初始集数为0，��续获取
+        // 初始集数为0，后续获取
       };
     });
     log("info", `[Aiyifan] \u641C\u7D22\u5B8C\u6210\uFF0C\u627E\u5230 ${results.length} \u4E2A\u7ED3\u679C`);
