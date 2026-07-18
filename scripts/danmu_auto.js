@@ -12644,7 +12644,7 @@ function log2(level, ...args) {
   log(level, ...args);
 }
 var RegexStore = {
-  /** 语言识别正则 */
+  /** 语言识别正��� */
   Lang: {
     CN: /(普通[话話]|[国國][语語]|中文配音|中配|中文|[粤粵][语語]配音|[粤粵]配|[粤粵][语語]|[台臺]配|[台臺][语語]|港配|港[语語]|字幕|助[听聽])(?:版)?/,
     JP: /(日[语語]|日配|原版|原[声聲])(?:版)?/,
@@ -19458,7 +19458,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   }
   /**
    * 过滤爱奇艺搜索项
-   * @param {Object} album - 搜索结果专辑信息
+   * @param {Object} album - ��索结果专辑信息
    * @param {string} keyword - 搜索关键词
    * @returns {Object|null} 过滤后的结果
    */
