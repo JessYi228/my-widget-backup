@@ -8651,7 +8651,7 @@ var Envs = class {
    * 从环境变量 MERGE_SOURCE_PAIRS 获取配置
    * 支持使用分号或逗号分隔多组配置
    * 支持一主多从配置，第一个为主源，后续为副源
-   * 允许单源配置（用于保留特定源的原���结果，不被合并消耗）
+   * 允许单源配置（用于保留特定源的原始结果，不被合并消耗）
    * 格式示例: bilibili&animeko, dandan&animeko&bahamut,dandan
    * @returns {Array} 合并配置数组 [{primary: 'dandan', secondaries: ['animeko', 'bahamut']}, {primary: 'renren', secondaries: []}]
    */
@@ -9105,7 +9105,7 @@ var Envs = class {
       convertColor: this.get("CONVERT_COLOR", "default", "string"),
       // 弹幕转换颜色配置，支持 default、white、color（默认 default，禁用转换）
       colorPool: this.get("COLOR_POOL", "16777215,16777215,16777215,16777215,16777215,16777215,16777215,16777215,16744319,16752762,16774799,9498256,8388564,8900346,14204888,16758465", "string"),
-      // 自定义颜色池，CONVERT_COLOR为color时生效
+      // 自定义颜色池，CONVERT_COLOR为color���生效
       danmuOutputFormat: this.get("DANMU_OUTPUT_FORMAT", "json", "string"),
       // 弹幕输出格式配置（默认 json，可选值：json, xml）
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", false, "boolean"),
