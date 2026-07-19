@@ -9071,7 +9071,7 @@ var Envs = class {
       danmuLimit: this.get("DANMU_LIMIT", 0, "number"),
       // 等间隔采样限制弹幕总数，单位为k，即千：默认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
       proxyUrl: this.get("PROXY_URL", "", "string", true),
-      // 代理/反代地址
+      // 代理/反��地址
       danmuSimplifiedTraditional: this.get("DANMU_SIMPLIFIED_TRADITIONAL", "default", "string"),
       // 弹幕简繁体转换设置：default（默认不转换）、simplified（繁转简）、traditional（简转繁）
       danmuPushUrl: this.get("DANMU_PUSH_URL", "", "string"),
@@ -9105,7 +9105,7 @@ var Envs = class {
       convertColor: this.get("CONVERT_COLOR", "default", "string"),
       // 弹幕转换颜色配置，支持 default、white、color（默认 default，禁用转换）
       colorPool: this.get("COLOR_POOL", "16777215,16777215,16777215,16777215,16777215,16777215,16777215,16777215,16744319,16752762,16774799,9498256,8388564,8900346,14204888,16758465", "string"),
-      // 自定义颜色池，CONVERT_COLOR为color���生效
+      // 自定义颜色池，CONVERT_COLOR为color时生效
       danmuOutputFormat: this.get("DANMU_OUTPUT_FORMAT", "json", "string"),
       // 弹幕输出格式配置（默认 json，可选值：json, xml）
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", false, "boolean"),
@@ -12735,7 +12735,7 @@ var SEASON_PATTERNS = [
   { regex: /\bpart\s*(\d+)/i, prefix: "P" },
   { regex: /\b(ova|oad)\d*\b/i, val: "OVA" },
   { regex: /(剧场版|劇場版|the\s*movie|theatrical|movie|film|电影)/i, val: "MOVIE" },
-  { regex: /(续篇|续集)/, val: "SEQUEL" },
+  { regex: /(���篇|续集)/, val: "SEQUEL" },
   { regex: /\b(sp|special)\d*\b/i, val: "SP" },
   // 回退：清洗后以数字结尾（如 "タイトル2"）视为 S{N}
   { regex: /[^0-9](\d)$/, prefix: "S", useCleaned: true }
@@ -20227,7 +20227,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
-        //弹幕颜色，RGB 颜色转为十进制后的��，16777215 为白色
+        //弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
         unixtime: Math.floor(Date.now() / 1e3),
         //Unix 时间戳格式
         uid: 0,
