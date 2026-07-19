@@ -9071,7 +9071,7 @@ var Envs = class {
       danmuLimit: this.get("DANMU_LIMIT", 0, "number"),
       // 等间隔采样限制弹幕总数，单位为k，即千：默认 0，表示不限制弹幕数，若改为5，弹幕总数在超过5000的情况下会将弹幕数控制在5000
       proxyUrl: this.get("PROXY_URL", "", "string", true),
-      // 代理/反��地址
+      // 代理/反代地址
       danmuSimplifiedTraditional: this.get("DANMU_SIMPLIFIED_TRADITIONAL", "default", "string"),
       // 弹幕简繁体转换设置：default（默认不转换）、simplified（繁转简）、traditional（简转繁）
       danmuPushUrl: this.get("DANMU_PUSH_URL", "", "string"),
@@ -12578,7 +12578,7 @@ var MERGE_DELIMITER = "$$$";
 var DISPLAY_CONNECTOR = "&";
 var ENABLE_VERBOSE_MERGE_LOG = false;
 var MergeWeights = Object.freeze({
-  // ── 标题与结构 ──────────────────────────────────────────
+  // ── 标题与结构 ──────────────��───────────────────────────
   TITLE_STRUCTURE_CONFLICT: -0.3,
   // 标题结构冲突（如父子集关系）
   LANG_MATCH_CN: 0.15,
@@ -12735,7 +12735,7 @@ var SEASON_PATTERNS = [
   { regex: /\bpart\s*(\d+)/i, prefix: "P" },
   { regex: /\b(ova|oad)\d*\b/i, val: "OVA" },
   { regex: /(剧场版|劇場版|the\s*movie|theatrical|movie|film|电影)/i, val: "MOVIE" },
-  { regex: /(���篇|续集)/, val: "SEQUEL" },
+  { regex: /(续篇|续集)/, val: "SEQUEL" },
   { regex: /\b(sp|special)\d*\b/i, val: "SP" },
   // 回退：清洗后以数字结尾（如 "タイトル2"）视为 S{N}
   { regex: /[^0-9](\d)$/, prefix: "S", useCleaned: true }
