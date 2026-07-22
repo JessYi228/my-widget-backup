@@ -413,7 +413,7 @@ async function searchDanmu(params) {
         );
         const epData = epResponse && epResponse.data;
         if (epData && Array.isArray(epData.animes)) {
-          // ��离内联 episodes，只保留番剧候选层（App 按三段流程后续调 getDetail 取分集）
+          // 剥离内联 episodes，只保留番剧候选层（App 按三段流程后续调 getDetail 取分集）
           rawAnimes = epData.animes.map(({ episodes, ...anime }) => anime);
         }
       }
