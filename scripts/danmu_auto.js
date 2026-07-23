@@ -12578,7 +12578,7 @@ var MERGE_DELIMITER = "$$$";
 var DISPLAY_CONNECTOR = "&";
 var ENABLE_VERBOSE_MERGE_LOG = false;
 var MergeWeights = Object.freeze({
-  // ── 标题与结构 ──────────────��───────────────────────────
+  // ── 标题与结构 ──────────────────────────────────────────
   TITLE_STRUCTURE_CONFLICT: -0.3,
   // 标题结构冲突（如父子集关系）
   LANG_MATCH_CN: 0.15,
@@ -15821,7 +15821,7 @@ var VodSource = class extends BaseSource {
       return { serverName, list: [] };
     }
   }
-  // 查询所有vod站点影片信息（返回所有结果）
+  // 查询所有vod站点影片信���（返回所有结果）
   async getVodAnimesFromAllServersImpl(title, servers) {
     const promises = servers.map(
       (server) => this.getVodAnimes(title, server.url, server.name)
@@ -26542,7 +26542,7 @@ var AnimekoSource = class extends BaseSource {
     }
   }
   /**
-   * 获取多源详情节点优先级列表 (含动态降级及代理感知)
+   * 获取多源详��节点优先级列表 (含动态降级及代理感知)
    * 支持官方(V0)、镜像(V0)及Animeko(V2)节点的融合队列调度
    * @returns {Array<Object>} 包含节点类型与 URL 的配置数组
    */
