@@ -12578,7 +12578,7 @@ var MERGE_DELIMITER = "$$$";
 var DISPLAY_CONNECTOR = "&";
 var ENABLE_VERBOSE_MERGE_LOG = false;
 var MergeWeights = Object.freeze({
-  // ── 标题与结构 ──────────────────────────────────────────
+  // ── 标题与结构 ──────────────��───────────────────────────
   TITLE_STRUCTURE_CONFLICT: -0.3,
   // 标题结构冲突（如父子集关系）
   LANG_MATCH_CN: 0.15,
@@ -15821,7 +15821,7 @@ var VodSource = class extends BaseSource {
       return { serverName, list: [] };
     }
   }
-  // 查询所有vod站点影片信��（返回所有结果）
+  // 查询所有vod站点影片信息（返回所有结果）
   async getVodAnimesFromAllServersImpl(title, servers) {
     const promises = servers.map(
       (server) => this.getVodAnimes(title, server.url, server.name)
