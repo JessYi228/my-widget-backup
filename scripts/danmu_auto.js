@@ -12644,7 +12644,7 @@ function log2(level, ...args) {
   log(level, ...args);
 }
 var RegexStore = {
-  /** 语言识别正��� */
+  /** 语言识别正则 */
   Lang: {
     CN: /(普通[话話]|[国國][语語]|中文配音|中配|中文|[粤粵][语語]配音|[粤粵]配|[粤粵][语語]|[台臺]配|[台臺][语語]|港配|港[语語]|字幕|助[听聽])(?:版)?/,
     JP: /(日[语語]|日配|原版|原[声聲])(?:版)?/,
@@ -12765,7 +12765,7 @@ var SpecialSeriesRegistry = [
     ]
   },
   {
-    // 案例 3：没有任何副标题，主标题本身就是特殊类型
+    // 案例 3��没有任何副标题，主标题本身就是特殊类型
     seriesKeywords: ["\u7EA2\u732A", "\u5343\u4E0E\u5343\u5BFB", "\u9F99\u732B"],
     // 当没有匹配到任何 mappings（或根本没写 mappings）时，直接给这个条目打上默认标签
     defaultStandard: "\u5267\u573A\u7248"
@@ -15821,7 +15821,7 @@ var VodSource = class extends BaseSource {
       return { serverName, list: [] };
     }
   }
-  // 查询所有vod站点影片信息（返回所有结果）
+  // 查询所有vod站点影片信息（返回所有结果���
   async getVodAnimesFromAllServersImpl(title, servers) {
     const promises = servers.map(
       (server) => this.getVodAnimes(title, server.url, server.name)
