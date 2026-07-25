@@ -9105,7 +9105,7 @@ var Envs = class {
       convertColor: this.get("CONVERT_COLOR", "default", "string"),
       // 弹幕转换颜色配置，支持 default、white、color（默认 default，禁用转换）
       colorPool: this.get("COLOR_POOL", "16777215,16777215,16777215,16777215,16777215,16777215,16777215,16777215,16744319,16752762,16774799,9498256,8388564,8900346,14204888,16758465", "string"),
-      // 自定义颜色池，CONVERT_COLOR为color���生效
+      // 自定义颜色池，CONVERT_COLOR为color时生效
       danmuOutputFormat: this.get("DANMU_OUTPUT_FORMAT", "json", "string"),
       // 弹幕输出格式配置（默认 json，可选值：json, xml）
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", false, "boolean"),
@@ -12765,7 +12765,7 @@ var SpecialSeriesRegistry = [
     ]
   },
   {
-    // 案例 3：没有任何副标题，主标题本身就是特殊类型
+    // 案例 3���没有任何副标题，主标题本身就是特殊类型
     seriesKeywords: ["\u7EA2\u732A", "\u5343\u4E0E\u5343\u5BFB", "\u9F99\u732B"],
     // 当没有匹配到任何 mappings（或根本没写 mappings）时，直接给这个条目打上默认标签
     defaultStandard: "\u5267\u573A\u7248"
@@ -19366,7 +19366,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   /**
    * 搜索爱奇艺内容
    * @param {string} keyword - 搜索关键词
-   * @returns {Promise<Array>} 搜索结果数组
+   * @returns {Promise<Array>} 搜索���果数组
    */
   async search(keyword) {
     try {
@@ -20227,7 +20227,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
-        //弹幕颜色，RGB 颜色转为十进制后的��，16777215 为白色
+        //弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
         unixtime: Math.floor(Date.now() / 1e3),
         //Unix 时间戳格式
         uid: 0,
