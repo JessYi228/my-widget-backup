@@ -5508,7 +5508,7 @@ var Envs = class {
   }
   /**
    * 基础加密函数 - 将字符串转换为星号
-   * @param {string} str 输入字符串
+   * @param {string} str 输入字���串
    * @returns {string} 星号字符串
    */
   static encryptStr(str) {
@@ -5957,7 +5957,7 @@ var Envs = class {
       commentCacheMinutes: this.get("COMMENT_CACHE_MINUTES", 3, "number"),
       // 弹幕缓存时间配置（分钟，默认 3）
       hongguoMergeAllEpisodes: this.get("HONGGUO_MERGE_ALL_EPISODES", !1, "boolean"),
-      // 红果短剧是否合��全集弹幕（默认 false）
+      // 红果短剧是否合并全集弹幕（默认 false）
       convertTopBottomToScroll: this.get("CONVERT_TOP_BOTTOM_TO_SCROLL", !1, "boolean"),
       // 顶部/底部弹幕转换为浮动弹幕配置（默认 false，禁用转换）
       convertColor: this.get("CONVERT_COLOR", "default", "string"),
@@ -14062,7 +14062,7 @@ var MangoSource = class extends BaseSource {
         let qiUpMidDownMatch = fullTitle.match(/第(\d+)期([上中下])/), qiPureMatch = fullTitle.match(/第(\d+)期/), hasUpMidDown = /第\d+期[上中下]/.test(fullTitle);
         if (qiUpMidDownMatch) {
           let qiNum = qiUpMidDownMatch[1], upMidDown = qiUpMidDownMatch[2], qiUpMidDownText = `\u7B2C${qiNum}\u671F${upMidDown}`, afterUpMidDown = fullTitle.substring(fullTitle.indexOf(qiUpMidDownText) + qiUpMidDownText.length);
-          /^(加更|会员版|纯享版|特���版|独家版|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后)/.test(afterUpMidDown) ? log("info", `[mango] \u7EFC\u827A\u8FC7\u6EE4\u4E0A\u4E2D\u4E0B\u683C\u5F0F+\u540E\u7F00: ${fullTitle}`) : (qiInfoMap.set(ep, [parseInt(qiNum), upMidDown]), episodeInfos.push(ep), log("info", `[mango] \u7EFC\u827A\u4FDD\u7559\u4E0A\u4E2D\u4E0B\u683C\u5F0F: ${fullTitle}`));
+          /^(加更|会员版|纯享版|特别版|独家版|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后)/.test(afterUpMidDown) ? log("info", `[mango] \u7EFC\u827A\u8FC7\u6EE4\u4E0A\u4E2D\u4E0B\u683C\u5F0F+\u540E\u7F00: ${fullTitle}`) : (qiInfoMap.set(ep, [parseInt(qiNum), upMidDown]), episodeInfos.push(ep), log("info", `[mango] \u7EFC\u827A\u4FDD\u7559\u4E0A\u4E2D\u4E0B\u683C\u5F0F: ${fullTitle}`));
         } else if (qiPureMatch && !hasUpMidDown && !/会员版|纯享版|特别版|独家版|加更|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后|访谈|采访|混剪|合集|盘点|总结|删减|未播放|NG|番外|片段|看点|精彩|制作|导演|演员|拍摄|片尾曲|插曲|主题曲|背景音乐|OST|音乐|歌曲/.test(fullTitle)) {
           let qiNum = qiPureMatch[1];
           qiInfoMap.set(ep, [parseInt(qiNum), ""]), episodeInfos.push(ep), log("info", `[mango] \u7EFC\u827A\u4FDD\u7559\u6807\u51C6\u671F\u6570: ${fullTitle}`);
@@ -19564,7 +19564,7 @@ var API_HEALTH2 = {
     });
   }
   /**
-   * 检查标题是否包含明确的季度或类��标识
+   * 检查标题是否包含明确的季度或类型标识
    * @param {string} title 标题文本
    * @returns {boolean} 是否包含明确标识
    */
@@ -19959,7 +19959,7 @@ function matchSeason(anime, queryTitle, season) {
       let seasonIndex = afterTitle.match(/\d+/);
       if (seasonIndex && seasonIndex[0] === season.toString())
         return !0;
-      let chineseNumber = afterTitle.match(/[一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+/);
+      let chineseNumber = afterTitle.match(/[一二三四五六七八九十壹贰叁肆伍陆柒捌玖���]+/);
       if (chineseNumber && convertChineseNumber(chineseNumber[0]) === season)
         return !0;
     }
