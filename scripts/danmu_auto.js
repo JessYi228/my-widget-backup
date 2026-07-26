@@ -12735,7 +12735,7 @@ var SEASON_PATTERNS = [
   { regex: /\bpart\s*(\d+)/i, prefix: "P" },
   { regex: /\b(ova|oad)\d*\b/i, val: "OVA" },
   { regex: /(剧场版|劇場版|the\s*movie|theatrical|movie|film|电影)/i, val: "MOVIE" },
-  { regex: /(续篇|续集)/, val: "SEQUEL" },
+  { regex: /(���篇|续集)/, val: "SEQUEL" },
   { regex: /\b(sp|special)\d*\b/i, val: "SP" },
   // 回退：清洗后以数字结尾（如 "タイトル2"）视为 S{N}
   { regex: /[^0-9](\d)$/, prefix: "S", useCleaned: true }
@@ -15527,7 +15527,7 @@ var Kan360Source = class extends BaseSource {
     }
     return null;
   }
-  // 使用 /v1/detail 分批获取集数（每��最多200集），返回 [{name, url}, ...]
+  // 使用 /v1/detail 分批获取集数（每批最多200集），返回 [{name, url}, ...]
   async getEpisodesV1(cat, id, site, number) {
     try {
       if (!number || Number(number) === 0) return [];
@@ -26578,7 +26578,7 @@ var AnimekoSource = class extends BaseSource {
   }
   /**
    * 获取 V0 剧集列表完整数据（并发适配器内部辅助方法）
-   * Bangumi API 限制单次 limit=200，需循环获取完整列表以适��长篇番剧
+   * Bangumi API 限制单次 limit=200，需循环获取完整列表以适配长篇番剧
    * @param {string} serverUrl 节点地址
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Array>} 剧集原始数据数组
