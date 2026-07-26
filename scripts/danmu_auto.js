@@ -8465,7 +8465,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   // 双端均为中文时的语言一致奖励
   LANG_MISMATCH: -0.2,
   // 语言不一致时的惩罚
-  // ── 日期 ─────────────────────────────────────────────────
+  // ── 日期 ───────────────────���─────────────────────────────
   DATE_MATCH: 0,
   // 基础日期匹配（动态计算，此处为占位）
   // ── 集数对齐 (Episode Alignment) ─────────────────────────
@@ -19315,7 +19315,7 @@ var API_HEALTH2 = {
   }
   /**
    * 获取 Animeko 弹幕域专属节点优先级列表 (官方优先级及逻辑)
-   * 弹幕域仅存在于 Animeko 自建节点，不混入官方镜像
+   * 弹幕域仅存在于 Animeko 自建节点，不��入官方镜像
    * @returns {Array<string>} 节点 URL 数组
    */
   _getDanmuServerPriority() {
