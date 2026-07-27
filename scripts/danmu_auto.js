@@ -5508,7 +5508,7 @@ var Envs = class {
   }
   /**
    * 基础加密函数 - 将字符串转换为星号
-   * @param {string} str 输入字符串
+   * @param {string} str 输入字���串
    * @returns {string} 星号字符串
    */
   static encryptStr(str) {
@@ -5957,7 +5957,7 @@ var Envs = class {
       commentCacheMinutes: this.get("COMMENT_CACHE_MINUTES", 3, "number"),
       // 弹幕缓存时间配置（分钟，默认 3）
       hongguoMergeAllEpisodes: this.get("HONGGUO_MERGE_ALL_EPISODES", !1, "boolean"),
-      // 红果短剧是否合��全集弹幕（默认 false）
+      // 红果短剧是否合并全集弹幕（默认 false）
       convertTopBottomToScroll: this.get("CONVERT_TOP_BOTTOM_TO_SCROLL", !1, "boolean"),
       // 顶部/底部弹幕转换为浮动弹幕配置（默认 false，禁用转换）
       convertColor: this.get("CONVERT_COLOR", "default", "string"),
@@ -13134,7 +13134,7 @@ var TencentSource = class extends BaseSource {
     );
     return this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), processTencentAnimes;
   }
-  // 提取vid的公共函数
+  // 提取vid的公共��数
   extractVid(id) {
     let vid2 = id;
     if (typeof id == "string" && (id.startsWith("http") || id.includes("vid="))) {
