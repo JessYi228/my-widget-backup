@@ -5508,7 +5508,7 @@ var Envs = class {
   }
   /**
    * 基础加密函数 - 将字符串转换为星号
-   * @param {string} str 输入字���串
+   * @param {string} str 输入字符串
    * @returns {string} 星号字符串
    */
   static encryptStr(str) {
@@ -6009,7 +6009,7 @@ var Envs = class {
 };
 __publicField(Envs, "env"), // 记录获取过的环境变量
 __publicField(Envs, "originalEnvVars", /* @__PURE__ */ new Map()), __publicField(Envs, "accessedEnvVars", /* @__PURE__ */ new Map()), __publicField(Envs, "VOD_ALLOWED_PLATFORMS", ["qiyi", "bilibili1", "imgo", "youku", "qq", "migu", "sohu", "leshi", "xigua", "maiduidui", "aiyifan"]), // vod允许的播放平台
-__publicField(Envs, "ALLOWED_PLATFORMS", ["qiyi", "bilibili1", "imgo", "youku", "qq", "migu", "renren", "hanjutv", "bahamut", "dandan", "sohu", "leshi", "xigua", "maiduidui", "aiyifan", "hongguo", "animeko", "custom"]), // 全部源允许的播放平台
+__publicField(Envs, "ALLOWED_PLATFORMS", ["qiyi", "bilibili1", "imgo", "youku", "qq", "migu", "renren", "hanjutv", "bahamut", "dandan", "sohu", "leshi", "xigua", "maiduidui", "aiyifan", "hongguo", "animeko", "custom"]), // 全���源允许的播放平台
 __publicField(Envs, "ALLOWED_SOURCES", ["360", "vod", "tmdb", "douban", "tencent", "youku", "iqiyi", "imgo", "bilibili", "migu", "renren", "hanjutv", "bahamut", "dandan", "sohu", "leshi", "xigua", "maiduidui", "aiyifan", "hongguo", "animeko", "custom"]), // 允许的源
 __publicField(Envs, "MERGE_ALLOWED_SOURCES", ["tencent", "youku", "iqiyi", "imgo", "bilibili", "migu", "renren", "hanjutv", "bahamut", "dandan", "sohu", "leshi", "xigua", "maiduidui", "aiyifan", "hongguo", "animeko"]), // 允许的源合并
 __publicField(Envs, "DEFAULT_AI_MATCH_PROMPT", `\u4F60\u662F\u4E00\u4E2A\u4E13\u4E1A\u7684\u5F71\u89C6\u5339\u914D\u4E13\u5BB6\uFF0C\u4F60\u7684\u7684\u4EFB\u52A1\u662F\u6839\u636E\u7528\u6237\u63D0\u4F9B\u7684 JSON \u6570\u636E\uFF0C\u4ECE\u5019\u9009\u52A8\u6F2B\u5217\u8868\u4E2D\u5339\u914D\u6700\u7B26\u5408\u6761\u4EF6\u7684\u52A8\u6F2B\u53CA\u96C6\u6570\u3002
@@ -19959,7 +19959,7 @@ function matchSeason(anime, queryTitle, season) {
       let seasonIndex = afterTitle.match(/\d+/);
       if (seasonIndex && seasonIndex[0] === season.toString())
         return !0;
-      let chineseNumber = afterTitle.match(/[一二三四五六七八九十壹贰叁肆伍陆柒捌玖���]+/);
+      let chineseNumber = afterTitle.match(/[一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+/);
       if (chineseNumber && convertChineseNumber(chineseNumber[0]) === season)
         return !0;
     }
