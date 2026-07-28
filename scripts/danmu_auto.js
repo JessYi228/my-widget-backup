@@ -19315,7 +19315,7 @@ var API_HEALTH2 = {
   }
   /**
    * 获取 Animeko 弹幕域专属节点优先级列表 (官方优先级及逻辑)
-   * 弹幕域仅存在于 Animeko 自建节点，不��入官方镜像
+   * 弹幕域仅存在于 Animeko 自建节点，不混入官方镜像
    * @returns {Array<string>} 节点 URL 数组
    */
   _getDanmuServerPriority() {
