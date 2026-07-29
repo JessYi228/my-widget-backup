@@ -5508,7 +5508,7 @@ var Envs = class {
   }
   /**
    * 基础加密函数 - 将字符串转换为星号
-   * @param {string} str 输入字符串
+   * @param {string} str 输入字���串
    * @returns {string} 星号字符串
    */
   static encryptStr(str) {
