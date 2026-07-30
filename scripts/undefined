@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：剧名，Optional
+ * seriesName：剧名��Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详情",
+      title: "获取��情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
