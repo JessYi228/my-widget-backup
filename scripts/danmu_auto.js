@@ -19564,7 +19564,7 @@ var API_HEALTH2 = {
     });
   }
   /**
-   * 检查标题是否包含明确的季度或类��标识
+   * 检查标题是否包含明确的季度或类型标识
    * @param {string} title 标题文本
    * @returns {boolean} 是否包含明确标识
    */
@@ -19795,7 +19795,7 @@ var API_HEALTH2 = {
         let resp = await Widget.http.get(targetUrl, {
           headers: this.headers,
           timeout: 3e3
-          // 限制节点请求超时时间为 3000 毫秒，加速故障节点跳过与轮询降级
+          // 限制节点请��超时时间为 3000 毫秒，加速故障节点跳过与轮询降级
         });
         if (resp && resp.data) {
           let danmuList = resp.data.danmakuList;
