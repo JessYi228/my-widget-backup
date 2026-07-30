@@ -5508,7 +5508,7 @@ var Envs = class {
   }
   /**
    * 基础加密函数 - 将字符串转换为星号
-   * @param {string} str 输入字���串
+   * @param {string} str 输入字符串
    * @returns {string} 星号字符串
    */
   static encryptStr(str) {
@@ -19959,7 +19959,7 @@ function matchSeason(anime, queryTitle, season) {
       let seasonIndex = afterTitle.match(/\d+/);
       if (seasonIndex && seasonIndex[0] === season.toString())
         return !0;
-      let chineseNumber = afterTitle.match(/[一二三四五六七八九十壹贰叁肆伍陆柒捌玖���]+/);
+      let chineseNumber = afterTitle.match(/[一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+/);
       if (chineseNumber && convertChineseNumber(chineseNumber[0]) === season)
         return !0;
     }
