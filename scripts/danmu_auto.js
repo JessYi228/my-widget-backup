@@ -5957,7 +5957,7 @@ var Envs = class {
       commentCacheMinutes: this.get("COMMENT_CACHE_MINUTES", 3, "number"),
       // 弹幕缓存时间配置（分钟，默认 3）
       hongguoMergeAllEpisodes: this.get("HONGGUO_MERGE_ALL_EPISODES", !1, "boolean"),
-      // 红果短剧是否合��全集弹幕（默认 false）
+      // 红果短剧是否合并全集弹幕（默认 false）
       convertTopBottomToScroll: this.get("CONVERT_TOP_BOTTOM_TO_SCROLL", !1, "boolean"),
       // 顶部/底部弹幕转换为浮动弹幕配置（默认 false，禁用转换）
       convertColor: this.get("CONVERT_COLOR", "default", "string"),
@@ -8690,7 +8690,7 @@ function cleanTitleForSimilarity(text) {
   let startBracketMatch = clean.match(/^(?:【|\[)(.+?)(?:】|\])/);
   if (startBracketMatch) {
     let content = startBracketMatch[1];
-    /^(TV|剧场版|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content) || (clean = clean.replace(startBracketMatch[0], content + " "));
+    /^(TV|剧场版|劇場版|movie|film|anime|动���|动画|AVC|HEVC|MP4|MKV)$/i.test(content) || (clean = clean.replace(startBracketMatch[0], content + " "));
   }
   return clean = clean.replace(RegexStore.Clean.SOURCE_TAG, ""), clean = clean.replace(RegexStore.Clean.FROM_SUFFIX, ""), clean = clean.replace(RegexStore.Clean.NA_TAG, ""), clean = clean.replace(RegexStore.Clean.PARENTHESES_CONTENT, ""), clean = clean.replace(RegexStore.Season.INFO_STRONG, ""), clean = clean.replace(RegexStore.Season.PART_INFO_STRONG, ""), clean = clean.replace(RegexStore.Clean.MOVIE_KEYWORDS, ""), clean = clean.replace(RegexStore.Lang.KEYWORDS_STRONG, ""), clean = clean.replace(RegexStore.Clean.LONE_VER_CHAR, ""), clean = clean.replace(RegexStore.Clean.NON_ALPHANUM_CN, ""), clean.toLowerCase();
 }
@@ -10609,7 +10609,7 @@ var VodSource = class extends BaseSource {
     );
     return (await Promise.allSettled(promises)).filter((result) => result.status === "fulfilled").map((result) => result.value);
   }
-  // 查询vod站点影片信息（返回最快的结果）
+  // 查询vod站点影片信息（返回��快的结果）
   async getVodAnimesFromFastestServer(title, servers, preferAnimeId = null, preferSource = null) {
     if (!servers || servers.length === 0)
       return [];
@@ -14062,7 +14062,7 @@ var MangoSource = class extends BaseSource {
         let qiUpMidDownMatch = fullTitle.match(/第(\d+)期([上中下])/), qiPureMatch = fullTitle.match(/第(\d+)期/), hasUpMidDown = /第\d+期[上中下]/.test(fullTitle);
         if (qiUpMidDownMatch) {
           let qiNum = qiUpMidDownMatch[1], upMidDown = qiUpMidDownMatch[2], qiUpMidDownText = `\u7B2C${qiNum}\u671F${upMidDown}`, afterUpMidDown = fullTitle.substring(fullTitle.indexOf(qiUpMidDownText) + qiUpMidDownText.length);
-          /^(加更|会员版|纯享版|特���版|独家版|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后)/.test(afterUpMidDown) ? log("info", `[mango] \u7EFC\u827A\u8FC7\u6EE4\u4E0A\u4E2D\u4E0B\u683C\u5F0F+\u540E\u7F00: ${fullTitle}`) : (qiInfoMap.set(ep, [parseInt(qiNum), upMidDown]), episodeInfos.push(ep), log("info", `[mango] \u7EFC\u827A\u4FDD\u7559\u4E0A\u4E2D\u4E0B\u683C\u5F0F: ${fullTitle}`));
+          /^(加更|会员版|纯享版|特别版|独家版|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后)/.test(afterUpMidDown) ? log("info", `[mango] \u7EFC\u827A\u8FC7\u6EE4\u4E0A\u4E2D\u4E0B\u683C\u5F0F+\u540E\u7F00: ${fullTitle}`) : (qiInfoMap.set(ep, [parseInt(qiNum), upMidDown]), episodeInfos.push(ep), log("info", `[mango] \u7EFC\u827A\u4FDD\u7559\u4E0A\u4E2D\u4E0B\u683C\u5F0F: ${fullTitle}`));
         } else if (qiPureMatch && !hasUpMidDown && !/会员版|纯享版|特别版|独家版|加更|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后|访谈|采访|混剪|合集|盘点|总结|删减|未播放|NG|番外|片段|看点|精彩|制作|导演|演员|拍摄|片尾曲|插曲|主题曲|背景音乐|OST|音乐|歌曲/.test(fullTitle)) {
           let qiNum = qiPureMatch[1];
           qiInfoMap.set(ep, [parseInt(qiNum), ""]), episodeInfos.push(ep), log("info", `[mango] \u7EFC\u827A\u4FDD\u7559\u6807\u51C6\u671F\u6570: ${fullTitle}`);
@@ -19795,7 +19795,7 @@ var API_HEALTH2 = {
         let resp = await Widget.http.get(targetUrl, {
           headers: this.headers,
           timeout: 3e3
-          // 限制节点请��超时时间为 3000 毫秒，加速故障节点跳过与轮询降级
+          // 限制节点请求超时时间为 3000 毫秒，加速故障节点跳过与轮询降级
         });
         if (resp && resp.data) {
           let danmuList = resp.data.danmakuList;
