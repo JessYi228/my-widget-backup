@@ -5508,7 +5508,7 @@ var Envs = class {
   }
   /**
    * 基础加密函数 - 将字符串转换为星号
-   * @param {string} str 输入字���串
+   * @param {string} str 输入字符串
    * @returns {string} 星号字符串
    */
   static encryptStr(str) {
@@ -5957,7 +5957,7 @@ var Envs = class {
       commentCacheMinutes: this.get("COMMENT_CACHE_MINUTES", 3, "number"),
       // 弹幕缓存时间配置（分钟，默认 3）
       hongguoMergeAllEpisodes: this.get("HONGGUO_MERGE_ALL_EPISODES", !1, "boolean"),
-      // 红果短剧是否合并全集弹幕（默认 false）
+      // 红果短剧是否合��全集弹幕（默认 false）
       convertTopBottomToScroll: this.get("CONVERT_TOP_BOTTOM_TO_SCROLL", !1, "boolean"),
       // 顶部/底部弹幕转换为浮动弹幕配置（默认 false，禁用转换）
       convertColor: this.get("CONVERT_COLOR", "default", "string"),
@@ -9325,7 +9325,7 @@ function detectCollectionCandidates(curAnimes) {
       let content = startBracketMatch[1];
       /^(TV|剧场版|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content) || (protectedTitle = protectedTitle.replace(startBracketMatch[0], content + " "));
     }
-    protectedTitle = protectedTitle.replace(/第([一二三四五六七八九十]+)季/g, (m, num) => `\u7B2C${convertChineseNumber(num)}\u5B63`);
+    protectedTitle = protectedTitle.replace(/第([一二三四五六七八九十]+)��/g, (m, num) => `\u7B2C${convertChineseNumber(num)}\u5B63`);
     let clean = protectedTitle.replace(RegexStore.Clean.SOURCE_TAG, "").replace(RegexStore.Clean.FROM_SUFFIX, "").replace(RegexStore.Clean.YEAR_TAG, "").replace(RegexStore.Clean.META_SUFFIX, "").replace(RegexStore.Lang.KEYWORDS_STRONG, "");
     if (SUFFIX_SPECIFIC_MAP.forEach((m) => clean = clean.replace(m.regex, "")), clean = clean.replace(RegexStore.Season.SUFFIX_AMBIGUOUS, "").replace(/(?:第|S)\d+(?:季|期|部)/gi, "").replace(/(?:Part|P)\s*\d+/gi, "").replace(/\s+/g, "").toLowerCase().trim(), !clean) return;
     let category = getContentCategory(anime.animeTitle, realAnime.typeDescription, realAnime.source), is3D = (realAnime.typeDescription || "").includes("3D") || /3[dD]/.test(anime.animeTitle || ""), is2D = (realAnime.typeDescription || "").includes("2D") || /2[dD]/.test(anime.animeTitle || ""), groupKey = `${clean}|${category}|${is3D ? "3D" : is2D ? "2D" : "-"}`;
