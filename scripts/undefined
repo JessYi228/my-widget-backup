@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：剧名��Optional
+ * seriesName：剧��，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取��情",
+      title: "获��详情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -449,7 +449,7 @@ async function searchDanmu(params) {
     candidates.push(...result.animes.map((anime, index) => {
       const searchAnime = {
         ...anime,
-        // Misaka 等兼容服��的 bangumi/{id} 端点只认 bangumiId(如 "A900016")，而非数字 animeId(900016)；
+        // Misaka 等兼容服务的 bangumi/{id} 端点只认 bangumiId(如 "A900016")，而非数字 animeId(900016)；
         // 标准 dandanplay 无 bangumiId 字段，回退到 animeId 保持原行为
         animeId: bindDanmuServerId(anime.bangumiId || anime.animeId, result.source, shouldBindSource),
         animeTitle: appendDanmuSourceTitle(anime.animeTitle, result.source, shouldBindSource),
@@ -489,7 +489,7 @@ function convertChineseNumber(chineseNumber) {
   // 单位映射（简体+繁体）
   const units = {
     // 简体
-    '十': 10, '百': 100, '千': 1000,
+    '十': 10, '百': 100, '���': 1000,
     // 繁体
     '拾': 10, '佰': 100, '仟': 1000
   };
