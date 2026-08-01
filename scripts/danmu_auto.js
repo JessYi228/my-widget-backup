@@ -6125,7 +6125,7 @@ var Globals = {
   },
   /**
    * 智能构建代理URL
-   * 逻辑：专用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
+   * 逻辑：���用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
    * @param {string} targetUrl 原始目标URL
    * @returns {string} 处理后的URL
    */
@@ -13399,7 +13399,7 @@ var TencentSource = class extends BaseSource {
 var _IqiyiSource = class _IqiyiSource extends BaseSource {
   /**
    * 搜索爱奇艺内容
-   * @param {string} keyword - 搜索关��词
+   * @param {string} keyword - 搜索关键词
    * @returns {Promise<Array>} 搜索结果数组
    */
   async search(keyword) {
