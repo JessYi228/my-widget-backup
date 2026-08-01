@@ -13399,7 +13399,7 @@ var TencentSource = class extends BaseSource {
 var _IqiyiSource = class _IqiyiSource extends BaseSource {
   /**
    * 搜索爱奇艺内容
-   * @param {string} keyword - 搜索关键词
+   * @param {string} keyword - 搜索关��词
    * @returns {Promise<Array>} 搜索结果数组
    */
   async search(keyword) {
