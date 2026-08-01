@@ -6125,7 +6125,7 @@ var Globals = {
   },
   /**
    * 智能构建代理URL
-   * 逻辑：���用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
+   * 逻辑：专用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
    * @param {string} targetUrl 原始目标URL
    * @returns {string} 处理后的URL
    */
@@ -13030,7 +13030,7 @@ var TencentSource = class extends BaseSource {
           ch && ch.title && chapters.push({ title: ch.title });
     return chapters;
   }
-  // 子分类式章节仅取“正片”子分类：该值直接作为请求参数 chapter_name 发往分页接口，
+  // 子分类式章节仅取“正片���子分类：该值直接作为请求参数 chapter_name 发往分页接口，
   // 与 tabs 分页路径以 chapter_name=正片 标识正片的方式一致；其余子分类（花絮/直播回放/彩蛋等）不请求。
   isZhengpianChapter(ch) {
     return !!ch && ch.title === "\u6B63\u7247";
