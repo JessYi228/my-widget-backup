@@ -5937,7 +5937,7 @@ var Envs = class {
       likeSwitch: this.get("LIKE_SWITCH", !0, "boolean"),
       // 弹幕点赞数显示开关，默认开启
       danmuOffset: this.get("DANMU_OFFSET", "", "string"),
-      // 弹幕时间���移配置
+      // 弹幕时间偏移配置
       danmuOffsetRules: parseOffsetRules(this.get("DANMU_OFFSET", "", "string")),
       // 解析后的偏移规则（缓存）
       tmdbApiKey: this.get("TMDB_API_KEY", "", "string", !0),
@@ -13399,7 +13399,7 @@ var TencentSource = class extends BaseSource {
 var _IqiyiSource = class _IqiyiSource extends BaseSource {
   /**
    * 搜索爱奇艺内容
-   * @param {string} keyword - 搜索关键词
+   * @param {string} keyword - 搜索关��词
    * @returns {Promise<Array>} 搜索结果数组
    */
   async search(keyword) {
