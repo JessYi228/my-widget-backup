@@ -6125,7 +6125,7 @@ var Globals = {
   },
   /**
    * 智能构建代理URL
-   * 逻辑：���用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
+   * 逻辑：专用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
    * @param {string} targetUrl 原始目标URL
    * @returns {string} 处理后的URL
    */
@@ -11191,7 +11191,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
       deviceid: "tWEtIN7JG2DTDkBBigvj6A%3D%3D",
       // 固定设备指纹
       token: "",
-      // 必须为空字符串以通过校验
+      // ���须为空字符串以通过校验
       aliid: aliId,
       // 使用动态aliId
       umid: "",
@@ -16364,7 +16364,7 @@ var SohuSource = class extends BaseSource {
   constructor() {
     super(), this.positionMap = {
       1: 1,
-      // 滚动弹幕
+      // 滚���弹幕
       4: 5,
       // 顶部弹幕
       5: 4
