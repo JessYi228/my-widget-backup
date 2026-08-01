@@ -13030,7 +13030,7 @@ var TencentSource = class extends BaseSource {
           ch && ch.title && chapters.push({ title: ch.title });
     return chapters;
   }
-  // 子分类式章节仅取“正片���子分类：该值直接作为请求参数 chapter_name 发往分页接口，
+  // 子分类式章节仅取“正片”子分类：该值直接作为请求参数 chapter_name 发往分页接口，
   // 与 tabs 分页路径以 chapter_name=正片 标识正片的方式一致；其余子分类（花絮/直播回放/彩蛋等）不请求。
   isZhengpianChapter(ch) {
     return !!ch && ch.title === "\u6B63\u7247";
@@ -13399,7 +13399,7 @@ var TencentSource = class extends BaseSource {
 var _IqiyiSource = class _IqiyiSource extends BaseSource {
   /**
    * 搜索爱奇艺内容
-   * @param {string} keyword - 搜索关键词
+   * @param {string} keyword - 搜索关��词
    * @returns {Promise<Array>} 搜索结果数组
    */
   async search(keyword) {
