@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详���",
+      title: "获取详情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -253,7 +253,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
 }
 
 // 从番剧标题提取季号，兼容多种命名：
-//   "��来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
+//   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
 // 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
 function extractSeasonNumber(animeTitle) {
   const title = String(animeTitle || "");
@@ -538,7 +538,7 @@ function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
 
-// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，不��期）
+// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，不过期）
 async function fetchEpisodesByBangumi(source, id) {
   try {
     const response = await Widget.http.get(
