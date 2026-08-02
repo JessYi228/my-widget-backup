@@ -18044,7 +18044,7 @@ var AiyifanSource = class extends BaseSource {
     }
   }
   /**
-   * 获取某集的弹幕分片��表
+   * 获取某集的弹幕分片列表
    * @param {string} id - 视频ID
    * @returns {Promise<any>} 弹幕分片列表
    */
