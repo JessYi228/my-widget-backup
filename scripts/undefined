@@ -486,7 +486,7 @@ function convertChineseNumber(chineseNumber) {
     '陸': 6, '柒': 7, '捌': 8, '玖': 9
   };
   
-  // 单位映射��简体+繁体）
+  // 单位映射（简体+繁体）
   const units = {
     // 简体
     '十': 10, '百': 100, '千': 1000,
@@ -538,7 +538,7 @@ function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
 
-// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，不过期���
+// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，不过期）
 async function fetchEpisodesByBangumi(source, id) {
   try {
     const response = await Widget.http.get(
