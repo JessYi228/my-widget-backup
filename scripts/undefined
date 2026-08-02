@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详情",
+      title: "获取详��",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -413,7 +413,7 @@ async function searchDanmu(params) {
         );
         const epData = epResponse && epResponse.data;
         if (epData && Array.isArray(epData.animes)) {
-          // 剥离内联 episodes，只保留番剧候选层（App 按三段流程后续调 getDetail 取分集）
+          // ��离内联 episodes，只保留番剧候选层（App 按三段流程后续调 getDetail 取分集）
           rawAnimes = epData.animes.map(({ episodes, ...anime }) => anime);
         }
       }
@@ -533,7 +533,7 @@ function convertChineseNumber(chineseNumber) {
 
 // 去掉 Misaka 兼容服务在 animeTitle 上加的后缀，还原干净搜索词
 //   "剑来 第二季 （来源：tencent 年份：2025）" -> "剑来 第二季"
-//   "剑来（库内：2）（搜索��1-10）" -> "剑来"
+//   "剑来（库内：2）（搜索：1-10）" -> "剑来"
 function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
