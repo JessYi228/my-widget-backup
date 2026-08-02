@@ -6125,7 +6125,7 @@ var Globals = {
   },
   /**
    * 智能构建代理URL
-   * 逻辑：专用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
+   * 逻辑：���用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
    * @param {string} targetUrl 原始目标URL
    * @returns {string} 处理后的URL
    */
@@ -16566,7 +16566,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的公共函数
+  // 提取vid和aid的公共函��
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {
