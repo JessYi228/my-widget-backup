@@ -13053,7 +13053,7 @@ var TencentSource = class extends BaseSource {
     return year * 10 + season;
   }
   // 按分页 tabs 下发的 page_context 结构构造章节请求参数；
-  // chapterInfo 自带的 pageContext 缺少 cid/page_num/req_type 等必填项，服务端会忽略并回落默认视图
+  // chapterInfo 自带的 pageContext 缺少 cid/page_num/req_type 等必��项，服务端会忽略并回落默认视图
   buildChapterPageContext(cid, chapterName, pageNum) {
     return `lid=&cid=${cid}&page_num=${pageNum}&page_size=30&id_type=1&req_type=6&req_from=web_vsite&req_from_second_type=&detail_page_type=1&year=&tab_type=4&chapter_name=${chapterName}&is_nocopyright=false`;
   }
@@ -17804,7 +17804,7 @@ var AiyifanSource = class extends BaseSource {
   }
   /**
    * 从搜索结果中提取剧目列表
-   * @param {Object} searchResult - 搜索结果
+   * @param {Object} searchResult - ���索结果
    * @returns {Array} 剧目列表
    */
   extractDramaList(searchResult) {
@@ -19174,7 +19174,7 @@ var API_HEALTH2 = {
   }
   /**
    * 从关联数据中提取关联条目
-   * @param {Object|null} v2Data 动画详情数据
+   * @param {Object|null} v2Data 动画详情数��
    * @returns {Array} 关联条目数组
    */
   _extractRelations(v2Data) {
