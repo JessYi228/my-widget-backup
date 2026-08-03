@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详情",
+      title: "获取详��",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
