@@ -6125,7 +6125,7 @@ var Globals = {
   },
   /**
    * 智能构建代理URL
-   * 逻辑：专用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
+   * 逻辑：���用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
    * @param {string} targetUrl 原始目标URL
    * @returns {string} 处理后的URL
    */
@@ -19174,7 +19174,7 @@ var API_HEALTH2 = {
   }
   /**
    * 从关联数据中提取关联条目
-   * @param {Object|null} v2Data 动画���情数据
+   * @param {Object|null} v2Data 动画详情数据
    * @returns {Array} 关联条目数组
    */
   _extractRelations(v2Data) {
