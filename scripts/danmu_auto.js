@@ -5475,7 +5475,7 @@ function applyOffset(danmus, offsetSeconds, options = {}) {
 var Envs = class {
   /**
    * 获取环境变量
-   * @param {string} key 环境变量的键
+   * @param {string} key 环境变��的键
    * @param {any} defaultValue 默认值
    * @param {'string' | 'number' | 'boolean'} type 类型
    * @returns {any} 转换后的值
@@ -10448,7 +10448,7 @@ var Kan360Source = class extends BaseSource {
       return log("error", `getEpisodesV1 error: ${e && e.message ? e.message : e}`), [];
     }
   }
-  // 使用 episodesv2 接口获取剧集分集（电视剧/动��）
+  // 使用 episodesv2 接口获取剧集分集（电视剧/动漫）
   async getEpisodesV2(cat, entId, site) {
     try {
       let sParam = JSON.stringify([{ cat_id: String(cat), ent_id: String(entId), site }]), url = `https://api.so.360kan.com/episodesv2?v_ap=1&s=${encodeURIComponent(sParam)}`, data = (await Widget.http.get(url, {
@@ -12025,7 +12025,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       return warnTag && log("warn", `${warnTag}: ${error.message}`), fallback;
     }
   }
-  // ── 数据规范化 ───────────────────────���──────────────────────
+  // ── 数据规范化 ──────────────────────────────────────────────
   normalizeSearchItems(items = []) {
     return Array.isArray(items) ? items.map((item) => {
       if (!item || typeof item != "object") return null;
@@ -13553,7 +13553,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
    * 获取分集列表
    * @param {string} id - 视频 ID (link_id 或 movie_qipuId)
    * @param {number|null} querySeason - 目标季，指定时只获取该季分集
-   * @param {Map|null} seasonAlbumCache - 跨多次调用共享的分季数���缓存，避免同一 album 重复请求
+   * @param {Map|null} seasonAlbumCache - 跨多次调用共享的分季数据缓存，避免同一 album 重复请求
    * @returns {Promise<Array>} 分集列表
    */
   async getEpisodes(id, querySeason = null, seasonAlbumCache = null, inlinedAlbumIds = null, baseInfoCache = null) {
@@ -18044,7 +18044,7 @@ var AiyifanSource = class extends BaseSource {
     }
   }
   /**
-   * 获取某集的弹幕分片列表
+   * 获取某集的弹幕分片��表
    * @param {string} id - 视频ID
    * @returns {Promise<any>} 弹幕分片列表
    */
