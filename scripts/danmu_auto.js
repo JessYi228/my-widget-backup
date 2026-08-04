@@ -5475,7 +5475,7 @@ function applyOffset(danmus, offsetSeconds, options = {}) {
 var Envs = class {
   /**
    * 获取环境变量
-   * @param {string} key 环境变��的键
+   * @param {string} key 环境变量的键
    * @param {any} defaultValue 默认值
    * @param {'string' | 'number' | 'boolean'} type 类型
    * @returns {any} 转换后的值
@@ -18044,7 +18044,7 @@ var AiyifanSource = class extends BaseSource {
     }
   }
   /**
-   * 获取某集的弹幕分片��表
+   * 获取某集的弹幕分片列表
    * @param {string} id - 视频ID
    * @returns {Promise<any>} 弹幕分片列表
    */
@@ -19174,7 +19174,7 @@ var API_HEALTH2 = {
   }
   /**
    * 从关联数据中提取关联条目
-   * @param {Object|null} v2Data 动画详情数据
+   * @param {Object|null} v2Data 动画���情数据
    * @returns {Array} 关联条目数组
    */
   _extractRelations(v2Data) {
