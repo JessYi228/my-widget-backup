@@ -17936,7 +17936,7 @@ var AiyifanSource = class extends BaseSource {
       type: drama.atypeName,
       // 默认类型
       year: new Date(drama.postTime).getFullYear(),
-      // 年份信息可能需要从其他地方获取
+      // 年��信息可能需要从其他地方获取
       imageUrl: drama.imgPath || null,
       // 图片链接
       episodeCount: 0
@@ -18044,7 +18044,7 @@ var AiyifanSource = class extends BaseSource {
     }
   }
   /**
-   * 获取某集的弹幕分片��表
+   * 获取某集的弹幕分片列表
    * @param {string} id - 视频ID
    * @returns {Promise<any>} 弹幕分片列表
    */
