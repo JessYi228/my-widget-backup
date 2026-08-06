@@ -12488,7 +12488,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
    * 处理搜索结果
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
-   * @param {Array} curAnimes 结果池
+   * @param {Array} curAnimes 结���池
    * @param {any} extra 额外信息
    * @param {Map} detailStore 详情缓存
    * @param {number|null} querySeason 目标季度
