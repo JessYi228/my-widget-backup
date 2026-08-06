@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：剧��，Optional
+ * seriesName：剧名���Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获��详情",
+      title: "获取���情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -394,7 +394,7 @@ async function searchDanmu(params) {
       );
 
       if (!response) {
-        throw new Error("获取数���失败");
+        throw new Error("获取数据失败");
       }
 
       const data = response.data;
@@ -413,7 +413,7 @@ async function searchDanmu(params) {
         );
         const epData = epResponse && epResponse.data;
         if (epData && Array.isArray(epData.animes)) {
-          // 剥离内联 episodes，只保留番剧候选层（App 按三段流程后续调 getDetail 取分集）
+          // ��离内联 episodes，只保留番剧候选层（App 按三段流程后续调 getDetail 取分集）
           rawAnimes = epData.animes.map(({ episodes, ...anime }) => anime);
         }
       }
