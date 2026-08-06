@@ -10421,7 +10421,7 @@ var Kan360Source = class extends BaseSource {
     }
     return null;
   }
-  // 使用 /v1/detail 分批获取集数��每批最多200集），返回 [{name, url}, ...]
+  // 使用 /v1/detail 分批获取集数（每批最多200集），返回 [{name, url}, ...]
   async getEpisodesV1(cat, id, site, number) {
     try {
       if (!number || Number(number) === 0) return [];
