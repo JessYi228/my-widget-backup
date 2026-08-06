@@ -8659,7 +8659,7 @@ var RegexStore = {
   { regex: /(剧场版|劇場版|the\s*movie|theatrical|movie|film|电影)/i, val: "MOVIE" },
   { regex: /(续篇|续集)/, val: "SEQUEL" },
   { regex: /\b(sp|special)\d*\b/i, val: "SP" },
-  // 回退：清洗后以数字结尾（��� "タイトル2"）视为 S{N}
+  // 回退：清洗后以数字结尾（如 "タイトル2"）视为 S{N}
   { regex: /[^0-9](\d)$/, prefix: "S", useCleaned: !0 }
 ], SpecialSeriesRegistry = [
   {
