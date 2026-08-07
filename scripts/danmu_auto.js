@@ -11916,7 +11916,7 @@ ${path2}?${sortedQuery}`;
   // 8. 数据解析与处理工具
   // =====================
   /**
-   * 解析 RRSP 的 P 字段 (属性字符串)
+   * ��析 RRSP 的 P 字段 (属性字符串)
    * 格式: timestamp,mode,size,color,uid,cid...
    * 使用安全数值转换，防止 NaN 污染导致数据被误去重
    */
@@ -12234,7 +12234,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       }
     };
   }
-  // ── 搜索接口 ─────────────────────────────────────────────────
+  // ── 搜索接口 ─────────────────────────────────────���───────────
   /**
    * 从响应 payload 中提取搜索结果；支持加密与明文两种格式
    */
@@ -16566,7 +16566,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的公共函��
+  // 提取vid和aid的公共函数
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {
