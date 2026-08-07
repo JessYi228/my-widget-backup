@@ -6125,7 +6125,7 @@ var Globals = {
   },
   /**
    * 智能构建代理URL
-   * 逻辑：专用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
+   * 逻辑：���用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
    * @param {string} targetUrl 原始目标URL
    * @returns {string} 处理后的URL
    */
@@ -10299,7 +10299,7 @@ var BaseSource = class {
   async getEpisodeSegmentDanmu(segment) {
     throw new Error("Method 'getEpisodeSegmentDanmu' must be implemented");
   }
-  // 格式化弹��
+  // 格式化弹幕
   formatComments(comments) {
     throw new Error("Method 'formatComments' must be implemented");
   }
