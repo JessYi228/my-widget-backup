@@ -10299,7 +10299,7 @@ var BaseSource = class {
   async getEpisodeSegmentDanmu(segment) {
     throw new Error("Method 'getEpisodeSegmentDanmu' must be implemented");
   }
-  // 格式化弹幕
+  // 格式化弹��
   formatComments(comments) {
     throw new Error("Method 'formatComments' must be implemented");
   }
@@ -16566,7 +16566,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的公共函��
+  // 提取vid和aid的公共函数
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {
