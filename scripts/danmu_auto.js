@@ -6125,7 +6125,7 @@ var Globals = {
   },
   /**
    * 智能构建代理URL
-   * 逻辑：���用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
+   * 逻辑：专用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
    * @param {string} targetUrl 原始目标URL
    * @returns {string} 处理后的URL
    */
@@ -10421,7 +10421,7 @@ var Kan360Source = class extends BaseSource {
     }
     return null;
   }
-  // 使用 /v1/detail 分批获取集数（每批最多200集），返回 [{name, url}, ...]
+  // 使用 /v1/detail 分批获取集数��每批最多200集），返回 [{name, url}, ...]
   async getEpisodesV1(cat, id, site, number) {
     try {
       if (!number || Number(number) === 0) return [];
