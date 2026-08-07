@@ -14253,7 +14253,7 @@ var MangoSource = class extends BaseSource {
         let qiUpMidDownMatch = fullTitle.match(/第(\d+)期([上中下])/), qiPureMatch = fullTitle.match(/第(\d+)期/), hasUpMidDown = /第\d+期[上中下]/.test(fullTitle);
         if (qiUpMidDownMatch) {
           let qiNum = qiUpMidDownMatch[1], upMidDown = qiUpMidDownMatch[2], qiUpMidDownText = `\u7B2C${qiNum}\u671F${upMidDown}`, afterUpMidDown = fullTitle.substring(fullTitle.indexOf(qiUpMidDownText) + qiUpMidDownText.length);
-          /^(加更|会员版|纯享版|特别版|独家版|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后)/.test(afterUpMidDown) ? log("info", `[mango] \u7EFC\u827A\u8FC7\u6EE4\u4E0A\u4E2D\u4E0B\u683C\u5F0F+\u540E\u7F00: ${fullTitle}`) : (qiInfoMap.set(ep, [parseInt(qiNum), upMidDown]), episodeInfos.push(ep), log("info", `[mango] \u7EFC\u827A\u4FDD\u7559\u4E0A\u4E2D\u4E0B\u683C\u5F0F: ${fullTitle}`));
+          /^(加更|会员版|纯享版|特别版|独家版|Plus|\+|���絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后)/.test(afterUpMidDown) ? log("info", `[mango] \u7EFC\u827A\u8FC7\u6EE4\u4E0A\u4E2D\u4E0B\u683C\u5F0F+\u540E\u7F00: ${fullTitle}`) : (qiInfoMap.set(ep, [parseInt(qiNum), upMidDown]), episodeInfos.push(ep), log("info", `[mango] \u7EFC\u827A\u4FDD\u7559\u4E0A\u4E2D\u4E0B\u683C\u5F0F: ${fullTitle}`));
         } else if (qiPureMatch && !hasUpMidDown && !/会员版|纯享版|特别版|独家版|加更|Plus|\+|花絮|预告|彩蛋|抢先|精选|未播|回顾|特辑|幕后|访谈|采访|混剪|合集|盘点|总结|删减|未播放|NG|番外|片段|看点|精彩|制作|导演|演员|拍摄|片尾曲|插曲|主题曲|背景音乐|OST|音乐|歌曲/.test(fullTitle)) {
           let qiNum = qiPureMatch[1];
           qiInfoMap.set(ep, [parseInt(qiNum), ""]), episodeInfos.push(ep), log("info", `[mango] \u7EFC\u827A\u4FDD\u7559\u6807\u51C6\u671F\u6570: ${fullTitle}`);
