@@ -6125,7 +6125,7 @@ var Globals = {
   },
   /**
    * 智能构建代理URL
-   * 逻辑：专用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
+   * 逻辑：���用反代/万能反代直接替换/拼接URL（无视平台）；正向代理走5321端口（仅本地Node有效）
    * @param {string} targetUrl 原始目标URL
    * @returns {string} 处理后的URL
    */
@@ -17936,7 +17936,7 @@ var AiyifanSource = class extends BaseSource {
       type: drama.atypeName,
       // 默认类型
       year: new Date(drama.postTime).getFullYear(),
-      // 年��信息可能需要从其他地方获取
+      // 年份信息可能需要从其他地方获取
       imageUrl: drama.imgPath || null,
       // 图片链接
       episodeCount: 0
