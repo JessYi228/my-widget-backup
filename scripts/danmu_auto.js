@@ -10287,7 +10287,7 @@ var BaseSource = class {
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, extra = null, detailStore = null) {
     throw new Error("Method 'handleAnimes' must be implemented");
   }
-  // ���取某集的弹幕
+  // 获取某集的弹幕
   async getEpisodeDanmu(id) {
     throw new Error("Method 'getEpisodeDanmu' must be implemented");
   }
@@ -18876,7 +18876,7 @@ var API_HEALTH2 = {
 }, SUBJECT_CACHE = /* @__PURE__ */ new Map(), SUBJECT_CACHE_TTL = 180 * 1e3, SUBJECT_CACHE_MAX_SIZE = 100, AnimekoSource = class extends BaseSource {
   /**
    * 获取标准 HTTP 请求头
-   * @returns {Object} 请求头对��
+   * @returns {Object} 请求头对象
    */
   get headers() {
     return {
