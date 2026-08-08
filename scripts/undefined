@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：��名，Optional
+ * seriesName��剧名，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "��取详情",
+      title: "获取详情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -252,7 +252,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
   return results;
 }
 
-// 从番剧标题提取季号，兼容多种命名：
+// 从番剧标题提取季号，兼容多种命���：
 //   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
 // 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
 function extractSeasonNumber(animeTitle) {
@@ -399,7 +399,7 @@ async function searchDanmu(params) {
 
       const data = response.data;
 
-      // 检查API返回状态
+      // 检查API返回���态
       if (!data.success) {
         throw new Error(data.errorMessage || "API调用失败");
       }
@@ -533,7 +533,7 @@ function convertChineseNumber(chineseNumber) {
 
 // 去掉 Misaka 兼容服务在 animeTitle 上加的后缀，还原干净搜索词
 //   "剑来 第二季 （来源：tencent 年份：2025）" -> "剑来 第二季"
-//   "剑来（库内：2）���搜索：1-10）" -> "剑来"
+//   "剑来（库内：2）（搜索：1-10）" -> "剑来"
 function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
