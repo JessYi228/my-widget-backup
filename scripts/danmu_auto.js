@@ -8535,7 +8535,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
     SEASON_SHIFT_EXACT: 15,
     // 完美的季度偏移匹配（如 S2E1 → S1E13）
     CN_STRICT_MATCH: 25,
-    // 中文严格：核心词命中且集数一致的���励
+    // 中文严格：核心词命中且集数一致的奖励
     CN_STRICT_MISMATCH: -5,
     // 中文严格：核心词包含但集数不同（防同系列误对齐）
     NUMERIC_MATCH: 2,
@@ -10448,7 +10448,7 @@ var Kan360Source = class extends BaseSource {
       return log("error", `getEpisodesV1 error: ${e && e.message ? e.message : e}`), [];
     }
   }
-  // 使用 episodesv2 接口获取剧集分集（电视剧/动��）
+  // 使用 episodesv2 接口获取剧集分集（电视剧/动漫）
   async getEpisodesV2(cat, entId, site) {
     try {
       let sParam = JSON.stringify([{ cat_id: String(cat), ent_id: String(entId), site }]), url = `https://api.so.360kan.com/episodesv2?v_ap=1&s=${encodeURIComponent(sParam)}`, data = (await Widget.http.get(url, {
@@ -12025,7 +12025,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       return warnTag && log("warn", `${warnTag}: ${error.message}`), fallback;
     }
   }
-  // ── 数据规范化 ───────────────────────���──────────────────────
+  // ── 数据规范化 ──────────────────────────────────────────────
   normalizeSearchItems(items = []) {
     return Array.isArray(items) ? items.map((item) => {
       if (!item || typeof item != "object") return null;
@@ -12523,7 +12523,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
         }
     return this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), tmpAnimes;
   }
-  // ── 弹幕 ────────────────────────────────────────���────────────
+  // ── 弹幕 ─────────────────────────────────────────────────────
   async fetchEpisodeDanmuByRef(episodeRef) {
     let episodeId = String(episodeRef?.id || "").trim();
     if (!episodeId) return [];
