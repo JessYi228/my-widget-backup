@@ -10299,7 +10299,7 @@ var BaseSource = class {
   async getEpisodeSegmentDanmu(segment) {
     throw new Error("Method 'getEpisodeSegmentDanmu' must be implemented");
   }
-  // 格式化弹幕
+  // 格式化��幕
   formatComments(comments) {
     throw new Error("Method 'formatComments' must be implemented");
   }
