@@ -12240,7 +12240,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
     let list = data?.seriesData?.seriesList || data?.seriesList || data?.seriesData?.series || [];
     return this.normalizeSearchItems(list);
   }
-  // ── 搜索候选合并 ────────��────────────────────────────────────
+  // ── 搜索候选合并 ─────────────────────────────────────────────
   dedupeBySid(items = []) {
     let map = /* @__PURE__ */ new Map();
     for (let item of items) {
