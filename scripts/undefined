@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：剧名，Optional
+ * seriesName：剧名��Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详情",
+      title: "获取��情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -279,7 +279,7 @@ function filterAnimes(rawAnimes, type, season, queryTitle) {
       if (type === "movie") {
         return movieTypes.some(t => t.toLowerCase() === animeType);
       }
-      // tv 类型兜底：只排除电影类型，其余都算剧���
+      // tv 类型兜底：只排除电影类型，其余都算剧集
       if (type === "tv") {
         return !movieTypes.some(t => t.toLowerCase() === animeType);
       }
@@ -637,7 +637,7 @@ async function fetchEpisodesByMatch(source, title, season, episode) {
     const data = response && response.data;
     if (!data || !data.isMatched || !Array.isArray(data.matches) || data.matches.length === 0) return null;
     const matched = data.matches[0];
-    // match 只返回匹配到的当前集，构造单集列表（episodeNumber 设为当前集，供 App 选集对齐）
+    // match 只返回匹配到的当前集，构造单集列表���episodeNumber 设为当前集，供 App 选集对齐）
     return [{
       episodeId: matched.episodeId,
       episodeTitle: matched.episodeTitle || `第${e}集`,
