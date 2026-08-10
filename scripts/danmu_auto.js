@@ -8854,7 +8854,7 @@ var RegexStore = {
     ]
   },
   {
-    // 案例 3：没有���何副标题，主标题本身就是特殊类型
+    // 案例 3：没有任何副标题，主标题本身就是特殊类型
     seriesKeywords: ["\u7EA2\u732A", "\u5343\u4E0E\u5343\u5BFB", "\u9F99\u732B"],
     // 当没有匹配到任何 mappings（或根本没写 mappings）时，直接给这个条目打上默认标签
     defaultStandard: "\u5267\u573A\u7248"
