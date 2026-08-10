@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：剧名，Optional
+ * seriesName：��名，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详情",
+      title: "��取详情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -279,7 +279,7 @@ function filterAnimes(rawAnimes, type, season, queryTitle) {
       if (type === "movie") {
         return movieTypes.some(t => t.toLowerCase() === animeType);
       }
-      // tv 类型兜底：只排除电影类型，其余都算���集
+      // tv 类型兜底：只排除电影类型，其余都算剧集
       if (type === "tv") {
         return !movieTypes.some(t => t.toLowerCase() === animeType);
       }
@@ -505,7 +505,7 @@ function convertChineseNumber(chineseNumber) {
       // 数字
       current = digits[char];
     } else if (units[char] !== undefined) {
-      // 单位
+      // 单��
       const unit = units[char];
       
       if (current === 0) current = 1;
@@ -533,7 +533,7 @@ function convertChineseNumber(chineseNumber) {
 
 // 去掉 Misaka 兼容服务在 animeTitle 上加的后缀，还原干净搜索词
 //   "剑来 第二季 （来源：tencent 年份：2025）" -> "剑来 第二季"
-//   "剑来（库内：2��（搜索：1-10）" -> "剑来"
+//   "剑来（库内：2）（搜索：1-10）" -> "剑来"
 function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
@@ -637,7 +637,7 @@ async function fetchEpisodesByMatch(source, title, season, episode) {
     const data = response && response.data;
     if (!data || !data.isMatched || !Array.isArray(data.matches) || data.matches.length === 0) return null;
     const matched = data.matches[0];
-    // match 只返回匹配到的当前集，构造单集列表（episodeNumber 设为当前集，供 App 选集对齐）
+    // match 只返回匹配到的当前集，构���单集列表（episodeNumber 设为当前集，供 App 选集对齐）
     return [{
       episodeId: matched.episodeId,
       episodeTitle: matched.episodeTitle || `第${e}集`,
@@ -662,7 +662,7 @@ async function getDetailById(params) {
       // 1. match 优先：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接匹配当前集。
       //    库内直接匹配 + 严格标题过滤，一步到位拿稳定 episodeId，不依赖易过期的临时ID。
       let episodes = await fetchEpisodesByMatch(source, matchTitle, season, episode);
-      // 2. 失败 → 标准 bangumi 端点（官方 dandanplay / 真实作品ID 直接命中）
+      // 2. 失败 → 标准 bangumi 端点（��方 dandanplay / 真实作品ID 直接命中）
       if (!episodes) {
         episodes = await fetchEpisodesByBangumi(source, parsedAnimeId.id);
       }
@@ -720,7 +720,7 @@ async function getCommentsById(params) {
     for (const source of sources) {
       try {
         // async=1：慢源/库外剧弹幕需实时下载，服务端会等待下载完成再返回（同步请求会直接返回0条）。
-        // widget JS 环境��� setTimeout，无法轮询 taskcomment；超长下载返回 taskId 时本次取不到，
+        // widget JS 环境无 setTimeout，无法轮询 taskcomment；超长下载返回 taskId 时本次取不到，
         // 靠 App "空弹幕不缓存→下次重试" + Misaka 预下载兜底。
         const response = await Widget.http.get(
           `${source.server}/api/v2/comment/${parsedCommentId.id}?async=1&withRelated=true&chConvert=1`,
