@@ -15447,7 +15447,7 @@ var YoukuSource = class extends BaseSource {
    * 过滤优酷搜索项
    * @param {Object} component - 搜索组件
    * @param {string} keyword - 搜索关键词
-   * @returns {Object|null} 过滤后的���果
+   * @returns {Object|null} 过滤后的结果
    */
   filterYoukuSearchItem(component, keyword) {
     let commonData = component.commonData;
@@ -18155,7 +18155,7 @@ var AiyifanSource = class extends BaseSource {
       return log("error", "[aiyifan] \u83B7\u53D6\u64AD\u653E\u5217\u8868\u5931\u8D25"), [];
     let result = episodes.map((ep, index) => ({
       vid: ep.key,
-      // 使用key���为vid
+      // 使用key作为vid
       id: ep.id,
       title: ep.name || `\u7B2C${index + 1}\u96C6`,
       link: `${this.DOMAIN_API}/${id}?id=${ep.key}`
