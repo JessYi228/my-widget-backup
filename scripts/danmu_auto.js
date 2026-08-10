@@ -8672,7 +8672,7 @@ function smartTitleReplace(animes, cnAlias) {
 
 // danmu_api/utils/merge-util.js
 var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG = !1, MergeWeights = Object.freeze({
-  // ── 标��与结构 ──────────────────────────────────────────
+  // ── 标题与结构 ──────────────────────────────────────────
   TITLE_STRUCTURE_CONFLICT: -0.3,
   // 标题结构冲突（如父子集关系）
   LANG_MATCH_CN: 0.15,
@@ -12240,7 +12240,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
     let list = data?.seriesData?.seriesList || data?.seriesList || data?.seriesData?.series || [];
     return this.normalizeSearchItems(list);
   }
-  // ── 搜索候选合并 ────────��────────────────────────────────────
+  // ── 搜索候选合并 ─────────────────────────────────────────────
   dedupeBySid(items = []) {
     let map = /* @__PURE__ */ new Map();
     for (let item of items) {
@@ -15447,7 +15447,7 @@ var YoukuSource = class extends BaseSource {
    * 过滤优酷搜索项
    * @param {Object} component - 搜索组件
    * @param {string} keyword - 搜索关键词
-   * @returns {Object|null} 过滤后的结果
+   * @returns {Object|null} 过滤后的���果
    */
   filterYoukuSearchItem(component, keyword) {
     let commonData = component.commonData;
@@ -18155,7 +18155,7 @@ var AiyifanSource = class extends BaseSource {
       return log("error", "[aiyifan] \u83B7\u53D6\u64AD\u653E\u5217\u8868\u5931\u8D25"), [];
     let result = episodes.map((ep, index) => ({
       vid: ep.key,
-      // 使用key作为vid
+      // 使用key���为vid
       id: ep.id,
       title: ep.name || `\u7B2C${index + 1}\u96C6`,
       link: `${this.DOMAIN_API}/${id}?id=${ep.key}`
