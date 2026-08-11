@@ -450,7 +450,7 @@ async function searchDanmu(params) {
       const searchAnime = {
         ...anime,
         // Misaka 等兼容服务的 bangumi/{id} 端点只认 bangumiId(如 "A900016")，而非数字 animeId(900016)；
-        // 标准 dandanplay 无 bangumiId 字段，回退到 animeId 保持原行���
+        // 标准 dandanplay 无 bangumiId 字段，回退到 animeId 保持原行为
         animeId: bindDanmuServerId(anime.bangumiId || anime.animeId, result.source, shouldBindSource),
         animeTitle: appendDanmuSourceTitle(anime.animeTitle, result.source, shouldBindSource),
       };
@@ -502,7 +502,7 @@ function convertChineseNumber(chineseNumber) {
     const char = chineseNumber[i];
     
     if (digits[char] !== undefined) {
-      // 数��
+      // 数字
       current = digits[char];
     } else if (units[char] !== undefined) {
       // 单位
@@ -533,7 +533,7 @@ function convertChineseNumber(chineseNumber) {
 
 // 去掉 Misaka 兼容服务在 animeTitle 上加的后缀，还原干净搜索词
 //   "剑来 第二季 （来源：tencent 年份：2025）" -> "剑来 第二季"
-//   "剑来（库内：2）（搜索：1-10）" -> "剑来"
+//   "剑来（库内：2）（搜索��1-10）" -> "剑来"
 function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }

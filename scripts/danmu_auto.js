@@ -5823,7 +5823,7 @@ var Envs = class {
    * 移除搜索关键词和源标题中的画质/配音/版本等杂音词。
    * 支持完全自定义的正则表达式，默认为同时匹配中英文括号的常用杂音词。
    * 未设置时使用默认规则，设为空值可禁用。
-   * @returns {RegExp|null} 全局正则，显式设为空时返�� null（禁用）
+   * @returns {RegExp|null} 全局正则，显式设为空时返回 null（禁用）
    */
   static resolveTitleNoiseFilter() {
     let defaultPattern = "[\uFF08(\\[](?:\u81FB\u5F69|\u771F\u5F69|\u9AD8\u6E05|\u6807\u6E05|\u8D85\u6E05|\u56FD\u914D|\u4E2D\u914D|\u65E5\u914D|\u7CA4\u8BED|\u539F\u58F0|\u53F0\u914D|\u65E0\u4FEE|\u672A\u5220\u51CF|\u5B8C\u6574\u7248|\u65E5\u8BED\u7248|\u56FD\u8BED\u7248|\u82F1\u8BED\u7248|\u4E2D\u5B57|\u5B57\u5E55|\u52A9\u542C|\u539F\u7248)[\\])\uFF09]", raw = this.get("TITLE_NOISE_FILTER", "", "string").trim(), hasKey = this.env && "TITLE_NOISE_FILTER" in this.env || typeof process < "u" && "TITLE_NOISE_FILTER" in process.env;
@@ -8854,7 +8854,7 @@ var RegexStore = {
     ]
   },
   {
-    // 案例 3：没有���何副标题，主标题本身就是特殊类型
+    // 案例 3：没有任何副标题，主标题本身就是特殊类型
     seriesKeywords: ["\u7EA2\u732A", "\u5343\u4E0E\u5343\u5BFB", "\u9F99\u732B"],
     // 当没有匹配到任何 mappings（或根本没写 mappings）时，直接给这个条目打上默认标签
     defaultStandard: "\u5267\u573A\u7248"
@@ -11294,7 +11294,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
   // =====================
   /**
    * 生成随机的 aliid (兼容 TV 端验证算法)
-   * 规律：24位长度，以 'aY' 开头，包含字母��字和 Base64 特殊字符
+   * 规律：24位长度，以 'aY' 开头，包含字母数字和 Base64 特殊字符
    * 模拟抓包数据：aYN4D0XfSREDAJaw3UAjG33K
    */
   generateRandomAliId() {
@@ -12240,7 +12240,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
     let list = data?.seriesData?.seriesList || data?.seriesList || data?.seriesData?.series || [];
     return this.normalizeSearchItems(list);
   }
-  // ── 搜索候选合并 ─────────────────────────────────────────────
+  // ── 搜索候选合并 ────────��────────────────────────────────────
   dedupeBySid(items = []) {
     let map = /* @__PURE__ */ new Map();
     for (let item of items) {
