@@ -319,7 +319,7 @@ function buildMatchedAnime(source, matched, episode, fallbackTitle, fileName, sh
 
 function buildCanonicalMatchFileName(params) {
   const title = cleanAnimeTitle(params.seriesName || params.title)
-    .replace(/\s*第\s*[一二三四五六七八九十百零���\d]+\s*[季部]\s*$/g, "")
+    .replace(/\s*第\s*[一二三四五六七八九十百零〇\d]+\s*[季部]\s*$/g, "")
     .trim();
   const episode = Number(params.episode);
   if (!title || Number.isNaN(episode) || episode <= 0) return null;
@@ -486,7 +486,7 @@ function convertChineseNumber(chineseNumber) {
     '陸': 6, '柒': 7, '捌': 8, '玖': 9
   };
   
-  // 单��映射（简体+繁体）
+  // 单位映射（简体+繁体）
   const units = {
     // 简体
     '十': 10, '百': 100, '千': 1000,
@@ -533,12 +533,12 @@ function convertChineseNumber(chineseNumber) {
 
 // 去掉 Misaka 兼容服务在 animeTitle 上加的后缀，还原干净搜索词
 //   "剑来 第二季 （来源：tencent 年份：2025）" -> "剑来 第二季"
-//   "剑来（库内：2）（搜索：1-10）" -> "剑来"
+//   "剑来（库内：2）（搜索��1-10）" -> "剑来"
 function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
 
-// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，���过期）
+// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，不过期）
 async function fetchEpisodesByBangumi(source, id) {
   try {
     const response = await Widget.http.get(
