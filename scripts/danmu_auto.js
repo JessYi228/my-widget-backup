@@ -18116,7 +18116,7 @@ var AiyifanSource = class extends BaseSource {
   }
   /**
    * 搜索功能
-   * @param {string} keyword - 搜索关键词
+   * @param {string} keyword - 搜索关���词
    * @returns {Promise<Array>} 搜索结果
    */
   async search(keyword) {
