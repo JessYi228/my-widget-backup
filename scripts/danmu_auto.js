@@ -6049,7 +6049,7 @@ var Envs = class {
       commentCacheMinutes: this.get("COMMENT_CACHE_MINUTES", 3, "number"),
       // 弹幕缓存时间配置（分钟，默认 3）
       commentCacheMinCount: this.get("COMMENT_CACHE_MIN_COUNT", 100, "number"),
-      // 弹幕缓存最少条数，低于该值时忽略缓存（默认 100��0 表示关闭）
+      // 弹幕缓存最少条数，低于该值时忽略缓存（默认 100，0 表示关闭）
       hongguoMergeAllEpisodes: this.get("HONGGUO_MERGE_ALL_EPISODES", !1, "boolean"),
       // 红果短剧是否合并全集弹幕（默认 false）
       convertTopBottomToScroll: this.get("CONVERT_TOP_BOTTOM_TO_SCROLL", !1, "boolean"),
@@ -8394,7 +8394,7 @@ async function searchTmdbTitles(title, mediaType = "multi", options = {}) {
     page = 1,
     // 起始页码
     maxPages = 3,
-    // ���多获取几页结果
+    // 最多获取几页结果
     signal = null
     // 中断信号
   } = options;
@@ -18116,7 +18116,7 @@ var AiyifanSource = class extends BaseSource {
   }
   /**
    * 搜索功能
-   * @param {string} keyword - 搜索关键词
+   * @param {string} keyword - 搜索关键���
    * @returns {Promise<Array>} 搜索结果
    */
   async search(keyword) {
