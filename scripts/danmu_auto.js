@@ -5611,7 +5611,7 @@ var Envs = class {
     }).filter((server) => server.url && server.url.length > 0);
   }
   /**
-   * 解析源排序
+   * 解析源��序
    * @returns {Array} 源排序数组
    */
   static resolveSourceOrder() {
