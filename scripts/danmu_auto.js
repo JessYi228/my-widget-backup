@@ -12292,7 +12292,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       category: normalizeValue(item?.category)
     };
   }
-  // titleMatches 只负责关键词相关性；S5↔TV 是否为同一实体必须满足精确标题与强元数据约束。
+  // titleMatches 只负责关键词相关性；S5↔TV 是否为同一实体必须满足精确标题与强元数据约���。
   isMergeableSearchPair(leftItem, rightItem) {
     let leftTitle = this.normalizeSearchPairTitle(leftItem?.name), rightTitle = this.normalizeSearchPairTitle(rightItem?.name);
     if (!leftTitle || !rightTitle || leftTitle !== rightTitle) return !1;
