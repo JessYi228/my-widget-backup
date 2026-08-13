@@ -6049,7 +6049,7 @@ var Envs = class {
       commentCacheMinutes: this.get("COMMENT_CACHE_MINUTES", 3, "number"),
       // 弹幕缓存时间配置（分钟，默认 3）
       commentCacheMinCount: this.get("COMMENT_CACHE_MIN_COUNT", 100, "number"),
-      // 弹幕缓存最少条数，低于该值时忽略缓存（默认 100��0 表示关闭）
+      // 弹幕缓存最少条数，低于该值时忽略缓存（默认 100，0 表示关闭）
       hongguoMergeAllEpisodes: this.get("HONGGUO_MERGE_ALL_EPISODES", !1, "boolean"),
       // 红果短剧是否合并全集弹幕（默认 false）
       convertTopBottomToScroll: this.get("CONVERT_TOP_BOTTOM_TO_SCROLL", !1, "boolean"),
@@ -8672,7 +8672,7 @@ function smartTitleReplace(animes, cnAlias) {
 
 // danmu_api/utils/merge-util.js
 var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG = !1, MergeWeights = Object.freeze({
-  // ── 标题与结构 ──────────────────────────────────────────
+  // ── 标��与结构 ──────────────────────────────────────────
   TITLE_STRUCTURE_CONFLICT: -0.3,
   // 标题结构冲突（如父子集关系）
   LANG_MATCH_CN: 0.15,
@@ -19174,7 +19174,7 @@ var API_HEALTH2 = {
    * 通过多源聚合获取条目详情（含剧集与关联数据，支持智能路由降级）
    * V2 节点: 单次请求聚合返回
    * V0 节点: 采用适配器模式，并发获取子端点数据并组装归一化为 V2 格式，实现底层调用抹平
-   * 使用短效缓存策略兼顾请求去重与动态数据(剧集)的时��性
+   * 使用短效缓存策略兼顾请求去重与动态数据(剧集)的时效性
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Object|null>}
    */
