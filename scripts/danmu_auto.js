@@ -6049,7 +6049,7 @@ var Envs = class {
       commentCacheMinutes: this.get("COMMENT_CACHE_MINUTES", 3, "number"),
       // 弹幕缓存时间配置（分钟，默认 3）
       commentCacheMinCount: this.get("COMMENT_CACHE_MIN_COUNT", 100, "number"),
-      // 弹幕缓存最少条数，低于该值时忽略缓存（默认 100，0 表示关闭）
+      // 弹幕缓存最少条数，低于该值时忽略缓存（默认 100��0 表示关闭）
       hongguoMergeAllEpisodes: this.get("HONGGUO_MERGE_ALL_EPISODES", !1, "boolean"),
       // 红果短剧是否合并全集弹幕（默认 false）
       convertTopBottomToScroll: this.get("CONVERT_TOP_BOTTOM_TO_SCROLL", !1, "boolean"),
@@ -8394,7 +8394,7 @@ async function searchTmdbTitles(title, mediaType = "multi", options = {}) {
     page = 1,
     // 起始页码
     maxPages = 3,
-    // 最多获取几页结果
+    // ���多获取几页结果
     signal = null
     // 中断信号
   } = options;
@@ -12292,7 +12292,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       category: normalizeValue(item?.category)
     };
   }
-  // titleMatches 只负责关键词相关性；S5↔TV 是否为同一实体必须满足精确标题与强元数据约���。
+  // titleMatches 只负责关键词相关性；S5↔TV 是否为同一实体必须满足精确标题与强元数据约束。
   isMergeableSearchPair(leftItem, rightItem) {
     let leftTitle = this.normalizeSearchPairTitle(leftItem?.name), rightTitle = this.normalizeSearchPairTitle(rightItem?.name);
     if (!leftTitle || !rightTitle || leftTitle !== rightTitle) return !1;
