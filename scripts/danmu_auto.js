@@ -8672,7 +8672,7 @@ function smartTitleReplace(animes, cnAlias) {
 
 // danmu_api/utils/merge-util.js
 var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG = !1, MergeWeights = Object.freeze({
-  // ── 标��与结构 ──────────────────────────────────────────
+  // ── 标题与结构 ──────────────────────────────────────────
   TITLE_STRUCTURE_CONFLICT: -0.3,
   // 标题结构冲突（如父子集关系）
   LANG_MATCH_CN: 0.15,
@@ -18116,7 +18116,7 @@ var AiyifanSource = class extends BaseSource {
   }
   /**
    * 搜索功能
-   * @param {string} keyword - 搜索关键词
+   * @param {string} keyword - 搜索关��词
    * @returns {Promise<Array>} 搜索结果
    */
   async search(keyword) {
