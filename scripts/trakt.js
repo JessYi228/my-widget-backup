@@ -186,7 +186,7 @@ WidgetMetadata = {
                     name: "days",
                     title: "天数",
                     type: "input",
-                    description: "如：7，会返回从开始日期起的7天内的节���，未填写情况下接口不可用",
+                    description: "如：7，会返回从开始日期起的7天内的节目，未填写情况下接口不可用",
                 },
                 {
                     name: "order",
