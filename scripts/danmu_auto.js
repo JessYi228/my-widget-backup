@@ -8672,7 +8672,7 @@ function smartTitleReplace(animes, cnAlias) {
 
 // danmu_api/utils/merge-util.js
 var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG = !1, MergeWeights = Object.freeze({
-  // ── 标��与结构 ──────────────────────────────────────────
+  // ── 标题与结构 ──────────────────────────────────────────
   TITLE_STRUCTURE_CONFLICT: -0.3,
   // 标题结构冲突（如父子集关系）
   LANG_MATCH_CN: 0.15,
@@ -8854,7 +8854,7 @@ var RegexStore = {
     ]
   },
   {
-    // 案例 3：没有任何副标题，主标题本身就是特殊类型
+    // 案例 3：没有���何副标题，主标题本身就是特殊类型
     seriesKeywords: ["\u7EA2\u732A", "\u5343\u4E0E\u5343\u5BFB", "\u9F99\u732B"],
     // 当没有匹配到任何 mappings（或根本没写 mappings）时，直接给这个条目打上默认标签
     defaultStandard: "\u5267\u573A\u7248"
