@@ -5766,7 +5766,7 @@ var _Envs = class _Envs {
   }
   /**
    * 解析 IP 黑名单列表
-   * @description 支持逗号/分��/换行分隔，支持 /regex/ 或 /regex/i 的正则格式，支持 IPv4/IPv6 CIDR（如 127.0.0.0/24、2001:db8::/64）
+   * @description 支持逗号/分号/换行分隔，支持 /regex/ 或 /regex/i 的正则格式，支持 IPv4/IPv6 CIDR（如 127.0.0.0/24、2001:db8::/64）
    * @returns {Array} IP 黑名单规则列表
    */
   static resolveIpBlacklist() {
@@ -6102,7 +6102,7 @@ var _Envs = class _Envs {
       hongguoMergeAllEpisodes: this.get("HONGGUO_MERGE_ALL_EPISODES", !1, "boolean"),
       // 红果短剧是否合并全集弹幕（默认 false）
       nipaplayReplaceDandan: this.get("NIPAPLAY_REPLACE_DANDAN", !1, "boolean"),
-      // NipaPlay 弹弹302关联弹幕替代开关，开启后 dandan 源以 nipaplay 弹弹302关联弹幕替代弹弹原��弹幕
+      // NipaPlay 弹弹302关联弹幕替代开关，开启后 dandan 源以 nipaplay 弹弹302关联弹幕替代弹弹原生弹幕
       convertTopBottomToScroll: this.get("CONVERT_TOP_BOTTOM_TO_SCROLL", !1, "boolean"),
       // 顶部/底部弹幕转换为浮动弹幕配置（默认 false，禁用转换）
       convertColor: this.get("CONVERT_COLOR", "default", "string"),
@@ -11775,7 +11775,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境搜索（vercel/netlify/cloudflare 等 serverless 平台）：
-   * 分两组并行执行，每组 3 秒，避免串行降级在云函数内的极限耗时。
+   * 分两组并行执行，每组 3 秒，避免串��降级在云函数内的极限耗时。
    * 第一组 WIN+TV 并行（TV 优先），第二组 MAC+WEB 并行（MAC 优先）。
    * 第一组任一成功即终止。
    */
@@ -14495,11 +14495,11 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕���4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
-        //��幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
+        //弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
         unixtime: Math.floor(Date.now() / 1e3),
         //Unix 时间戳格式
         uid: 0,
@@ -16248,7 +16248,7 @@ var DandanSource = class extends BaseSource {
       }), { episodes: [], titles: [], relateds: [], type: null, typeDescription: null, imageUrl: null };
     }
   }
-  // 计算两个字符串的文本相似度（字符集交并比算法）
+  // 计算两个字符串的���本相似度（字符集交并比算法）
   calculateSimilarity(str1, str2) {
     if (!str1 || !str2) return 0;
     let s1 = new Set(str1.toLowerCase()), s2 = new Set(str2.toLowerCase()), intersection = [...s1].filter((char) => s2.has(char)).length, union = (/* @__PURE__ */ new Set([...s1, ...s2])).size;
@@ -19575,7 +19575,7 @@ var API_HEALTH2 = {
             if (resp = await Widget.http.post(ep.url, JSON.stringify(payload), {
               headers: this.headers,
               timeout: 5e3
-              // 限制搜索超时��间，确保多节点故障转移的流畅性
+              // 限制搜索超时时间，确保多节点故障转移的流畅性
             }), resp && resp.data) {
               log("info", `[animeko] \u641C\u7D22\u8282\u70B9 [${ep.id}] \u8BF7\u6C42\u6210\u529F (offset: ${offset})`);
               break;
