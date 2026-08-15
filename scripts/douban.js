@@ -55,7 +55,7 @@ WidgetMetadata = {
           name: "cookie",
           title: "用户Cookie",
           type: "input",
-          description: "未��写情况下非个性化推荐；可手机登陆网页版后，通过loon，Qx等软件抓包获取Cookie",
+          description: "未填写情况下非个性化推荐；可手机登陆网页版后，通过loon，Qx等软件抓包获取Cookie",
         },
         {
           name: "type",
@@ -192,7 +192,7 @@ WidgetMetadata = {
               value: "最新",
             },
             {
-              title: "��瓣高分",
+              title: "豆瓣高分",
               value: "豆瓣高分",
             },
             {
@@ -515,7 +515,7 @@ WidgetMetadata = {
           title: "排序",
           type: "enumeration",
           enumOptions: [
-            { title: "综合���序", value: "T" },
+            { title: "综合排序", value: "T" },
             { title: "近期热度", value: "U" },
             { title: "首映时间", value: "R" },
             { title: "高分优选", value: "S" }
@@ -760,7 +760,7 @@ WidgetMetadata = {
             {"title":"梅艳芳","value":"梅艳芳"}, {"title":"王祖贤","value":"王祖贤"}, {"title":"杨采妮","value":"杨采妮"},
             {"title":"张艾嘉","value":"张艾嘉"}, {"title":"舒淇","value":"舒淇"}, {"title":"郑秀文","value":"郑秀文"},
             {"title":"杨千嬅","value":"杨千嬅"}, {"title":"蔡卓妍","value":"蔡卓妍"}, {"title":"钟欣潼","value":"钟欣潼"},
-            {"title":"吴君如","value":"吴君如"}, {"title":"莫文蔚","value":"莫���蔚"}, {"title":"李若彤","value":"李若彤"},
+            {"title":"吴君如","value":"吴君如"}, {"title":"莫文蔚","value":"莫文蔚"}, {"title":"李若彤","value":"李若彤"},
             {"title":"朱茵","value":"朱茵"}, {"title":"佘诗曼","value":"佘诗曼"}, {"title":"宣萱","value":"宣萱"},
             {"title":"陈慧琳","value":"陈慧琳"}, {"title":"林依晨","value":"林依晨"}, {"title":"陈乔恩","value":"陈乔恩"},
             {"title":"杨丞琳","value":"杨丞琳"}, {"title":"张钧甯","value":"张钧甯"}, {"title":"桂纶镁","value":"桂纶镁"},
@@ -850,7 +850,7 @@ WidgetMetadata = {
             {"title":"克里斯·埃文斯","value":"克里斯·埃文斯"}, {"title":"罗伯特·唐尼","value":"罗伯特·唐尼"}, {"title":"马克·鲁法洛","value":"马克·鲁法洛"},
             {"title":"詹姆斯·麦卡沃伊","value":"詹姆斯·麦卡沃伊"}, {"title":"迈克尔·法斯宾德","value":"迈克尔·法斯宾德"}, {"title":"蒂莫西·柴勒梅德","value":"蒂莫西·柴勒梅德"},
             {"title":"汤姆·霍兰德","value":"汤姆·霍兰德"}, {"title":"扎克·埃夫隆","value":"扎克·埃夫隆"}, {"title":"瑞安·雷诺兹","value":"瑞安·雷诺兹"},
-            {"title":"布兰登·弗雷泽","value":"布兰登·弗雷泽"}, {"title":"科林·法瑞尔","value":"科林·法瑞尔"}, {"title":"伊万·麦克格雷格","value":"伊万·麦克格雷���"},
+            {"title":"布兰登·弗雷泽","value":"布兰登·弗雷泽"}, {"title":"科林·法瑞尔","value":"科林·法瑞尔"}, {"title":"伊万·麦克格雷格","value":"伊万·麦克格雷格"},
             {"title":"休·格兰特","value":"休·格兰特"}, {"title":"裘德·洛","value":"裘德·洛"}, {"title":"马修·麦康纳","value":"马修·麦康纳"},
             {"title":"杰瑞德·莱托","value":"杰瑞德·莱托"}, {"title":"西蒙·佩吉","value":"西蒙·佩吉"}, {"title":"本尼迪克特·康伯巴奇","value":"本尼迪克特·康伯巴奇"},
             {"title":"艾迪·雷德梅恩","value":"艾迪·雷德梅恩"}, {"title":"查宁·塔图姆","value":"查宁·塔图姆"}, {"title":"克里斯·派恩","value":"克里斯·派恩"},
@@ -874,14 +874,14 @@ WidgetMetadata = {
             {"title":"朱莉娅·罗伯茨","value":"朱莉娅·罗伯茨"}, {"title":"桑德拉·布洛克","value":"桑德拉·布洛克"}, {"title":"凯拉·奈特莉","value":"凯拉·奈特莉"},
             {"title":"杰西卡·查斯坦","value":"杰西卡·查斯坦"}, {"title":"玛格特·罗比","value":"玛格特·罗比"}, {"title":"查理兹·塞隆","value":"查理兹·塞隆"},
             {"title":"瑞茜·威瑟斯彭","value":"瑞茜·威瑟斯彭"}, {"title":"妮可·基德曼","value":"妮可·基德曼"}, {"title":"凯特·温斯莱特","value":"凯特·温斯莱特"},
-            {"title":"朱迪·丹奇","value":"朱迪·丹奇"}, {"title":"海伦·米伦","value":"海伦·米伦"}, {"title":"弗兰西丝·麦克多蒙德","value":"弗兰西丝·���克多蒙德"},
+            {"title":"朱迪·丹奇","value":"朱迪·丹奇"}, {"title":"海伦·米伦","value":"海伦·米伦"}, {"title":"弗兰西丝·麦克多蒙德","value":"弗兰西丝·麦克多蒙德"},
             {"title":"艾玛·沃特森","value":"艾玛·沃特森"}, {"title":"西尔莎·罗南","value":"西尔莎·罗南"}, {"title":"赞达亚","value":"赞达亚"},
             {"title":"艾米莉·布朗特","value":"艾米莉·布朗特"}, {"title":"罗莎蒙德·派克","value":"罗莎蒙德·派克"}, {"title":"奥利维娅·科尔曼","value":"奥利维娅·科尔曼"},
             {"title":"格温妮斯·帕特洛","value":"格温妮斯·帕特洛"}, {"title":"米歇尔·威廉姆斯","value":"米歇尔·威廉姆斯"}, {"title":"克里斯汀·斯图尔特","value":"克里斯汀·斯图尔特"},
             {"title":"布丽·拉尔森","value":"布丽·拉尔森"}, {"title":"蕾切尔·麦克亚当斯","value":"蕾切尔·麦克亚当斯"}, {"title":"艾丽西亚·维坎德","value":"艾丽西亚·维坎德"},
             {"title":"凯莉·穆里根","value":"凯莉·穆里根"}, {"title":"维奥拉·戴维斯","value":"维奥拉·戴维斯"}, {"title":"奥克塔维娅·斯宾瑟","value":"奥克塔维娅·斯宾瑟"},
             {"title":"黛安·基顿","value":"黛安·基顿"}, {"title":"苏珊·萨兰登","value":"苏珊·萨兰登"}, {"title":"梅丽莎·麦卡西","value":"梅丽莎·麦卡西"},
-            {"title":"蒂尔达·斯文顿","value":"蒂尔达·斯文顿"}, {"title":"劳拉·邓恩","value":"劳拉·��恩"}, {"title":"蕾妮·齐薇格","value":"蕾妮·齐薇格"},
+            {"title":"蒂尔达·斯文顿","value":"蒂尔达·斯文顿"}, {"title":"劳拉·邓恩","value":"劳拉·邓恩"}, {"title":"蕾妮·齐薇格","value":"蕾妮·齐薇格"},
             {"title":"安娜·肯德里克","value":"安娜·肯德里克"}, {"title":"珍妮弗·康纳利","value":"珍妮弗·康纳利"}, {"title":"克莱尔·芙伊","value":"克莱尔·芙伊"},
             {"title":"艾米丽·莫迪默","value":"艾米丽·莫迪默"}, {"title":"凯瑟琳·泽塔-琼斯","value":"凯瑟琳·泽塔-琼斯"}, {"title":"伊丽莎白·班克斯","value":"伊丽莎白·班克斯"},
             {"title":"弗洛伦丝·皮尤","value":"弗洛伦丝·皮尤"}, {"title":"玛丽昂·歌迪亚","value":"玛丽昂·歌迪亚"}
@@ -899,7 +899,7 @@ WidgetMetadata = {
             {"title":"张艺谋","value":"张艺谋"}, {"title":"陈凯歌","value":"陈凯歌"}, {"title":"冯小刚","value":"冯小刚"},
             {"title":"王家卫","value":"王家卫"}, {"title":"李安","value":"李安"}, {"title":"姜文","value":"姜文"},
             {"title":"徐克","value":"徐克"}, {"title":"吴宇森","value":"吴宇森"}, {"title":"杜琪峰","value":"杜琪峰"},
-            {"title":"周星驰","value":"周星驰"}, {"title":"宁���","value":"宁浩"}, {"title":"陈思诚","value":"陈思诚"},
+            {"title":"周星驰","value":"周星驰"}, {"title":"宁浩","value":"宁浩"}, {"title":"陈思诚","value":"陈思诚"},
             {"title":"贾樟柯","value":"贾樟柯"}, {"title":"侯孝贤","value":"侯孝贤"}, {"title":"杨德昌","value":"杨德昌"},
             {"title":"许鞍华","value":"许鞍华"}, {"title":"谢晋","value":"谢晋"}, {"title":"张一白","value":"张一白"},
             {"title":"管虎","value":"管虎"}, {"title":"陆川","value":"陆川"}, {"title":"韩寒","value":"韩寒"},
@@ -934,7 +934,7 @@ WidgetMetadata = {
             {"title":"韦斯·安德森","value":"韦斯·安德森"}, {"title":"保罗·托马斯·安德森","value":"保罗·托马斯·安德森"}, {"title":"达米恩·查泽雷","value":"达米恩·查泽雷"},
             {"title":"阿方索·卡隆","value":"阿方索·卡隆"}, {"title":"吉尔莫·德尔·托罗","value":"吉尔莫·德尔·托罗"}, {"title":"亚历杭德罗·冈萨雷斯·伊纳里图","value":"亚历杭德罗·冈萨雷斯·伊纳里图"},
             {"title":"科恩兄弟","value":"科恩兄弟"}, {"title":"朗·霍华德","value":"朗·霍华德"}, {"title":"克林特·伊斯特伍德","value":"克林特·伊斯特伍德"},
-            {"title":"英格玛·伯格曼","value":"英格玛·伯格曼"}, {"title":"费���里科·费里尼","value":"费德里科·费里尼"}, {"title":"维托里奥·德·西卡","value":"维托里奥·德·西卡"},
+            {"title":"英格玛·伯格曼","value":"英格玛·伯格曼"}, {"title":"费德里科·费里尼","value":"费德里科·费里尼"}, {"title":"维托里奥·德·西卡","value":"维托里奥·德·西卡"},
             {"title":"吕克·贝松","value":"吕克·贝松"}, {"title":"让-吕克·戈达尔","value":"让-吕克·戈达尔"}, {"title":"弗朗索瓦·特吕弗","value":"弗朗索瓦·特吕弗"},
             {"title":"拉斯·冯·提尔","value":"拉斯·冯·提尔"}, {"title":"托马斯·温特伯格","value":"托马斯·温特伯格"}, {"title":"迈克尔·哈内克","value":"迈克尔·哈内克"},
             {"title":"贝托鲁奇","value":"贝托鲁奇"}, {"title":"安德烈·塔可夫斯基","value":"安德烈·塔可夫斯基"}, {"title":"谢尔盖·爱森斯坦","value":"谢尔盖·爱森斯坦"},
@@ -971,7 +971,7 @@ WidgetMetadata = {
       ],
     },
     {
-      title: "豆瓣影人作品(平铺选择版)",
+      title: "豆瓣影人��品(平铺选择版)",
       requiresWebView: false,
       functionName: "loadActorItems",
       cacheDuration: 604800,
@@ -1056,7 +1056,7 @@ WidgetMetadata = {
             {"title":"杨丞琳","value":"杨丞琳"}, {"title":"张钧甯","value":"张钧甯"}, {"title":"桂纶镁","value":"桂纶镁"},
             {"title":"徐若瑄","value":"徐若瑄"}, {"title":"谢欣颖","value":"谢欣颖"}, {"title":"柯佳嬿","value":"柯佳嬿"},
             {"title":"陈意涵","value":"陈意涵"}, {"title":"白歆惠","value":"白歆惠"}, {"title":"简嫚书","value":"简嫚书"},
-            {"title":"曾之乔","value":"��之乔"}, {"title":"郭采洁","value":"郭采洁"}, {"title":"夏于乔","value":"夏于乔"},
+            {"title":"曾之乔","value":"曾之乔"}, {"title":"郭采洁","value":"郭采洁"}, {"title":"夏于乔","value":"夏于乔"},
             {"title":"安心亚","value":"安心亚"}, {"title":"赖雅妍","value":"赖雅妍"}, {"title":"许玮甯","value":"许玮甯"},
             {"title":"谢盈萱","value":"谢盈萱"}, {"title":"严艺文","value":"严艺文"}, {"title":"王净","value":"王净"},
             {"title":"陈妍希","value":"陈妍希"}, {"title":"张榕容","value":"张榕容"}, {"title":"林心如","value":"林心如"},
@@ -1103,7 +1103,7 @@ WidgetMetadata = {
             {"title":"乔治·克鲁尼","value":"乔治·克鲁尼"}, {"title":"本·阿弗莱克","value":"本·阿弗莱克"}, {"title":"马克·沃尔伯格","value":"马克·沃尔伯格"},
             {"title":"丹尼尔·戴-刘易斯","value":"丹尼尔·戴-刘易斯"}, {"title":"安东尼·霍普金斯","value":"安东尼·霍普金斯"}, {"title":"加里·奥德曼","value":"加里·奥德曼"},
             {"title":"克里斯·埃文斯","value":"克里斯·埃文斯"}, {"title":"罗伯特·唐尼","value":"罗伯特·唐尼"}, {"title":"马克·鲁法洛","value":"马克·鲁法洛"},
-            {"title":"詹姆斯·麦卡沃伊","value":"詹姆斯·麦卡沃伊"}, {"title":"迈克尔·法斯宾德","value":"迈克尔·法斯宾德"}, {"title":"蒂莫西·柴勒梅德","value":"蒂莫西·柴勒梅德"},
+            {"title":"詹姆斯·麦卡沃伊","value":"詹姆斯·麦卡沃伊"}, {"title":"迈克尔·法斯宾德","value":"迈克���·法斯宾德"}, {"title":"蒂莫西·柴勒梅德","value":"蒂莫西·柴勒梅德"},
             {"title":"汤姆·霍兰德","value":"汤姆·霍兰德"}, {"title":"扎克·埃夫隆","value":"扎克·埃夫隆"}, {"title":"瑞安·雷诺兹","value":"瑞安·雷诺兹"},
             {"title":"布兰登·弗雷泽","value":"布兰登·弗雷泽"}, {"title":"科林·法瑞尔","value":"科林·法瑞尔"}, {"title":"伊万·麦克格雷格","value":"伊万·麦克格雷格"},
             {"title":"休·格兰特","value":"休·格兰特"}, {"title":"裘德·洛","value":"裘德·洛"}, {"title":"马修·麦康纳","value":"马修·麦康纳"},
@@ -1338,7 +1338,7 @@ function cleanTitle(title) {
 
     title = title.trim();
 
-    // 对“多个词”的情况，仅保留第一个“主标题”（如“沧元图2 元初山” → “沧元图”）
+    // 对“多个词”的情况，仅保留第一个���主标题”（如“沧元图2 元初山” → “沧元图”）
     // 使用中文词语边界分割
     const parts = title.split(/\s+/);
     if (parts.length > 1) {

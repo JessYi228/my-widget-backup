@@ -5669,7 +5669,7 @@ var _Envs = class _Envs {
   }
   /**
    * 解析源合并配置
-   * 从环境变�� MERGE_SOURCE_PAIRS 获取配置
+   * 从环境变量 MERGE_SOURCE_PAIRS 获取配置
    * 支持使用分号或逗号分隔多组配置
    * 支持一主多从配置，第一个为主源，后续为副源
    * 允许单源配置（用于保留特定源的原始结果，不被合并消耗）
@@ -6217,7 +6217,7 @@ var Globals = {
   animes: [],
   episodeIds: [],
   episodeNum: 10001,
-  // 全局��量，用于自增 ID
+  // 全局变量，用于自增 ID
   logBuffer: [],
   requestHistory: /* @__PURE__ */ new Map(),
   // 记录每个 IP 地址的请求历史
