@@ -5695,7 +5695,7 @@ var _Envs = class _Envs {
    * 用于解析用户自定义的剧集/季度级别合并与乱序重排规则，以及阻断特定合并。
    * 支持从全局强制合并到精确单集的路由干预，解决跨源集数错位问题。
    * 格式: 
-   * 合并: 副源实体 -> 主源实��� | 路由规则
+   * 合并: 副源实体 -> 主源实体 | 路由规则
    * 阻断: 副源实体 × 主源实体
    * @returns {Array} 解析后的规则对象列表
    */
@@ -6258,7 +6258,7 @@ var Globals = {
   deployPlatform: "",
   // 部署平台配置
   currentToken: "",
-  // ��识当前可用token
+  // 标识当前可用token
   /**
    * 初始化全局变量，加载环境变量依赖
    * @param {Object} env 环境对象
@@ -12272,7 +12272,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
     return CATE_MAP[key] || "\u5176\u4ED6";
   }
   /**
-   * 构建 TV 端请求头，��回 { headers, uid }
+   * 构建 TV 端请求头，返回 { headers, uid }
    */
   async buildTvHeaders() {
     return this._tvMakeHeaders || (this._tvMakeHeaders = await buildLiteHeaders(Date.now())), this._tvMakeHeaders(Date.now());
@@ -17055,7 +17055,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的公共函数
+  // 提取vid和aid的���共函数
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {
