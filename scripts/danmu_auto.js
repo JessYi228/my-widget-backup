@@ -11693,7 +11693,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 搜索剧集 (Win API)
-   * 深度展平提取模糊查询项与独立合集项
+   * 深度展平提取模糊查询项与独立合集��
    */
   async performWinSearch(keyword, size = 30, signal) {
     try {
@@ -12222,7 +12222,7 @@ ${path2}?${sortedQuery}`;
   /**
    * 格式化弹幕列表为标准模型
    * 将原始 d/p 字段映射为系统内部对象
-   * 兼容处理 item.d 和 item.content 内容字段，支持内嵌广告自动前移偏移补偿
+   * ���容处理 item.d 和 item.content 内容字段，支持内嵌广告自动前移偏移补偿
    */
   formatComments(comments) {
     let adDurationMs = comments.adDurationMs || 0, episodeId = comments.episodeId || "\u672A\u77E5", offsetSec = adDurationMs / 1e3, droppedCount = 0, formattedList = comments.map((item) => {
@@ -17055,7 +17055,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的���共函数
+  // 提取vid和aid的公共函数
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {
