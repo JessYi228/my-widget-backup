@@ -11532,7 +11532,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
   }
   /**
    * 生成网页版 API 业务校验字符串
-   * 负责拼装各项客户端属性与业务参数结构，以供底层哈希算法加密使用
+   * ���责拼装各项客户端属性与业务参数结构，以供底层哈希算法加密使用
    */
   generateSignature(method, aliId, ct, cv, timestamp, path2, sortedQuery, secret) {
     let signStr = `${method.toUpperCase()}
@@ -17055,7 +17055,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的���共函数
+  // 提取vid和aid的公共函数
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {
