@@ -5695,7 +5695,7 @@ var _Envs = class _Envs {
    * 用于解析用户自定义的剧集/季度级别合并与乱序重排规则，以及阻断特定合并。
    * 支持从全局强制合并到精确单集的路由干预，解决跨源集数错位问题。
    * 格式: 
-   * 合并: 副源实体 -> 主源实体 | 路由规则
+   * 合并: 副源实体 -> 主源实��� | 路由规则
    * 阻断: 副源实体 × 主源实体
    * @returns {Array} 解析后的规则对象列表
    */
@@ -6258,7 +6258,7 @@ var Globals = {
   deployPlatform: "",
   // 部署平台配置
   currentToken: "",
-  // 标识当前可用token
+  // ��识当前可用token
   /**
    * 初始化全局变量，加载环境变量依赖
    * @param {Object} env 环境对象
@@ -11532,7 +11532,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
   }
   /**
    * 生成网页版 API 业务校验字符串
-   * 负责拼装各项客户端属性与业务参数结构，以供底��哈希算法加密使用
+   * 负责拼装各项客户端属性与业务参数结构，以供底层哈希算法加密使用
    */
   generateSignature(method, aliId, ct, cv, timestamp, path2, sortedQuery, secret) {
     let signStr = `${method.toUpperCase()}
@@ -12272,7 +12272,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
     return CATE_MAP[key] || "\u5176\u4ED6";
   }
   /**
-   * 构建 TV 端请求头，返回 { headers, uid }
+   * 构建 TV 端请求头，��回 { headers, uid }
    */
   async buildTvHeaders() {
     return this._tvMakeHeaders || (this._tvMakeHeaders = await buildLiteHeaders(Date.now())), this._tvMakeHeaders(Date.now());
@@ -19426,7 +19426,7 @@ var API_HEALTH2 = {
   }
   /**
    * 获取 V0 剧集列表完整数据（并发适配器内部辅助方法）
-   * Bangumi API 限制单次 limit=200，需循环获取完整列表以��配长篇番剧
+   * Bangumi API 限制单次 limit=200，需循环获取完整列表以适配长篇番剧
    * @param {string} serverUrl 节点地址
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Array>} 剧集原始数据数组
