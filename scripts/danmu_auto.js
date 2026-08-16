@@ -17055,7 +17055,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的公共函数
+  // 提取vid和aid的���共函数
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {
@@ -20025,7 +20025,7 @@ function matchSeason(anime, queryTitle, season) {
       let seasonIndex = afterTitle.match(/\d+/);
       if (seasonIndex && seasonIndex[0] === season.toString())
         return !0;
-      let chineseNumber = afterTitle.match(/[一二三四��六七八九十壹贰叁肆伍陆柒捌玖拾]+/);
+      let chineseNumber = afterTitle.match(/[一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+/);
       if (chineseNumber && convertChineseNumber(chineseNumber[0]) === season)
         return !0;
     }
