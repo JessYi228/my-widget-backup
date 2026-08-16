@@ -6088,7 +6088,7 @@ var _Envs = class _Envs {
       localRedisUrl: this.get("LOCAL_REDIS_URL", "", "string", !0),
       // 本地 Redis 连接URL，示例：redis://:password@127.0.0.1:6379/0，只支持本地部署和docker部署
       rateLimitMaxRequests: this.get("RATE_LIMIT_MAX_REQUESTS", 3, "number"),
-      // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流��
+      // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流）
       enableAnimeEpisodeFilter: this.get("ENABLE_ANIME_EPISODE_FILTER", !1, "boolean"),
       // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用过滤）
       logLevel: this.get("LOG_LEVEL", "info", "string"),
@@ -11775,7 +11775,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境搜索（vercel/netlify/cloudflare 等 serverless 平台）：
-   * 分两组并行执行，每组 3 秒，避免串行降级在云函数内的极限耗时。
+   * 分两组并行执行，每组 3 秒，避免串��降级在云函数内的极限耗时。
    * 第一组 WIN+TV 并行（TV 优先），第二组 MAC+WEB 并行（MAC 优先）。
    * 第一组任一成功即终止。
    */
@@ -14495,7 +14495,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕���4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
@@ -16248,7 +16248,7 @@ var DandanSource = class extends BaseSource {
       }), { episodes: [], titles: [], relateds: [], type: null, typeDescription: null, imageUrl: null };
     }
   }
-  // 计算两个字符串的文本相似度（字符集交并比算法）
+  // 计算两个字符串的���本相似度（字符集交并比算法）
   calculateSimilarity(str1, str2) {
     if (!str1 || !str2) return 0;
     let s1 = new Set(str1.toLowerCase()), s2 = new Set(str2.toLowerCase()), intersection = [...s1].filter((char) => s2.has(char)).length, union = (/* @__PURE__ */ new Set([...s1, ...s2])).size;
@@ -18506,7 +18506,7 @@ var AiyifanSource = class extends BaseSource {
     return await Promise.all(processPromises), this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), tmpAnimes;
   }
   /**
-   * 获取某集的��幕
+   * 获取某集的弹幕
    * @param {string} id - 视频ID
    * @returns {Promise<Array>} 弹幕列表
    */
