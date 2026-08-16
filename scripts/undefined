@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：���名，Optional
+ * seriesName：剧名，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "���取详情",
+      title: "获取详情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -279,7 +279,7 @@ function filterAnimes(rawAnimes, type, season, queryTitle) {
       if (type === "movie") {
         return movieTypes.some(t => t.toLowerCase() === animeType);
       }
-      // tv 类型兜底：只排除电影类型，其余都算��集
+      // tv 类型兜底：只排除电影类型，其余都算剧集
       if (type === "tv") {
         return !movieTypes.some(t => t.toLowerCase() === animeType);
       }
@@ -621,7 +621,7 @@ async function fetchEpisodesByResearch(source, title, season) {
 // 注意：parse_filename 要求 "标题 SxxExx" 格式（"第N集"格式匹配不到）。
 async function fetchEpisodesByMatch(source, title, season, episode) {
   // 去来源后缀 + 去尾部"第N季/第N部"（季由 SxxExx 表达，避免 "剑来 第二季 S02E02" 季信息重复导致匹配失败）
-  const cleanTitle = cleanAnimeTitle(title).replace(/\s*第\s*[一二三四五六七八九���百零〇\d]+\s*[季部]\s*$/g, "").trim();
+  const cleanTitle = cleanAnimeTitle(title).replace(/\s*第\s*[一二三四五六七八九十百零〇\d]+\s*[季部]\s*$/g, "").trim();
   const e = Number(episode);
   if (!cleanTitle || Number.isNaN(e) || e <= 0) return null;
   const s = Number(season);
@@ -637,7 +637,7 @@ async function fetchEpisodesByMatch(source, title, season, episode) {
     const data = response && response.data;
     if (!data || !data.isMatched || !Array.isArray(data.matches) || data.matches.length === 0) return null;
     const matched = data.matches[0];
-    // match 只返回匹配到的当前集，构造单集列表（episodeNumber 设为当前集，供 App 选集对齐）
+    // match 只返回匹配到的当前集，构造单集列���（episodeNumber 设为当前集，供 App 选集对齐）
     return [{
       episodeId: matched.episodeId,
       episodeTitle: matched.episodeTitle || `第${e}集`,
@@ -720,7 +720,7 @@ async function getCommentsById(params) {
     for (const source of sources) {
       try {
         // async=1：慢源/库外剧弹幕需实时下载，服务端会等待下载完成再返回（同步请求会直接返回0条）。
-        // widget JS 环境无 setTimeout，无法轮询 taskcomment；超长下载返回 taskId 时���次取不到，
+        // widget JS 环境无 setTimeout，无法轮询 taskcomment；超长下载返回 taskId 时本次取不到，
         // 靠 App "空弹幕不缓存→下次重试" + Misaka 预下载兜底。
         const response = await Widget.http.get(
           `${source.server}/api/v2/comment/${parsedCommentId.id}?async=1&withRelated=true&chConvert=1`,
