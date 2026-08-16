@@ -20025,7 +20025,7 @@ function matchSeason(anime, queryTitle, season) {
       let seasonIndex = afterTitle.match(/\d+/);
       if (seasonIndex && seasonIndex[0] === season.toString())
         return !0;
-      let chineseNumber = afterTitle.match(/[一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+/);
+      let chineseNumber = afterTitle.match(/[一二三四��六七八九十壹贰叁肆伍陆柒捌玖拾]+/);
       if (chineseNumber && convertChineseNumber(chineseNumber[0]) === season)
         return !0;
     }
