@@ -11532,7 +11532,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
   }
   /**
    * 生成网页版 API 业务校验字符串
-   * 负责拼装各项客户端属性与��务参数结构，以供底层哈希算法加密使用
+   * 负责拼装各项客户端属性与业务参数结构，以供底层哈希算法加密使用
    */
   generateSignature(method, aliId, ct, cv, timestamp, path2, sortedQuery, secret) {
     let signStr = `${method.toUpperCase()}
@@ -19426,7 +19426,7 @@ var API_HEALTH2 = {
   }
   /**
    * 获取 V0 剧集列表完整数据（并发适配器内部辅助方法）
-   * Bangumi API 限制单次 limit=200，��循环获取完整列表以适配长篇番剧
+   * Bangumi API 限制单次 limit=200，需循环获取完整列表以适配长篇番剧
    * @param {string} serverUrl 节点地址
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Array>} 剧集原始数据数组
