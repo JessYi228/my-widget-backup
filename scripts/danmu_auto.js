@@ -5035,7 +5035,7 @@ var Trie = class {
     return orig_i !== null && segments.push(s.slice(orig_i, n)), segments;
   }
   /**
-   * 根據字典樹中的資料轉換字串。
+   * 根據���典樹中的資料轉換字串。
    * @param {string} s 要轉換的字串
    */
   convert(s) {
@@ -8826,7 +8826,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
     SEASON_SHIFT_EXACT: 15,
     // 完美的季度偏移匹配（如 S2E1 → S1E13）
     CN_STRICT_MATCH: 25,
-    // 中文严格：核心词命中且集数一致的奖励
+    // ���文严格：核心词命中且集数一致的奖励
     CN_STRICT_MISMATCH: -5,
     // 中文严格：核心词包含但集数不同（防同系列误对齐）
     NUMERIC_MATCH: 2,
@@ -12316,7 +12316,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       return warnTag && log("warn", `${warnTag}: ${error.message}`), fallback;
     }
   }
-  // ── 数据规范化 ──────────────────────────────────────────────
+  // ── 数据规范化 ───────���──────────────────────────────────────
   normalizeSearchItems(items = []) {
     return Array.isArray(items) ? items.map((item) => {
       if (!item || typeof item != "object") return null;
@@ -14843,7 +14843,7 @@ var MangoSource = class extends BaseSource {
             segment_start: i,
             // 每段开始时间（秒）
             segment_end: Math.min(i + 60, time_to_second(time)),
-            // 每段结���时间（秒）
+            // 每段结束时间（秒）
             url: `${api_rd_barrage}?vid=${vid2}&cid=${cid}&time=${i * 1e3}`
             // 每段弹幕URL
           });
