@@ -11488,7 +11488,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
       deviceid: "tWEtIN7JG2DTDkBBigvj6A%3D%3D",
       // 固定设备指纹
       token: "",
-      // 必须为空字符串以通过��验
+      // 必须为空字符串以通过校验
       aliid: aliId,
       // 使用动态aliId
       umid: "",
@@ -17055,7 +17055,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的公共函数
+  // 提取vid和aid的���共函数
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {
