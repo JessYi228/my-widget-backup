@@ -254,7 +254,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
 
 // 从番剧标题提取季号，兼容多种命名：
 //   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
-// 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
+// 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为���号
 function extractSeasonNumber(animeTitle) {
   const title = String(animeTitle || "");
   let m = title.match(/第\s*([0-9一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+)\s*[季部]/);
@@ -405,7 +405,7 @@ async function searchDanmu(params) {
       }
 
       let rawAnimes = Array.isArray(data.animes) ? data.animes : [];
-      // 兜底：search/anime 为空时用 search/episodes（库内查询，兼容未开后备/并行搜索的实例）
+      // 兜底��search/anime 为空时用 search/episodes（库内查询，兼容未开后备/并行搜索的实例）
       if (rawAnimes.length === 0) {
         const epResponse = await Widget.http.get(
           `${source.server}/api/v2/search/episodes?anime=${encodeURIComponent(queryTitle)}`,
@@ -449,7 +449,7 @@ async function searchDanmu(params) {
     candidates.push(...result.animes.map((anime, index) => {
       const searchAnime = {
         ...anime,
-        // Misaka 等兼容服务的 bangumi/{id} 端点只认 bangumiId(如 "A900016")，而非数字 animeId(900016)；
+        // Misaka 等兼���服务的 bangumi/{id} 端点只认 bangumiId(如 "A900016")，而非数字 animeId(900016)；
         // 标准 dandanplay 无 bangumiId 字段，回退到 animeId 保持原行为
         animeId: bindDanmuServerId(anime.bangumiId || anime.animeId, result.source, shouldBindSource),
         animeTitle: appendDanmuSourceTitle(anime.animeTitle, result.source, shouldBindSource),
@@ -659,7 +659,7 @@ async function getDetailById(params) {
   // 多 source 并发，同 source 内 4 级 fallback 保持串行
   const results = await mapDanmuSourcesInBatches(sources, DANMU_SOURCE_BATCH_SIZE, async (source) => {
     try {
-      // 1. match 优���：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接匹配当前集。
+      // 1. match 优先：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接匹��当前集。
       //    库内直接匹配 + 严格标题过滤，一步到位拿稳定 episodeId，不依赖易过期的临时ID。
       let episodes = await fetchEpisodesByMatch(source, matchTitle, season, episode);
       // 2. 失败 → 标准 bangumi 端点（官方 dandanplay / 真实作品ID 直接命中）
