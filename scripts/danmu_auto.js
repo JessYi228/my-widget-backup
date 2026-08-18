@@ -6155,7 +6155,7 @@ var _Envs = class _Envs {
   }
 };
 __publicField(_Envs, "env"), // 记录获取过的环境变量
-__publicField(_Envs, "originalEnvVars", /* @__PURE__ */ new Map()), __publicField(_Envs, "accessedEnvVars", /* @__PURE__ */ new Map()), // Node 本地部署时由 server.js 注入：启���前的真实系统环境变量快照（最高优先级判定依据）与 .env 原始解析结果
+__publicField(_Envs, "originalEnvVars", /* @__PURE__ */ new Map()), __publicField(_Envs, "accessedEnvVars", /* @__PURE__ */ new Map()), // Node 本地部署时由 server.js 注入：启动前的真实系统环境变量快照（最高优先级判定依据）与 .env 原始解析结果
 __publicField(_Envs, "systemEnvBackup", null), __publicField(_Envs, "rawEnvValues", null), // 允许在值中写入 # 等 dotenv 视为注释字符的文本类变量；读取时绕过 dotenv 截断以保留完整内容。仅纳入 encrypt=false 变量（带令牌/密码 URL 若入此集合会绕过加密返回明文，故禁止纳入）。
 __publicField(_Envs, "RAW_ENV_KEYS", /* @__PURE__ */ new Set(["AI_MATCH_PROMPT", "ANIME_TITLE_FILTER", "AUTO_MATCH_MAPPING_TABLE", "BLOCKED_WORDS", "COLOR_POOL", "CUSTOM_MERGE_RULES", "DANMU_OFFSET", "DANMU_PUSH_URL", "EPISODE_TITLE_FILTER", "IP_BLACKLIST", "OTHER_SERVER", "TITLE_MAPPING_TABLE", "TITLE_NOISE_FILTER", "VOD_SERVERS"])), __publicField(_Envs, "VOD_ALLOWED_PLATFORMS", ["qiyi", "bilibili1", "imgo", "youku", "qq", "migu", "sohu", "leshi", "xigua", "maiduidui", "aiyifan"]), // vod允许的播放平台
 __publicField(_Envs, "ALLOWED_PLATFORMS", ["qiyi", "bilibili1", "imgo", "youku", "qq", "migu", "renren", "hanjutv", "sohu", "leshi", "xigua", "maiduidui", "aiyifan", "hongguo", "dandan", "bahamut", "animeko", "custom"]), // 全部源允许的播放平台
@@ -14883,7 +14883,7 @@ var MangoSource = class extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕、4 为底���、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
