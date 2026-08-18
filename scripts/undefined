@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详情",
+      title: "获取详���",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -449,7 +449,7 @@ async function searchDanmu(params) {
     candidates.push(...result.animes.map((anime, index) => {
       const searchAnime = {
         ...anime,
-        // Misaka 等兼容服务��� bangumi/{id} 端点只认 bangumiId(如 "A900016")，而非数字 animeId(900016)；
+        // Misaka 等兼容服务的 bangumi/{id} 端点只认 bangumiId(如 "A900016")，而非数字 animeId(900016)；
         // 标准 dandanplay 无 bangumiId 字段，回退到 animeId 保持原行为
         animeId: bindDanmuServerId(anime.bangumiId || anime.animeId, result.source, shouldBindSource),
         animeTitle: appendDanmuSourceTitle(anime.animeTitle, result.source, shouldBindSource),
@@ -617,7 +617,7 @@ async function fetchEpisodesByResearch(source, title, season) {
 }
 
 // match 兜底：用 title+season+episode 构造标准文件名 → POST /match 直接匹配当前集。
-// 走库内直接匹配 + 触发"匹配后备"导入(需服务端开 matchFallbackEnabled)，命中稳定真实作品，不依赖会过期的临时ID。
+// 走库内直接匹��� + 触发"匹配后备"导入(需服务端开 matchFallbackEnabled)，命中稳定真实作品，不依赖会过期的临时ID。
 // 注意：parse_filename 要求 "标题 SxxExx" 格式（"第N集"格式匹配不到）。
 async function fetchEpisodesByMatch(source, title, season, episode) {
   // 去来源后缀 + 去尾部"第N季/第N部"（季由 SxxExx 表达，避免 "剑来 第二季 S02E02" 季信息重复导致匹配失败）
@@ -637,7 +637,7 @@ async function fetchEpisodesByMatch(source, title, season, episode) {
     const data = response && response.data;
     if (!data || !data.isMatched || !Array.isArray(data.matches) || data.matches.length === 0) return null;
     const matched = data.matches[0];
-    // match 只返回匹配到的当前集，构造单集列表（episodeNumber 设为当前集，供 App 选集对齐）
+    // match 只返回匹配到的当前集，构造单集��表（episodeNumber 设为当前集，供 App 选集对齐）
     return [{
       episodeId: matched.episodeId,
       episodeTitle: matched.episodeTitle || `第${e}集`,
@@ -659,7 +659,7 @@ async function getDetailById(params) {
   // 多 source 并发，同 source 内 4 级 fallback 保持串行
   const results = await mapDanmuSourcesInBatches(sources, DANMU_SOURCE_BATCH_SIZE, async (source) => {
     try {
-      // 1. match 优先：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接匹配当前��。
+      // 1. match 优先：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接匹配当前集。
       //    库内直接匹配 + 严格标题过滤，一步到位拿稳定 episodeId，不依赖易过期的临时ID。
       let episodes = await fetchEpisodesByMatch(source, matchTitle, season, episode);
       // 2. 失败 → 标准 bangumi 端点（官方 dandanplay / 真实作品ID 直接命中）

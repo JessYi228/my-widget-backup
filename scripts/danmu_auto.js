@@ -13658,7 +13658,7 @@ var TencentSource = class extends BaseSource {
     );
     return this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), processTencentAnimes;
   }
-  // 提取vid的公共��数
+  // 提取vid的公共函数
   extractVid(id) {
     let vid2 = id;
     if (typeof id == "string" && (id.startsWith("http") || id.includes("vid="))) {
@@ -19426,7 +19426,7 @@ var API_HEALTH2 = {
   }
   /**
    * 获取 V0 剧集列表完整数据（并发适配器内部辅助方法）
-   * Bangumi API 限制单次 limit=200，需循环获取完整列表以适配长篇番剧
+   * Bangumi API 限制单次 limit=200，需循环获取完整列表���适配长篇番剧
    * @param {string} serverUrl 节点地址
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Array>} 剧集原始数据数组
