@@ -18423,7 +18423,7 @@ var AiyifanSource = class extends BaseSource {
       // vid 作为 mediaId
       title: drama.title,
       type: drama.atypeName,
-      // 默认类型
+      // 默��类型
       year: new Date(drama.postTime).getFullYear(),
       // 年份信息可能需要从其他地方获取
       imageUrl: drama.imgPath || null,
