@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：剧名，Optional
+ * seriesName：剧名��Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详���",
+      title: "获取��情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -394,7 +394,7 @@ async function searchDanmu(params) {
       );
 
       if (!response) {
-        throw new Error("获取数据失败");
+        throw new Error("获取数���失败");
       }
 
       const data = response.data;
@@ -659,7 +659,7 @@ async function getDetailById(params) {
   // 多 source 并发，同 source 内 4 级 fallback 保持串行
   const results = await mapDanmuSourcesInBatches(sources, DANMU_SOURCE_BATCH_SIZE, async (source) => {
     try {
-      // 1. match 优先：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接匹配���前集。
+      // 1. match 优先：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接匹配当前集。
       //    库内直接匹配 + 严格标题过滤，一步到位拿稳定 episodeId，不依赖易过期的临时ID。
       let episodes = await fetchEpisodesByMatch(source, matchTitle, season, episode);
       // 2. 失败 → 标准 bangumi 端点（官方 dandanplay / 真实作品ID 直接命中）
