@@ -253,7 +253,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
 }
 
 // 从番剧标题提取季号，兼容多种命名：
-//   "剑来 ���二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
+//   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
 // 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
 function extractSeasonNumber(animeTitle) {
   const title = String(animeTitle || "");
@@ -413,7 +413,7 @@ async function searchDanmu(params) {
         );
         const epData = epResponse && epResponse.data;
         if (epData && Array.isArray(epData.animes)) {
-          // 剥离内联 episodes，只保留番剧候选层（App 按三段流程后续调 getDetail 取分集）
+          // 剥离内�� episodes，只保留番剧候选层（App 按三段流程后续调 getDetail 取分集）
           rawAnimes = epData.animes.map(({ episodes, ...anime }) => anime);
         }
       }
@@ -538,7 +538,7 @@ function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
 
-// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，不过期��
+// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，不过期）
 async function fetchEpisodesByBangumi(source, id) {
   try {
     const response = await Widget.http.get(
@@ -618,7 +618,7 @@ async function fetchEpisodesByResearch(source, title, season) {
 
 // match 兜底：用 title+season+episode 构造标准文件名 → POST /match 直接匹配当前集。
 // 走库内直接匹配 + 触发"匹配后备"导入(需服务端开 matchFallbackEnabled)，命中稳定真实作品，不依赖会过期的临时ID。
-// 注意：parse_filename 要求 "标题 SxxExx" 格式（"第N集"格式匹配不到）。
+// 注意：parse_filename 要求 "标题 SxxExx" 格��（"第N集"格式匹配不到）。
 async function fetchEpisodesByMatch(source, title, season, episode) {
   // 去来源后缀 + 去尾部"第N季/第N部"（季由 SxxExx 表达，避免 "剑来 第二季 S02E02" 季信息重复导致匹配失败）
   const cleanTitle = cleanAnimeTitle(title).replace(/\s*第\s*[一二三四五六七八九十百零〇\d]+\s*[季部]\s*$/g, "").trim();
