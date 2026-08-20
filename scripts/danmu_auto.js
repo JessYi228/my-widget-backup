@@ -11775,7 +11775,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境搜索（vercel/netlify/cloudflare 等 serverless 平台）：
-   * 分两组并行执行，每组 3 秒，避免串��降级在云函数内的极限耗时。
+   * 分两组并行执行，每组 3 秒，避免串行降级在云函数内的极限耗时。
    * 第一组 WIN+TV 并行（TV 优先），第二组 MAC+WEB 并行（MAC 优先）。
    * 第一组任一成功即终止。
    */
@@ -19616,7 +19616,7 @@ var API_HEALTH2 = {
    * 过滤搜索结果
    * 利用公共方法对主标题和别名进行匹配校验
    * @param {Array} list 原始 API 返回结果列表
-   * @param {string} keyword 用户搜索关���词
+   * @param {string} keyword 用户搜索关键词
    * @returns {Array} 过滤后的结果列表
    */
   filterSearchResults(list, keyword) {

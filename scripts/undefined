@@ -449,7 +449,7 @@ async function searchDanmu(params) {
     candidates.push(...result.animes.map((anime, index) => {
       const searchAnime = {
         ...anime,
-        // Misaka 等兼容服务的 bangumi/{id} 端点只认 bangumiId(如 "A900016")，而非数字 animeId(900016)；
+        // Misaka 等兼容服��的 bangumi/{id} 端点只认 bangumiId(如 "A900016")，而非数字 animeId(900016)；
         // 标准 dandanplay 无 bangumiId 字段，回退到 animeId 保持原行为
         animeId: bindDanmuServerId(anime.bangumiId || anime.animeId, result.source, shouldBindSource),
         animeTitle: appendDanmuSourceTitle(anime.animeTitle, result.source, shouldBindSource),
