@@ -14495,7 +14495,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕���4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
@@ -16248,7 +16248,7 @@ var DandanSource = class extends BaseSource {
       }), { episodes: [], titles: [], relateds: [], type: null, typeDescription: null, imageUrl: null };
     }
   }
-  // 计算两个字符串的���本相似度（字符集交并比算法）
+  // 计算两个字符串的文本相似度（字符集交并比算法）
   calculateSimilarity(str1, str2) {
     if (!str1 || !str2) return 0;
     let s1 = new Set(str1.toLowerCase()), s2 = new Set(str2.toLowerCase()), intersection = [...s1].filter((char) => s2.has(char)).length, union = (/* @__PURE__ */ new Set([...s1, ...s2])).size;
@@ -19616,7 +19616,7 @@ var API_HEALTH2 = {
    * 过滤搜索结果
    * 利用公共方法对主标题和别名进行匹配校验
    * @param {Array} list 原始 API 返回结果列表
-   * @param {string} keyword 用户搜索关键词
+   * @param {string} keyword 用户搜索关���词
    * @returns {Array} 过滤后的结果列表
    */
   filterSearchResults(list, keyword) {
