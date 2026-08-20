@@ -12100,7 +12100,7 @@ ${path2}?${sortedQuery}`;
   /**
    * 获取单集弹幕 (TV API)
    * 请求 static-dm.qwdjapp.com 获取全量弹幕数据
-   * @param {string} episodeSid 单集ID (支持复合ID自动解包)
+   * @param {string} episodeSid 单集ID (支持复合ID自���解包)
    * @returns {Array} 原始弹幕数据列表
    */
   async getAppDanmu(episodeSid) {
@@ -17055,7 +17055,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的���共函数
+  // 提取vid和aid的公共函数
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {
