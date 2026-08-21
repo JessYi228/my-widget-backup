@@ -11774,7 +11774,7 @@ ${path2}?${sortedQuery}`;
     return this._searchConnectivity = null, log("info", `[renren] \u5F00\u59CB\u641C\u7D22: ${keyword}`), globals.deployPlatform && globals.deployPlatform !== "node" ? this._searchCloud(keyword) : this._searchLocal(keyword);
   }
   /**
-   * 云环境搜索（vercel/netlify/cloudflare 等 serverless 平台）：
+   * 云环境搜索（vercel/netlify/cloudflare 等 serverless 平���）：
    * 分两组并行执行，每组 3 秒，避免串行降级在云函数内的极限耗时。
    * 第一组 WIN+TV 并行（TV 优先），第二组 MAC+WEB 并行（MAC 优先）。
    * 第一组任一成功即终止。
@@ -12100,7 +12100,7 @@ ${path2}?${sortedQuery}`;
   /**
    * 获取单集弹幕 (TV API)
    * 请求 static-dm.qwdjapp.com 获取全量弹幕数据
-   * @param {string} episodeSid 单集ID (支持复合ID自���解包)
+   * @param {string} episodeSid 单集ID (支持复合ID自动解包)
    * @returns {Array} 原始弹幕数据列表
    */
   async getAppDanmu(episodeSid) {
@@ -14493,7 +14493,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
     return comments.map((item) => {
       let content = {
         timepoint: 0,
-        // 弹幕发送时间（秒）
+        // 弹幕发送时间（秒���
         ct: 1,
         // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
@@ -18457,7 +18457,7 @@ var AiyifanSource = class extends BaseSource {
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
-   * @param {Map} detailStore 详���缓存
+   * @param {Map} detailStore 详情缓存
    * @param {number|null} querySeason 目标季度
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null, querySeason = null) {
