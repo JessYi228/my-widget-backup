@@ -617,7 +617,7 @@ async function fetchEpisodesByResearch(source, title, season) {
 }
 
 // match 兜底：用 title+season+episode 构造标准文件名 → POST /match 直接匹配当前集。
-// 走库内直接匹配 + 触发"匹配后备"导入(需服务端开 matchFallbackEnabled)，命中稳定真实作品，不依赖会过期的临时ID。
+// 走库内直接匹配 + 触发"匹配后备"导入(需服务端开 matchFallbackEnabled)，命中稳定真实作品��不依赖会过期的临时ID。
 // 注意：parse_filename 要求 "标题 SxxExx" 格式（"第N集"格式匹配不到）。
 async function fetchEpisodesByMatch(source, title, season, episode) {
   // 去来源后缀 + 去尾部"第N季/第N部"（季由 SxxExx 表达，避免 "剑来 第二季 S02E02" 季信息重复导致匹配失败）
@@ -706,7 +706,7 @@ async function getDetailById(params) {
     return allEpisodes;
   }
 
-  throw lastError || new Error("获取数据失败");
+  throw lastError || new Error("获取数据失��");
 }
 
 async function getCommentsById(params) {
