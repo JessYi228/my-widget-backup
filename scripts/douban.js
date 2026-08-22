@@ -515,7 +515,7 @@ WidgetMetadata = {
           title: "排序",
           type: "enumeration",
           enumOptions: [
-            { title: "综合���序", value: "T" },
+            { title: "综��排序", value: "T" },
             { title: "近期热度", value: "U" },
             { title: "首映时间", value: "R" },
             { title: "高分优选", value: "S" }

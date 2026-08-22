@@ -6159,7 +6159,7 @@ __publicField(_Envs, "originalEnvVars", /* @__PURE__ */ new Map()), __publicFiel
 __publicField(_Envs, "systemEnvBackup", null), __publicField(_Envs, "rawEnvValues", null), // 允许在值中写入 # 等 dotenv 视为注释字符的文本类变量；读取时绕过 dotenv 截断以保留完整内容。仅纳入 encrypt=false 变量（带令牌/密码 URL 若入此集合会绕过加密返回明文，故禁止纳入）。
 __publicField(_Envs, "RAW_ENV_KEYS", /* @__PURE__ */ new Set(["AI_MATCH_PROMPT", "ANIME_TITLE_FILTER", "AUTO_MATCH_MAPPING_TABLE", "BLOCKED_WORDS", "COLOR_POOL", "CUSTOM_MERGE_RULES", "DANMU_OFFSET", "DANMU_PUSH_URL", "EPISODE_TITLE_FILTER", "IP_BLACKLIST", "OTHER_SERVER", "TITLE_MAPPING_TABLE", "TITLE_NOISE_FILTER", "VOD_SERVERS"])), __publicField(_Envs, "VOD_ALLOWED_PLATFORMS", ["qiyi", "bilibili1", "imgo", "youku", "qq", "migu", "sohu", "leshi", "xigua", "maiduidui", "aiyifan"]), // vod允许的播放平台
 __publicField(_Envs, "ALLOWED_PLATFORMS", ["qiyi", "bilibili1", "imgo", "youku", "qq", "migu", "renren", "hanjutv", "sohu", "leshi", "xigua", "maiduidui", "aiyifan", "hongguo", "dandan", "bahamut", "animeko", "custom"]), // 全部源允许的播放平台
-__publicField(_Envs, "ALLOWED_SOURCES", ["360", "vod", "tmdb", "douban", "tencent", "youku", "iqiyi", "imgo", "bilibili", "migu", "renren", "hanjutv", "sohu", "leshi", "xigua", "maiduidui", "aiyifan", "hongguo", "dandan", "bahamut", "animeko", "custom"]), // ���许的源
+__publicField(_Envs, "ALLOWED_SOURCES", ["360", "vod", "tmdb", "douban", "tencent", "youku", "iqiyi", "imgo", "bilibili", "migu", "renren", "hanjutv", "sohu", "leshi", "xigua", "maiduidui", "aiyifan", "hongguo", "dandan", "bahamut", "animeko", "custom"]), // 允许的源
 __publicField(_Envs, "MERGE_ALLOWED_SOURCES", ["tencent", "youku", "iqiyi", "imgo", "bilibili", "migu", "renren", "hanjutv", "sohu", "leshi", "xigua", "maiduidui", "aiyifan", "hongguo", "dandan", "bahamut", "animeko"]), // 允许的源合并
 __publicField(_Envs, "DEFAULT_AI_MATCH_PROMPT", `\u4F60\u662F\u4E00\u4E2A\u4E13\u4E1A\u7684\u5F71\u89C6\u5339\u914D\u4E13\u5BB6\uFF0C\u4F60\u7684\u7684\u4EFB\u52A1\u662F\u6839\u636E\u7528\u6237\u63D0\u4F9B\u7684 JSON \u6570\u636E\uFF0C\u4ECE\u5019\u9009\u52A8\u6F2B\u5217\u8868\u4E2D\u5339\u914D\u6700\u7B26\u5408\u6761\u4EF6\u7684\u52A8\u6F2B\u53CA\u96C6\u6570\u3002
 
@@ -12100,7 +12100,7 @@ ${path2}?${sortedQuery}`;
   /**
    * 获取单集弹幕 (TV API)
    * 请求 static-dm.qwdjapp.com 获取全量弹幕数据
-   * @param {string} episodeSid 单集ID (支持复合ID自动���包)
+   * @param {string} episodeSid 单集ID (支持复合ID自动解包)
    * @returns {Array} 原始弹幕数据列表
    */
   async getAppDanmu(episodeSid) {
