@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详情",
+      title: "获取详��",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -58,7 +58,7 @@ WidgetMetadata = {
     {
       //id需固定为getComments
       id: "getComments",
-      title: "获取弹幕",
+      title: "��取弹幕",
       functionName: "getCommentsById",
       type: "danmu",
       params: [],
@@ -394,7 +394,7 @@ async function searchDanmu(params) {
       );
 
       if (!response) {
-        throw new Error("获取数据失败");
+        throw new Error("获取数据��败");
       }
 
       const data = response.data;
