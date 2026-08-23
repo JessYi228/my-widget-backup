@@ -6088,7 +6088,7 @@ var _Envs = class _Envs {
       localRedisUrl: this.get("LOCAL_REDIS_URL", "", "string", !0),
       // 本地 Redis 连接URL，示例：redis://:password@127.0.0.1:6379/0，只支持本地部署和docker部署
       rateLimitMaxRequests: this.get("RATE_LIMIT_MAX_REQUESTS", 3, "number"),
-      // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流��
+      // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流）
       enableAnimeEpisodeFilter: this.get("ENABLE_ANIME_EPISODE_FILTER", !1, "boolean"),
       // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用过滤）
       logLevel: this.get("LOG_LEVEL", "info", "string"),
@@ -8805,7 +8805,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   // ── 日期 ─────────────────────────────────────────────────
   DATE_MATCH: 0,
   // 基础日期匹配（动态计算，此处为占位）
-  // ── 集数对齐 (Episode Alignment) ─────────────────────────
+  // ── 集数对齐 (Episode Alignment) ��────────────────────────
   EP_ALIGN: {
     MOVIE_TYPE_MISMATCH: -5,
     // 电影/TV 类型不符
@@ -14843,7 +14843,7 @@ var MangoSource = class extends BaseSource {
             segment_start: i,
             // 每段开始时间（秒）
             segment_end: Math.min(i + 60, time_to_second(time)),
-            // 每段结束时间（秒）
+            // 每段结���时间（秒）
             url: `${api_rd_barrage}?vid=${vid2}&cid=${cid}&time=${i * 1e3}`
             // 每段弹幕URL
           });
@@ -18429,7 +18429,7 @@ var AiyifanSource = class extends BaseSource {
       imageUrl: drama.imgPath || null,
       // 图片链接
       episodeCount: 0
-      // 初始集数为0，后续获取
+      // 初始集数为0，后续获���
     }));
     return log("info", `[aiyifan] \u641C\u7D22\u5B8C\u6210\uFF0C\u627E\u5230 ${results.length} \u4E2A\u7ED3\u679C`), results;
   }
@@ -19398,7 +19398,7 @@ var API_HEALTH2 = {
     ];
   }
   /**
-   * 获取多源详情节点优先级列表 (含动态降级及代理感知)
+   * 获取多源详情��点优先级列表 (含动态降级及代理感知)
    * 支持官方(V0)、镜像(V0)及Animeko(V2)节点的融合队列调度
    * @returns {Array<Object>} 包含节点类型与 URL 的配置数组
    */
@@ -19616,7 +19616,7 @@ var API_HEALTH2 = {
    * 过滤搜索结果
    * 利用公共方法对主标题和别名进行匹配校验
    * @param {Array} list 原始 API 返回结果列表
-   * @param {string} keyword 用户搜索关���词
+   * @param {string} keyword 用户搜索关键词
    * @returns {Array} 过滤后的结果列表
    */
   filterSearchResults(list, keyword) {
