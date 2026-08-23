@@ -10803,7 +10803,7 @@ var Kan360Source = class extends BaseSource {
   /**
    * 处理搜索结果
    * @param {Array} sourceAnimes 原始数据
-   * @param {string} queryTitle 关键词
+   * @param {string} queryTitle ��键词
    * @param {Array} curAnimes 结果池
    * @param {Map} detailStore 详情缓存
    * @param {number|null} querySeason 目标季度
@@ -11458,7 +11458,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
   /**
    * 检查并增加计数 (核心逻辑)
    * 负责监控使用次数，达到阈值时触发轮换
-   * 并在日志中明确输出 AliID 计数状态
+   * 并在日志中明确输出 AliID 计数���态
    */
   checkAndIncrementUsage() {
     CACHED_ALI_ID || this.rotateAliId(), REQUEST_COUNT >= ROTATION_THRESHOLD && (log("info", `[renren] AliID \u89E6\u53D1\u9608\u503C (${REQUEST_COUNT}/${ROTATION_THRESHOLD})\uFF0C\u6B63\u5728\u8F6E\u6362 ID...`), this.rotateAliId()), REQUEST_COUNT++, log("info", `[renren] AliID \u8BA1\u6570\u589E\u52A0: ${REQUEST_COUNT}/${ROTATION_THRESHOLD} (\u5F53\u524DID: ...${CACHED_ALI_ID.slice(-6)})`);
@@ -17055,7 +17055,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的���共函数
+  // 提取vid和aid的公共函数
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {
@@ -19365,7 +19365,7 @@ var API_HEALTH2 = {
 }, SUBJECT_CACHE = /* @__PURE__ */ new Map(), SUBJECT_CACHE_TTL = 180 * 1e3, SUBJECT_CACHE_MAX_SIZE = 100, AnimekoSource = class extends BaseSource {
   /**
    * 获取标准 HTTP 请求头
-   * @returns {Object} 请求头对象
+   * @returns {Object} 请���头对象
    */
   get headers() {
     return {
