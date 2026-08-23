@@ -10803,7 +10803,7 @@ var Kan360Source = class extends BaseSource {
   /**
    * 处理搜索结果
    * @param {Array} sourceAnimes 原始数据
-   * @param {string} queryTitle ��键词
+   * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {Map} detailStore 详情缓存
    * @param {number|null} querySeason 目标季度
@@ -11458,7 +11458,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
   /**
    * 检查并增加计数 (核心逻辑)
    * 负责监控使用次数，达到阈值时触发轮换
-   * 并在日志中明确输出 AliID 计数���态
+   * 并在日志中明确输出 AliID 计数状态
    */
   checkAndIncrementUsage() {
     CACHED_ALI_ID || this.rotateAliId(), REQUEST_COUNT >= ROTATION_THRESHOLD && (log("info", `[renren] AliID \u89E6\u53D1\u9608\u503C (${REQUEST_COUNT}/${ROTATION_THRESHOLD})\uFF0C\u6B63\u5728\u8F6E\u6362 ID...`), this.rotateAliId()), REQUEST_COUNT++, log("info", `[renren] AliID \u8BA1\u6570\u589E\u52A0: ${REQUEST_COUNT}/${ROTATION_THRESHOLD} (\u5F53\u524DID: ...${CACHED_ALI_ID.slice(-6)})`);
@@ -11775,7 +11775,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境搜索（vercel/netlify/cloudflare 等 serverless 平台）：
-   * 分两组并行执行，每组 3 秒，避免串行降级在云函数内的极限耗时。
+   * 分两组并行执行，每组 3 秒，避免串��降级在云函数内的极限耗时。
    * 第一组 WIN+TV 并行（TV 优先），第二组 MAC+WEB 并行（MAC 优先）。
    * 第一组任一成功即终止。
    */
@@ -14495,7 +14495,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕���4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
@@ -16248,7 +16248,7 @@ var DandanSource = class extends BaseSource {
       }), { episodes: [], titles: [], relateds: [], type: null, typeDescription: null, imageUrl: null };
     }
   }
-  // 计算两个字符串的文本相似度（字符集交并比算法）
+  // 计算两个字符串的���本相似度（字符集交并比算法）
   calculateSimilarity(str1, str2) {
     if (!str1 || !str2) return 0;
     let s1 = new Set(str1.toLowerCase()), s2 = new Set(str2.toLowerCase()), intersection = [...s1].filter((char) => s2.has(char)).length, union = (/* @__PURE__ */ new Set([...s1, ...s2])).size;
@@ -19365,7 +19365,7 @@ var API_HEALTH2 = {
 }, SUBJECT_CACHE = /* @__PURE__ */ new Map(), SUBJECT_CACHE_TTL = 180 * 1e3, SUBJECT_CACHE_MAX_SIZE = 100, AnimekoSource = class extends BaseSource {
   /**
    * 获取标准 HTTP 请求头
-   * @returns {Object} 请���头对象
+   * @returns {Object} 请求头对象
    */
   get headers() {
     return {
