@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详��",
+      title: "获取详情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -486,7 +486,7 @@ function convertChineseNumber(chineseNumber) {
     '陸': 6, '柒': 7, '捌': 8, '玖': 9
   };
   
-  // 单位映射���简体+繁体）
+  // 单位映射（简体+繁体）
   const units = {
     // 简体
     '十': 10, '百': 100, '千': 1000,
