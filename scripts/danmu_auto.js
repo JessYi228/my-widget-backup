@@ -11775,7 +11775,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境搜索（vercel/netlify/cloudflare 等 serverless 平台）：
-   * 分两组并行执行，每组 3 秒，避免串��降级在云函数内的极限耗时。
+   * 分两组并行执行，每组 3 秒，避免串行降级在云函数内的极限耗时。
    * 第一组 WIN+TV 并行（TV 优先），第二组 MAC+WEB 并行（MAC 优先）。
    * 第一组任一成功即终止。
    */
@@ -14495,7 +14495,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕���4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
@@ -15398,7 +15398,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
   }
   /**
    * 获取视频的分段信息，支持解析常规视频（/video/BV）与合并分P请求（/combine?cid）
-   * 对于合并分P，将其拆解为标准分段任务队列并注入时间轴平移元数据
+   * 对于合并分P，将其拆解为标准分段任务队列并注入��间轴平移元数据
    */
   async getEpisodeDanmuSegments(id) {
     if (log("info", "[bilibili] \u83B7\u53D6B\u7AD9\u5F39\u5E55\u5206\u6BB5\u5217\u8868...", id), typeof id == "string" && id.includes("/combine?")) {
@@ -16248,7 +16248,7 @@ var DandanSource = class extends BaseSource {
       }), { episodes: [], titles: [], relateds: [], type: null, typeDescription: null, imageUrl: null };
     }
   }
-  // 计算两个字符串的���本相似度（字符集交并比算法）
+  // 计算两个字符串的文本相似度（字符集交并比算法）
   calculateSimilarity(str1, str2) {
     if (!str1 || !str2) return 0;
     let s1 = new Set(str1.toLowerCase()), s2 = new Set(str2.toLowerCase()), intersection = [...s1].filter((char) => s2.has(char)).length, union = (/* @__PURE__ */ new Set([...s1, ...s2])).size;
