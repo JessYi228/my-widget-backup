@@ -14883,7 +14883,7 @@ var MangoSource = class extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕、4 为底���、5 为顶端、6 为逆向、7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
@@ -15398,7 +15398,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
   }
   /**
    * 获取视频的分段信息，支持解析常规视频（/video/BV）与合并分P请求（/combine?cid）
-   * 对于合并分P，将其拆解为标准分段任务队列并注入时间轴平移元数据
+   * 对于合并分P，将其拆解为标准分段任务队列并注入��间轴平移元数据
    */
   async getEpisodeDanmuSegments(id) {
     if (log("info", "[bilibili] \u83B7\u53D6B\u7AD9\u5F39\u5E55\u5206\u6BB5\u5217\u8868...", id), typeof id == "string" && id.includes("/combine?")) {
