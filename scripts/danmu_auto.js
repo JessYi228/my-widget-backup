@@ -5606,7 +5606,7 @@ var _Envs = class _Envs {
     return "*".repeat(str.length);
   }
   /**
-   * 解析 .env 原始内容：跳过整行 # 注释、保留行内 #，并剥除整体双引号包裹（与 node-handler 引号写入一致）。
+   * 解析 .env 原始内容：跳过整行 # 注释、保留行内 #，并剥��整体双引号包裹（与 node-handler 引号写入一致）。
    * @param {string} text .env 文件原始内容
    * @returns {Object} 键值映射
    */
@@ -17055,7 +17055,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的���共函数
+  // 提取vid和aid的公共函数
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {
@@ -18506,7 +18506,7 @@ var AiyifanSource = class extends BaseSource {
     return await Promise.all(processPromises), this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), tmpAnimes;
   }
   /**
-   * 获取某集的弹幕
+   * 获取某集的��幕
    * @param {string} id - 视频ID
    * @returns {Promise<Array>} 弹幕列表
    */
