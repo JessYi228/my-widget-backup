@@ -18506,7 +18506,7 @@ var AiyifanSource = class extends BaseSource {
     return await Promise.all(processPromises), this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), tmpAnimes;
   }
   /**
-   * 获取某集的��幕
+   * 获取某集的弹幕
    * @param {string} id - 视频ID
    * @returns {Promise<Array>} 弹幕列表
    */
