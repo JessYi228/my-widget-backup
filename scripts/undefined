@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：��名，Optional
+ * seriesName：剧名，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "��取详情",
+      title: "获取详情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -533,7 +533,7 @@ function convertChineseNumber(chineseNumber) {
 
 // 去掉 Misaka 兼容服务在 animeTitle 上加的后缀，还原干净搜索词
 //   "剑来 第二季 （来源：tencent 年份：2025）" -> "剑来 第二季"
-//   "剑来（库内：2）���搜索：1-10）" -> "剑来"
+//   "剑来（库内：2）（搜索：1-10）" -> "剑来"
 function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
