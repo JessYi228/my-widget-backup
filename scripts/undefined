@@ -405,7 +405,7 @@ async function searchDanmu(params) {
       }
 
       let rawAnimes = Array.isArray(data.animes) ? data.animes : [];
-      // 兜底：search/anime 为空时用 search/episodes（库内查询，兼容未开后备/并行搜索的实例）
+      // 兜底：search/anime 为��时用 search/episodes（库内查询，兼容未开后备/并行搜索的实例）
       if (rawAnimes.length === 0) {
         const epResponse = await Widget.http.get(
           `${source.server}/api/v2/search/episodes?anime=${encodeURIComponent(queryTitle)}`,
@@ -577,7 +577,7 @@ async function fetchEpisodesByLibrary(source, title, season) {
 }
 
 // 兜底：bangumi 临时ID跨数据快照会过期。重新 search/anime 拿"新鲜"ID（同请求内不过期，
-// 且能并行命中库外新剧，search/episodes 只查库内），再立即 bangumi 取分集
+// 且能并行命中库外新剧，search/episodes 只查��内），再立即 bangumi 取分集
 async function fetchEpisodesByResearch(source, title, season) {
   const query = cleanAnimeTitle(title);
   if (!query) return null;
