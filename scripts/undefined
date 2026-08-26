@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：剧��，Optional
+ * seriesName：剧名，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获��详情",
+      title: "获取详情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -319,7 +319,7 @@ function buildMatchedAnime(source, matched, episode, fallbackTitle, fileName, sh
 
 function buildCanonicalMatchFileName(params) {
   const title = cleanAnimeTitle(params.seriesName || params.title)
-    .replace(/\s*第\s*[一二三四五六七八九十百零��\d]+\s*[季部]\s*$/g, "")
+    .replace(/\s*第\s*[一二三四五六七八九十百零〇\d]+\s*[季部]\s*$/g, "")
     .trim();
   const episode = Number(params.episode);
   if (!title || Number.isNaN(episode) || episode <= 0) return null;
@@ -538,7 +538,7 @@ function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
 
-// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，��过期）
+// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，不过期）
 async function fetchEpisodesByBangumi(source, id) {
   try {
     const response = await Widget.http.get(
