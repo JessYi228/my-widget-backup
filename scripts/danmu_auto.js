@@ -14883,7 +14883,7 @@ var MangoSource = class extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕、4 为底��、5 为顶端、6 为逆向、7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
@@ -17055,7 +17055,7 @@ var SohuSource = class extends BaseSource {
       return log("warn", `[sohu] \u83B7\u53D6\u771F\u5B9E\u65F6\u957F\u5931\u8D25: ${error.message}`), 0;
     }
   }
-  // 提取vid和aid的公共函数
+  // 提取vid和aid的���共函数
   async extractVidAndAid(id) {
     let vid2, aid = "0", resp = await Widget.http.get(id, {
       headers: {

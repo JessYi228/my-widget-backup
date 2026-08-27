@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：剧名，Optional
+ * seriesName：剧名���Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详情",
+      title: "获取���情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -405,7 +405,7 @@ async function searchDanmu(params) {
       }
 
       let rawAnimes = Array.isArray(data.animes) ? data.animes : [];
-      // 兜底：search/anime 为��时用 search/episodes（库内查询，兼容未开后备/并行搜索的实例）
+      // 兜底：search/anime 为空时用 search/episodes（库内查询，兼容未开后备/并行搜索的实例）
       if (rawAnimes.length === 0) {
         const epResponse = await Widget.http.get(
           `${source.server}/api/v2/search/episodes?anime=${encodeURIComponent(queryTitle)}`,
@@ -577,7 +577,7 @@ async function fetchEpisodesByLibrary(source, title, season) {
 }
 
 // 兜底：bangumi 临时ID跨数据快照会过期。重新 search/anime 拿"新鲜"ID（同请求内不过期，
-// 且能并行命中库外新剧，search/episodes 只查��内），再立即 bangumi 取分集
+// 且能并行命中库外新剧，search/episodes 只查库内），再立即 bangumi 取分集
 async function fetchEpisodesByResearch(source, title, season) {
   const query = cleanAnimeTitle(title);
   if (!query) return null;
@@ -637,7 +637,7 @@ async function fetchEpisodesByMatch(source, title, season, episode) {
     const data = response && response.data;
     if (!data || !data.isMatched || !Array.isArray(data.matches) || data.matches.length === 0) return null;
     const matched = data.matches[0];
-    // match 只返回匹配到的当前集，构造单集列表（episodeNumber 设为当前集，供 App 选集对齐）
+    // match 只返回匹配到的当前集，构造���集列表（episodeNumber 设为当前集，供 App 选集对齐）
     return [{
       episodeId: matched.episodeId,
       episodeTitle: matched.episodeTitle || `第${e}集`,
@@ -662,7 +662,7 @@ async function getDetailById(params) {
       // 1. match 优先：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接匹配当前集。
       //    库内直接匹配 + 严格标题过滤，一步到位拿稳定 episodeId，不依赖易过期的临时ID。
       let episodes = await fetchEpisodesByMatch(source, matchTitle, season, episode);
-      // 2. 失败 → 标准 bangumi 端点（官方 dandanplay / 真实作品ID 直接命中）
+      // 2. 失败 → 标准 bangumi 端点（官�� dandanplay / 真实作品ID 直接命中）
       if (!episodes) {
         episodes = await fetchEpisodesByBangumi(source, parsedAnimeId.id);
       }
