@@ -6088,7 +6088,7 @@ var _Envs = class _Envs {
       localRedisUrl: this.get("LOCAL_REDIS_URL", "", "string", !0),
       // 本地 Redis 连接URL，示例：redis://:password@127.0.0.1:6379/0，只支持本地部署和docker部署
       rateLimitMaxRequests: this.get("RATE_LIMIT_MAX_REQUESTS", 3, "number"),
-      // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流��
+      // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流）
       enableAnimeEpisodeFilter: this.get("ENABLE_ANIME_EPISODE_FILTER", !1, "boolean"),
       // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用过滤）
       logLevel: this.get("LOG_LEVEL", "info", "string"),
@@ -15398,7 +15398,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
   }
   /**
    * 获取视频的分段信息，支持解析常规视频（/video/BV）与合并分P请求（/combine?cid）
-   * 对于合并分P，将其拆解为标准分段任务队列并注入时间轴平移元数据
+   * 对于合并分P，将其拆解为标准分段任务队列并注入��间轴平移元数据
    */
   async getEpisodeDanmuSegments(id) {
     if (log("info", "[bilibili] \u83B7\u53D6B\u7AD9\u5F39\u5E55\u5206\u6BB5\u5217\u8868...", id), typeof id == "string" && id.includes("/combine?")) {
