@@ -279,7 +279,7 @@ function filterAnimes(rawAnimes, type, season, queryTitle) {
       if (type === "movie") {
         return movieTypes.some(t => t.toLowerCase() === animeType);
       }
-      // tv 类型兜底：只排除电影类型，其余都算剧���
+      // tv 类型兜底：只排除电影类型，其余都算剧集
       if (type === "tv") {
         return !movieTypes.some(t => t.toLowerCase() === animeType);
       }
@@ -486,7 +486,7 @@ function convertChineseNumber(chineseNumber) {
     '陸': 6, '柒': 7, '捌': 8, '玖': 9
   };
   
-  // 单位映射（简体+繁体）
+  // ���位映射（简体+繁体）
   const units = {
     // 简体
     '十': 10, '百': 100, '千': 1000,
