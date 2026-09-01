@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：剧名，Optional
+ * seriesName：��名，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取详���",
+      title: "��取详情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -401,7 +401,7 @@ async function searchDanmu(params) {
 
       // 检查API返回状态
       if (!data.success) {
-        throw new Error(data.errorMessage || "API调用失败");
+        throw new Error(data.errorMessage || "API调用失���");
       }
 
       let rawAnimes = Array.isArray(data.animes) ? data.animes : [];
@@ -576,7 +576,7 @@ async function fetchEpisodesByLibrary(source, title, season) {
   }
 }
 
-// 兜底：bangumi 临时ID跨数据快照会过期。重新 search/anime 拿"新鲜"ID（同请求内不过期，
+// 兜底：bangumi 临时ID跨数据快照会过期。���新 search/anime 拿"新鲜"ID（同请求内不过期，
 // 且能并行命中库外新剧，search/episodes 只查库内），再立即 bangumi 取分集
 async function fetchEpisodesByResearch(source, title, season) {
   const query = cleanAnimeTitle(title);
