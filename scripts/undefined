@@ -4,7 +4,7 @@
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
  * title: 搜索关键词
- * seriesName：剧名���Optional
+ * seriesName：��名，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
  * runtime：时长，Optional
@@ -50,7 +50,7 @@ WidgetMetadata = {
     {
       //id需固定为getDetail
       id: "getDetail",
-      title: "获取���情",
+      title: "��取详情",
       functionName: "getDetailById",
       type: "danmu",
       params: [],
@@ -450,7 +450,7 @@ async function searchDanmu(params) {
       const searchAnime = {
         ...anime,
         // Misaka 等兼容服务的 bangumi/{id} 端点只认 bangumiId(如 "A900016")，而非数字 animeId(900016)；
-        // 标准 dandanplay 无 bangumiId 字段，回退到 animeId 保持原行为
+        // 标准 dandanplay 无 bangumiId 字段，回退到 animeId 保��原行为
         animeId: bindDanmuServerId(anime.bangumiId || anime.animeId, result.source, shouldBindSource),
         animeTitle: appendDanmuSourceTitle(anime.animeTitle, result.source, shouldBindSource),
       };
@@ -616,7 +616,7 @@ async function fetchEpisodesByResearch(source, title, season) {
   }
 }
 
-// match 兜底：用 title+season+episode 构造标准文件名 → POST /match 直接匹配当前集。
+// match 兜底：�� title+season+episode 构造标准文件名 → POST /match 直接匹配当前集。
 // 走库内直接匹配 + 触发"匹配后备"导入(需服务端开 matchFallbackEnabled)，命中稳定真实作品，不依赖会过期的临时ID。
 // 注意：parse_filename 要求 "标题 SxxExx" 格式（"第N集"格式匹配不到）。
 async function fetchEpisodesByMatch(source, title, season, episode) {
@@ -736,7 +736,7 @@ async function getCommentsById(params) {
         lastError = new Error("获取数据失败");
       } catch (error) {
         lastError = error;
-        console.error(`请求 ${source.server} 失败:`, error);
+        console.error(`请求 ${source.server} ���败:`, error);
       }
     }
 
