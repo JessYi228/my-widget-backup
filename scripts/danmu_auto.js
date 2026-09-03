@@ -10356,7 +10356,7 @@ function getDanmuText(danmu) {
   return "";
 }
 function normalizeText(text) {
-  return !text || typeof text != "string" ? "" : text.replace(/[\s.,!?"'(){}\[\]<>;:，。！？、""''（���【】《》；：~～]/g, "").toLowerCase();
+  return !text || typeof text != "string" ? "" : text.replace(/[\s.,!?"'(){}\[\]<>;:，。！？、""''（）【】《》；：~～]/g, "").toLowerCase();
 }
 function mergeDanmakuList(listA, listB) {
   let final = [...listA || [], ...listB || []], getTime = (item) => {
