@@ -3,7 +3,7 @@
  * 给 module 指定 type 为 danmu 后，默认会携带以下参数：
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
- * title: 搜索关键词
+ * title: 搜索���键词
  * seriesName：剧名，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
@@ -254,7 +254,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
 
 // 从番剧标题提取季号，兼容多种命名：
 //   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
-// 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
+// 优先匹配"第X季/部"，并把季号限制在 1-2 ���，避免把年份(2025)误判为季号
 function extractSeasonNumber(animeTitle) {
   const title = String(animeTitle || "");
   let m = title.match(/第\s*([0-9一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+)\s*[季部]/);
@@ -577,7 +577,7 @@ async function fetchEpisodesByLibrary(source, title, season) {
 }
 
 // 兜底：bangumi 临时ID跨数据快照会过期。重新 search/anime 拿"新鲜"ID（同请求内不过期，
-// 且能并行命中库外��剧，search/episodes 只查库内），再立即 bangumi 取分集
+// ��能并行命中库外新剧，search/episodes 只查库内），再立即 bangumi 取分集
 async function fetchEpisodesByResearch(source, title, season) {
   const query = cleanAnimeTitle(title);
   if (!query) return null;
