@@ -10918,7 +10918,7 @@ var Kan360Source = class extends BaseSource {
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {Map} detailStore 详情缓存
-   * @param {number|null} querySeason 目标��度
+   * @param {number|null} querySeason 目标季度
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null, querySeason = null) {
     let tmpAnimes = [];
@@ -13770,7 +13770,7 @@ var TencentSource = class extends BaseSource {
     );
     return this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), processTencentAnimes;
   }
-  // 提取vid的公共函数
+  // ��取vid的公共函数
   extractVid(id) {
     let vid = id;
     if (typeof id == "string" && (id.startsWith("http") || id.includes("vid="))) {
