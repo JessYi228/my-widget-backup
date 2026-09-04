@@ -252,7 +252,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
   return results;
 }
 
-// 从番剧标题提取季号，兼容多种命名：
+// 从番剧标题提取季号，���容多种命名：
 //   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
 // 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
 function extractSeasonNumber(animeTitle) {
@@ -399,7 +399,7 @@ async function searchDanmu(params) {
 
       const data = response.data;
 
-      // 检查API返回状态
+      // ���查API返回状态
       if (!data.success) {
         throw new Error(data.errorMessage || "API调用失败");
       }
@@ -483,7 +483,7 @@ function convertChineseNumber(chineseNumber) {
     '六': 6, '七': 7, '八': 8, '九': 9,
     // 繁体
     '壹': 1, '貳': 2, '參': 3, '肆': 4, '伍': 5,
-    '陸': 6, '柒': 7, '捌': 8, '玖': 9
+    '陸': 6, '柒': 7, '捌': 8, '���': 9
   };
   
   // 单位映射（简体+繁体）
@@ -577,7 +577,7 @@ async function fetchEpisodesByLibrary(source, title, season) {
 }
 
 // 兜底：bangumi 临时ID跨数据快照会过期。重新 search/anime 拿"新鲜"ID（同请求内不过期，
-// 且能并行命中库���新剧，search/episodes 只查库内），再立即 bangumi 取分集
+// 且能并行命中库外新剧，search/episodes 只查库内），再立即 bangumi 取分集
 async function fetchEpisodesByResearch(source, title, season) {
   const query = cleanAnimeTitle(title);
   if (!query) return null;
