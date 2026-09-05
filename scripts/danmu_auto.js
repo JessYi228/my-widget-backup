@@ -10356,7 +10356,7 @@ function getDanmuText(danmu) {
   return "";
 }
 function normalizeText(text) {
-  return !text || typeof text != "string" ? "" : text.replace(/[\s.,!?"'(){}\[\]<>;:，。！？、""''（���【】《》；：~～]/g, "").toLowerCase();
+  return !text || typeof text != "string" ? "" : text.replace(/[\s.,!?"'(){}\[\]<>;:，。！？、""''（）【】《》；：~～]/g, "").toLowerCase();
 }
 function mergeDanmakuList(listA, listB) {
   let final = [...listA || [], ...listB || []], getTime = (item) => {
@@ -15566,7 +15566,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
   }
   /**
    * 获取单段弹幕数据
-   * 包含就地拦截元数据并进行时间轴平移与截取的能力
+   * 包含就地拦截元数据���进行时间轴平移与截取的能力
    */
   async getEpisodeSegmentDanmu(segment) {
     try {
