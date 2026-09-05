@@ -10918,7 +10918,7 @@ var Kan360Source = class extends BaseSource {
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {Map} detailStore 详情缓存
-   * @param {number|null} querySeason 目标��度
+   * @param {number|null} querySeason 目标季度
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null, querySeason = null) {
     let tmpAnimes = [];
@@ -19961,7 +19961,7 @@ var API_HEALTH2 = {
     return list;
   }
   /**
-   * 从关联数据中提取关���条目
+   * 从关联数据中提取关联条目
    * @param {Object|null} v2Data 动画详情数据
    * @returns {Array} 关联条目数组
    */
