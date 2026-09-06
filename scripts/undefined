@@ -252,7 +252,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
   return results;
 }
 
-// 从番剧标题提取季号，兼容多��命名：
+// 从番剧标题提取季号，兼容多种命名：
 //   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
 // 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
 function extractSeasonNumber(animeTitle) {
@@ -279,7 +279,7 @@ function filterAnimes(rawAnimes, type, season, queryTitle) {
       if (type === "movie") {
         return movieTypes.some(t => t.toLowerCase() === animeType);
       }
-      // tv 类型兜底：只排除电影类型，其余都算剧集
+      // tv 类型兜底：只排除电影类型��其余都算剧集
       if (type === "tv") {
         return !movieTypes.some(t => t.toLowerCase() === animeType);
       }
@@ -319,7 +319,7 @@ function buildMatchedAnime(source, matched, episode, fallbackTitle, fileName, sh
 
 function buildCanonicalMatchFileName(params) {
   const title = cleanAnimeTitle(params.seriesName || params.title)
-    .replace(/\s*第\s*[一二三四五六七���九十百零〇\d]+\s*[季部]\s*$/g, "")
+    .replace(/\s*第\s*[一二三四五六七八九十百零〇\d]+\s*[季部]\s*$/g, "")
     .trim();
   const episode = Number(params.episode);
   if (!title || Number.isNaN(episode) || episode <= 0) return null;
@@ -399,7 +399,7 @@ async function searchDanmu(params) {
 
       const data = response.data;
 
-      // 检查API��回状态
+      // 检查API返回状态
       if (!data.success) {
         throw new Error(data.errorMessage || "API调用失败");
       }
@@ -538,7 +538,7 @@ function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
 
-// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分���（稳定，不过期）
+// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，不过期）
 async function fetchEpisodesByBangumi(source, id) {
   try {
     const response = await Widget.http.get(
@@ -552,7 +552,7 @@ async function fetchEpisodesByBangumi(source, id) {
   }
 }
 
-// 库内兜底：search/episodes 直接内联返回稳定 episodes（仅库内，兼容未开后备的实例如 wuqingfeng）
+// ��内兜底：search/episodes 直接内联返回稳定 episodes（仅库内，兼容未开后备的实例如 wuqingfeng）
 async function fetchEpisodesByLibrary(source, title, season) {
   const query = cleanAnimeTitle(title);
   if (!query) return null;
