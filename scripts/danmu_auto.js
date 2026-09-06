@@ -13770,7 +13770,7 @@ var TencentSource = class extends BaseSource {
     );
     return this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), processTencentAnimes;
   }
-  // ��取vid的公共函数
+  // 提取vid的公共函数
   extractVid(id) {
     let vid = id;
     if (typeof id == "string" && (id.startsWith("http") || id.includes("vid="))) {
@@ -19938,7 +19938,7 @@ var API_HEALTH2 = {
   }
   /**
    * 批量检查条目关系并修正标题（使用 Animeko API 的 relations 数据）
-   * 对于检测到的续作或衍生关系，在标题后追加标识
+   * 对于检测到的续作或衍生关系，在标题后追加��识
    * @param {Array} list 条目列表
    * @returns {Promise<Array>} 修正后的列表
    */
