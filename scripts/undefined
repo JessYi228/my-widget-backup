@@ -3,7 +3,7 @@
  * 给 module 指定 type 为 danmu 后，默认会携带以下参数：
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
- * title: 搜索关��词
+ * title: 搜索关键词
  * seriesName：剧名，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
@@ -577,7 +577,7 @@ async function fetchEpisodesByLibrary(source, title, season) {
 }
 
 // 兜底：bangumi 临时ID跨数据快照会过期。重新 search/anime 拿"新鲜"ID（同请求内不过期，
-// 且能���行命中库外新剧，search/episodes 只查库内），再立即 bangumi 取分集
+// 且能并行命中���外新剧，search/episodes 只查库内），再立即 bangumi 取分集
 async function fetchEpisodesByResearch(source, title, season) {
   const query = cleanAnimeTitle(title);
   if (!query) return null;

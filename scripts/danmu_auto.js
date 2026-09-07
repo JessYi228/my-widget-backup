@@ -8832,7 +8832,7 @@ async function getTmdbJaOriginalTitle(title, signal = null, sourceLabel = "Unkno
     signal && (signal.removeEventListener("abort", leaveTask), abortHandler && signal.removeEventListener("abort", abortHandler));
   }
 }
-var SUFFIX_PATTERN = /(?:\s+|^)(?:第?\s*(?:\d+|[一二三四五六七八九十]+)\s*[季期部]|season\s*\d+|s\d+|part\s*\d+|act\s*\d+|phase\s*\d+|the\s+final\s+season|(?:movie|film|ova|oad|sp|剧场版|劇場版|续[篇集]|外传)(?![a-z]))|[:：~～]|\s+.*?篇|(?<=\s|^)\d+$/i, SEPARATOR_REGEX = /[ :：~～]/;
+var SUFFIX_PATTERN = /(?:\s+|^)(?:第?\s*(?:\d+|[一二三四五六七八九十]+)\s*[季期部]|season\s*\d+|s\d+|part\s*\d+|act\s*\d+|phase\s*\d+|the\s+final\s+season|(?:movie|film|ova|oad|sp|剧场版|劇��版|续[篇集]|外传)(?![a-z]))|[:：~～]|\s+.*?篇|(?<=\s|^)\d+$/i, SEPARATOR_REGEX = /[ :：~～]/;
 function detectSuffixStart(title) {
   let match = title.match(SUFFIX_PATTERN);
   return match ? match.index : title.length;
@@ -19938,7 +19938,7 @@ var API_HEALTH2 = {
   }
   /**
    * 批量检查条目关系并修正标题（使用 Animeko API 的 relations 数据）
-   * 对于检测到的续作或衍生关系，在标题后追加��识
+   * 对于检测到的续作或衍生关系，在标题后追加标识
    * @param {Array} list 条目列表
    * @returns {Promise<Array>} 修正后的列表
    */
