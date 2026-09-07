@@ -8832,7 +8832,7 @@ async function getTmdbJaOriginalTitle(title, signal = null, sourceLabel = "Unkno
     signal && (signal.removeEventListener("abort", leaveTask), abortHandler && signal.removeEventListener("abort", abortHandler));
   }
 }
-var SUFFIX_PATTERN = /(?:\s+|^)(?:第?\s*(?:\d+|[一二三四五六七八九十]+)\s*[季期部]|season\s*\d+|s\d+|part\s*\d+|act\s*\d+|phase\s*\d+|the\s+final\s+season|(?:movie|film|ova|oad|sp|剧场版|劇��版|续[篇集]|外传)(?![a-z]))|[:：~～]|\s+.*?篇|(?<=\s|^)\d+$/i, SEPARATOR_REGEX = /[ :：~～]/;
+var SUFFIX_PATTERN = /(?:\s+|^)(?:第?\s*(?:\d+|[一二三四五六七八九十]+)\s*[季期部]|season\s*\d+|s\d+|part\s*\d+|act\s*\d+|phase\s*\d+|the\s+final\s+season|(?:movie|film|ova|oad|sp|剧场版|劇場版|续[篇集]|外传)(?![a-z]))|[:：~～]|\s+.*?篇|(?<=\s|^)\d+$/i, SEPARATOR_REGEX = /[ :：~～]/;
 function detectSuffixStart(title) {
   let match = title.match(SUFFIX_PATTERN);
   return match ? match.index : title.length;
@@ -19961,7 +19961,7 @@ var API_HEALTH2 = {
     return list;
   }
   /**
-   * 从关联数据中提取关联条目
+   * 从关联数据中提取关���条目
    * @param {Object|null} v2Data 动画详情数据
    * @returns {Array} 关联条目数组
    */
