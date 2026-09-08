@@ -8916,7 +8916,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   // 语言不一致时的惩罚
   // ── 日期 ─────────────────────────────────────────────────
   DATE_MATCH: 0,
-  // ��础日期匹配（动态计算，此处为占位）
+  // 基础日期匹配（动态计算，此处为占位）
   // ── 集数对齐 (Episode Alignment) ─────────────────────────
   EP_ALIGN: {
     MOVIE_TYPE_MISMATCH: -5,
@@ -19938,7 +19938,7 @@ var API_HEALTH2 = {
   }
   /**
    * 批量检查条目关系并修正标题（使用 Animeko API 的 relations 数据）
-   * 对于检测到的续作或衍生关系，在标题后追加标识
+   * 对于检测到的续作或衍生关系，在标题后追加��识
    * @param {Array} list 条目列表
    * @returns {Promise<Array>} 修正后的列表
    */
