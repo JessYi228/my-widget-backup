@@ -19961,7 +19961,7 @@ var API_HEALTH2 = {
     return list;
   }
   /**
-   * 从关联数据中提取关���条目
+   * 从关联数据中提取关联条目
    * @param {Object|null} v2Data 动画详情数据
    * @returns {Array} 关联条目数组
    */
