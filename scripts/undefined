@@ -3,7 +3,7 @@
  * 给 module 指定 type 为 danmu 后，默认会携带以下参数：
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
- * title: 搜索关键词
+ * title: 搜��关键词
  * seriesName：剧名，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
