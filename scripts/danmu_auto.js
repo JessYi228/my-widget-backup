@@ -8916,7 +8916,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   // 语言不一致时的惩罚
   // ── 日期 ─────────────────────────────────────────────────
   DATE_MATCH: 0,
-  // 基础日期匹配（动态计算，此处为占位）
+  // ��础日期匹配（动态计算，此处为占位）
   // ── 集数对齐 (Episode Alignment) ─────────────────────────
   EP_ALIGN: {
     MOVIE_TYPE_MISMATCH: -5,
@@ -10918,7 +10918,7 @@ var Kan360Source = class extends BaseSource {
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {Map} detailStore 详情缓存
-   * @param {number|null} querySeason 目标��度
+   * @param {number|null} querySeason 目标季度
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null, querySeason = null) {
     let tmpAnimes = [];
@@ -12711,7 +12711,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       return this.logError("getHanjutvAnimes error", error), [];
     }
   }
-  // ── 详情 & 剧集 ──────────────────────────────────────────────
+  // ── 详情 & 剧集 ───────────────��──────────────────────────────
   async getSeriesDetail(id, loader, missingLogTag, errorTag) {
     try {
       let sid = String(id || "").trim();
@@ -13036,7 +13036,7 @@ var BahamutSource = class extends BaseSource {
             aliases: [...m.titles],
             _typeStr: m.typeStr,
             _fromDataSourceDirectHit: !0,
-            // 标记来源于数据源直通模式
+            // 标记来��于数据源直通模式
             _originalQuery: keyword,
             // 保留 begin 年份供 handleAnimes 使用
             _bangumiBegin: m.begin || null
@@ -19699,7 +19699,7 @@ var API_HEALTH2 = {
   /**
    * 获取多源详情节点优先级列表 (含动态降级及代理感知)
    * 支持官方(V0)、镜像(V0)及Animeko(V2)节点的融合队列调度
-   * @returns {Array<Object>} 包含节点类型与 URL 的配置数组
+   * @returns {Array<Object>} ��含节点类型与 URL 的配置数组
    */
   _getSubjectServerPriority() {
     let officialBase = "https://api.bgm.tv", mirrorBase = "https://api.bangumi.pro", proxyOfficialBase = this._applyProxyForSearch(officialBase), animekoNodes = (/* @__PURE__ */ new Date()).getTimezoneOffset() === -480 ? [
