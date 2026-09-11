@@ -14747,7 +14747,7 @@ var MangoSource = class extends BaseSource {
     log("info", `[mango] \u7EFC\u827A\u5904\u7406\u5F00\u59CB\uFF0C\u539F\u59CB\u5206\u96C6\u6570: ${rawEpisodes.length}`);
     let hasQiFormat = rawEpisodes.some((ep) => {
       let fullTitle = `${ep.t2 || ""} ${ep.t1 || ""}`.trim();
-      return /第\d+期/.test(fullTitle);
+      return /��\d+期/.test(fullTitle);
     });
     log("info", `[mango] \u7EFC\u827A\u683C\u5F0F\u5206\u6790: \u6709\u671F\u6570\u683C\u5F0F=${hasQiFormat}`);
     let episodeInfos = [], qiInfoMap = /* @__PURE__ */ new Map();
