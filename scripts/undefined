@@ -253,7 +253,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
 }
 
 // 从番剧标题提取季号，兼容多种命名：
-//   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
+//   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"��2、"剑来 S2"→2
 // 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
 function extractSeasonNumber(animeTitle) {
   const title = String(animeTitle || "");
@@ -405,7 +405,7 @@ async function searchDanmu(params) {
       }
 
       let rawAnimes = Array.isArray(data.animes) ? data.animes : [];
-      // 兜底：search/anime 为空时用 search/episodes（库内查询，兼容��开后备/并行搜索的实例）
+      // 兜底：search/anime 为空时用 search/episodes（库内查询，兼容未开后备/并行搜索的实例）
       if (rawAnimes.length === 0) {
         const epResponse = await Widget.http.get(
           `${source.server}/api/v2/search/episodes?anime=${encodeURIComponent(queryTitle)}`,
@@ -719,7 +719,7 @@ async function getCommentsById(params) {
 
     for (const source of sources) {
       try {
-        // async=1：慢源/库外剧弹幕需实时下载，服务端会等待下载完成再返回（同步请求会直接返回0条）。
+        // async=1：慢源/库外剧弹幕���实时下载，服务端会等待下载完成再返回（同步请求会直接返回0条）。
         // widget JS 环境无 setTimeout，无法轮询 taskcomment；超长下载返回 taskId 时本次取不到，
         // 靠 App "空弹幕不缓存→下次重试" + Misaka 预下载兜底。
         const response = await Widget.http.get(
@@ -733,7 +733,7 @@ async function getCommentsById(params) {
           return response.data;
         }
 
-        lastError = new Error("获取数据失��");
+        lastError = new Error("获取数据失败");
       } catch (error) {
         lastError = error;
         console.error(`请求 ${source.server} 失败:`, error);
