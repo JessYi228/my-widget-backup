@@ -405,7 +405,7 @@ async function searchDanmu(params) {
       }
 
       let rawAnimes = Array.isArray(data.animes) ? data.animes : [];
-      // 兜底：search/anime 为空时用 search/episodes（库内查询，兼容未开后备/并行搜索的实例）
+      // 兜底：search/anime 为空时用 search/episodes（库内查询，兼容��开后备/并行搜索的实例）
       if (rawAnimes.length === 0) {
         const epResponse = await Widget.http.get(
           `${source.server}/api/v2/search/episodes?anime=${encodeURIComponent(queryTitle)}`,
@@ -488,7 +488,7 @@ function convertChineseNumber(chineseNumber) {
   
   // 单位映射（简体+繁体）
   const units = {
-    // ���体
+    // 简体
     '十': 10, '百': 100, '千': 1000,
     // 繁体
     '拾': 10, '佰': 100, '仟': 1000
@@ -733,7 +733,7 @@ async function getCommentsById(params) {
           return response.data;
         }
 
-        lastError = new Error("获取数据失败");
+        lastError = new Error("获取数据失��");
       } catch (error) {
         lastError = error;
         console.error(`请求 ${source.server} 失败:`, error);
