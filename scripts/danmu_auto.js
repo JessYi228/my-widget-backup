@@ -17126,7 +17126,7 @@ var SohuSource = class extends BaseSource {
     }
   }
   /**
-   * 处理搜索���果
+   * 处理搜索结果
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
