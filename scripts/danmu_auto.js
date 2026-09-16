@@ -5570,7 +5570,7 @@ var _Envs = class _Envs {
   /**
    * 获取环境变量
    * @param {string} key 环境变量的键
-   * @param {any} defaultValue 默认值
+   * @param {any} defaultValue ��认值
    * @param {'string' | 'number' | 'boolean'} type 类型
    * @returns {any} 转换后的值
    */
@@ -11094,7 +11094,7 @@ var VodSource = class extends BaseSource {
   async getEpisodes(id) {
   }
   /**
-   * 处理搜索结果
+   * 处��搜索结果
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
@@ -13770,7 +13770,7 @@ var TencentSource = class extends BaseSource {
     );
     return this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), processTencentAnimes;
   }
-  // ��取vid的公共函数
+  // 提取vid的公共函数
   extractVid(id) {
     let vid = id;
     if (typeof id == "string" && (id.startsWith("http") || id.includes("vid="))) {
@@ -19725,7 +19725,7 @@ var API_HEALTH2 = {
   }
   /**
    * 获取 V0 剧集列表完整数据（并发适配器内部辅助方法）
-   * Bangumi API 限制单次 limit=200，需循环获取完���列表以适配长篇番剧
+   * Bangumi API 限制单次 limit=200，需循环获取完整列表以适配长篇番剧
    * @param {string} serverUrl 节点地址
    * @param {number} subjectId 条目 ID
    * @returns {Promise<Array>} 剧集原始数据数组
