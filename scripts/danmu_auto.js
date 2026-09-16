@@ -5570,7 +5570,7 @@ var _Envs = class _Envs {
   /**
    * 获取环境变量
    * @param {string} key 环境变量的键
-   * @param {any} defaultValue ��认值
+   * @param {any} defaultValue 默认值
    * @param {'string' | 'number' | 'boolean'} type 类型
    * @returns {any} 转换后的值
    */
@@ -11094,7 +11094,7 @@ var VodSource = class extends BaseSource {
   async getEpisodes(id) {
   }
   /**
-   * 处��搜索结果
+   * 处理搜索结果
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
