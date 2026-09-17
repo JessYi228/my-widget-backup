@@ -19938,7 +19938,7 @@ var API_HEALTH2 = {
   }
   /**
    * 批量检查条目关系并修正标题（使用 Animeko API 的 relations 数据）
-   * 对于检测到的续作或衍生关系，在标题后追加��识
+   * 对于检测到的续作或衍生关系，在标题后追加标识
    * @param {Array} list 条目列表
    * @returns {Promise<Array>} 修正后的列表
    */
