@@ -13770,7 +13770,7 @@ var TencentSource = class extends BaseSource {
     );
     return this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), processTencentAnimes;
   }
-  // ��取vid的公共函数
+  // 提取vid的公共函数
   extractVid(id) {
     let vid = id;
     if (typeof id == "string" && (id.startsWith("http") || id.includes("vid="))) {
@@ -15566,7 +15566,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
   }
   /**
    * 获取单段弹幕数据
-   * 包含就地拦截元数据并进行时间轴平移与截取的能力
+   * 包含就地拦截元数据���进行时间轴平移与截取的能力
    */
   async getEpisodeSegmentDanmu(segment) {
     try {
