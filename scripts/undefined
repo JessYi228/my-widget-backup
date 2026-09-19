@@ -279,7 +279,7 @@ function filterAnimes(rawAnimes, type, season, queryTitle) {
       if (type === "movie") {
         return movieTypes.some(t => t.toLowerCase() === animeType);
       }
-      // tv 类型兜底：只排除电影类型，其余都算剧集
+      // tv 类型兜底：只排除电影类型，���余都算剧集
       if (type === "tv") {
         return !movieTypes.some(t => t.toLowerCase() === animeType);
       }
@@ -476,7 +476,7 @@ function convertChineseNumber(chineseNumber) {
     return Number(chineseNumber);
   }
   
-  // 中文数字映射（简��+繁体）
+  // 中文数字映射（简体+繁体）
   const digits = {
     // 简体
     '零': 0, '一': 1, '二': 2, '三': 3, '四': 4, '五': 5,
@@ -533,7 +533,7 @@ function convertChineseNumber(chineseNumber) {
 
 // 去掉 Misaka 兼容服务在 animeTitle 上加的后缀，还原干净搜索词
 //   "剑来 第二季 （来源：tencent 年份：2025）" -> "剑来 第二季"
-//   "剑��（库内：2）（搜索：1-10）" -> "剑来"
+//   "剑来（库内：2）（搜索：1-10）" -> "剑来"
 function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
@@ -552,7 +552,7 @@ async function fetchEpisodesByBangumi(source, id) {
   }
 }
 
-// 库内兜底：search/episodes 直接内联返回稳定 episodes（仅库内，兼容未开后备的实例如 wuqingfeng）
+// 库���兜底：search/episodes 直接内联返回稳定 episodes（仅库内，兼容未开后备的实例如 wuqingfeng）
 async function fetchEpisodesByLibrary(source, title, season) {
   const query = cleanAnimeTitle(title);
   if (!query) return null;
@@ -637,7 +637,7 @@ async function fetchEpisodesByMatch(source, title, season, episode) {
     const data = response && response.data;
     if (!data || !data.isMatched || !Array.isArray(data.matches) || data.matches.length === 0) return null;
     const matched = data.matches[0];
-    // match 只返回匹配到的当前集，构造单集列表（episodeNumber 设为当前集，供 App 选集对齐）
+    // match 只返回匹配到的当��集，构造单集列表（episodeNumber 设为当前集，供 App 选集对齐）
     return [{
       episodeId: matched.episodeId,
       episodeTitle: matched.episodeTitle || `第${e}集`,
