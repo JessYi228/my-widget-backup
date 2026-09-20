@@ -640,7 +640,7 @@ async function fetchEpisodesByMatch(source, title, season, episode) {
     // match 只返回匹配到的当前集，构造单集列表（episodeNumber 设为当前集，供 App 选集对齐）
     return [{
       episodeId: matched.episodeId,
-      episodeTitle: matched.episodeTitle || `第${e}集`,
+      episodeTitle: matched.episodeTitle || `���${e}集`,
       episodeNumber: String(e),
     }];
   } catch (error) {
@@ -666,7 +666,7 @@ async function getDetailById(params) {
       if (!episodes) {
         episodes = await fetchEpisodesByBangumi(source, parsedAnimeId.id);
       }
-      // 3. 失败 → 重新 search/anime 拿新鲜ID再 bangumi（并行后备实例走实时源）
+      // 3. ��败 → 重新 search/anime 拿新鲜ID再 bangumi（并行后备实例走实时源）
       if (!episodes) {
         episodes = await fetchEpisodesByResearch(source, title, season);
       }
@@ -680,7 +680,7 @@ async function getDetailById(params) {
       }
       return { source, error: new Error("获取数据失败") };
     } catch (error) {
-      console.error(`请求 ${source.server} ���败:`, error);
+      console.error(`请求 ${source.server} 失败:`, error);
       return { source, error };
     }
   });
@@ -721,7 +721,7 @@ async function getCommentsById(params) {
       try {
         // async=1：慢源/库外剧弹幕需实时下载，服务端会等待下载完成再返回（同步请求会直接返回0条）。
         // widget JS 环境无 setTimeout，无法轮询 taskcomment；超长下载返回 taskId 时本次取不到，
-        // 靠 App "空弹幕不缓存→下次重���" + Misaka 预下载兜底。
+        // 靠 App "空弹幕不缓存→下次重试" + Misaka 预下载兜底。
         const response = await Widget.http.get(
           `${source.server}/api/v2/comment/${parsedCommentId.id}?async=1&withRelated=true&chConvert=1`,
           {
