@@ -552,7 +552,7 @@ async function fetchEpisodesByBangumi(source, id) {
   }
 }
 
-// 库内兜底：search/episodes 直接内联返回稳定 episodes（仅库内，兼容未开��备的实例如 wuqingfeng）
+// 库内兜底：search/episodes 直接内联返回稳定 episodes（仅库内，兼容未开后备的实例如 wuqingfeng）
 async function fetchEpisodesByLibrary(source, title, season) {
   const query = cleanAnimeTitle(title);
   if (!query) return null;
