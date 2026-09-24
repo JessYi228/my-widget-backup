@@ -10918,7 +10918,7 @@ var Kan360Source = class extends BaseSource {
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {Map} detailStore 详情缓存
-   * @param {number|null} querySeason 目标季度
+   * @param {number|null} querySeason 目标��度
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null, querySeason = null) {
     let tmpAnimes = [];
