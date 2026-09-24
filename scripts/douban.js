@@ -55,7 +55,7 @@ WidgetMetadata = {
           name: "cookie",
           title: "用户Cookie",
           type: "input",
-          description: "未��写情况下非个性化推荐；可手机登陆网页版后，通过loon，Qx等软件抓包获取Cookie",
+          description: "未填写情况下非个性化推荐；可手机登陆网页版后，通过loon，Qx等软件抓包获取Cookie",
         },
         {
           name: "type",
@@ -192,7 +192,7 @@ WidgetMetadata = {
               value: "最新",
             },
             {
-              title: "��瓣高分",
+              title: "豆瓣高分",
               value: "豆瓣高分",
             },
             {
@@ -729,7 +729,7 @@ WidgetMetadata = {
           },
           enumOptions: [
             {"title":"周润发","value":"周润发"}, {"title":"梁朝伟","value":"梁朝伟"}, {"title":"刘德华","value":"刘德华"},
-            {"title":"成龙","value":"成龙"}, {"title":"李连杰","value":"李���杰"}, {"title":"张家辉","value":"张家辉"},
+            {"title":"成龙","value":"成龙"}, {"title":"李连杰","value":"李连杰"}, {"title":"张家辉","value":"张家辉"},
             {"title":"古天乐","value":"古天乐"}, {"title":"甄子丹","value":"甄子丹"}, {"title":"刘青云","value":"刘青云"},
             {"title":"任达华","value":"任达华"}, {"title":"吴镇宇","value":"吴镇宇"}, {"title":"黄秋生","value":"黄秋生"},
             {"title":"林家栋","value":"林家栋"}, {"title":"余文乐","value":"余文乐"}, {"title":"谢霆锋","value":"谢霆锋"},
@@ -744,7 +744,7 @@ WidgetMetadata = {
             {"title":"明道","value":"明道"}, {"title":"贺军翔","value":"贺军翔"}, {"title":"周渝民","value":"周渝民"},
             {"title":"言承旭","value":"言承旭"}, {"title":"汪东城","value":"汪东城"}, {"title":"陈奕迅","value":"陈奕迅"},
             {"title":"张震","value":"张震"}, {"title":"王力宏","value":"王力宏"}, {"title":"林志颖","value":"林志颖"},
-            {"title":"苏���朋","value":"苏有朋"}, {"title":"吴彦祖","value":"吴彦祖"}
+            {"title":"苏有朋","value":"苏有朋"}, {"title":"吴彦祖","value":"吴彦祖"}
           ],
         },
         {
@@ -901,7 +901,7 @@ WidgetMetadata = {
             {"title":"徐克","value":"徐克"}, {"title":"吴宇森","value":"吴宇森"}, {"title":"杜琪峰","value":"杜琪峰"},
             {"title":"周星驰","value":"周星驰"}, {"title":"宁浩","value":"宁浩"}, {"title":"陈思诚","value":"陈思诚"},
             {"title":"贾樟柯","value":"贾樟柯"}, {"title":"侯孝贤","value":"侯孝贤"}, {"title":"杨德昌","value":"杨德昌"},
-            {"title":"许���华","value":"许鞍华"}, {"title":"谢晋","value":"谢晋"}, {"title":"张一白","value":"张一白"},
+            {"title":"许鞍华","value":"许鞍华"}, {"title":"谢晋","value":"谢晋"}, {"title":"张一白","value":"张一白"},
             {"title":"管虎","value":"管虎"}, {"title":"陆川","value":"陆川"}, {"title":"韩寒","value":"韩寒"},
             {"title":"徐峥","value":"徐峥"}, {"title":"陈可辛","value":"陈可辛"}, {"title":"林超贤","value":"林超贤"},
             {"title":"乌尔善","value":"乌尔善"}, {"title":"郭帆","value":"郭帆"}, {"title":"路阳","value":"路阳"},
@@ -971,7 +971,7 @@ WidgetMetadata = {
       ],
     },
     {
-      title: "豆瓣影人作品(平铺选择版)",
+      title: "豆瓣影人��品(平铺选择版)",
       requiresWebView: false,
       functionName: "loadActorItems",
       cacheDuration: 604800,
