@@ -252,7 +252,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
   return results;
 }
 
-// 从番剧标题提取季号，兼容多种命名：
+// 从番剧标题提取季号，兼容��种命名：
 //   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
 // 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
 function extractSeasonNumber(animeTitle) {
@@ -319,7 +319,7 @@ function buildMatchedAnime(source, matched, episode, fallbackTitle, fileName, sh
 
 function buildCanonicalMatchFileName(params) {
   const title = cleanAnimeTitle(params.seriesName || params.title)
-    .replace(/\s*第\s*[一二三四五六七八九十百零〇\d]+\s*[季部]\s*$/g, "")
+    .replace(/\s*第\s*[一二三四五六���八九十百零〇\d]+\s*[季部]\s*$/g, "")
     .trim();
   const episode = Number(params.episode);
   if (!title || Number.isNaN(episode) || episode <= 0) return null;
@@ -476,7 +476,7 @@ function convertChineseNumber(chineseNumber) {
     return Number(chineseNumber);
   }
   
-  // 中文数字映射（简体+���体）
+  // 中文数字映射（简体+繁体）
   const digits = {
     // 简体
     '零': 0, '一': 1, '二': 2, '三': 3, '四': 4, '五': 5,
@@ -533,12 +533,12 @@ function convertChineseNumber(chineseNumber) {
 
 // 去掉 Misaka 兼容服务在 animeTitle 上加的后缀，还原干净搜索词
 //   "剑来 第二季 （来源：tencent 年份：2025）" -> "剑来 第二季"
-//   "剑来��库内：2）（搜索：1-10）" -> "剑来"
+//   "剑来（库内：2）（搜索：1-10）" -> "剑来"
 function cleanAnimeTitle(title) {
   return String(title || "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
 }
 
-// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿分集（稳定，不过期）
+// 标准 dandanplay / 真实作品ID：bangumi/{id} 直接拿���集（稳定，不过期）
 async function fetchEpisodesByBangumi(source, id) {
   try {
     const response = await Widget.http.get(

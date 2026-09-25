@@ -10356,7 +10356,7 @@ function getDanmuText(danmu) {
   return "";
 }
 function normalizeText(text) {
-  return !text || typeof text != "string" ? "" : text.replace(/[\s.,!?"'(){}\[\]<>;:，。！？、""''（）【】《》；：~～]/g, "").toLowerCase();
+  return !text || typeof text != "string" ? "" : text.replace(/[\s.,!?"'(){}\[\]<>;:，。！？、""''（���【】《》；：~～]/g, "").toLowerCase();
 }
 function mergeDanmakuList(listA, listB) {
   let final = [...listA || [], ...listB || []], getTime = (item) => {
@@ -13770,7 +13770,7 @@ var TencentSource = class extends BaseSource {
     );
     return this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), processTencentAnimes;
   }
-  // ��取vid的公共函数
+  // 提取vid的公共函数
   extractVid(id) {
     let vid = id;
     if (typeof id == "string" && (id.startsWith("http") || id.includes("vid="))) {
