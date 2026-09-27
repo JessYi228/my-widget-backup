@@ -8916,7 +8916,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   // 语言不一致时的惩罚
   // ── 日期 ─────────────────────────────────────────────────
   DATE_MATCH: 0,
-  // 基础日期匹配（动态计算，此处为占位）
+  // ��础日期匹配（动态计算，此处为占位）
   // ── 集数对齐 (Episode Alignment) ─────────────────────────
   EP_ALIGN: {
     MOVIE_TYPE_MISMATCH: -5,
