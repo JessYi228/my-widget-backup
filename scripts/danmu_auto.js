@@ -10918,7 +10918,7 @@ var Kan360Source = class extends BaseSource {
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {Map} detailStore 详情缓存
-   * @param {number|null} querySeason 目标��度
+   * @param {number|null} querySeason 目标季度
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null, querySeason = null) {
     let tmpAnimes = [];
@@ -14214,7 +14214,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
     return !data || data.status_code !== 0 || !data.data || !data.data.template ? (log("error", `[iqiyi] \u83B7\u53D6\u5206\u96C6\u5217\u8868\u5931\u8D25: ${data ? `status_code: ${data.status_code}` : "\u54CD\u5E94\u4E3A\u7A7A\u6216\u89E3\u6790\u5931\u8D25"}`), null) : data;
   }
   /**
-   * 全季搜索时统一拉取各结果的分集列表，收集其中以内联方式返回的季 album_id；
+   * 全季搜索时���一拉取各结果的分集列表，收集其中以内联方式返回的季 album_id；
    * 这些季无需再经分季URL获取，供 getEpisodes 判断跳过对应请求
    * @param {Array} animes - 搜索结果数组
    * @param {Map} baseInfoCache - 复用已拉取的分集列表数据，避免重复请求
