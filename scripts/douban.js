@@ -515,7 +515,7 @@ WidgetMetadata = {
           title: "排序",
           type: "enumeration",
           enumOptions: [
-            { title: "综���排序", value: "T" },
+            { title: "综合排序", value: "T" },
             { title: "近期热度", value: "U" },
             { title: "首映时间", value: "R" },
             { title: "高分优选", value: "S" }
@@ -1318,7 +1318,7 @@ function cleanTitle(title) {
 
     // 删除季数、期数、part等
     const patterns = [
-        /[��\-:]\s*[^·\-:]+季/,                // “·慢享季”
+        /[·\-:]\s*[^·\-:]+季/,                // “·慢享季”
         /第[^季]*季/,                        // “第X季”
         /(?:Part|Season|Series)\s*\d+/i,     // “Part 2”
         /\d{4}/,                             // 年份
