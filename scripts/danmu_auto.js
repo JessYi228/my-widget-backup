@@ -14866,7 +14866,7 @@ var MangoSource = class extends BaseSource {
   }
   /**
    * 从类型字符串中提取标准化的媒体类型
-   * @param {string} typeStr - API 返回的类型字符串
+   * @param {string} typeStr - API 返回��类型字符串
    * @returns {string} 标准化的媒体类型
    */
   _extractMediaType(typeStr) {
