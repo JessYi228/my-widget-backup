@@ -6298,7 +6298,7 @@ var Globals = {
   redisValid: !1,
   // redis是否生效
   localRedisValid: !1,
-  // 本地redis是否生效
+  // 本���redis是否生效
   aiValid: !1,
   // AI配置是否生效
   redisCacheInitialized: !1,
@@ -14866,7 +14866,7 @@ var MangoSource = class extends BaseSource {
   }
   /**
    * 从类型字符串中提取标准化的媒体类型
-   * @param {string} typeStr - API 返回��类型字符串
+   * @param {string} typeStr - API 返回的类型字符串
    * @returns {string} 标准化的媒体类型
    */
   _extractMediaType(typeStr) {
