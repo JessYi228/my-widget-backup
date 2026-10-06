@@ -9153,7 +9153,7 @@ var RegexStore = {
     NA_TAG: /(\(|（|\[)N\/A(\)|）|\])/gi,
     SOURCE_TAG: /【.*?】/g,
     REGION_LIMIT: /(\(|（|\[)仅限.*?地区(\)|）|\])/g,
-    PUNCTUATION: /[!！?？,，.。、~～:：\-–—_]/g,
+    PUNCTUATION: /[!！?？,，.。���~～:：\-–—_]/g,
     WHITESPACE: /\s+/g,
     FROM_SUFFIX: /\s*from\s+.*$/i,
     PARENTHESES_CONTENT: /(\(|（|\[).*?(\)|）|\])/g,
@@ -11722,7 +11722,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
   /**
    * 检查并增加计数 (核心逻辑)
    * 负责监控使用次数，达到阈值时触发轮换
-   * 并在日��中明确输出 AliID 计数状态
+   * 并在日志中明确输出 AliID 计数状态
    */
   checkAndIncrementUsage() {
     CACHED_ALI_ID || this.rotateAliId(), REQUEST_COUNT >= ROTATION_THRESHOLD && (log("info", `[renren] AliID \u89E6\u53D1\u9608\u503C (${REQUEST_COUNT}/${ROTATION_THRESHOLD})\uFF0C\u6B63\u5728\u8F6E\u6362 ID...`), this.rotateAliId()), REQUEST_COUNT++, log("info", `[renren] AliID \u8BA1\u6570\u589E\u52A0: ${REQUEST_COUNT}/${ROTATION_THRESHOLD} (\u5F53\u524DID: ...${CACHED_ALI_ID.slice(-6)})`);
@@ -12637,7 +12637,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
     }
     return Array.from(map.values());
   }
-  // 双端身份键只做 Unicode 兼容归一与首尾去空白，不���用模糊标题清洗。
+  // 双端身份键只做 Unicode 兼容归一与首尾去空白，不使用模糊标题清洗。
   normalizeSearchPairTitle(name = "") {
     return String(name || "").normalize("NFKC").trim();
   }
