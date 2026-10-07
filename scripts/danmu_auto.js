@@ -20202,7 +20202,7 @@ var API_HEALTH2 = {
   }
   /**
    * 过滤搜索结果
-   * 利用公共方法对主标题和别名进行匹配校��
+   * 利用公共方法对主标题和别名进行匹配校验
    * @param {Array} list 原始 API 返回结果列表
    * @param {string} keyword 用户搜索关键词
    * @returns {Array} 过滤后的结果列表
