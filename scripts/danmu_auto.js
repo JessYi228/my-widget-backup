@@ -9142,7 +9142,7 @@ var RegexStore = {
     CN: /第\s*([一二三四五六七八九十]+)\s*季/g,
     ROMAN: /(\s|^)(IV|III|II|I)(\s|$)/g,
     INFO_STRONG: /(?:season|s|第)\s*[0-9一二三四五六七八九十]+\s*(?:季|期|部(?!分))?/gi,
-    PART_INFO_STRONG: /(?:part|p|第)\s*\d+\s*(?:部���)?/gi,
+    PART_INFO_STRONG: /(?:part|p|第)\s*\d+\s*(?:部分)?/gi,
     PART_ANY: /(?:part|p)\s*\d+/gi,
     CN_STRUCTURE: /(?:^|\s|×\d+\s?)(承|转|结)(?=$|[\s\(\（\[【])/i,
     SUFFIX_AMBIGUOUS: /(?:[\s\u4e00-\u9fa5]|^)(S|T|R|II|III|IV)(?=$|[\s\(\（\[【])/i,
@@ -12637,7 +12637,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
     }
     return Array.from(map.values());
   }
-  // 双端身份键只做 Unicode 兼容归一与首尾去空白，��使用模糊标题清洗。
+  // 双端身份键只做 Unicode 兼容归一与首尾去空白，不使用模糊标题清洗。
   normalizeSearchPairTitle(name = "") {
     return String(name || "").normalize("NFKC").trim();
   }
@@ -14836,7 +14836,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类���，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
