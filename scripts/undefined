@@ -3,7 +3,7 @@
  * 给 module 指定 type 为 danmu 后，默认会携带以下参数：
  * tmdbId: TMDB ID，Optional
  * type: 类型，tv | movie
- * title: 搜索关键词
+ * title: 搜索���键词
  * seriesName：剧名，Optional
  * episodeName：集名，Optional
  * airDate：播出日期，Optional
@@ -279,7 +279,7 @@ function filterAnimes(rawAnimes, type, season, queryTitle) {
       if (type === "movie") {
         return movieTypes.some(t => t.toLowerCase() === animeType);
       }
-      // tv 类型兜底：只排除电影类型���其余都算剧集
+      // tv 类型兜底：只排除电影类型，其余都算剧集
       if (type === "tv") {
         return !movieTypes.some(t => t.toLowerCase() === animeType);
       }
@@ -450,7 +450,7 @@ async function searchDanmu(params) {
       const searchAnime = {
         ...anime,
         // Misaka 等兼容服务的 bangumi/{id} 端点只认 bangumiId(如 "A900016")，而非数字 animeId(900016)；
-        // 标准 dandanplay 无 bangumiId 字段，回退到 animeId 保持原行为
+        // 标准 dandanplay 无 bangumiId 字段��回退到 animeId 保持原行为
         animeId: bindDanmuServerId(anime.bangumiId || anime.animeId, result.source, shouldBindSource),
         animeTitle: appendDanmuSourceTitle(anime.animeTitle, result.source, shouldBindSource),
       };
@@ -616,7 +616,7 @@ async function fetchEpisodesByResearch(source, title, season) {
   }
 }
 
-// match 兜底：用 title+season+episode 构造标准文件名 → POST /match 直接匹配当前集���
+// match 兜底：用 title+season+episode 构造标准文件名 → POST /match 直接匹配当前集。
 // 走库内直接匹配 + 触发"匹配后备"导入(需服务端开 matchFallbackEnabled)，命中稳定真实作品，不依赖会过期的临时ID。
 // 注意：parse_filename 要求 "标题 SxxExx" 格式（"第N集"格式匹配不到）。
 async function fetchEpisodesByMatch(source, title, season, episode) {
@@ -637,7 +637,7 @@ async function fetchEpisodesByMatch(source, title, season, episode) {
     const data = response && response.data;
     if (!data || !data.isMatched || !Array.isArray(data.matches) || data.matches.length === 0) return null;
     const matched = data.matches[0];
-    // match 只返回匹配到的���前集，构造单集列表（episodeNumber 设为当前集，供 App 选集对齐）
+    // match 只返回匹配到的当前集，构造单集列表（episodeNumber 设为当前集，供 App 选集对齐）
     return [{
       episodeId: matched.episodeId,
       episodeTitle: matched.episodeTitle || `第${e}集`,
@@ -736,11 +736,11 @@ async function getCommentsById(params) {
         lastError = new Error("获取数据失败");
       } catch (error) {
         lastError = error;
-        console.error(`请求 ${source.server} 失败:`, error);
+        console.error(`���求 ${source.server} 失败:`, error);
       }
     }
 
-    throw lastError || new Error("获取数据失��");
+    throw lastError || new Error("获取数据失败");
   }
   // else {
   //   // just for sample

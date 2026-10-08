@@ -5673,7 +5673,7 @@ var _Envs = class _Envs {
     return result;
   }
   /**
-   * 读取文本类变量，绕过 dotenv 截断保留 #：系统环境变量 > .env 原始值 > 默认值；非 Node 部署退化为普通取值。
+   * 读取文本类变量，���过 dotenv 截断保留 #：系统环境变量 > .env 原始值 > 默认值；非 Node 部署退化为普通取值。
    * @param {string} key 环境变量键
    * @param {string} defaultValue 默认值
    * @param {boolean} encrypt 是否按掩码写入预览集合
@@ -8381,7 +8381,7 @@ async function runPipeline(commands, { timeoutMs = Math.max(3e4, ...commands.map
         "Content-Type": "application/json"
       },
       body: JSON.stringify(commands)
-      // commands 是一个数组，包含多个 Redis 命令
+      // commands 是一个数组，包含���个 Redis 命令
     });
     if (!response.ok) throw new Error(`Pipeline HTTP ${response.status}`);
     let result = await response.json();
@@ -18281,7 +18281,7 @@ var MaiduiduiSource = class _MaiduiduiSource extends BaseSource {
   }
   // vodType 数字到类型名的映射（埋堆堆搜索接口已不返回 typeName 字符串，改用 vodType 数字）。
   // 按埋堆堆旧接口的 typeName 分类约定解释：0=剧集(正剧，多集), 1=电影, 2=综艺，3=短视频/花絮。
-  // materialName 是题材标签（如“奇幻”“警匪”），不作为剧集/电影/综艺类型使用。
+  // materialName 是题材标签（如“奇���”“警匪”），不作为剧集/电影/综艺类型使用。
   static get VOD_TYPE_MAP() {
     return { 0: "\u5267\u96C6", 1: "\u7535\u5F71", 2: "\u7EFC\u827A" };
   }
