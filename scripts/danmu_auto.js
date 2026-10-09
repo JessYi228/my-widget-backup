@@ -11721,7 +11721,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
   }
   /**
    * 检查并增加计数 (核心逻辑)
-   * 负责监控使用次数，��到阈值时触发轮换
+   * 负责监控使用次数，达到阈值时触发轮换
    * 并在日志中明确输出 AliID 计数状态
    */
   checkAndIncrementUsage() {
@@ -16433,7 +16433,7 @@ var YoukuSource = class extends BaseSource {
 var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoSource = new MangoSource(), bilibiliSource = new BilibiliSource(), youkuSource = new YoukuSource(), bahamutSource = new BahamutSource(), DandanSource = class extends BaseSource {
   /**
    * 搜索动画条目
-   * 包含常规搜索、TMDB 日语原名搜索，以及去除季度信息后的降级搜索策略
+   * 包含常规搜索、TMDB 日语原��搜索，以及去除季度信息后的降级搜索策略
    * @param {string} keyword 搜索关键词
    * @param {boolean} isFallback 标记当前是否处于降级搜索状态，防止无限递归
    */
