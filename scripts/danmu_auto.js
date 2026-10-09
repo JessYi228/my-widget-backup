@@ -11721,7 +11721,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
   }
   /**
    * 检查并增加计数 (核心逻辑)
-   * 负责监控使用次数，达到阈值时触发轮换
+   * 负责监控使用次数，��到阈值时触发轮换
    * 并在日志中明确输出 AliID 计数状态
    */
   checkAndIncrementUsage() {
