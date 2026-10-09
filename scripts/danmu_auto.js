@@ -9142,7 +9142,7 @@ var RegexStore = {
     CN: /第\s*([一二三四五六七八九十]+)\s*季/g,
     ROMAN: /(\s|^)(IV|III|II|I)(\s|$)/g,
     INFO_STRONG: /(?:season|s|第)\s*[0-9一二三四五六七八九十]+\s*(?:季|期|部(?!分))?/gi,
-    PART_INFO_STRONG: /(?:part|p|第)\s*\d+\s*(?:部分)?/gi,
+    PART_INFO_STRONG: /(?:part|p|第)\s*\d+\s*(?:部��)?/gi,
     PART_ANY: /(?:part|p)\s*\d+/gi,
     CN_STRUCTURE: /(?:^|\s|×\d+\s?)(承|转|结)(?=$|[\s\(\（\[【])/i,
     SUFFIX_AMBIGUOUS: /(?:[\s\u4e00-\u9fa5]|^)(S|T|R|II|III|IV)(?=$|[\s\(\（\[【])/i,
@@ -11722,7 +11722,7 @@ var CACHED_ALI_ID = null, REQUEST_COUNT = 0, ROTATION_THRESHOLD = 0, API_HEALTH 
   /**
    * 检查并增加计数 (核心逻辑)
    * 负责监控使用次数，达到阈值时触发轮换
-   * 并在日志中明确输出 AliID 计数状态
+   * 并在日���中明确输出 AliID 计数状态
    */
   checkAndIncrementUsage() {
     CACHED_ALI_ID || this.rotateAliId(), REQUEST_COUNT >= ROTATION_THRESHOLD && (log("info", `[renren] AliID \u89E6\u53D1\u9608\u503C (${REQUEST_COUNT}/${ROTATION_THRESHOLD})\uFF0C\u6B63\u5728\u8F6E\u6362 ID...`), this.rotateAliId()), REQUEST_COUNT++, log("info", `[renren] AliID \u8BA1\u6570\u589E\u52A0: ${REQUEST_COUNT}/${ROTATION_THRESHOLD} (\u5F53\u524DID: ...${CACHED_ALI_ID.slice(-6)})`);
@@ -14836,7 +14836,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
+        // 弹幕类��，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
@@ -16433,7 +16433,7 @@ var YoukuSource = class extends BaseSource {
 var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoSource = new MangoSource(), bilibiliSource = new BilibiliSource(), youkuSource = new YoukuSource(), bahamutSource = new BahamutSource(), DandanSource = class extends BaseSource {
   /**
    * 搜索动画条目
-   * 包含常规搜索、TMDB 日语原��搜索，以及去除季度信息后的降级搜索策略
+   * 包含常规搜索、TMDB 日语原名搜索，以及去除季度信息后的降级搜索策略
    * @param {string} keyword 搜索关键词
    * @param {boolean} isFallback 标记当前是否处于降级搜索状态，防止无限递归
    */
