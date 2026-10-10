@@ -9789,7 +9789,7 @@ function getMatchingCustomRule(pAnime, sAnime) {
       let startBracketMatch = cleanAnime.match(/^(?:【|\[)(.+?)(?:】|\])/);
       if (startBracketMatch) {
         let content = startBracketMatch[1];
-        /^(TV|剧场版|劇場版|movie|film|anime|动漫|动画|电影|电视剧|连续剧|综艺|真人秀|纪录片|日剧|韩剧|美剧|英剧|泰剧|国产剧|港剧|台剧|短剧|微短剧|特摄|OVA|OAD|SP|AVC|HEVC|MP4|MKV)$/i.test(content) || (cleanAnime = cleanAnime.replace(startBracketMatch[0], content + " "));
+        /^(TV|剧场版|劇場版|movie|film|anime|动��|动画|电影|电视剧|连续剧|综艺|真人秀|纪录片|日剧|韩剧|美剧|英剧|泰剧|国产剧|港剧|台剧|短剧|微短剧|特摄|OVA|OAD|SP|AVC|HEVC|MP4|MKV)$/i.test(content) || (cleanAnime = cleanAnime.replace(startBracketMatch[0], content + " "));
       }
       cleanAnime = cleanAnime.replace(RegexStore.Clean.SOURCE_TAG, "").replace(/\[.*?\]/g, "");
     }
@@ -14866,7 +14866,7 @@ var MangoSource = class extends BaseSource {
   }
   /**
    * 从类型字符串中提取标准化的媒体类型
-   * @param {string} typeStr - API 返回��类型字符串
+   * @param {string} typeStr - API 返回的类型字符串
    * @returns {string} 标准化的媒体类型
    */
   _extractMediaType(typeStr) {
