@@ -9789,7 +9789,7 @@ function getMatchingCustomRule(pAnime, sAnime) {
       let startBracketMatch = cleanAnime.match(/^(?:【|\[)(.+?)(?:】|\])/);
       if (startBracketMatch) {
         let content = startBracketMatch[1];
-        /^(TV|剧场版|劇場版|movie|film|anime|动��|动画|电影|电视剧|连续剧|综艺|真人秀|纪录片|日剧|韩剧|美剧|英剧|泰剧|国产剧|港剧|台剧|短剧|微短剧|特摄|OVA|OAD|SP|AVC|HEVC|MP4|MKV)$/i.test(content) || (cleanAnime = cleanAnime.replace(startBracketMatch[0], content + " "));
+        /^(TV|剧场版|劇場版|movie|film|anime|动漫|动画|电影|电视剧|连续剧|综艺|真人秀|纪录片|日剧|韩剧|美剧|英剧|泰剧|国产剧|港剧|台剧|短剧|微短剧|特摄|OVA|OAD|SP|AVC|HEVC|MP4|MKV)$/i.test(content) || (cleanAnime = cleanAnime.replace(startBracketMatch[0], content + " "));
       }
       cleanAnime = cleanAnime.replace(RegexStore.Clean.SOURCE_TAG, "").replace(/\[.*?\]/g, "");
     }
@@ -20202,7 +20202,7 @@ var API_HEALTH2 = {
   }
   /**
    * 过滤搜索结果
-   * 利用公共方法对主标题和别名进行匹配校验
+   * 利用公共方法对主标题和别名进行匹配校��
    * @param {Array} list 原始 API 返回结果列表
    * @param {string} keyword 用户搜索关键词
    * @returns {Array} 过滤后的结果列表
