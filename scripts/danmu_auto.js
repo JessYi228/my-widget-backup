@@ -12263,7 +12263,7 @@ ${path2}?${sortedQuery}`;
    * 获取剧集详情 (TV API)
    * @param {string} dramaId 剧集ID
    * @param {string} episodeSid 单集ID (可选)
-   * @returns {Object} 详情数据��象
+   * @returns {Object} 详情数据对象
    */
   async getAppDramaDetail(dramaId, episodeSid = "", signal) {
     try {
@@ -18330,7 +18330,7 @@ var XiguaSource = class extends BaseSource {
         headers: {
           "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/17.5 Mobile/15A5370a Safari/602.1"
         }
-      })).data, animes = [], sectionRegex = /<section class="search-section">[\s\S]*?<h2 class="search-section-title">[\s\S]*?相关视频[\s\S]*?<\/h2>[\s\S]*?<div class="s-long-video-card">([\s\S]*?)<\/div><\/div><\/div>/, sectionMatch = html.match(sectionRegex);
+      })).data, animes = [], sectionRegex = /<section class="search-section">[\s\S]*?<h2 class="search-section-title">[\s\S]*?相���视频[\s\S]*?<\/h2>[\s\S]*?<div class="s-long-video-card">([\s\S]*?)<\/div><\/div><\/div>/, sectionMatch = html.match(sectionRegex);
       if (sectionMatch) {
         let sectionContent = sectionMatch[1], videoRegex = /<div class="s-long-video">[\s\S]*?(?=<div class="s-long-video">|$)/g;
         (sectionContent.match(videoRegex) || []).forEach((card) => {
@@ -19339,7 +19339,7 @@ var AiyifanSource = class extends BaseSource {
     return comments.map((comment) => {
       let colorHex = String(comment.color || "#ffffff").replace("#", "");
       return {
-        // 时间（秒）
+        // 时间���秒）
         p: `${comment.second || 0},${comment.position === 1 ? 5 : 1},25,${hexToInt(colorHex)},0,0,0,0`,
         // 标准弹幕格式: time, type, fontsize, color, unix_timestamp, pool, uid, row_id
         m: comment.contxt || comment.content || "",
