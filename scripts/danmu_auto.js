@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标题转换中文开关
+      // 外语标���转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -12628,7 +12628,7 @@ ${path2}?${sortedQuery}`;
   /**
    * 格式化弹幕列表为标准模型
    * 将原始 d/p 字段映射为系统内部对象
-   * 兼容处理 item.d 和 item.content 内容字段，支持内嵌广告自动前移偏移补偿
+   * 兼容处理 item.d 和 item.content 内容字段，支持内嵌广告自动前��偏移补偿
    */
   formatComments(comments) {
     let adDurationMs = comments.adDurationMs || 0, episodeId = comments.episodeId || "\u672A\u77E5", offsetSec = adDurationMs / 1e3, droppedCount = 0, formattedList = comments.map((item) => {
@@ -15130,7 +15130,7 @@ var MangoSource = class extends BaseSource {
     }
   }
   /**
-   * 获取电影正片
+   * 获取��影正片
    * @param {string} mediaId - 媒体ID
    * @returns {Object|null} 电影正片信息
    */
@@ -18330,7 +18330,7 @@ var XiguaSource = class extends BaseSource {
         headers: {
           "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/17.5 Mobile/15A5370a Safari/602.1"
         }
-      })).data, animes = [], sectionRegex = /<section class="search-section">[\s\S]*?<h2 class="search-section-title">[\s\S]*?相���视频[\s\S]*?<\/h2>[\s\S]*?<div class="s-long-video-card">([\s\S]*?)<\/div><\/div><\/div>/, sectionMatch = html.match(sectionRegex);
+      })).data, animes = [], sectionRegex = /<section class="search-section">[\s\S]*?<h2 class="search-section-title">[\s\S]*?相关视频[\s\S]*?<\/h2>[\s\S]*?<div class="s-long-video-card">([\s\S]*?)<\/div><\/div><\/div>/, sectionMatch = html.match(sectionRegex);
       if (sectionMatch) {
         let sectionContent = sectionMatch[1], videoRegex = /<div class="s-long-video">[\s\S]*?(?=<div class="s-long-video">|$)/g;
         (sectionContent.match(videoRegex) || []).forEach((card) => {
@@ -19339,7 +19339,7 @@ var AiyifanSource = class extends BaseSource {
     return comments.map((comment) => {
       let colorHex = String(comment.color || "#ffffff").replace("#", "");
       return {
-        // 时间���秒）
+        // 时间（秒）
         p: `${comment.second || 0},${comment.position === 1 ? 5 : 1},25,${hexToInt(colorHex)},0,0,0,0`,
         // 标准弹幕格式: time, type, fontsize, color, unix_timestamp, pool, uid, row_id
         m: comment.contxt || comment.content || "",
