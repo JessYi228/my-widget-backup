@@ -15478,7 +15478,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
     }
   }
   /**
-   * 对参数进行 WBI ���名
+   * 对参数进行 WBI 签名
    */
   _getWbiSignedParams(params, mixinKey) {
     let signedParams = { ...params };
@@ -18330,7 +18330,7 @@ var XiguaSource = class extends BaseSource {
         headers: {
           "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/17.5 Mobile/15A5370a Safari/602.1"
         }
-      })).data, animes = [], sectionRegex = /<section class="search-section">[\s\S]*?<h2 class="search-section-title">[\s\S]*?相关视频[\s\S]*?<\/h2>[\s\S]*?<div class="s-long-video-card">([\s\S]*?)<\/div><\/div><\/div>/, sectionMatch = html.match(sectionRegex);
+      })).data, animes = [], sectionRegex = /<section class="search-section">[\s\S]*?<h2 class="search-section-title">[\s\S]*?相���视频[\s\S]*?<\/h2>[\s\S]*?<div class="s-long-video-card">([\s\S]*?)<\/div><\/div><\/div>/, sectionMatch = html.match(sectionRegex);
       if (sectionMatch) {
         let sectionContent = sectionMatch[1], videoRegex = /<div class="s-long-video">[\s\S]*?(?=<div class="s-long-video">|$)/g;
         (sectionContent.match(videoRegex) || []).forEach((card) => {
@@ -18836,7 +18836,7 @@ var AiyifanAppSigningProvider = class {
     let headers = this.buildCommonHeaders();
     return headers["x-timestamp"] = String(timestamp), headers["x-pub"] = signingConfig.publicKey, headers["x-sign"] = computeAiyifanAppSign(query, timestamp, signingConfig.privateKey), headers;
   }
-  // 获取（并缓存）pConfig 签名配置；并发请求会合并到���一个请求上
+  // 获取（并缓存）pConfig 签名配置；并发请求会合并到同一个请求上
   async getSigningConfig(forceRefresh) {
     if (forceRefresh = forceRefresh || !1, this.inflightConfigRequest)
       return await this.inflightConfigRequest;
@@ -19339,7 +19339,7 @@ var AiyifanSource = class extends BaseSource {
     return comments.map((comment) => {
       let colorHex = String(comment.color || "#ffffff").replace("#", "");
       return {
-        // 时间（秒）
+        // 时间���秒）
         p: `${comment.second || 0},${comment.position === 1 ? 5 : 1},25,${hexToInt(colorHex)},0,0,0,0`,
         // 标准弹幕格式: time, type, fontsize, color, unix_timestamp, pool, uid, row_id
         m: comment.contxt || comment.content || "",
