@@ -5607,7 +5607,7 @@ function parseAutoMatchMappingRules(value, allowedPlatforms = []) {
 var _Envs = class _Envs {
   /**
    * 获取环境变量
-   * @param {string} key 环境变量的键
+   * @param {string} key 环���变量的键
    * @param {any} defaultValue 默认值
    * @param {'string' | 'number' | 'boolean'} type 类型
    * @param {boolean} [encrypt] 是否按加密变量读取，其值按掩码写入预览集合
@@ -5814,7 +5814,7 @@ var _Envs = class _Envs {
   /**
    * 解析 IP 黑名单列表
    * @description 支持逗号/分号/换行分隔，支持 /regex/ 或 /regex/i 的正则格式，支持 IPv4/IPv6 CIDR（如 127.0.0.0/24、2001:db8::/64）
-   * @returns {Array} IP 黑名单规则列表
+   * @returns {Array} IP 黑名单规���列表
    */
   static resolveIpBlacklist() {
     let rawList = this.get("IP_BLACKLIST", "", "string", !1).trim();
@@ -9159,7 +9159,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   COLLECTION_RATIO: 4,
   // 合集判定比率上限（防超大合集误标）
   COLLECTION_DIFF: 6
-  // 合集判定数量差阈值（超出N集才认为是合集）
+  // 合集判定数量差阈值（超��N集才认为是合集）
 }), DUB_VERSION_YEAR_SOURCES = /* @__PURE__ */ new Set(["bilibili"]);
 function log2(level, ...args) {
   typeof args[0] == "string" && args[0].includes("[Merge-Check]") && !ENABLE_VERBOSE_MERGE_LOG || log(level, ...args);
@@ -12931,7 +12931,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       }
     };
   }
-  // ── 搜索接口 ─────────────────────────────────────────────────
+  // ── 搜索接口 ──────────────────────────────────────────���──────
   /**
    * 从响应 payload 中提取搜索结果；支持加密与明文两种格式
    */
@@ -13240,7 +13240,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
         }
     return this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), tmpAnimes;
   }
-  // ── 弹幕 ─────────────────────────────────────────────────────
+  // ── 弹幕 ─���───────────────────────────────────────────────────
   async fetchEpisodeDanmuByRef(episodeRef) {
     let episodeId = String(episodeRef?.id || "").trim();
     if (!episodeId) return [];
@@ -18330,7 +18330,7 @@ var XiguaSource = class extends BaseSource {
         headers: {
           "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/17.5 Mobile/15A5370a Safari/602.1"
         }
-      })).data, animes = [], sectionRegex = /<section class="search-section">[\s\S]*?<h2 class="search-section-title">[\s\S]*?相���视频[\s\S]*?<\/h2>[\s\S]*?<div class="s-long-video-card">([\s\S]*?)<\/div><\/div><\/div>/, sectionMatch = html.match(sectionRegex);
+      })).data, animes = [], sectionRegex = /<section class="search-section">[\s\S]*?<h2 class="search-section-title">[\s\S]*?相关视频[\s\S]*?<\/h2>[\s\S]*?<div class="s-long-video-card">([\s\S]*?)<\/div><\/div><\/div>/, sectionMatch = html.match(sectionRegex);
       if (sectionMatch) {
         let sectionContent = sectionMatch[1], videoRegex = /<div class="s-long-video">[\s\S]*?(?=<div class="s-long-video">|$)/g;
         (sectionContent.match(videoRegex) || []).forEach((card) => {
@@ -19339,7 +19339,7 @@ var AiyifanSource = class extends BaseSource {
     return comments.map((comment) => {
       let colorHex = String(comment.color || "#ffffff").replace("#", "");
       return {
-        // 时间���秒）
+        // 时间（秒）
         p: `${comment.second || 0},${comment.position === 1 ? 5 : 1},25,${hexToInt(colorHex)},0,0,0,0`,
         // 标准弹幕格式: time, type, fontsize, color, unix_timestamp, pool, uid, row_id
         m: comment.contxt || comment.content || "",
