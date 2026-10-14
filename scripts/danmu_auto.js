@@ -12263,7 +12263,7 @@ ${path2}?${sortedQuery}`;
    * 获取剧集详情 (TV API)
    * @param {string} dramaId 剧集ID
    * @param {string} episodeSid 单集ID (可选)
-   * @returns {Object} 详情数据对象
+   * @returns {Object} 详情数据��象
    */
   async getAppDramaDetail(dramaId, episodeSid = "", signal) {
     try {
@@ -20390,7 +20390,7 @@ var API_HEALTH2 = {
           let resp = await Widget.http.get(`${server.url}/v2/subjects/${subjectId}`, {
             headers: this.headers,
             timeout: 3e3
-            // 限制节点请求超时时间，加速故障���点跳过与轮询降级
+            // 限制节点请求超时时间，加速故障节点跳过与轮询降级
           });
           resp && resp.data && resp.data.id && (resultData = resp.data);
         } else if (server.type === "V0") {
