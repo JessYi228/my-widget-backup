@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标���转换中文开关
+      // 外语标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -20390,7 +20390,7 @@ var API_HEALTH2 = {
           let resp = await Widget.http.get(`${server.url}/v2/subjects/${subjectId}`, {
             headers: this.headers,
             timeout: 3e3
-            // 限制节点请求超时时间，加速故障节点跳过与轮询降级
+            // 限制节点请求超时时间，加速故障���点跳过与轮询降级
           });
           resp && resp.data && resp.data.id && (resultData = resp.data);
         } else if (server.type === "V0") {
