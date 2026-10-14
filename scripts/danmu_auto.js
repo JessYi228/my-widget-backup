@@ -15130,7 +15130,7 @@ var MangoSource = class extends BaseSource {
     }
   }
   /**
-   * 获取电影正片
+   * 获取��影正片
    * @param {string} mediaId - 媒体ID
    * @returns {Object|null} 电影正片信息
    */
