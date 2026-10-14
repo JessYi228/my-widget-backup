@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标题转换中文开关
+      // 外语标���转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -12263,7 +12263,7 @@ ${path2}?${sortedQuery}`;
    * 获取剧集详情 (TV API)
    * @param {string} dramaId 剧集ID
    * @param {string} episodeSid 单集ID (可选)
-   * @returns {Object} 详情数据��象
+   * @returns {Object} 详情数据对象
    */
   async getAppDramaDetail(dramaId, episodeSid = "", signal) {
     try {
@@ -12628,7 +12628,7 @@ ${path2}?${sortedQuery}`;
   /**
    * 格式化弹幕列表为标准模型
    * 将原始 d/p 字段映射为系统内部对象
-   * 兼容处理 item.d 和 item.content 内容字段，支持内嵌广告自动前移偏移补偿
+   * 兼容处理 item.d 和 item.content 内容字段，支持内嵌广告自动前��偏移补偿
    */
   formatComments(comments) {
     let adDurationMs = comments.adDurationMs || 0, episodeId = comments.episodeId || "\u672A\u77E5", offsetSec = adDurationMs / 1e3, droppedCount = 0, formattedList = comments.map((item) => {
