@@ -5607,7 +5607,7 @@ function parseAutoMatchMappingRules(value, allowedPlatforms = []) {
 var _Envs = class _Envs {
   /**
    * 获取环境变量
-   * @param {string} key 环���变量的键
+   * @param {string} key 环境变量的键
    * @param {any} defaultValue 默认值
    * @param {'string' | 'number' | 'boolean'} type 类型
    * @param {boolean} [encrypt] 是否按加密变量读取，其值按掩码写入预览集合
@@ -5814,7 +5814,7 @@ var _Envs = class _Envs {
   /**
    * 解析 IP 黑名单列表
    * @description 支持逗号/分号/换行分隔，支持 /regex/ 或 /regex/i 的正则格式，支持 IPv4/IPv6 CIDR（如 127.0.0.0/24、2001:db8::/64）
-   * @returns {Array} IP 黑名单规���列表
+   * @returns {Array} IP 黑名单规则列表
    */
   static resolveIpBlacklist() {
     let rawList = this.get("IP_BLACKLIST", "", "string", !1).trim();
@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标题转换中文开关
+      // 外语标���转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -9159,7 +9159,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   COLLECTION_RATIO: 4,
   // 合集判定比率上限（防超大合集误标）
   COLLECTION_DIFF: 6
-  // 合集判定数量差阈值（超��N集才认为是合集）
+  // 合集判定数量差阈值（超出N集才认为是合集）
 }), DUB_VERSION_YEAR_SOURCES = /* @__PURE__ */ new Set(["bilibili"]);
 function log2(level, ...args) {
   typeof args[0] == "string" && args[0].includes("[Merge-Check]") && !ENABLE_VERBOSE_MERGE_LOG || log(level, ...args);
@@ -12931,7 +12931,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       }
     };
   }
-  // ── 搜索接口 ──────────────────────────────────────────���──────
+  // ── 搜索接口 ─────────────────────────────────────────────────
   /**
    * 从响应 payload 中提取搜索结果；支持加密与明文两种格式
    */
@@ -13240,7 +13240,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
         }
     return this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), tmpAnimes;
   }
-  // ── 弹幕 ─���───────────────────────────────────────────────────
+  // ── 弹幕 ─────────────────────────────────────────────────────
   async fetchEpisodeDanmuByRef(episodeRef) {
     let episodeId = String(episodeRef?.id || "").trim();
     if (!episodeId) return [];
