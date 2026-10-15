@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标���转换中文开关
+      // 外语标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -10976,7 +10976,7 @@ var BaseSource = class {
   async search(keyword) {
     throw new Error("Method 'search' must be implemented");
   }
-  // 获取剧集详��
+  // 获取剧集详情
   async getEpisodes(id) {
     throw new Error("Method 'Episodes' must be implemented");
   }
@@ -12331,7 +12331,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境详情：根据搜索阶段连通性跳过已知超时的 tier。
-   * 优先级 WEB/TV > MAC/WIN。搜索阶段已验证工作的 tier 优先使用。
+   * 优先级 WEB/TV > MAC/WIN。搜索阶���已验证工作的 tier 优先使用。
    */
   async _getDetailCloud(id, episodeSid) {
     let did = String(id), sid = String(episodeSid), conn = this._searchConnectivity || {};
@@ -16857,7 +16857,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
                 imageUrl: rel.imageUrl,
                 rating: rel.rating || 0,
                 isRelated: !0
-                // 标记动态挖掘出的条目为相关作品
+                // 标记动态挖掘出���条目为相关作品
               }));
             }
             if (!isTargetFoundInInitial && Array.isArray(details.relateds)) {
