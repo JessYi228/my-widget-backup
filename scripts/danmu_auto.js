@@ -10976,7 +10976,7 @@ var BaseSource = class {
   async search(keyword) {
     throw new Error("Method 'search' must be implemented");
   }
-  // 获取剧集详情
+  // 获取剧集详��
   async getEpisodes(id) {
     throw new Error("Method 'Episodes' must be implemented");
   }
@@ -12628,7 +12628,7 @@ ${path2}?${sortedQuery}`;
   /**
    * 格式化弹幕列表为标准模型
    * 将原始 d/p 字段映射为系统内部对象
-   * 兼容处理 item.d 和 item.content 内容字段，支持内嵌广告自动前��偏移补偿
+   * 兼容处理 item.d 和 item.content 内容字段，支持内嵌广告自动前移偏移补偿
    */
   formatComments(comments) {
     let adDurationMs = comments.adDurationMs || 0, episodeId = comments.episodeId || "\u672A\u77E5", offsetSec = adDurationMs / 1e3, droppedCount = 0, formattedList = comments.map((item) => {
@@ -15130,7 +15130,7 @@ var MangoSource = class extends BaseSource {
     }
   }
   /**
-   * 获取��影正片
+   * 获取电影正片
    * @param {string} mediaId - 媒体ID
    * @returns {Object|null} 电影正片信息
    */
