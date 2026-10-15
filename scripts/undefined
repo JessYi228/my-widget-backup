@@ -279,7 +279,7 @@ function filterAnimes(rawAnimes, type, season, queryTitle) {
       if (type === "movie") {
         return movieTypes.some(t => t.toLowerCase() === animeType);
       }
-      // tv 类型兜底：只排除电影类型���其余都算剧集
+      // tv 类型兜底：只排除电影类型，其余都算剧集
       if (type === "tv") {
         return !movieTypes.some(t => t.toLowerCase() === animeType);
       }
@@ -405,7 +405,7 @@ async function searchDanmu(params) {
       }
 
       let rawAnimes = Array.isArray(data.animes) ? data.animes : [];
-      // 兜底：search/anime 为空时用 search/episodes（库内查询，兼容未开后备/并行搜索的实例）
+      // 兜底：search/anime 为空时用 search/episodes（库内查询，兼容未开后备/并行搜索的实��）
       if (rawAnimes.length === 0) {
         const epResponse = await Widget.http.get(
           `${source.server}/api/v2/search/episodes?anime=${encodeURIComponent(queryTitle)}`,
@@ -740,7 +740,7 @@ async function getCommentsById(params) {
       }
     }
 
-    throw lastError || new Error("获取数据失���");
+    throw lastError || new Error("获取数据失败");
   }
   // else {
   //   // just for sample
