@@ -9159,7 +9159,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   COLLECTION_RATIO: 4,
   // 合集判定比率上限（防超大合集误标）
   COLLECTION_DIFF: 6
-  // 合集判定数量差阈值（���出N集才认为是合集）
+  // 合集判定数量差阈值（超出N集才认为是合集）
 }), DUB_VERSION_YEAR_SOURCES = /* @__PURE__ */ new Set(["bilibili"]);
 function log2(level, ...args) {
   typeof args[0] == "string" && args[0].includes("[Merge-Check]") && !ENABLE_VERBOSE_MERGE_LOG || log(level, ...args);
@@ -12331,7 +12331,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境详情：根据搜索阶段连通性跳过已知超时的 tier。
-   * 优先级 WEB/TV > MAC/WIN。搜索阶段已验证工作的 tier 优先使用。
+   * 优先级 WEB/TV > MAC/WIN。搜索阶段已验证工作的 tier ���先使用。
    */
   async _getDetailCloud(id, episodeSid) {
     let did = String(id), sid = String(episodeSid), conn = this._searchConnectivity || {};
@@ -12613,7 +12613,7 @@ ${path2}?${sortedQuery}`;
   // 8. 数据解析与处理工具
   // =====================
   /**
-   * 解析 RRSP ��� P 字段 (属性字符串)
+   * 解析 RRSP 的 P 字段 (属性字符串)
    * 格式: timestamp,mode,size,color,uid,cid...
    * 使用安全数值转换，防止 NaN 污染导致数据被误去重
    */
@@ -15413,7 +15413,7 @@ var MangoSource = class extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高��
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
@@ -20523,7 +20523,7 @@ var API_HEALTH2 = {
    * 过滤搜索结果
    * 利用公共方法对主标题和别名进行匹配校验
    * @param {Array} list 原始 API 返回结果列表
-   * @param {string} keyword 用户搜索关键��
+   * @param {string} keyword 用户搜索关键词
    * @returns {Array} 过滤后的结果列表
    */
   filterSearchResults(list, keyword) {
