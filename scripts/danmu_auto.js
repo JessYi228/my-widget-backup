@@ -12331,7 +12331,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境详情：根据搜索阶段连通性跳过已知超时的 tier。
-   * 优先级 WEB/TV > MAC/WIN。搜索阶��已验证工作的 tier 优先使用。
+   * 优先级 WEB/TV > MAC/WIN。搜索阶段已验证工作的 tier 优先使用。
    */
   async _getDetailCloud(id, episodeSid) {
     let did = String(id), sid = String(episodeSid), conn = this._searchConnectivity || {};
@@ -15413,7 +15413,7 @@ var MangoSource = class extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向���7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
@@ -16857,7 +16857,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
                 imageUrl: rel.imageUrl,
                 rating: rel.rating || 0,
                 isRelated: !0
-                // 标记动态挖掘出��条目为相关作品
+                // 标记动态挖掘出的条目为相关作品
               }));
             }
             if (!isTargetFoundInInitial && Array.isArray(details.relateds)) {
