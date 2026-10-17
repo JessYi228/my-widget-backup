@@ -9234,7 +9234,7 @@ var LANG_CN_MANDARIN = "\u666E\u901A[\u8BDD\u8A71]|[\u56FD\u570B][\u8BED\u8A9E]|
     MAP_EXCLUDE_KEYWORDS: /(?:^|\s)(?:PV|OP|ED|SP|Special|Drama|OAD|OVA|Opening|Ending|特番|特典|Behind\s+the\s+Scenes|Making|Interview)(?:\s|$|[:：])/i,
     SINK_TITLE_STRICT: /^(?:S\d+|C\d+|SP\d*|OP\d*|ED\d*|PV\d*|Trailers?|Interview|Making|特番|特典)(?:\s|$|[:：.\-]|\u3000)/i
   },
-  /** 内容分类正则 */
+  /** 内容分���正则 */
   Category: {
     ANIME_KW: /(动画|TV动画|动漫|日漫|国漫)/,
     REAL_KW: /(电视剧|真人剧|综艺|纪录片)/,
@@ -12331,7 +12331,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境详情：根据搜索阶段连通性跳过已知超时的 tier。
-   * 优先级 WEB/TV > MAC/WIN。搜索阶���已验证工作的 tier 优先使用。
+   * 优先级 WEB/TV > MAC/WIN。搜索阶段已验证工作的 tier 优先使用。
    */
   async _getDetailCloud(id, episodeSid) {
     let did = String(id), sid = String(episodeSid), conn = this._searchConnectivity || {};
