@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标���转换中文开关
+      // 外语标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -8863,7 +8863,7 @@ function extractChineseTitleFromAlternatives(altData, mediaType, queryTitle = ""
   let cleanQuery = (queryTitle || "").toLowerCase().trim(), getStr = (t) => t.title || t.name || "", priorityRules = [
     // 1. 最高优先级：精确命中用户搜索词
     (t) => cleanQuery && getStr(t).toLowerCase().trim() === cleanQuery,
-    // 2. 地区优先级：按 CN > TW > HK > SG 顺序映射出 4 个规则函数
+    // 2. 地区优先级：按 CN > TW > HK > SG 顺序映射��� 4 个规则函数
     ...["CN", "TW", "HK", "SG"].map(
       (region) => (t) => (t.iso_3166_1 || t.iso_639_1) === region && !isNonChinese(getStr(t))
     ),
@@ -20405,7 +20405,7 @@ var API_HEALTH2 = {
 }, SUBJECT_CACHE = /* @__PURE__ */ new Map(), SUBJECT_CACHE_TTL = 180 * 1e3, SUBJECT_CACHE_MAX_SIZE = 100, AnimekoSource = class extends BaseSource {
   /**
    * 获取标准 HTTP 请求头
-   * @returns {Object} 请求头���象
+   * @returns {Object} 请求头对象
    */
   get headers() {
     return {
