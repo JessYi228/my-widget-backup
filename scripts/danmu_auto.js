@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标题转换中文开关
+      // 外语标���转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -12331,7 +12331,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境详情：根据搜索阶段连通性跳过已知超时的 tier。
-   * 优先级 WEB/TV > MAC/WIN。搜索��段已验证工作的 tier 优先使用。
+   * 优先级 WEB/TV > MAC/WIN。搜索阶段已验证工作的 tier 优先使用。
    */
   async _getDetailCloud(id, episodeSid) {
     let did = String(id), sid = String(episodeSid), conn = this._searchConnectivity || {};
@@ -12628,7 +12628,7 @@ ${path2}?${sortedQuery}`;
   /**
    * 格式化弹幕列表为标准模型
    * 将原始 d/p 字段映射为系统内部对象
-   * 兼容处理 item.d 和 item.content 内容字段，支持内嵌广告自动前移偏移补偿
+   * 兼容处理 item.d 和 item.content 内容字段，支持内嵌广告自动前��偏移补偿
    */
   formatComments(comments) {
     let adDurationMs = comments.adDurationMs || 0, episodeId = comments.episodeId || "\u672A\u77E5", offsetSec = adDurationMs / 1e3, droppedCount = 0, formattedList = comments.map((item) => {
@@ -15130,7 +15130,7 @@ var MangoSource = class extends BaseSource {
     }
   }
   /**
-   * 获取电影正片
+   * 获取��影正片
    * @param {string} mediaId - 媒体ID
    * @returns {Object|null} 电影正片信息
    */
@@ -15413,7 +15413,7 @@ var MangoSource = class extends BaseSource {
         timepoint: 0,
         // 弹幕发送时间（秒）
         ct: 1,
-        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆���、7 为精确、8 为高级
+        // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
         //字体大小，25 为中，18 为小
         color: 16777215,
@@ -16857,7 +16857,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
                 imageUrl: rel.imageUrl,
                 rating: rel.rating || 0,
                 isRelated: !0
-                // 标记动态挖掘��的条目为相关作品
+                // 标记动态挖掘出的条目为相关作品
               }));
             }
             if (!isTargetFoundInInitial && Array.isArray(details.relateds)) {
