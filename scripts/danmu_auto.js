@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标题转换中文开关
+      // 外语标���转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -12656,7 +12656,7 @@ ${path2}?${sortedQuery}`;
   /**
    * 解析 RRSP 的 P 字段 (属性字符串)
    * 格式: timestamp,mode,size,color,uid,cid...
-   * 使用安全数值转换，防止 NaN 污���导致数据被误去重
+   * 使用安全数值转换，防止 NaN 污染导致数据被误去重
    */
   parseRRSPPFields(pField) {
     let parts = String(pField).split(","), safeNum = (val, parser, defaultVal) => {
@@ -13281,7 +13281,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
         }
     return this.sortAndPushAnimesByYear(tmpAnimes, curAnimes), tmpAnimes;
   }
-  // ── 弹幕 ──────────────────────────────────────────���──────────
+  // ── 弹幕 ─────────────────────────────────────────────────────
   async fetchEpisodeDanmuByRef(episodeRef) {
     let episodeId = String(episodeRef?.id || "").trim();
     if (!episodeId) return [];
