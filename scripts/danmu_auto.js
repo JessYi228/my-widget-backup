@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标题转换中文开关
+      // 外语标���转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -14769,7 +14769,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
    * 这些季无需再经分季URL获取，供 getEpisodes 判断跳过对应请求
    * @param {Array} animes - 搜索结果数组
    * @param {Map} baseInfoCache - 复用已拉取的分集列表数据，避免重复请求
-   * @returns {Promise<Set<string>>} 已��内联的季 album_id 集合
+   * @returns {Promise<Set<string>>} 已被内联的季 album_id 集合
    */
   async _collectInlinedAlbumIds(animes, baseInfoCache) {
     let inlined = /* @__PURE__ */ new Set();
