@@ -8819,7 +8819,7 @@ async function searchTmdbTitles(title, mediaType = "multi", options = {}) {
     page = 1,
     // 起始页码
     maxPages = 3,
-    // 最多获���几页结果
+    // 最多获取几页结果
     signal = null
     // 中断信号
   } = options;
@@ -14769,7 +14769,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
    * 这些季无需再经分季URL获取，供 getEpisodes 判断跳过对应请求
    * @param {Array} animes - 搜索结果数组
    * @param {Map} baseInfoCache - 复用已拉取的分集列表数据，避免重复请求
-   * @returns {Promise<Set<string>>} 已被内联的季 album_id 集合
+   * @returns {Promise<Set<string>>} 已��内联的季 album_id 集合
    */
   async _collectInlinedAlbumIds(animes, baseInfoCache) {
     let inlined = /* @__PURE__ */ new Set();
