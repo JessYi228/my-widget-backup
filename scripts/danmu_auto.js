@@ -6174,11 +6174,11 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标题转换中文开关
+      // 外语标���转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
-      // 剧名映射表，用于自动匹配时替���标题进行搜索
+      // 剧名映射表，用于自动匹配时替换标题进行搜索
       autoMatchMappingTable: this.resolveAutoMatchMappingTable(),
       // 自动匹配标题/季度/集数映射规则
       ipBlacklist: this.resolveIpBlacklist(),
@@ -12481,7 +12481,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 处理搜索结果
-   * @param {Array} sourceAnimes 原始��据
+   * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {Map} detailStore 详情缓存
