@@ -1,6 +1,6 @@
 ## 📊 备份统计
 
-- 🕒 最后更新: 2026-10-19 23:18:31
+- 🕒 最后更新: 2026-10-20 03:28:30
 - 📁 脚本数量: 10
 - 📄 脚本列表:
 
@@ -13,4 +13,4 @@
   - letterboxd.js (34438 bytes)
   - person_movie.js (7843 bytes)
   - trakt.js (18207 bytes)
-  - undefined (25820 bytes)
+  - undefined (25814 bytes)
