@@ -6178,7 +6178,7 @@ var _Envs = class _Envs {
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
-      // 剧名映射表，用于自动匹配时替换标题进行搜索
+      // 剧名映射表，用于自动匹配时替���标题进行搜索
       autoMatchMappingTable: this.resolveAutoMatchMappingTable(),
       // 自动匹配标题/季度/集数映射规则
       ipBlacklist: this.resolveIpBlacklist(),
@@ -8819,7 +8819,7 @@ async function searchTmdbTitles(title, mediaType = "multi", options = {}) {
     page = 1,
     // 起始页码
     maxPages = 3,
-    // 最多获���几页结果
+    // 最多获取几页结果
     signal = null
     // 中断信号
   } = options;
@@ -12481,7 +12481,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 处理搜索结果
-   * @param {Array} sourceAnimes 原始数据
+   * @param {Array} sourceAnimes 原始��据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {Map} detailStore 详情缓存
