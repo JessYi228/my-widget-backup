@@ -9365,7 +9365,7 @@ function cleanTitleForSimilarity(text) {
   let startBracketMatch = clean.match(/^(?:【|\[)(.+?)(?:】|\])/);
   if (startBracketMatch) {
     let content = startBracketMatch[1];
-    /^(TV|剧场版|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content) || (clean = clean.replace(startBracketMatch[0], content + " "));
+    /^(TV|剧场版|劇場版|movie|film|anime|动漫|动���|AVC|HEVC|MP4|MKV)$/i.test(content) || (clean = clean.replace(startBracketMatch[0], content + " "));
   }
   return clean = clean.replace(RegexStore.Clean.SOURCE_TAG, ""), clean = clean.replace(RegexStore.Clean.FROM_SUFFIX, ""), clean = clean.replace(RegexStore.Clean.NA_TAG, ""), clean = clean.replace(RegexStore.Clean.PARENTHESES_CONTENT, ""), clean = clean.replace(RegexStore.Season.INFO_STRONG, ""), clean = clean.replace(RegexStore.Season.PART_INFO_STRONG, ""), clean = clean.replace(RegexStore.Clean.MOVIE_KEYWORDS, ""), clean = clean.replace(RegexStore.Lang.KEYWORDS_STRONG, ""), clean = clean.replace(RegexStore.Clean.LONE_VER_CHAR, ""), clean = clean.replace(RegexStore.Clean.NON_ALPHANUM_CN, ""), clean.toLowerCase();
 }
