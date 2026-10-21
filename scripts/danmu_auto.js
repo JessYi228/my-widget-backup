@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标���转换中文开关
+      // 外语标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -11128,7 +11128,7 @@ var Kan360Source = class extends BaseSource {
       }), [];
     }
   }
-  // 获取某站点的总集���
+  // 获取某站点的总集数
   async getNumber(cat, id, site) {
     try {
       let url = `https://api.web.360kan.com/v1/detail?cat=${cat}&id=${id}&site=${site}`, result = (await Widget.http.get(url, {
@@ -16376,7 +16376,7 @@ var YoukuSource = class extends BaseSource {
       imageUrl: commonData.posterDTO ? commonData.posterDTO.vThumbUrl : null,
       episodeCount: commonData.episodeTotal,
       cats: commonData.cats
-      // 保存分类信息用��后续判断
+      // 保存分类信息用于后续判断
     };
   }
   async search(keyword) {
