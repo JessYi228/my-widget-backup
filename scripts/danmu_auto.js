@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标题转换中文开关
+      // 外语标���转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -9365,7 +9365,7 @@ function cleanTitleForSimilarity(text) {
   let startBracketMatch = clean.match(/^(?:【|\[)(.+?)(?:】|\])/);
   if (startBracketMatch) {
     let content = startBracketMatch[1];
-    /^(TV|剧场版|劇場版|movie|film|anime|动漫|动���|AVC|HEVC|MP4|MKV)$/i.test(content) || (clean = clean.replace(startBracketMatch[0], content + " "));
+    /^(TV|剧场版|劇場版|movie|film|anime|动漫|动画|AVC|HEVC|MP4|MKV)$/i.test(content) || (clean = clean.replace(startBracketMatch[0], content + " "));
   }
   return clean = clean.replace(RegexStore.Clean.SOURCE_TAG, ""), clean = clean.replace(RegexStore.Clean.FROM_SUFFIX, ""), clean = clean.replace(RegexStore.Clean.NA_TAG, ""), clean = clean.replace(RegexStore.Clean.PARENTHESES_CONTENT, ""), clean = clean.replace(RegexStore.Season.INFO_STRONG, ""), clean = clean.replace(RegexStore.Season.PART_INFO_STRONG, ""), clean = clean.replace(RegexStore.Clean.MOVIE_KEYWORDS, ""), clean = clean.replace(RegexStore.Lang.KEYWORDS_STRONG, ""), clean = clean.replace(RegexStore.Clean.LONE_VER_CHAR, ""), clean = clean.replace(RegexStore.Clean.NON_ALPHANUM_CN, ""), clean.toLowerCase();
 }
