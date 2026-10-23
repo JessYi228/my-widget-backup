@@ -16757,7 +16757,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
    * 搜索动画条目
    * 包含常规搜索、TMDB 日语原名搜索，以及去除季度信息后的降级搜索策略
    * @param {string} keyword 搜索关键词
-   * @param {boolean} isFallback 标记当前是否处于降级搜索状态，防止无限递归
+   * @param {boolean} isFallback 标记当前是否处于降级搜索状态，防��无限递归
    */
   async search(keyword, isFallback = !1) {
     if (globals.useBangumiData && !isFallback) {
