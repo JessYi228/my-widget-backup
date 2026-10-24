@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标���转换中文开关
+      // 外语标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -9245,7 +9245,7 @@ var LANG_CN_MANDARIN = "\u666E\u901A[\u8BDD\u8A71]|[\u56FD\u570B][\u8BED\u8A9E]|
   Episode: {
     SUFFIX_DIGIT: /_\d+(?=$|\s)/g,
     FILE_NOISE: /_(\d{2,4})(?=\.)/g,
-    SEASON_PREFIX: /(?:^|\s)(?:第\s*[0-9一二三四五六七八九十]+\s*季|S(?:eason)?\s*\d+)(?:\s+|_)/gi,
+    SEASON_PREFIX: /(?:^|\s)(?:第\s*[0-9一���三四五六七八九十]+\s*季|S(?:eason)?\s*\d+)(?:\s+|_)/gi,
     CLEAN_SMART: /(?:^|\s)(?:EP|E|Vol|Episode|No|Part|第)\s*\d+(?:\.\d+)?(?:\s*[话話集])?(?!\s*[季期部])/gi,
     PUNCTUATION: /[!！?？,，.。、~～:：\-–—]/g,
     DANDAN_TAG: /^【(dandan|animeko)】/i,
@@ -11128,7 +11128,7 @@ var Kan360Source = class extends BaseSource {
       }), [];
     }
   }
-  // 获取某站点的总集数
+  // 获取某站点的总集���
   async getNumber(cat, id, site) {
     try {
       let url = `https://api.web.360kan.com/v1/detail?cat=${cat}&id=${id}&site=${site}`, result = (await Widget.http.get(url, {
