@@ -12972,7 +12972,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       }
     };
   }
-  // ── 搜索接口 ─────────────────────────────────────────────────
+  // ── 搜索接口 ──────────���──────────────────────────────────────
   /**
    * 从响应 payload 中提取搜索结果；支持加密与明文两种格式
    */
@@ -17847,7 +17847,7 @@ var SohuSource = class extends BaseSource {
   /**
    * 处理搜索结果
    * @param {Array} sourceAnimes 原始数据
-   * @param {string} queryTitle 关键词
+   * @param {string} queryTitle ���键词
    * @param {Array} curAnimes 结果池
    * @param {Map|null} detailStore 详情缓存
    * @param {number|null} querySeason 目标季度
