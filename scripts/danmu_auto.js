@@ -12763,7 +12763,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       return warnTag && log("warn", `${warnTag}: ${error.message}`), fallback;
     }
   }
-  // ── 数��规范化 ──────────────────────────────────────────────
+  // ── 数据规范化 ──────────────────────────────────────────────
   normalizeSearchItems(items = []) {
     return Array.isArray(items) ? items.map((item) => {
       if (!item || typeof item != "object") return null;
@@ -15548,7 +15548,7 @@ var MangoSource = class extends BaseSource {
         ct: 1,
         // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
-        //字体大小，25 为中，18 为���
+        //字体大小，25 为中，18 为小
         color: 16777215,
         //弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
         unixtime: Math.floor(Date.now() / 1e3),
