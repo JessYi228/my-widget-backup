@@ -6174,7 +6174,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标���转换中文开关
+      // 外语标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -8819,7 +8819,7 @@ async function searchTmdbTitles(title, mediaType = "multi", options = {}) {
     page = 1,
     // 起始页码
     maxPages = 3,
-    // 最多获取几页结果
+    // 最多获���几页结果
     signal = null
     // 中断信号
   } = options;
@@ -11128,7 +11128,7 @@ var Kan360Source = class extends BaseSource {
       }), [];
     }
   }
-  // 获取某站点的总集���
+  // 获取某站点的总集数
   async getNumber(cat, id, site) {
     try {
       let url = `https://api.web.360kan.com/v1/detail?cat=${cat}&id=${id}&site=${site}`, result = (await Widget.http.get(url, {
@@ -12763,7 +12763,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       return warnTag && log("warn", `${warnTag}: ${error.message}`), fallback;
     }
   }
-  // ── 数据规范化 ──────────────────────────────────────────────
+  // ── 数��规范化 ──────────────────────────────────────────────
   normalizeSearchItems(items = []) {
     return Array.isArray(items) ? items.map((item) => {
       if (!item || typeof item != "object") return null;
@@ -15548,7 +15548,7 @@ var MangoSource = class extends BaseSource {
         ct: 1,
         // 弹幕类型，1-3 为滚动弹幕、4 为底部、5 为顶端、6 为逆向、7 为精确、8 为高级
         size: 25,
-        //字体大小，25 为中，18 为小
+        //字体大小，25 为中，18 为���
         color: 16777215,
         //弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
         unixtime: Math.floor(Date.now() / 1e3),
@@ -16376,7 +16376,7 @@ var YoukuSource = class extends BaseSource {
       imageUrl: commonData.posterDTO ? commonData.posterDTO.vThumbUrl : null,
       episodeCount: commonData.episodeTotal,
       cats: commonData.cats
-      // 保存分类信息用��后续判断
+      // 保存分类信息用于后续判断
     };
   }
   async search(keyword) {
