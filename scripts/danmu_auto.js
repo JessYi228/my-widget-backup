@@ -6154,7 +6154,7 @@ var _Envs = class _Envs {
       rateLimitMaxRequests: this.get("RATE_LIMIT_MAX_REQUESTS", 3, "number"),
       // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流）
       enableAnimeEpisodeFilter: this.get("ENABLE_ANIME_EPISODE_FILTER", !1, "boolean"),
-      // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用过滤）
+      // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用过滤���
       logLevel: this.get("LOG_LEVEL", "info", "string"),
       // 日志级别配置（默认 info，可选值：error, warn, info）
       searchCacheMinutes: this.get("SEARCH_CACHE_MINUTES", 3, "number"),
@@ -9172,7 +9172,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
     PATTERN_CONSISTENCY_BONUS: 2,
     // 强规律性奖励（偏移一致比例高）
     ZERO_DIFF_BONUS_BASE: 100,
-    // 零偏移的额外基���奖励
+    // 零偏移的额外基准奖励
     ZERO_DIFF_BONUS_PER_HIT: 5
     // 零偏移的单次命中奖励
   }
@@ -13254,7 +13254,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {any} extra 额外信息
-   * @param {Map} detailStore 详情���存
+   * @param {Map} detailStore 详情缓存
    * @param {number|null} querySeason 目标季度
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null, querySeason = null) {
@@ -14027,7 +14027,7 @@ var TencentSource = class extends BaseSource {
   // 腾讯各字段含义：
   //   play_title     —— 展示用标题，连续剧为「兰香如故 第01集」，综艺为「第1期：xxx」
   //   video_subtitle —— 该集副标题（如「寒山图解生存厄 寒舍三人盼新生」），电影/综艺常为空
-  //   union_title    —— 内部标题，连续剧多为「兰香如故_01」（不含集标题），仅作兜底
+  //   union_title    —— 内部标题，连续���多为「兰香如故_01」（不含集标题），仅作兜底
   //   c_title_output / title —— 纯集号（如 "01" / "1"），或在综艺中与 union_title 相同
   extractEpisodeMeta(itemParams) {
     let p = itemParams || {};
@@ -16873,7 +16873,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
         }
       }
       if (log("info", `[dandan] \u539F\u59CB\u641C\u7D22\u548C\u57FA\u4E8ETMDB\u7684\u641C\u7D22\u5747\u672A\u8FD4\u56DE\u4EFB\u4F55\u7ED3\u679C (\u5F53\u524D\u641C\u7D22\u8BCD: ${keyword})`), !isFallback) {
-        let strippedKeyword = keyword.replace(/(?:第\s*[0-9���二三四五六七八九十百千万]+\s*[季期部])|(?:S(?:eason)?\s*\d+)|(?:Part\s*\d+)/gi, "").trim();
+        let strippedKeyword = keyword.replace(/(?:第\s*[0-9一二三四五六七八九十百千万]+\s*[季期部])|(?:S(?:eason)?\s*\d+)|(?:Part\s*\d+)/gi, "").trim();
         if (strippedKeyword && strippedKeyword !== keyword)
           return log("info", `[dandan] \u5C1D\u8BD5\u53BB\u9664\u5B63\u5EA6\u4FE1\u606F\u8FDB\u884C\u964D\u7EA7\u641C\u7D22: ${strippedKeyword}`), await this.search(strippedKeyword, !0);
       }
@@ -21765,7 +21765,7 @@ async function getComment(path2, queryFormat, segmentFlag, clientIp, includeDura
     return getCommentByUrl(url, queryFormat, segmentFlag, includeDuration);
   let localResource = segmentFlag ? null : await (async () => {
     try {
-      let { findLocalDanmu: findLocalDanmu2 } = await Promise.resolve().then(() => (init_local_store(), local_store_exports)), [localAnimeId] = findAnimeIdByCommentId(commentId), localAnime = globals.animes.find((a) => String(a.animeId) === String(localAnimeId)), matchTitle = extractAnimeTitle(animeTitle || "").split("\u3010")[0].trim(), seasonSuffix = matchTitle.match(/\s*(?:第\s*[0-9一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+\s*[季期部]|(?:S(?:eason)?|Part)\s*\d+)\s*$/i), season = seasonSuffix ? extractSeasonNumberFromAnimeTitle(matchTitle).season ?? 1 : 1;
+      let { findLocalDanmu: findLocalDanmu2 } = await Promise.resolve().then(() => (init_local_store(), local_store_exports)), [localAnimeId] = findAnimeIdByCommentId(commentId), localAnime = globals.animes.find((a) => String(a.animeId) === String(localAnimeId)), matchTitle = extractAnimeTitle(animeTitle || "").split("\u3010")[0].trim(), seasonSuffix = matchTitle.match(/\s*(?:第\s*[0-9一二三四五六七八九十壹贰叁肆伍陆��捌玖拾]+\s*[季期部]|(?:S(?:eason)?|Part)\s*\d+)\s*$/i), season = seasonSuffix ? extractSeasonNumberFromAnimeTitle(matchTitle).season ?? 1 : 1;
       return findLocalDanmu2({
         videoId: String(commentId),
         title: seasonSuffix ? matchTitle.slice(0, seasonSuffix.index).trim() : matchTitle,
