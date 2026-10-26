@@ -5285,7 +5285,7 @@ function titleMatches(title, query, parsedSeason = null, forceNonStrict = !1, th
   if (!forceNonStrict && globals.strictTitleMatch) return strictTitleMatch(titleText, queryText);
   let tagFilter = globals.titleNoiseFilter || null, cleanTitle = tagFilter ? titleText.replace(tagFilter, "").trim() : titleText, t = normalizeTitleForMatch(cleanTitle).toLowerCase(), qList = [normalizeTitleForMatch(queryText).toLowerCase()], querySeason = parsedSeason !== null ? parsedSeason : getExplicitSeasonNumber(queryText);
   if (querySeason !== null && parsedSeason === null) {
-    let seasonStripped = queryText.replace(/(?:season|s|第)\s*[0-9一二三四五六七八九���]+\s*(?:季|期|部(?!分))?/gi, "").trim();
+    let seasonStripped = queryText.replace(/(?:season|s|第)\s*[0-9一二三四五六七八九十]+\s*(?:季|期|部(?!分))?/gi, "").trim();
     seasonStripped && seasonStripped !== queryText && (qList = [.../* @__PURE__ */ new Set([...qList, normalizeTitleForMatch(seasonStripped).toLowerCase()])]);
   }
   if (tagFilter) {
@@ -5814,7 +5814,7 @@ var _Envs = class _Envs {
   /**
    * 解析 IP 黑名单列表
    * @description 支持逗号/分号/换行分隔，支持 /regex/ 或 /regex/i 的正则格式，支持 IPv4/IPv6 CIDR（如 127.0.0.0/24、2001:db8::/64）
-   * @returns {Array} IP 黑名���规则列表
+   * @returns {Array} IP 黑名单规则列表
    */
   static resolveIpBlacklist() {
     let rawList = this.get("IP_BLACKLIST", "", "string", !1).trim();
@@ -14761,7 +14761,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   /**
    * 补齐分集标题缺失的集数，集数置于作品名后面，与接口自带集数的分集保持同一格式
    * @param {string} title - 分集标题
-   * @param {string} animeTitle - 所属��品名
+   * @param {string} animeTitle - 所属作品名
    * @param {number} order - 分集序号
    * @returns {string} 含集数的分集标题
    */
