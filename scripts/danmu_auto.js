@@ -5285,7 +5285,7 @@ function titleMatches(title, query, parsedSeason = null, forceNonStrict = !1, th
   if (!forceNonStrict && globals.strictTitleMatch) return strictTitleMatch(titleText, queryText);
   let tagFilter = globals.titleNoiseFilter || null, cleanTitle = tagFilter ? titleText.replace(tagFilter, "").trim() : titleText, t = normalizeTitleForMatch(cleanTitle).toLowerCase(), qList = [normalizeTitleForMatch(queryText).toLowerCase()], querySeason = parsedSeason !== null ? parsedSeason : getExplicitSeasonNumber(queryText);
   if (querySeason !== null && parsedSeason === null) {
-    let seasonStripped = queryText.replace(/(?:season|s|第)\s*[0-9一二三四五六七八九十]+\s*(?:季|期|部(?!分))?/gi, "").trim();
+    let seasonStripped = queryText.replace(/(?:season|s|第)\s*[0-9一二三四五六七八九���]+\s*(?:季|期|部(?!分))?/gi, "").trim();
     seasonStripped && seasonStripped !== queryText && (qList = [.../* @__PURE__ */ new Set([...qList, normalizeTitleForMatch(seasonStripped).toLowerCase()])]);
   }
   if (tagFilter) {
@@ -5814,7 +5814,7 @@ var _Envs = class _Envs {
   /**
    * 解析 IP 黑名单列表
    * @description 支持逗号/分号/换行分隔，支持 /regex/ 或 /regex/i 的正则格式，支持 IPv4/IPv6 CIDR（如 127.0.0.0/24、2001:db8::/64）
-   * @returns {Array} IP 黑名单规则列表
+   * @returns {Array} IP 黑名���规则列表
    */
   static resolveIpBlacklist() {
     let rawList = this.get("IP_BLACKLIST", "", "string", !1).trim();
@@ -6154,7 +6154,7 @@ var _Envs = class _Envs {
       rateLimitMaxRequests: this.get("RATE_LIMIT_MAX_REQUESTS", 3, "number"),
       // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流）
       enableAnimeEpisodeFilter: this.get("ENABLE_ANIME_EPISODE_FILTER", !1, "boolean"),
-      // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用过滤���
+      // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用过滤）
       logLevel: this.get("LOG_LEVEL", "info", "string"),
       // 日志级别配置（默认 info，可选值：error, warn, info）
       searchCacheMinutes: this.get("SEARCH_CACHE_MINUTES", 3, "number"),
@@ -14027,7 +14027,7 @@ var TencentSource = class extends BaseSource {
   // 腾讯各字段含义：
   //   play_title     —— 展示用标题，连续剧为「兰香如故 第01集」，综艺为「第1期：xxx」
   //   video_subtitle —— 该集副标题（如「寒山图解生存厄 寒舍三人盼新生」），电影/综艺常为空
-  //   union_title    —— 内部标题，连续���多为「兰香如故_01」（不含集标题），仅作兜底
+  //   union_title    —— 内部标题，连续剧多为「兰香如故_01」（不含集标题），仅作兜底
   //   c_title_output / title —— 纯集号（如 "01" / "1"），或在综艺中与 union_title 相同
   extractEpisodeMeta(itemParams) {
     let p = itemParams || {};
@@ -14761,7 +14761,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   /**
    * 补齐分集标题缺失的集数，集数置于作品名后面，与接口自带集数的分集保持同一格式
    * @param {string} title - 分集标题
-   * @param {string} animeTitle - 所属作品名
+   * @param {string} animeTitle - 所属��品名
    * @param {number} order - 分集序号
    * @returns {string} 含集数的分集标题
    */
@@ -21765,7 +21765,7 @@ async function getComment(path2, queryFormat, segmentFlag, clientIp, includeDura
     return getCommentByUrl(url, queryFormat, segmentFlag, includeDuration);
   let localResource = segmentFlag ? null : await (async () => {
     try {
-      let { findLocalDanmu: findLocalDanmu2 } = await Promise.resolve().then(() => (init_local_store(), local_store_exports)), [localAnimeId] = findAnimeIdByCommentId(commentId), localAnime = globals.animes.find((a) => String(a.animeId) === String(localAnimeId)), matchTitle = extractAnimeTitle(animeTitle || "").split("\u3010")[0].trim(), seasonSuffix = matchTitle.match(/\s*(?:第\s*[0-9一二三四五六七八九十壹贰叁肆伍陆��捌玖拾]+\s*[季期部]|(?:S(?:eason)?|Part)\s*\d+)\s*$/i), season = seasonSuffix ? extractSeasonNumberFromAnimeTitle(matchTitle).season ?? 1 : 1;
+      let { findLocalDanmu: findLocalDanmu2 } = await Promise.resolve().then(() => (init_local_store(), local_store_exports)), [localAnimeId] = findAnimeIdByCommentId(commentId), localAnime = globals.animes.find((a) => String(a.animeId) === String(localAnimeId)), matchTitle = extractAnimeTitle(animeTitle || "").split("\u3010")[0].trim(), seasonSuffix = matchTitle.match(/\s*(?:第\s*[0-9一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+\s*[季期部]|(?:S(?:eason)?|Part)\s*\d+)\s*$/i), season = seasonSuffix ? extractSeasonNumberFromAnimeTitle(matchTitle).season ?? 1 : 1;
       return findLocalDanmu2({
         videoId: String(commentId),
         title: seasonSuffix ? matchTitle.slice(0, seasonSuffix.index).trim() : matchTitle,
