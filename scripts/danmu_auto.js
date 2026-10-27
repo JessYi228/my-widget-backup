@@ -6154,7 +6154,7 @@ var _Envs = class _Envs {
       rateLimitMaxRequests: this.get("RATE_LIMIT_MAX_REQUESTS", 3, "number"),
       // 限流配置：时间窗口内最大请求次数（默认 3，0表示不限流）
       enableAnimeEpisodeFilter: this.get("ENABLE_ANIME_EPISODE_FILTER", !1, "boolean"),
-      // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用��滤）
+      // 控制手动搜索的时候是否根据ANIME_TITLE_FILTER进行剧名过滤以及根据EPISODE_TITLE_FILTER进行集标题过滤（默认 false，禁用过滤）
       logLevel: this.get("LOG_LEVEL", "info", "string"),
       // 日志级别配置（默认 info，可选值：error, warn, info）
       searchCacheMinutes: this.get("SEARCH_CACHE_MINUTES", 3, "number"),
@@ -9172,7 +9172,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
     PATTERN_CONSISTENCY_BONUS: 2,
     // 强规律性奖励（偏移一致比例高）
     ZERO_DIFF_BONUS_BASE: 100,
-    // 零偏移的额外基准奖励
+    // 零偏移的额外基���奖励
     ZERO_DIFF_BONUS_PER_HIT: 5
     // 零偏移的单次命中奖励
   }
