@@ -9172,7 +9172,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
     PATTERN_CONSISTENCY_BONUS: 2,
     // 强规律性奖励（偏移一致比例高）
     ZERO_DIFF_BONUS_BASE: 100,
-    // 零偏移的额外基���奖励
+    // 零偏移的额外基准奖励
     ZERO_DIFF_BONUS_PER_HIT: 5
     // 零偏移的单次命中奖励
   }
