@@ -5285,7 +5285,7 @@ function titleMatches(title, query, parsedSeason = null, forceNonStrict = !1, th
   if (!forceNonStrict && globals.strictTitleMatch) return strictTitleMatch(titleText, queryText);
   let tagFilter = globals.titleNoiseFilter || null, cleanTitle = tagFilter ? titleText.replace(tagFilter, "").trim() : titleText, t = normalizeTitleForMatch(cleanTitle).toLowerCase(), qList = [normalizeTitleForMatch(queryText).toLowerCase()], querySeason = parsedSeason !== null ? parsedSeason : getExplicitSeasonNumber(queryText);
   if (querySeason !== null && parsedSeason === null) {
-    let seasonStripped = queryText.replace(/(?:season|s|第)\s*[0-9一二三四五六七八��十]+\s*(?:季|期|部(?!分))?/gi, "").trim();
+    let seasonStripped = queryText.replace(/(?:season|s|第)\s*[0-9一二三四五六七八九十]+\s*(?:季|期|部(?!分))?/gi, "").trim();
     seasonStripped && seasonStripped !== queryText && (qList = [.../* @__PURE__ */ new Set([...qList, normalizeTitleForMatch(seasonStripped).toLowerCase()])]);
   }
   if (tagFilter) {
@@ -9172,7 +9172,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
     PATTERN_CONSISTENCY_BONUS: 2,
     // 强规律性奖励（偏移一致比例高）
     ZERO_DIFF_BONUS_BASE: 100,
-    // 零偏移的额外基准奖励
+    // 零偏移的额外基���奖励
     ZERO_DIFF_BONUS_PER_HIT: 5
     // 零偏移的单次命中奖励
   }
@@ -13254,7 +13254,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {any} extra 额外信息
-   * @param {Map} detailStore 详情缓存
+   * @param {Map} detailStore 详情���存
    * @param {number|null} querySeason 目标季度
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null, querySeason = null) {
@@ -14027,7 +14027,7 @@ var TencentSource = class extends BaseSource {
   // 腾讯各字段含义：
   //   play_title     —— 展示用标题，连续剧为「兰香如故 第01集」，综艺为「第1期：xxx」
   //   video_subtitle —— 该集副标题（如「寒山图解生存厄 寒舍三人盼新生」），电影/综艺常为空
-  //   union_title    —— 内部标题，连续���多为「兰香如故_01」（不含集标题），仅作兜底
+  //   union_title    —— 内部标题，连续剧多为「兰香如故_01」（不含集标题），仅作兜底
   //   c_title_output / title —— 纯集号（如 "01" / "1"），或在综艺中与 union_title 相同
   extractEpisodeMeta(itemParams) {
     let p = itemParams || {};
@@ -16873,7 +16873,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
         }
       }
       if (log("info", `[dandan] \u539F\u59CB\u641C\u7D22\u548C\u57FA\u4E8ETMDB\u7684\u641C\u7D22\u5747\u672A\u8FD4\u56DE\u4EFB\u4F55\u7ED3\u679C (\u5F53\u524D\u641C\u7D22\u8BCD: ${keyword})`), !isFallback) {
-        let strippedKeyword = keyword.replace(/(?:第\s*[0-9一二三四五六七八九十百千万]+\s*[季期部])|(?:S(?:eason)?\s*\d+)|(?:Part\s*\d+)/gi, "").trim();
+        let strippedKeyword = keyword.replace(/(?:第\s*[0-9���二三四五六七八九十百千万]+\s*[季期部])|(?:S(?:eason)?\s*\d+)|(?:Part\s*\d+)/gi, "").trim();
         if (strippedKeyword && strippedKeyword !== keyword)
           return log("info", `[dandan] \u5C1D\u8BD5\u53BB\u9664\u5B63\u5EA6\u4FE1\u606F\u8FDB\u884C\u964D\u7EA7\u641C\u7D22: ${strippedKeyword}`), await this.search(strippedKeyword, !0);
       }
@@ -19484,7 +19484,7 @@ var AiyifanSource = class extends BaseSource {
         m: comment.contxt || comment.content || "",
         // 弹幕内容
         like: comment.good,
-        // ��赞数
+        // 点赞数
         // 保留原始数据
         ...comment
       };
