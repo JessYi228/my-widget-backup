@@ -15185,7 +15185,7 @@ var IqiyiSource = _IqiyiSource;
 
 // danmu_api/sources/mango.js
 var MangoSource = class extends BaseSource {
-  // ��理 v2_color 对象的转换逻辑
+  // 处理 v2_color 对象的转换逻辑
   transformV2Color(v2_color) {
     if (!v2_color)
       return -1;
