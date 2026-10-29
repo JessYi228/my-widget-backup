@@ -14027,7 +14027,7 @@ var TencentSource = class extends BaseSource {
   // 腾讯各字段含义：
   //   play_title     —— 展示用标题，连续剧为「兰香如故 第01集」，综艺为「第1期：xxx」
   //   video_subtitle —— 该集副标题（如「寒山图解生存厄 寒舍三人盼新生」），电影/综艺常为空
-  //   union_title    —— 内部标题，连续剧多为「兰香如故_01」（不含集标题），仅作兜底
+  //   union_title    —— 内部标题，连续���多为「兰香如故_01」（不含集标题），仅作兜底
   //   c_title_output / title —— 纯集号（如 "01" / "1"），或在综艺中与 union_title 相同
   extractEpisodeMeta(itemParams) {
     let p = itemParams || {};
@@ -20604,7 +20604,7 @@ var API_HEALTH2 = {
    * 搜索动画条目
    * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
    * @param {string} keyword 搜索关键词
-   * @returns {Promise<Array>} 转换后的搜索结果列表
+   * @returns {Promise<Array>} ���换后的搜索结果列表
    */
   async search(keyword) {
     if (globals.useBangumiData) {
@@ -20958,7 +20958,7 @@ var API_HEALTH2 = {
   }
   /**
    * 获取分段弹幕列表定义
-   * 使用��整的 API URL 填充 url 字段，以通过 format 校验
+   * 使用完整的 API URL 填充 url 字段，以通过 format 校验
    */
   async getEpisodeDanmuSegments(id) {
     return new SegmentListResponse({
