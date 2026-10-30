@@ -19484,7 +19484,7 @@ var AiyifanSource = class extends BaseSource {
         m: comment.contxt || comment.content || "",
         // 弹幕内容
         like: comment.good,
-        // 点赞数
+        // ��赞数
         // 保留原始数据
         ...comment
       };
@@ -21765,7 +21765,7 @@ async function getComment(path2, queryFormat, segmentFlag, clientIp, includeDura
     return getCommentByUrl(url, queryFormat, segmentFlag, includeDuration);
   let localResource = segmentFlag ? null : await (async () => {
     try {
-      let { findLocalDanmu: findLocalDanmu2 } = await Promise.resolve().then(() => (init_local_store(), local_store_exports)), [localAnimeId] = findAnimeIdByCommentId(commentId), localAnime = globals.animes.find((a) => String(a.animeId) === String(localAnimeId)), matchTitle = extractAnimeTitle(animeTitle || "").split("\u3010")[0].trim(), seasonSuffix = matchTitle.match(/\s*(?:第\s*[0-9一二三四五六七八九十壹贰叁肆伍陆��捌玖拾]+\s*[季期部]|(?:S(?:eason)?|Part)\s*\d+)\s*$/i), season = seasonSuffix ? extractSeasonNumberFromAnimeTitle(matchTitle).season ?? 1 : 1;
+      let { findLocalDanmu: findLocalDanmu2 } = await Promise.resolve().then(() => (init_local_store(), local_store_exports)), [localAnimeId] = findAnimeIdByCommentId(commentId), localAnime = globals.animes.find((a) => String(a.animeId) === String(localAnimeId)), matchTitle = extractAnimeTitle(animeTitle || "").split("\u3010")[0].trim(), seasonSuffix = matchTitle.match(/\s*(?:第\s*[0-9一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+\s*[季期部]|(?:S(?:eason)?|Part)\s*\d+)\s*$/i), season = seasonSuffix ? extractSeasonNumberFromAnimeTitle(matchTitle).season ?? 1 : 1;
       return findLocalDanmu2({
         videoId: String(commentId),
         title: seasonSuffix ? matchTitle.slice(0, seasonSuffix.index).trim() : matchTitle,
