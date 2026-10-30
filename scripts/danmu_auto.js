@@ -9137,7 +9137,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   TITLE_STRUCTURE_CONFLICT: -0.3,
   // 标题结构冲突（如父子集关系）
   LANG_MATCH_CN: 0.15,
-  // 双端均为中文时的语言一致奖励
+  // 双端���为中文时的语言一致奖励
   LANG_MISMATCH: -0.2,
   // 语言不一致时的惩罚
   // ── 日期 ─────────────────────────────────────────────────
@@ -14027,7 +14027,7 @@ var TencentSource = class extends BaseSource {
   // 腾讯各字段含义：
   //   play_title     —— 展示用标题，连续剧为「兰香如故 第01集」，综艺为「第1期：xxx」
   //   video_subtitle —— 该集副标题（如「寒山图解生存厄 寒舍三人盼新生」），电影/综艺常为空
-  //   union_title    —— 内部标题，连续���多为「兰香如故_01」（不含集标题），仅作兜底
+  //   union_title    —— 内部标题，连续剧多为「兰香如故_01」（不含集标题），仅作兜底
   //   c_title_output / title —— 纯集号（如 "01" / "1"），或在综艺中与 union_title 相同
   extractEpisodeMeta(itemParams) {
     let p = itemParams || {};
@@ -19484,7 +19484,7 @@ var AiyifanSource = class extends BaseSource {
         m: comment.contxt || comment.content || "",
         // 弹幕内容
         like: comment.good,
-        // ��赞数
+        // 点赞数
         // 保留原始数据
         ...comment
       };
