@@ -9172,7 +9172,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
     PATTERN_CONSISTENCY_BONUS: 2,
     // 强规律性奖励（偏移一致比例高）
     ZERO_DIFF_BONUS_BASE: 100,
-    // 零偏移的额外基准奖励
+    // 零偏移的额外基���奖励
     ZERO_DIFF_BONUS_PER_HIT: 5
     // 零偏移的单次命中奖励
   }
@@ -12582,7 +12582,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "MAC");
   }
   /**
-   * 获取单集弹幕 (Win API)
+   * 获取单���弹幕 (Win API)
    */
   async getWinDanmu(episodeSid) {
     let realEpisodeId = String(episodeSid).includes("-") ? String(episodeSid).split("-")[1] : episodeSid, url = `https://${this.API_CONFIG.WIN_DANMU_HOST}/v1/produce/danmu/EPISODE/${realEpisodeId}`, headers = { "User-Agent": this.API_CONFIG.WIN_USER_AGENT };
@@ -14027,7 +14027,7 @@ var TencentSource = class extends BaseSource {
   // 腾讯各字段含义：
   //   play_title     —— 展示用标题，连续剧为「兰香如故 第01集」，综艺为「第1期：xxx」
   //   video_subtitle —— 该集副标题（如「寒山图解生存厄 寒舍三人盼新生」），电影/综艺常为空
-  //   union_title    —— 内部标题，连续���多为「兰香如故_01」（不含集标题），仅作兜底
+  //   union_title    —— 内部标题，连续剧多为「兰香如故_01」（不含集标题），仅作兜底
   //   c_title_output / title —— 纯集号（如 "01" / "1"），或在综艺中与 union_title 相同
   extractEpisodeMeta(itemParams) {
     let p = itemParams || {};
@@ -20604,7 +20604,7 @@ var API_HEALTH2 = {
    * 搜索动画条目
    * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
    * @param {string} keyword 搜索关键词
-   * @returns {Promise<Array>} ���换后的搜索结果列表
+   * @returns {Promise<Array>} 转换后的搜索结果列表
    */
   async search(keyword) {
     if (globals.useBangumiData) {
