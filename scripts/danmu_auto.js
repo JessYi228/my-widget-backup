@@ -12038,7 +12038,7 @@ ${path2}?${sortedQuery}`;
   // 4. 底层网络请求代理
   // =====================
   /**
-   * 通用结构处理方法，用于接管无严密签名的独立��点弹幕响应
+   * 通用结构处理方法，用于接管无严密签名的独立节点弹幕响应
    * @param {string} url 目标请求地址
    * @param {Object} headers 携带端特征的请求头
    * @param {string} tierName 平台标识
@@ -12582,7 +12582,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "MAC");
   }
   /**
-   * 获取单���弹幕 (Win API)
+   * 获取单集弹幕 (Win API)
    */
   async getWinDanmu(episodeSid) {
     let realEpisodeId = String(episodeSid).includes("-") ? String(episodeSid).split("-")[1] : episodeSid, url = `https://${this.API_CONFIG.WIN_DANMU_HOST}/v1/produce/danmu/EPISODE/${realEpisodeId}`, headers = { "User-Agent": this.API_CONFIG.WIN_USER_AGENT };
@@ -13254,7 +13254,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {any} extra 额外信息
-   * @param {Map} detailStore 详情缓存
+   * @param {Map} detailStore 详情���存
    * @param {number|null} querySeason 目标季度
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null, querySeason = null) {
@@ -16873,7 +16873,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
         }
       }
       if (log("info", `[dandan] \u539F\u59CB\u641C\u7D22\u548C\u57FA\u4E8ETMDB\u7684\u641C\u7D22\u5747\u672A\u8FD4\u56DE\u4EFB\u4F55\u7ED3\u679C (\u5F53\u524D\u641C\u7D22\u8BCD: ${keyword})`), !isFallback) {
-        let strippedKeyword = keyword.replace(/(?:第\s*[0-9一二三四五六七八九十百千万]+\s*[季期部])|(?:S(?:eason)?\s*\d+)|(?:Part\s*\d+)/gi, "").trim();
+        let strippedKeyword = keyword.replace(/(?:第\s*[0-9���二三四五六七八九十百千万]+\s*[季期部])|(?:S(?:eason)?\s*\d+)|(?:Part\s*\d+)/gi, "").trim();
         if (strippedKeyword && strippedKeyword !== keyword)
           return log("info", `[dandan] \u5C1D\u8BD5\u53BB\u9664\u5B63\u5EA6\u4FE1\u606F\u8FDB\u884C\u964D\u7EA7\u641C\u7D22: ${strippedKeyword}`), await this.search(strippedKeyword, !0);
       }
