@@ -9137,7 +9137,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   TITLE_STRUCTURE_CONFLICT: -0.3,
   // 标题结构冲突（如父子集关系）
   LANG_MATCH_CN: 0.15,
-  // 双端���为中文时的语言一致奖励
+  // 双端均为中文时的语言一致奖励
   LANG_MISMATCH: -0.2,
   // 语言不一致时的惩罚
   // ── 日期 ─────────────────────────────────────────────────
@@ -9172,7 +9172,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
     PATTERN_CONSISTENCY_BONUS: 2,
     // 强规律性奖励（偏移一致比例高）
     ZERO_DIFF_BONUS_BASE: 100,
-    // 零偏移的额外基准奖励
+    // 零偏移的额外基���奖励
     ZERO_DIFF_BONUS_PER_HIT: 5
     // 零偏移的单次命中奖励
   }
@@ -12038,7 +12038,7 @@ ${path2}?${sortedQuery}`;
   // 4. 底层网络请求代理
   // =====================
   /**
-   * 通用结构处理方法，用于接管无严密签名的独立节点弹幕响应
+   * 通用结构处理方法，用于接管无严密签名的独立��点弹幕响应
    * @param {string} url 目标请求地址
    * @param {Object} headers 携带端特征的请求头
    * @param {string} tierName 平台标识
@@ -12582,7 +12582,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "MAC");
   }
   /**
-   * 获取单集弹幕 (Win API)
+   * 获取单���弹幕 (Win API)
    */
   async getWinDanmu(episodeSid) {
     let realEpisodeId = String(episodeSid).includes("-") ? String(episodeSid).split("-")[1] : episodeSid, url = `https://${this.API_CONFIG.WIN_DANMU_HOST}/v1/produce/danmu/EPISODE/${realEpisodeId}`, headers = { "User-Agent": this.API_CONFIG.WIN_USER_AGENT };
