@@ -1,15 +1,15 @@
 ## 📊 备份统计
 
-- 🕒 最后更新: 2026-11-01 15:45:50
+- 🕒 最后更新: 2026-11-01 20:10:35
 - 📁 脚本数量: 10
 - 📄 脚本列表:
 
   - IMDb.js (14921 bytes)
   - combined.js (205534 bytes)
   - danmu.js (6398 bytes)
-  - danmu_auto.js (1380375 bytes)
+  - danmu_auto.js (1380381 bytes)
   - danmu_playurl.js (46921 bytes)
-  - douban.js (97028 bytes)
+  - douban.js (96998 bytes)
   - letterboxd.js (34438 bytes)
   - person_movie.js (7843 bytes)
   - trakt.js (18207 bytes)
