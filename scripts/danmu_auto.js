@@ -9137,7 +9137,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   TITLE_STRUCTURE_CONFLICT: -0.3,
   // 标题结构冲突（如父子集关系）
   LANG_MATCH_CN: 0.15,
-  // 双端均为���文时的语言一致奖励
+  // 双端均为中文时的语言一致奖励
   LANG_MISMATCH: -0.2,
   // 语言不一致时的惩罚
   // ── 日期 ─────────────────────────────────────────────────
@@ -9172,7 +9172,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
     PATTERN_CONSISTENCY_BONUS: 2,
     // 强规律性奖励（偏移一致比例高）
     ZERO_DIFF_BONUS_BASE: 100,
-    // 零偏移的额外基准奖励
+    // 零偏移的额外基���奖励
     ZERO_DIFF_BONUS_PER_HIT: 5
     // 零偏移的单次命中奖励
   }
@@ -13254,7 +13254,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
    * @param {any} extra 额外信息
-   * @param {Map} detailStore 详情缓存
+   * @param {Map} detailStore 详情���存
    * @param {number|null} querySeason 目标季度
    */
   async handleAnimes(sourceAnimes, queryTitle, curAnimes, detailStore = null, querySeason = null) {
@@ -14752,7 +14752,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
   /**
    * 组装分集标题：取接口的分集名，并在标题末尾补上副标题
    * @param {object} epData - 分集原始数据
-   * @returns {string} ���集标题
+   * @returns {string} 分集标题
    */
   _buildEpisodeTitle(epData) {
     let title = epData.short_display_name || epData.title || "\u672A\u77E5\u5206\u96C6", subtitle = epData.subtitle;
@@ -16873,7 +16873,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
         }
       }
       if (log("info", `[dandan] \u539F\u59CB\u641C\u7D22\u548C\u57FA\u4E8ETMDB\u7684\u641C\u7D22\u5747\u672A\u8FD4\u56DE\u4EFB\u4F55\u7ED3\u679C (\u5F53\u524D\u641C\u7D22\u8BCD: ${keyword})`), !isFallback) {
-        let strippedKeyword = keyword.replace(/(?:第\s*[0-9一二三四五六七八九十百千万]+\s*[季期部])|(?:S(?:eason)?\s*\d+)|(?:Part\s*\d+)/gi, "").trim();
+        let strippedKeyword = keyword.replace(/(?:第\s*[0-9���二三四五六七八九十百千万]+\s*[季期部])|(?:S(?:eason)?\s*\d+)|(?:Part\s*\d+)/gi, "").trim();
         if (strippedKeyword && strippedKeyword !== keyword)
           return log("info", `[dandan] \u5C1D\u8BD5\u53BB\u9664\u5B63\u5EA6\u4FE1\u606F\u8FDB\u884C\u964D\u7EA7\u641C\u7D22: ${strippedKeyword}`), await this.search(strippedKeyword, !0);
       }
