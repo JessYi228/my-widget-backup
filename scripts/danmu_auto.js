@@ -5751,7 +5751,7 @@ var _Envs = class _Envs {
   /**
    * 解析合并映射表
    * 用于解析用户自定义的剧集/季度级别合并与乱序重排规则，以及阻断特定合并。
-   * 支持从全局强制合并到精确单集的路由干预，解决跨源集数错位问题。
+   * 支持从全局强制合并到精确单集的路由干预��解决跨源集数错位问题。
    * 格式: 
    * 合并: 副源实体 -> 主源实体 | 路由规则
    * 阻断: 副源实体 × 主源实体
@@ -7972,7 +7972,7 @@ var Season = class _Season {
   constructor({ type, segment_start, segment_end, url, data, _m_h5_tk, _m_h5_tk_enc } = {}) {
     validateType(type, "string", "type"), validateType(segment_start, "number", "segment_start"), validateType(segment_end, "number", "segment_end"), validateType(url, "string", "url"), data !== void 0 && validateType(data, "string", "data"), _m_h5_tk !== void 0 && validateType(_m_h5_tk, "string", "_m_h5_tk"), _m_h5_tk_enc !== void 0 && validateType(_m_h5_tk_enc, "string", "_m_h5_tk_enc"), Object.assign(this, { type, segment_start, segment_end, url, data, _m_h5_tk, _m_h5_tk_enc });
   }
-  // ---- 静态方法：从 JSON 创建 Segment 对象 ----
+  // ---- 静态方法：从 JSON 创建 Segment ��象 ----
   static fromJson(json) {
     if (typeof json != "object" || json === null)
       throw new TypeError("fromJson \u53C2\u6570\u5FC5\u987B\u662F\u5BF9\u8C61");
@@ -14087,7 +14087,7 @@ var TencentSource = class extends BaseSource {
   // 从分集接口的 item_params 中提取标题相关字段，供 buildEpisodeTitle 统一组装。
   // 腾讯各字段含义：
   //   play_title     —— 展示用标题，连续剧为「兰香如故 第01集」，综艺为「第1期：xxx」
-  //   video_subtitle —— 该集副标题（如「寒山图解生���厄 寒舍三人盼新生」），电影/综艺常为空
+  //   video_subtitle —— 该集副标题（如「寒山图解生存厄 寒舍三人盼新生」），电影/综艺常为空
   //   union_title    —— 内部标题，连续剧多为「兰香如故_01」（不含集标题），仅作兜底
   //   c_title_output / title —— 纯集号（如 "01" / "1"），或在综艺中与 union_title 相同
   extractEpisodeMeta(itemParams) {
@@ -16579,7 +16579,7 @@ var YoukuSource = class extends BaseSource {
   /**
    * 根据媒体类型格式化分集标题
    * @param {Object} ep - 分集对象
-   * @param {number} episodeIndex - 分集索引
+   * @param {number} episodeIndex - 分集��引
    * @param {string} mediaType - 媒体类型
    * @returns {string} 格式化后的标题
    */
