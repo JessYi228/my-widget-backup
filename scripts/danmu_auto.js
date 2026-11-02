@@ -5751,7 +5751,7 @@ var _Envs = class _Envs {
   /**
    * 解析合并映射表
    * 用于解析用户自定义的剧集/季度级别合并与乱序重排规则，以及阻断特定合并。
-   * 支持从全局强制合并到精确单集的路由干预��解决跨源集数错位问题。
+   * 支持从全局强制合并到精确单集的路由干预，解决跨源集数错位问题。
    * 格式: 
    * 合并: 副源实体 -> 主源实体 | 路由规则
    * 阻断: 副源实体 × 主源实体
@@ -7972,7 +7972,7 @@ var Season = class _Season {
   constructor({ type, segment_start, segment_end, url, data, _m_h5_tk, _m_h5_tk_enc } = {}) {
     validateType(type, "string", "type"), validateType(segment_start, "number", "segment_start"), validateType(segment_end, "number", "segment_end"), validateType(url, "string", "url"), data !== void 0 && validateType(data, "string", "data"), _m_h5_tk !== void 0 && validateType(_m_h5_tk, "string", "_m_h5_tk"), _m_h5_tk_enc !== void 0 && validateType(_m_h5_tk_enc, "string", "_m_h5_tk_enc"), Object.assign(this, { type, segment_start, segment_end, url, data, _m_h5_tk, _m_h5_tk_enc });
   }
-  // ---- 静态方法：从 JSON 创建 Segment ��象 ----
+  // ---- 静态方法：从 JSON 创建 Segment 对象 ----
   static fromJson(json) {
     if (typeof json != "object" || json === null)
       throw new TypeError("fromJson \u53C2\u6570\u5FC5\u987B\u662F\u5BF9\u8C61");
@@ -11904,7 +11904,7 @@ var RenrenSource = class extends BaseSource {
   // 2. 身份指纹与轮换管控
   // =====================
   /**
-   * 生成随机的 aliid (兼容 TV 端验证算法)
+   * 生成随机的 aliid (兼容 TV 端���证算法)
    * 规律：24位长度，以 'aY' 开头，包含字母数字和 Base64 特殊字符
    * 模拟抓包数据：aYN4D0XfSREDAJaw3UAjG33K
    */
@@ -16579,7 +16579,7 @@ var YoukuSource = class extends BaseSource {
   /**
    * 根据媒体类型格式化分集标题
    * @param {Object} ep - 分集对象
-   * @param {number} episodeIndex - 分集��引
+   * @param {number} episodeIndex - 分集索引
    * @param {string} mediaType - 媒体类型
    * @returns {string} 格式化后的标题
    */
