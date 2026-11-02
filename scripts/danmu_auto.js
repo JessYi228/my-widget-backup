@@ -11904,7 +11904,7 @@ var RenrenSource = class extends BaseSource {
   // 2. 身份指纹与轮换管控
   // =====================
   /**
-   * 生成随机的 aliid (兼容 TV 端���证算法)
+   * 生成随机的 aliid (兼容 TV 端验证算法)
    * 规律：24位长度，以 'aY' 开头，包含字母数字和 Base64 特殊字符
    * 模拟抓包数据：aYN4D0XfSREDAJaw3UAjG33K
    */
