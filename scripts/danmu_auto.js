@@ -9305,7 +9305,7 @@ var LANG_CN_MANDARIN = "\u666E\u901A[\u8BDD\u8A71]|[\u56FD\u570B][\u8BED\u8A9E]|
   { regex: /\bpart\s*(\d+)/i, prefix: "P" },
   { regex: /\b(ova|oad)\d*\b/i, val: "OVA" },
   { regex: /(剧场版|劇場版|the\s*movie|theatrical|movie|film|电影)/i, val: "MOVIE" },
-  { regex: /(续���|续集)/, val: "SEQUEL" },
+  { regex: /(续篇|续集)/, val: "SEQUEL" },
   { regex: /\b(sp|special)\d*\b/i, val: "SP" },
   // 回退：清洗后以数字结尾（如 "タイトル2"）视为 S{N}
   { regex: /[^0-9](\d)$/, prefix: "S", useCleaned: !0 }
@@ -11870,7 +11870,7 @@ var RenrenSource = class extends BaseSource {
   constructor() {
     super();
     // =====================
-    // 1. API 综合配置常量
+    // 1. API 综合配置���量
     // =====================
     __publicField(this, "API_CONFIG", {
       // 跨端通用核心加密密钥 (用于网关穿透等严格验签场景)
