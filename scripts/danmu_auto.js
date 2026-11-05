@@ -14087,7 +14087,7 @@ var TencentSource = class extends BaseSource {
   // 从分集接口的 item_params 中提取标题相关字段，供 buildEpisodeTitle 统一组装。
   // 腾讯各字段含义：
   //   play_title     —— 展示用标题，连续剧为「兰香如故 第01集」，综艺为「第1期：xxx」
-  //   video_subtitle —— 该集副标题（如「寒山图��生存厄 寒舍三人盼新生」），电影/综艺常为空
+  //   video_subtitle —— 该集副标题（如「寒山图解生存厄 寒舍三人盼新生」），电影/综艺常为空
   //   union_title    —— 内部标题，连续剧多为「兰香如故_01」（不含集标题），仅作兜底
   //   c_title_output / title —— 纯集号（如 "01" / "1"），或在综艺中与 union_title 相同
   extractEpisodeMeta(itemParams) {
@@ -15246,7 +15246,7 @@ var IqiyiSource = _IqiyiSource;
 
 // danmu_api/sources/mango.js
 var MangoSource = class extends BaseSource {
-  // 处理 v2_color 对象的转换逻辑
+  // 处理 v2_color 对���的转换逻辑
   transformV2Color(v2_color) {
     if (!v2_color)
       return -1;
