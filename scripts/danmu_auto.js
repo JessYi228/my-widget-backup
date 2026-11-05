@@ -11870,7 +11870,7 @@ var RenrenSource = class extends BaseSource {
   constructor() {
     super();
     // =====================
-    // 1. API 综合配置���量
+    // 1. API 综合配置常量
     // =====================
     __publicField(this, "API_CONFIG", {
       // 跨端通用核心加密密钥 (用于网关穿透等严格验签场景)
@@ -14087,7 +14087,7 @@ var TencentSource = class extends BaseSource {
   // 从分集接口的 item_params 中提取标题相关字段，供 buildEpisodeTitle 统一组装。
   // 腾讯各字段含义：
   //   play_title     —— 展示用标题，连续剧为「兰香如故 第01集」，综艺为「第1期：xxx」
-  //   video_subtitle —— 该集副标题（如「寒山图解生存厄 寒舍三人盼新生」），电影/综艺常为空
+  //   video_subtitle —— 该集副标题（如「寒山图��生存厄 寒舍三人盼新生」），电影/综艺常为空
   //   union_title    —— 内部标题，连续剧多为「兰香如故_01」（不含集标题），仅作兜底
   //   c_title_output / title —— 纯集号（如 "01" / "1"），或在综艺中与 union_title 相同
   extractEpisodeMeta(itemParams) {
