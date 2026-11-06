@@ -6150,7 +6150,7 @@ var _Envs = class _Envs {
       likeSwitch: this.get("LIKE_SWITCH", !0, "boolean"),
       // 弹幕点赞数显示开关，默认开启
       danmuOffset: this.get("DANMU_OFFSET", "", "string"),
-      // 弹幕时间偏移配���
+      // 弹幕时间偏移配置
       danmuOffsetRules: parseOffsetRules(this.get("DANMU_OFFSET", "", "string")),
       // 解析后的偏移规则（缓存）
       tmdbApiKey: this.get("TMDB_API_KEY", "", "string", !0),
@@ -11904,7 +11904,7 @@ var RenrenSource = class extends BaseSource {
   // 2. 身份指纹与轮换管控
   // =====================
   /**
-   * 生成随机的 aliid (兼容 TV 端���证算法)
+   * 生成随机的 aliid (兼容 TV 端验证算法)
    * 规律：24位长度，以 'aY' 开头，包含字母数字和 Base64 特殊字符
    * 模拟抓包数据：aYN4D0XfSREDAJaw3UAjG33K
    */
