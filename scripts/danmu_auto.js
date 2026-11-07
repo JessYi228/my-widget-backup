@@ -6197,7 +6197,7 @@ var _Envs = class _Envs {
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
-      // 剧名映射表，用于自动���配时替换标题进行搜索
+      // 剧名映射表，用于自动匹配时替换标题进行搜索
       titleMappingTableUrl: this.get("TITLE_MAPPING_TABLE_URL", "", "string"),
       // 远程剧名映射表地址（由用户托管维护，自动拉取生效）
       autoMatchMappingTable: this.resolveAutoMatchMappingTable(),
