@@ -14118,7 +14118,7 @@ var TencentSource = class extends BaseSource {
   /**
    * 组装分集显示标题，与 iqiyi/youku 源保持一致的「集数 + 标题」形态。
    *
-   * 原先仅取 union_title，连续剧只能显示「兰香如故_01」——只有集号、没有集标题，
+   * 原先��取 union_title，连续剧只能显示「兰香如故_01」——只有集号、没有集标题，
    * 与 iqiyi 的「南部档案第1集 你俩掉进邪神洞」差距明显。改为：
    *   主标题 play_title（自带剧名与集数）> union_title 规范化 > c_title_output > title
    *   再追加 video_subtitle 作为集标题（已包含时跳过）
