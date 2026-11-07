@@ -12503,7 +12503,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境搜索（vercel/netlify/cloudflare 等 serverless 平台）：
-   * 分两组并行执行，每组 3 秒，避免串行降级在云函数内的��限耗时。
+   * 分两组并行执行，每组 3 秒，避免串行降级在云函数内的极限耗时。
    * 第一组 WIN+TV 并行（TV 优先），第二组 MAC+WEB 并行（MAC 优先）。
    * 第一组任一成功即终止。
    */
@@ -15471,7 +15471,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         color: 16777215,
         //弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
         unixtime: Math.floor(Date.now() / 1e3),
-        //Unix 时间戳格式
+        //Unix 时间戳��式
         uid: 0,
         //发送人的 id
         content: ""
@@ -21060,7 +21060,7 @@ var API_HEALTH2 = {
   /**
    * 搜索动画条目
    * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
-   * @param {string} keyword 搜索关键词
+   * @param {string} keyword 搜索��键词
    * @returns {Promise<Array>} 转换后的搜索结果列表
    */
   async search(keyword) {

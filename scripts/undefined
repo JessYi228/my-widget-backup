@@ -253,7 +253,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
 }
 
 // 从番剧标题提取季号，兼容多种命名：
-//   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"���2、"剑来 S2"→2
+//   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
 // 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
 function extractSeasonNumber(animeTitle) {
   const title = String(animeTitle || "");
@@ -576,7 +576,7 @@ async function fetchEpisodesByLibrary(source, title, season) {
   }
 }
 
-// 兜底：bangumi 临时ID跨数据快���会过期。重新 search/anime 拿"新鲜"ID（同请求内不过期，
+// 兜底：bangumi 临时ID跨数据快照会过期。重新 search/anime 拿"新鲜"ID（同请求内不过期，
 // 且能并行命中库外新剧，search/episodes 只查库内），再立即 bangumi 取分集
 async function fetchEpisodesByResearch(source, title, season) {
   const query = cleanAnimeTitle(title);
@@ -720,7 +720,7 @@ async function getCommentsById(params) {
     for (const source of sources) {
       try {
         // async=1：慢源/库外剧弹幕需实时下载，服务端会等待下载完成再返回（同步请求会直接返回0条）。
-        // widget JS 环境无 setTimeout，无法轮询 taskcomment；超长下载返回 taskId 时本次取不到，
+        // widget JS 环境无 setTimeout���无法轮询 taskcomment；超长下载返回 taskId 时本次取不到，
         // 靠 App "空弹幕不缓存→下次重试" + Misaka 预下载兜底。
         const response = await Widget.http.get(
           `${source.server}/api/v2/comment/${parsedCommentId.id}?async=1&withRelated=true&chConvert=1`,
