@@ -6197,7 +6197,7 @@ var _Envs = class _Envs {
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
-      // 剧名映射表，用于自动匹配时替换标题进行搜索
+      // 剧名映射表，用于自动���配时替换标题进行搜索
       titleMappingTableUrl: this.get("TITLE_MAPPING_TABLE_URL", "", "string"),
       // 远程剧名映射表地址（由用户托管维护，自动拉取生效）
       autoMatchMappingTable: this.resolveAutoMatchMappingTable(),
@@ -12503,7 +12503,7 @@ ${path2}?${sortedQuery}`;
   }
   /**
    * 云环境搜索（vercel/netlify/cloudflare 等 serverless 平台）：
-   * 分两组并行执行，每组 3 秒，避免串行降级在云函数内的极限耗时。
+   * 分两组并行执行，每组 3 秒，避免串行降级在云函数内的��限耗时。
    * 第一组 WIN+TV 并行（TV 优先），第二组 MAC+WEB 并行（MAC 优先）。
    * 第一组任一成功即终止。
    */
