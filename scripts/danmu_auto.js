@@ -12164,7 +12164,7 @@ var RenrenSource = class extends BaseSource {
     });
   }
   /**
-   * 生成 Win 端格式的 32 位十六进制设备指纹
+   * ��成 Win 端格式的 32 位十六进制设备指纹
    */
   generateWinAliId() {
     return Array.from({ length: 32 }, () => Math.floor(Math.random() * 16).toString(16)).join("").toUpperCase();
@@ -13054,7 +13054,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       return warnTag && log("warn", `${warnTag}: ${error.message}`), fallback;
     }
   }
-  // ── 数据规范化 ──────────────────────────────────────────────
+  // ── 数据规范化 ───────────────────────────────────────────��──
   normalizeSearchItems(items = []) {
     return Array.isArray(items) ? items.map((item) => {
       if (!item || typeof item != "object") return null;
@@ -15471,7 +15471,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
         color: 16777215,
         //弹幕颜色，RGB 颜色转为十进制后的值，16777215 为白色
         unixtime: Math.floor(Date.now() / 1e3),
-        //Unix 时间戳��式
+        //Unix 时间戳格式
         uid: 0,
         //发送人的 id
         content: ""
@@ -21060,7 +21060,7 @@ var API_HEALTH2 = {
   /**
    * 搜索动画条目
    * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
-   * @param {string} keyword 搜索��键词
+   * @param {string} keyword 搜索关键词
    * @returns {Promise<Array>} 转换后的搜索结果列表
    */
   async search(keyword) {
