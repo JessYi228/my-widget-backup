@@ -12220,7 +12220,7 @@ var RenrenSource = class extends BaseSource {
       aliid: aliId,
       // 使用动态aliId
       umid: "",
-      // 必须为空字符串以��过校验
+      // 必须为空字符串以通过校验
       clienttype: this.API_CONFIG.TV_CLIENT_TYPE,
       pkt: this.API_CONFIG.TV_PKT,
       t: timestamp.toString(),
