@@ -19298,7 +19298,7 @@ var AiyifanAppSigningProvider = class {
       headers,
       timeout: this.timeoutMs,
       retries: 2,
-      // 配置已有 TTL 缓存和并发合并；实际获取时绕过请求内缓存，避免同秒刷新复用旧配置。
+      // 配置已有 TTL 缓存和并发合并；实际获取时绕过请求内缓存，避免同秒��新复用旧配置。
       bypassCache: !0
     }), pConfig = normalizeJsonPayload(response.data)?.data?.list?.pConfig, publicKey = pConfig?.publicKey, privateKeyList = pConfig?.privateKey, privateKey = Array.isArray(privateKeyList) ? privateKeyList[0] : privateKeyList;
     if (!publicKey || !privateKey)
