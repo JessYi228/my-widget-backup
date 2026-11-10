@@ -677,7 +677,7 @@ async function fetchImdbIdsFromLetterboxdUrls(letterboxdUrls) {
 
             return match ? `${match[1]}` : null;
         } catch {
-            return null; // 忽略单个失败��求
+            return null; // 忽略单个失败请求
         }
     });
 
