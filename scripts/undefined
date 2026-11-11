@@ -662,7 +662,7 @@ async function getDetailById(params) {
       // 1. match 优先：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接匹配当前集。
       //    库内直接匹配 + 严格标题过滤，一步到位拿稳定 episodeId，不依赖易过期的临时ID。
       let episodes = await fetchEpisodesByMatch(source, matchTitle, season, episode);
-      // 2. 失败 → 标��� bangumi 端点（官方 dandanplay / 真实作品ID 直接命中）
+      // 2. 失败 → 标准 bangumi 端点（官方 dandanplay / 真实作品ID 直接命中）
       if (!episodes) {
         episodes = await fetchEpisodesByBangumi(source, parsedAnimeId.id);
       }
@@ -740,7 +740,7 @@ async function getCommentsById(params) {
       }
     }
 
-    throw lastError || new Error("获取数���失败");
+    throw lastError || new Error("获取数据失败");
   }
   // else {
   //   // just for sample
