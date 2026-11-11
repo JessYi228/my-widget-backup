@@ -662,7 +662,7 @@ async function getDetailById(params) {
       // 1. match 优先：用原始剧名(matchTitle)+season+episode 构造 "标题 SxxExx" 直接匹配当前集。
       //    库内直接匹配 + 严格标题过滤，一步到位拿稳定 episodeId，不依赖易过期的临时ID。
       let episodes = await fetchEpisodesByMatch(source, matchTitle, season, episode);
-      // 2. 失败 → 标准 bangumi 端点（官方 dandanplay / 真实作品ID 直接命中）
+      // 2. 失败 → 标��� bangumi 端点（官方 dandanplay / 真实作品ID 直接命中）
       if (!episodes) {
         episodes = await fetchEpisodesByBangumi(source, parsedAnimeId.id);
       }
@@ -678,7 +678,7 @@ async function getDetailById(params) {
       if (episodes) {
         return { source, episodes };
       }
-      return { source, error: new Error("获取数���失败") };
+      return { source, error: new Error("获取数据失败") };
     } catch (error) {
       console.error(`请求 ${source.server} 失败:`, error);
       return { source, error };
@@ -720,7 +720,7 @@ async function getCommentsById(params) {
     for (const source of sources) {
       try {
         // async=1：慢源/库外剧弹幕需实时下载，服务端会等待下载完成再返回（同步请求会直接返回0条）。
-        // widget JS 环境无 setTimeout，无法轮询 taskcomment；超长下载返�� taskId 时本次取不到，
+        // widget JS 环境无 setTimeout，无法轮询 taskcomment；超长下载返回 taskId 时本次取不到，
         // 靠 App "空弹幕不缓存→下次重试" + Misaka 预下载兜底。
         const response = await Widget.http.get(
           `${source.server}/api/v2/comment/${parsedCommentId.id}?async=1&withRelated=true&chConvert=1`,
@@ -740,7 +740,7 @@ async function getCommentsById(params) {
       }
     }
 
-    throw lastError || new Error("获取数据失败");
+    throw lastError || new Error("获取数���失败");
   }
   // else {
   //   // just for sample
