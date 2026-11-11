@@ -12868,7 +12868,7 @@ ${path2}?${sortedQuery}`;
     return this.fetchStandardDanmu(url, headers, "WIN");
   }
   /**
-   * 获取网页版弹幕 (终极降级方法)
+   * 获取网页版弹幕 (终极��级方法)
    * 自动处理复合 ID 的解包
    */
   async getWebDanmuFallback(id) {
