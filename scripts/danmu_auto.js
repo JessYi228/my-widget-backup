@@ -14633,7 +14633,7 @@ var TencentSource = class extends BaseSource {
   /**
    * 获取视频真实时长（秒）
    *
-   * 腾讯弹幕分片接口(base)只提供按 30s 对齐的分片边界，末段 segment_end 是分片桶的
+   * 腾讯弹幕分片接口(base)只提供按 30s 对��的分片边界，末段 segment_end 是分片桶的
    * 上边界（会把片尾广告/占位时长也算进去），并非正片真实时长。
    * vv.video.qq.com/getinfo 的 vl.vi[0].td 才是权威的视频总时长。
    *
@@ -19555,7 +19555,7 @@ var AiyifanSource = class extends BaseSource {
     return log("info", `[aiyifan] [\u9009\u96C6] \u5171\u83B7\u53D6\u5230 ${result.length} \u96C6`), result;
   }
   /**
-   * 获取视频详情（用于补齐老链接缺失的 videoId）
+   * 获取视频详��（用于补齐老链接缺失的 videoId）
    * @param {string} mediaKey - 剧集标识
    * @param {string} episodeKey - 分集标识
    * @param {string|number} videoType - 视频类型
@@ -21060,7 +21060,7 @@ var API_HEALTH2 = {
   /**
    * 搜索动画条目
    * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
-   * @param {string} keyword 搜索关键词
+   * @param {string} keyword 搜索��键词
    * @returns {Promise<Array>} 转换后的搜索结果列表
    */
   async search(keyword) {

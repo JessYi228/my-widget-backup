@@ -253,7 +253,7 @@ async function mapDanmuSourcesInBatches(sources, batchSize, task) {
 }
 
 // 从番剧标题提取季号，兼容多种命名：
-//   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2��"剑来 S2"→2
+//   "剑来 第二季"→2、"【tencent】剑来_02"→2、"剑来2"→2、"剑来 S2"→2
 // 优先匹配"第X季/部"，并把季号限制在 1-2 位，避免把年份(2025)误判为季号
 function extractSeasonNumber(animeTitle) {
   const title = String(animeTitle || "");
@@ -637,7 +637,7 @@ async function fetchEpisodesByMatch(source, title, season, episode) {
     const data = response && response.data;
     if (!data || !data.isMatched || !Array.isArray(data.matches) || data.matches.length === 0) return null;
     const matched = data.matches[0];
-    // match 只返回匹配到的当前集，构造单集列表（episodeNumber 设为当前集，供 App 选集对齐）
+    // match 只返回匹配到的当前集，构造单集列���（episodeNumber 设为当前集，供 App 选集对齐）
     return [{
       episodeId: matched.episodeId,
       episodeTitle: matched.episodeTitle || `第${e}集`,
