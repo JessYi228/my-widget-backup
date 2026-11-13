@@ -6121,7 +6121,7 @@ var _Envs = class _Envs {
       tencentConcurrency: Math.max(1, Math.min(this.get("TENCENT_CONCURRENCY", 100, "number"), 200)),
       // 腾讯弹幕分片并发配置
       iqiyiConcurrency: Math.max(1, Math.min(this.get("IQIYI_CONCURRENCY", 100, "number"), 200)),
-      // 爱��艺弹幕分片并发配置
+      // 爱奇艺弹幕分片并发配置
       dandanplayAccount: this.get("DANDANPLAY_ACCOUNT", "", "string", !0),
       // 弹弹play账号，dandan 源使用
       dandanplayPassword: this.get("DANDANPLAY_PASSWORD", "", "string", !0),
@@ -12164,7 +12164,7 @@ var RenrenSource = class extends BaseSource {
     });
   }
   /**
-   * ��成 Win 端格式的 32 位十六进制设备指纹
+   * 生成 Win 端格式的 32 位十六进制设备指纹
    */
   generateWinAliId() {
     return Array.from({ length: 32 }, () => Math.floor(Math.random() * 16).toString(16)).join("").toUpperCase();
@@ -13054,7 +13054,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
       return warnTag && log("warn", `${warnTag}: ${error.message}`), fallback;
     }
   }
-  // ── 数据规范化 ───────────────────────────────────────────��──
+  // ── 数据规范化 ──────────────────────────────────────────────
   normalizeSearchItems(items = []) {
     return Array.isArray(items) ? items.map((item) => {
       if (!item || typeof item != "object") return null;
