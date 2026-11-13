@@ -6121,7 +6121,7 @@ var _Envs = class _Envs {
       tencentConcurrency: Math.max(1, Math.min(this.get("TENCENT_CONCURRENCY", 100, "number"), 200)),
       // 腾讯弹幕分片并发配置
       iqiyiConcurrency: Math.max(1, Math.min(this.get("IQIYI_CONCURRENCY", 100, "number"), 200)),
-      // 爱奇艺弹幕分片并发配置
+      // ���奇艺弹幕分片并发配置
       dandanplayAccount: this.get("DANDANPLAY_ACCOUNT", "", "string", !0),
       // 弹弹play账号，dandan 源使用
       dandanplayPassword: this.get("DANDANPLAY_PASSWORD", "", "string", !0),
