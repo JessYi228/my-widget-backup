@@ -5621,7 +5621,7 @@ var _Envs = class _Envs {
    * @param {string} key 环境变量的键
    * @param {any} defaultValue 默认值
    * @param {'string' | 'number' | 'boolean'} type 类型
-   * @param {boolean} [encrypt] 是否按加密变量读取���其值按掩码写入预览集合
+   * @param {boolean} [encrypt] 是否按加密变量读取，其值按掩码写入预览集合
    * @returns {any} 转换后的值
    */
   static get(key, defaultValue, type = "string", encrypt = !1) {
@@ -14379,7 +14379,7 @@ var TencentSource = class extends BaseSource {
    *
    * 原先仅取 union_title，连续剧只能显示「兰香如故_01」——只有集号、没有集标题，
    * 与 iqiyi 的「南部档案第1集 你俩掉进邪神洞」差距明显。改为：
-   *   主标题 play_title（自带剧名与集数）> union_title 规范化 > c_title_output > title
+   *   主��题 play_title（自带剧名与集数）> union_title 规范化 > c_title_output > title
    *   再追加 video_subtitle 作为集标题（已包含时跳过）
    *
    * @param {object} ep allEpisodes 中的分集对象
