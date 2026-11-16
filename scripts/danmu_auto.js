@@ -14310,7 +14310,7 @@ var TencentSource = class extends BaseSource {
       return log("error", "[tencent] \u641C\u7D22\u51FA\u9519:", error.message), [];
     }
   }
-  // 从 videoInfo 的 episodeSites/playSites 中提取各���章节标题，用于综艺等多季内容逐季补全分集
+  // 从 videoInfo 的 episodeSites/playSites 中提取各季章节标题，用于综艺等多季内容逐季补全分集
   extractChapterContexts(videoInfo) {
     let chapters = [];
     if (!videoInfo) return chapters;
@@ -15079,7 +15079,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
     return subtitle && !title.includes(subtitle) && (title = `${title} ${subtitle}`), title;
   }
   /**
-   * 补齐分集标题缺失的集数，集数置于作品名后面，与接口自带集数的分集保持同一格式
+   * 补齐分集标题缺失的集���，集数置于作品名后面，与接口自带集数的分集保持同一格式
    * @param {string} title - 分集标题
    * @param {string} animeTitle - 所属作品名
    * @param {number} order - 分集序号
