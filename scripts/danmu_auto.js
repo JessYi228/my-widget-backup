@@ -14310,7 +14310,7 @@ var TencentSource = class extends BaseSource {
       return log("error", "[tencent] \u641C\u7D22\u51FA\u9519:", error.message), [];
     }
   }
-  // 从 videoInfo 的 episodeSites/playSites 中提取各季章节标题，用于综艺等多季内容逐季补全分集
+  // 从 videoInfo 的 episodeSites/playSites 中提取各���章节标题，用于综艺等多季内容逐季补全分集
   extractChapterContexts(videoInfo) {
     let chapters = [];
     if (!videoInfo) return chapters;
@@ -19042,7 +19042,7 @@ var MaiduiduiSource = class _MaiduiduiSource extends BaseSource {
     return { 0: "\u5267\u96C6", 1: "\u7535\u5F71", 2: "\u7EFC\u827A" };
   }
   // 旧接口 getAllSearchResult4820.action 已失效(返回空数组)，新接口去掉版本号后缀
-  // ��接口数据结构变化：typeItem.typeName 不再存在，改用 vodItem.vodType + vodItem.materialName
+  // 新接口数据结构变化：typeItem.typeName 不再存在，改用 vodItem.vodType + vodItem.materialName
   async search(keyword) {
     try {
       let urlSuffix = "/searchApi/search/getAllSearchResult.action", searchUrl = `${this.domain}${urlSuffix}`, dataBody = {
