@@ -5621,7 +5621,7 @@ var _Envs = class _Envs {
    * @param {string} key 环境变量的键
    * @param {any} defaultValue 默认值
    * @param {'string' | 'number' | 'boolean'} type 类型
-   * @param {boolean} [encrypt] 是否按加密变量读取���其值按掩码写入预览集合
+   * @param {boolean} [encrypt] 是否按加密变量读取，其值按掩码写入预览集合
    * @returns {any} 转换后的值
    */
   static get(key, defaultValue, type = "string", encrypt = !1) {
@@ -15079,7 +15079,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
     return subtitle && !title.includes(subtitle) && (title = `${title} ${subtitle}`), title;
   }
   /**
-   * 补齐分集标题缺失的集���，集数置于作品名后面，与接口自带集数的分集保持同一格式
+   * 补齐分集标题缺失的集数，集数置于作品名后面，与接口自带集数的分集保持同一格式
    * @param {string} title - 分集标题
    * @param {string} animeTitle - 所属作品名
    * @param {number} order - 分集序号
