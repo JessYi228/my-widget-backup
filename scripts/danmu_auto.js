@@ -5621,7 +5621,7 @@ var _Envs = class _Envs {
    * @param {string} key 环境变量的键
    * @param {any} defaultValue 默认值
    * @param {'string' | 'number' | 'boolean'} type 类型
-   * @param {boolean} [encrypt] 是否按加密变量读取���其值按掩码写入预览集合
+   * @param {boolean} [encrypt] 是否按加密变量读取，其值按掩码写入预览集合
    * @returns {any} 转换后的值
    */
   static get(key, defaultValue, type = "string", encrypt = !1) {
@@ -6110,7 +6110,7 @@ var _Envs = class _Envs {
       vodServers: this.resolveVodServers(),
       // vod站点配置，格式：名称@URL,名称@URL
       vodReturnMode: this.get("VOD_RETURN_MODE", "fastest", "string").toLowerCase(),
-      // vod返回模式：all（所有站点）或 fastest（最快的站点）
+      // vod返回模式：all（所有站点）或 fastest（���快的站点）
       vodRequestTimeout: this.get("VOD_REQUEST_TIMEOUT", "10000", "string"),
       // vod超时时间（默认10秒）
       bilibliCookie: this.get("BILIBILI_COOKIE", "", "string", !0),
