@@ -5621,7 +5621,7 @@ var _Envs = class _Envs {
    * @param {string} key 环境变量的键
    * @param {any} defaultValue 默认值
    * @param {'string' | 'number' | 'boolean'} type 类型
-   * @param {boolean} [encrypt] 是否按加密变量读取，其值按掩码写入预览集合
+   * @param {boolean} [encrypt] 是否按加密变量读取���其值按掩码写入预览集合
    * @returns {any} 转换后的值
    */
   static get(key, defaultValue, type = "string", encrypt = !1) {
@@ -19042,7 +19042,7 @@ var MaiduiduiSource = class _MaiduiduiSource extends BaseSource {
     return { 0: "\u5267\u96C6", 1: "\u7535\u5F71", 2: "\u7EFC\u827A" };
   }
   // 旧接口 getAllSearchResult4820.action 已失效(返回空数组)，新接口去掉版本号后缀
-  // ��接口数据结构变化：typeItem.typeName 不再存在，改用 vodItem.vodType + vodItem.materialName
+  // 新接口数据结构变化：typeItem.typeName 不再存在，改用 vodItem.vodType + vodItem.materialName
   async search(keyword) {
     try {
       let urlSuffix = "/searchApi/search/getAllSearchResult.action", searchUrl = `${this.domain}${urlSuffix}`, dataBody = {
