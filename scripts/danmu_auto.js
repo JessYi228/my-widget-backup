@@ -6110,7 +6110,7 @@ var _Envs = class _Envs {
       vodServers: this.resolveVodServers(),
       // vod站点配置，格式：名称@URL,名称@URL
       vodReturnMode: this.get("VOD_RETURN_MODE", "fastest", "string").toLowerCase(),
-      // vod返回模式：all（所有站点）或 fastest（���快的站点）
+      // vod返回模式：all（所有站点）或 fastest（最快的站点）
       vodRequestTimeout: this.get("VOD_REQUEST_TIMEOUT", "10000", "string"),
       // vod超时时间（默认10秒）
       bilibliCookie: this.get("BILIBILI_COOKIE", "", "string", !0),
@@ -19042,7 +19042,7 @@ var MaiduiduiSource = class _MaiduiduiSource extends BaseSource {
     return { 0: "\u5267\u96C6", 1: "\u7535\u5F71", 2: "\u7EFC\u827A" };
   }
   // 旧接口 getAllSearchResult4820.action 已失效(返回空数组)，新接口去掉版本号后缀
-  // 新接口数据结构变化：typeItem.typeName 不再存在，改用 vodItem.vodType + vodItem.materialName
+  // ��接口数据结构变化：typeItem.typeName 不再存在，改用 vodItem.vodType + vodItem.materialName
   async search(keyword) {
     try {
       let urlSuffix = "/searchApi/search/getAllSearchResult.action", searchUrl = `${this.domain}${urlSuffix}`, dataBody = {
