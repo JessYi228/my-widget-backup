@@ -14310,7 +14310,7 @@ var TencentSource = class extends BaseSource {
       return log("error", "[tencent] \u641C\u7D22\u51FA\u9519:", error.message), [];
     }
   }
-  // 从 videoInfo 的 episodeSites/playSites 中提取各���章节标题，用于综艺等多季内容逐季补全分集
+  // 从 videoInfo 的 episodeSites/playSites 中提取各季章节标题，用于综艺等多季内容逐季补全分集
   extractChapterContexts(videoInfo) {
     let chapters = [];
     if (!videoInfo) return chapters;
