@@ -12873,7 +12873,7 @@ ${path2}?${sortedQuery}`;
     }
   }
   /**
-   * 获取单��弹幕 (Mac API)
+   * 获取单集弹幕 (Mac API)
    */
   async getMacDanmu(episodeSid) {
     let realEpisodeId = String(episodeSid).includes("-") ? String(episodeSid).split("-")[1] : episodeSid, url = `https://${this.API_CONFIG.MAC_DANMU_HOST}/v1/produce/danmu/EPISODE/${realEpisodeId}`, headers = { "User-Agent": this.API_CONFIG.MAC_USER_AGENT, Accept: "*/*" };
@@ -15091,7 +15091,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
     return prefix ? `${prefix} \u7B2C${order}\u96C6 ${rest}`.trim() : `\u7B2C${order}\u96C6 ${rest}`.trim();
   }
   /**
-   * 全季搜索时统一拉取各结果的分集列表，收集其中以内联方式返回的季 album_id；
+   * 全季搜索时统一拉取各结果的分集列表，收集其中以内联方式返回的��� album_id；
    * 这些季无需再经分季URL获取，供 getEpisodes 判断跳过对应请求
    * @param {Array} animes - 搜索结果数组
    * @param {Map} baseInfoCache - 复用已拉取的分集列表数据，避免重复请求
@@ -19042,7 +19042,7 @@ var MaiduiduiSource = class _MaiduiduiSource extends BaseSource {
     return { 0: "\u5267\u96C6", 1: "\u7535\u5F71", 2: "\u7EFC\u827A" };
   }
   // 旧接口 getAllSearchResult4820.action 已失效(返回空数组)，新接口去掉版本号后缀
-  // ��接口数据结构变化：typeItem.typeName 不再存在，改用 vodItem.vodType + vodItem.materialName
+  // 新接口数据结构变化：typeItem.typeName 不再存在，改用 vodItem.vodType + vodItem.materialName
   async search(keyword) {
     try {
       let urlSuffix = "/searchApi/search/getAllSearchResult.action", searchUrl = `${this.domain}${urlSuffix}`, dataBody = {
