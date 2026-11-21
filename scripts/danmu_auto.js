@@ -15091,7 +15091,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
     return prefix ? `${prefix} \u7B2C${order}\u96C6 ${rest}`.trim() : `\u7B2C${order}\u96C6 ${rest}`.trim();
   }
   /**
-   * 全季搜索时统一拉取各结果的分集列表，收集其中以内联方式返回的��� album_id；
+   * 全季搜索时统一拉取各结果的分集列表，收集其中以内联方式返回的季 album_id；
    * 这些季无需再经分季URL获取，供 getEpisodes 判断跳过对应请求
    * @param {Array} animes - 搜索结果数组
    * @param {Map} baseInfoCache - 复用已拉取的分集列表数据，避免重复请求
