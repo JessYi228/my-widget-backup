@@ -16082,7 +16082,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
     }
   }
   /**
-   * 将 media_id 转换为 season_id 并提��封面
+   * 将 media_id 转换为 season_id 并提取封面
    * @param {string|number} mediaId - B站 md 号
    * @returns {Promise<{seasonId: string|null, cover: string}>}
    */
@@ -17269,7 +17269,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
     return intersection / union;
   }
   /**
-   * 处理���索结果
+   * 处理搜索结果
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
