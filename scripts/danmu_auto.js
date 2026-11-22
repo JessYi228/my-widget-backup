@@ -5621,7 +5621,7 @@ var _Envs = class _Envs {
    * @param {string} key 环境变量的键
    * @param {any} defaultValue 默认值
    * @param {'string' | 'number' | 'boolean'} type 类型
-   * @param {boolean} [encrypt] 是否按加密变量读取，其值按掩码写入预览集合
+   * @param {boolean} [encrypt] 是否按加密变量读取���其值按掩码写入预览集合
    * @returns {any} 转换后的值
    */
   static get(key, defaultValue, type = "string", encrypt = !1) {
@@ -6354,7 +6354,7 @@ var Globals = {
   // 标识当前可用token
   /**
    * 初始化全局变量，加载环境变量依赖
-   * @param {Object} env ���境对象
+   * @param {Object} env 环境对象
    * @returns {Object} 全局配置对象
    */
   init(env = {}) {
@@ -14377,7 +14377,7 @@ var TencentSource = class extends BaseSource {
   /**
    * 组装分集显示标题，与 iqiyi/youku 源保持一致的「集数 + 标题」形态。
    *
-   * ���先仅取 union_title，连续剧只能显示「兰香如故_01」——只有集号、没有集标题，
+   * 原先仅取 union_title，连续剧只能显示「兰香如故_01」——只有集号、没有集标题，
    * 与 iqiyi 的「南部档案第1集 你俩掉进邪神洞」差距明显。改为：
    *   主标题 play_title（自带剧名与集数）> union_title 规范化 > c_title_output > title
    *   再追加 video_subtitle 作为集标题（已包含时跳过）
@@ -16082,7 +16082,7 @@ var _BilibiliSource = class _BilibiliSource extends BaseSource {
     }
   }
   /**
-   * 将 media_id 转换为 season_id 并提取封面
+   * 将 media_id 转换为 season_id 并提��封面
    * @param {string|number} mediaId - B站 md 号
    * @returns {Promise<{seasonId: string|null, cover: string}>}
    */
@@ -17269,7 +17269,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
     return intersection / union;
   }
   /**
-   * 处理搜索结果
+   * 处理���索结果
    * @param {Array} sourceAnimes 原始数据
    * @param {string} queryTitle 关键词
    * @param {Array} curAnimes 结果池
