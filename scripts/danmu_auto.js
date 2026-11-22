@@ -6806,7 +6806,7 @@ var _Envs = class _Envs {
       strictTitleMatch: this.get("STRICT_TITLE_MATCH", !1, "boolean"),
       // 严格标题匹配模式配置（默认 false，宽松模糊匹配）
       titleToChinese: this.get("TITLE_TO_CHINESE", !1, "boolean"),
-      // 外语标题转换中文开关
+      // 外��标题转换中文开关
       animeTitleSimplified: this.get("ANIME_TITLE_SIMPLIFIED", !1, "boolean"),
       // 搜索的剧名标题自动繁转简
       titleMappingTable: this.resolveTitleMappingTable(),
@@ -13408,7 +13408,7 @@ var CATE_MAP = { 1: "\u97E9\u5267", 2: "\u7EFC\u827A", 3: "\u7535\u5F71", 4: "\u
     return Array.isArray(comments) ? comments.map((item) => ({ ...item, _sourceLabel: sourceLabel })) : [];
   }
   /**
-   * 安全执行异步操作，失败时返回 fallback 值并可选打印警告
+   * 安全执行异步操作��失败时返回 fallback 值并可选打印警告
    */
   async tryGet(fn, fallback, warnTag) {
     try {
