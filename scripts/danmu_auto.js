@@ -13017,7 +13017,7 @@ ${path2}?${sortedQuery}`;
     return globals.deployPlatform && globals.deployPlatform !== "node" ? this._getDetailCloud(id, episodeSid, diagnostics) : this._getDetailLocal(id, episodeSid, diagnostics);
   }
   /**
-   * 云环境详情：根据搜��阶段连通性跳过已知超时的 tier。
+   * 云环境详情：根据搜索阶段连通性跳过已知超时的 tier。
    * 优先级 WEB/TV > MAC/WIN。搜索阶段已验证工作的 tier 优先使用。
    */
   async _getDetailCloud(id, episodeSid, diagnostics = null) {
@@ -15445,7 +15445,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
     return !videosData || typeof videosData != "object" ? [] : videosData.feature_paged ? Object.values(videosData.feature_paged).flat() : (Array.isArray(videosData.data?.videos) ? videosData.data.videos : Object.values(videosData).filter((value) => value && typeof value == "object" && Array.isArray(value.data))).flatMap((segment) => Array.isArray(segment) ? segment : segment.data);
   }
   /**
-   * 补齐分集标题缺失的集数，集数置于作品名后面，与接口自带集数的分集保持同一格式；
+   * 补齐分集标题缺失的集数，集数置于作品名后面，与接口自带集数的分���保持同一格式；
    * 接口未提供集号时不补集数，保持标题原样
    * @param {string} title - 分集标题
    * @param {string} animeTitle - 所属作品名
