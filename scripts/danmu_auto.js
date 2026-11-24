@@ -12485,7 +12485,7 @@ var RenrenSource = class extends BaseSource {
       TV_USER_AGENT: "okhttp/3.12.13",
       TV_CLIENT_TYPE: "android_qwtv_RRSP",
       TV_PKT: "rrmj",
-      // Mac 端特征配置
+      // Mac ��特征配置
       MAC_HOST: "api.cluuid.cn",
       MAC_DANMU_HOST: "static-dm.lequkeji.com",
       MAC_VERSION: "1.2.3",
@@ -15445,7 +15445,7 @@ var _IqiyiSource = class _IqiyiSource extends BaseSource {
     return !videosData || typeof videosData != "object" ? [] : videosData.feature_paged ? Object.values(videosData.feature_paged).flat() : (Array.isArray(videosData.data?.videos) ? videosData.data.videos : Object.values(videosData).filter((value) => value && typeof value == "object" && Array.isArray(value.data))).flatMap((segment) => Array.isArray(segment) ? segment : segment.data);
   }
   /**
-   * 补齐分集标题缺失的集数，集数置于作品名后面，与接口自带集数的分���保持同一格式；
+   * 补齐分集标题缺失的集数，集数置于作品名后面，与接口自带集数的分集保持同一格式；
    * 接口未提供集号时不补集数，保持标题原样
    * @param {string} title - 分集标题
    * @param {string} animeTitle - 所属作品名
@@ -19779,7 +19779,7 @@ var AiyifanAppSigningProvider = class {
     return { data: payload, signingConfig };
   }
   // 按关键词查询网页搜索，返回 mediaKey(contxt) -> 作品年份 的映射
-  // 同关键词带 TTL 缓存；失败时返回空 Map（年份保持未知，不影响主链路）
+  // 同关键词带 TTL 缓���；失败时返回空 Map（年份保持未知，不影响主链路）
   async lookupYears(keyword, logPrefix) {
     logPrefix = logPrefix || "Aiyifan";
     let cacheKey = String(keyword || "").trim();
@@ -21437,7 +21437,7 @@ var API_HEALTH2 = {
   }
   /**
    * 搜索动画条目
-   * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
+   * 使用 Bangumi V0 POST 接口���行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
    * @param {string} keyword 搜索关键词
    * @returns {Promise<Array>} 转换后的搜索结果列表
    */
