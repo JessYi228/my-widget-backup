@@ -19779,7 +19779,7 @@ var AiyifanAppSigningProvider = class {
     return { data: payload, signingConfig };
   }
   // 按关键词查询网页搜索，返回 mediaKey(contxt) -> 作品年份 的映射
-  // 同关键词带 TTL 缓���；失败时返回空 Map（年份保持未知，不影响主链路）
+  // 同关键词带 TTL 缓存；失败时返回空 Map（年份保持未知，不影响主链路）
   async lookupYears(keyword, logPrefix) {
     logPrefix = logPrefix || "Aiyifan";
     let cacheKey = String(keyword || "").trim();
@@ -21437,7 +21437,7 @@ var API_HEALTH2 = {
   }
   /**
    * 搜索动画条目
-   * 使用 Bangumi V0 POST 接口���行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
+   * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
    * @param {string} keyword 搜索关键词
    * @returns {Promise<Array>} 转换后的搜索结果列表
    */
