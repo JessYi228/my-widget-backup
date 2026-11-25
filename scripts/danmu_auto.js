@@ -12485,7 +12485,7 @@ var RenrenSource = class extends BaseSource {
       TV_USER_AGENT: "okhttp/3.12.13",
       TV_CLIENT_TYPE: "android_qwtv_RRSP",
       TV_PKT: "rrmj",
-      // Mac ��特征配置
+      // Mac 端特征配置
       MAC_HOST: "api.cluuid.cn",
       MAC_DANMU_HOST: "static-dm.lequkeji.com",
       MAC_VERSION: "1.2.3",
