@@ -12485,7 +12485,7 @@ var RenrenSource = class extends BaseSource {
       TV_USER_AGENT: "okhttp/3.12.13",
       TV_CLIENT_TYPE: "android_qwtv_RRSP",
       TV_PKT: "rrmj",
-      // Mac 端特征配置
+      // Mac ��特征配置
       MAC_HOST: "api.cluuid.cn",
       MAC_DANMU_HOST: "static-dm.lequkeji.com",
       MAC_VERSION: "1.2.3",
@@ -13017,7 +13017,7 @@ ${path2}?${sortedQuery}`;
     return globals.deployPlatform && globals.deployPlatform !== "node" ? this._getDetailCloud(id, episodeSid, diagnostics) : this._getDetailLocal(id, episodeSid, diagnostics);
   }
   /**
-   * 云环境详情：根据搜��阶段连通性跳过已知超时的 tier。
+   * 云环境详情：根据搜索阶段连通性跳过已知超时的 tier。
    * 优先级 WEB/TV > MAC/WIN。搜索阶段已验证工作的 tier 优先使用。
    */
   async _getDetailCloud(id, episodeSid, diagnostics = null) {
@@ -19779,7 +19779,7 @@ var AiyifanAppSigningProvider = class {
     return { data: payload, signingConfig };
   }
   // 按关键词查询网页搜索，返回 mediaKey(contxt) -> 作品年份 的映射
-  // 同关键词带 TTL 缓存；失败时返回空 Map（年份保持未知，不影响主链路）
+  // 同关键词带 TTL 缓���；失败时返回空 Map（年份保持未知，不影响主链路）
   async lookupYears(keyword, logPrefix) {
     logPrefix = logPrefix || "Aiyifan";
     let cacheKey = String(keyword || "").trim();
@@ -21437,7 +21437,7 @@ var API_HEALTH2 = {
   }
   /**
    * 搜索动画条目
-   * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
+   * 使用 Bangumi V0 POST 接口���行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
    * @param {string} keyword 搜索关键词
    * @returns {Promise<Array>} 转换后的搜索结果列表
    */
