@@ -13017,7 +13017,7 @@ ${path2}?${sortedQuery}`;
     return globals.deployPlatform && globals.deployPlatform !== "node" ? this._getDetailCloud(id, episodeSid, diagnostics) : this._getDetailLocal(id, episodeSid, diagnostics);
   }
   /**
-   * 云环境详情：根据搜索阶段连通性跳过已知超时的 tier。
+   * 云环境详情：根据搜��阶段连通性跳过已知超时的 tier。
    * 优先级 WEB/TV > MAC/WIN。搜索阶段已验证工作的 tier 优先使用。
    */
   async _getDetailCloud(id, episodeSid, diagnostics = null) {
