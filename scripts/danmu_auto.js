@@ -1,5 +1,127 @@
 // 本插件从项目 https://github.com/huangxd-/danmu_api.git 一键导出，配置参数使用说明请参考该项目README
 
+// Rex 的 JavaScriptCore 不提供 URLSearchParams；B 站合并分段解析与流程追踪的
+// 凭据遮罩都依赖它，缺失时会直接抛出 "URLSearchParams is not a constructor"。
+const forwardGlobal = typeof globalThis !== 'undefined'
+  ? globalThis
+  : (typeof self !== 'undefined' ? self : this);
+
+if (typeof forwardGlobal.URLSearchParams === 'undefined') {
+  forwardGlobal.URLSearchParams = class URLSearchParams {
+    constructor(init = '') {
+      this._rows = [];
+
+      if (init instanceof URLSearchParams) {
+        for (const [key, value] of init.entries()) {
+          this.append(key, value);
+        }
+      } else if (typeof init === 'string') {
+        const text = init.replace(/^\?/, '');
+        for (const part of text.split('&')) {
+          if (!part) continue;
+          const separator = part.indexOf('=');
+          const key = separator < 0 ? part : part.slice(0, separator);
+          const value = separator < 0 ? '' : part.slice(separator + 1);
+          this.append(this._decode(key), this._decode(value));
+        }
+      } else if (init && typeof init[Symbol.iterator] === 'function') {
+        for (const [key, value] of init) {
+          this.append(key, value);
+        }
+      } else if (init && typeof init === 'object') {
+        for (const [key, value] of Object.entries(init)) {
+          this.append(key, value);
+        }
+      }
+    }
+
+    _decode(part) {
+      try {
+        return decodeURIComponent(String(part).replace(/\+/g, ' '));
+      } catch (error) {
+        return String(part);
+      }
+    }
+
+    _encode(part) {
+      return encodeURIComponent(String(part))
+        .replace(/[!'()~]/g, character => `%${character.charCodeAt(0).toString(16).toUpperCase()}`)
+        .replace(/%20/g, '+');
+    }
+
+    append(key, value) {
+      this._rows.push([String(key), String(value)]);
+    }
+
+    delete(key) {
+      const name = String(key);
+      this._rows = this._rows.filter(([item]) => item !== name);
+    }
+
+    get(key) {
+      const name = String(key);
+      const row = this._rows.find(([item]) => item === name);
+      return row ? row[1] : null;
+    }
+
+    getAll(key) {
+      const name = String(key);
+      return this._rows.filter(([item]) => item === name).map(([, value]) => value);
+    }
+
+    has(key) {
+      const name = String(key);
+      return this._rows.some(([item]) => item === name);
+    }
+
+    set(key, value) {
+      const name = String(key);
+      const nextValue = String(value);
+      const index = this._rows.findIndex(([item]) => item === name);
+      if (index < 0) {
+        this.append(name, nextValue);
+        return;
+      }
+      this._rows[index] = [name, nextValue];
+      this._rows = this._rows.filter(([item], rowIndex) => item !== name || rowIndex === index);
+    }
+
+    sort() {
+      this._rows.sort(([left], [right]) => left.localeCompare(right));
+    }
+
+    keys() {
+      return this._rows.map(([key]) => key)[Symbol.iterator]();
+    }
+
+    values() {
+      return this._rows.map(([, value]) => value)[Symbol.iterator]();
+    }
+
+    entries() {
+      return this._rows[Symbol.iterator]();
+    }
+
+    forEach(callback, thisArg) {
+      this._rows.forEach(([key, value]) => callback.call(thisArg, value, key, this));
+    }
+
+    [Symbol.iterator]() {
+      return this.entries();
+    }
+
+    toString() {
+      return this._rows
+        .map(([key, value]) => `${this._encode(key)}=${this._encode(value)}`)
+        .join('&');
+    }
+
+    get size() {
+      return this._rows.length;
+    }
+  };
+}
+
 class URL {
   constructor(url, base) {
     if (base) {
@@ -24,8 +146,12 @@ class URL {
   }
 
   parseURL(url) {
+    const hashIndex = url.indexOf('#');
+    this.hash = hashIndex === -1 ? '' : url.substring(hashIndex);
+    const urlWithoutHash = hashIndex === -1 ? url : url.substring(0, hashIndex);
+
     // 基础URL解析逻辑
-    const match = url.match(/^([^:]+):\/\/([^\/]+)(.*)$/);
+    const match = urlWithoutHash.match(/^([^:]+):\/\/([^\/]+)(.*)$/);
     if (match) {
       this.protocol = match[1] + ':';
       this.hostname = match[2];
@@ -42,7 +168,7 @@ class URL {
     } else {
       this.protocol = '';
       this.hostname = '';
-      this.pathname = url;
+      this.pathname = urlWithoutHash;
       this.search = '';
     }
   }
@@ -73,26 +199,7 @@ class URL {
   }
 
   get searchParams() {
-    // 创建一个简单的SearchParams实现
-    const paramsString = this.search.substring(1); // 移除开头的?
-    const params = new (function() {
-      const entries = {};
-      if (paramsString) {
-        paramsString.split('&').forEach(pair => {
-          const [key, value] = pair.split('=');
-          if (key) {
-            entries[decodeURIComponent(key)] = decodeURIComponent(value || '');
-          }
-        });
-      }
-
-      this.get = (name) => entries[name] || null;
-      this.set = (name, value) => { entries[name] = value.toString(); };
-      this.toString = () => Object.keys(entries).map(key => 
-        encodeURIComponent(key) + '=' + encodeURIComponent(entries[key])
-      ).join('&');
-    })();
-    return params;
+    return new URLSearchParams(this.search);
   }
 }
 
@@ -9891,7 +9998,7 @@ var LANG_CN_MANDARIN = "\u666E\u901A[\u8BDD\u8A71]|[\u56FD\u570B][\u8BED\u8A9E]|
   { regex: /(剧场版|劇場版|the\s*movie|theatrical|movie|film|电影)/i, val: "MOVIE" },
   { regex: /(续篇|续集)/, val: "SEQUEL" },
   { regex: /\b(sp|special)\d*\b/i, val: "SP" },
-  // 回退：清洗后以数字结尾（如 "タイトル2"）视为 S{N}
+  // 回退：清洗后以数字结尾（如 "タイトル2"）��为 S{N}
   { regex: /[^0-9](\d)$/, prefix: "S", useCleaned: !0 }
 ], SpecialSeriesRegistry = [
   {
@@ -12485,7 +12592,7 @@ var RenrenSource = class extends BaseSource {
       TV_USER_AGENT: "okhttp/3.12.13",
       TV_CLIENT_TYPE: "android_qwtv_RRSP",
       TV_PKT: "rrmj",
-      // Mac ��特征配置
+      // Mac 端特征配置
       MAC_HOST: "api.cluuid.cn",
       MAC_DANMU_HOST: "static-dm.lequkeji.com",
       MAC_VERSION: "1.2.3",
@@ -19779,7 +19886,7 @@ var AiyifanAppSigningProvider = class {
     return { data: payload, signingConfig };
   }
   // 按关键词查询网页搜索，返回 mediaKey(contxt) -> 作品年份 的映射
-  // 同关键词带 TTL 缓���；失败时返回空 Map（年份保持未知，不影响主链路）
+  // 同关键词带 TTL 缓存；失败时返回空 Map（年份保持未知，不影响主链路）
   async lookupYears(keyword, logPrefix) {
     logPrefix = logPrefix || "Aiyifan";
     let cacheKey = String(keyword || "").trim();
@@ -19975,7 +20082,7 @@ var AiyifanSource = class extends BaseSource {
   /**
    * 搜索功能
    * @param {string} keyword - 搜索关键词
-   * @returns {Promise<Array>} 搜索结果
+   * @returns {Promise<Array>} 搜��结果
    */
   async search(keyword) {
     log("info", `[aiyifan] \u5F00\u59CB\u641C\u7D22: ${keyword}`);
@@ -21437,7 +21544,7 @@ var API_HEALTH2 = {
   }
   /**
    * 搜索动画条目
-   * 使用 Bangumi V0 POST 接口���行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
+   * 使用 Bangumi V0 POST 接口进行搜索，支持偏移翻页、结果过滤、镜像回退及关系检测
    * @param {string} keyword 搜索关键词
    * @returns {Promise<Array>} 转换后的搜索结果列表
    */
@@ -23476,7 +23583,7 @@ async function getSegmentComment(segment, queryFormat) {
 }
 
 // forward/forward-widget.js
-var wv = "1.22.0";
+var wv = "1.22.1";
 WidgetMetadata = {
   id: "forward.auto.danmu2",
   title: "\u81EA\u52A8\u94FE\u63A5\u5F39\u5E55v2",
