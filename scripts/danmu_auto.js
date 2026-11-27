@@ -9850,7 +9850,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   // ── 日期 ─────────────────────────────────────────────────
   DATE_MATCH: 0,
   // 基础日期匹配（动态计算，此处为占位）
-  // ── 集数对齐 (Episode Alignment) ─────────────────────────
+  // ─��� 集数对齐 (Episode Alignment) ─────────────────────────
   EP_ALIGN: {
     MOVIE_TYPE_MISMATCH: -5,
     // 电影/TV 类型不符
@@ -9998,7 +9998,7 @@ var LANG_CN_MANDARIN = "\u666E\u901A[\u8BDD\u8A71]|[\u56FD\u570B][\u8BED\u8A9E]|
   { regex: /(剧场版|劇場版|the\s*movie|theatrical|movie|film|电影)/i, val: "MOVIE" },
   { regex: /(续篇|续集)/, val: "SEQUEL" },
   { regex: /\b(sp|special)\d*\b/i, val: "SP" },
-  // 回退：清洗后以数字结尾（如 "タイトル2"）��为 S{N}
+  // 回退：清洗后以数字结尾（如 "タイトル2"）视为 S{N}
   { regex: /[^0-9](\d)$/, prefix: "S", useCleaned: !0 }
 ], SpecialSeriesRegistry = [
   {
@@ -16040,7 +16040,7 @@ var MangoSource = class extends BaseSource {
     }
   }
   /**
-   * 获取电影正片
+   * 获取电影正��
    * @param {string} mediaId - 媒体ID
    * @returns {Object|null} 电影正片信息
    */
@@ -20082,7 +20082,7 @@ var AiyifanSource = class extends BaseSource {
   /**
    * 搜索功能
    * @param {string} keyword - 搜索关键词
-   * @returns {Promise<Array>} 搜��结果
+   * @returns {Promise<Array>} 搜索结果
    */
   async search(keyword) {
     log("info", `[aiyifan] \u5F00\u59CB\u641C\u7D22: ${keyword}`);
