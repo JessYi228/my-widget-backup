@@ -9850,7 +9850,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   // ── 日期 ─────────────────────────────────────────────────
   DATE_MATCH: 0,
   // 基础日期匹配（动态计算，此处为占位）
-  // ─��� 集数对齐 (Episode Alignment) ─────────────────────────
+  // ── 集数对齐 (Episode Alignment) ─────────────────────────
   EP_ALIGN: {
     MOVIE_TYPE_MISMATCH: -5,
     // 电影/TV 类型不符
@@ -16040,7 +16040,7 @@ var MangoSource = class extends BaseSource {
     }
   }
   /**
-   * 获取电影正��
+   * 获取电影正片
    * @param {string} mediaId - 媒体ID
    * @returns {Object|null} 电影正片信息
    */
@@ -17719,7 +17719,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
       imageUrl: null
     };
   }
-  // 从详情数据提取剧集、别名、相关作品、类型与封面，并按 Bangumi Data 的放送区间补全缺失集
+  // 从详情数��提取剧集、别名、相关作品、类型与封面，并按 Bangumi Data 的放送区间补全缺失集
   async extractDetailResult(id, detail) {
     let episodes = Array.isArray(detail.episodes) ? detail.episodes : [], titles = Array.isArray(detail.titles) ? detail.titles.map((t) => t.title) : [], relateds = Array.isArray(detail.relateds) ? detail.relateds : [], type = detail.type || null, typeDescription = detail.typeDescription || null, is3D = !1, is2D = !1;
     detail.tags && Array.isArray(detail.tags) && detail.tags.forEach((tag) => {
@@ -19503,7 +19503,7 @@ var MaiduiduiSource = class _MaiduiduiSource extends BaseSource {
   }
   // vodType 数字到类型名的映射（埋堆堆搜索接口已不返回 typeName 字符串，改用 vodType 数字）。
   // 按埋堆堆旧接口的 typeName 分类约定解释：0=剧集(正剧，多集), 1=电影, 2=综艺，3=短视频/花絮。
-  // materialName 是题材标签（如“奇幻”“警匪”），不作为剧集/电影/综艺类型使用。
+  // materialName 是题材标签（如“奇幻”“警匪”），不作���剧集/电影/综艺类型使用。
   static get VOD_TYPE_MAP() {
     return { 0: "\u5267\u96C6", 1: "\u7535\u5F71", 2: "\u7EFC\u827A" };
   }
@@ -21473,7 +21473,7 @@ var API_HEALTH2 = {
    * 通过 V0 接口获取条目详情数据（剧集列表与关联条目）
    * @param {string} serverUrl 节点地址
    * @param {number} subjectId 条目 ID
-   * @returns {Promise<Object|null>} 归一化为 V2 格式的详情数据，无有效数据时返回 null
+   * @returns {Promise<Object|null>} 归一化为 V2 ���式的详情数据，无有效数据时返回 null
    */
   async _fetchV0SubjectData(serverUrl, subjectId) {
     let [episodesData, relationsResp] = await Promise.all([
