@@ -9885,7 +9885,7 @@ var MERGE_DELIMITER = "$$$", DISPLAY_CONNECTOR = "&", ENABLE_VERBOSE_MERGE_LOG =
   }
 }), Thresholds = Object.freeze({
   SIMILARITY_MIN: 0.65,
-  // 最低标题相似度（低于此值直接拒��）
+  // 最低标题相似度（低于此值直接拒绝）
   SIMILARITY_STRONG: 0.98,
   // 强匹配（Probe 确认后）
   TIER_DEFAULT: 1e-3,
@@ -17719,7 +17719,7 @@ var tencentSource = new TencentSource(), iqiyiSource = new IqiyiSource(), mangoS
       imageUrl: null
     };
   }
-  // 从详情数据提取剧集、别名、相关作品、类型与封面，并按 Bangumi Data 的放送区间补全缺失集
+  // 从详情数��提取剧集、别名、相关作品、类型与封面，并按 Bangumi Data 的放送区间补全缺失集
   async extractDetailResult(id, detail) {
     let episodes = Array.isArray(detail.episodes) ? detail.episodes : [], titles = Array.isArray(detail.titles) ? detail.titles.map((t) => t.title) : [], relateds = Array.isArray(detail.relateds) ? detail.relateds : [], type = detail.type || null, typeDescription = detail.typeDescription || null, is3D = !1, is2D = !1;
     detail.tags && Array.isArray(detail.tags) && detail.tags.forEach((tag) => {
@@ -23438,7 +23438,7 @@ async function getComment(path2, queryFormat, segmentFlag, clientIp, includeDura
   }), markStepActive("\u5F39\u5E55\xB7\u672C\u5730\u5F39\u5E55");
   let localResource = segmentFlag ? null : await (async () => {
     try {
-      let { findLocalDanmu: findLocalDanmu2 } = await Promise.resolve().then(() => (init_local_store(), local_store_exports)), [localAnimeId] = findAnimeIdByCommentId(commentId), localAnime = globals.animes.find((a) => String(a.animeId) === String(localAnimeId)), matchTitle = extractAnimeTitle(animeTitle || "").split("\u3010")[0].trim(), seasonSuffix = matchTitle.match(/\s*(?:第\s*[0-9一二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+\s*[季期部]|(?:S(?:eason)?|Part)\s*\d+)\s*$/i), season = seasonSuffix ? extractSeasonNumberFromAnimeTitle(matchTitle).season ?? 1 : 1;
+      let { findLocalDanmu: findLocalDanmu2 } = await Promise.resolve().then(() => (init_local_store(), local_store_exports)), [localAnimeId] = findAnimeIdByCommentId(commentId), localAnime = globals.animes.find((a) => String(a.animeId) === String(localAnimeId)), matchTitle = extractAnimeTitle(animeTitle || "").split("\u3010")[0].trim(), seasonSuffix = matchTitle.match(/\s*(?:第\s*[0-9��二三四五六七八九十壹贰叁肆伍陆柒捌玖拾]+\s*[季期部]|(?:S(?:eason)?|Part)\s*\d+)\s*$/i), season = seasonSuffix ? extractSeasonNumberFromAnimeTitle(matchTitle).season ?? 1 : 1;
       return findLocalDanmu2({
         videoId: String(commentId),
         title: seasonSuffix ? matchTitle.slice(0, seasonSuffix.index).trim() : matchTitle,
